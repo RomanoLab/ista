@@ -1,0 +1,4 @@
+openpyxl
+owlready2
+pandas
+tqdm
