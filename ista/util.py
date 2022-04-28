@@ -1,5 +1,7 @@
 import owlready2
 
+import ipdb
+
 _OWL = owlready2.get_ontology("http://www.w3.org/2002/07/owl#")
 
 def safe_add_property(entity, prop, value):
@@ -35,7 +37,7 @@ def get_onto_class_by_node_type(ont: owlready2.namespace.Ontology, node_label: s
     -----
     This should be refactored if/when a better solution is available!
     """
-    matches = [c for c in onto.classes() if str(c).split(".")[-1] == node_label]
+    matches = [c for c in ont.classes() if str(c).split(".")[-1] == node_label]
     if len(matches) == 1:
         return matches[0]
     elif len(matches) == 0:
@@ -67,3 +69,34 @@ def safe_make_individual_name(
     else:
         nm = indiv_name
     return "{0}_{1}".format(cl, nm)
+
+def print_onto_stats(onto: owlready2.Ontology):
+    """Print summary statistics for an OWL2 ontology loaded into `owlready2`.
+    """
+
+    print()
+    print("*******************")
+    print("ONTOLOGY STATISTICS")
+    print("*******************")
+    print()
+
+    # classes, etc.
+    ont_classes = [x.name for x in onto.classes()]
+    ont_object_properties = [y.name for y in onto.object_properties()]
+    
+    # individuals
+    print("Individual counts:")
+    for cl in onto.classes():
+        name = cl.name
+        this_class_count = len(onto.get_instances_of(cl))
+        if this_class_count > 0:
+            print(f"{name}: {this_class_count}")
+
+    # relationships
+    print()
+    print("Relationship counts:")
+    for op in onto.object_properties():
+        name = op.name
+        this_op_count = len(list(op.get_relations()))
+        if this_op_count > 0:
+            print(f"{name}: {this_op_count}")

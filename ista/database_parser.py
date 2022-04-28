@@ -630,3 +630,5 @@ class MySQLDatabaseParser(DatabaseParser):
 
         if no_node_added:
             print("WARNING: NO NODES/PROPERTIES ADDED TO ONTOLOGY")
+
+# class XMLDatabaseParser(DatabaseParser):
