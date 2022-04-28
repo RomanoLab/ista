@@ -6,7 +6,7 @@ with open("README.md", 'r', encoding="utf-8") as fp:
 
 setuptools.setup(
     name="ista",
-    version="0.0.1",
+    version="0.1.0",
     author="Joseph D. Romano",
     description="A toolkit for building semantic graph knowledge bases.",
     long_description=readme,
