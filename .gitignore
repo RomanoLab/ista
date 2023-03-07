@@ -130,3 +130,7 @@ dmypy.json
 
 
 tests/projects/*
+
+*alzkb-populated*
+
+*secrets.py
