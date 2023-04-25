@@ -44,7 +44,7 @@ public:
     IRI ontology_iri;
     IRI version_iri;
 private:
-    std::unordered_set* axioms;
+    std::unordered_set<Axiom>* axioms;
 };
 
 
