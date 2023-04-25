@@ -6,36 +6,36 @@
 
 struct Entity
 {
-    
+    IRI iri;
 };
 
 struct Class : Entity
 {
-    IRI iri;
+    
 };
 
 
 struct Datatype : Entity
 {
-    IRI iri;
+    
 };
 
 
 struct ObjectProperty : Entity
 {
-    IRI iri;
+    
 };
 
 
 struct DataProperty : Entity
 {
-    IRI iri;
+    
 };
 
 
 struct AnnotationProperty
 {
-    IRI iri;
+    
 };
 
 

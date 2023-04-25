@@ -7,6 +7,7 @@
 
 #include "iri.hpp"
 #include "axiom.hpp"
+#include "entity.hpp"
 
 
 namespace ista
@@ -14,14 +15,6 @@ namespace ista
 
 namespace owl2
 {
-
-
-struct Entity
-{
-    IRI entityIRI;
-
-    Entity() = default;
-};
 
 
 struct Annotation
