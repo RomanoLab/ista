@@ -3,6 +3,11 @@
 
 #include <string>
 #include <unordered_set>
+#include <ostream>
+
+#include "iri.hpp"
+#include "axiom.hpp"
+
 
 namespace ista
 {
@@ -11,22 +16,11 @@ namespace owl2
 {
 
 
-struct IRI
+struct Entity
 {
-    std::string fullIRI;
-    std::string prefixName;
-    std::string abbreviatedIRI;
-    std::string baseIRI;
-    
-    IRI(std::string base_iri);
-    
-    IRI(std::string base_iri, std::string prefix_name);
-};
+    IRI entityIRI;
 
-
-struct Axiom
-{
-
+    Entity() = default;
 };
 
 

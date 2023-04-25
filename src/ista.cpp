@@ -4,8 +4,9 @@
 
 int main(int argc, char* argv[])
 {
-    ista::owl2::IRI my_test_iri = ista::owl2::IRI("https://comptox.ai/comptox.rdf");
+    IRI my_test_iri = IRI("https://comptox.ai/comptox.rdf");
     
     std::cout << "Hello, Ista!\n";
+    std::cout << my_test_iri.fullIRI << "\n";
     return 0;
 }
