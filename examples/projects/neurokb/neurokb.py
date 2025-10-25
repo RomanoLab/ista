@@ -7,7 +7,7 @@ import secrets
 
 import ipdb
 
-onto = owlready2.get_ontology("file://D:\\projects\\ista\\examples\\projects\\alzkb\\alzkb.rdf").load()
+onto = owlready2.get_ontology("file://D:\\projects\\ista\\examples\\projects\\neurokb\\neurokb.rdf").load()
 data_dir = "D:\\data\\"
 
 mysql_config = {
@@ -61,8 +61,7 @@ ncbigene.parse_node_type(
             "GeneID": onto.xrefNcbiGene,
             "Symbol": onto.geneSymbol,
             "type_of_gene": onto.typeOfGene,
-            "Full_name_from_nomenclature_authority": onto.commonName,
-            "MIM": onto.xrefOMIM,
+            "Full_name_from_nomenclature_authority": onto.commonName,            "MIM": onto.xrefOMIM,
             "HGNC": onto.xrefHGNC,
             "Ensembl": onto.xrefEnsembl,
             # TODO: Parse Feature_type and other columns
@@ -245,7 +244,7 @@ aopdb.parse_node_type(
 
 disgenet.parse_node_type(
     node_type="Disease",
-    source_filename="CUSTOM/disease_mappings_to_attributes_alzheimer.tsv",  # Filtered for just Alzheimer disease
+    source_filename="CUSTOM/disease_mappings_attributes_neurodegeneration.tsv",  # Filtered for just Alzheimer disease
     fmt="tsv-pandas",
     parse_config={
         "iri_column_name": "diseaseId",
@@ -260,7 +259,7 @@ disgenet.parse_node_type(
 )
 disgenet.parse_node_type(
     node_type="Disease",
-    source_filename="CUSTOM/disease_mappings_alzheimer.tsv",  # Filtered, as above
+    source_filename="CUSTOM/disease_mappings_neurodegeneration.tsv",  # Filtered, as above
     fmt="tsv-pandas",
     parse_config={
         "iri_column_name": "diseaseId",
@@ -718,5 +717,5 @@ hetionet.parse_relationship_type(
 
 print_onto_stats(onto)
 
-with open("./alzkb-populated.rdf", 'wb') as fp:
+with open("./neurokb-populated.rdf", 'wb') as fp:
     onto.save(file=fp, format="rdfxml")

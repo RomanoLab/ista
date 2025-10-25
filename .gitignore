@@ -149,5 +149,6 @@ _deps
 tests/projects/*
 
 *alzkb-populated*
+*populated.rdf
 
 *secrets.py

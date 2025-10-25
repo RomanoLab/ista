@@ -93,7 +93,7 @@ def load_kb(rdf_filepath: str):
     db.query("MATCH (n) DETACH DELETE n;")
 
     try:
-        db.query("CREATE CONSTRAINT n10s_unique_uri ON (r:Resource) ASSERT r.uri IS UNIQUE;")
+        db.query("CREATE CONSTRAINT n10s_unique_uri FOR (r:Resource) REQUIRE r.uri IS UNIQUE;")
     except neo4j.exceptions.ClientError:
         print("Constraint already exists - skipping.")
     db.query("CALL n10s.graphconfig.init();")
