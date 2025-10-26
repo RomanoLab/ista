@@ -21,14 +21,17 @@ The Python package provides tools for:
 - Loading knowledge graphs into Neo4j graph databases
 - Custom graph data structures
 - **Python bindings to high-performance C++ OWL2 library**
+- **Graph converters for NetworkX, igraph, and native graphs**
 
 **Key Features:**
 - Integration with `owlready2` for OWL2 manipulation
 - **Native C++ OWL2 library bindings via pybind11**
+- **Convert ontologies to graph formats (NetworkX, igraph, ista.graph)**
 - Database parsers for MySQL and flat files
 - Neo4j loader via Neosemantics (n10s)
 - Example knowledge bases (AlzKB, NeuroKB)
-- **RDF/XML and Functional Syntax serialization**
+- **RDF/XML parser and serialization**
+- **Functional Syntax serialization**
 
 ### C++ Library (libista)
 
@@ -59,6 +62,8 @@ See [lib/README.md](lib/README.md) for detailed C++ library documentation.
 - [x] OWL2 Functional Syntax serialization (.ofn files)
 - [x] Comprehensive entity, axiom, and expression support
 - [x] **Complete round-trip support (read/write OWL files)**
+- [x] **Graph converters (NetworkX, igraph, ista.graph)**
+- [x] **Ontology-to-graph and graph-to-ontology conversion**
 - [x] Example programs and documentation
 
 ### In Progress / Planned
@@ -117,6 +122,16 @@ owl2.FunctionalSyntaxSerializer.serialize_to_file(onto, "output.ofn")
 parsed_onto = owl2.RDFXMLParser.parse_from_file("output.owl")
 print(f"Loaded ontology with {parsed_onto.get_axiom_count()} axioms")
 print(f"Found {parsed_onto.get_class_count()} classes")
+
+# Convert to NetworkX graph
+from ista.converters import to_networkx
+graph = to_networkx(onto, strategy='individuals_only')
+print(f"Graph has {graph.number_of_nodes()} nodes, {graph.number_of_edges()} edges")
+
+# Perform graph analysis
+import networkx as nx
+centrality = nx.betweenness_centrality(graph)
+communities = nx.community.greedy_modularity_communities(graph.to_undirected())
 ```
 
 ### Python Example with Database Parser
