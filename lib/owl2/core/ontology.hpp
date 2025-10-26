@@ -106,6 +106,43 @@ public:
     std::string toFunctionalSyntax() const;
     std::string toFunctionalSyntax(const std::string& indent) const;
 
+    // Filtering and Subgraph Extraction
+    /**
+     * @brief Create a filtered subgraph using OntologyFilter
+     * @param filter The OntologyFilter to apply (must reference this ontology)
+     * @return Shared pointer to the filtered ontology
+     */
+    std::shared_ptr<Ontology> createSubgraph(const class OntologyFilter& filter) const;
+    
+    /**
+     * @brief Get all individuals that are instances of a class
+     * @param cls The class to query
+     * @return Set of individuals that have ClassAssertion axioms for this class
+     */
+    std::unordered_set<NamedIndividual> getIndividualsOfClass(const Class& cls) const;
+    
+    /**
+     * @brief Get neighboring individuals within specified depth
+     * 
+     * Uses BFS to traverse the ontology graph via object property assertions.
+     * 
+     * @param individual The starting individual
+     * @param depth Maximum number of hops (default 1)
+     * @return Vector of individuals reachable within depth hops
+     */
+    std::vector<NamedIndividual> getNeighbors(const NamedIndividual& individual, int depth = 1) const;
+    
+    /**
+     * @brief Check if a path exists between two individuals
+     * 
+     * Uses BFS to determine reachability through object property assertions.
+     * 
+     * @param from Starting individual
+     * @param to Target individual
+     * @return true if a path exists, false otherwise
+     */
+    bool hasPath(const NamedIndividual& from, const NamedIndividual& to) const;
+
 private:
     std::optional<IRI> ontology_iri_;
     std::optional<IRI> version_iri_;

@@ -1,6 +1,9 @@
 #include "ontology.hpp"
+#include "ontology_filter.hpp"
 #include <algorithm>
 #include <sstream>
+#include <queue>
+#include <unordered_map>
 
 namespace ista {
 namespace owl2 {
@@ -505,6 +508,153 @@ bool Ontology::isAnnotationAxiom(const AxiomPtr& axiom) const {
            std::dynamic_pointer_cast<SubAnnotationPropertyOf>(axiom) ||
            std::dynamic_pointer_cast<AnnotationPropertyDomain>(axiom) ||
            std::dynamic_pointer_cast<AnnotationPropertyRange>(axiom);
+}
+
+// ============================================================================
+// Filtering and Subgraph Extraction Methods
+// ============================================================================
+
+std::shared_ptr<Ontology> Ontology::createSubgraph(const OntologyFilter& filter) const {
+    auto result = filter.execute();
+    return result.ontology;
+}
+
+std::unordered_set<NamedIndividual> Ontology::getIndividualsOfClass(const Class& cls) const {
+    std::unordered_set<NamedIndividual> individuals;
+    
+    for (const auto& axiom : axioms_) {
+        if (auto class_assertion = std::dynamic_pointer_cast<ClassAssertion>(axiom)) {
+            // Check if the class matches
+            if (auto named_class = std::dynamic_pointer_cast<NamedClass>(class_assertion->getClassExpression())) {
+                if (named_class->getClass().getIRI() == cls.getIRI()) {
+                    // Extract the individual
+                    if (std::holds_alternative<NamedIndividual>(class_assertion->getIndividual())) {
+                        individuals.insert(std::get<NamedIndividual>(class_assertion->getIndividual()));
+                    }
+                }
+            }
+        }
+    }
+    
+    return individuals;
+}
+
+std::vector<NamedIndividual> Ontology::getNeighbors(const NamedIndividual& individual, int depth) const {
+    if (depth < 0) {
+        return {};
+    }
+    
+    // Build adjacency list from object property assertions
+    std::unordered_map<IRI, std::unordered_set<IRI>> adj_list;
+    
+    for (const auto& axiom : axioms_) {
+        if (auto obj_prop = std::dynamic_pointer_cast<ObjectPropertyAssertion>(axiom)) {
+            if (std::holds_alternative<NamedIndividual>(obj_prop->getSource()) &&
+                std::holds_alternative<NamedIndividual>(obj_prop->getTarget())) {
+                
+                auto source = std::get<NamedIndividual>(obj_prop->getSource()).getIRI();
+                auto target = std::get<NamedIndividual>(obj_prop->getTarget()).getIRI();
+                
+                // Bidirectional edges for undirected graph
+                adj_list[source].insert(target);
+                adj_list[target].insert(source);
+            }
+        }
+    }
+    
+    // BFS traversal
+    std::unordered_set<IRI> visited;
+    std::queue<std::pair<IRI, int>> queue;  // (node, current_depth)
+    
+    IRI start_iri = individual.getIRI();
+    queue.push({start_iri, 0});
+    visited.insert(start_iri);
+    
+    while (!queue.empty()) {
+        auto [current, current_depth] = queue.front();
+        queue.pop();
+        
+        if (current_depth >= depth) {
+            continue;
+        }
+        
+        auto it = adj_list.find(current);
+        if (it != adj_list.end()) {
+            for (const auto& neighbor_iri : it->second) {
+                if (visited.find(neighbor_iri) == visited.end()) {
+                    visited.insert(neighbor_iri);
+                    queue.push({neighbor_iri, current_depth + 1});
+                }
+            }
+        }
+    }
+    
+    // Remove the starting individual from results
+    visited.erase(start_iri);
+    
+    // Convert to vector
+    std::vector<NamedIndividual> neighbors;
+    neighbors.reserve(visited.size());
+    for (const auto& iri : visited) {
+        neighbors.push_back(NamedIndividual(iri));
+    }
+    
+    return neighbors;
+}
+
+bool Ontology::hasPath(const NamedIndividual& from, const NamedIndividual& to) const {
+    // Build adjacency list
+    std::unordered_map<IRI, std::unordered_set<IRI>> adj_list;
+    
+    for (const auto& axiom : axioms_) {
+        if (auto obj_prop = std::dynamic_pointer_cast<ObjectPropertyAssertion>(axiom)) {
+            if (std::holds_alternative<NamedIndividual>(obj_prop->getSource()) &&
+                std::holds_alternative<NamedIndividual>(obj_prop->getTarget())) {
+                
+                auto source = std::get<NamedIndividual>(obj_prop->getSource()).getIRI();
+                auto target = std::get<NamedIndividual>(obj_prop->getTarget()).getIRI();
+                
+                // Bidirectional edges
+                adj_list[source].insert(target);
+                adj_list[target].insert(source);
+            }
+        }
+    }
+    
+    // BFS to check reachability
+    std::unordered_set<IRI> visited;
+    std::queue<IRI> queue;
+    
+    IRI start_iri = from.getIRI();
+    IRI end_iri = to.getIRI();
+    
+    if (start_iri == end_iri) {
+        return true;  // Trivial case
+    }
+    
+    queue.push(start_iri);
+    visited.insert(start_iri);
+    
+    while (!queue.empty()) {
+        IRI current = queue.front();
+        queue.pop();
+        
+        if (current == end_iri) {
+            return true;
+        }
+        
+        auto it = adj_list.find(current);
+        if (it != adj_list.end()) {
+            for (const auto& neighbor : it->second) {
+                if (visited.find(neighbor) == visited.end()) {
+                    visited.insert(neighbor);
+                    queue.push(neighbor);
+                }
+            }
+        }
+    }
+    
+    return false;
 }
 
 } // namespace owl2

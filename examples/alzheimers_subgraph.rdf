@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace">
+
+    <owl:Ontology rdf:about="http://example.org/biomedical"/>
+
+    <owl:NamedIndividual rdf:about="http://example.org/biomedical#Alzheimers">
+        <rdf:type rdf:resource="http://example.org/biomedical#Disease"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/biomedical#APOE">
+        <rdf:type rdf:resource="http://example.org/biomedical#Gene"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/biomedical#ApoEProtein">
+        <rdf:type rdf:resource="http://example.org/biomedical#Protein"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/biomedical#Donepezil">
+        <rdf:type rdf:resource="http://example.org/biomedical#Drug"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/biomedical#APOE">
+        <http://example.org/biomedical#associatedWith rdf:resource="http://example.org/biomedical#Alzheimers"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/biomedical#APOE">
+        <http://example.org/biomedical#encodes rdf:resource="http://example.org/biomedical#ApoEProtein"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/biomedical#Donepezil">
+        <http://example.org/biomedical#targets rdf:resource="http://example.org/biomedical#ApoEProtein"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/biomedical#Donepezil">
+        <http://example.org/biomedical#treats rdf:resource="http://example.org/biomedical#Alzheimers"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/biomedical#Insulin">
+        <http://example.org/biomedical#interactsWith rdf:resource="http://example.org/biomedical#ApoEProtein"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/biomedical#Alzheimers">
+        <http://example.org/biomedical#name>Alzheimer&apos;s Disease</http://example.org/biomedical#name>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/biomedical#APOE">
+        <http://example.org/biomedical#identifier>APOE</http://example.org/biomedical#identifier>
+    </owl:NamedIndividual>
+
+</rdf:RDF>

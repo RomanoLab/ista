@@ -9,9 +9,11 @@
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
 #include <pybind11/operators.h>
+#include <pybind11/functional.h>
 
 #include "../owl2/owl2.hpp"
 #include "../owl2/parser/rdfxml_parser.hpp"
+#include "../owl2/core/ontology_filter.hpp"
 
 namespace py = pybind11;
 using namespace ista::owl2;
@@ -98,6 +100,9 @@ PYBIND11_MODULE(_libista_owl2, m) {
              "Construct a NamedIndividual with the given IRI")
         .def("__repr__", [](const NamedIndividual& ni) {
             return "<NamedIndividual '" + ni.getIRI().toString() + "'>";
+        })
+        .def("__hash__", [](const NamedIndividual& ni) {
+            return std::hash<IRI>()(ni.getIRI());
         });
 
     // ========================================================================
@@ -202,12 +207,14 @@ PYBIND11_MODULE(_libista_owl2, m) {
 
     // ClassAssertion Axiom - using lambda to accept NamedIndividual directly
     py::class_<ClassAssertion, Axiom, std::shared_ptr<ClassAssertion>>(m, "ClassAssertion", "ClassAssertion axiom")
-        .def(py::init([](const ClassExpressionPtr& class_expression, const NamedIndividual& individual) {
-                 return std::make_shared<ClassAssertion>(class_expression, Individual(individual));
+        .def(py::init([](const Class& cls, const NamedIndividual& individual) {
+                 return std::make_shared<ClassAssertion>(
+                     std::make_shared<NamedClass>(cls), 
+                     Individual(individual));
              }),
-             py::arg("class_expression"),
+             py::arg("cls"),
              py::arg("individual"),
-             "Construct a ClassAssertion axiom with a NamedIndividual")
+             "Construct a ClassAssertion axiom with a Class and NamedIndividual")
         .def("get_class_expression", &ClassAssertion::getClassExpression,
              "Get the class expression");
         // Note: getIndividual() returns variant, so we skip it
@@ -267,6 +274,32 @@ PYBIND11_MODULE(_libista_owl2, m) {
              "Construct a FunctionalDataProperty axiom")
         .def("get_property", &FunctionalDataProperty::getProperty,
              "Get the property");
+
+    // ObjectPropertyAssertion - using lambda to accept NamedIndividual directly
+    py::class_<ObjectPropertyAssertion, Axiom, std::shared_ptr<ObjectPropertyAssertion>>(m, "ObjectPropertyAssertion", "ObjectPropertyAssertion axiom")
+        .def(py::init([](const ObjectProperty& property, const NamedIndividual& source, const NamedIndividual& target) {
+                 return std::make_shared<ObjectPropertyAssertion>(
+                     ObjectPropertyExpression(property),
+                     Individual(source),
+                     Individual(target));
+             }),
+             py::arg("property"),
+             py::arg("source"),
+             py::arg("target"),
+             "Construct an ObjectPropertyAssertion axiom");
+
+    // DataPropertyAssertion - using lambda to accept NamedIndividual directly
+    py::class_<DataPropertyAssertion, Axiom, std::shared_ptr<DataPropertyAssertion>>(m, "DataPropertyAssertion", "DataPropertyAssertion axiom")
+        .def(py::init([](const DataProperty& property, const NamedIndividual& source, const Literal& value) {
+                 return std::make_shared<DataPropertyAssertion>(
+                     property,
+                     Individual(source),
+                     value);
+             }),
+             py::arg("property"),
+             py::arg("source"),
+             py::arg("value"),
+             "Construct a DataPropertyAssertion axiom");
 
     // ========================================================================
     // Ontology Class
@@ -383,6 +416,23 @@ PYBIND11_MODULE(_libista_owl2, m) {
         .def("to_functional_syntax", py::overload_cast<const std::string&>(&Ontology::toFunctionalSyntax, py::const_),
              py::arg("indent"),
              "Convert the ontology to OWL2 Functional Syntax with custom indentation")
+        
+        // Filtering and subgraph extraction methods
+        .def("create_subgraph", &Ontology::createSubgraph,
+             py::arg("filter"),
+             "Create a filtered subgraph using an OntologyFilter")
+        .def("get_individuals_of_class", &Ontology::getIndividualsOfClass,
+             py::arg("cls"),
+             "Get all individuals that are instances of the given class")
+        .def("get_neighbors", &Ontology::getNeighbors,
+             py::arg("individual"),
+             py::arg("depth") = 1,
+             "Get neighboring individuals within specified depth (default: 1 hop)")
+        .def("has_path", &Ontology::hasPath,
+             py::arg("from_individual"),
+             py::arg("to_individual"),
+             "Check if a path exists between two individuals through property assertions")
+        
         .def("__repr__", [](const Ontology& onto) {
             auto iri = onto.getOntologyIRI();
             if (iri.has_value()) {
@@ -390,6 +440,129 @@ PYBIND11_MODULE(_libista_owl2, m) {
                        std::to_string(onto.getAxiomCount()) + " axioms>";
             }
             return "<Ontology with " + std::to_string(onto.getAxiomCount()) + " axioms>";
+        });
+
+    // ========================================================================
+    // Ontology Filtering
+    // ========================================================================
+    
+    // FilterCriteria struct
+    py::class_<FilterCriteria>(m, "FilterCriteria", "Criteria for filtering ontology content")
+        .def(py::init<>(), "Construct empty filter criteria")
+        .def_readwrite("include_individuals", &FilterCriteria::include_individuals,
+                      "Set of individual IRIs to include explicitly")
+        .def_readwrite("include_classes", &FilterCriteria::include_classes,
+                      "Set of class IRIs whose instances should be included")
+        .def_readwrite("exclude_individuals", &FilterCriteria::exclude_individuals,
+                      "Set of individual IRIs to exclude explicitly")
+        .def_readwrite("property_value_filters", &FilterCriteria::property_value_filters,
+                      "Map of property IRI to allowed values")
+        .def_readwrite("max_depth", &FilterCriteria::max_depth,
+                      "Maximum depth for neighborhood extraction (-1 = no limit)")
+        .def_readwrite("include_class_hierarchy", &FilterCriteria::include_class_hierarchy,
+                      "Whether to include class hierarchy axioms")
+        .def_readwrite("include_property_hierarchy", &FilterCriteria::include_property_hierarchy,
+                      "Whether to include property hierarchy axioms")
+        .def_readwrite("include_declarations", &FilterCriteria::include_declarations,
+                      "Whether to include declarations for referenced entities")
+        .def_readwrite("custom_filter", &FilterCriteria::custom_filter,
+                      "Custom filter function for additional filtering logic");
+    
+    // FilterResult struct
+    py::class_<FilterResult>(m, "FilterResult", "Result of a filtering operation")
+        .def(py::init<>(), "Construct empty filter result")
+        .def_readwrite("ontology", &FilterResult::ontology,
+                      "The filtered ontology")
+        .def_readwrite("original_axiom_count", &FilterResult::original_axiom_count,
+                      "Number of axioms in original ontology")
+        .def_readwrite("filtered_axiom_count", &FilterResult::filtered_axiom_count,
+                      "Number of axioms in filtered ontology")
+        .def_readwrite("original_individual_count", &FilterResult::original_individual_count,
+                      "Number of individuals in original ontology")
+        .def_readwrite("filtered_individual_count", &FilterResult::filtered_individual_count,
+                      "Number of individuals in filtered ontology")
+        .def_readwrite("included_individuals", &FilterResult::included_individuals,
+                      "Set of individual IRIs that were included")
+        .def("__repr__", [](const FilterResult& result) {
+            return "<FilterResult: " + std::to_string(result.filtered_axiom_count) + 
+                   " axioms, " + std::to_string(result.filtered_individual_count) + " individuals>";
+        });
+    
+    // OntologyFilter class
+    py::class_<OntologyFilter>(m, "OntologyFilter", "High-performance ontology filtering and subgraph extraction")
+        .def(py::init<const Ontology&>(),
+             py::arg("ontology"),
+             "Construct a filter for the given ontology")
+        .def(py::init<std::shared_ptr<const Ontology>>(),
+             py::arg("ontology"),
+             "Construct a filter with shared ownership of ontology")
+        
+        // Filtering methods
+        .def("filter_by_individuals", &OntologyFilter::filterByIndividuals,
+             py::arg("iris"),
+             "Extract a subgraph containing specific individuals")
+        .def("filter_by_classes", &OntologyFilter::filterByClasses,
+             py::arg("class_iris"),
+             "Filter by class membership - includes all instances of specified classes")
+        .def("filter_by_property", &OntologyFilter::filterByProperty,
+             py::arg("property"),
+             py::arg("value"),
+             "Filter by data property value")
+        .def("filter_by_object_property", &OntologyFilter::filterByObjectProperty,
+             py::arg("property"),
+             py::arg("target"),
+             "Filter by object property target")
+        .def("extract_neighborhood", 
+             py::overload_cast<const IRI&, int>(&OntologyFilter::extractNeighborhood, py::const_),
+             py::arg("seed"),
+             py::arg("depth"),
+             "Extract k-hop neighborhood around a seed individual")
+        .def("extract_neighborhood", 
+             py::overload_cast<const std::unordered_set<IRI>&, int>(&OntologyFilter::extractNeighborhood, py::const_),
+             py::arg("seeds"),
+             py::arg("depth"),
+             "Extract k-hop neighborhood around multiple seed individuals")
+        .def("extract_path", &OntologyFilter::extractPath,
+             py::arg("start"),
+             py::arg("end"),
+             "Extract path(s) between two individuals")
+        .def("random_sample", &OntologyFilter::randomSample,
+             py::arg("n"),
+             py::arg("seed") = 42,
+             "Random sampling of n individuals")
+        .def("apply_filter", &OntologyFilter::applyFilter,
+             py::arg("criteria"),
+             "Apply custom filter criteria")
+        
+        // Builder pattern methods
+        .def("with_individuals", &OntologyFilter::withIndividuals,
+             py::arg("iris"),
+             "Builder: add individuals to include")
+        .def("with_classes", &OntologyFilter::withClasses,
+             py::arg("class_iris"),
+             "Builder: add classes whose instances should be included")
+        .def("exclude_individuals", &OntologyFilter::excludeIndividuals,
+             py::arg("iris"),
+             "Builder: add individuals to exclude")
+        .def("with_max_depth", &OntologyFilter::withMaxDepth,
+             py::arg("depth"),
+             "Builder: set maximum depth for neighborhood extraction")
+        .def("include_class_hierarchy", &OntologyFilter::includeClassHierarchy,
+             py::arg("include"),
+             "Builder: set whether to include class hierarchy axioms")
+        .def("include_property_hierarchy", &OntologyFilter::includePropertyHierarchy,
+             py::arg("include"),
+             "Builder: set whether to include property hierarchy axioms")
+        .def("include_declarations", &OntologyFilter::includeDeclarations,
+             py::arg("include"),
+             "Builder: set whether to include declarations")
+        .def("execute", &OntologyFilter::execute,
+             "Execute the built filter")
+        
+        .def("get_ontology", &OntologyFilter::getOntology,
+             "Get the source ontology")
+        .def("__repr__", [](const OntologyFilter& filter) {
+            return "<OntologyFilter>";
         });
 
     // ========================================================================
