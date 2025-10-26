@@ -1,4 +1,12 @@
+# Runtime dependencies
 openpyxl
 owlready2
 pandas
 tqdm
+
+# Documentation dependencies
+sphinx>=7.0.0
+furo
+numpydoc
+breathe
+sphinx-autodoc-typehints
