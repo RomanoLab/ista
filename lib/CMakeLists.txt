@@ -1,12 +1,16 @@
-# Collect all C++ source files recursively
+# Collect all C++ source files recursively, but exclude python bindings
 file(GLOB_RECURSE lib_sources ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
+
+# Exclude Python bindings from the main library
+list(FILTER lib_sources EXCLUDE REGEX ".*python/.*")
+
 message(STATUS "Library sources: ${lib_sources}")
 
 # Create the libista library
 add_library(libista ${lib_sources})
 
 # Make headers accessible to library consumers
-target_include_directories(libista PUBLIC 
+target_include_directories(libista PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}
 )
 

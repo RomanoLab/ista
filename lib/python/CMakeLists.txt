@@ -43,7 +43,7 @@ endif()
 
 # Create the Python module using pybind11
 pybind11_add_module(_libista_owl2 MODULE
-    bindings.cpp
+    bindings_simple.cpp
 )
 
 # Link against the libista library
