@@ -20,12 +20,15 @@ The Python package provides tools for:
 - Converting structured data into OWL2 ontologies
 - Loading knowledge graphs into Neo4j graph databases
 - Custom graph data structures
+- **Python bindings to high-performance C++ OWL2 library**
 
 **Key Features:**
 - Integration with `owlready2` for OWL2 manipulation
+- **Native C++ OWL2 library bindings via pybind11**
 - Database parsers for MySQL and flat files
 - Neo4j loader via Neosemantics (n10s)
 - Example knowledge bases (AlzKB, NeuroKB)
+- **RDF/XML and Functional Syntax serialization**
 
 ### C++ Library (libista)
 
@@ -37,7 +40,9 @@ A modern C++20 library for parsing, creating, and manipulating OWL2 ontologies.
 - Complex class expressions and data ranges
 - IRI management with prefix support
 - Ontology container with rich query API
-- Functional Syntax serialization
+- **RDF/XML serialization (.owl/.rdf files)**
+- **Functional Syntax serialization (.ofn files)**
+- **Python bindings via pybind11**
 - No external dependencies for core functionality
 
 See [lib/README.md](lib/README.md) for detailed C++ library documentation.
@@ -48,15 +53,17 @@ See [lib/README.md](lib/README.md) for detailed C++ library documentation.
 
 - [x] Python tools for building semantic graph databases from public sources
 - [x] C++ library for high-performance OWL2 ontology manipulation
-- [x] OWL2 Functional Syntax serialization
+- [x] **Python bindings to C++ library (pybind11)**
+- [x] **RDF/XML serialization (.owl/.rdf files)**
+- [x] OWL2 Functional Syntax serialization (.ofn files)
 - [x] Comprehensive entity, axiom, and expression support
 - [x] Example programs and documentation
 
 ### In Progress / Planned
 
-- [ ] Python bindings to C++ library (pybind11)
-- [ ] RDF/XML parser for OWL2 files
-- [ ] Turtle and Manchester Syntax support
+- [ ] RDF/XML parser for reading OWL2 files
+- [ ] Turtle parser and serializer
+- [ ] Manchester Syntax support
 - [ ] Graph summarization and characterization tools
 - [ ] Conversion tools between graph representations
 - [ ] Fast subgraph generators
@@ -83,7 +90,30 @@ The library will be built as `libista` (or `ista.lib` on Windows).
 
 ## Quick Start
 
-### Python Example
+### Python Example with C++ OWL2 Library
+
+```python
+from ista import owl2
+
+# Create an ontology using the high-performance C++ library
+onto = owl2.Ontology(owl2.IRI("http://example.org/myonto"))
+onto.register_prefix("ex", "http://example.org/myonto#")
+
+# Create and declare a class
+person = owl2.Class(owl2.IRI("ex", "Person", "http://example.org/myonto#"))
+onto.add_axiom(owl2.Declaration(owl2.EntityType.CLASS, person.get_iri()))
+
+# Create a subclass
+student = owl2.Class(owl2.IRI("ex", "Student", "http://example.org/myonto#"))
+onto.add_axiom(owl2.Declaration(owl2.EntityType.CLASS, student.get_iri()))
+onto.add_axiom(owl2.SubClassOf(owl2.NamedClass(student), owl2.NamedClass(person)))
+
+# Save to RDF/XML (.owl) and Functional Syntax (.ofn)
+owl2.RDFXMLSerializer.serialize_to_file(onto, "output.owl")
+owl2.FunctionalSyntaxSerializer.serialize_to_file(onto, "output.ofn")
+```
+
+### Python Example with Database Parser
 
 ```python
 import owlready2

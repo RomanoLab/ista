@@ -20,6 +20,7 @@
 
 // Serializers
 #include "serializer/functional_serializer.hpp"
+#include "serializer/rdfxml_serializer.hpp"
 
 // Note: RDF/XML parser will require external XML library (e.g., libxml2, pugixml, rapidxml)
 // Parsers are provided as separate optional components
