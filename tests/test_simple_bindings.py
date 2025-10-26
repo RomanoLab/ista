@@ -1,19 +1,37 @@
 #!/usr/bin/env python3
 """
 Test script for simplified Python bindings.
+
 This demonstrates the essential functionality of the simplified OWL2 bindings.
+
+Prerequisites
+-------------
+Install the package in development mode:
+    pip install -e .
+
+This will build the C++ extension and make it available for testing.
 """
 
 import sys
 
-sys.path.insert(0, r"D:\projects\ista\build\lib\python\Release")
+try:
+    from ista import owl2
+except ImportError:
+    print("ERROR: Could not import ista.owl2")
+    print("Please install the package: pip install -e .")
+    sys.exit(1)
 
-import _libista_owl2 as owl2
+# Verify C++ bindings are available
+if not owl2.is_available():
+    print("ERROR: C++ OWL2 bindings are not available!")
+    print("Please rebuild the C++ extension: pip install -e . --force-reinstall")
+    sys.exit(1)
 
 
 def main():
     print("Testing simplified OWL2 Python bindings...")
-    print(f"Version: {owl2.__version__}")
+    if hasattr(owl2, "__version__"):
+        print(f"Version: {owl2.__version__}")
     print()
 
     # Create an ontology

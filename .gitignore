@@ -152,3 +152,19 @@ tests/projects/*
 *populated.rdf
 
 *secrets.py
+
+# Build artifacts in root
+*.pyd
+*.so
+*.dll
+
+# Test output files
+tests/*.rdf
+tests/*.owl
+tests/*.ofn
+
+# Example output files
+examples/*.rdf
+examples/*.owl
+examples/*.ofn
+examples/*_subgraph.rdf

@@ -12,18 +12,19 @@ This script tests:
 import sys
 import os
 
-# Add the Debug build directory to the path
-sys.path.insert(0, r"D:\projects\ista\build\lib\python\Debug")
-
 try:
-    import _libista_owl2 as owl2
+    from ista import owl2
 
-    print("✓ Successfully imported _libista_owl2 module")
-    print(f"  Module version: {owl2.__version__}")
+    if not owl2.is_available():
+        raise ImportError("C++ OWL2 bindings are not available")
+
+    print("✓ Successfully imported ista.owl2 module")
+    if hasattr(owl2, "__version__"):
+        print(f"  Module version: {owl2.__version__}")
     print()
 except ImportError as e:
-    print(f"✗ Failed to import _libista_owl2 module: {e}")
-    print("  Make sure the module is built and in the correct location.")
+    print(f"✗ Failed to import ista.owl2 module: {e}")
+    print("  Make sure the C++ extension is built. Run: pip install -e .")
     sys.exit(1)
 
 

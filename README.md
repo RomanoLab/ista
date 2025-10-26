@@ -193,23 +193,48 @@ See [src/ista.cpp](src/ista.cpp) for a complete working example.
 ista/
 ├── ista/                      # Python package
 │   ├── __init__.py
+│   ├── owl2.py                # Public OWL2 API (wraps C++ bindings)
 │   ├── ista.py                # CLI interface
-│   ├── database_parser.py      # Data source parsers
+│   ├── database_parser.py     # Data source parsers
 │   ├── load_kb.py             # Neo4j loader
 │   ├── graph/                 # Graph data structures
-│   └── tests/                 # Python tests
+│   ├── converters/            # Ontology-to-graph converters
+│   └── tests/                 # Legacy Python tests
 ├── lib/                       # C++ library (libista)
 │   ├── owl2/                  # OWL2 sub-library
 │   │   ├── core/              # Core OWL2 structures
+│   │   │   ├── iri.hpp/cpp
+│   │   │   ├── entity.hpp
+│   │   │   ├── axiom.hpp/cpp
+│   │   │   ├── ontology.hpp/cpp
+│   │   │   └── ontology_filter.hpp/cpp  # Subgraph extraction
 │   │   ├── serializer/        # Output formats
-│   │   └── parser/            # Input parsers (planned)
+│   │   │   ├── rdfxml_serializer.hpp/cpp
+│   │   │   └── functional_serializer.hpp/cpp
+│   │   └── parser/            # Input parsers
+│   │       └── rdfxml_parser.hpp/cpp
+│   ├── python/                # Python bindings (pybind11)
+│   │   └── bindings_simple.cpp
 │   └── CMakeLists.txt
 ├── src/                       # C++ example executable
 │   └── ista.cpp
-├── examples/                  # Example knowledge bases
+├── tests/                     # Test files
+│   ├── test_simple_bindings.py    # Basic bindings test
+│   ├── test_parser.py             # RDF/XML parser test
+│   ├── test_subgraph.py           # Subgraph extraction test
+│   └── README.md                  # Test documentation
+├── examples/                  # Example programs
+│   ├── subgraph_extraction_example.py
+│   ├── graph_conversion_example.py
+│   ├── owl2_roundtrip_example.py
 │   └── projects/
 │       ├── alzkb/             # Alzheimer KB
 │       └── neurokb/           # Neurology KB
+├── docs/                      # Documentation
+│   ├── OWL2_INTERFACES.md     # Guide to owlready2 vs ista.owl2
+│   └── SIMPLIFIED_BINDINGS_SUMMARY.md
+├── scripts/                   # Utility scripts
+│   └── fix_entity.py
 ├── CMakeLists.txt             # Root build config
 ├── setup.py                   # Python package setup
 └── README.md                  # This file
@@ -217,6 +242,7 @@ ista/
 
 ## Documentation
 
+- **OWL2 Interfaces Guide**: See [docs/OWL2_INTERFACES.md](docs/OWL2_INTERFACES.md) for choosing between owlready2 and ista.owl2
 - **C++ Library**: See [lib/README.md](lib/README.md) for API documentation
 - **OWL2 Implementation**: See [lib/owl2/README.md](lib/owl2/README.md) for technical details
 

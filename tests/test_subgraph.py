@@ -8,9 +8,7 @@ path finding, and random sampling operations.
 
 import sys
 
-sys.path.insert(0, "build/lib/python/Release")
-
-from _libista_owl2 import (
+from ista.owl2 import (
     Ontology,
     IRI,
     Class,
