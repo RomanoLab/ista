@@ -6,12 +6,22 @@ list(FILTER lib_sources EXCLUDE REGEX ".*python/.*")
 
 message(STATUS "Library sources: ${lib_sources}")
 
+# Add pugixml sources
+set(PUGIXML_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../external/pugixml)
+if(EXISTS ${PUGIXML_DIR}/src/pugixml.cpp)
+    list(APPEND lib_sources ${PUGIXML_DIR}/src/pugixml.cpp)
+    message(STATUS "Added pugixml from: ${PUGIXML_DIR}")
+else()
+    message(WARNING "pugixml not found at ${PUGIXML_DIR} - RDF/XML parser will not work")
+endif()
+
 # Create the libista library
 add_library(libista ${lib_sources})
 
 # Make headers accessible to library consumers
 target_include_directories(libista PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}
+    ${PUGIXML_DIR}/src
 )
 
 # Set C++20 standard for the library

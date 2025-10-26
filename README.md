@@ -54,14 +54,15 @@ See [lib/README.md](lib/README.md) for detailed C++ library documentation.
 - [x] Python tools for building semantic graph databases from public sources
 - [x] C++ library for high-performance OWL2 ontology manipulation
 - [x] **Python bindings to C++ library (pybind11)**
+- [x] **RDF/XML parser for reading OWL2 files**
 - [x] **RDF/XML serialization (.owl/.rdf files)**
 - [x] OWL2 Functional Syntax serialization (.ofn files)
 - [x] Comprehensive entity, axiom, and expression support
+- [x] **Complete round-trip support (read/write OWL files)**
 - [x] Example programs and documentation
 
 ### In Progress / Planned
 
-- [ ] RDF/XML parser for reading OWL2 files
 - [ ] Turtle parser and serializer
 - [ ] Manchester Syntax support
 - [ ] Graph summarization and characterization tools
@@ -111,6 +112,11 @@ onto.add_axiom(owl2.SubClassOf(owl2.NamedClass(student), owl2.NamedClass(person)
 # Save to RDF/XML (.owl) and Functional Syntax (.ofn)
 owl2.RDFXMLSerializer.serialize_to_file(onto, "output.owl")
 owl2.FunctionalSyntaxSerializer.serialize_to_file(onto, "output.ofn")
+
+# Parse an existing OWL file
+parsed_onto = owl2.RDFXMLParser.parse_from_file("output.owl")
+print(f"Loaded ontology with {parsed_onto.get_axiom_count()} axioms")
+print(f"Found {parsed_onto.get_class_count()} classes")
 ```
 
 ### Python Example with Database Parser

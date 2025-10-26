@@ -63,9 +63,9 @@ class CMakeBuild(build_ext):
 
 setup(
     name="ista",
-    version="0.1.1",
+    version="0.2.0",
     author="Joseph D. Romano",
-    description="A hybrid Python/C++ toolkit for building and manipulating knowledge graphs.",
+    description="A Python/C++ toolkit for building and manipulating knowledge graphs.",
     long_description=readme,
     long_description_content_type="text/markdown",
     url="https://github.com/JDRomano2/ista",

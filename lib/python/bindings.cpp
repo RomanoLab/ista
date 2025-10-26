@@ -11,6 +11,7 @@
 #include <pybind11/operators.h>
 
 #include "../owl2/owl2.hpp"
+#include "../owl2/parser/rdfxml_parser.hpp"
 
 namespace py = pybind11;
 using namespace ista::owl2;
@@ -925,6 +926,20 @@ PYBIND11_MODULE(_libista_owl2, m) {
                    py::arg("ontology"),
                    py::arg("filename"),
                    "Serialize ontology to RDF/XML file");
+
+    // ========================================================================
+    // RDF/XML Parser
+    // ========================================================================
+    py::class_<RDFXMLParser>(m, "RDFXMLParser", "Parser for OWL2 RDF/XML format")
+        .def_static("parse", &RDFXMLParser::parse,
+                   py::arg("rdfxml_content"),
+                   "Parse ontology from RDF/XML string")
+        .def_static("parse_from_file", &RDFXMLParser::parseFromFile,
+                   py::arg("filename"),
+                   "Parse ontology from RDF/XML file");
+
+    // Exception for parser errors
+    py::register_exception<RDFXMLParseException>(m, "RDFXMLParseException");
 
     // ========================================================================
     // Helper functions
