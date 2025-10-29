@@ -13,6 +13,7 @@
 
 #include "../owl2/owl2.hpp"
 #include "../owl2/parser/rdfxml_parser.hpp"
+#include "../owl2/parser/csv_parser.hpp"
 #include "../owl2/core/ontology_filter.hpp"
 
 namespace py = pybind11;
@@ -606,6 +607,87 @@ PYBIND11_MODULE(_libista_owl2, m) {
     
     // Parser exception
     py::register_exception<RDFXMLParseException>(m, "RDFXMLParseException");
+
+    // ========================================================================
+    // CSV Parser
+    // ========================================================================
+    
+    // NodeTypeConfig struct
+    py::class_<NodeTypeConfig>(m, "NodeTypeConfig", "Configuration for parsing node types from CSV")
+        .def(py::init<>(), "Construct empty node type config")
+        .def_readwrite("iri_column_name", &NodeTypeConfig::iri_column_name,
+                      "Column name for unique identifiers")
+        .def_readwrite("has_headers", &NodeTypeConfig::has_headers,
+                      "Whether the CSV has header row")
+        .def_readwrite("data_property_map", &NodeTypeConfig::data_property_map,
+                      "Map from column names to property IRIs")
+        .def_readwrite("data_transforms", &NodeTypeConfig::data_transforms,
+                      "Transform functions for column data")
+        .def_readwrite("filter_column", &NodeTypeConfig::filter_column,
+                      "Column name for filtering")
+        .def_readwrite("filter_value", &NodeTypeConfig::filter_value,
+                      "Value to match for filtering")
+        .def_readwrite("merge_mode", &NodeTypeConfig::merge_mode,
+                      "Whether to merge with existing individuals")
+        .def_readwrite("merge_property_iri", &NodeTypeConfig::merge_property_iri,
+                      "Property to match on when merging")
+        .def_readwrite("merge_column_name", &NodeTypeConfig::merge_column_name,
+                      "Column name to use for merging");
+    
+    // RelationshipTypeConfig struct
+    py::class_<RelationshipTypeConfig>(m, "RelationshipTypeConfig", "Configuration for parsing relationships from CSV")
+        .def(py::init<>(), "Construct empty relationship type config")
+        .def_readwrite("has_headers", &RelationshipTypeConfig::has_headers,
+                      "Whether the CSV has header row")
+        .def_readwrite("subject_class_iri", &RelationshipTypeConfig::subject_class_iri,
+                      "IRI of subject class")
+        .def_readwrite("subject_column_name", &RelationshipTypeConfig::subject_column_name,
+                      "Column name for subject values")
+        .def_readwrite("subject_match_property_iri", &RelationshipTypeConfig::subject_match_property_iri,
+                      "Property to match subjects on")
+        .def_readwrite("object_class_iri", &RelationshipTypeConfig::object_class_iri,
+                      "IRI of object class")
+        .def_readwrite("object_column_name", &RelationshipTypeConfig::object_column_name,
+                      "Column name for object values")
+        .def_readwrite("object_match_property_iri", &RelationshipTypeConfig::object_match_property_iri,
+                      "Property to match objects on")
+        .def_readwrite("filter_column", &RelationshipTypeConfig::filter_column,
+                      "Column name for filtering")
+        .def_readwrite("filter_value", &RelationshipTypeConfig::filter_value,
+                      "Value to match for filtering")
+        .def_readwrite("data_transforms", &RelationshipTypeConfig::data_transforms,
+                      "Transform functions for column data");
+    
+    // CSVParser class
+    py::class_<CSVParser>(m, "CSVParser", "High-performance CSV parser for OWL2 ontologies")
+        .def(py::init<Ontology&, const std::string&>(),
+             py::arg("ontology"),
+             py::arg("base_iri"),
+             "Construct a CSV parser for the given ontology")
+        .def("parse_node_type", &CSVParser::parse_node_type,
+             py::arg("filename"),
+             py::arg("class_iri"),
+             py::arg("config"),
+             py::arg("delimiter") = ',',
+             "Parse CSV file to create individuals of a class")
+        .def("parse_relationship_type", &CSVParser::parse_relationship_type,
+             py::arg("filename"),
+             py::arg("property_iri"),
+             py::arg("config"),
+             py::arg("delimiter") = ',',
+             "Parse CSV file to create relationships between individuals")
+        .def("set_iri_generator", &CSVParser::set_iri_generator,
+             py::arg("generator"),
+             "Set custom IRI generator function")
+        .def("get_ontology", &CSVParser::get_ontology,
+             py::return_value_policy::reference,
+             "Get the ontology being populated")
+        .def("__repr__", [](const CSVParser& parser) {
+            return "<CSVParser>";
+        });
+    
+    // Parser exception
+    py::register_exception<CSVParseException>(m, "CSVParseException");
 
     // ========================================================================
     // Version information

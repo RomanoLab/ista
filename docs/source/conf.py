@@ -5,9 +5,135 @@
 
 import os
 import sys
+from unittest.mock import MagicMock
 
 # Add the project root to sys.path for importing Python modules
 sys.path.insert(0, os.path.abspath("../.."))
+
+
+# Mock the C++ extension module if it's not available
+# This allows documentation to be built without compiling the C++ bindings
+
+# Define all the classes that should exist in the C++ extension
+MOCK_CLASSES = [
+    "IRI",
+    "Literal",
+    "Entity",
+    "EntityType",
+    "Class",
+    "ObjectProperty",
+    "DataProperty",
+    "NamedIndividual",
+    "ClassExpression",
+    "NamedClass",
+    "Axiom",
+    "Declaration",
+    "SubClassOf",
+    "EquivalentClasses",
+    "DisjointClasses",
+    "ClassAssertion",
+    "ObjectPropertyAssertion",
+    "DataPropertyAssertion",
+    "NegativeObjectPropertyAssertion",
+    "NegativeDataPropertyAssertion",
+    "ObjectPropertyDomain",
+    "ObjectPropertyRange",
+    "DataPropertyDomain",
+    "DataPropertyRange",
+    "FunctionalObjectProperty",
+    "FunctionalDataProperty",
+    "InverseFunctionalObjectProperty",
+    "TransitiveObjectProperty",
+    "SymmetricObjectProperty",
+    "AsymmetricObjectProperty",
+    "ReflexiveObjectProperty",
+    "IrreflexiveObjectProperty",
+    "SubObjectPropertyOf",
+    "SubDataPropertyOf",
+    "EquivalentObjectProperties",
+    "EquivalentDataProperties",
+    "DisjointObjectProperties",
+    "DisjointDataProperties",
+    "InverseObjectProperties",
+    "ObjectIntersectionOf",
+    "ObjectUnionOf",
+    "ObjectComplementOf",
+    "ObjectSomeValuesFrom",
+    "ObjectAllValuesFrom",
+    "ObjectHasValue",
+    "ObjectHasSelf",
+    "ObjectMinCardinality",
+    "ObjectMaxCardinality",
+    "ObjectExactCardinality",
+    "DataSomeValuesFrom",
+    "DataAllValuesFrom",
+    "DataHasValue",
+    "DataMinCardinality",
+    "DataMaxCardinality",
+    "DataExactCardinality",
+    "Ontology",
+    "FunctionalSyntaxSerializer",
+    "FunctionalSyntaxParser",
+    "RDFXMLSerializer",
+    "RDFXMLParser",
+    "RDFXMLParseException",
+    "OntologyFilter",
+    "FilterCriteria",
+    "FilterResult",
+    "AnnotationAssertion",
+    "AnnotationProperty",
+    "SubAnnotationPropertyOf",
+    "AnnotationPropertyDomain",
+    "AnnotationPropertyRange",
+]
+
+MOCK_CONSTANTS = {
+    "CLASS": "CLASS",
+    "OBJECT_PROPERTY": "OBJECT_PROPERTY",
+    "DATA_PROPERTY": "DATA_PROPERTY",
+    "NAMED_INDIVIDUAL": "NAMED_INDIVIDUAL",
+    "DATATYPE": "DATATYPE",
+    "ANNOTATION_PROPERTY": "ANNOTATION_PROPERTY",
+    "xsd": MagicMock(),
+}
+
+
+class MockCppModule:
+    """Mock module for C++ extension when not available."""
+
+    __name__ = "_libista_owl2"
+    __file__ = "_libista_owl2.so"
+
+    def __init__(self):
+        # Add all mock classes
+        for class_name in MOCK_CLASSES:
+            setattr(
+                self,
+                class_name,
+                type(
+                    class_name,
+                    (object,),
+                    {
+                        "__module__": "_libista_owl2",
+                        "__doc__": f"{class_name} class from C++ extension",
+                    },
+                ),
+            )
+
+        # Add constants
+        for const_name, const_value in MOCK_CONSTANTS.items():
+            setattr(self, const_name, const_value)
+
+        # Set __all__ for "from module import *"
+        self.__all__ = MOCK_CLASSES + list(MOCK_CONSTANTS.keys())
+
+    def __getattr__(self, name):
+        # Return MagicMock for any other attributes
+        return MagicMock()
+
+
+# Mock the C++ extension module
+sys.modules["_libista_owl2"] = MockCppModule()
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information

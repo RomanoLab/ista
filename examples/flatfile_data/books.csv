@@ -1,0 +1,8 @@
+book_id,title,publication_year,genre,pages
+BOOK001,Pride and Prejudice,1813,Romance,432
+BOOK002,Adventures of Huckleberry Finn,1884,Adventure,366
+BOOK003,One Hundred Years of Solitude,1967,Magical Realism,417
+BOOK004,Mrs Dalloway,1925,Modernist,194
+BOOK005,Norwegian Wood,1987,Romance,296
+BOOK006,Sense and Sensibility,1811,Romance,409
+BOOK007,The Adventures of Tom Sawyer,1876,Adventure,274
