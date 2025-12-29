@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1RDFXMLSerializer" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::RDFXMLSerializer</compoundname>
+    <includes refid="rdfxml__serializer_8hpp" local="no">rdfxml_serializer.hpp</includes>
+    <innerclass refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder" prot="private">ista::owl2::RDFXMLSerializer::Builder</innerclass>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1a5c1ca964be2422c0455f078e26389611" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::RDFXMLSerializer::serialize</definition>
+        <argsstring>(const Ontology &amp;ontology)</argsstring>
+        <name>serialize</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::serialize</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <briefdescription>
+<para>Serialize ontology to RDF/XML string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ontology</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ontology to serialize </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>String containing RDF/XML </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="24" column="24" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="13" bodyend="16"/>
+        <referencedby refid="classista_1_1owl2_1_1RDFXMLSerializer_1a58ed16c49f43b65e7090f80c0a244435" compoundref="rdfxml__serializer_8cpp" startline="18" endline="27">serializeToFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1a58ed16c49f43b65e7090f80c0a244435" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::RDFXMLSerializer::serializeToFile</definition>
+        <argsstring>(const Ontology &amp;ontology, const std::string &amp;filename)</argsstring>
+        <name>serializeToFile</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::serializeToFile</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+<para>Serialize ontology to file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ontology</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ontology to serialize </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output file path </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if successful, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="32" column="17" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="18" bodyend="27"/>
+        <references refid="classista_1_1owl2_1_1RDFXMLSerializer_1a5c1ca964be2422c0455f078e26389611" compoundref="rdfxml__serializer_8cpp" startline="13" endline="16">serialize</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Serializer for OWL2 RDF/XML format. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Writes ontologies to RDF/XML format compatible with tools like Protégé and owlready2. </para>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="17" column="1" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" bodystart="17" bodyend="93"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1a5c1ca964be2422c0455f078e26389611" prot="public" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer</scope><name>serialize</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1a58ed16c49f43b65e7090f80c0a244435" prot="public" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer</scope><name>serializeToFile</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

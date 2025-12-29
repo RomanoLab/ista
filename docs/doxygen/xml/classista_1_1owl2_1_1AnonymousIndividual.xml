@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1AnonymousIndividual" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::AnonymousIndividual</compoundname>
+    <includes refid="core_2entity_8hpp" local="no">entity.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classista_1_1owl2_1_1AnonymousIndividual_1a0c3d20ca4d350ffe70d63286122aa15f" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::AnonymousIndividual::node_id_</definition>
+        <argsstring></argsstring>
+        <name>node_id_</name>
+        <qualifiedname>ista::owl2::AnonymousIndividual::node_id_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="118" column="17" bodyfile="D:/projects/ista/lib/owl2/core/entity.hpp" bodystart="118" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1AnonymousIndividual_1ae2648c6c03bb4777cfdd43f3a900f6e5" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::AnonymousIndividual::AnonymousIndividual</definition>
+        <argsstring>(const std::string &amp;node_id)</argsstring>
+        <name>AnonymousIndividual</name>
+        <qualifiedname>ista::owl2::AnonymousIndividual::AnonymousIndividual</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>node_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="103" column="14" bodyfile="D:/projects/ista/lib/owl2/core/entity.hpp" bodystart="103" bodyend="103"/>
+        <referencedby refid="classista_1_1owl2_1_1AnonymousIndividual_1a00ddac9fd067a88df25470180d4ffddc" compoundref="core_2entity_8hpp" startline="110" endline="112">operator!=</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1AnonymousIndividual_1ad4e1b75ebccd74738d8c15b1d9322392" compoundref="core_2entity_8hpp" startline="113" endline="115">operator&lt;</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1AnonymousIndividual_1a846588968b36c0a8c6465784084273bf" compoundref="core_2entity_8hpp" startline="107" endline="109">operator==</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1AnonymousIndividual_1a46897575ce6e97968b4ec986b9656379" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::AnonymousIndividual::getNodeID</definition>
+        <argsstring>() const</argsstring>
+        <name>getNodeID</name>
+        <qualifiedname>ista::owl2::AnonymousIndividual::getNodeID</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="105" column="17" bodyfile="D:/projects/ista/lib/owl2/core/entity.hpp" bodystart="105" bodyend="105"/>
+        <referencedby refid="structstd_1_1hash_3_01ista_1_1owl2_1_1AnonymousIndividual_01_4_1a5e6b307eea93f5f8c11b6c3d43acc553" compoundref="core_2entity_8hpp" startline="179" endline="181">std::hash&lt; ista::owl2::AnonymousIndividual &gt;::operator()</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1AnonymousIndividual_1a846588968b36c0a8c6465784084273bf" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::AnonymousIndividual::operator==</definition>
+        <argsstring>(const AnonymousIndividual &amp;other) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>ista::owl2::AnonymousIndividual::operator==</qualifiedname>
+        <param>
+          <type>const <ref refid="structAnonymousIndividual" kindref="compound">AnonymousIndividual</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="107" column="10" bodyfile="D:/projects/ista/lib/owl2/core/entity.hpp" bodystart="107" bodyend="109"/>
+        <references refid="classista_1_1owl2_1_1AnonymousIndividual_1ae2648c6c03bb4777cfdd43f3a900f6e5" compoundref="core_2entity_8hpp" startline="103" endline="103">AnonymousIndividual</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1AnonymousIndividual_1a00ddac9fd067a88df25470180d4ffddc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::AnonymousIndividual::operator!=</definition>
+        <argsstring>(const AnonymousIndividual &amp;other) const</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>ista::owl2::AnonymousIndividual::operator!=</qualifiedname>
+        <param>
+          <type>const <ref refid="structAnonymousIndividual" kindref="compound">AnonymousIndividual</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="110" column="10" bodyfile="D:/projects/ista/lib/owl2/core/entity.hpp" bodystart="110" bodyend="112"/>
+        <references refid="classista_1_1owl2_1_1AnonymousIndividual_1ae2648c6c03bb4777cfdd43f3a900f6e5" compoundref="core_2entity_8hpp" startline="103" endline="103">AnonymousIndividual</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1AnonymousIndividual_1ad4e1b75ebccd74738d8c15b1d9322392" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::AnonymousIndividual::operator&lt;</definition>
+        <argsstring>(const AnonymousIndividual &amp;other) const</argsstring>
+        <name>operator&lt;</name>
+        <qualifiedname>ista::owl2::AnonymousIndividual::operator&lt;</qualifiedname>
+        <param>
+          <type>const <ref refid="structAnonymousIndividual" kindref="compound">AnonymousIndividual</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="113" column="5" bodyfile="D:/projects/ista/lib/owl2/core/entity.hpp" bodystart="113" bodyend="115"/>
+        <references refid="classista_1_1owl2_1_1AnonymousIndividual_1ae2648c6c03bb4777cfdd43f3a900f6e5" compoundref="core_2entity_8hpp" startline="103" endline="103">AnonymousIndividual</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>OWL2 Anonymous <ref refid="structIndividual" kindref="compound">Individual</ref> (blank node). </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="101" column="1" bodyfile="D:/projects/ista/lib/owl2/core/entity.hpp" bodystart="101" bodyend="119"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1AnonymousIndividual_1ae2648c6c03bb4777cfdd43f3a900f6e5" prot="public" virt="non-virtual"><scope>ista::owl2::AnonymousIndividual</scope><name>AnonymousIndividual</name></member>
+      <member refid="classista_1_1owl2_1_1AnonymousIndividual_1a46897575ce6e97968b4ec986b9656379" prot="public" virt="non-virtual"><scope>ista::owl2::AnonymousIndividual</scope><name>getNodeID</name></member>
+      <member refid="classista_1_1owl2_1_1AnonymousIndividual_1a0c3d20ca4d350ffe70d63286122aa15f" prot="private" virt="non-virtual"><scope>ista::owl2::AnonymousIndividual</scope><name>node_id_</name></member>
+      <member refid="classista_1_1owl2_1_1AnonymousIndividual_1a00ddac9fd067a88df25470180d4ffddc" prot="public" virt="non-virtual"><scope>ista::owl2::AnonymousIndividual</scope><name>operator!=</name></member>
+      <member refid="classista_1_1owl2_1_1AnonymousIndividual_1ad4e1b75ebccd74738d8c15b1d9322392" prot="public" virt="non-virtual"><scope>ista::owl2::AnonymousIndividual</scope><name>operator&lt;</name></member>
+      <member refid="classista_1_1owl2_1_1AnonymousIndividual_1a846588968b36c0a8c6465784084273bf" prot="public" virt="non-virtual"><scope>ista::owl2::AnonymousIndividual</scope><name>operator==</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

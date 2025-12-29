@@ -1,0 +1,409 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="core_2entity_8hpp" kind="file" language="C++">
+    <compoundname>entity.hpp</compoundname>
+    <includes refid="iri_8hpp" local="yes">iri.hpp</includes>
+    <includes local="no">memory</includes>
+    <includedby refid="annotation_8hpp" local="yes">D:/projects/ista/lib/owl2/core/annotation.hpp</includedby>
+    <includedby refid="axiom_8hpp" local="yes">D:/projects/ista/lib/owl2/core/axiom.hpp</includedby>
+    <includedby refid="class__expression_8hpp" local="yes">D:/projects/ista/lib/owl2/core/class_expression.hpp</includedby>
+    <includedby refid="data__range_8hpp" local="yes">D:/projects/ista/lib/owl2/core/data_range.hpp</includedby>
+    <includedby refid="ontology_8hpp" local="yes">D:/projects/ista/lib/owl2/core/ontology.hpp</includedby>
+    <includedby refid="ontology__filter_8hpp" local="yes">D:/projects/ista/lib/owl2/core/ontology_filter.hpp</includedby>
+    <includedby refid="owl2_8hpp" local="yes">D:/projects/ista/lib/owl2/owl2.hpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>D:/projects/ista/lib/owl2/core/entity.hpp</label>
+        <link refid="core_2entity_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>iri.hpp</label>
+        <link refid="iri_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>memory</label>
+      </node>
+      <node id="5">
+        <label>optional</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+      <node id="4">
+        <label>unordered_map</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>D:/projects/ista/lib/owl2/core/annotation.cpp</label>
+        <link refid="annotation_8cpp"/>
+      </node>
+      <node id="2">
+        <label>D:/projects/ista/lib/owl2/core/annotation.hpp</label>
+        <link refid="annotation_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>D:/projects/ista/lib/owl2/core/axiom.cpp</label>
+        <link refid="axiom_8cpp"/>
+      </node>
+      <node id="4">
+        <label>D:/projects/ista/lib/owl2/core/axiom.hpp</label>
+        <link refid="axiom_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>D:/projects/ista/lib/owl2/core/class_expression.cpp</label>
+        <link refid="class__expression_8cpp"/>
+      </node>
+      <node id="21">
+        <label>D:/projects/ista/lib/owl2/core/class_expression.hpp</label>
+        <link refid="class__expression_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>D:/projects/ista/lib/owl2/core/data_range.cpp</label>
+        <link refid="data__range_8cpp"/>
+      </node>
+      <node id="23">
+        <label>D:/projects/ista/lib/owl2/core/data_range.hpp</label>
+        <link refid="data__range_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/projects/ista/lib/owl2/core/entity.hpp</label>
+        <link refid="core_2entity_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>D:/projects/ista/lib/owl2/core/ontology.cpp</label>
+        <link refid="ontology_8cpp"/>
+      </node>
+      <node id="6">
+        <label>D:/projects/ista/lib/owl2/core/ontology.hpp</label>
+        <link refid="ontology_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>D:/projects/ista/lib/owl2/core/ontology_filter.cpp</label>
+        <link refid="ontology__filter_8cpp"/>
+      </node>
+      <node id="8">
+        <label>D:/projects/ista/lib/owl2/core/ontology_filter.hpp</label>
+        <link refid="ontology__filter_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>D:/projects/ista/lib/owl2/owl2.hpp</label>
+        <link refid="owl2_8hpp"/>
+      </node>
+      <node id="12">
+        <label>D:/projects/ista/lib/owl2/parser/csv_parser.cpp</label>
+        <link refid="csv__parser_8cpp"/>
+      </node>
+      <node id="11">
+        <label>D:/projects/ista/lib/owl2/parser/csv_parser.hpp</label>
+        <link refid="csv__parser_8hpp"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp</label>
+        <link refid="rdfxml__parser_8cpp"/>
+      </node>
+      <node id="13">
+        <label>D:/projects/ista/lib/owl2/parser/rdfxml_parser.hpp</label>
+        <link refid="rdfxml__parser_8hpp"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.cpp</label>
+        <link refid="konclude__wrapper_8cpp"/>
+      </node>
+      <node id="16">
+        <label>D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp</label>
+        <link refid="konclude__wrapper_8hpp"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>D:/projects/ista/lib/owl2/serializer/functional_serializer.cpp</label>
+        <link refid="functional__serializer_8cpp"/>
+      </node>
+      <node id="17">
+        <label>D:/projects/ista/lib/owl2/serializer/functional_serializer.hpp</label>
+        <link refid="functional__serializer_8hpp"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp</label>
+        <link refid="rdfxml__serializer_8cpp"/>
+      </node>
+      <node id="19">
+        <label>D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp</label>
+        <link refid="rdfxml__serializer_8hpp"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classista_1_1owl2_1_1Entity" prot="public">ista::owl2::Entity</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1Class" prot="public">ista::owl2::Class</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1Datatype" prot="public">ista::owl2::Datatype</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1ObjectProperty" prot="public">ista::owl2::ObjectProperty</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1DataProperty" prot="public">ista::owl2::DataProperty</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1AnnotationProperty" prot="public">ista::owl2::AnnotationProperty</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1NamedIndividual" prot="public">ista::owl2::NamedIndividual</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1AnonymousIndividual" prot="public">ista::owl2::AnonymousIndividual</innerclass>
+    <innerclass refid="structstd_1_1hash_3_01ista_1_1owl2_1_1Class_01_4" prot="public">std::hash&lt; ista::owl2::Class &gt;</innerclass>
+    <innerclass refid="structstd_1_1hash_3_01ista_1_1owl2_1_1Datatype_01_4" prot="public">std::hash&lt; ista::owl2::Datatype &gt;</innerclass>
+    <innerclass refid="structstd_1_1hash_3_01ista_1_1owl2_1_1ObjectProperty_01_4" prot="public">std::hash&lt; ista::owl2::ObjectProperty &gt;</innerclass>
+    <innerclass refid="structstd_1_1hash_3_01ista_1_1owl2_1_1DataProperty_01_4" prot="public">std::hash&lt; ista::owl2::DataProperty &gt;</innerclass>
+    <innerclass refid="structstd_1_1hash_3_01ista_1_1owl2_1_1AnnotationProperty_01_4" prot="public">std::hash&lt; ista::owl2::AnnotationProperty &gt;</innerclass>
+    <innerclass refid="structstd_1_1hash_3_01ista_1_1owl2_1_1NamedIndividual_01_4" prot="public">std::hash&lt; ista::owl2::NamedIndividual &gt;</innerclass>
+    <innerclass refid="structstd_1_1hash_3_01ista_1_1owl2_1_1AnonymousIndividual_01_4" prot="public">std::hash&lt; ista::owl2::AnonymousIndividual &gt;</innerclass>
+    <innernamespace refid="namespaceista">ista</innernamespace>
+    <innernamespace refid="namespaceista_1_1owl2">ista::owl2</innernamespace>
+    <innernamespace refid="namespacestd">std</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>ISTA_OWL2_ENTITY_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ISTA_OWL2_ENTITY_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="iri_8hpp" kindref="compound">iri.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceista" kindref="compound">ista</ref><sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceista_1_1owl2" kindref="compound">owl2</ref><sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="classista_1_1owl2_1_1Entity" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classista_1_1owl2_1_1Entity_1a111253c02830d3982cfee5b4b9cd1ac8" kindref="member">Entity</ref><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="17" refid="classista_1_1owl2_1_1Entity_1a111253c02830d3982cfee5b4b9cd1ac8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Entity_1a111253c02830d3982cfee5b4b9cd1ac8" kindref="member">Entity</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>&amp;<sp/>iri)<sp/>:<sp/><ref refid="classista_1_1owl2_1_1Entity_1a126a750eda40c881a5ea4b1fdb412ee0" kindref="member">iri_</ref>(iri)<sp/>{}</highlight></codeline>
+<codeline lineno="18" refid="classista_1_1owl2_1_1Entity_1ae65d7a7f48db51fd0758ac1ae4291b4e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Entity_1ae65d7a7f48db51fd0758ac1ae4291b4e" kindref="member">~Entity</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="20" refid="classista_1_1owl2_1_1Entity_1a7450ac96112b23d4514cf60be3c3ac41" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref><sp/><ref refid="classista_1_1owl2_1_1Entity_1a7450ac96112b23d4514cf60be3c3ac41" kindref="member">getIRI</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Entity_1a126a750eda40c881a5ea4b1fdb412ee0" kindref="member">iri_</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="22" refid="classista_1_1owl2_1_1Entity_1a7eaf4cac49d6f5a3c97e138e7aed7f94" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classista_1_1owl2_1_1Entity_1a7eaf4cac49d6f5a3c97e138e7aed7f94" kindref="member">getEntityType</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="24" refid="classista_1_1owl2_1_1Entity_1a0e207ab4f355df68e5adfe107668cec6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Entity_1a0e207ab4f355df68e5adfe107668cec6" kindref="member">operator==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Entity_1a111253c02830d3982cfee5b4b9cd1ac8" kindref="member">Entity</ref>&amp;<sp/>other)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Entity_1a126a750eda40c881a5ea4b1fdb412ee0" kindref="member">iri_</ref><sp/>==<sp/>other.<ref refid="classista_1_1owl2_1_1Entity_1a126a750eda40c881a5ea4b1fdb412ee0" kindref="member">iri_</ref>;<sp/></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="27" refid="classista_1_1owl2_1_1Entity_1ab710382cee94c7bbaca255a4d62bffa9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Entity_1ab710382cee94c7bbaca255a4d62bffa9" kindref="member">operator!=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Entity_1a111253c02830d3982cfee5b4b9cd1ac8" kindref="member">Entity</ref>&amp;<sp/>other)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!(*</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>==<sp/>other);<sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="30" refid="classista_1_1owl2_1_1Entity_1addc9bc76aa4acdd281d6a7e11a9d9afb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Entity_1addc9bc76aa4acdd281d6a7e11a9d9afb" kindref="member">operator&lt;</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Entity_1a111253c02830d3982cfee5b4b9cd1ac8" kindref="member">Entity</ref>&amp;<sp/>other)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Entity_1a126a750eda40c881a5ea4b1fdb412ee0" kindref="member">iri_</ref><sp/>&lt;<sp/>other.<ref refid="classista_1_1owl2_1_1Entity_1a126a750eda40c881a5ea4b1fdb412ee0" kindref="member">iri_</ref>;<sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="35" refid="classista_1_1owl2_1_1Entity_1a126a750eda40c881a5ea4b1fdb412ee0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref><sp/><ref refid="classista_1_1owl2_1_1Entity_1a126a750eda40c881a5ea4b1fdb412ee0" kindref="member">iri_</ref>;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="classista_1_1owl2_1_1Class" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classista_1_1owl2_1_1Class_1a84ec930b22892c16f386e031244cf8fd" kindref="member">Class</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Entity_1a111253c02830d3982cfee5b4b9cd1ac8" kindref="member">Entity</ref><sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="43" refid="classista_1_1owl2_1_1Class_1a84ec930b22892c16f386e031244cf8fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Class_1a84ec930b22892c16f386e031244cf8fd" kindref="member">Class</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>&amp;<sp/>iri)<sp/>:<sp/><ref refid="classista_1_1owl2_1_1Entity_1a111253c02830d3982cfee5b4b9cd1ac8" kindref="member">Entity</ref>(iri)<sp/>{}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="45" refid="classista_1_1owl2_1_1Class_1a9a2e16e50790d885501fb24fa02bf07c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classista_1_1owl2_1_1Class_1a9a2e16e50790d885501fb24fa02bf07c" kindref="member">getEntityType</ref>()</highlight><highlight class="keyword"><sp/>const<sp/>override<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Class&quot;</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="classista_1_1owl2_1_1Datatype" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classista_1_1owl2_1_1Datatype_1a054d33fb6fb38b2961d9b2b6a6d2960f" kindref="member">Datatype</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Entity_1a111253c02830d3982cfee5b4b9cd1ac8" kindref="member">Entity</ref><sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="53" refid="classista_1_1owl2_1_1Datatype_1a054d33fb6fb38b2961d9b2b6a6d2960f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Datatype_1a054d33fb6fb38b2961d9b2b6a6d2960f" kindref="member">Datatype</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>&amp;<sp/>iri)<sp/>:<sp/><ref refid="classista_1_1owl2_1_1Entity_1a111253c02830d3982cfee5b4b9cd1ac8" kindref="member">Entity</ref>(iri)<sp/>{}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="55" refid="classista_1_1owl2_1_1Datatype_1a39550519d342a045e0bc9ec84d9199d7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classista_1_1owl2_1_1Datatype_1a39550519d342a045e0bc9ec84d9199d7" kindref="member">getEntityType</ref>()</highlight><highlight class="keyword"><sp/>const<sp/>override<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Datatype&quot;</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="classista_1_1owl2_1_1ObjectProperty" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classista_1_1owl2_1_1ObjectProperty_1a865d508a59c2c81ee03e1d10094d6de8" kindref="member">ObjectProperty</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Entity_1a111253c02830d3982cfee5b4b9cd1ac8" kindref="member">Entity</ref><sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="63" refid="classista_1_1owl2_1_1ObjectProperty_1a865d508a59c2c81ee03e1d10094d6de8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1ObjectProperty_1a865d508a59c2c81ee03e1d10094d6de8" kindref="member">ObjectProperty</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>&amp;<sp/>iri)<sp/>:<sp/><ref refid="classista_1_1owl2_1_1Entity_1a111253c02830d3982cfee5b4b9cd1ac8" kindref="member">Entity</ref>(iri)<sp/>{}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="65" refid="classista_1_1owl2_1_1ObjectProperty_1a2eb8596592e38b1555fb2b83e2a85672" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classista_1_1owl2_1_1ObjectProperty_1a2eb8596592e38b1555fb2b83e2a85672" kindref="member">getEntityType</ref>()</highlight><highlight class="keyword"><sp/>const<sp/>override<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;ObjectProperty&quot;</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="classista_1_1owl2_1_1DataProperty" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classista_1_1owl2_1_1DataProperty_1a379102bb43332c1485202e991e06f524" kindref="member">DataProperty</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Entity_1a111253c02830d3982cfee5b4b9cd1ac8" kindref="member">Entity</ref><sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="73" refid="classista_1_1owl2_1_1DataProperty_1a379102bb43332c1485202e991e06f524" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1DataProperty_1a379102bb43332c1485202e991e06f524" kindref="member">DataProperty</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>&amp;<sp/>iri)<sp/>:<sp/><ref refid="classista_1_1owl2_1_1Entity_1a111253c02830d3982cfee5b4b9cd1ac8" kindref="member">Entity</ref>(iri)<sp/>{}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="75" refid="classista_1_1owl2_1_1DataProperty_1a9651f2cc85fc4a72398cb50e1e16e889" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classista_1_1owl2_1_1DataProperty_1a9651f2cc85fc4a72398cb50e1e16e889" kindref="member">getEntityType</ref>()</highlight><highlight class="keyword"><sp/>const<sp/>override<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;DataProperty&quot;</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="classista_1_1owl2_1_1AnnotationProperty" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classista_1_1owl2_1_1AnnotationProperty_1a75157d4f576856347017024853a6973f" kindref="member">AnnotationProperty</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Entity_1a111253c02830d3982cfee5b4b9cd1ac8" kindref="member">Entity</ref><sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="83" refid="classista_1_1owl2_1_1AnnotationProperty_1a75157d4f576856347017024853a6973f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1AnnotationProperty_1a75157d4f576856347017024853a6973f" kindref="member">AnnotationProperty</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>&amp;<sp/>iri)<sp/>:<sp/><ref refid="classista_1_1owl2_1_1Entity_1a111253c02830d3982cfee5b4b9cd1ac8" kindref="member">Entity</ref>(iri)<sp/>{}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="85" refid="classista_1_1owl2_1_1AnnotationProperty_1a72e7d1f2df59ca59c8040d99ac8afd42" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classista_1_1owl2_1_1AnnotationProperty_1a72e7d1f2df59ca59c8040d99ac8afd42" kindref="member">getEntityType</ref>()</highlight><highlight class="keyword"><sp/>const<sp/>override<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;AnnotationProperty&quot;</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="classista_1_1owl2_1_1NamedIndividual" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classista_1_1owl2_1_1NamedIndividual_1a7d5ac04e43d0bce6f419b2a751300318" kindref="member">NamedIndividual</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Entity_1a111253c02830d3982cfee5b4b9cd1ac8" kindref="member">Entity</ref><sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="93" refid="classista_1_1owl2_1_1NamedIndividual_1a7d5ac04e43d0bce6f419b2a751300318" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1NamedIndividual_1a7d5ac04e43d0bce6f419b2a751300318" kindref="member">NamedIndividual</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>&amp;<sp/>iri)<sp/>:<sp/><ref refid="classista_1_1owl2_1_1Entity_1a111253c02830d3982cfee5b4b9cd1ac8" kindref="member">Entity</ref>(iri)<sp/>{}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="95" refid="classista_1_1owl2_1_1NamedIndividual_1aad3d10caf98591dbac670ba1e39d09b9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classista_1_1owl2_1_1NamedIndividual_1aad3d10caf98591dbac670ba1e39d09b9" kindref="member">getEntityType</ref>()</highlight><highlight class="keyword"><sp/>const<sp/>override<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;NamedIndividual&quot;</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="classista_1_1owl2_1_1AnonymousIndividual" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classista_1_1owl2_1_1AnonymousIndividual_1ae2648c6c03bb4777cfdd43f3a900f6e5" kindref="member">AnonymousIndividual</ref><sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="103" refid="classista_1_1owl2_1_1AnonymousIndividual_1ae2648c6c03bb4777cfdd43f3a900f6e5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1AnonymousIndividual_1ae2648c6c03bb4777cfdd43f3a900f6e5" kindref="member">AnonymousIndividual</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>node_id)<sp/>:<sp/>node_id_(node_id)<sp/>{}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="105" refid="classista_1_1owl2_1_1AnonymousIndividual_1a46897575ce6e97968b4ec986b9656379" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classista_1_1owl2_1_1AnonymousIndividual_1a46897575ce6e97968b4ec986b9656379" kindref="member">getNodeID</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>node_id_;<sp/>}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="107" refid="classista_1_1owl2_1_1AnonymousIndividual_1a846588968b36c0a8c6465784084273bf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1AnonymousIndividual_1a846588968b36c0a8c6465784084273bf" kindref="member">operator==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1AnonymousIndividual_1ae2648c6c03bb4777cfdd43f3a900f6e5" kindref="member">AnonymousIndividual</ref>&amp;<sp/>other)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>node_id_<sp/>==<sp/>other.node_id_;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="110" refid="classista_1_1owl2_1_1AnonymousIndividual_1a00ddac9fd067a88df25470180d4ffddc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1AnonymousIndividual_1a00ddac9fd067a88df25470180d4ffddc" kindref="member">operator!=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1AnonymousIndividual_1ae2648c6c03bb4777cfdd43f3a900f6e5" kindref="member">AnonymousIndividual</ref>&amp;<sp/>other)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!(*</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>==<sp/>other);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="113" refid="classista_1_1owl2_1_1AnonymousIndividual_1ad4e1b75ebccd74738d8c15b1d9322392" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1AnonymousIndividual_1ad4e1b75ebccd74738d8c15b1d9322392" kindref="member">operator&lt;</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1AnonymousIndividual_1ae2648c6c03bb4777cfdd43f3a900f6e5" kindref="member">AnonymousIndividual</ref>&amp;<sp/>other)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>node_id_<sp/>&lt;<sp/>other.node_id_;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>node_id_;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Convenience<sp/>type<sp/>aliases</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="namespaceista_1_1owl2_1a0d288444e5ed181610f80a105ae2db43" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespaceista_1_1owl2_1a0d288444e5ed181610f80a105ae2db43" kindref="member">ClassPtr</ref><sp/>=<sp/>std::shared_ptr&lt;Class&gt;;</highlight></codeline>
+<codeline lineno="123" refid="namespaceista_1_1owl2_1aea7bff0a03a57c105831602ad1ad9ee5" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespaceista_1_1owl2_1aea7bff0a03a57c105831602ad1ad9ee5" kindref="member">DatatypePtr</ref><sp/>=<sp/>std::shared_ptr&lt;Datatype&gt;;</highlight></codeline>
+<codeline lineno="124" refid="namespaceista_1_1owl2_1ac45509b50fa4c5f3d54540686b5ef3c8" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespaceista_1_1owl2_1ac45509b50fa4c5f3d54540686b5ef3c8" kindref="member">ObjectPropertyPtr</ref><sp/>=<sp/>std::shared_ptr&lt;ObjectProperty&gt;;</highlight></codeline>
+<codeline lineno="125" refid="namespaceista_1_1owl2_1a78c3d4f506d1b71dab796d7c944ab3a0" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespaceista_1_1owl2_1a78c3d4f506d1b71dab796d7c944ab3a0" kindref="member">DataPropertyPtr</ref><sp/>=<sp/>std::shared_ptr&lt;DataProperty&gt;;</highlight></codeline>
+<codeline lineno="126" refid="namespaceista_1_1owl2_1af717f3d5f9456c923c8ef094b0531686" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespaceista_1_1owl2_1af717f3d5f9456c923c8ef094b0531686" kindref="member">AnnotationPropertyPtr</ref><sp/>=<sp/>std::shared_ptr&lt;AnnotationProperty&gt;;</highlight></codeline>
+<codeline lineno="127" refid="namespaceista_1_1owl2_1ae9ccd6be1115c4f13576535b3dda0a57" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespaceista_1_1owl2_1ae9ccd6be1115c4f13576535b3dda0a57" kindref="member">NamedIndividualPtr</ref><sp/>=<sp/>std::shared_ptr&lt;NamedIndividual&gt;;</highlight></codeline>
+<codeline lineno="128" refid="namespaceista_1_1owl2_1ab284d083244574c79371e0e408b9d4dd" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespaceista_1_1owl2_1ab284d083244574c79371e0e408b9d4dd" kindref="member">AnonymousIndividualPtr</ref><sp/>=<sp/>std::shared_ptr&lt;AnonymousIndividual&gt;;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>owl2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>ista</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Hash<sp/>functions<sp/>for<sp/>entities</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="namespacestd" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacestd" kindref="compound">std</ref><sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;&gt;</highlight></codeline>
+<codeline lineno="136" refid="structstd_1_1hash_3_01ista_1_1owl2_1_1Class_01_4" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">hash&lt;<ref refid="namespaceista" kindref="compound">ista</ref>::owl2::Class&gt;<sp/>{</highlight></codeline>
+<codeline lineno="137" refid="structstd_1_1hash_3_01ista_1_1owl2_1_1Class_01_4_1a00df7579ccc6b09ab96bc7e872263411" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structstd_1_1hash_3_01ista_1_1owl2_1_1Class_01_4_1a00df7579ccc6b09ab96bc7e872263411" kindref="member">operator()</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Class" kindref="compound">ista::owl2::Class</ref>&amp;<sp/>c)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>hash&lt;ista::owl2::IRI&gt;()(c.<ref refid="classista_1_1owl2_1_1Entity_1a7450ac96112b23d4514cf60be3c3ac41" kindref="member">getIRI</ref>());</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;&gt;</highlight></codeline>
+<codeline lineno="143" refid="structstd_1_1hash_3_01ista_1_1owl2_1_1Datatype_01_4" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">hash&lt;<ref refid="namespaceista" kindref="compound">ista</ref>::owl2::Datatype&gt;<sp/>{</highlight></codeline>
+<codeline lineno="144" refid="structstd_1_1hash_3_01ista_1_1owl2_1_1Datatype_01_4_1a5e7ff4c3326257f15d73916008101adb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structstd_1_1hash_3_01ista_1_1owl2_1_1Datatype_01_4_1a5e7ff4c3326257f15d73916008101adb" kindref="member">operator()</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Datatype" kindref="compound">ista::owl2::Datatype</ref>&amp;<sp/>dt)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>hash&lt;ista::owl2::IRI&gt;()(dt.<ref refid="classista_1_1owl2_1_1Entity_1a7450ac96112b23d4514cf60be3c3ac41" kindref="member">getIRI</ref>());</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;&gt;</highlight></codeline>
+<codeline lineno="150" refid="structstd_1_1hash_3_01ista_1_1owl2_1_1ObjectProperty_01_4" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">hash&lt;<ref refid="namespaceista" kindref="compound">ista</ref>::owl2::ObjectProperty&gt;<sp/>{</highlight></codeline>
+<codeline lineno="151" refid="structstd_1_1hash_3_01ista_1_1owl2_1_1ObjectProperty_01_4_1aae0751dd29d6ad1e91704df3fef957d5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structstd_1_1hash_3_01ista_1_1owl2_1_1ObjectProperty_01_4_1aae0751dd29d6ad1e91704df3fef957d5" kindref="member">operator()</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1ObjectProperty" kindref="compound">ista::owl2::ObjectProperty</ref>&amp;<sp/>op)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>hash&lt;ista::owl2::IRI&gt;()(op.<ref refid="classista_1_1owl2_1_1Entity_1a7450ac96112b23d4514cf60be3c3ac41" kindref="member">getIRI</ref>());</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;&gt;</highlight></codeline>
+<codeline lineno="157" refid="structstd_1_1hash_3_01ista_1_1owl2_1_1DataProperty_01_4" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">hash&lt;<ref refid="namespaceista" kindref="compound">ista</ref>::owl2::DataProperty&gt;<sp/>{</highlight></codeline>
+<codeline lineno="158" refid="structstd_1_1hash_3_01ista_1_1owl2_1_1DataProperty_01_4_1a008347ce92f7af3ea491ee660bf49464" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structstd_1_1hash_3_01ista_1_1owl2_1_1DataProperty_01_4_1a008347ce92f7af3ea491ee660bf49464" kindref="member">operator()</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1DataProperty" kindref="compound">ista::owl2::DataProperty</ref>&amp;<sp/>dp)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>hash&lt;ista::owl2::IRI&gt;()(dp.<ref refid="classista_1_1owl2_1_1Entity_1a7450ac96112b23d4514cf60be3c3ac41" kindref="member">getIRI</ref>());</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;&gt;</highlight></codeline>
+<codeline lineno="164" refid="structstd_1_1hash_3_01ista_1_1owl2_1_1AnnotationProperty_01_4" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">hash&lt;<ref refid="namespaceista" kindref="compound">ista</ref>::owl2::AnnotationProperty&gt;<sp/>{</highlight></codeline>
+<codeline lineno="165" refid="structstd_1_1hash_3_01ista_1_1owl2_1_1AnnotationProperty_01_4_1aa2910d86cd12bd45a47a92776b279645" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structstd_1_1hash_3_01ista_1_1owl2_1_1AnnotationProperty_01_4_1aa2910d86cd12bd45a47a92776b279645" kindref="member">operator()</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1AnnotationProperty" kindref="compound">ista::owl2::AnnotationProperty</ref>&amp;<sp/>ap)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>hash&lt;ista::owl2::IRI&gt;()(ap.<ref refid="classista_1_1owl2_1_1Entity_1a7450ac96112b23d4514cf60be3c3ac41" kindref="member">getIRI</ref>());</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;&gt;</highlight></codeline>
+<codeline lineno="171" refid="structstd_1_1hash_3_01ista_1_1owl2_1_1NamedIndividual_01_4" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">hash&lt;<ref refid="namespaceista" kindref="compound">ista</ref>::owl2::NamedIndividual&gt;<sp/>{</highlight></codeline>
+<codeline lineno="172" refid="structstd_1_1hash_3_01ista_1_1owl2_1_1NamedIndividual_01_4_1a08fc8208e88a65045c37381aec7a257b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structstd_1_1hash_3_01ista_1_1owl2_1_1NamedIndividual_01_4_1a08fc8208e88a65045c37381aec7a257b" kindref="member">operator()</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1NamedIndividual" kindref="compound">ista::owl2::NamedIndividual</ref>&amp;<sp/>ni)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>hash&lt;ista::owl2::IRI&gt;()(ni.<ref refid="classista_1_1owl2_1_1Entity_1a7450ac96112b23d4514cf60be3c3ac41" kindref="member">getIRI</ref>());</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;&gt;</highlight></codeline>
+<codeline lineno="178" refid="structstd_1_1hash_3_01ista_1_1owl2_1_1AnonymousIndividual_01_4" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">hash&lt;<ref refid="namespaceista" kindref="compound">ista</ref>::owl2::AnonymousIndividual&gt;<sp/>{</highlight></codeline>
+<codeline lineno="179" refid="structstd_1_1hash_3_01ista_1_1owl2_1_1AnonymousIndividual_01_4_1a5e6b307eea93f5f8c11b6c3d43acc553" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structstd_1_1hash_3_01ista_1_1owl2_1_1AnonymousIndividual_01_4_1a5e6b307eea93f5f8c11b6c3d43acc553" kindref="member">operator()</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1AnonymousIndividual" kindref="compound">ista::owl2::AnonymousIndividual</ref>&amp;<sp/>ai)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>hash&lt;string&gt;()(ai.<ref refid="classista_1_1owl2_1_1AnonymousIndividual_1a46897575ce6e97968b4ec986b9656379" kindref="member">getNodeID</ref>());</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="183"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>ISTA_OWL2_ENTITY_HPP</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/projects/ista/lib/owl2/core/entity.hpp"/>
+  </compounddef>
+</doxygen>

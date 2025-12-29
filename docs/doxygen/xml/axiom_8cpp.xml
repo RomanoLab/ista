@@ -1,0 +1,538 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="axiom_8cpp" kind="file" language="C++">
+    <compoundname>axiom.cpp</compoundname>
+    <includes refid="axiom_8hpp" local="yes">axiom.hpp</includes>
+    <includes local="no">sstream</includes>
+    <incdepgraph>
+      <node id="14">
+        <label>annotation.hpp</label>
+        <link refid="annotation_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/projects/ista/lib/owl2/core/axiom.cpp</label>
+        <link refid="axiom_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>axiom.hpp</label>
+        <link refid="axiom_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>class_expression.hpp</label>
+        <link refid="class__expression_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>data_range.hpp</label>
+        <link refid="data__range_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>entity.hpp</label>
+        <link refid="core_2entity_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>iri.hpp</label>
+        <link refid="iri_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>literal.hpp</label>
+        <link refid="literal_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>memory</label>
+      </node>
+      <node id="7">
+        <label>optional</label>
+      </node>
+      <node id="16">
+        <label>sstream</label>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+      <node id="6">
+        <label>unordered_map</label>
+      </node>
+      <node id="13">
+        <label>utility</label>
+      </node>
+      <node id="15">
+        <label>variant</label>
+      </node>
+      <node id="11">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceista">ista</innernamespace>
+    <innernamespace refid="namespaceista_1_1owl2">ista::owl2</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="axiom_8hpp" kindref="compound">axiom.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceista" kindref="compound">ista</ref><sp/>{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceista_1_1owl2" kindref="compound">owl2</ref><sp/>{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>BASE<sp/>AXIOM<sp/>CLASS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">Axiom::formatAnnotations</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classista_1_1owl2_1_1Axiom_1a05b3b8e7ddc42b14d1d77830f0b4949b" kindref="member">annotations_</ref>.empty())<sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>result<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>annotation<sp/>:<sp/><ref refid="classista_1_1owl2_1_1Axiom_1a05b3b8e7ddc42b14d1d77830f0b4949b" kindref="member">annotations_</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>+=<sp/>annotation.toFunctionalSyntax()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>HELPER<sp/>FUNCTIONS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="namespaceista_1_1owl2_1ac39c91f6c39e4468ca5610fb4360c1fe" refkind="member"><highlight class="normal">std::string<sp/><ref refid="namespaceista_1_1owl2_1ac39c91f6c39e4468ca5610fb4360c1fe" kindref="member">formatObjectPropertyExpression</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceista_1_1owl2_1ad17b74082fc9976eec3e4c085ebdec53" kindref="member">ObjectPropertyExpression</ref>&amp;<sp/>ope)<sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::visit([](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>prop)<sp/>-&gt;<sp/>std::string<sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">T<sp/>=<sp/>std::decay_t&lt;</highlight><highlight class="keyword">decltype</highlight><highlight class="normal">(prop)&gt;;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>(std::is_same_v&lt;T,<sp/>ObjectProperty&gt;)<sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;&lt;&quot;</highlight><highlight class="normal"><sp/>+<sp/>prop.getIRI().toString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;ObjectInverseOf(&lt;&quot;</highlight><highlight class="normal"><sp/>+<sp/>prop.first.getIRI().toString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;&gt;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>},<sp/>ope);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="namespaceista_1_1owl2_1acf338c217966d139979b2abcad955cd4" refkind="member"><highlight class="normal">std::string<sp/><ref refid="namespaceista_1_1owl2_1acf338c217966d139979b2abcad955cd4" kindref="member">formatIndividual</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceista_1_1owl2_1a8327f2edd65d42a9498697dce8118d84" kindref="member">Individual</ref>&amp;<sp/>individual)<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::visit([](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>ind)<sp/>-&gt;<sp/>std::string<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">T<sp/>=<sp/>std::decay_t&lt;</highlight><highlight class="keyword">decltype</highlight><highlight class="normal">(ind)&gt;;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>(std::is_same_v&lt;T,<sp/>NamedIndividual&gt;)<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;&lt;&quot;</highlight><highlight class="normal"><sp/>+<sp/>ind.getIRI().toString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;_:&quot;</highlight><highlight class="normal"><sp/>+<sp/>ind.getNodeID();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>},<sp/>individual);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="namespaceista_1_1owl2_1adafe0668771c4600e18bd24c8c5c8b2c" refkind="member"><highlight class="normal">std::string<sp/><ref refid="namespaceista_1_1owl2_1adafe0668771c4600e18bd24c8c5c8b2c" kindref="member">formatAnnotationSubject</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceista_1_1owl2_1a7a451dd92f3728ab467f5f52ac3679f0" kindref="member">AnnotationSubject</ref>&amp;<sp/>subject)<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::visit([](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>subj)<sp/>-&gt;<sp/>std::string<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">T<sp/>=<sp/>std::decay_t&lt;</highlight><highlight class="keyword">decltype</highlight><highlight class="normal">(subj)&gt;;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>(std::is_same_v&lt;T,<sp/>IRI&gt;)<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;&lt;&quot;</highlight><highlight class="normal"><sp/>+<sp/>subj.toString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;_:&quot;</highlight><highlight class="normal"><sp/>+<sp/>subj.getNodeID();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>},<sp/>subject);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="namespaceista_1_1owl2_1a88df2dad88b8049b7b21ce6bddaf2849" refkind="member"><highlight class="normal">std::string<sp/><ref refid="namespaceista_1_1owl2_1a88df2dad88b8049b7b21ce6bddaf2849" kindref="member">formatAnnotationValue</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceista_1_1owl2_1a61f55fb50b668c2a4fc68c63be3e8574" kindref="member">AnnotationValue</ref>&amp;<sp/>value)<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::visit([](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>val)<sp/>-&gt;<sp/>std::string<sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">T<sp/>=<sp/>std::decay_t&lt;</highlight><highlight class="keyword">decltype</highlight><highlight class="normal">(val)&gt;;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>(std::is_same_v&lt;T,<sp/>IRI&gt;)<sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;&lt;&quot;</highlight><highlight class="normal"><sp/>+<sp/>val.toString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>(std::is_same_v&lt;T,<sp/>Literal&gt;)<sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>val.toString();</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;_:&quot;</highlight><highlight class="normal"><sp/>+<sp/>val.getNodeID();</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>},<sp/>value);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="comment">//<sp/>DECLARATION<sp/>AXIOMS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="classista_1_1owl2_1_1Declaration_1ac7e02d21b3d25e690b072cc925df2c10" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1Declaration_1ac7e02d21b3d25e690b072cc925df2c10" kindref="member">Declaration::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>entity_type_str;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(entity_type_)<sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Declaration_1a7267779b3efd411e00f5ddbda89fb84aac18e8f1f430ea227dbd63d0d9a2bc5fb" kindref="member">EntityType::CLASS</ref>:</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>entity_type_str<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Class&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Declaration_1a7267779b3efd411e00f5ddbda89fb84aa02ff2101e64dbed6c34c715aa8d5cfea" kindref="member">EntityType::DATATYPE</ref>:</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>entity_type_str<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Datatype&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Declaration_1a7267779b3efd411e00f5ddbda89fb84aa15811145fc9372d5172d51bb90cff185" kindref="member">EntityType::OBJECT_PROPERTY</ref>:</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>entity_type_str<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;ObjectProperty&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Declaration_1a7267779b3efd411e00f5ddbda89fb84aa1bba77ff4e31c40bd1bd9a2f4361435b" kindref="member">EntityType::DATA_PROPERTY</ref>:</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>entity_type_str<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;DataProperty&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Declaration_1a7267779b3efd411e00f5ddbda89fb84aa977f6e2e17a16e1f652ff35ff6bb4baf" kindref="member">EntityType::ANNOTATION_PROPERTY</ref>:</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>entity_type_str<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;AnnotationProperty&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Declaration_1a7267779b3efd411e00f5ddbda89fb84aa8dd87ab6a2d5be88caea8d4ca1d74ea0" kindref="member">EntityType::NAMED_INDIVIDUAL</ref>:</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>entity_type_str<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;NamedIndividual&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Declaration(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>()<sp/>+<sp/>entity_type_str<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;(&lt;&quot;</highlight><highlight class="normal"><sp/>+<sp/>iri_.toString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;&gt;))&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CLASS<sp/>AXIOMS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="classista_1_1owl2_1_1SubClassOf_1a55da35c4aa36d26a296448bde8762f56" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1SubClassOf_1a55da35c4aa36d26a296448bde8762f56" kindref="member">SubClassOf::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;SubClassOf(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>()<sp/>+<sp/></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>subclass_-&gt;toFunctionalSyntax()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>superclass_-&gt;toFunctionalSyntax()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="classista_1_1owl2_1_1EquivalentClasses_1a6c7d5f82e216e1c42e4cef4d4bef427f" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1EquivalentClasses_1a6c7d5f82e216e1c42e4cef4d4bef427f" kindref="member">EquivalentClasses::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>result<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;EquivalentClasses(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>();</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>ce<sp/>:<sp/>class_expressions_)<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>+=<sp/>ce-&gt;toFunctionalSyntax()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>result.pop_back();</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="classista_1_1owl2_1_1DisjointClasses_1ac4070d4f7c08ad6a5e223aedd871c3c6" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1DisjointClasses_1ac4070d4f7c08ad6a5e223aedd871c3c6" kindref="member">DisjointClasses::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>result<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;DisjointClasses(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>();</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>ce<sp/>:<sp/>class_expressions_)<sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>+=<sp/>ce-&gt;toFunctionalSyntax()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>result.pop_back();</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="classista_1_1owl2_1_1DisjointUnion_1aea2097ac09551729badc14499ac0253c" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1DisjointUnion_1aea2097ac09551729badc14499ac0253c" kindref="member">DisjointUnion::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>result<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;DisjointUnion(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>()<sp/>+</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&lt;&quot;</highlight><highlight class="normal"><sp/>+<sp/>class_.getIRI().toString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;&gt;<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>ce<sp/>:<sp/>class_expressions_)<sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>+=<sp/>ce-&gt;toFunctionalSyntax()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>result.pop_back();</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="comment">//<sp/>OBJECT<sp/>PROPERTY<sp/>AXIOMS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145" refid="classista_1_1owl2_1_1SubObjectPropertyOf_1ae390a1267baa6f73ce37e7fb2c5fe324" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1SubObjectPropertyOf_1ae390a1267baa6f73ce37e7fb2c5fe324" kindref="member">SubObjectPropertyOf::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>result<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SubObjectPropertyOf(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>();</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classista_1_1owl2_1_1SubObjectPropertyOf_1a94bd7d4fe50ccc202a1df040a07cf38e" kindref="member">isPropertyChain</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>+=<sp/></highlight><highlight class="stringliteral">&quot;ObjectPropertyChain(&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>prop<sp/>:<sp/>property_chain_)<sp/>{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>+=<sp/><ref refid="namespaceista_1_1owl2_1ac39c91f6c39e4468ca5610fb4360c1fe" kindref="member">formatObjectPropertyExpression</ref>(prop)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result.pop_back();</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>+=<sp/></highlight><highlight class="stringliteral">&quot;)<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>+=<sp/><ref refid="namespaceista_1_1owl2_1ac39c91f6c39e4468ca5610fb4360c1fe" kindref="member">formatObjectPropertyExpression</ref>(*sub_property_)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>result<sp/>+=<sp/><ref refid="namespaceista_1_1owl2_1ac39c91f6c39e4468ca5610fb4360c1fe" kindref="member">formatObjectPropertyExpression</ref>(super_property_)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163" refid="classista_1_1owl2_1_1EquivalentObjectProperties_1a3e9708afe6192ff26825d2d31d37657c" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1EquivalentObjectProperties_1a3e9708afe6192ff26825d2d31d37657c" kindref="member">EquivalentObjectProperties::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>result<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;EquivalentObjectProperties(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>();</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>prop<sp/>:<sp/>properties_)<sp/>{</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>+=<sp/><ref refid="namespaceista_1_1owl2_1ac39c91f6c39e4468ca5610fb4360c1fe" kindref="member">formatObjectPropertyExpression</ref>(prop)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>result.pop_back();</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172" refid="classista_1_1owl2_1_1DisjointObjectProperties_1ad177ba54b243a38ec922de773743cc6e" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1DisjointObjectProperties_1ad177ba54b243a38ec922de773743cc6e" kindref="member">DisjointObjectProperties::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>result<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;DisjointObjectProperties(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>();</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>prop<sp/>:<sp/>properties_)<sp/>{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>+=<sp/><ref refid="namespaceista_1_1owl2_1ac39c91f6c39e4468ca5610fb4360c1fe" kindref="member">formatObjectPropertyExpression</ref>(prop)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>result.pop_back();</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181" refid="classista_1_1owl2_1_1InverseObjectProperties_1ac6dcc206debbada8bed3a798e0b4ac0e" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1InverseObjectProperties_1ac6dcc206debbada8bed3a798e0b4ac0e" kindref="member">InverseObjectProperties::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;InverseObjectProperties(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>()<sp/>+</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceista_1_1owl2_1ac39c91f6c39e4468ca5610fb4360c1fe" kindref="member">formatObjectPropertyExpression</ref>(property1_)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceista_1_1owl2_1ac39c91f6c39e4468ca5610fb4360c1fe" kindref="member">formatObjectPropertyExpression</ref>(property2_)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187" refid="classista_1_1owl2_1_1ObjectPropertyDomain_1adda9ab3b3ca9f34c795c586644cdd9d1" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1ObjectPropertyDomain_1adda9ab3b3ca9f34c795c586644cdd9d1" kindref="member">ObjectPropertyDomain::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;ObjectPropertyDomain(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>()<sp/>+</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceista_1_1owl2_1ac39c91f6c39e4468ca5610fb4360c1fe" kindref="member">formatObjectPropertyExpression</ref>(property_)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>domain_-&gt;toFunctionalSyntax()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193" refid="classista_1_1owl2_1_1ObjectPropertyRange_1aa1295af4afa2346d00079415adc0d431" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1ObjectPropertyRange_1aa1295af4afa2346d00079415adc0d431" kindref="member">ObjectPropertyRange::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;ObjectPropertyRange(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>()<sp/>+</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceista_1_1owl2_1ac39c91f6c39e4468ca5610fb4360c1fe" kindref="member">formatObjectPropertyExpression</ref>(property_)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>range_-&gt;toFunctionalSyntax()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199" refid="classista_1_1owl2_1_1FunctionalObjectProperty_1ab19dc8410b3d80efb59a6aad9aaab535" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1FunctionalObjectProperty_1ab19dc8410b3d80efb59a6aad9aaab535" kindref="member">FunctionalObjectProperty::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;FunctionalObjectProperty(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>()<sp/>+</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceista_1_1owl2_1ac39c91f6c39e4468ca5610fb4360c1fe" kindref="member">formatObjectPropertyExpression</ref>(property_)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204" refid="classista_1_1owl2_1_1InverseFunctionalObjectProperty_1ab0e926508339fa564ae0708cc42f2fa4" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1InverseFunctionalObjectProperty_1ab0e926508339fa564ae0708cc42f2fa4" kindref="member">InverseFunctionalObjectProperty::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;InverseFunctionalObjectProperty(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>()<sp/>+</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceista_1_1owl2_1ac39c91f6c39e4468ca5610fb4360c1fe" kindref="member">formatObjectPropertyExpression</ref>(property_)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209" refid="classista_1_1owl2_1_1ReflexiveObjectProperty_1a973ff5ca73796b26fb0a7abb1e8d0d07" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1ReflexiveObjectProperty_1a973ff5ca73796b26fb0a7abb1e8d0d07" kindref="member">ReflexiveObjectProperty::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;ReflexiveObjectProperty(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>()<sp/>+</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceista_1_1owl2_1ac39c91f6c39e4468ca5610fb4360c1fe" kindref="member">formatObjectPropertyExpression</ref>(property_)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="212"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214" refid="classista_1_1owl2_1_1IrreflexiveObjectProperty_1a75641fe57bce0eda3239a4112132925e" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1IrreflexiveObjectProperty_1a75641fe57bce0eda3239a4112132925e" kindref="member">IrreflexiveObjectProperty::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;IrreflexiveObjectProperty(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>()<sp/>+</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceista_1_1owl2_1ac39c91f6c39e4468ca5610fb4360c1fe" kindref="member">formatObjectPropertyExpression</ref>(property_)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219" refid="classista_1_1owl2_1_1SymmetricObjectProperty_1a144d0e10da4e5960663a22a40b18ddbb" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1SymmetricObjectProperty_1a144d0e10da4e5960663a22a40b18ddbb" kindref="member">SymmetricObjectProperty::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;SymmetricObjectProperty(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>()<sp/>+</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceista_1_1owl2_1ac39c91f6c39e4468ca5610fb4360c1fe" kindref="member">formatObjectPropertyExpression</ref>(property_)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224" refid="classista_1_1owl2_1_1AsymmetricObjectProperty_1a0d4eff7057f13d9930cc0e8fc252f0ff" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1AsymmetricObjectProperty_1a0d4eff7057f13d9930cc0e8fc252f0ff" kindref="member">AsymmetricObjectProperty::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;AsymmetricObjectProperty(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>()<sp/>+</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceista_1_1owl2_1ac39c91f6c39e4468ca5610fb4360c1fe" kindref="member">formatObjectPropertyExpression</ref>(property_)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229" refid="classista_1_1owl2_1_1TransitiveObjectProperty_1a28ecd0d526349fc8fd357ceb941e2071" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1TransitiveObjectProperty_1a28ecd0d526349fc8fd357ceb941e2071" kindref="member">TransitiveObjectProperty::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;TransitiveObjectProperty(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>()<sp/>+</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceista_1_1owl2_1ac39c91f6c39e4468ca5610fb4360c1fe" kindref="member">formatObjectPropertyExpression</ref>(property_)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight><highlight class="comment">//<sp/>DATA<sp/>PROPERTY<sp/>AXIOMS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238" refid="classista_1_1owl2_1_1SubDataPropertyOf_1a8eadcb7d4945afaac4a39cc2400f4c6c" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1SubDataPropertyOf_1a8eadcb7d4945afaac4a39cc2400f4c6c" kindref="member">SubDataPropertyOf::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;SubDataPropertyOf(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>()<sp/>+</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&lt;&quot;</highlight><highlight class="normal"><sp/>+<sp/>sub_property_.getIRI().toString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;&gt;<sp/>&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&lt;&quot;</highlight><highlight class="normal"><sp/>+<sp/>super_property_.getIRI().toString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;&gt;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244" refid="classista_1_1owl2_1_1EquivalentDataProperties_1a1dbf5c97b1187f3fe5e7b3d6b4b1f2d5" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1EquivalentDataProperties_1a1dbf5c97b1187f3fe5e7b3d6b4b1f2d5" kindref="member">EquivalentDataProperties::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>result<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;EquivalentDataProperties(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>();</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>prop<sp/>:<sp/>properties_)<sp/>{</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>+=<sp/></highlight><highlight class="stringliteral">&quot;&lt;&quot;</highlight><highlight class="normal"><sp/>+<sp/>prop.getIRI().toString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;&gt;<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>result.pop_back();</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253" refid="classista_1_1owl2_1_1DisjointDataProperties_1a42d30abb866637b1b6fd1ae432fbbb36" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1DisjointDataProperties_1a42d30abb866637b1b6fd1ae432fbbb36" kindref="member">DisjointDataProperties::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>result<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;DisjointDataProperties(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>();</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>prop<sp/>:<sp/>properties_)<sp/>{</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>+=<sp/></highlight><highlight class="stringliteral">&quot;&lt;&quot;</highlight><highlight class="normal"><sp/>+<sp/>prop.getIRI().toString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;&gt;<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>result.pop_back();</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262" refid="classista_1_1owl2_1_1DataPropertyDomain_1a4f1c8ec2c2ea4e10e965d345f449eea4" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1DataPropertyDomain_1a4f1c8ec2c2ea4e10e965d345f449eea4" kindref="member">DataPropertyDomain::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;DataPropertyDomain(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>()<sp/>+</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&lt;&quot;</highlight><highlight class="normal"><sp/>+<sp/>property_.getIRI().toString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;&gt;<sp/>&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>domain_-&gt;toFunctionalSyntax()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="266"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268" refid="classista_1_1owl2_1_1DataPropertyRange_1ae9fc2d350da0ca0f1af9b057be2352a2" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1DataPropertyRange_1ae9fc2d350da0ca0f1af9b057be2352a2" kindref="member">DataPropertyRange::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;DataPropertyRange(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>()<sp/>+</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&lt;&quot;</highlight><highlight class="normal"><sp/>+<sp/>property_.getIRI().toString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;&gt;<sp/>&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>range_-&gt;toFunctionalSyntax()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="272"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="274" refid="classista_1_1owl2_1_1FunctionalDataProperty_1a787a1f036bfa2b191658650485a36648" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1FunctionalDataProperty_1a787a1f036bfa2b191658650485a36648" kindref="member">FunctionalDataProperty::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;FunctionalDataProperty(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>()<sp/>+</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&lt;&quot;</highlight><highlight class="normal"><sp/>+<sp/>property_.getIRI().toString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;&gt;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="277"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight><highlight class="comment">//<sp/>DATATYPE<sp/>DEFINITION<sp/>AXIOM</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283" refid="classista_1_1owl2_1_1DatatypeDefinition_1a524af252494b739804e4934a47326412" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1DatatypeDefinition_1a524af252494b739804e4934a47326412" kindref="member">DatatypeDefinition::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;DatatypeDefinition(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>()<sp/>+</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&lt;&quot;</highlight><highlight class="normal"><sp/>+<sp/>datatype_.getIRI().toString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;&gt;<sp/>&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data_range_-&gt;toFunctionalSyntax()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="287"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight><highlight class="comment">//<sp/>KEYS<sp/>AXIOM</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293" refid="classista_1_1owl2_1_1HasKey_1a266dcf1edf0d1eaff73f251f0bf783ef" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1HasKey_1a266dcf1edf0d1eaff73f251f0bf783ef" kindref="member">HasKey::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>result<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;HasKey(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>()<sp/>+</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>class_expression_-&gt;toFunctionalSyntax()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>(&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>prop<sp/>:<sp/>object_properties_)<sp/>{</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>+=<sp/><ref refid="namespaceista_1_1owl2_1ac39c91f6c39e4468ca5610fb4360c1fe" kindref="member">formatObjectPropertyExpression</ref>(prop)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>prop<sp/>:<sp/>data_properties_)<sp/>{</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>+=<sp/></highlight><highlight class="stringliteral">&quot;&lt;&quot;</highlight><highlight class="normal"><sp/>+<sp/>prop.getIRI().toString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;&gt;<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!object_properties_.empty()<sp/>||<sp/>!data_properties_.empty())<sp/>{</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result.pop_back();</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;))&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="309"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight><highlight class="comment">//<sp/>ASSERTION<sp/>AXIOMS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight></codeline>
+<codeline lineno="315" refid="classista_1_1owl2_1_1SameIndividual_1a6cbb4f114dca10be0a2c526678098e92" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1SameIndividual_1a6cbb4f114dca10be0a2c526678098e92" kindref="member">SameIndividual::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>result<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SameIndividual(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>();</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>ind<sp/>:<sp/>individuals_)<sp/>{</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>+=<sp/><ref refid="namespaceista_1_1owl2_1acf338c217966d139979b2abcad955cd4" kindref="member">formatIndividual</ref>(ind)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/>result.pop_back();</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="322"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight></codeline>
+<codeline lineno="324" refid="classista_1_1owl2_1_1DifferentIndividuals_1aee9e81afcad28d80b331d477a3f2f392" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1DifferentIndividuals_1aee9e81afcad28d80b331d477a3f2f392" kindref="member">DifferentIndividuals::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>result<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;DifferentIndividuals(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>();</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>ind<sp/>:<sp/>individuals_)<sp/>{</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>+=<sp/><ref refid="namespaceista_1_1owl2_1acf338c217966d139979b2abcad955cd4" kindref="member">formatIndividual</ref>(ind)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/>result.pop_back();</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="331"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight></codeline>
+<codeline lineno="333" refid="classista_1_1owl2_1_1ClassAssertion_1a3c36d64aed2d453c39d11f2e6a93f1ef" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1ClassAssertion_1a3c36d64aed2d453c39d11f2e6a93f1ef" kindref="member">ClassAssertion::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;ClassAssertion(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>()<sp/>+</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>class_expression_-&gt;toFunctionalSyntax()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceista_1_1owl2_1acf338c217966d139979b2abcad955cd4" kindref="member">formatIndividual</ref>(individual_)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="337"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight></codeline>
+<codeline lineno="339" refid="classista_1_1owl2_1_1ObjectPropertyAssertion_1ae4c6b42880350575471635f53c251d19" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1ObjectPropertyAssertion_1ae4c6b42880350575471635f53c251d19" kindref="member">ObjectPropertyAssertion::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;ObjectPropertyAssertion(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>()<sp/>+</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceista_1_1owl2_1ac39c91f6c39e4468ca5610fb4360c1fe" kindref="member">formatObjectPropertyExpression</ref>(property_)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceista_1_1owl2_1acf338c217966d139979b2abcad955cd4" kindref="member">formatIndividual</ref>(source_)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceista_1_1owl2_1acf338c217966d139979b2abcad955cd4" kindref="member">formatIndividual</ref>(target_)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="344"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight></codeline>
+<codeline lineno="346" refid="classista_1_1owl2_1_1NegativeObjectPropertyAssertion_1af0f0c10b47fc87ae4dc7c39b602bc08d" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1NegativeObjectPropertyAssertion_1af0f0c10b47fc87ae4dc7c39b602bc08d" kindref="member">NegativeObjectPropertyAssertion::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;NegativeObjectPropertyAssertion(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>()<sp/>+</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceista_1_1owl2_1ac39c91f6c39e4468ca5610fb4360c1fe" kindref="member">formatObjectPropertyExpression</ref>(property_)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceista_1_1owl2_1acf338c217966d139979b2abcad955cd4" kindref="member">formatIndividual</ref>(source_)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceista_1_1owl2_1acf338c217966d139979b2abcad955cd4" kindref="member">formatIndividual</ref>(target_)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="351"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"></highlight></codeline>
+<codeline lineno="353" refid="classista_1_1owl2_1_1DataPropertyAssertion_1a079e0c091f4aaf0586ca95d5548e891d" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1DataPropertyAssertion_1a079e0c091f4aaf0586ca95d5548e891d" kindref="member">DataPropertyAssertion::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;DataPropertyAssertion(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>()<sp/>+</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&lt;&quot;</highlight><highlight class="normal"><sp/>+<sp/>property_.getIRI().toString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;&gt;<sp/>&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceista_1_1owl2_1acf338c217966d139979b2abcad955cd4" kindref="member">formatIndividual</ref>(source_)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>target_.toString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="358"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"></highlight></codeline>
+<codeline lineno="360" refid="classista_1_1owl2_1_1NegativeDataPropertyAssertion_1ab6e6fba098c7c7b8a2f2ee109c49ed5f" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1NegativeDataPropertyAssertion_1ab6e6fba098c7c7b8a2f2ee109c49ed5f" kindref="member">NegativeDataPropertyAssertion::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;NegativeDataPropertyAssertion(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>()<sp/>+</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&lt;&quot;</highlight><highlight class="normal"><sp/>+<sp/>property_.getIRI().toString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;&gt;<sp/>&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceista_1_1owl2_1acf338c217966d139979b2abcad955cd4" kindref="member">formatIndividual</ref>(source_)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>target_.toString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="365"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"></highlight></codeline>
+<codeline lineno="367"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="368"><highlight class="normal"></highlight><highlight class="comment">//<sp/>ANNOTATION<sp/>AXIOMS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="370"><highlight class="normal"></highlight></codeline>
+<codeline lineno="371" refid="classista_1_1owl2_1_1AnnotationAssertion_1a0ac4aa97e3f200a89d0fbdf300075e8f" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1AnnotationAssertion_1a0ac4aa97e3f200a89d0fbdf300075e8f" kindref="member">AnnotationAssertion::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;AnnotationAssertion(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>()<sp/>+</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&lt;&quot;</highlight><highlight class="normal"><sp/>+<sp/>property_.getIRI().toString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;&gt;<sp/>&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceista_1_1owl2_1adafe0668771c4600e18bd24c8c5c8b2c" kindref="member">formatAnnotationSubject</ref>(subject_)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceista_1_1owl2_1a88df2dad88b8049b7b21ce6bddaf2849" kindref="member">formatAnnotationValue</ref>(value_)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="376"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"></highlight></codeline>
+<codeline lineno="378" refid="classista_1_1owl2_1_1SubAnnotationPropertyOf_1a07b15da9891f892156c2213de6a5669e" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1SubAnnotationPropertyOf_1a07b15da9891f892156c2213de6a5669e" kindref="member">SubAnnotationPropertyOf::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;SubAnnotationPropertyOf(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>()<sp/>+</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&lt;&quot;</highlight><highlight class="normal"><sp/>+<sp/>sub_property_.getIRI().toString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;&gt;<sp/>&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&lt;&quot;</highlight><highlight class="normal"><sp/>+<sp/>super_property_.getIRI().toString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;&gt;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="382"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"></highlight></codeline>
+<codeline lineno="384" refid="classista_1_1owl2_1_1AnnotationPropertyDomain_1aa9db14f2a343beff11a73dc3557e4e30" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1AnnotationPropertyDomain_1aa9db14f2a343beff11a73dc3557e4e30" kindref="member">AnnotationPropertyDomain::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;AnnotationPropertyDomain(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>()<sp/>+</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&lt;&quot;</highlight><highlight class="normal"><sp/>+<sp/>property_.getIRI().toString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;&gt;<sp/>&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&lt;&quot;</highlight><highlight class="normal"><sp/>+<sp/>domain_.toString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;&gt;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="388"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"></highlight></codeline>
+<codeline lineno="390" refid="classista_1_1owl2_1_1AnnotationPropertyRange_1a2dadf60a46c9a24ad09c98eb6e1c40a1" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classista_1_1owl2_1_1AnnotationPropertyRange_1a2dadf60a46c9a24ad09c98eb6e1c40a1" kindref="member">AnnotationPropertyRange::toFunctionalSyntax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;AnnotationPropertyRange(&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kindref="member">formatAnnotations</ref>()<sp/>+</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&lt;&quot;</highlight><highlight class="normal"><sp/>+<sp/>property_.getIRI().toString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;&gt;<sp/>&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&lt;&quot;</highlight><highlight class="normal"><sp/>+<sp/>range_.toString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;&gt;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="394"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"></highlight></codeline>
+<codeline lineno="396"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>owl2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="397"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>ista</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/projects/ista/lib/owl2/core/axiom.cpp"/>
+  </compounddef>
+</doxygen>

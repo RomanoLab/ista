@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="namespaceista_1_1owl2_1_1facets" kind="namespace" language="C++">
+    <compoundname>ista::owl2::facets</compoundname>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceista_1_1owl2_1_1facets_1ac6de1704702f4525f67e05a1a64238ca" prot="public" static="no" mutable="no">
+        <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref></type>
+        <definition>const IRI ista::owl2::facets::MIN_INCLUSIVE(&quot;http://www.w3.org/2001/XMLSchema#minInclusive&quot;)</definition>
+        <argsstring>(&quot;http://www.w3.org/2001/XMLSchema#minInclusive&quot;)</argsstring>
+        <name>MIN_INCLUSIVE</name>
+        <qualifiedname>ista::owl2::facets::MIN_INCLUSIVE</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="145" column="15"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceista_1_1owl2_1_1facets_1aeab328ba2b464912f380e7c2556cd7bf" prot="public" static="no" mutable="no">
+        <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref></type>
+        <definition>const IRI ista::owl2::facets::MAX_INCLUSIVE(&quot;http://www.w3.org/2001/XMLSchema#maxInclusive&quot;)</definition>
+        <argsstring>(&quot;http://www.w3.org/2001/XMLSchema#maxInclusive&quot;)</argsstring>
+        <name>MAX_INCLUSIVE</name>
+        <qualifiedname>ista::owl2::facets::MAX_INCLUSIVE</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="146" column="15"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceista_1_1owl2_1_1facets_1af28966079f4e347469e4720d8b8658e8" prot="public" static="no" mutable="no">
+        <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref></type>
+        <definition>const IRI ista::owl2::facets::MIN_EXCLUSIVE(&quot;http://www.w3.org/2001/XMLSchema#minExclusive&quot;)</definition>
+        <argsstring>(&quot;http://www.w3.org/2001/XMLSchema#minExclusive&quot;)</argsstring>
+        <name>MIN_EXCLUSIVE</name>
+        <qualifiedname>ista::owl2::facets::MIN_EXCLUSIVE</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="147" column="15"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceista_1_1owl2_1_1facets_1afd2c07bdbfd3902e46453d7eedd18aa7" prot="public" static="no" mutable="no">
+        <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref></type>
+        <definition>const IRI ista::owl2::facets::MAX_EXCLUSIVE(&quot;http://www.w3.org/2001/XMLSchema#maxExclusive&quot;)</definition>
+        <argsstring>(&quot;http://www.w3.org/2001/XMLSchema#maxExclusive&quot;)</argsstring>
+        <name>MAX_EXCLUSIVE</name>
+        <qualifiedname>ista::owl2::facets::MAX_EXCLUSIVE</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="148" column="15"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceista_1_1owl2_1_1facets_1a0e790b2777173927b7f891245861cbc8" prot="public" static="no" mutable="no">
+        <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref></type>
+        <definition>const IRI ista::owl2::facets::LENGTH(&quot;http://www.w3.org/2001/XMLSchema#length&quot;)</definition>
+        <argsstring>(&quot;http://www.w3.org/2001/XMLSchema#length&quot;)</argsstring>
+        <name>LENGTH</name>
+        <qualifiedname>ista::owl2::facets::LENGTH</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="149" column="15"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceista_1_1owl2_1_1facets_1a0d8c1562706c985ae152a38bc4537802" prot="public" static="no" mutable="no">
+        <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref></type>
+        <definition>const IRI ista::owl2::facets::MIN_LENGTH(&quot;http://www.w3.org/2001/XMLSchema#minLength&quot;)</definition>
+        <argsstring>(&quot;http://www.w3.org/2001/XMLSchema#minLength&quot;)</argsstring>
+        <name>MIN_LENGTH</name>
+        <qualifiedname>ista::owl2::facets::MIN_LENGTH</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="150" column="15"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceista_1_1owl2_1_1facets_1a02d949712d4d1911c4fe19505aceadd3" prot="public" static="no" mutable="no">
+        <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref></type>
+        <definition>const IRI ista::owl2::facets::MAX_LENGTH(&quot;http://www.w3.org/2001/XMLSchema#maxLength&quot;)</definition>
+        <argsstring>(&quot;http://www.w3.org/2001/XMLSchema#maxLength&quot;)</argsstring>
+        <name>MAX_LENGTH</name>
+        <qualifiedname>ista::owl2::facets::MAX_LENGTH</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="151" column="15"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceista_1_1owl2_1_1facets_1ac004b7bce27e2d89258bb3f85099fc4d" prot="public" static="no" mutable="no">
+        <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref></type>
+        <definition>const IRI ista::owl2::facets::PATTERN(&quot;http://www.w3.org/2001/XMLSchema#pattern&quot;)</definition>
+        <argsstring>(&quot;http://www.w3.org/2001/XMLSchema#pattern&quot;)</argsstring>
+        <name>PATTERN</name>
+        <qualifiedname>ista::owl2::facets::PATTERN</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="152" column="15"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="144" column="1"/>
+  </compounddef>
+</doxygen>

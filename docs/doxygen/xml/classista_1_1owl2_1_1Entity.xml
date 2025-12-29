@@ -1,0 +1,260 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1Entity" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>ista::owl2::Entity</compoundname>
+    <derivedcompoundref refid="classista_1_1owl2_1_1AnnotationProperty" prot="public" virt="non-virtual">ista::owl2::AnnotationProperty</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1Class" prot="public" virt="non-virtual">ista::owl2::Class</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1DataProperty" prot="public" virt="non-virtual">ista::owl2::DataProperty</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1Datatype" prot="public" virt="non-virtual">ista::owl2::Datatype</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1NamedIndividual" prot="public" virt="non-virtual">ista::owl2::NamedIndividual</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1ObjectProperty" prot="public" virt="non-virtual">ista::owl2::ObjectProperty</derivedcompoundref>
+    <includes refid="core_2entity_8hpp" local="no">entity.hpp</includes>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classista_1_1owl2_1_1Entity_1a126a750eda40c881a5ea4b1fdb412ee0" prot="protected" static="no" mutable="no">
+        <type><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref></type>
+        <definition>IRI ista::owl2::Entity::iri_</definition>
+        <argsstring></argsstring>
+        <name>iri_</name>
+        <qualifiedname>ista::owl2::Entity::iri_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="35" column="9" bodyfile="D:/projects/ista/lib/owl2/core/entity.hpp" bodystart="35" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1Entity_1a111253c02830d3982cfee5b4b9cd1ac8" compoundref="core_2entity_8hpp" startline="17" endline="17">Entity</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Entity_1a7450ac96112b23d4514cf60be3c3ac41" compoundref="core_2entity_8hpp" startline="20" endline="20">getIRI</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Entity_1addc9bc76aa4acdd281d6a7e11a9d9afb" compoundref="core_2entity_8hpp" startline="30" endline="32">operator&lt;</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Entity_1a0e207ab4f355df68e5adfe107668cec6" compoundref="core_2entity_8hpp" startline="24" endline="26">operator==</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1Entity_1a111253c02830d3982cfee5b4b9cd1ac8" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::Entity::Entity</definition>
+        <argsstring>(const IRI &amp;iri)</argsstring>
+        <name>Entity</name>
+        <qualifiedname>ista::owl2::Entity::Entity</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &amp;</type>
+          <declname>iri</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="17" column="14" bodyfile="D:/projects/ista/lib/owl2/core/entity.hpp" bodystart="17" bodyend="17"/>
+        <references refid="classista_1_1owl2_1_1Entity_1a126a750eda40c881a5ea4b1fdb412ee0" compoundref="core_2entity_8hpp" startline="35">iri_</references>
+        <referencedby refid="classista_1_1owl2_1_1AnnotationProperty_1a75157d4f576856347017024853a6973f" compoundref="core_2entity_8hpp" startline="83" endline="83">ista::owl2::AnnotationProperty::AnnotationProperty</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Class_1a84ec930b22892c16f386e031244cf8fd" compoundref="core_2entity_8hpp" startline="43" endline="43">ista::owl2::Class::Class</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1DataProperty_1a379102bb43332c1485202e991e06f524" compoundref="core_2entity_8hpp" startline="73" endline="73">ista::owl2::DataProperty::DataProperty</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Datatype_1a054d33fb6fb38b2961d9b2b6a6d2960f" compoundref="core_2entity_8hpp" startline="53" endline="53">ista::owl2::Datatype::Datatype</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1NamedIndividual_1a7d5ac04e43d0bce6f419b2a751300318" compoundref="core_2entity_8hpp" startline="93" endline="93">ista::owl2::NamedIndividual::NamedIndividual</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1ObjectProperty_1a865d508a59c2c81ee03e1d10094d6de8" compoundref="core_2entity_8hpp" startline="63" endline="63">ista::owl2::ObjectProperty::ObjectProperty</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Entity_1ab710382cee94c7bbaca255a4d62bffa9" compoundref="core_2entity_8hpp" startline="27" endline="29">operator!=</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Entity_1addc9bc76aa4acdd281d6a7e11a9d9afb" compoundref="core_2entity_8hpp" startline="30" endline="32">operator&lt;</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Entity_1a0e207ab4f355df68e5adfe107668cec6" compoundref="core_2entity_8hpp" startline="24" endline="26">operator==</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Entity_1ae65d7a7f48db51fd0758ac1ae4291b4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual ista::owl2::Entity::~Entity</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Entity</name>
+        <qualifiedname>ista::owl2::Entity::~Entity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="18" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Entity_1a7450ac96112b23d4514cf60be3c3ac41" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref></type>
+        <definition>IRI ista::owl2::Entity::getIRI</definition>
+        <argsstring>() const</argsstring>
+        <name>getIRI</name>
+        <qualifiedname>ista::owl2::Entity::getIRI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="20" column="9" bodyfile="D:/projects/ista/lib/owl2/core/entity.hpp" bodystart="20" bodyend="20"/>
+        <references refid="classista_1_1owl2_1_1Entity_1a126a750eda40c881a5ea4b1fdb412ee0" compoundref="core_2entity_8hpp" startline="35">iri_</references>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1a0b83890fe6b03bd11dec3eec7feb8714" compoundref="ontology_8cpp" startline="259" endline="273">ista::owl2::Ontology::getClassAssertions</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1a6af7a822e59a953f1f11ff34f8c3c2a8" compoundref="ontology_8cpp" startline="291" endline="305">ista::owl2::Ontology::getDataPropertyAssertions</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1a21557c821220cbff341db72864a6bfa0" compoundref="ontology_8cpp" startline="217" endline="232">ista::owl2::Ontology::getDisjointClassesAxioms</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1afbea71fc3fb0d640a36cf768fcf14bd1" compoundref="ontology_8cpp" startline="200" endline="215">ista::owl2::Ontology::getEquivalentClassesAxioms</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1ac137744891c0214127facaac23013b16" compoundref="ontology_8cpp" startline="522" endline="540">ista::owl2::Ontology::getIndividualsOfClass</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1a1b4b0cebf3f0a08142223a8dec60d641" compoundref="ontology_8cpp" startline="542" endline="603">ista::owl2::Ontology::getNeighbors</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1a379fc42774fd69ac2d371d7cd5e29ffe" compoundref="ontology_8cpp" startline="275" endline="289">ista::owl2::Ontology::getObjectPropertyAssertions</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1afe2ca53667c56ba8f6b6667ae1cdf93d" compoundref="ontology_8cpp" startline="172" endline="184">ista::owl2::Ontology::getSubClassAxiomsForSubClass</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1afc7ad1023981940d5bb997ab23bacd59" compoundref="ontology_8cpp" startline="186" endline="198">ista::owl2::Ontology::getSubClassAxiomsForSuperClass</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1aebd57fe6329ac257ceac639f987f9dab" compoundref="ontology_8cpp" startline="245" endline="257">ista::owl2::Ontology::getSubDataPropertyAxioms</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1a701278c21bea7a0d09857bccf7505b6b" compoundref="ontology_8cpp" startline="605" endline="658">ista::owl2::Ontology::hasPath</referencedby>
+        <referencedby refid="structstd_1_1hash_3_01ista_1_1owl2_1_1AnnotationProperty_01_4_1aa2910d86cd12bd45a47a92776b279645" compoundref="core_2entity_8hpp" startline="165" endline="167">std::hash&lt; ista::owl2::AnnotationProperty &gt;::operator()</referencedby>
+        <referencedby refid="structstd_1_1hash_3_01ista_1_1owl2_1_1Class_01_4_1a00df7579ccc6b09ab96bc7e872263411" compoundref="core_2entity_8hpp" startline="137" endline="139">std::hash&lt; ista::owl2::Class &gt;::operator()</referencedby>
+        <referencedby refid="structstd_1_1hash_3_01ista_1_1owl2_1_1DataProperty_01_4_1a008347ce92f7af3ea491ee660bf49464" compoundref="core_2entity_8hpp" startline="158" endline="160">std::hash&lt; ista::owl2::DataProperty &gt;::operator()</referencedby>
+        <referencedby refid="structstd_1_1hash_3_01ista_1_1owl2_1_1Datatype_01_4_1a5e7ff4c3326257f15d73916008101adb" compoundref="core_2entity_8hpp" startline="144" endline="146">std::hash&lt; ista::owl2::Datatype &gt;::operator()</referencedby>
+        <referencedby refid="structstd_1_1hash_3_01ista_1_1owl2_1_1NamedIndividual_01_4_1a08fc8208e88a65045c37381aec7a257b" compoundref="core_2entity_8hpp" startline="172" endline="174">std::hash&lt; ista::owl2::NamedIndividual &gt;::operator()</referencedby>
+        <referencedby refid="structstd_1_1hash_3_01ista_1_1owl2_1_1ObjectProperty_01_4_1aae0751dd29d6ad1e91704df3fef957d5" compoundref="core_2entity_8hpp" startline="151" endline="153">std::hash&lt; ista::owl2::ObjectProperty &gt;::operator()</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Entity_1a7eaf4cac49d6f5a3c97e138e7aed7f94" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::string</type>
+        <definition>virtual std::string ista::owl2::Entity::getEntityType</definition>
+        <argsstring>() const =0</argsstring>
+        <name>getEntityType</name>
+        <qualifiedname>ista::owl2::Entity::getEntityType</qualifiedname>
+        <reimplementedby refid="classista_1_1owl2_1_1AnnotationProperty_1a72e7d1f2df59ca59c8040d99ac8afd42">getEntityType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1Class_1a9a2e16e50790d885501fb24fa02bf07c">getEntityType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1DataProperty_1a9651f2cc85fc4a72398cb50e1e16e889">getEntityType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1Datatype_1a39550519d342a045e0bc9ec84d9199d7">getEntityType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1NamedIndividual_1aad3d10caf98591dbac670ba1e39d09b9">getEntityType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1ObjectProperty_1a2eb8596592e38b1555fb2b83e2a85672">getEntityType</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="22" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Entity_1a0e207ab4f355df68e5adfe107668cec6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::Entity::operator==</definition>
+        <argsstring>(const Entity &amp;other) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>ista::owl2::Entity::operator==</qualifiedname>
+        <param>
+          <type>const <ref refid="structEntity" kindref="compound">Entity</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="24" column="10" bodyfile="D:/projects/ista/lib/owl2/core/entity.hpp" bodystart="24" bodyend="26"/>
+        <references refid="classista_1_1owl2_1_1Entity_1a111253c02830d3982cfee5b4b9cd1ac8" compoundref="core_2entity_8hpp" startline="17" endline="17">Entity</references>
+        <references refid="classista_1_1owl2_1_1Entity_1a126a750eda40c881a5ea4b1fdb412ee0" compoundref="core_2entity_8hpp" startline="35">iri_</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Entity_1ab710382cee94c7bbaca255a4d62bffa9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::Entity::operator!=</definition>
+        <argsstring>(const Entity &amp;other) const</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>ista::owl2::Entity::operator!=</qualifiedname>
+        <param>
+          <type>const <ref refid="structEntity" kindref="compound">Entity</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="27" column="10" bodyfile="D:/projects/ista/lib/owl2/core/entity.hpp" bodystart="27" bodyend="29"/>
+        <references refid="classista_1_1owl2_1_1Entity_1a111253c02830d3982cfee5b4b9cd1ac8" compoundref="core_2entity_8hpp" startline="17" endline="17">Entity</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Entity_1addc9bc76aa4acdd281d6a7e11a9d9afb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::Entity::operator&lt;</definition>
+        <argsstring>(const Entity &amp;other) const</argsstring>
+        <name>operator&lt;</name>
+        <qualifiedname>ista::owl2::Entity::operator&lt;</qualifiedname>
+        <param>
+          <type>const <ref refid="structEntity" kindref="compound">Entity</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="30" column="5" bodyfile="D:/projects/ista/lib/owl2/core/entity.hpp" bodystart="30" bodyend="32"/>
+        <references refid="classista_1_1owl2_1_1Entity_1a111253c02830d3982cfee5b4b9cd1ac8" compoundref="core_2entity_8hpp" startline="17" endline="17">Entity</references>
+        <references refid="classista_1_1owl2_1_1Entity_1a126a750eda40c881a5ea4b1fdb412ee0" compoundref="core_2entity_8hpp" startline="35">iri_</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Base class for all OWL2 entities. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Entities are the named components of an ontology. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ista::owl2::AnnotationProperty</label>
+        <link refid="classista_1_1owl2_1_1AnnotationProperty"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>ista::owl2::Class</label>
+        <link refid="classista_1_1owl2_1_1Class"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ista::owl2::DataProperty</label>
+        <link refid="classista_1_1owl2_1_1DataProperty"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>ista::owl2::Datatype</label>
+        <link refid="classista_1_1owl2_1_1Datatype"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ista::owl2::Entity</label>
+        <link refid="classista_1_1owl2_1_1Entity"/>
+      </node>
+      <node id="6">
+        <label>ista::owl2::NamedIndividual</label>
+        <link refid="classista_1_1owl2_1_1NamedIndividual"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>ista::owl2::ObjectProperty</label>
+        <link refid="classista_1_1owl2_1_1ObjectProperty"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>ista::owl2::Entity</label>
+        <link refid="classista_1_1owl2_1_1Entity"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>iri_</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ista::owl2::IRI</label>
+        <link refid="classista_1_1owl2_1_1IRI"/>
+      </node>
+    </collaborationgraph>
+    <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="15" column="1" bodyfile="D:/projects/ista/lib/owl2/core/entity.hpp" bodystart="15" bodyend="36"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1Entity_1a111253c02830d3982cfee5b4b9cd1ac8" prot="public" virt="non-virtual"><scope>ista::owl2::Entity</scope><name>Entity</name></member>
+      <member refid="classista_1_1owl2_1_1Entity_1a7eaf4cac49d6f5a3c97e138e7aed7f94" prot="public" virt="pure-virtual"><scope>ista::owl2::Entity</scope><name>getEntityType</name></member>
+      <member refid="classista_1_1owl2_1_1Entity_1a7450ac96112b23d4514cf60be3c3ac41" prot="public" virt="non-virtual"><scope>ista::owl2::Entity</scope><name>getIRI</name></member>
+      <member refid="classista_1_1owl2_1_1Entity_1a126a750eda40c881a5ea4b1fdb412ee0" prot="protected" virt="non-virtual"><scope>ista::owl2::Entity</scope><name>iri_</name></member>
+      <member refid="classista_1_1owl2_1_1Entity_1ab710382cee94c7bbaca255a4d62bffa9" prot="public" virt="non-virtual"><scope>ista::owl2::Entity</scope><name>operator!=</name></member>
+      <member refid="classista_1_1owl2_1_1Entity_1addc9bc76aa4acdd281d6a7e11a9d9afb" prot="public" virt="non-virtual"><scope>ista::owl2::Entity</scope><name>operator&lt;</name></member>
+      <member refid="classista_1_1owl2_1_1Entity_1a0e207ab4f355df68e5adfe107668cec6" prot="public" virt="non-virtual"><scope>ista::owl2::Entity</scope><name>operator==</name></member>
+      <member refid="classista_1_1owl2_1_1Entity_1ae65d7a7f48db51fd0758ac1ae4291b4e" prot="public" virt="virtual"><scope>ista::owl2::Entity</scope><name>~Entity</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="structstd_1_1hash_3_01ista_1_1owl2_1_1IRI_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>std::hash&lt; ista::owl2::IRI &gt;</compoundname>
+    <includes refid="iri_8hpp" local="no">iri.hpp</includes>
+    <templateparamlist>
+    </templateparamlist>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structstd_1_1hash_3_01ista_1_1owl2_1_1IRI_01_4_1a6e3849474630f76742b38631ab943f4f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t std::hash&lt; ista::owl2::IRI &gt;::operator()</definition>
+        <argsstring>(const ista::owl2::IRI &amp;iri) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>std::hash&lt; ista::owl2::IRI &gt;::operator()</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">ista::owl2::IRI</ref> &amp;</type>
+          <declname>iri</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/iri.hpp" line="91" column="16" bodyfile="D:/projects/ista/lib/owl2/core/iri.hpp" bodystart="91" bodyend="93"/>
+        <references refid="classista_1_1owl2_1_1IRI_1add16c12a986f833581a2e1ae39e63277" compoundref="iri_8hpp" startline="36" endline="36">ista::owl2::IRI::getFullIRI</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/core/iri.hpp" line="90" column="5" bodyfile="D:/projects/ista/lib/owl2/core/iri.hpp" bodystart="90" bodyend="94"/>
+    <listofallmembers>
+      <member refid="structstd_1_1hash_3_01ista_1_1owl2_1_1IRI_01_4_1a6e3849474630f76742b38631ab943f4f" prot="public" virt="non-virtual"><scope>std::hash&lt; ista::owl2::IRI &gt;</scope><name>operator()</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

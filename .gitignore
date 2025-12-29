@@ -168,3 +168,12 @@ examples/*.rdf
 examples/*.owl
 examples/*.ofn
 examples/*_subgraph.rdf
+
+
+
+# specific large data files to ignore
+examples/kg_projects/neurokb/neurokb-with-adverse-events.rdf
+examples/kg_projects/neurokb/neurokb-with-all-drug-relationships.rdf
+examples/kg_projects/neurokb/neurokb-with-drug-interactions.rdf
+examples/kg_projects/neurokb/neurokb-with-drug-relationships.rdf
+examples/kg_projects/neurokb/neurokb-with-indications.rdf

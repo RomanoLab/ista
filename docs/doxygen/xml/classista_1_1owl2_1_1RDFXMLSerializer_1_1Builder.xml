@@ -1,0 +1,811 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder" kind="class" language="C++" prot="private">
+    <compoundname>ista::owl2::RDFXMLSerializer::Builder</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a546946c497fb70895092f49310760e84" prot="private" static="no" mutable="no">
+        <type>const <ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+        <definition>const Ontology&amp; ista::owl2::RDFXMLSerializer::Builder::ontology_</definition>
+        <argsstring></argsstring>
+        <name>ontology_</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::ontology_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="42" column="24" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1ac5cbb105e713ca965e4a1ac07e134ead" prot="private" static="no" mutable="no">
+        <type>std::ostringstream</type>
+        <definition>std::ostringstream ista::owl2::RDFXMLSerializer::Builder::xml_</definition>
+        <argsstring></argsstring>
+        <name>xml_</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::xml_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="43" column="28" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a1f83927b6cce7009fdbf9f8fd7f1fa31" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::string &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::string&gt; ista::owl2::RDFXMLSerializer::Builder::namespaces_</definition>
+        <argsstring></argsstring>
+        <name>namespaces_</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::namespaces_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="44" column="28" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a1dfbd62f7dc8ef5a1f70b07388f7ed62" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ista::owl2::RDFXMLSerializer::Builder::blank_node_counter_</definition>
+        <argsstring></argsstring>
+        <name>blank_node_counter_</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::blank_node_counter_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="45" column="13" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a99a3166c7f767f195a4a2fc70df9ef62" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::RDFXMLSerializer::Builder::Builder</definition>
+        <argsstring>(const Ontology &amp;ontology)</argsstring>
+        <name>Builder</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::Builder</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="38" column="18" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="33" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a611c52b2167b32584e7d3af1faf4c341" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::RDFXMLSerializer::Builder::build</definition>
+        <argsstring>()</argsstring>
+        <name>build</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::build</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="39" column="21" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="39" bodyend="46"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a242d4d64aedec176eea86aa9a0bca14e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::writeXMLDeclaration</definition>
+        <argsstring>()</argsstring>
+        <name>writeXMLDeclaration</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::writeXMLDeclaration</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="48" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="48" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a8a5c5908339763fce2a92fe60779eea4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::writeRDFHeader</definition>
+        <argsstring>()</argsstring>
+        <name>writeRDFHeader</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::writeRDFHeader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="49" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="52" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a515024fb7e0b505b3c3ae19bd4c47219" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::writeOntologyHeader</definition>
+        <argsstring>()</argsstring>
+        <name>writeOntologyHeader</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::writeOntologyHeader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="50" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="63" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a3619285c4c2304b2d196af40d9fcac89" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::writeAxioms</definition>
+        <argsstring>()</argsstring>
+        <name>writeAxioms</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::writeAxioms</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="51" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="101" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1acbb598ad0be2ffda19748a846d3624f7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::writeRDFFooter</definition>
+        <argsstring>()</argsstring>
+        <name>writeRDFFooter</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::writeRDFFooter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="52" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="182" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a0703b49074579a859a2a7d7e6f1ae4cd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::writeDeclaration</definition>
+        <argsstring>(const std::shared_ptr&lt; Declaration &gt; &amp;axiom)</argsstring>
+        <name>writeDeclaration</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::writeDeclaration</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1Declaration" kindref="compound">Declaration</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="55" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="190" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1aec9575e510cd4a6317978575fec51df2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::writeSubClassOf</definition>
+        <argsstring>(const std::shared_ptr&lt; SubClassOf &gt; &amp;axiom)</argsstring>
+        <name>writeSubClassOf</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::writeSubClassOf</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1SubClassOf" kindref="compound">SubClassOf</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="56" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="232" bodyend="268"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1ab4b2bef7a5a57cd4f476b0ff7bb3c047" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::writeEquivalentClasses</definition>
+        <argsstring>(const std::shared_ptr&lt; EquivalentClasses &gt; &amp;axiom)</argsstring>
+        <name>writeEquivalentClasses</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::writeEquivalentClasses</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1EquivalentClasses" kindref="compound">EquivalentClasses</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="57" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="270" bodyend="296"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1aa1dbaf4085456561fc78c0d5d4085ed9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::writeDisjointClasses</definition>
+        <argsstring>(const std::shared_ptr&lt; DisjointClasses &gt; &amp;axiom)</argsstring>
+        <name>writeDisjointClasses</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::writeDisjointClasses</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1DisjointClasses" kindref="compound">DisjointClasses</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="58" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="298" bodyend="319"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a99f3a64afb2d4f6c04e910953135a298" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::writeClassAssertion</definition>
+        <argsstring>(const std::shared_ptr&lt; ClassAssertion &gt; &amp;axiom)</argsstring>
+        <name>writeClassAssertion</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::writeClassAssertion</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1ClassAssertion" kindref="compound">ClassAssertion</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="59" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="568" bodyend="590"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1acbb1e64a702d7e874fb13492cfd54cb4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::writeObjectPropertyAssertion</definition>
+        <argsstring>(const std::shared_ptr&lt; ObjectPropertyAssertion &gt; &amp;axiom)</argsstring>
+        <name>writeObjectPropertyAssertion</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::writeObjectPropertyAssertion</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1ObjectPropertyAssertion" kindref="compound">ObjectPropertyAssertion</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="60" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="592" bodyend="611"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a0e8c379733e1b3802147d72c46940d04" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::writeDataPropertyAssertion</definition>
+        <argsstring>(const std::shared_ptr&lt; DataPropertyAssertion &gt; &amp;axiom)</argsstring>
+        <name>writeDataPropertyAssertion</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::writeDataPropertyAssertion</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1DataPropertyAssertion" kindref="compound">DataPropertyAssertion</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="61" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="613" bodyend="628"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1ab276b8ae4bd5cb5e067a805e9c2ee131" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::writeSubObjectPropertyOf</definition>
+        <argsstring>(const std::shared_ptr&lt; SubObjectPropertyOf &gt; &amp;axiom)</argsstring>
+        <name>writeSubObjectPropertyOf</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::writeSubObjectPropertyOf</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1SubObjectPropertyOf" kindref="compound">SubObjectPropertyOf</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="62" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="325" bodyend="348"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a1fd0fbd059fac70d1f7d39df962ff528" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::writeSubDataPropertyOf</definition>
+        <argsstring>(const std::shared_ptr&lt; SubDataPropertyOf &gt; &amp;axiom)</argsstring>
+        <name>writeSubDataPropertyOf</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::writeSubDataPropertyOf</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1SubDataPropertyOf" kindref="compound">SubDataPropertyOf</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="63" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="500" bodyend="510"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a281cf4035f55936d646ed303275a04c2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::writeObjectPropertyDomain</definition>
+        <argsstring>(const std::shared_ptr&lt; ObjectPropertyDomain &gt; &amp;axiom)</argsstring>
+        <name>writeObjectPropertyDomain</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::writeObjectPropertyDomain</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1ObjectPropertyDomain" kindref="compound">ObjectPropertyDomain</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="64" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="350" bodyend="372"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a055950c558b83fd8791a3fe6b8553200" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::writeObjectPropertyRange</definition>
+        <argsstring>(const std::shared_ptr&lt; ObjectPropertyRange &gt; &amp;axiom)</argsstring>
+        <name>writeObjectPropertyRange</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::writeObjectPropertyRange</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1ObjectPropertyRange" kindref="compound">ObjectPropertyRange</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="65" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="374" bodyend="396"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a3b8b66cc45ce92455b92b88771fedcb3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::writeDataPropertyDomain</definition>
+        <argsstring>(const std::shared_ptr&lt; DataPropertyDomain &gt; &amp;axiom)</argsstring>
+        <name>writeDataPropertyDomain</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::writeDataPropertyDomain</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1DataPropertyDomain" kindref="compound">DataPropertyDomain</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="66" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="512" bodyend="531"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a49ee33b9d0194fee589569dafb838503" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::writeDataPropertyRange</definition>
+        <argsstring>(const std::shared_ptr&lt; DataPropertyRange &gt; &amp;axiom)</argsstring>
+        <name>writeDataPropertyRange</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::writeDataPropertyRange</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1DataPropertyRange" kindref="compound">DataPropertyRange</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="67" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="533" bodyend="551"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a6d589ac2f759cc297a7ff6bf5592bb32" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::writeFunctionalObjectProperty</definition>
+        <argsstring>(const std::shared_ptr&lt; FunctionalObjectProperty &gt; &amp;axiom)</argsstring>
+        <name>writeFunctionalObjectProperty</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::writeFunctionalObjectProperty</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1FunctionalObjectProperty" kindref="compound">FunctionalObjectProperty</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="68" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="398" bodyend="410"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1af9321f394bba0d6d60abcf428712bbd4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::writeFunctionalDataProperty</definition>
+        <argsstring>(const std::shared_ptr&lt; FunctionalDataProperty &gt; &amp;axiom)</argsstring>
+        <name>writeFunctionalDataProperty</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::writeFunctionalDataProperty</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1FunctionalDataProperty" kindref="compound">FunctionalDataProperty</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="69" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="553" bodyend="562"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1ad4d58c4e488471297c0b7c635a00c6c2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::writeInverseFunctionalObjectProperty</definition>
+        <argsstring>(const std::shared_ptr&lt; InverseFunctionalObjectProperty &gt; &amp;axiom)</argsstring>
+        <name>writeInverseFunctionalObjectProperty</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::writeInverseFunctionalObjectProperty</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1InverseFunctionalObjectProperty" kindref="compound">InverseFunctionalObjectProperty</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="70" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="412" bodyend="424"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a0d2a4c1fad89b74765c4c60fbf8b0d43" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::writeTransitiveObjectProperty</definition>
+        <argsstring>(const std::shared_ptr&lt; TransitiveObjectProperty &gt; &amp;axiom)</argsstring>
+        <name>writeTransitiveObjectProperty</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::writeTransitiveObjectProperty</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1TransitiveObjectProperty" kindref="compound">TransitiveObjectProperty</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="71" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="426" bodyend="438"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a72f1f8623bb3614936a210a13889c135" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::writeSymmetricObjectProperty</definition>
+        <argsstring>(const std::shared_ptr&lt; SymmetricObjectProperty &gt; &amp;axiom)</argsstring>
+        <name>writeSymmetricObjectProperty</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::writeSymmetricObjectProperty</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1SymmetricObjectProperty" kindref="compound">SymmetricObjectProperty</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="72" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="440" bodyend="452"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1acfc031e39d3e5aa79779f2013c07c948" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::writeAsymmetricObjectProperty</definition>
+        <argsstring>(const std::shared_ptr&lt; AsymmetricObjectProperty &gt; &amp;axiom)</argsstring>
+        <name>writeAsymmetricObjectProperty</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::writeAsymmetricObjectProperty</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1AsymmetricObjectProperty" kindref="compound">AsymmetricObjectProperty</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="73" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="454" bodyend="466"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a0cb588e6ba3b3eaaf7b46f04e3054ae6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::writeReflexiveObjectProperty</definition>
+        <argsstring>(const std::shared_ptr&lt; ReflexiveObjectProperty &gt; &amp;axiom)</argsstring>
+        <name>writeReflexiveObjectProperty</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::writeReflexiveObjectProperty</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1ReflexiveObjectProperty" kindref="compound">ReflexiveObjectProperty</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="74" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="468" bodyend="480"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1aa30ea03beadf7ee1b14c80c191b2a7eb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::writeIrreflexiveObjectProperty</definition>
+        <argsstring>(const std::shared_ptr&lt; IrreflexiveObjectProperty &gt; &amp;axiom)</argsstring>
+        <name>writeIrreflexiveObjectProperty</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::writeIrreflexiveObjectProperty</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1IrreflexiveObjectProperty" kindref="compound">IrreflexiveObjectProperty</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="75" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="482" bodyend="494"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a878364920e95cbf5e0f3347c89db03c5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::writeAnnotationAssertion</definition>
+        <argsstring>(const std::shared_ptr&lt; AnnotationAssertion &gt; &amp;axiom)</argsstring>
+        <name>writeAnnotationAssertion</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::writeAnnotationAssertion</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1AnnotationAssertion" kindref="compound">AnnotationAssertion</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="76" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="634" bodyend="675"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a435332edf0b69c727e35888b1d43faeb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::writeClassExpression</definition>
+        <argsstring>(const ClassExpressionPtr &amp;expr, const std::string &amp;indent)</argsstring>
+        <name>writeClassExpression</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::writeClassExpression</qualifiedname>
+        <param>
+          <type>const <ref refid="namespaceista_1_1owl2_1a61b3005e8a7011a323fdc822a191da25" kindref="member">ClassExpressionPtr</ref> &amp;</type>
+          <declname>expr</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>indent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="79" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="681" bodyend="728"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1aa255da91d597302a98621c5dc78a5a86" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::RDFXMLSerializer::Builder::getClassExpressionNodeID</definition>
+        <argsstring>(const ClassExpressionPtr &amp;expr)</argsstring>
+        <name>getClassExpressionNodeID</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::getClassExpressionNodeID</qualifiedname>
+        <param>
+          <type>const <ref refid="namespaceista_1_1owl2_1a61b3005e8a7011a323fdc822a191da25" kindref="member">ClassExpressionPtr</ref> &amp;</type>
+          <declname>expr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="80" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a26cd8429b846edf03ba9cdc2b8f9830b" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::RDFXMLSerializer::Builder::escapeXML</definition>
+        <argsstring>(const std::string &amp;str) const</argsstring>
+        <name>escapeXML</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::escapeXML</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="83" column="21" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="734" bodyend="750"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a4df3d0c149b2eff4b70f67ba5e800f51" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::RDFXMLSerializer::Builder::getQName</definition>
+        <argsstring>(const IRI &amp;iri) const</argsstring>
+        <name>getQName</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::getQName</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &amp;</type>
+          <declname>iri</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="84" column="21" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="752" bodyend="765"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a711706a386a1948f2358c97f29e6b04b" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::RDFXMLSerializer::Builder::getNamespacePrefix</definition>
+        <argsstring>(const std::string &amp;ns) const</argsstring>
+        <name>getNamespacePrefix</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::getNamespacePrefix</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>ns</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="85" column="21" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="767" bodyend="774"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a940ae69ade346269b8bffd651bb5b742" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::registerStandardNamespaces</definition>
+        <argsstring>()</argsstring>
+        <name>registerStandardNamespaces</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::registerStandardNamespaces</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="86" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="776" bodyend="782"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a5d308fe86e837f58bad80044000de2b6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::registerOntologyNamespaces</definition>
+        <argsstring>()</argsstring>
+        <name>registerOntologyNamespaces</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::registerOntologyNamespaces</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="87" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="784" bodyend="792"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1af615dae56eca363397bf9a32ff7c58c0" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::RDFXMLSerializer::Builder::formatLiteral</definition>
+        <argsstring>(const Literal &amp;literal) const</argsstring>
+        <name>formatLiteral</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::formatLiteral</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1Literal" kindref="compound">Literal</ref> &amp;</type>
+          <declname>literal</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="88" column="21" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="794" bodyend="811"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a7f3095faf253814ee31fe0fad7685cfd" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::RDFXMLSerializer::Builder::formatIndividual</definition>
+        <argsstring>(const Individual &amp;individual) const</argsstring>
+        <name>formatIndividual</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::formatIndividual</qualifiedname>
+        <param>
+          <type>const <ref refid="namespaceista_1_1owl2_1a8327f2edd65d42a9498697dce8118d84" kindref="member">Individual</ref><ref refid="structIndividual" kindref="compound">Individual</ref> &amp;</type>
+          <declname>individual</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="89" column="21" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="813" bodyend="821"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1afe6fd8f0db0eff3acd827383b9cc8245" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::RDFXMLSerializer::Builder::getBlankNodeID</definition>
+        <argsstring>()</argsstring>
+        <name>getBlankNodeID</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::getBlankNodeID</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="90" column="21" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="823" bodyend="825"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1abf96fee54c06a7cf2904a906eb0dc6b2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLSerializer::Builder::writeAnnotations</definition>
+        <argsstring>(const std::vector&lt; Annotation &gt; &amp;annotations, const std::string &amp;indent)</argsstring>
+        <name>writeAnnotations</name>
+        <qualifiedname>ista::owl2::RDFXMLSerializer::Builder::writeAnnotations</qualifiedname>
+        <param>
+          <type>const std::vector&lt; <ref refid="classista_1_1owl2_1_1Annotation" kindref="compound">Annotation</ref> &gt; &amp;</type>
+          <declname>annotations</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>indent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="91" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp" bodystart="827" bodyend="853"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" line="36" column="5" bodyfile="D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp" bodystart="36" bodyend="92"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a1dfbd62f7dc8ef5a1f70b07388f7ed62" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>blank_node_counter_</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a611c52b2167b32584e7d3af1faf4c341" prot="public" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>build</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a99a3166c7f767f195a4a2fc70df9ef62" prot="public" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>Builder</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a26cd8429b846edf03ba9cdc2b8f9830b" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>escapeXML</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a7f3095faf253814ee31fe0fad7685cfd" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>formatIndividual</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1af615dae56eca363397bf9a32ff7c58c0" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>formatLiteral</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1afe6fd8f0db0eff3acd827383b9cc8245" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>getBlankNodeID</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1aa255da91d597302a98621c5dc78a5a86" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>getClassExpressionNodeID</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a711706a386a1948f2358c97f29e6b04b" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>getNamespacePrefix</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a4df3d0c149b2eff4b70f67ba5e800f51" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>getQName</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a1f83927b6cce7009fdbf9f8fd7f1fa31" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>namespaces_</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a546946c497fb70895092f49310760e84" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>ontology_</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a5d308fe86e837f58bad80044000de2b6" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>registerOntologyNamespaces</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a940ae69ade346269b8bffd651bb5b742" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>registerStandardNamespaces</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a878364920e95cbf5e0f3347c89db03c5" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>writeAnnotationAssertion</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1abf96fee54c06a7cf2904a906eb0dc6b2" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>writeAnnotations</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1acfc031e39d3e5aa79779f2013c07c948" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>writeAsymmetricObjectProperty</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a3619285c4c2304b2d196af40d9fcac89" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>writeAxioms</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a99f3a64afb2d4f6c04e910953135a298" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>writeClassAssertion</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a435332edf0b69c727e35888b1d43faeb" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>writeClassExpression</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a0e8c379733e1b3802147d72c46940d04" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>writeDataPropertyAssertion</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a3b8b66cc45ce92455b92b88771fedcb3" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>writeDataPropertyDomain</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a49ee33b9d0194fee589569dafb838503" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>writeDataPropertyRange</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a0703b49074579a859a2a7d7e6f1ae4cd" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>writeDeclaration</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1aa1dbaf4085456561fc78c0d5d4085ed9" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>writeDisjointClasses</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1ab4b2bef7a5a57cd4f476b0ff7bb3c047" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>writeEquivalentClasses</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1af9321f394bba0d6d60abcf428712bbd4" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>writeFunctionalDataProperty</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a6d589ac2f759cc297a7ff6bf5592bb32" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>writeFunctionalObjectProperty</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1ad4d58c4e488471297c0b7c635a00c6c2" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>writeInverseFunctionalObjectProperty</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1aa30ea03beadf7ee1b14c80c191b2a7eb" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>writeIrreflexiveObjectProperty</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1acbb1e64a702d7e874fb13492cfd54cb4" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>writeObjectPropertyAssertion</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a281cf4035f55936d646ed303275a04c2" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>writeObjectPropertyDomain</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a055950c558b83fd8791a3fe6b8553200" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>writeObjectPropertyRange</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a515024fb7e0b505b3c3ae19bd4c47219" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>writeOntologyHeader</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1acbb598ad0be2ffda19748a846d3624f7" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>writeRDFFooter</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a8a5c5908339763fce2a92fe60779eea4" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>writeRDFHeader</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a0cb588e6ba3b3eaaf7b46f04e3054ae6" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>writeReflexiveObjectProperty</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1aec9575e510cd4a6317978575fec51df2" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>writeSubClassOf</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a1fd0fbd059fac70d1f7d39df962ff528" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>writeSubDataPropertyOf</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1ab276b8ae4bd5cb5e067a805e9c2ee131" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>writeSubObjectPropertyOf</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a72f1f8623bb3614936a210a13889c135" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>writeSymmetricObjectProperty</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a0d2a4c1fad89b74765c4c60fbf8b0d43" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>writeTransitiveObjectProperty</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a242d4d64aedec176eea86aa9a0bca14e" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>writeXMLDeclaration</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1ac5cbb105e713ca965e4a1ac07e134ead" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLSerializer::Builder</scope><name>xml_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

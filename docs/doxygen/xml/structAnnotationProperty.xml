@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="structAnnotationProperty" kind="struct" language="C++" prot="public">
+    <compoundname>AnnotationProperty</compoundname>
+    <includes refid="entity_8hpp" local="no">entity.hpp</includes>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/entity.hpp" line="36" column="1" bodyfile="D:/projects/ista/lib/owl2/entity.hpp" bodystart="37" bodyend="39"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

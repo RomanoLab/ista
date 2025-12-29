@@ -1,0 +1,35 @@
+# clangd configuration for ISTA project
+# This helps IDEs (VS Code, CLion, etc.) find headers and configure linting
+
+CompileFlags:
+  # Add include directories
+  Add:
+    # Project includes
+    - "-ID:/projects/ista/lib"
+    - "-ID:/projects/ista/lib/owl2"
+    - "-ID:/projects/ista/external/pybind11/include"
+    - "-ID:/projects/ista/external/pugixml/src"
+    # Python includes (adjust path if different)
+    - "-IC:/Users/jdr2160/miniconda3/include"
+    # Standard library
+    - "-std=c++20"
+    # Suppress some warnings for external headers
+    - "-Wno-pragma-once-outside-header"
+
+  # Remove problematic flags
+  Remove:
+    - "-W*"  # Remove all warning flags, we'll add back what we need
+
+Diagnostics:
+  # Suppress warnings from external libraries
+  UnusedIncludes: None
+  MissingIncludes: None
+
+  # Don't show errors for system headers
+  Suppress:
+    - "pp_file_not_found"
+    - "err_pp_file_not_found"
+
+# Index configuration
+Index:
+  Background: Build

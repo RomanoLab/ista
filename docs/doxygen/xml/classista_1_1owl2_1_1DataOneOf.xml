@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1DataOneOf" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::DataOneOf</compoundname>
+    <basecompoundref refid="classista_1_1owl2_1_1DataRange" prot="public" virt="non-virtual">ista::owl2::DataRange</basecompoundref>
+    <includes refid="data__range_8hpp" local="no">data_range.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classista_1_1owl2_1_1DataOneOf_1a96327c135744e59e6d72e91d9e27eac9" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classista_1_1owl2_1_1Literal" kindref="compound">Literal</ref> &gt;</type>
+        <definition>std::vector&lt;Literal&gt; ista::owl2::DataOneOf::literals_</definition>
+        <argsstring></argsstring>
+        <name>literals_</name>
+        <qualifiedname>ista::owl2::DataOneOf::literals_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="116" column="17" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="116" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1DataOneOf_1aa7e4484cac805cbb7060415597da20a4" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::DataOneOf::DataOneOf</definition>
+        <argsstring>(const std::vector&lt; Literal &gt; &amp;literals)</argsstring>
+        <name>DataOneOf</name>
+        <qualifiedname>ista::owl2::DataOneOf::DataOneOf</qualifiedname>
+        <param>
+          <type>const std::vector&lt; <ref refid="classista_1_1owl2_1_1Literal" kindref="compound">Literal</ref> &gt; &amp;</type>
+          <declname>literals</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="107" column="14" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="107" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1DataOneOf_1a9b1f2bd38c1f9a3c26d7006dec2a993a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="classista_1_1owl2_1_1Literal" kindref="compound">Literal</ref> &gt;</type>
+        <definition>std::vector&lt; Literal &gt; ista::owl2::DataOneOf::getLiterals</definition>
+        <argsstring>() const</argsstring>
+        <name>getLiterals</name>
+        <qualifiedname>ista::owl2::DataOneOf::getLiterals</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="110" column="17" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="110" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1DataOneOf_1a7c5f8974c5fb85dfac591d6ff3341a44" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::DataOneOf::toFunctionalSyntax</definition>
+        <argsstring>() const override</argsstring>
+        <name>toFunctionalSyntax</name>
+        <qualifiedname>ista::owl2::DataOneOf::toFunctionalSyntax</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1DataRange_1abe52a263c7481aa3d078f895a62c7547">toFunctionalSyntax</reimplements>
+        <briefdescription>
+<para>Convert to OWL2 Functional Syntax. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="112" column="17" bodyfile="D:/projects/ista/lib/owl2/core/data_range.cpp" bodystart="49" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1DataOneOf_1a2f1aa4f201b63cd1284e627509dc234d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::DataOneOf::getDataRangeType</definition>
+        <argsstring>() const override</argsstring>
+        <name>getDataRangeType</name>
+        <qualifiedname>ista::owl2::DataOneOf::getDataRangeType</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1DataRange_1abc8e583db3cb378e0e055ecb5607288b">getDataRangeType</reimplements>
+        <briefdescription>
+<para>Get the type of this data range. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="113" column="17" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="113" bodyend="113"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Enumeration of literals. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>ista::owl2::DataOneOf</label>
+        <link refid="classista_1_1owl2_1_1DataOneOf"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ista::owl2::DataRange</label>
+        <link refid="classista_1_1owl2_1_1DataRange"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>ista::owl2::DataOneOf</label>
+        <link refid="classista_1_1owl2_1_1DataOneOf"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ista::owl2::DataRange</label>
+        <link refid="classista_1_1owl2_1_1DataRange"/>
+      </node>
+    </collaborationgraph>
+    <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="105" column="1" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="105" bodyend="117"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1DataOneOf_1aa7e4484cac805cbb7060415597da20a4" prot="public" virt="non-virtual"><scope>ista::owl2::DataOneOf</scope><name>DataOneOf</name></member>
+      <member refid="classista_1_1owl2_1_1DataOneOf_1a2f1aa4f201b63cd1284e627509dc234d" prot="public" virt="virtual"><scope>ista::owl2::DataOneOf</scope><name>getDataRangeType</name></member>
+      <member refid="classista_1_1owl2_1_1DataOneOf_1a9b1f2bd38c1f9a3c26d7006dec2a993a" prot="public" virt="non-virtual"><scope>ista::owl2::DataOneOf</scope><name>getLiterals</name></member>
+      <member refid="classista_1_1owl2_1_1DataOneOf_1a96327c135744e59e6d72e91d9e27eac9" prot="private" virt="non-virtual"><scope>ista::owl2::DataOneOf</scope><name>literals_</name></member>
+      <member refid="classista_1_1owl2_1_1DataOneOf_1a7c5f8974c5fb85dfac591d6ff3341a44" prot="public" virt="virtual"><scope>ista::owl2::DataOneOf</scope><name>toFunctionalSyntax</name></member>
+      <member refid="classista_1_1owl2_1_1DataRange_1af96348d6c75791cb43e898a5b0a4d677" prot="public" virt="virtual"><scope>ista::owl2::DataOneOf</scope><name>~DataRange</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

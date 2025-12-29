@@ -1,0 +1,364 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="ontology__filter_8hpp" kind="file" language="C++">
+    <compoundname>ontology_filter.hpp</compoundname>
+    <includes refid="ontology_8hpp" local="yes">ontology.hpp</includes>
+    <includes refid="core_2entity_8hpp" local="yes">entity.hpp</includes>
+    <includes refid="literal_8hpp" local="yes">literal.hpp</includes>
+    <includes local="no">unordered_set</includes>
+    <includes local="no">unordered_map</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">optional</includes>
+    <includes local="no">memory</includes>
+    <includedby refid="ontology_8cpp" local="yes">D:/projects/ista/lib/owl2/core/ontology.cpp</includedby>
+    <includedby refid="ontology__filter_8cpp" local="yes">D:/projects/ista/lib/owl2/core/ontology_filter.cpp</includedby>
+    <incdepgraph>
+      <node id="15">
+        <label>annotation.hpp</label>
+        <link refid="annotation_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>axiom.hpp</label>
+        <link refid="axiom_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>class_expression.hpp</label>
+        <link refid="class__expression_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>data_range.hpp</label>
+        <link refid="data__range_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>entity.hpp</label>
+        <link refid="core_2entity_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>iri.hpp</label>
+        <link refid="iri_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>literal.hpp</label>
+        <link refid="literal_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ontology.hpp</label>
+        <link refid="ontology_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/projects/ista/lib/owl2/core/ontology_filter.hpp</label>
+        <link refid="ontology__filter_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>functional</label>
+      </node>
+      <node id="8">
+        <label>memory</label>
+      </node>
+      <node id="6">
+        <label>optional</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+      <node id="5">
+        <label>unordered_map</label>
+      </node>
+      <node id="17">
+        <label>unordered_set</label>
+      </node>
+      <node id="14">
+        <label>utility</label>
+      </node>
+      <node id="16">
+        <label>variant</label>
+      </node>
+      <node id="12">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>D:/projects/ista/lib/owl2/core/ontology.cpp</label>
+        <link refid="ontology_8cpp"/>
+      </node>
+      <node id="3">
+        <label>D:/projects/ista/lib/owl2/core/ontology_filter.cpp</label>
+        <link refid="ontology__filter_8cpp"/>
+      </node>
+      <node id="1">
+        <label>D:/projects/ista/lib/owl2/core/ontology_filter.hpp</label>
+        <link refid="ontology__filter_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structista_1_1owl2_1_1FilterCriteria" prot="public">ista::owl2::FilterCriteria</innerclass>
+    <innerclass refid="structista_1_1owl2_1_1FilterResult" prot="public">ista::owl2::FilterResult</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1OntologyFilter" prot="public">ista::owl2::OntologyFilter</innerclass>
+    <innernamespace refid="namespaceista">ista</innernamespace>
+    <innernamespace refid="namespaceista_1_1owl2">ista::owl2</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>ISTA_OWL2_ONTOLOGY_FILTER_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ISTA_OWL2_ONTOLOGY_FILTER_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ontology_8hpp" kindref="compound">ontology.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="core_2entity_8hpp" kindref="compound">entity.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="literal_8hpp" kindref="compound">literal.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_set&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;optional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceista" kindref="compound">ista</ref><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceista_1_1owl2" kindref="compound">owl2</ref><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Forward<sp/>declaration</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref>;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="structista_1_1owl2_1_1FilterCriteria" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structista_1_1owl2_1_1FilterCriteria_1a7873082dfa32f27b54e35bc2f45aeb4e" kindref="member">FilterCriteria</ref><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Individuals<sp/>to<sp/>include<sp/>explicitly</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="structista_1_1owl2_1_1FilterCriteria_1a164bd8f86d499bba709f0b50ade662fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_set&lt;IRI&gt;<sp/><ref refid="structista_1_1owl2_1_1FilterCriteria_1a164bd8f86d499bba709f0b50ade662fc" kindref="member">include_individuals</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Classes<sp/>whose<sp/>instances<sp/>should<sp/>be<sp/>included</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="structista_1_1owl2_1_1FilterCriteria_1aea7192979aae25c94580f410b1d8d7fb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_set&lt;IRI&gt;<sp/><ref refid="structista_1_1owl2_1_1FilterCriteria_1aea7192979aae25c94580f410b1d8d7fb" kindref="member">include_classes</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Individuals<sp/>to<sp/>exclude<sp/>explicitly</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="structista_1_1owl2_1_1FilterCriteria_1a802cc8f0c0ce656cc8f3295907d16c36" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_set&lt;IRI&gt;<sp/><ref refid="structista_1_1owl2_1_1FilterCriteria_1a802cc8f0c0ce656cc8f3295907d16c36" kindref="member">exclude_individuals</ref>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Property<sp/>filters:<sp/>property<sp/>IRI<sp/>→<sp/>allowed<sp/>values</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="structista_1_1owl2_1_1FilterCriteria_1a5900e9c421d1f65fb8d9d82345e1f1bd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;IRI,<sp/>std::unordered_set&lt;std::string&gt;&gt;<sp/><ref refid="structista_1_1owl2_1_1FilterCriteria_1a5900e9c421d1f65fb8d9d82345e1f1bd" kindref="member">property_value_filters</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Maximum<sp/>depth<sp/>for<sp/>neighborhood<sp/>extraction<sp/>(0<sp/>=<sp/>only<sp/>seed<sp/>nodes)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="structista_1_1owl2_1_1FilterCriteria_1a54c61a9c7e8661f961dcec5a9db5cd31" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structista_1_1owl2_1_1FilterCriteria_1a54c61a9c7e8661f961dcec5a9db5cd31" kindref="member">max_depth</ref><sp/>=<sp/>-1;<sp/><sp/></highlight><highlight class="comment">//<sp/>-1<sp/>means<sp/>no<sp/>limit</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Whether<sp/>to<sp/>include<sp/>class<sp/>hierarchy<sp/>axioms<sp/>for<sp/>included<sp/>individuals</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="structista_1_1owl2_1_1FilterCriteria_1a66c598f1946b9570608337c31239495c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structista_1_1owl2_1_1FilterCriteria_1a66c598f1946b9570608337c31239495c" kindref="member">include_class_hierarchy</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Whether<sp/>to<sp/>include<sp/>property<sp/>hierarchy<sp/>axioms</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="structista_1_1owl2_1_1FilterCriteria_1a7a5c4d40f40cf84da30e7dc197db0138" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structista_1_1owl2_1_1FilterCriteria_1a7a5c4d40f40cf84da30e7dc197db0138" kindref="member">include_property_hierarchy</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Whether<sp/>to<sp/>include<sp/>all<sp/>declarations<sp/>for<sp/>referenced<sp/>entities</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="structista_1_1owl2_1_1FilterCriteria_1ae1485fa30f50257dbf9c02532c2aa426" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structista_1_1owl2_1_1FilterCriteria_1ae1485fa30f50257dbf9c02532c2aa426" kindref="member">include_declarations</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Custom<sp/>filter<sp/>function<sp/>for<sp/>additional<sp/>filtering<sp/>logic</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="structista_1_1owl2_1_1FilterCriteria_1abb64413e85f97a22742614663b34434e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::function&lt;bool(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceista_1_1owl2_1ae305b46823ac53f0c71aed391a90f835" kindref="member">AxiomPtr</ref>&amp;)&gt;<sp/><ref refid="structista_1_1owl2_1_1FilterCriteria_1abb64413e85f97a22742614663b34434e" kindref="member">custom_filter</ref>;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="54" refid="structista_1_1owl2_1_1FilterCriteria_1a7873082dfa32f27b54e35bc2f45aeb4e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structista_1_1owl2_1_1FilterCriteria_1a7873082dfa32f27b54e35bc2f45aeb4e" kindref="member">FilterCriteria</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="structista_1_1owl2_1_1FilterResult" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structista_1_1owl2_1_1FilterResult_1abd389d51a8d3e0bc30c8e61f20905486" kindref="member">FilterResult</ref><sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>filtered<sp/>ontology</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="structista_1_1owl2_1_1FilterResult_1af871fff98d85e591dd2eb6913c952111" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Ontology&gt;<sp/><ref refid="structista_1_1owl2_1_1FilterResult_1af871fff98d85e591dd2eb6913c952111" kindref="member">ontology</ref>;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Statistics<sp/>about<sp/>the<sp/>filtering</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="structista_1_1owl2_1_1FilterResult_1ad1907ad70b0409e965cbd89bda38573e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structista_1_1owl2_1_1FilterResult_1ad1907ad70b0409e965cbd89bda38573e" kindref="member">original_axiom_count</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="68" refid="structista_1_1owl2_1_1FilterResult_1ac345e02ecf680342e8bf6332113b5a44" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structista_1_1owl2_1_1FilterResult_1ac345e02ecf680342e8bf6332113b5a44" kindref="member">filtered_axiom_count</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="69" refid="structista_1_1owl2_1_1FilterResult_1a53667b08912df20ea6223d38dd238be4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structista_1_1owl2_1_1FilterResult_1a53667b08912df20ea6223d38dd238be4" kindref="member">original_individual_count</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="70" refid="structista_1_1owl2_1_1FilterResult_1ad15732fb4d1e1db5859a0b24ccf2b668" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structista_1_1owl2_1_1FilterResult_1ad15732fb4d1e1db5859a0b24ccf2b668" kindref="member">filtered_individual_count</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Individuals<sp/>that<sp/>were<sp/>included</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="structista_1_1owl2_1_1FilterResult_1a43b58937641067a01abfd8f796845bc0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_set&lt;IRI&gt;<sp/><ref refid="structista_1_1owl2_1_1FilterResult_1a43b58937641067a01abfd8f796845bc0" kindref="member">included_individuals</ref>;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="75" refid="structista_1_1owl2_1_1FilterResult_1abd389d51a8d3e0bc30c8e61f20905486" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structista_1_1owl2_1_1FilterResult_1abd389d51a8d3e0bc30c8e61f20905486" kindref="member">FilterResult</ref>()<sp/>:<sp/><ref refid="structista_1_1owl2_1_1FilterResult_1af871fff98d85e591dd2eb6913c952111" kindref="member">ontology</ref>(<ref refid="namespacestd" kindref="compound">std</ref>::make_shared&lt;<ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref>&gt;())<sp/>{}</highlight></codeline>
+<codeline lineno="76" refid="structista_1_1owl2_1_1FilterResult_1a8d19bb5c91f1a700381666a2c2f94bc7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="structista_1_1owl2_1_1FilterResult_1a8d19bb5c91f1a700381666a2c2f94bc7" kindref="member">FilterResult</ref>(std::shared_ptr&lt;Ontology&gt;<sp/>onto)<sp/>:<sp/><ref refid="structista_1_1owl2_1_1FilterResult_1af871fff98d85e591dd2eb6913c952111" kindref="member">ontology</ref>(onto)<sp/>{}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="classista_1_1owl2_1_1OntologyFilter" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classista_1_1owl2_1_1OntologyFilter_1a7143654057351b6d135895b291887a97" kindref="member">OntologyFilter</ref><sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1OntologyFilter_1a7143654057351b6d135895b291887a97" kindref="member">OntologyFilter</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref>&amp;<sp/>ontology);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1OntologyFilter_1a7143654057351b6d135895b291887a97" kindref="member">OntologyFilter</ref>(std::shared_ptr&lt;const<sp/>Ontology&gt;<sp/>ontology);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structista_1_1owl2_1_1FilterResult" kindref="compound">FilterResult</ref><sp/><ref refid="classista_1_1owl2_1_1OntologyFilter_1a07975b01d94c1a58008728892c77f60b" kindref="member">filterByIndividuals</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unordered_set&lt;IRI&gt;&amp;<sp/>iris)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structista_1_1owl2_1_1FilterResult" kindref="compound">FilterResult</ref><sp/><ref refid="classista_1_1owl2_1_1OntologyFilter_1a6f6d0a43b2a623ad17cf80e8a0eff87b" kindref="member">filterByClasses</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unordered_set&lt;IRI&gt;&amp;<sp/>class_iris)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structista_1_1owl2_1_1FilterResult" kindref="compound">FilterResult</ref><sp/><ref refid="classista_1_1owl2_1_1OntologyFilter_1a1e8f46ed127f1d4c19f0cdce53adcb0d" kindref="member">filterByProperty</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>&amp;<sp/>property,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Literal" kindref="compound">Literal</ref>&amp;<sp/>value)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structista_1_1owl2_1_1FilterResult" kindref="compound">FilterResult</ref><sp/><ref refid="classista_1_1owl2_1_1OntologyFilter_1aa9bb64a055d688ee2012c389df99c5f9" kindref="member">filterByObjectProperty</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>&amp;<sp/>property,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>&amp;<sp/>target)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structista_1_1owl2_1_1FilterResult" kindref="compound">FilterResult</ref><sp/><ref refid="classista_1_1owl2_1_1OntologyFilter_1a97f9a68e6632707e6b50238cf9e57faa" kindref="member">extractNeighborhood</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>&amp;<sp/>seed,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>depth)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structista_1_1owl2_1_1FilterResult" kindref="compound">FilterResult</ref><sp/><ref refid="classista_1_1owl2_1_1OntologyFilter_1a97f9a68e6632707e6b50238cf9e57faa" kindref="member">extractNeighborhood</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unordered_set&lt;IRI&gt;&amp;<sp/>seeds,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>depth)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structista_1_1owl2_1_1FilterResult" kindref="compound">FilterResult</ref><sp/><ref refid="classista_1_1owl2_1_1OntologyFilter_1a11640efd18c237dcd1742cc07b52c65e" kindref="member">extractPath</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>&amp;<sp/>start,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>&amp;<sp/>end)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structista_1_1owl2_1_1FilterResult" kindref="compound">FilterResult</ref><sp/><ref refid="classista_1_1owl2_1_1OntologyFilter_1a00f2153862d854e1618bc9f8b24ad5b5" kindref="member">randomSample</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>seed<sp/>=<sp/>42)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structista_1_1owl2_1_1FilterResult" kindref="compound">FilterResult</ref><sp/><ref refid="classista_1_1owl2_1_1OntologyFilter_1a05fbcd33f210d57cdf321e0d96297b60" kindref="member">applyFilter</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structista_1_1owl2_1_1FilterCriteria" kindref="compound">FilterCriteria</ref>&amp;<sp/>criteria)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classista_1_1owl2_1_1OntologyFilter_1a7143654057351b6d135895b291887a97" kindref="member">OntologyFilter</ref>&amp;<sp/><ref refid="classista_1_1owl2_1_1OntologyFilter_1a5a68f5fed2201b121f54c872af137f1b" kindref="member">withIndividuals</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unordered_set&lt;IRI&gt;&amp;<sp/>iris);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classista_1_1owl2_1_1OntologyFilter_1a7143654057351b6d135895b291887a97" kindref="member">OntologyFilter</ref>&amp;<sp/><ref refid="classista_1_1owl2_1_1OntologyFilter_1acb0e23e9328763b75ddf35f858fa276a" kindref="member">withClasses</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unordered_set&lt;IRI&gt;&amp;<sp/>class_iris);</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classista_1_1owl2_1_1OntologyFilter_1a7143654057351b6d135895b291887a97" kindref="member">OntologyFilter</ref>&amp;<sp/><ref refid="classista_1_1owl2_1_1OntologyFilter_1a75f1abdc1d4e8031350a0e4cde907ea6" kindref="member">excludeIndividuals</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unordered_set&lt;IRI&gt;&amp;<sp/>iris);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classista_1_1owl2_1_1OntologyFilter_1a7143654057351b6d135895b291887a97" kindref="member">OntologyFilter</ref>&amp;<sp/><ref refid="classista_1_1owl2_1_1OntologyFilter_1a898402f739529104fe3288c67a945d1b" kindref="member">withMaxDepth</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>depth);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classista_1_1owl2_1_1OntologyFilter_1a7143654057351b6d135895b291887a97" kindref="member">OntologyFilter</ref>&amp;<sp/><ref refid="classista_1_1owl2_1_1OntologyFilter_1a888c96adeb52623f9ae2d980f2b284d6" kindref="member">includeClassHierarchy</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>include);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classista_1_1owl2_1_1OntologyFilter_1a7143654057351b6d135895b291887a97" kindref="member">OntologyFilter</ref>&amp;<sp/><ref refid="classista_1_1owl2_1_1OntologyFilter_1ac47d8b428dc9f048bf3d3544d92c01d1" kindref="member">includePropertyHierarchy</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>include);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classista_1_1owl2_1_1OntologyFilter_1a7143654057351b6d135895b291887a97" kindref="member">OntologyFilter</ref>&amp;<sp/><ref refid="classista_1_1owl2_1_1OntologyFilter_1a666abd422d7662f1adce40e97975c4f6" kindref="member">includeDeclarations</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>include);</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structista_1_1owl2_1_1FilterResult" kindref="compound">FilterResult</ref><sp/><ref refid="classista_1_1owl2_1_1OntologyFilter_1a42f58574eeb431335d08f914dd4cf7f1" kindref="member">execute</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="229" refid="classista_1_1owl2_1_1OntologyFilter_1aef35424e4000eaab2e5e9a5396b2a053" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;const<sp/>Ontology&gt;<sp/><ref refid="classista_1_1owl2_1_1OntologyFilter_1aef35424e4000eaab2e5e9a5396b2a053" kindref="member">getOntology</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ontology_;<sp/>}</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;const<sp/>Ontology&gt;<sp/>ontology_;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structista_1_1owl2_1_1FilterCriteria" kindref="compound">FilterCriteria</ref><sp/>criteria_;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Internal<sp/>helper<sp/>methods</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_set&lt;IRI&gt;<sp/>getAllIndividuals()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_set&lt;IRI&gt;<sp/>getIndividualsOfClass(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>&amp;<sp/>class_iri)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;IRI,<sp/>std::unordered_set&lt;IRI&gt;&gt;<sp/>buildAdjacencyList()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_set&lt;IRI&gt;<sp/>bfsTraversal(</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unordered_set&lt;IRI&gt;&amp;<sp/>seeds,</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>depth,</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unordered_map&lt;<ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>,<sp/>std::unordered_set&lt;IRI&gt;&gt;&amp;<sp/>adj_list)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_set&lt;IRI&gt;<sp/>findPath(</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>&amp;<sp/>start,</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>&amp;<sp/>end,</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unordered_map&lt;<ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>,<sp/>std::unordered_set&lt;IRI&gt;&gt;&amp;<sp/>adj_list)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>axiomReferencesIndividuals(</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceista_1_1owl2_1ae305b46823ac53f0c71aed391a90f835" kindref="member">AxiomPtr</ref>&amp;<sp/>axiom,</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unordered_set&lt;IRI&gt;&amp;<sp/>individuals)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_set&lt;IRI&gt;<sp/>extractIndividualsFromAxiom(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceista_1_1owl2_1ae305b46823ac53f0c71aed391a90f835" kindref="member">AxiomPtr</ref>&amp;<sp/>axiom)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structista_1_1owl2_1_1FilterResult" kindref="compound">FilterResult</ref><sp/>createFilteredOntology(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unordered_set&lt;IRI&gt;&amp;<sp/>individuals)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>addClassHierarchyAxioms(</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref>&amp;<sp/>target,</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unordered_set&lt;IRI&gt;&amp;<sp/>class_iris)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>addPropertyHierarchyAxioms(</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref>&amp;<sp/>target,</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unordered_set&lt;IRI&gt;&amp;<sp/>property_iris)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>addDeclarations(</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref>&amp;<sp/>target,</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unordered_set&lt;IRI&gt;&amp;<sp/>entity_iris)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>copyMetadata(<ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref>&amp;<sp/>target)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="313"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>owl2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>ista</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>ISTA_OWL2_ONTOLOGY_FILTER_HPP</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/projects/ista/lib/owl2/core/ontology_filter.hpp"/>
+  </compounddef>
+</doxygen>

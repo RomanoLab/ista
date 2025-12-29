@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="structista_1_1owl2_1_1RelationshipTypeConfig" kind="struct" language="C++" prot="public">
+    <compoundname>ista::owl2::RelationshipTypeConfig</compoundname>
+    <includes refid="csv__parser_8hpp" local="no">csv_parser.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structista_1_1owl2_1_1RelationshipTypeConfig_1a023457a50e6cce9ca08ec2649379b693" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ista::owl2::RelationshipTypeConfig::has_headers</definition>
+        <argsstring></argsstring>
+        <name>has_headers</name>
+        <qualifiedname>ista::owl2::RelationshipTypeConfig::has_headers</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" line="64" column="10" bodyfile="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" bodystart="64" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1CSVParser_1a7e78ff59edca8fd4340d39d226d8252c" compoundref="csv__parser_8cpp" startline="264" endline="383">ista::owl2::CSVParser::parse_relationship_type</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1RelationshipTypeConfig_1a79e3cca28b10a1fdab75e448c5cb4ccf" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &gt;</type>
+        <definition>std::optional&lt;IRI&gt; ista::owl2::RelationshipTypeConfig::subject_class_iri</definition>
+        <argsstring></argsstring>
+        <name>subject_class_iri</name>
+        <qualifiedname>ista::owl2::RelationshipTypeConfig::subject_class_iri</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" line="67" column="19" bodyfile="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1RelationshipTypeConfig_1a48432e04611a6aa4530122ea3bddceb1" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::RelationshipTypeConfig::subject_column_name</definition>
+        <argsstring></argsstring>
+        <name>subject_column_name</name>
+        <qualifiedname>ista::owl2::RelationshipTypeConfig::subject_column_name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" line="68" column="17" bodyfile="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" bodystart="68" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1CSVParser_1a7e78ff59edca8fd4340d39d226d8252c" compoundref="csv__parser_8cpp" startline="264" endline="383">ista::owl2::CSVParser::parse_relationship_type</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1RelationshipTypeConfig_1a63b377eae6b42f7a7e0764a1ffc086b7" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &gt;</type>
+        <definition>std::optional&lt;IRI&gt; ista::owl2::RelationshipTypeConfig::subject_match_property_iri</definition>
+        <argsstring></argsstring>
+        <name>subject_match_property_iri</name>
+        <qualifiedname>ista::owl2::RelationshipTypeConfig::subject_match_property_iri</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" line="69" column="19" bodyfile="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" bodystart="69" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1CSVParser_1a7e78ff59edca8fd4340d39d226d8252c" compoundref="csv__parser_8cpp" startline="264" endline="383">ista::owl2::CSVParser::parse_relationship_type</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1RelationshipTypeConfig_1a6777e55066492bca9eae5c4447f89d16" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &gt;</type>
+        <definition>std::optional&lt;IRI&gt; ista::owl2::RelationshipTypeConfig::object_class_iri</definition>
+        <argsstring></argsstring>
+        <name>object_class_iri</name>
+        <qualifiedname>ista::owl2::RelationshipTypeConfig::object_class_iri</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" line="72" column="19" bodyfile="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1RelationshipTypeConfig_1a4fd7c0a9b07393d3f899bf00f1d7b340" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::RelationshipTypeConfig::object_column_name</definition>
+        <argsstring></argsstring>
+        <name>object_column_name</name>
+        <qualifiedname>ista::owl2::RelationshipTypeConfig::object_column_name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" line="73" column="17" bodyfile="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" bodystart="73" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1CSVParser_1a7e78ff59edca8fd4340d39d226d8252c" compoundref="csv__parser_8cpp" startline="264" endline="383">ista::owl2::CSVParser::parse_relationship_type</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1RelationshipTypeConfig_1a4117b03a92fc3204bb99a63e54f21998" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &gt;</type>
+        <definition>std::optional&lt;IRI&gt; ista::owl2::RelationshipTypeConfig::object_match_property_iri</definition>
+        <argsstring></argsstring>
+        <name>object_match_property_iri</name>
+        <qualifiedname>ista::owl2::RelationshipTypeConfig::object_match_property_iri</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" line="74" column="19" bodyfile="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" bodystart="74" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1CSVParser_1a7e78ff59edca8fd4340d39d226d8252c" compoundref="csv__parser_8cpp" startline="264" endline="383">ista::owl2::CSVParser::parse_relationship_type</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1RelationshipTypeConfig_1a3642a19af76767cbf7c16fcdfb680aa1" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::RelationshipTypeConfig::filter_column</definition>
+        <argsstring></argsstring>
+        <name>filter_column</name>
+        <qualifiedname>ista::owl2::RelationshipTypeConfig::filter_column</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" line="77" column="17" bodyfile="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" bodystart="77" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1CSVParser_1a7e78ff59edca8fd4340d39d226d8252c" compoundref="csv__parser_8cpp" startline="264" endline="383">ista::owl2::CSVParser::parse_relationship_type</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1RelationshipTypeConfig_1aa56420db6bb6cbb7418b47e423ecc7c2" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::RelationshipTypeConfig::filter_value</definition>
+        <argsstring></argsstring>
+        <name>filter_value</name>
+        <qualifiedname>ista::owl2::RelationshipTypeConfig::filter_value</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" line="78" column="17" bodyfile="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" bodystart="78" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1CSVParser_1a7e78ff59edca8fd4340d39d226d8252c" compoundref="csv__parser_8cpp" startline="264" endline="383">ista::owl2::CSVParser::parse_relationship_type</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1RelationshipTypeConfig_1a106593938161f738f0589f6ba0f043b0" prot="public" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::function&lt; std::string(const std::string &amp;)&gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::function&lt;std::string(const std::string&amp;)&gt; &gt; ista::owl2::RelationshipTypeConfig::data_transforms</definition>
+        <argsstring></argsstring>
+        <name>data_transforms</name>
+        <qualifiedname>ista::owl2::RelationshipTypeConfig::data_transforms</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" line="81" column="24" bodyfile="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" bodystart="81" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1CSVParser_1a7e78ff59edca8fd4340d39d226d8252c" compoundref="csv__parser_8cpp" startline="264" endline="383">ista::owl2::CSVParser::parse_relationship_type</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structista_1_1owl2_1_1RelationshipTypeConfig_1a0f16687e868ee6be661ae04a92f9b696" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::RelationshipTypeConfig::RelationshipTypeConfig</definition>
+        <argsstring>()=default</argsstring>
+        <name>RelationshipTypeConfig</name>
+        <qualifiedname>ista::owl2::RelationshipTypeConfig::RelationshipTypeConfig</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" line="61" column="5"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Configuration for parsing relationship types from CSV files. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" line="59" column="1" bodyfile="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" bodystart="59" bodyend="82"/>
+    <listofallmembers>
+      <member refid="structista_1_1owl2_1_1RelationshipTypeConfig_1a106593938161f738f0589f6ba0f043b0" prot="public" virt="non-virtual"><scope>ista::owl2::RelationshipTypeConfig</scope><name>data_transforms</name></member>
+      <member refid="structista_1_1owl2_1_1RelationshipTypeConfig_1a3642a19af76767cbf7c16fcdfb680aa1" prot="public" virt="non-virtual"><scope>ista::owl2::RelationshipTypeConfig</scope><name>filter_column</name></member>
+      <member refid="structista_1_1owl2_1_1RelationshipTypeConfig_1aa56420db6bb6cbb7418b47e423ecc7c2" prot="public" virt="non-virtual"><scope>ista::owl2::RelationshipTypeConfig</scope><name>filter_value</name></member>
+      <member refid="structista_1_1owl2_1_1RelationshipTypeConfig_1a023457a50e6cce9ca08ec2649379b693" prot="public" virt="non-virtual"><scope>ista::owl2::RelationshipTypeConfig</scope><name>has_headers</name></member>
+      <member refid="structista_1_1owl2_1_1RelationshipTypeConfig_1a6777e55066492bca9eae5c4447f89d16" prot="public" virt="non-virtual"><scope>ista::owl2::RelationshipTypeConfig</scope><name>object_class_iri</name></member>
+      <member refid="structista_1_1owl2_1_1RelationshipTypeConfig_1a4fd7c0a9b07393d3f899bf00f1d7b340" prot="public" virt="non-virtual"><scope>ista::owl2::RelationshipTypeConfig</scope><name>object_column_name</name></member>
+      <member refid="structista_1_1owl2_1_1RelationshipTypeConfig_1a4117b03a92fc3204bb99a63e54f21998" prot="public" virt="non-virtual"><scope>ista::owl2::RelationshipTypeConfig</scope><name>object_match_property_iri</name></member>
+      <member refid="structista_1_1owl2_1_1RelationshipTypeConfig_1a0f16687e868ee6be661ae04a92f9b696" prot="public" virt="non-virtual"><scope>ista::owl2::RelationshipTypeConfig</scope><name>RelationshipTypeConfig</name></member>
+      <member refid="structista_1_1owl2_1_1RelationshipTypeConfig_1a79e3cca28b10a1fdab75e448c5cb4ccf" prot="public" virt="non-virtual"><scope>ista::owl2::RelationshipTypeConfig</scope><name>subject_class_iri</name></member>
+      <member refid="structista_1_1owl2_1_1RelationshipTypeConfig_1a48432e04611a6aa4530122ea3bddceb1" prot="public" virt="non-virtual"><scope>ista::owl2::RelationshipTypeConfig</scope><name>subject_column_name</name></member>
+      <member refid="structista_1_1owl2_1_1RelationshipTypeConfig_1a63b377eae6b42f7a7e0764a1ffc086b7" prot="public" virt="non-virtual"><scope>ista::owl2::RelationshipTypeConfig</scope><name>subject_match_property_iri</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

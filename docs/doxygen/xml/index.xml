@@ -1,0 +1,1011 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.15.0" xml:lang="en-US">
+  <compound refid="classista_1_1owl2_1_1Annotation" kind="class"><name>ista::owl2::Annotation</name>
+    <member refid="classista_1_1owl2_1_1Annotation_1a30e83aaa7b4a5d115c056ab91d8eb24a" kind="variable"><name>property_</name></member>
+    <member refid="classista_1_1owl2_1_1Annotation_1a25293d3ecdac8bbbcf7f864b0ed67863" kind="variable"><name>value_</name></member>
+    <member refid="classista_1_1owl2_1_1Annotation_1a5943843054eb2ebd00ff2ed244e40980" kind="variable"><name>annotations_</name></member>
+    <member refid="classista_1_1owl2_1_1Annotation_1ac89a82ca38a4bcfae4d5340f3e1fc8d8" kind="function"><name>Annotation</name></member>
+    <member refid="classista_1_1owl2_1_1Annotation_1a4fe0a4f158ad8d0d58ab3c49a17ca8d4" kind="function"><name>Annotation</name></member>
+    <member refid="classista_1_1owl2_1_1Annotation_1aab296595de159c472903197690f44f3a" kind="function"><name>getProperty</name></member>
+    <member refid="classista_1_1owl2_1_1Annotation_1a2ed25ac2beb679c9ccc677e682231ac9" kind="function"><name>getValue</name></member>
+    <member refid="classista_1_1owl2_1_1Annotation_1a60eadc33131c257038ffb03a862d4fc9" kind="function"><name>getAnnotations</name></member>
+    <member refid="classista_1_1owl2_1_1Annotation_1aa79465ed57a3ec04f2d205cc970dd22b" kind="function"><name>hasAnnotations</name></member>
+    <member refid="classista_1_1owl2_1_1Annotation_1a29094a1e139345b03a84044f958b8ded" kind="function"><name>setProperty</name></member>
+    <member refid="classista_1_1owl2_1_1Annotation_1adc83207f63cd685c0a7718710f32486c" kind="function"><name>setValue</name></member>
+    <member refid="classista_1_1owl2_1_1Annotation_1a5bbb6f6c235a9a1d6c6c4a1777de32fb" kind="function"><name>addAnnotation</name></member>
+    <member refid="classista_1_1owl2_1_1Annotation_1a6e9f9feeaf1891522743a64fbe4366ce" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1Annotation_1a3cbbf3b255d093946cf6595f8fe6ce60" kind="function"><name>getValueAsString</name></member>
+    <member refid="classista_1_1owl2_1_1Annotation_1a6ae10b8d1f25d8be31a1783fc592eb74" kind="function"><name>operator==</name></member>
+    <member refid="classista_1_1owl2_1_1Annotation_1a8e3cb14877a5c3f72ab811db3a83ea70" kind="function"><name>operator!=</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1AnnotationAssertion" kind="class"><name>ista::owl2::AnnotationAssertion</name>
+    <member refid="classista_1_1owl2_1_1AnnotationAssertion_1ab529edfd33a3f8b810f5204964a7d4e0" kind="variable"><name>property_</name></member>
+    <member refid="classista_1_1owl2_1_1AnnotationAssertion_1ad9dd57d05d348174512e55db573ce904" kind="variable"><name>subject_</name></member>
+    <member refid="classista_1_1owl2_1_1AnnotationAssertion_1abb892f4c7c2646e03e3a8d7ec0f1f5ea" kind="variable"><name>value_</name></member>
+    <member refid="classista_1_1owl2_1_1AnnotationAssertion_1ae9fb3b33dfa57bf93caae0c402c587d7" kind="function"><name>AnnotationAssertion</name></member>
+    <member refid="classista_1_1owl2_1_1AnnotationAssertion_1a92c88be822d09702bff2dba7534fdc83" kind="function"><name>getProperty</name></member>
+    <member refid="classista_1_1owl2_1_1AnnotationAssertion_1adeaf5ebf09e859b5aaadf0dc5f181bfe" kind="function"><name>getSubject</name></member>
+    <member refid="classista_1_1owl2_1_1AnnotationAssertion_1a31361319d63e27e212f7c93605296705" kind="function"><name>getValue</name></member>
+    <member refid="classista_1_1owl2_1_1AnnotationAssertion_1a0ac4aa97e3f200a89d0fbdf300075e8f" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1AnnotationAssertion_1a5a802bf9f305ae981ccfeee4872dab14" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="structAnnotationProperty" kind="struct"><name>AnnotationProperty</name>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1AnnotationProperty" kind="class"><name>ista::owl2::AnnotationProperty</name>
+    <member refid="classista_1_1owl2_1_1AnnotationProperty_1a75157d4f576856347017024853a6973f" kind="function"><name>AnnotationProperty</name></member>
+    <member refid="classista_1_1owl2_1_1AnnotationProperty_1a72e7d1f2df59ca59c8040d99ac8afd42" kind="function"><name>getEntityType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1AnnotationPropertyDomain" kind="class"><name>ista::owl2::AnnotationPropertyDomain</name>
+    <member refid="classista_1_1owl2_1_1AnnotationPropertyDomain_1a4b3b732a823274f1f03974c71ec4cefa" kind="variable"><name>property_</name></member>
+    <member refid="classista_1_1owl2_1_1AnnotationPropertyDomain_1a5623901b90dc778b91485c3de1eda8c3" kind="variable"><name>domain_</name></member>
+    <member refid="classista_1_1owl2_1_1AnnotationPropertyDomain_1a7067da98dd8d7ac27c20cb7f4f8fda1e" kind="function"><name>AnnotationPropertyDomain</name></member>
+    <member refid="classista_1_1owl2_1_1AnnotationPropertyDomain_1ad130ce87686836f07cd9681788d008ee" kind="function"><name>getProperty</name></member>
+    <member refid="classista_1_1owl2_1_1AnnotationPropertyDomain_1af09df17db629e19704e2f2c7bf618e2c" kind="function"><name>getDomain</name></member>
+    <member refid="classista_1_1owl2_1_1AnnotationPropertyDomain_1aa9db14f2a343beff11a73dc3557e4e30" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1AnnotationPropertyDomain_1a4937d399f0939fd3507cd624ee73c7a7" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1AnnotationPropertyRange" kind="class"><name>ista::owl2::AnnotationPropertyRange</name>
+    <member refid="classista_1_1owl2_1_1AnnotationPropertyRange_1add4e961f3954f1b5f18eceaad9d43a7e" kind="variable"><name>property_</name></member>
+    <member refid="classista_1_1owl2_1_1AnnotationPropertyRange_1aa8dbbf620a6b860db3037ea23141f648" kind="variable"><name>range_</name></member>
+    <member refid="classista_1_1owl2_1_1AnnotationPropertyRange_1a3215299f0647b9e68ebaa4f5e486a5cd" kind="function"><name>AnnotationPropertyRange</name></member>
+    <member refid="classista_1_1owl2_1_1AnnotationPropertyRange_1a1fd762ed78edad60dd9390e26a2a9c24" kind="function"><name>getProperty</name></member>
+    <member refid="classista_1_1owl2_1_1AnnotationPropertyRange_1a8b35d125ec8b511d2cc969d71bd59794" kind="function"><name>getRange</name></member>
+    <member refid="classista_1_1owl2_1_1AnnotationPropertyRange_1a2dadf60a46c9a24ad09c98eb6e1c40a1" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1AnnotationPropertyRange_1a3ea6d3fccb56ca4bc0847cc2259fe4d3" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="structAnonymousIndividual" kind="struct"><name>AnonymousIndividual</name>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1AnonymousIndividual" kind="class"><name>ista::owl2::AnonymousIndividual</name>
+    <member refid="classista_1_1owl2_1_1AnonymousIndividual_1a0c3d20ca4d350ffe70d63286122aa15f" kind="variable"><name>node_id_</name></member>
+    <member refid="classista_1_1owl2_1_1AnonymousIndividual_1ae2648c6c03bb4777cfdd43f3a900f6e5" kind="function"><name>AnonymousIndividual</name></member>
+    <member refid="classista_1_1owl2_1_1AnonymousIndividual_1a46897575ce6e97968b4ec986b9656379" kind="function"><name>getNodeID</name></member>
+    <member refid="classista_1_1owl2_1_1AnonymousIndividual_1a846588968b36c0a8c6465784084273bf" kind="function"><name>operator==</name></member>
+    <member refid="classista_1_1owl2_1_1AnonymousIndividual_1a00ddac9fd067a88df25470180d4ffddc" kind="function"><name>operator!=</name></member>
+    <member refid="classista_1_1owl2_1_1AnonymousIndividual_1ad4e1b75ebccd74738d8c15b1d9322392" kind="function"><name>operator&lt;</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1AsymmetricObjectProperty" kind="class"><name>ista::owl2::AsymmetricObjectProperty</name>
+    <member refid="classista_1_1owl2_1_1AsymmetricObjectProperty_1a6f6056c88fb91dcdcaf86d24901f684f" kind="variable"><name>property_</name></member>
+    <member refid="classista_1_1owl2_1_1AsymmetricObjectProperty_1a6650623de40a78840946db0dc76a8b3e" kind="function"><name>AsymmetricObjectProperty</name></member>
+    <member refid="classista_1_1owl2_1_1AsymmetricObjectProperty_1a69ac8ee5f91bb1ef49f3891601117e69" kind="function"><name>getProperty</name></member>
+    <member refid="classista_1_1owl2_1_1AsymmetricObjectProperty_1a0d4eff7057f13d9930cc0e8fc252f0ff" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1AsymmetricObjectProperty_1a6e970ee70309547d09f0053f66330bfe" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1Axiom" kind="class"><name>ista::owl2::Axiom</name>
+    <member refid="classista_1_1owl2_1_1Axiom_1a05b3b8e7ddc42b14d1d77830f0b4949b" kind="variable"><name>annotations_</name></member>
+    <member refid="classista_1_1owl2_1_1Axiom_1acdf39a5f1ada2ce68b0d230f4f4d1c32" kind="function"><name>~Axiom</name></member>
+    <member refid="classista_1_1owl2_1_1Axiom_1abb5141ba6bd01498e779edef9eeb11e4" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1Axiom_1abb223166f4ef93273628b162caab215a" kind="function"><name>getAxiomType</name></member>
+    <member refid="classista_1_1owl2_1_1Axiom_1a4711720ba16843d59d2bb4bbea3b59b1" kind="function"><name>getAnnotations</name></member>
+    <member refid="classista_1_1owl2_1_1Axiom_1a63abdbe0c16756478cc705e0e3cdc7b4" kind="function"><name>hasAnnotations</name></member>
+    <member refid="classista_1_1owl2_1_1Axiom_1ae1259860d3c95a2cb42fa4d993339b68" kind="function"><name>addAnnotation</name></member>
+    <member refid="classista_1_1owl2_1_1Axiom_1af9bbe00a1d3ff20aa1f04ae3a6ad41b4" kind="function"><name>setAnnotations</name></member>
+    <member refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" kind="function"><name>formatAnnotations</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder" kind="class"><name>ista::owl2::RDFXMLSerializer::Builder</name>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a546946c497fb70895092f49310760e84" kind="variable"><name>ontology_</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1ac5cbb105e713ca965e4a1ac07e134ead" kind="variable"><name>xml_</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a1f83927b6cce7009fdbf9f8fd7f1fa31" kind="variable"><name>namespaces_</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a1dfbd62f7dc8ef5a1f70b07388f7ed62" kind="variable"><name>blank_node_counter_</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a99a3166c7f767f195a4a2fc70df9ef62" kind="function"><name>Builder</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a611c52b2167b32584e7d3af1faf4c341" kind="function"><name>build</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a242d4d64aedec176eea86aa9a0bca14e" kind="function"><name>writeXMLDeclaration</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a8a5c5908339763fce2a92fe60779eea4" kind="function"><name>writeRDFHeader</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a515024fb7e0b505b3c3ae19bd4c47219" kind="function"><name>writeOntologyHeader</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a3619285c4c2304b2d196af40d9fcac89" kind="function"><name>writeAxioms</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1acbb598ad0be2ffda19748a846d3624f7" kind="function"><name>writeRDFFooter</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a0703b49074579a859a2a7d7e6f1ae4cd" kind="function"><name>writeDeclaration</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1aec9575e510cd4a6317978575fec51df2" kind="function"><name>writeSubClassOf</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1ab4b2bef7a5a57cd4f476b0ff7bb3c047" kind="function"><name>writeEquivalentClasses</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1aa1dbaf4085456561fc78c0d5d4085ed9" kind="function"><name>writeDisjointClasses</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a99f3a64afb2d4f6c04e910953135a298" kind="function"><name>writeClassAssertion</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1acbb1e64a702d7e874fb13492cfd54cb4" kind="function"><name>writeObjectPropertyAssertion</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a0e8c379733e1b3802147d72c46940d04" kind="function"><name>writeDataPropertyAssertion</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1ab276b8ae4bd5cb5e067a805e9c2ee131" kind="function"><name>writeSubObjectPropertyOf</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a1fd0fbd059fac70d1f7d39df962ff528" kind="function"><name>writeSubDataPropertyOf</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a281cf4035f55936d646ed303275a04c2" kind="function"><name>writeObjectPropertyDomain</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a055950c558b83fd8791a3fe6b8553200" kind="function"><name>writeObjectPropertyRange</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a3b8b66cc45ce92455b92b88771fedcb3" kind="function"><name>writeDataPropertyDomain</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a49ee33b9d0194fee589569dafb838503" kind="function"><name>writeDataPropertyRange</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a6d589ac2f759cc297a7ff6bf5592bb32" kind="function"><name>writeFunctionalObjectProperty</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1af9321f394bba0d6d60abcf428712bbd4" kind="function"><name>writeFunctionalDataProperty</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1ad4d58c4e488471297c0b7c635a00c6c2" kind="function"><name>writeInverseFunctionalObjectProperty</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a0d2a4c1fad89b74765c4c60fbf8b0d43" kind="function"><name>writeTransitiveObjectProperty</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a72f1f8623bb3614936a210a13889c135" kind="function"><name>writeSymmetricObjectProperty</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1acfc031e39d3e5aa79779f2013c07c948" kind="function"><name>writeAsymmetricObjectProperty</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a0cb588e6ba3b3eaaf7b46f04e3054ae6" kind="function"><name>writeReflexiveObjectProperty</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1aa30ea03beadf7ee1b14c80c191b2a7eb" kind="function"><name>writeIrreflexiveObjectProperty</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a878364920e95cbf5e0f3347c89db03c5" kind="function"><name>writeAnnotationAssertion</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a435332edf0b69c727e35888b1d43faeb" kind="function"><name>writeClassExpression</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1aa255da91d597302a98621c5dc78a5a86" kind="function"><name>getClassExpressionNodeID</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a26cd8429b846edf03ba9cdc2b8f9830b" kind="function"><name>escapeXML</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a4df3d0c149b2eff4b70f67ba5e800f51" kind="function"><name>getQName</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a711706a386a1948f2358c97f29e6b04b" kind="function"><name>getNamespacePrefix</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a940ae69ade346269b8bffd651bb5b742" kind="function"><name>registerStandardNamespaces</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a5d308fe86e837f58bad80044000de2b6" kind="function"><name>registerOntologyNamespaces</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1af615dae56eca363397bf9a32ff7c58c0" kind="function"><name>formatLiteral</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1a7f3095faf253814ee31fe0fad7685cfd" kind="function"><name>formatIndividual</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1afe6fd8f0db0eff3acd827383b9cc8245" kind="function"><name>getBlankNodeID</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1abf96fee54c06a7cf2904a906eb0dc6b2" kind="function"><name>writeAnnotations</name></member>
+  </compound>
+  <compound refid="structClass" kind="struct"><name>Class</name>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1Class" kind="class"><name>ista::owl2::Class</name>
+    <member refid="classista_1_1owl2_1_1Class_1a84ec930b22892c16f386e031244cf8fd" kind="function"><name>Class</name></member>
+    <member refid="classista_1_1owl2_1_1Class_1a9a2e16e50790d885501fb24fa02bf07c" kind="function"><name>getEntityType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1ClassAssertion" kind="class"><name>ista::owl2::ClassAssertion</name>
+    <member refid="classista_1_1owl2_1_1ClassAssertion_1a9d65cff83964417703daee6e154a3a3b" kind="variable"><name>class_expression_</name></member>
+    <member refid="classista_1_1owl2_1_1ClassAssertion_1abe9b0eb25ce6fb7c9bd2ab288fba2873" kind="variable"><name>individual_</name></member>
+    <member refid="classista_1_1owl2_1_1ClassAssertion_1a3ee4b40019ab4fe821d0a173a4ea3386" kind="function"><name>ClassAssertion</name></member>
+    <member refid="classista_1_1owl2_1_1ClassAssertion_1a4853fbed0a175a3c9c254cc57a87a914" kind="function"><name>getClassExpression</name></member>
+    <member refid="classista_1_1owl2_1_1ClassAssertion_1a6d7cabb0f33e3520619eea7c41fea871" kind="function"><name>getIndividual</name></member>
+    <member refid="classista_1_1owl2_1_1ClassAssertion_1a3c36d64aed2d453c39d11f2e6a93f1ef" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1ClassAssertion_1ade6a13b2dc0d1fbd1023c1a41a4339b1" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1ClassExpression" kind="class"><name>ista::owl2::ClassExpression</name>
+    <member refid="classista_1_1owl2_1_1ClassExpression_1a85c474cc91b72cc925bb7d13bfc3fc46" kind="function"><name>~ClassExpression</name></member>
+    <member refid="classista_1_1owl2_1_1ClassExpression_1ad4aeb7d012b1b53d20e6fb43cde7a1ea" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1ClassExpression_1a15e960b8ed26c64c517ea85f543806d9" kind="function"><name>getExpressionType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1CSVParseException" kind="class"><name>ista::owl2::CSVParseException</name>
+    <member refid="classista_1_1owl2_1_1CSVParseException_1ae25d6cd68efdbf77a304b59429471165" kind="function"><name>CSVParseException</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1CSVParser" kind="class"><name>ista::owl2::CSVParser</name>
+    <member refid="classista_1_1owl2_1_1CSVParser_1a8de09cd6c3dd98b2fac6435d42286353" kind="variable"><name>ontology_</name></member>
+    <member refid="classista_1_1owl2_1_1CSVParser_1a46ef6f7929e2b80c6a8bfa9bca5ad07e" kind="variable"><name>base_iri_</name></member>
+    <member refid="classista_1_1owl2_1_1CSVParser_1a8cf70ef0264df6d8107c5a6a225e1007" kind="variable"><name>iri_generator_</name></member>
+    <member refid="classista_1_1owl2_1_1CSVParser_1a88068b4d56754886a77fc08ec20ca263" kind="variable"><name>individual_cache_</name></member>
+    <member refid="classista_1_1owl2_1_1CSVParser_1ae853907065bc902b4cece36b0a86f271" kind="function"><name>CSVParser</name></member>
+    <member refid="classista_1_1owl2_1_1CSVParser_1ae03994dbd246e812aef90c4514e51b9e" kind="function"><name>parse_node_type</name></member>
+    <member refid="classista_1_1owl2_1_1CSVParser_1a7e78ff59edca8fd4340d39d226d8252c" kind="function"><name>parse_relationship_type</name></member>
+    <member refid="classista_1_1owl2_1_1CSVParser_1ab5d45428dedf17751afb321e97219d12" kind="function"><name>set_iri_generator</name></member>
+    <member refid="classista_1_1owl2_1_1CSVParser_1ab53c68167a748d4c0d75d9fe187eec55" kind="function"><name>get_ontology</name></member>
+    <member refid="classista_1_1owl2_1_1CSVParser_1a49f58b5466d62effaf0526c06b3c098c" kind="function"><name>parse_csv_line</name></member>
+    <member refid="classista_1_1owl2_1_1CSVParser_1a8858117be9e01e746947cbf2d11bdd22" kind="function"><name>create_individual_iri</name></member>
+    <member refid="classista_1_1owl2_1_1CSVParser_1a20bc4c4a28e88a684dd1b6c50a6e7370" kind="function"><name>find_individual_by_property</name></member>
+    <member refid="classista_1_1owl2_1_1CSVParser_1af2fcd034579f7e1c3a5f9d90c0f8f851" kind="function"><name>apply_transform</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1DataComplementOf" kind="class"><name>ista::owl2::DataComplementOf</name>
+    <member refid="classista_1_1owl2_1_1DataComplementOf_1ac064a20bbd39f13be56df2963c9589c3" kind="variable"><name>data_range_</name></member>
+    <member refid="classista_1_1owl2_1_1DataComplementOf_1a02335ee8e5b6061bfbb9d36c91d80150" kind="function"><name>DataComplementOf</name></member>
+    <member refid="classista_1_1owl2_1_1DataComplementOf_1acdc6576bbd77156ca36cfce6b1f69c56" kind="function"><name>getDataRange</name></member>
+    <member refid="classista_1_1owl2_1_1DataComplementOf_1a6a45b0d20ab1384b27f6b199bcdc18f1" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1DataComplementOf_1a83de3d2e709e781059923136d61c6fb1" kind="function"><name>getDataRangeType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1DataIntersectionOf" kind="class"><name>ista::owl2::DataIntersectionOf</name>
+    <member refid="classista_1_1owl2_1_1DataIntersectionOf_1a93fc6d6a5a8ee6c14619750678af031e" kind="variable"><name>operands_</name></member>
+    <member refid="classista_1_1owl2_1_1DataIntersectionOf_1a5544d9bf7a39f92a76f172a956358250" kind="function"><name>DataIntersectionOf</name></member>
+    <member refid="classista_1_1owl2_1_1DataIntersectionOf_1ad527e2b28e48eea98ac073ea25abe852" kind="function"><name>getOperands</name></member>
+    <member refid="classista_1_1owl2_1_1DataIntersectionOf_1a89be2bd5aec959e2484f81082a328ec8" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1DataIntersectionOf_1a3205e0ad92e1ca7f1cc8b69b5db2f89d" kind="function"><name>getDataRangeType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1DataOneOf" kind="class"><name>ista::owl2::DataOneOf</name>
+    <member refid="classista_1_1owl2_1_1DataOneOf_1a96327c135744e59e6d72e91d9e27eac9" kind="variable"><name>literals_</name></member>
+    <member refid="classista_1_1owl2_1_1DataOneOf_1aa7e4484cac805cbb7060415597da20a4" kind="function"><name>DataOneOf</name></member>
+    <member refid="classista_1_1owl2_1_1DataOneOf_1a9b1f2bd38c1f9a3c26d7006dec2a993a" kind="function"><name>getLiterals</name></member>
+    <member refid="classista_1_1owl2_1_1DataOneOf_1a7c5f8974c5fb85dfac591d6ff3341a44" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1DataOneOf_1a2f1aa4f201b63cd1284e627509dc234d" kind="function"><name>getDataRangeType</name></member>
+  </compound>
+  <compound refid="structDataProperty" kind="struct"><name>DataProperty</name>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1DataProperty" kind="class"><name>ista::owl2::DataProperty</name>
+    <member refid="classista_1_1owl2_1_1DataProperty_1a379102bb43332c1485202e991e06f524" kind="function"><name>DataProperty</name></member>
+    <member refid="classista_1_1owl2_1_1DataProperty_1a9651f2cc85fc4a72398cb50e1e16e889" kind="function"><name>getEntityType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1DataPropertyAssertion" kind="class"><name>ista::owl2::DataPropertyAssertion</name>
+    <member refid="classista_1_1owl2_1_1DataPropertyAssertion_1a6d848ee82944368ef7fe33421ca3c13b" kind="variable"><name>property_</name></member>
+    <member refid="classista_1_1owl2_1_1DataPropertyAssertion_1acf15971e1243863c14ba252689062d09" kind="variable"><name>source_</name></member>
+    <member refid="classista_1_1owl2_1_1DataPropertyAssertion_1a3871f4738839966ff3f0a3cad7d08285" kind="variable"><name>target_</name></member>
+    <member refid="classista_1_1owl2_1_1DataPropertyAssertion_1a34a44a22b780388888795c541df14560" kind="function"><name>DataPropertyAssertion</name></member>
+    <member refid="classista_1_1owl2_1_1DataPropertyAssertion_1a335264fe3c5c3d245a7a528388f35032" kind="function"><name>getProperty</name></member>
+    <member refid="classista_1_1owl2_1_1DataPropertyAssertion_1a23a3f37836344ac26dab8297a19e0104" kind="function"><name>getSource</name></member>
+    <member refid="classista_1_1owl2_1_1DataPropertyAssertion_1af679be45acf70dc3dd84f37ae3af8176" kind="function"><name>getTarget</name></member>
+    <member refid="classista_1_1owl2_1_1DataPropertyAssertion_1a079e0c091f4aaf0586ca95d5548e891d" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1DataPropertyAssertion_1a9008455c3f2ec7ce587b5193ca56000c" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1DataPropertyDomain" kind="class"><name>ista::owl2::DataPropertyDomain</name>
+    <member refid="classista_1_1owl2_1_1DataPropertyDomain_1a77d13e8eb5f2907203d2f336475bc679" kind="variable"><name>property_</name></member>
+    <member refid="classista_1_1owl2_1_1DataPropertyDomain_1a92ca0aa848131dae33596fa4cc3872b2" kind="variable"><name>domain_</name></member>
+    <member refid="classista_1_1owl2_1_1DataPropertyDomain_1a19bfe1f64b5c1145f1c98b576a848aeb" kind="function"><name>DataPropertyDomain</name></member>
+    <member refid="classista_1_1owl2_1_1DataPropertyDomain_1abc058787f1de68b95889563be873d732" kind="function"><name>getProperty</name></member>
+    <member refid="classista_1_1owl2_1_1DataPropertyDomain_1ad2e305e3ed826bc60a32c00e0e0ac54a" kind="function"><name>getDomain</name></member>
+    <member refid="classista_1_1owl2_1_1DataPropertyDomain_1a4f1c8ec2c2ea4e10e965d345f449eea4" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1DataPropertyDomain_1aae2933fbd461783ad877e4f86e5072ba" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1DataPropertyRange" kind="class"><name>ista::owl2::DataPropertyRange</name>
+    <member refid="classista_1_1owl2_1_1DataPropertyRange_1ad7248e529e25ccaf99395191cc58f3b5" kind="variable"><name>property_</name></member>
+    <member refid="classista_1_1owl2_1_1DataPropertyRange_1a056fc49e0ecf5846d940f38a19044a00" kind="variable"><name>range_</name></member>
+    <member refid="classista_1_1owl2_1_1DataPropertyRange_1a446a1e525e7af6c87100fd5069a502d5" kind="function"><name>DataPropertyRange</name></member>
+    <member refid="classista_1_1owl2_1_1DataPropertyRange_1a8dc9dc878b1449a1292da416c4d09978" kind="function"><name>getProperty</name></member>
+    <member refid="classista_1_1owl2_1_1DataPropertyRange_1a7b520d9605e1acda4c43dd64717ed8d6" kind="function"><name>getRange</name></member>
+    <member refid="classista_1_1owl2_1_1DataPropertyRange_1ae9fc2d350da0ca0f1af9b057be2352a2" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1DataPropertyRange_1a85ff95dc1d1471fadec734c32133812f" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1DataRange" kind="class"><name>ista::owl2::DataRange</name>
+    <member refid="classista_1_1owl2_1_1DataRange_1af96348d6c75791cb43e898a5b0a4d677" kind="function"><name>~DataRange</name></member>
+    <member refid="classista_1_1owl2_1_1DataRange_1abe52a263c7481aa3d078f895a62c7547" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1DataRange_1abc8e583db3cb378e0e055ecb5607288b" kind="function"><name>getDataRangeType</name></member>
+  </compound>
+  <compound refid="structDatatype" kind="struct"><name>Datatype</name>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1Datatype" kind="class"><name>ista::owl2::Datatype</name>
+    <member refid="classista_1_1owl2_1_1Datatype_1a054d33fb6fb38b2961d9b2b6a6d2960f" kind="function"><name>Datatype</name></member>
+    <member refid="classista_1_1owl2_1_1Datatype_1a39550519d342a045e0bc9ec84d9199d7" kind="function"><name>getEntityType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1DatatypeDefinition" kind="class"><name>ista::owl2::DatatypeDefinition</name>
+    <member refid="classista_1_1owl2_1_1DatatypeDefinition_1a689d8e7cb3fc2a263cf6216ce0177aa9" kind="variable"><name>datatype_</name></member>
+    <member refid="classista_1_1owl2_1_1DatatypeDefinition_1a13bdcc3e352f2f3da0f20bad4a7ffe7e" kind="variable"><name>data_range_</name></member>
+    <member refid="classista_1_1owl2_1_1DatatypeDefinition_1ac333e9292d884de6fa30de686cd79fc5" kind="function"><name>DatatypeDefinition</name></member>
+    <member refid="classista_1_1owl2_1_1DatatypeDefinition_1a3acf3ce1c31f4f64d887ba5afdf7e568" kind="function"><name>getDatatype</name></member>
+    <member refid="classista_1_1owl2_1_1DatatypeDefinition_1ad4a5937539166dde36639142b265d29c" kind="function"><name>getDataRange</name></member>
+    <member refid="classista_1_1owl2_1_1DatatypeDefinition_1a524af252494b739804e4934a47326412" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1DatatypeDefinition_1a5089ac6a212183498b659a43e90666e6" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1DatatypeRestriction" kind="class"><name>ista::owl2::DatatypeRestriction</name>
+    <member refid="classista_1_1owl2_1_1DatatypeRestriction_1a3335cf362c8a08673862c2d46543bb37" kind="typedef"><name>FacetRestriction</name></member>
+    <member refid="classista_1_1owl2_1_1DatatypeRestriction_1afbdb458094b3dbe0224c60ac5dca919d" kind="variable"><name>datatype_</name></member>
+    <member refid="classista_1_1owl2_1_1DatatypeRestriction_1a421ecb38a98e834d0ccadcffebd78cbc" kind="variable"><name>restrictions_</name></member>
+    <member refid="classista_1_1owl2_1_1DatatypeRestriction_1a7fe3ce4adcfee57af74e92b7aff16011" kind="function"><name>DatatypeRestriction</name></member>
+    <member refid="classista_1_1owl2_1_1DatatypeRestriction_1a51e18f9f67d1f87b5e9f32e9dabbb962" kind="function"><name>getDatatype</name></member>
+    <member refid="classista_1_1owl2_1_1DatatypeRestriction_1adb53c447927f729a50fba58d802c1866" kind="function"><name>getRestrictions</name></member>
+    <member refid="classista_1_1owl2_1_1DatatypeRestriction_1aac4a2eb16ba1cbd645d50ff3c7494af5" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1DatatypeRestriction_1ac09d7198020ab79608d77a2bc1816354" kind="function"><name>getDataRangeType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1DataUnionOf" kind="class"><name>ista::owl2::DataUnionOf</name>
+    <member refid="classista_1_1owl2_1_1DataUnionOf_1a12f8e6ba95d156bb6dab7b245ca453e4" kind="variable"><name>operands_</name></member>
+    <member refid="classista_1_1owl2_1_1DataUnionOf_1a274ccf3eacb0fa3ad2f7bff9e283b22e" kind="function"><name>DataUnionOf</name></member>
+    <member refid="classista_1_1owl2_1_1DataUnionOf_1ac66c132e06a900b69be1ecc97d8ede4f" kind="function"><name>getOperands</name></member>
+    <member refid="classista_1_1owl2_1_1DataUnionOf_1ad531465657ba2c6032de077b06a18542" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1DataUnionOf_1a1d67f4692c97823a39b8a12b7f324d00" kind="function"><name>getDataRangeType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1Declaration" kind="class"><name>ista::owl2::Declaration</name>
+    <member refid="classista_1_1owl2_1_1Declaration_1a7267779b3efd411e00f5ddbda89fb84a" kind="enum"><name>EntityType</name></member>
+    <member refid="classista_1_1owl2_1_1Declaration_1a7267779b3efd411e00f5ddbda89fb84aac18e8f1f430ea227dbd63d0d9a2bc5fb" kind="enumvalue"><name>CLASS</name></member>
+    <member refid="classista_1_1owl2_1_1Declaration_1a7267779b3efd411e00f5ddbda89fb84aa02ff2101e64dbed6c34c715aa8d5cfea" kind="enumvalue"><name>DATATYPE</name></member>
+    <member refid="classista_1_1owl2_1_1Declaration_1a7267779b3efd411e00f5ddbda89fb84aa15811145fc9372d5172d51bb90cff185" kind="enumvalue"><name>OBJECT_PROPERTY</name></member>
+    <member refid="classista_1_1owl2_1_1Declaration_1a7267779b3efd411e00f5ddbda89fb84aa1bba77ff4e31c40bd1bd9a2f4361435b" kind="enumvalue"><name>DATA_PROPERTY</name></member>
+    <member refid="classista_1_1owl2_1_1Declaration_1a7267779b3efd411e00f5ddbda89fb84aa977f6e2e17a16e1f652ff35ff6bb4baf" kind="enumvalue"><name>ANNOTATION_PROPERTY</name></member>
+    <member refid="classista_1_1owl2_1_1Declaration_1a7267779b3efd411e00f5ddbda89fb84aa8dd87ab6a2d5be88caea8d4ca1d74ea0" kind="enumvalue"><name>NAMED_INDIVIDUAL</name></member>
+    <member refid="classista_1_1owl2_1_1Declaration_1aa13edebd52ecd300dc8f4159a558210c" kind="variable"><name>entity_type_</name></member>
+    <member refid="classista_1_1owl2_1_1Declaration_1aa6f7e1b9720ceadc0ac01fa1ba2ac161" kind="variable"><name>iri_</name></member>
+    <member refid="classista_1_1owl2_1_1Declaration_1ac87edb020a5ac8bfd541f2e6fe8126a7" kind="function"><name>Declaration</name></member>
+    <member refid="classista_1_1owl2_1_1Declaration_1a90008e0e3c54c95a680c07f39fcaa489" kind="function"><name>getEntityType</name></member>
+    <member refid="classista_1_1owl2_1_1Declaration_1a3e662ba92d9830ad4ed9e10935490648" kind="function"><name>getIRI</name></member>
+    <member refid="classista_1_1owl2_1_1Declaration_1ac7e02d21b3d25e690b072cc925df2c10" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1Declaration_1a1c3a036598150a4bdd92dad6e9387212" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1DifferentIndividuals" kind="class"><name>ista::owl2::DifferentIndividuals</name>
+    <member refid="classista_1_1owl2_1_1DifferentIndividuals_1af6f14b29697eca89137310890b40e286" kind="variable"><name>individuals_</name></member>
+    <member refid="classista_1_1owl2_1_1DifferentIndividuals_1abb6f815da4a5cf9fc938dafba34268b2" kind="function"><name>DifferentIndividuals</name></member>
+    <member refid="classista_1_1owl2_1_1DifferentIndividuals_1aaa30effe701fb2bfe0e2b947411eefa3" kind="function"><name>getIndividuals</name></member>
+    <member refid="classista_1_1owl2_1_1DifferentIndividuals_1aee9e81afcad28d80b331d477a3f2f392" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1DifferentIndividuals_1a26a325932a8a93524bd1763c7b650160" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1DisjointClasses" kind="class"><name>ista::owl2::DisjointClasses</name>
+    <member refid="classista_1_1owl2_1_1DisjointClasses_1af3d59e0d3a03132952d11a7a367a5302" kind="variable"><name>class_expressions_</name></member>
+    <member refid="classista_1_1owl2_1_1DisjointClasses_1a9a862078981c442f51dadb496ca53fa6" kind="function"><name>DisjointClasses</name></member>
+    <member refid="classista_1_1owl2_1_1DisjointClasses_1aedd7e61574edd4f71dc590ab95b0357b" kind="function"><name>getClassExpressions</name></member>
+    <member refid="classista_1_1owl2_1_1DisjointClasses_1ac4070d4f7c08ad6a5e223aedd871c3c6" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1DisjointClasses_1afa8e4fdf66cc7a77a41d6db4f384b2c5" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1DisjointDataProperties" kind="class"><name>ista::owl2::DisjointDataProperties</name>
+    <member refid="classista_1_1owl2_1_1DisjointDataProperties_1a175206dde70b183637d53db0c3e7870e" kind="variable"><name>properties_</name></member>
+    <member refid="classista_1_1owl2_1_1DisjointDataProperties_1a6b4cf2a080f3369c49802ff4bb9209ba" kind="function"><name>DisjointDataProperties</name></member>
+    <member refid="classista_1_1owl2_1_1DisjointDataProperties_1ad0e13a532a9af7717f32d10594d49ec6" kind="function"><name>getProperties</name></member>
+    <member refid="classista_1_1owl2_1_1DisjointDataProperties_1a42d30abb866637b1b6fd1ae432fbbb36" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1DisjointDataProperties_1aa9cf60a4c340019e07edc6089f41dea7" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1DisjointObjectProperties" kind="class"><name>ista::owl2::DisjointObjectProperties</name>
+    <member refid="classista_1_1owl2_1_1DisjointObjectProperties_1a774d809d1e77e4bffbbde6d94eaf47d8" kind="variable"><name>properties_</name></member>
+    <member refid="classista_1_1owl2_1_1DisjointObjectProperties_1a7aa4c6b8dcdec1fbe15f205354909412" kind="function"><name>DisjointObjectProperties</name></member>
+    <member refid="classista_1_1owl2_1_1DisjointObjectProperties_1ab2c536833802a25d93f0349e831faf98" kind="function"><name>getProperties</name></member>
+    <member refid="classista_1_1owl2_1_1DisjointObjectProperties_1ad177ba54b243a38ec922de773743cc6e" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1DisjointObjectProperties_1a9f907ff832ed492b50b2a9c417db3c63" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1DisjointUnion" kind="class"><name>ista::owl2::DisjointUnion</name>
+    <member refid="classista_1_1owl2_1_1DisjointUnion_1af4a7bd7a663df9b2e23865907fe25c62" kind="variable"><name>class_</name></member>
+    <member refid="classista_1_1owl2_1_1DisjointUnion_1a85877bbd8b59566390a25edfcedd8f68" kind="variable"><name>class_expressions_</name></member>
+    <member refid="classista_1_1owl2_1_1DisjointUnion_1a0033af8d7898237787e9839ec8476827" kind="function"><name>DisjointUnion</name></member>
+    <member refid="classista_1_1owl2_1_1DisjointUnion_1a11bf1a2c12bfbdf8670d5f1e9e1aaed4" kind="function"><name>getClass</name></member>
+    <member refid="classista_1_1owl2_1_1DisjointUnion_1a1dc82d4b4dd1f6f86a35377437cf4bb5" kind="function"><name>getClassExpressions</name></member>
+    <member refid="classista_1_1owl2_1_1DisjointUnion_1aea2097ac09551729badc14499ac0253c" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1DisjointUnion_1a6b1436e01385a50a1a2932db3b3cd595" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="structEntity" kind="struct"><name>Entity</name>
+    <member refid="structEntity_1aa7296b46f78ff82279659e7abe2b4717" kind="variable"><name>iri</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1Entity" kind="class"><name>ista::owl2::Entity</name>
+    <member refid="classista_1_1owl2_1_1Entity_1a126a750eda40c881a5ea4b1fdb412ee0" kind="variable"><name>iri_</name></member>
+    <member refid="classista_1_1owl2_1_1Entity_1a111253c02830d3982cfee5b4b9cd1ac8" kind="function"><name>Entity</name></member>
+    <member refid="classista_1_1owl2_1_1Entity_1ae65d7a7f48db51fd0758ac1ae4291b4e" kind="function"><name>~Entity</name></member>
+    <member refid="classista_1_1owl2_1_1Entity_1a7450ac96112b23d4514cf60be3c3ac41" kind="function"><name>getIRI</name></member>
+    <member refid="classista_1_1owl2_1_1Entity_1a7eaf4cac49d6f5a3c97e138e7aed7f94" kind="function"><name>getEntityType</name></member>
+    <member refid="classista_1_1owl2_1_1Entity_1a0e207ab4f355df68e5adfe107668cec6" kind="function"><name>operator==</name></member>
+    <member refid="classista_1_1owl2_1_1Entity_1ab710382cee94c7bbaca255a4d62bffa9" kind="function"><name>operator!=</name></member>
+    <member refid="classista_1_1owl2_1_1Entity_1addc9bc76aa4acdd281d6a7e11a9d9afb" kind="function"><name>operator&lt;</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1EquivalentClasses" kind="class"><name>ista::owl2::EquivalentClasses</name>
+    <member refid="classista_1_1owl2_1_1EquivalentClasses_1a463a611bd2b910a94c14f7593229ee19" kind="variable"><name>class_expressions_</name></member>
+    <member refid="classista_1_1owl2_1_1EquivalentClasses_1a1cbc11dcdd11dd010acb08b78f262f70" kind="function"><name>EquivalentClasses</name></member>
+    <member refid="classista_1_1owl2_1_1EquivalentClasses_1a99d2f84dd418c1e286d8545ccd3d794f" kind="function"><name>getClassExpressions</name></member>
+    <member refid="classista_1_1owl2_1_1EquivalentClasses_1a6c7d5f82e216e1c42e4cef4d4bef427f" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1EquivalentClasses_1a66891bf9898a23cd264d860cb6af6d1c" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1EquivalentDataProperties" kind="class"><name>ista::owl2::EquivalentDataProperties</name>
+    <member refid="classista_1_1owl2_1_1EquivalentDataProperties_1a0da413a586448bc333074e1eb9354102" kind="variable"><name>properties_</name></member>
+    <member refid="classista_1_1owl2_1_1EquivalentDataProperties_1a6584b45514ceb9194decd37b1446641b" kind="function"><name>EquivalentDataProperties</name></member>
+    <member refid="classista_1_1owl2_1_1EquivalentDataProperties_1af1e96719d4c34d7705290562b37294da" kind="function"><name>getProperties</name></member>
+    <member refid="classista_1_1owl2_1_1EquivalentDataProperties_1a1dbf5c97b1187f3fe5e7b3d6b4b1f2d5" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1EquivalentDataProperties_1aa81e329a24716d970f8fc5e23015a74b" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1EquivalentObjectProperties" kind="class"><name>ista::owl2::EquivalentObjectProperties</name>
+    <member refid="classista_1_1owl2_1_1EquivalentObjectProperties_1a4d33c3cd434bafb2864b36aeb19cb6c5" kind="variable"><name>properties_</name></member>
+    <member refid="classista_1_1owl2_1_1EquivalentObjectProperties_1ae1bc2bfff2a8bd8c1746567326374b1b" kind="function"><name>EquivalentObjectProperties</name></member>
+    <member refid="classista_1_1owl2_1_1EquivalentObjectProperties_1a76cd58b8bebbe3cb549c091fe4dc68a2" kind="function"><name>getProperties</name></member>
+    <member refid="classista_1_1owl2_1_1EquivalentObjectProperties_1a3e9708afe6192ff26825d2d31d37657c" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1EquivalentObjectProperties_1ac18db073f6692c26d61161076b981035" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="structista_1_1owl2_1_1FilterCriteria" kind="struct"><name>ista::owl2::FilterCriteria</name>
+    <member refid="structista_1_1owl2_1_1FilterCriteria_1a164bd8f86d499bba709f0b50ade662fc" kind="variable"><name>include_individuals</name></member>
+    <member refid="structista_1_1owl2_1_1FilterCriteria_1aea7192979aae25c94580f410b1d8d7fb" kind="variable"><name>include_classes</name></member>
+    <member refid="structista_1_1owl2_1_1FilterCriteria_1a802cc8f0c0ce656cc8f3295907d16c36" kind="variable"><name>exclude_individuals</name></member>
+    <member refid="structista_1_1owl2_1_1FilterCriteria_1a5900e9c421d1f65fb8d9d82345e1f1bd" kind="variable"><name>property_value_filters</name></member>
+    <member refid="structista_1_1owl2_1_1FilterCriteria_1a54c61a9c7e8661f961dcec5a9db5cd31" kind="variable"><name>max_depth</name></member>
+    <member refid="structista_1_1owl2_1_1FilterCriteria_1a66c598f1946b9570608337c31239495c" kind="variable"><name>include_class_hierarchy</name></member>
+    <member refid="structista_1_1owl2_1_1FilterCriteria_1a7a5c4d40f40cf84da30e7dc197db0138" kind="variable"><name>include_property_hierarchy</name></member>
+    <member refid="structista_1_1owl2_1_1FilterCriteria_1ae1485fa30f50257dbf9c02532c2aa426" kind="variable"><name>include_declarations</name></member>
+    <member refid="structista_1_1owl2_1_1FilterCriteria_1abb64413e85f97a22742614663b34434e" kind="variable"><name>custom_filter</name></member>
+    <member refid="structista_1_1owl2_1_1FilterCriteria_1a7873082dfa32f27b54e35bc2f45aeb4e" kind="function"><name>FilterCriteria</name></member>
+  </compound>
+  <compound refid="structista_1_1owl2_1_1FilterResult" kind="struct"><name>ista::owl2::FilterResult</name>
+    <member refid="structista_1_1owl2_1_1FilterResult_1af871fff98d85e591dd2eb6913c952111" kind="variable"><name>ontology</name></member>
+    <member refid="structista_1_1owl2_1_1FilterResult_1ad1907ad70b0409e965cbd89bda38573e" kind="variable"><name>original_axiom_count</name></member>
+    <member refid="structista_1_1owl2_1_1FilterResult_1ac345e02ecf680342e8bf6332113b5a44" kind="variable"><name>filtered_axiom_count</name></member>
+    <member refid="structista_1_1owl2_1_1FilterResult_1a53667b08912df20ea6223d38dd238be4" kind="variable"><name>original_individual_count</name></member>
+    <member refid="structista_1_1owl2_1_1FilterResult_1ad15732fb4d1e1db5859a0b24ccf2b668" kind="variable"><name>filtered_individual_count</name></member>
+    <member refid="structista_1_1owl2_1_1FilterResult_1a43b58937641067a01abfd8f796845bc0" kind="variable"><name>included_individuals</name></member>
+    <member refid="structista_1_1owl2_1_1FilterResult_1abd389d51a8d3e0bc30c8e61f20905486" kind="function"><name>FilterResult</name></member>
+    <member refid="structista_1_1owl2_1_1FilterResult_1a8d19bb5c91f1a700381666a2c2f94bc7" kind="function"><name>FilterResult</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1FunctionalDataProperty" kind="class"><name>ista::owl2::FunctionalDataProperty</name>
+    <member refid="classista_1_1owl2_1_1FunctionalDataProperty_1a5da123f8cbac095726f4f89ea8ad9576" kind="variable"><name>property_</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalDataProperty_1ad35ed0d3e45a8ff431cc94c32d8a786a" kind="function"><name>FunctionalDataProperty</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalDataProperty_1aa71af5bb80386e8066a8ae71d640f9af" kind="function"><name>getProperty</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalDataProperty_1a787a1f036bfa2b191658650485a36648" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalDataProperty_1a4de6bbdd0ecd9bb41898cb8de4286cd7" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1FunctionalObjectProperty" kind="class"><name>ista::owl2::FunctionalObjectProperty</name>
+    <member refid="classista_1_1owl2_1_1FunctionalObjectProperty_1adb16acbf11238ea89688685055f31bb0" kind="variable"><name>property_</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalObjectProperty_1a01fadc64fe6cac86dfef9307c1ef88d3" kind="function"><name>FunctionalObjectProperty</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalObjectProperty_1aa21619b8624212782b367c1c923bd636" kind="function"><name>getProperty</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalObjectProperty_1ab19dc8410b3d80efb59a6aad9aaab535" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalObjectProperty_1a63b1adbe374dd5ca074d2009055b5248" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1FunctionalSyntaxSerializer" kind="class"><name>ista::owl2::FunctionalSyntaxSerializer</name>
+    <member refid="classista_1_1owl2_1_1FunctionalSyntaxSerializer_1a6a2ef523bf327716659cb98f0c51fdb6" kind="function"><name>serialize</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalSyntaxSerializer_1a737da1655be10815a7c6ab463e34debd" kind="function"><name>serializeToFile</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalSyntaxSerializer_1aa9be510f430db32b7bdda8abec35928c" kind="function"><name>serialize</name></member>
+  </compound>
+  <compound refid="structstd_1_1hash_3_01ista_1_1owl2_1_1AnnotationProperty_01_4" kind="struct"><name>std::hash&lt; ista::owl2::AnnotationProperty &gt;</name>
+    <member refid="structstd_1_1hash_3_01ista_1_1owl2_1_1AnnotationProperty_01_4_1aa2910d86cd12bd45a47a92776b279645" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="structstd_1_1hash_3_01ista_1_1owl2_1_1AnonymousIndividual_01_4" kind="struct"><name>std::hash&lt; ista::owl2::AnonymousIndividual &gt;</name>
+    <member refid="structstd_1_1hash_3_01ista_1_1owl2_1_1AnonymousIndividual_01_4_1a5e6b307eea93f5f8c11b6c3d43acc553" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="structstd_1_1hash_3_01ista_1_1owl2_1_1Class_01_4" kind="struct"><name>std::hash&lt; ista::owl2::Class &gt;</name>
+    <member refid="structstd_1_1hash_3_01ista_1_1owl2_1_1Class_01_4_1a00df7579ccc6b09ab96bc7e872263411" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="structstd_1_1hash_3_01ista_1_1owl2_1_1DataProperty_01_4" kind="struct"><name>std::hash&lt; ista::owl2::DataProperty &gt;</name>
+    <member refid="structstd_1_1hash_3_01ista_1_1owl2_1_1DataProperty_01_4_1a008347ce92f7af3ea491ee660bf49464" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="structstd_1_1hash_3_01ista_1_1owl2_1_1Datatype_01_4" kind="struct"><name>std::hash&lt; ista::owl2::Datatype &gt;</name>
+    <member refid="structstd_1_1hash_3_01ista_1_1owl2_1_1Datatype_01_4_1a5e7ff4c3326257f15d73916008101adb" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="structstd_1_1hash_3_01ista_1_1owl2_1_1IRI_01_4" kind="struct"><name>std::hash&lt; ista::owl2::IRI &gt;</name>
+    <member refid="structstd_1_1hash_3_01ista_1_1owl2_1_1IRI_01_4_1a6e3849474630f76742b38631ab943f4f" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="structstd_1_1hash_3_01ista_1_1owl2_1_1NamedIndividual_01_4" kind="struct"><name>std::hash&lt; ista::owl2::NamedIndividual &gt;</name>
+    <member refid="structstd_1_1hash_3_01ista_1_1owl2_1_1NamedIndividual_01_4_1a08fc8208e88a65045c37381aec7a257b" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="structstd_1_1hash_3_01ista_1_1owl2_1_1ObjectProperty_01_4" kind="struct"><name>std::hash&lt; ista::owl2::ObjectProperty &gt;</name>
+    <member refid="structstd_1_1hash_3_01ista_1_1owl2_1_1ObjectProperty_01_4_1aae0751dd29d6ad1e91704df3fef957d5" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1HasKey" kind="class"><name>ista::owl2::HasKey</name>
+    <member refid="classista_1_1owl2_1_1HasKey_1a0f41561c430f3e0c801c26b16585dd29" kind="variable"><name>class_expression_</name></member>
+    <member refid="classista_1_1owl2_1_1HasKey_1a1b39b420dafde1595c7727f27d5468f3" kind="variable"><name>object_properties_</name></member>
+    <member refid="classista_1_1owl2_1_1HasKey_1a64d3e3ba7f375842c5e3de49450f2cd1" kind="variable"><name>data_properties_</name></member>
+    <member refid="classista_1_1owl2_1_1HasKey_1aa3fd981682c5b492b2f1eac6d7e369c5" kind="function"><name>HasKey</name></member>
+    <member refid="classista_1_1owl2_1_1HasKey_1a65531931834c87265582716ff66f0f28" kind="function"><name>getClassExpression</name></member>
+    <member refid="classista_1_1owl2_1_1HasKey_1a56138b34cc26618fa209d2bd3c4a5b17" kind="function"><name>getObjectProperties</name></member>
+    <member refid="classista_1_1owl2_1_1HasKey_1a70b1c3e3f1d21f6657018f116b3ead79" kind="function"><name>getDataProperties</name></member>
+    <member refid="classista_1_1owl2_1_1HasKey_1a266dcf1edf0d1eaff73f251f0bf783ef" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1HasKey_1ab7744a8089dbab6c4aaa981258bfaa76" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="structIndividual" kind="struct"><name>Individual</name>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1InverseFunctionalObjectProperty" kind="class"><name>ista::owl2::InverseFunctionalObjectProperty</name>
+    <member refid="classista_1_1owl2_1_1InverseFunctionalObjectProperty_1a72b24e49104fe016796d3393c5806a3a" kind="variable"><name>property_</name></member>
+    <member refid="classista_1_1owl2_1_1InverseFunctionalObjectProperty_1abe0a44e3302dfdc635b411e7ffc56926" kind="function"><name>InverseFunctionalObjectProperty</name></member>
+    <member refid="classista_1_1owl2_1_1InverseFunctionalObjectProperty_1a62b02df8e43c50b03eb9e06ab16d7e88" kind="function"><name>getProperty</name></member>
+    <member refid="classista_1_1owl2_1_1InverseFunctionalObjectProperty_1ab0e926508339fa564ae0708cc42f2fa4" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1InverseFunctionalObjectProperty_1aa423998ee02e29a3b4a8c78e092d63d5" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1InverseObjectProperties" kind="class"><name>ista::owl2::InverseObjectProperties</name>
+    <member refid="classista_1_1owl2_1_1InverseObjectProperties_1a99c51d50183a6e7efd2b877866df2efc" kind="variable"><name>property1_</name></member>
+    <member refid="classista_1_1owl2_1_1InverseObjectProperties_1a9df5482fd023947c6c75bf5eedc3f9a3" kind="variable"><name>property2_</name></member>
+    <member refid="classista_1_1owl2_1_1InverseObjectProperties_1a571b08ea0dec191692cd4ff41a5dd333" kind="function"><name>InverseObjectProperties</name></member>
+    <member refid="classista_1_1owl2_1_1InverseObjectProperties_1aaeb8ce6176c8e603493434f810ef88b1" kind="function"><name>getProperty1</name></member>
+    <member refid="classista_1_1owl2_1_1InverseObjectProperties_1ae3eefde38deec75e420fd845d0cdae3a" kind="function"><name>getProperty2</name></member>
+    <member refid="classista_1_1owl2_1_1InverseObjectProperties_1ac6dcc206debbada8bed3a798e0b4ac0e" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1InverseObjectProperties_1ace4ed43d7bf4b3809ef844062fa186cc" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1IRI" kind="class"><name>ista::owl2::IRI</name>
+    <member refid="classista_1_1owl2_1_1IRI_1ae58d83b86bf9e88e72208fdb9f711560" kind="variable"><name>full_iri_</name></member>
+    <member refid="classista_1_1owl2_1_1IRI_1a3efde026ae5f2ed89c871174642400d3" kind="variable"><name>namespace_uri_</name></member>
+    <member refid="classista_1_1owl2_1_1IRI_1ae140262f666515d24e483b44df2a3cc8" kind="variable"><name>prefix_</name></member>
+    <member refid="classista_1_1owl2_1_1IRI_1ada717c5b36a8213a09b3df74717494e9" kind="variable"><name>local_name_</name></member>
+    <member refid="classista_1_1owl2_1_1IRI_1ababb4bda3a28f3ca4e99f873257b17af" kind="function"><name>IRI</name></member>
+    <member refid="classista_1_1owl2_1_1IRI_1a5ed55513a7c7b2b40e0169349ef49c5d" kind="function"><name>IRI</name></member>
+    <member refid="classista_1_1owl2_1_1IRI_1add16c12a986f833581a2e1ae39e63277" kind="function"><name>getFullIRI</name></member>
+    <member refid="classista_1_1owl2_1_1IRI_1a1aac1537b3171c2343175335be3771e0" kind="function"><name>getPrefix</name></member>
+    <member refid="classista_1_1owl2_1_1IRI_1ab6aa4aa646199419240557a2ab0ad18a" kind="function"><name>getLocalName</name></member>
+    <member refid="classista_1_1owl2_1_1IRI_1afe2dbb1cfdf037b8db3a35be3bcf984e" kind="function"><name>getNamespace</name></member>
+    <member refid="classista_1_1owl2_1_1IRI_1af84bcf15c9961c7961f2805063d2cd66" kind="function"><name>getAbbreviated</name></member>
+    <member refid="classista_1_1owl2_1_1IRI_1a3577aa9ddb89e031845c14abe90adb8a" kind="function"><name>isAbbreviated</name></member>
+    <member refid="classista_1_1owl2_1_1IRI_1a5297897bbced379f09b25abf5c79d7cc" kind="function"><name>operator==</name></member>
+    <member refid="classista_1_1owl2_1_1IRI_1a3b912e059ddf1419b95eab0428e41aab" kind="function"><name>operator!=</name></member>
+    <member refid="classista_1_1owl2_1_1IRI_1aa80a9308ff46b2133a3165f3a47d4da2" kind="function"><name>operator&lt;</name></member>
+    <member refid="classista_1_1owl2_1_1IRI_1abeda7230673f8bb46fd0608b8cce8382" kind="function"><name>toString</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1IrreflexiveObjectProperty" kind="class"><name>ista::owl2::IrreflexiveObjectProperty</name>
+    <member refid="classista_1_1owl2_1_1IrreflexiveObjectProperty_1ae85890af8ee04d7ca0c609327d4add24" kind="variable"><name>property_</name></member>
+    <member refid="classista_1_1owl2_1_1IrreflexiveObjectProperty_1ad1f122efb7d5c098c8ab74a0762cfa1a" kind="function"><name>IrreflexiveObjectProperty</name></member>
+    <member refid="classista_1_1owl2_1_1IrreflexiveObjectProperty_1a695d58790a431233680ad1c8024ec60d" kind="function"><name>getProperty</name></member>
+    <member refid="classista_1_1owl2_1_1IrreflexiveObjectProperty_1a75641fe57bce0eda3239a4112132925e" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1IrreflexiveObjectProperty_1a0318c750a3ffc409902efd1aaa4bae03" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig" kind="struct"><name>ista::owl2::reasoner::KoncludeConfig</name>
+    <member refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig_1ae71389f56db68c760e3e620e3a271ee0" kind="variable"><name>konclude_path</name></member>
+    <member refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig_1a39b70042d089f925703219b098b517ae" kind="variable"><name>worker_threads</name></member>
+    <member refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig_1acd76c21e87307b68aff707f170ac85c3" kind="variable"><name>verbose</name></member>
+    <member refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig_1acdcf863876ae463cdc152788dbbbd69c" kind="variable"><name>timeout_seconds</name></member>
+    <member refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig_1a7a5f4bb4efc74f7554aa50733e93b188" kind="variable"><name>temp_dir</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1reasoner_1_1KoncludeException" kind="class"><name>ista::owl2::reasoner::KoncludeException</name>
+    <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeException_1a70ecb650e1a304fb3909e5693fad9966" kind="function"><name>KoncludeException</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper" kind="class"><name>ista::owl2::reasoner::KoncludeWrapper</name>
+    <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a4d36b7a5ebad3a3839ee1330be9e3ce0" kind="variable"><name>config_</name></member>
+    <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1ad2fa2dcc98054d98f3e7dc3770ad1351" kind="variable"><name>last_output_file_</name></member>
+    <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a78beeb1f908f51aa6c59d4ceadbb7de1" kind="function"><name>KoncludeWrapper</name></member>
+    <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a2b43e80be18bb10992c21b4f40aa8cfb" kind="function"><name>KoncludeWrapper</name></member>
+    <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a47c94d32fbc9e88fa121de8813908a9e" kind="function"><name>set_konclude_path</name></member>
+    <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1acfffa42f7e10dc87adbf6e59d4dbfe6a" kind="function"><name>set_worker_threads</name></member>
+    <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a46524a9ea066a0e9a69750cf3da23b9e" kind="function"><name>set_verbose</name></member>
+    <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a4ca029c1caabd3850d1f582a606e3683" kind="function"><name>check_consistency</name></member>
+    <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a8940078ac089acaa0e97be4a8feba090" kind="function"><name>classify</name></member>
+    <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a01efb4e405f5f1851fe93dc319498cd7" kind="function"><name>realize</name></member>
+    <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a3a0dc62c67cce6d549583980a8dbb0ab" kind="function"><name>check_satisfiability</name></member>
+    <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a276452035d9dbd998157db9f5a446f55" kind="function"><name>load_inferred_ontology</name></member>
+    <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1af6eb3c0dc732f81bb6685e7c906ee385" kind="function"><name>get_config</name></member>
+    <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a5bc9bfd423578ca87261eb02ff228cd4" kind="function"><name>is_available</name></member>
+    <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a4f832683f3f0a6aaba009edba9f10474" kind="function"><name>execute_command</name></member>
+    <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1aa6a997d616c29081407b0f7542ace88d" kind="function"><name>save_to_temp_file</name></member>
+    <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a9273ea8200b8d9c5343ae7ee8c3db2cb" kind="function"><name>parse_timing_info</name></member>
+    <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a227d8bb68e3c55c04f6c9b978257db34" kind="function"><name>build_command</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1Literal" kind="class"><name>ista::owl2::Literal</name>
+    <member refid="classista_1_1owl2_1_1Literal_1a47fe80530c8f6c832e381854c2fc3788" kind="variable"><name>lexical_form_</name></member>
+    <member refid="classista_1_1owl2_1_1Literal_1a3093f7f0ca4fa03886bd418e3c8a0144" kind="variable"><name>datatype_</name></member>
+    <member refid="classista_1_1owl2_1_1Literal_1a63515228a98ca27f9d431bce8d4c4e24" kind="variable"><name>language_tag_</name></member>
+    <member refid="classista_1_1owl2_1_1Literal_1ab867743552ddbcddd7c033130fdfa2e9" kind="function"><name>Literal</name></member>
+    <member refid="classista_1_1owl2_1_1Literal_1a0a2e06ef44299c84034ef9cfb499f0b7" kind="function"><name>Literal</name></member>
+    <member refid="classista_1_1owl2_1_1Literal_1a56ddceb68c4792370cfff4377de3bd82" kind="function"><name>getLexicalForm</name></member>
+    <member refid="classista_1_1owl2_1_1Literal_1a1a401b1636dccb06149708938e1a3309" kind="function"><name>getDatatype</name></member>
+    <member refid="classista_1_1owl2_1_1Literal_1a2dd15c00eed524111fa1ce0d84b0ebfa" kind="function"><name>getLanguageTag</name></member>
+    <member refid="classista_1_1owl2_1_1Literal_1ae932960f494da87033ec95728e493f29" kind="function"><name>isTyped</name></member>
+    <member refid="classista_1_1owl2_1_1Literal_1aa69c95995f5ca2051548a199c8d00ca8" kind="function"><name>hasLanguageTag</name></member>
+    <member refid="classista_1_1owl2_1_1Literal_1a70858bd4ab042d4a23653e35170cd8f5" kind="function"><name>toString</name></member>
+    <member refid="classista_1_1owl2_1_1Literal_1a7ec4872adc79a2dffad376aaeca5c4dd" kind="function"><name>operator==</name></member>
+    <member refid="classista_1_1owl2_1_1Literal_1a907d905329c2b80bae5b64370423ce97" kind="function"><name>operator!=</name></member>
+    <member refid="classista_1_1owl2_1_1Literal_1a7162404fb52bdf89400155e2d05216bf" kind="function"><name>operator&lt;</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1NamedClass" kind="class"><name>ista::owl2::NamedClass</name>
+    <member refid="classista_1_1owl2_1_1NamedClass_1a161ce5807d151a3432017ae51630cebc" kind="variable"><name>class_</name></member>
+    <member refid="classista_1_1owl2_1_1NamedClass_1a8c547e5ef5eed41e0bf2f3226e66a060" kind="function"><name>NamedClass</name></member>
+    <member refid="classista_1_1owl2_1_1NamedClass_1a681383c2bc3230e5c250de95f56cdcfd" kind="function"><name>getClass</name></member>
+    <member refid="classista_1_1owl2_1_1NamedClass_1a9dee70ca5ffc86050e3652ef57f3a3e3" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1NamedClass_1a8042d2ee96f83ed10aa16519599a9539" kind="function"><name>getExpressionType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1NamedDatatype" kind="class"><name>ista::owl2::NamedDatatype</name>
+    <member refid="classista_1_1owl2_1_1NamedDatatype_1ac141469f60a8aa7c8b8a14b2a0693969" kind="variable"><name>datatype_</name></member>
+    <member refid="classista_1_1owl2_1_1NamedDatatype_1a95d658788be77e2aadae055cf6172ef8" kind="function"><name>NamedDatatype</name></member>
+    <member refid="classista_1_1owl2_1_1NamedDatatype_1ae636245b6d250f290487eef81f99530c" kind="function"><name>getDatatype</name></member>
+    <member refid="classista_1_1owl2_1_1NamedDatatype_1a4fb4582eaa82ffb09b4fdf032e5f6d6f" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1NamedDatatype_1a6847b1cf76ea668dc57981974b58a125" kind="function"><name>getDataRangeType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1NamedIndividual" kind="class"><name>ista::owl2::NamedIndividual</name>
+    <member refid="classista_1_1owl2_1_1NamedIndividual_1a7d5ac04e43d0bce6f419b2a751300318" kind="function"><name>NamedIndividual</name></member>
+    <member refid="classista_1_1owl2_1_1NamedIndividual_1aad3d10caf98591dbac670ba1e39d09b9" kind="function"><name>getEntityType</name></member>
+  </compound>
+  <compound refid="structNamedInvidual" kind="struct"><name>NamedInvidual</name>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1NegativeDataPropertyAssertion" kind="class"><name>ista::owl2::NegativeDataPropertyAssertion</name>
+    <member refid="classista_1_1owl2_1_1NegativeDataPropertyAssertion_1a0c7de6bdc070696e1c581bd26cc10ba5" kind="variable"><name>property_</name></member>
+    <member refid="classista_1_1owl2_1_1NegativeDataPropertyAssertion_1a1543fbe33636fca20f6aaa5075d44bcb" kind="variable"><name>source_</name></member>
+    <member refid="classista_1_1owl2_1_1NegativeDataPropertyAssertion_1af504c0cb2fbb9c8abbbcd9c542366ce2" kind="variable"><name>target_</name></member>
+    <member refid="classista_1_1owl2_1_1NegativeDataPropertyAssertion_1a409f680ba2c5cfc85f683fe56bc817ee" kind="function"><name>NegativeDataPropertyAssertion</name></member>
+    <member refid="classista_1_1owl2_1_1NegativeDataPropertyAssertion_1ad40001297dfbac018763a4433df67bec" kind="function"><name>getProperty</name></member>
+    <member refid="classista_1_1owl2_1_1NegativeDataPropertyAssertion_1adf19bc0741c5f4dc2b8e7fdba8c654c2" kind="function"><name>getSource</name></member>
+    <member refid="classista_1_1owl2_1_1NegativeDataPropertyAssertion_1a7e47c1dfb3237db0eebaee15c0c77e1a" kind="function"><name>getTarget</name></member>
+    <member refid="classista_1_1owl2_1_1NegativeDataPropertyAssertion_1ab6e6fba098c7c7b8a2f2ee109c49ed5f" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1NegativeDataPropertyAssertion_1a2421a4b753e4c5d2c6d7d1db9fa9d446" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1NegativeObjectPropertyAssertion" kind="class"><name>ista::owl2::NegativeObjectPropertyAssertion</name>
+    <member refid="classista_1_1owl2_1_1NegativeObjectPropertyAssertion_1af0e7f3cb857fa5a30be14e2b8b13c98c" kind="variable"><name>property_</name></member>
+    <member refid="classista_1_1owl2_1_1NegativeObjectPropertyAssertion_1a62c00db1481ed4d3470e786d5a5e5db4" kind="variable"><name>source_</name></member>
+    <member refid="classista_1_1owl2_1_1NegativeObjectPropertyAssertion_1a9cec7db9e53e70ecf87d96e789de891e" kind="variable"><name>target_</name></member>
+    <member refid="classista_1_1owl2_1_1NegativeObjectPropertyAssertion_1adf422dd4e57a52c8376c8ea0400d3fed" kind="function"><name>NegativeObjectPropertyAssertion</name></member>
+    <member refid="classista_1_1owl2_1_1NegativeObjectPropertyAssertion_1aac259f20b81c2de866b9bbfcc734b3d8" kind="function"><name>getProperty</name></member>
+    <member refid="classista_1_1owl2_1_1NegativeObjectPropertyAssertion_1ab016f587c56d94391ed25474223bec4a" kind="function"><name>getSource</name></member>
+    <member refid="classista_1_1owl2_1_1NegativeObjectPropertyAssertion_1a621f7e7da8ccc29f9ae280e0557e8d80" kind="function"><name>getTarget</name></member>
+    <member refid="classista_1_1owl2_1_1NegativeObjectPropertyAssertion_1af0f0c10b47fc87ae4dc7c39b602bc08d" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1NegativeObjectPropertyAssertion_1a77e98400c4a3aee87022350a630d0406" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="structista_1_1owl2_1_1NodeTypeConfig" kind="struct"><name>ista::owl2::NodeTypeConfig</name>
+    <member refid="structista_1_1owl2_1_1NodeTypeConfig_1ad4bfb1fbddd64bc813e487e411ecf660" kind="variable"><name>iri_column_name</name></member>
+    <member refid="structista_1_1owl2_1_1NodeTypeConfig_1a6367adba07cb50cdcfa2e7b73684a48e" kind="variable"><name>has_headers</name></member>
+    <member refid="structista_1_1owl2_1_1NodeTypeConfig_1ae0a6fb01a7c7d05ffb9577d68385fdb1" kind="variable"><name>data_property_map</name></member>
+    <member refid="structista_1_1owl2_1_1NodeTypeConfig_1a3412952d8318699f855ab1712a488c07" kind="variable"><name>data_transforms</name></member>
+    <member refid="structista_1_1owl2_1_1NodeTypeConfig_1a1668e1f388d6eecb84253fea83e9e867" kind="variable"><name>filter_column</name></member>
+    <member refid="structista_1_1owl2_1_1NodeTypeConfig_1aa51f04504b65a160c74b033ca75871b2" kind="variable"><name>filter_value</name></member>
+    <member refid="structista_1_1owl2_1_1NodeTypeConfig_1a8a626d06b65c19cfca146839bf034e57" kind="variable"><name>merge_mode</name></member>
+    <member refid="structista_1_1owl2_1_1NodeTypeConfig_1ad7307172f1b8a1a188794b47aa21c6f5" kind="variable"><name>merge_property_iri</name></member>
+    <member refid="structista_1_1owl2_1_1NodeTypeConfig_1a5d6e7c1debdf7a1fb32597618d4718b7" kind="variable"><name>merge_column_name</name></member>
+    <member refid="structista_1_1owl2_1_1NodeTypeConfig_1a9ae09b3dca146068752e82bdc9354e76" kind="function"><name>NodeTypeConfig</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1ObjectAllValuesFrom" kind="class"><name>ista::owl2::ObjectAllValuesFrom</name>
+    <member refid="classista_1_1owl2_1_1ObjectAllValuesFrom_1a07b9c3debf72c35068f7e96fbdf24beb" kind="variable"><name>property_</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectAllValuesFrom_1afb393c7901fbdefa6ecc31f9e8c74ca6" kind="variable"><name>filler_</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectAllValuesFrom_1a7bf72f119c40a81fa0480fe2da039bae" kind="function"><name>ObjectAllValuesFrom</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectAllValuesFrom_1aa393467f3e7574278c194b11eae9207e" kind="function"><name>getProperty</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectAllValuesFrom_1a0e49e5a269e79904baec8dfaa1356e1f" kind="function"><name>getFiller</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectAllValuesFrom_1a088ff8684e235ec4b1abee45a1278049" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectAllValuesFrom_1a55fbf41cac32151cf186d68e6b849426" kind="function"><name>getExpressionType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1ObjectIntersectionOf" kind="class"><name>ista::owl2::ObjectIntersectionOf</name>
+    <member refid="classista_1_1owl2_1_1ObjectIntersectionOf_1aa01a4832615713d504a90c705663e4d8" kind="variable"><name>operands_</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectIntersectionOf_1a8a5f9962bca2a3c1d6187a5e0f2ecdb6" kind="function"><name>ObjectIntersectionOf</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectIntersectionOf_1abd4d647e6323bad84f1a428a171f9483" kind="function"><name>getOperands</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectIntersectionOf_1a3cf4be2dbac3c64c496e72c67a8e494c" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectIntersectionOf_1ad158cfdfd406b372395fbc73911f3864" kind="function"><name>getExpressionType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1ObjectProperty" kind="class"><name>ista::owl2::ObjectProperty</name>
+    <member refid="classista_1_1owl2_1_1ObjectProperty_1a865d508a59c2c81ee03e1d10094d6de8" kind="function"><name>ObjectProperty</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectProperty_1a2eb8596592e38b1555fb2b83e2a85672" kind="function"><name>getEntityType</name></member>
+  </compound>
+  <compound refid="structObjectProperty" kind="struct"><name>ObjectProperty</name>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1ObjectPropertyAssertion" kind="class"><name>ista::owl2::ObjectPropertyAssertion</name>
+    <member refid="classista_1_1owl2_1_1ObjectPropertyAssertion_1a1b875407630d08cc04e75ca9c0792a1a" kind="variable"><name>property_</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectPropertyAssertion_1a655e817fbabb0151eb4ca35640a6e25d" kind="variable"><name>source_</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectPropertyAssertion_1a983955f4500629b0dd834e80bfa54484" kind="variable"><name>target_</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectPropertyAssertion_1a7039057808460f966f638c8ec28f2ac6" kind="function"><name>ObjectPropertyAssertion</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectPropertyAssertion_1a74f60f61eb950cc8578557a12e4850a2" kind="function"><name>getProperty</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectPropertyAssertion_1a49a845f40e140dd85c281fb2c160f932" kind="function"><name>getSource</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectPropertyAssertion_1abddab0e7326556abc3af48fcb5259313" kind="function"><name>getTarget</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectPropertyAssertion_1ae4c6b42880350575471635f53c251d19" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectPropertyAssertion_1ac3e5dfa43978af56338eeb9019718553" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1ObjectPropertyDomain" kind="class"><name>ista::owl2::ObjectPropertyDomain</name>
+    <member refid="classista_1_1owl2_1_1ObjectPropertyDomain_1af5fc7b040019192d4a1235c1a2841832" kind="variable"><name>property_</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectPropertyDomain_1a85e663e696d9015c4adae6d38d2741c2" kind="variable"><name>domain_</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectPropertyDomain_1af816e36d0783bef17f778d1d6be8820c" kind="function"><name>ObjectPropertyDomain</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectPropertyDomain_1a8c6d9071700f10d948fb436527217bee" kind="function"><name>getProperty</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectPropertyDomain_1a3c9fa0abd9bd8e9cedf75a824ec32d7a" kind="function"><name>getDomain</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectPropertyDomain_1adda9ab3b3ca9f34c795c586644cdd9d1" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectPropertyDomain_1abb5ce1dbdce02e4c615b2c955c5a288e" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1ObjectPropertyRange" kind="class"><name>ista::owl2::ObjectPropertyRange</name>
+    <member refid="classista_1_1owl2_1_1ObjectPropertyRange_1a4c7ae8609f55150db8921a6db6a9a384" kind="variable"><name>property_</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectPropertyRange_1a8931eaf3629618d40f664bebae3b7484" kind="variable"><name>range_</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectPropertyRange_1a74e388833bf7add187f0826fd8682bff" kind="function"><name>ObjectPropertyRange</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectPropertyRange_1ad16c35b4c2e7f150e824706ec4a71185" kind="function"><name>getProperty</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectPropertyRange_1a14b89f2634c53663d3193474e2e01c23" kind="function"><name>getRange</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectPropertyRange_1aa1295af4afa2346d00079415adc0d431" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectPropertyRange_1a8b3ff99d99deae32b0e1e3ee75aa9ea4" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1ObjectSomeValuesFrom" kind="class"><name>ista::owl2::ObjectSomeValuesFrom</name>
+    <member refid="classista_1_1owl2_1_1ObjectSomeValuesFrom_1a4c021fc36c74045faeb9a8b4edb276e4" kind="variable"><name>property_</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectSomeValuesFrom_1ab07958bfd39ddbbb22780b9edede7f76" kind="variable"><name>filler_</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectSomeValuesFrom_1aa6dd92aa3192e44c884f4873c1463557" kind="function"><name>ObjectSomeValuesFrom</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectSomeValuesFrom_1a266a987da471f023f44cb685ff1b5005" kind="function"><name>getProperty</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectSomeValuesFrom_1aee6afdbe1daf50b6f6f1c6d7f83ac06a" kind="function"><name>getFiller</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectSomeValuesFrom_1a72e1c567a0f8e65091c1a56e0de0f168" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectSomeValuesFrom_1af72162bb0e901428faa9f107922655fe" kind="function"><name>getExpressionType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1ObjectUnionOf" kind="class"><name>ista::owl2::ObjectUnionOf</name>
+    <member refid="classista_1_1owl2_1_1ObjectUnionOf_1a88c3c74c3d4add5388ed0950d3acd81b" kind="variable"><name>operands_</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectUnionOf_1ad0fe0700362196cba6ddac93d0870625" kind="function"><name>ObjectUnionOf</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectUnionOf_1a5561b6f3937188c734b98ffe8c54add7" kind="function"><name>getOperands</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectUnionOf_1abe8c01ea4467f26477a4e2562fe7cf90" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1ObjectUnionOf_1adefd6ee8441c9f2a936d0c6d5247b4f5" kind="function"><name>getExpressionType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1Ontology" kind="class"><name>ista::owl2::Ontology</name>
+    <member refid="classista_1_1owl2_1_1Ontology_1a7037d2a28084fc0fd1d8572845f7f322" kind="variable"><name>ontology_iri_</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1ab9b5a426d48c517cc2161019c377bbbd" kind="variable"><name>version_iri_</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a68598d913b6fe7aed0999afa194d28d4" kind="variable"><name>imports_</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a9bc4777e46c038542d375b696d4d009b" kind="variable"><name>ontology_annotations_</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1ae560804ca9b01b653230dc82d064dc4a" kind="variable"><name>prefix_to_namespace_</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a8ab6e846f5554c3beb41449c186e1a45" kind="variable"><name>namespace_to_prefix_</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1aa75b6394bbcbdfd68dc3e9565e102e71" kind="variable"><name>axioms_</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a90d1287e6f7833e204316b228c208240" kind="function"><name>Ontology</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a9ddb7eb4b99bfad4cc49c6e8b6168650" kind="function"><name>Ontology</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1ad5f9ef9f2a1b6f50671717cfa1271021" kind="function"><name>Ontology</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a6d0e91b569042123bfaa3f0f50a47866" kind="function"><name>~Ontology</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1aa06397dd98c67f3b66a2f5e2a2473e1d" kind="function"><name>getOntologyIRI</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1ae39978737af14aa86783a90030b2e6f3" kind="function"><name>setOntologyIRI</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1abbc3d0c7c79885c9bb3c4a91925d2bd2" kind="function"><name>getVersionIRI</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a2105b7111827d718876a69b1aaacd354" kind="function"><name>setVersionIRI</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a776e97b4f81e585e23e44e01bd625a6f" kind="function"><name>getImports</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a9b4669972793a84feb54f776da6cf9c0" kind="function"><name>addImport</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1ae36b1a94708e6956b6bf74276e1573aa" kind="function"><name>removeImport</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1afdab584ca0f4efdbc033544cb5a27a90" kind="function"><name>hasImport</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a913f794f65a6a694fee0eedd1c9026bd" kind="function"><name>getOntologyAnnotations</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a85c4bcb533987f0aa7ab6fef0562e204" kind="function"><name>addOntologyAnnotation</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a0dbefe6498a02f54ba05360ce5643273" kind="function"><name>setOntologyAnnotations</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a413a66bc09fd7a6a406de212703edac4" kind="function"><name>clearOntologyAnnotations</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a5d4759c58c914ddcf9d26adbb2ae4821" kind="function"><name>registerPrefix</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a62c043f7eeb443dad024e52d482e79ae" kind="function"><name>getNamespaceForPrefix</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a2b1dbc8297c0cd8bdcca920330bf29e3" kind="function"><name>getPrefixForNamespace</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a1ddb72efc5c657427f3eaed5badbd6e6" kind="function"><name>getPrefixMap</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a5856de70b8d63d0b2e5d03440b6d0ddc" kind="function"><name>removePrefix</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1ac108b62dbebd3b924b0ab5b4e078b101" kind="function"><name>clearPrefixes</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1ae0c1d302cdfbc753b1fd721dad2e5c72" kind="function"><name>addAxiom</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a16687f276f636b625c0ea32d258125ea" kind="function"><name>removeAxiom</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1ad164565597fe673144c79f0d778a3635" kind="function"><name>containsAxiom</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a304594adb433e2efec19f6c576b234ea" kind="function"><name>getAxioms</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a2cda64d88748c1cc24b4959f68afbc9a" kind="function"><name>clearAxioms</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a5d36d4fee838ec30be5614930275be33" kind="function"><name>getDeclarationAxioms</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a24ee02b421098f5c1eb17c5edc97c57a" kind="function"><name>getClassAxioms</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a7ea6a599f0fce06f7b6fc63d9d758059" kind="function"><name>getObjectPropertyAxioms</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a65b0dc430354667afcaed8ce6ae12993" kind="function"><name>getDataPropertyAxioms</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1adc6e66f7b4896fcc5688c83cec083bfa" kind="function"><name>getAssertionAxioms</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1aad322912a37cc9e96586577397e6cbb1" kind="function"><name>getAnnotationAxioms</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1afe2ca53667c56ba8f6b6667ae1cdf93d" kind="function"><name>getSubClassAxiomsForSubClass</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1afc7ad1023981940d5bb997ab23bacd59" kind="function"><name>getSubClassAxiomsForSuperClass</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1afbea71fc3fb0d640a36cf768fcf14bd1" kind="function"><name>getEquivalentClassesAxioms</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a21557c821220cbff341db72864a6bfa0" kind="function"><name>getDisjointClassesAxioms</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a1c4ca5e159a5500bc60d6c433a0a411f" kind="function"><name>getSubObjectPropertyAxioms</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1aebd57fe6329ac257ceac639f987f9dab" kind="function"><name>getSubDataPropertyAxioms</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a0b83890fe6b03bd11dec3eec7feb8714" kind="function"><name>getClassAssertions</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a379fc42774fd69ac2d371d7cd5e29ffe" kind="function"><name>getObjectPropertyAssertions</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a6af7a822e59a953f1f11ff34f8c3c2a8" kind="function"><name>getDataPropertyAssertions</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a6ed785e3937a7d923648c49ce9a75089" kind="function"><name>getClasses</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1ab34c29d56999157d02b88d8c3732a3eb" kind="function"><name>getObjectProperties</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a82a4d15fd1673cab83edfeb7a6826e23" kind="function"><name>getDataProperties</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a1006342790878e9bae434febd283351d" kind="function"><name>getAnnotationProperties</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a4bdfb670409150935f13c0d601244c97" kind="function"><name>getIndividuals</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a36e88ed26c9b1cad92716e683823d446" kind="function"><name>getDatatypes</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1aedb054d380c6fa7deb015f49150e91ef" kind="function"><name>containsClass</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a2c5817b7faec430aa3906e34e60bfa8e" kind="function"><name>containsObjectProperty</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a5a65720646781685a85792bd73923aca" kind="function"><name>containsDataProperty</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a8728d5a18d8ba5753e34a1ea653d35af" kind="function"><name>containsAnnotationProperty</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a5ade8ff527c246ac2a8aea02cd0aaf7b" kind="function"><name>containsIndividual</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a14c42a5963a2d2a0ecc0c2d3fa046fd3" kind="function"><name>containsDatatype</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a506dcf3e7f2680ec3c4ec699cc9a77cc" kind="function"><name>getAxiomCount</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a11cdc927f6ddc386025ff0e0d410ab89" kind="function"><name>getEntityCount</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a9c2523f0f285088a5feb529de8127feb" kind="function"><name>getClassCount</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a2662c949ca02a59613294b15961198f3" kind="function"><name>getObjectPropertyCount</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a5341aa7a01a720b66e13440bf7f28c36" kind="function"><name>getDataPropertyCount</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a09636f4dfae8da859918854327e05cfd" kind="function"><name>getIndividualCount</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1ab2647568576b66db9c3e610ceb9be7ea" kind="function"><name>getStatistics</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a1e42513679e7d6340b68b0b1a8f77b55" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a6669c4413bea23f464ea23b4ea4fd3e2" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a225834906bceea69d0ae3b37fa5b2e2c" kind="function"><name>createSubgraph</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1ac137744891c0214127facaac23013b16" kind="function"><name>getIndividualsOfClass</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a1b4b0cebf3f0a08142223a8dec60d641" kind="function"><name>getNeighbors</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a701278c21bea7a0d09857bccf7505b6b" kind="function"><name>hasPath</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1ac844b751e78e5ed8db0c0d17fd0fec10" kind="function"><name>initializeStandardPrefixes</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a3d755c6a85b48400c2437405a98f8900" kind="function"><name>isClassAxiom</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1ad147c0d88be35dcf78356051c6cffd0d" kind="function"><name>isObjectPropertyAxiom</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a7e7e9c8682b02252746cb8e63ccc6f70" kind="function"><name>isDataPropertyAxiom</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a1effe050752d839c4e37e58f204ee9e9" kind="function"><name>isAssertionAxiom</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a3e4989c3891c5b635ffc8c3ef326bd4f" kind="function"><name>isAnnotationAxiom</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1OntologyFilter" kind="class"><name>ista::owl2::OntologyFilter</name>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1ad5e0765e3465ad335ea4d9b681eee02c" kind="variable"><name>ontology_</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1a8a7a81ea998c3436b63f0e581cc289a2" kind="variable"><name>criteria_</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1a7143654057351b6d135895b291887a97" kind="function"><name>OntologyFilter</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1a7c6058f61917b34ee12ac3e600f5d1c3" kind="function"><name>OntologyFilter</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1a07975b01d94c1a58008728892c77f60b" kind="function"><name>filterByIndividuals</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1a6f6d0a43b2a623ad17cf80e8a0eff87b" kind="function"><name>filterByClasses</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1a1e8f46ed127f1d4c19f0cdce53adcb0d" kind="function"><name>filterByProperty</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1aa9bb64a055d688ee2012c389df99c5f9" kind="function"><name>filterByObjectProperty</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1a97f9a68e6632707e6b50238cf9e57faa" kind="function"><name>extractNeighborhood</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1a419895577ae3e0375f90ee0904040fbc" kind="function"><name>extractNeighborhood</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1a11640efd18c237dcd1742cc07b52c65e" kind="function"><name>extractPath</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1a00f2153862d854e1618bc9f8b24ad5b5" kind="function"><name>randomSample</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1a05fbcd33f210d57cdf321e0d96297b60" kind="function"><name>applyFilter</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1a5a68f5fed2201b121f54c872af137f1b" kind="function"><name>withIndividuals</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1acb0e23e9328763b75ddf35f858fa276a" kind="function"><name>withClasses</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1a75f1abdc1d4e8031350a0e4cde907ea6" kind="function"><name>excludeIndividuals</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1a898402f739529104fe3288c67a945d1b" kind="function"><name>withMaxDepth</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1a888c96adeb52623f9ae2d980f2b284d6" kind="function"><name>includeClassHierarchy</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1ac47d8b428dc9f048bf3d3544d92c01d1" kind="function"><name>includePropertyHierarchy</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1a666abd422d7662f1adce40e97975c4f6" kind="function"><name>includeDeclarations</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1a42f58574eeb431335d08f914dd4cf7f1" kind="function"><name>execute</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1aef35424e4000eaab2e5e9a5396b2a053" kind="function"><name>getOntology</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1a1e50060e7d9bb34b82e3731fd2f67127" kind="function"><name>getAllIndividuals</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1a16a45b4bdbcbbd29874511bc45161b94" kind="function"><name>getIndividualsOfClass</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1a3a68e5352cc8b7aa3b1e8666cdd8836e" kind="function"><name>buildAdjacencyList</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1aef152e0bb00743472edaea6773957821" kind="function"><name>bfsTraversal</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1a9bb1b404f5e8bc314ed9ea2e94a4f57d" kind="function"><name>findPath</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1a6b609bc7135852e74a88550360644852" kind="function"><name>axiomReferencesIndividuals</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1aa3a435e0b5d9a6862a41876c78673645" kind="function"><name>extractIndividualsFromAxiom</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1a5befc5d8a9d5051b27f7caa0fb0b1491" kind="function"><name>createFilteredOntology</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1a0730b687680f64ede65a983c3293532f" kind="function"><name>addClassHierarchyAxioms</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1a7faa521a9b5f9038cef7c24a09110e07" kind="function"><name>addPropertyHierarchyAxioms</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1ad712044479c3788938255ed4b4a5e4af" kind="function"><name>addDeclarations</name></member>
+    <member refid="classista_1_1owl2_1_1OntologyFilter_1a6cf29292370190260724f1f4d9eb17e7" kind="function"><name>copyMetadata</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser" kind="class"><name>ista::owl2::RDFXMLParser::Parser</name>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ac043cbcd946c9b4e7b2e6dc3fbf4a854" kind="variable"><name>content_</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a3b3b5e5d9c1e5880cd42fe5241a5ed88" kind="variable"><name>doc_</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a36533d4e012922a2f4d37fca7c86d5bc" kind="variable"><name>rdf_root_</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1aae5f15308bb03cdb98f63b19237fd60e" kind="variable"><name>namespaces_</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ac7e0c236463ea9698fd42373ea62603d" kind="variable"><name>RDF_NS</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ae69435d5a46ed252fdecc24aec70f857" kind="variable"><name>RDFS_NS</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a628b9036d9ef979c2101847f6b665211" kind="variable"><name>OWL_NS</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a62193f4d45b75cb40098766c82111a6b" kind="variable"><name>XSD_NS</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ad9fed486cfb1c7bfd77f5cf48a07fd22" kind="function"><name>Parser</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1aaac251c56dba2e7b97a4a05f4e590c0d" kind="function"><name>parse</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a74c0829d469fb4299c16ab54fc1c747c" kind="function"><name>extractNamespaces</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a6775a08e0cd6dbc8cfc3ba5986c0bcff" kind="function"><name>resolveIRI</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a4c016b95780d15ad26b5f3e3d9803f20" kind="function"><name>getAttributeIRI</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1add980afbc8cab09fdeeb68752b41ee88" kind="function"><name>getOptionalAttributeIRI</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a3bf4d160d1475e0a223ca11f26bbe9f0" kind="function"><name>parseOntologyHeader</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a94fe3e45f97fe7e3733eb25ecc38994c" kind="function"><name>parseOntologyAnnotation</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a0b3401a2c3ad7b104ba3967f3cb8dbd7" kind="function"><name>parseDeclarations</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ae5669512ce3760a23e0caf57b3bb9233" kind="function"><name>parseAxioms</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ab93f37b811a618f7d91b47552990a8b9" kind="function"><name>parseClassAxioms</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a5914ce680a88f63164c10ea05bb9ecf8" kind="function"><name>parseSubClassOf</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a45791411185c66b551b4e9a77df8cc0d" kind="function"><name>parseEquivalentClass</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a6616cf29db0d19a27b931a37b4bd2dc3" kind="function"><name>parseDisjointClasses</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a88488db509096e654d7fc169fcd5dd1a" kind="function"><name>parseObjectPropertyAxioms</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a7c244c38078567f118a99c0f76fc840d" kind="function"><name>parseDataPropertyAxioms</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ad3a444dbe91683c45d7e4afface34fd7" kind="function"><name>parseIndividualAxioms</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1aef5af3d7d75eeef9997ebc9697ed37c1" kind="function"><name>parseDescriptionAxioms</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a4e75903be35bb27b2885225db2d198d0" kind="function"><name>parsePropertyAssertion</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a96a9959c76723923086f99ebee71f110" kind="function"><name>parseClassExpression</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1acb71a548f0a68a114453357af86c3ac4" kind="function"><name>parseComplexClassExpression</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1aded2e386bce3faf42d7787a9e3727354" kind="function"><name>parseRestriction</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a61e1f22da30423267471c6bc341e7221" kind="function"><name>parseIntersectionOf</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ab37b5b1edec3fa965c9046734576a437" kind="function"><name>parseUnionOf</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ae6d940764fbfb595a86ea41eb923e861" kind="function"><name>parseAnnotations</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ac941ee6319fa82cb365a07026e69b654" kind="function"><name>parseAnnotationValue</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a87637981caf21f381c82d0bb025ea690" kind="function"><name>parseLiteral</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ac920ffe83e899463073594200437a7d9" kind="function"><name>resolveNodeName</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1RDFXMLParseException" kind="class"><name>ista::owl2::RDFXMLParseException</name>
+    <member refid="classista_1_1owl2_1_1RDFXMLParseException_1aee49285111f06812c368bb838d9c330b" kind="function"><name>RDFXMLParseException</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1RDFXMLParser" kind="class"><name>ista::owl2::RDFXMLParser</name>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1a7d1d842fd843bca9e5f369a562c74518" kind="function"><name>parse</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLParser_1afc1445c4e5fbaab711f50cff7540dafa" kind="function"><name>parseFromFile</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1RDFXMLSerializer" kind="class"><name>ista::owl2::RDFXMLSerializer</name>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1a5c1ca964be2422c0455f078e26389611" kind="function"><name>serialize</name></member>
+    <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1a58ed16c49f43b65e7090f80c0a244435" kind="function"><name>serializeToFile</name></member>
+  </compound>
+  <compound refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult" kind="struct"><name>ista::owl2::reasoner::ReasoningResult</name>
+    <member refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult_1a6ec510c0be0c89cb46b96f27364c22fe" kind="variable"><name>success</name></member>
+    <member refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult_1ace94e3f5c5eb9491781968594f864077" kind="variable"><name>is_consistent</name></member>
+    <member refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult_1a03e96f0c6ac8f8e112c94e7e12dea1fa" kind="variable"><name>error_message</name></member>
+    <member refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult_1affeafe4f2f00905c89d37f2adcdf60cd" kind="variable"><name>inferred_axioms</name></member>
+    <member refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult_1acef1c3fac6d2eb1225969800b21556e1" kind="variable"><name>reasoning_time_seconds</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1ReflexiveObjectProperty" kind="class"><name>ista::owl2::ReflexiveObjectProperty</name>
+    <member refid="classista_1_1owl2_1_1ReflexiveObjectProperty_1a13361f47e04bf7ede33da2e8a593eaf4" kind="variable"><name>property_</name></member>
+    <member refid="classista_1_1owl2_1_1ReflexiveObjectProperty_1a97e0eb2a60a91547025546e40aa165b1" kind="function"><name>ReflexiveObjectProperty</name></member>
+    <member refid="classista_1_1owl2_1_1ReflexiveObjectProperty_1abcd36a8c17f4ae5a3ed37ade79a989ed" kind="function"><name>getProperty</name></member>
+    <member refid="classista_1_1owl2_1_1ReflexiveObjectProperty_1a973ff5ca73796b26fb0a7abb1e8d0d07" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1ReflexiveObjectProperty_1acba1fe01ec29b681de01e17fb2edf93c" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="structista_1_1owl2_1_1RelationshipTypeConfig" kind="struct"><name>ista::owl2::RelationshipTypeConfig</name>
+    <member refid="structista_1_1owl2_1_1RelationshipTypeConfig_1a023457a50e6cce9ca08ec2649379b693" kind="variable"><name>has_headers</name></member>
+    <member refid="structista_1_1owl2_1_1RelationshipTypeConfig_1a79e3cca28b10a1fdab75e448c5cb4ccf" kind="variable"><name>subject_class_iri</name></member>
+    <member refid="structista_1_1owl2_1_1RelationshipTypeConfig_1a48432e04611a6aa4530122ea3bddceb1" kind="variable"><name>subject_column_name</name></member>
+    <member refid="structista_1_1owl2_1_1RelationshipTypeConfig_1a63b377eae6b42f7a7e0764a1ffc086b7" kind="variable"><name>subject_match_property_iri</name></member>
+    <member refid="structista_1_1owl2_1_1RelationshipTypeConfig_1a6777e55066492bca9eae5c4447f89d16" kind="variable"><name>object_class_iri</name></member>
+    <member refid="structista_1_1owl2_1_1RelationshipTypeConfig_1a4fd7c0a9b07393d3f899bf00f1d7b340" kind="variable"><name>object_column_name</name></member>
+    <member refid="structista_1_1owl2_1_1RelationshipTypeConfig_1a4117b03a92fc3204bb99a63e54f21998" kind="variable"><name>object_match_property_iri</name></member>
+    <member refid="structista_1_1owl2_1_1RelationshipTypeConfig_1a3642a19af76767cbf7c16fcdfb680aa1" kind="variable"><name>filter_column</name></member>
+    <member refid="structista_1_1owl2_1_1RelationshipTypeConfig_1aa56420db6bb6cbb7418b47e423ecc7c2" kind="variable"><name>filter_value</name></member>
+    <member refid="structista_1_1owl2_1_1RelationshipTypeConfig_1a106593938161f738f0589f6ba0f043b0" kind="variable"><name>data_transforms</name></member>
+    <member refid="structista_1_1owl2_1_1RelationshipTypeConfig_1a0f16687e868ee6be661ae04a92f9b696" kind="function"><name>RelationshipTypeConfig</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1SameIndividual" kind="class"><name>ista::owl2::SameIndividual</name>
+    <member refid="classista_1_1owl2_1_1SameIndividual_1a59d3518f904d733c9a713b12b25bfa3f" kind="variable"><name>individuals_</name></member>
+    <member refid="classista_1_1owl2_1_1SameIndividual_1a6a7d3ab4c6b5c87cacf5bf2ef05d02cf" kind="function"><name>SameIndividual</name></member>
+    <member refid="classista_1_1owl2_1_1SameIndividual_1a8aca375eca6323bc5adfcf2acce6e104" kind="function"><name>getIndividuals</name></member>
+    <member refid="classista_1_1owl2_1_1SameIndividual_1a6cbb4f114dca10be0a2c526678098e92" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1SameIndividual_1a8fc659af2b499a2947205f99ad91e491" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1SubAnnotationPropertyOf" kind="class"><name>ista::owl2::SubAnnotationPropertyOf</name>
+    <member refid="classista_1_1owl2_1_1SubAnnotationPropertyOf_1a27b675d4046d159e19abed2e805c9b61" kind="variable"><name>sub_property_</name></member>
+    <member refid="classista_1_1owl2_1_1SubAnnotationPropertyOf_1a5fc576a63125d4cd4e06c16021c2a1f4" kind="variable"><name>super_property_</name></member>
+    <member refid="classista_1_1owl2_1_1SubAnnotationPropertyOf_1a0c1fddd5904c47158c3863cf0b8c5908" kind="function"><name>SubAnnotationPropertyOf</name></member>
+    <member refid="classista_1_1owl2_1_1SubAnnotationPropertyOf_1aa3230af9f4407ee2ea9d8f69bb05a707" kind="function"><name>getSubProperty</name></member>
+    <member refid="classista_1_1owl2_1_1SubAnnotationPropertyOf_1adb1d664fbe3bc6de4edcb509d22b91b5" kind="function"><name>getSuperProperty</name></member>
+    <member refid="classista_1_1owl2_1_1SubAnnotationPropertyOf_1a07b15da9891f892156c2213de6a5669e" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1SubAnnotationPropertyOf_1af6f1c886cc79339bf1050ea37bd47606" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1SubClassOf" kind="class"><name>ista::owl2::SubClassOf</name>
+    <member refid="classista_1_1owl2_1_1SubClassOf_1a95d30323f7b40f7c1f920c0fb5299af5" kind="variable"><name>subclass_</name></member>
+    <member refid="classista_1_1owl2_1_1SubClassOf_1aa88fa58fc34e9dc6afb13551e87ad256" kind="variable"><name>superclass_</name></member>
+    <member refid="classista_1_1owl2_1_1SubClassOf_1a4f6a3f5c07a8814c8e928287e8ab0b36" kind="function"><name>SubClassOf</name></member>
+    <member refid="classista_1_1owl2_1_1SubClassOf_1a164ecfab63e4e8b6bd9f69f1154e61de" kind="function"><name>getSubClass</name></member>
+    <member refid="classista_1_1owl2_1_1SubClassOf_1a8429e8c8e071673d8d0054b432a0168b" kind="function"><name>getSuperClass</name></member>
+    <member refid="classista_1_1owl2_1_1SubClassOf_1a55da35c4aa36d26a296448bde8762f56" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1SubClassOf_1a59ecbb99b8c7110b9f1f345f8b025f9d" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1SubDataPropertyOf" kind="class"><name>ista::owl2::SubDataPropertyOf</name>
+    <member refid="classista_1_1owl2_1_1SubDataPropertyOf_1a303dd2f2eda40d442f28f5aa3cfefe82" kind="variable"><name>sub_property_</name></member>
+    <member refid="classista_1_1owl2_1_1SubDataPropertyOf_1a79cc203ba5e334ef3a47c6ea19541b67" kind="variable"><name>super_property_</name></member>
+    <member refid="classista_1_1owl2_1_1SubDataPropertyOf_1a514fa24d3c527c4aaa49cd90711f6e16" kind="function"><name>SubDataPropertyOf</name></member>
+    <member refid="classista_1_1owl2_1_1SubDataPropertyOf_1aec7f0ddf1bb46dd29ffa0612190b2e9f" kind="function"><name>getSubProperty</name></member>
+    <member refid="classista_1_1owl2_1_1SubDataPropertyOf_1ae27bb2a766f772c6e2ba59cfa699263a" kind="function"><name>getSuperProperty</name></member>
+    <member refid="classista_1_1owl2_1_1SubDataPropertyOf_1a8eadcb7d4945afaac4a39cc2400f4c6c" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1SubDataPropertyOf_1a2c9272fb349ea00d878a5bd6cd23433b" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1SubObjectPropertyOf" kind="class"><name>ista::owl2::SubObjectPropertyOf</name>
+    <member refid="classista_1_1owl2_1_1SubObjectPropertyOf_1a98a2a417da99295aa46f44e73f6e3d5d" kind="variable"><name>sub_property_</name></member>
+    <member refid="classista_1_1owl2_1_1SubObjectPropertyOf_1a0c5237727516ae6fa42f291834f80b0a" kind="variable"><name>property_chain_</name></member>
+    <member refid="classista_1_1owl2_1_1SubObjectPropertyOf_1a43f49db3029fe0202cffb687071cba7a" kind="variable"><name>super_property_</name></member>
+    <member refid="classista_1_1owl2_1_1SubObjectPropertyOf_1a395f480e8af6d94bbc52884f2e1ea226" kind="function"><name>SubObjectPropertyOf</name></member>
+    <member refid="classista_1_1owl2_1_1SubObjectPropertyOf_1ac6861dad02fa338d8886485012741d8e" kind="function"><name>SubObjectPropertyOf</name></member>
+    <member refid="classista_1_1owl2_1_1SubObjectPropertyOf_1a39ddbdfcbf8f246f51fe37f9f954a2d4" kind="function"><name>getSubProperty</name></member>
+    <member refid="classista_1_1owl2_1_1SubObjectPropertyOf_1ae21db405c388779d6821550c2a6a1565" kind="function"><name>getSuperProperty</name></member>
+    <member refid="classista_1_1owl2_1_1SubObjectPropertyOf_1a72c1f4658bca0158305c60b91452be5e" kind="function"><name>getPropertyChain</name></member>
+    <member refid="classista_1_1owl2_1_1SubObjectPropertyOf_1a94bd7d4fe50ccc202a1df040a07cf38e" kind="function"><name>isPropertyChain</name></member>
+    <member refid="classista_1_1owl2_1_1SubObjectPropertyOf_1ae390a1267baa6f73ce37e7fb2c5fe324" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1SubObjectPropertyOf_1ac1b6bbb8368fa6c18564bfdb6fff405c" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1SymmetricObjectProperty" kind="class"><name>ista::owl2::SymmetricObjectProperty</name>
+    <member refid="classista_1_1owl2_1_1SymmetricObjectProperty_1af65e84773e542c5569c159377c32a865" kind="variable"><name>property_</name></member>
+    <member refid="classista_1_1owl2_1_1SymmetricObjectProperty_1a3b5e3e440610a85198ad0f6f09a00ef6" kind="function"><name>SymmetricObjectProperty</name></member>
+    <member refid="classista_1_1owl2_1_1SymmetricObjectProperty_1ad66aa36740b512b391fbdebea2b4cc18" kind="function"><name>getProperty</name></member>
+    <member refid="classista_1_1owl2_1_1SymmetricObjectProperty_1a144d0e10da4e5960663a22a40b18ddbb" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1SymmetricObjectProperty_1a89e940d8567e4c0c038209fdcabf5ff9" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1TransitiveObjectProperty" kind="class"><name>ista::owl2::TransitiveObjectProperty</name>
+    <member refid="classista_1_1owl2_1_1TransitiveObjectProperty_1a8c98949b15120d10fcc9ebc11b1677b3" kind="variable"><name>property_</name></member>
+    <member refid="classista_1_1owl2_1_1TransitiveObjectProperty_1a5dda94a8f790ef3139ec6c0292a01a33" kind="function"><name>TransitiveObjectProperty</name></member>
+    <member refid="classista_1_1owl2_1_1TransitiveObjectProperty_1add9ee1676cc9ef2d6b85831427d4309c" kind="function"><name>getProperty</name></member>
+    <member refid="classista_1_1owl2_1_1TransitiveObjectProperty_1a28ecd0d526349fc8fd357ceb941e2071" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1TransitiveObjectProperty_1a9fc1a3d53b4165f0b3622d973bbc1220" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="namespaceista" kind="namespace"><name>ista</name>
+  </compound>
+  <compound refid="namespaceista_1_1owl2" kind="namespace"><name>ista::owl2</name>
+    <member refid="namespaceista_1_1owl2_1a61f55fb50b668c2a4fc68c63be3e8574" kind="typedef"><name>AnnotationValue</name></member>
+    <member refid="namespaceista_1_1owl2_1a08e247e0199d79cc565e79e2639a7e82" kind="typedef"><name>AnnotationPtr</name></member>
+    <member refid="namespaceista_1_1owl2_1ae305b46823ac53f0c71aed391a90f835" kind="typedef"><name>AxiomPtr</name></member>
+    <member refid="namespaceista_1_1owl2_1ad17b74082fc9976eec3e4c085ebdec53" kind="typedef"><name>ObjectPropertyExpression</name></member>
+    <member refid="namespaceista_1_1owl2_1a8327f2edd65d42a9498697dce8118d84" kind="typedef"><name>Individual</name></member>
+    <member refid="namespaceista_1_1owl2_1a7a451dd92f3728ab467f5f52ac3679f0" kind="typedef"><name>AnnotationSubject</name></member>
+    <member refid="namespaceista_1_1owl2_1a419553adf775765f8b59cfed39cca902" kind="typedef"><name>DataRangePtr</name></member>
+    <member refid="namespaceista_1_1owl2_1a61b3005e8a7011a323fdc822a191da25" kind="typedef"><name>ClassExpressionPtr</name></member>
+    <member refid="namespaceista_1_1owl2_1a0d288444e5ed181610f80a105ae2db43" kind="typedef"><name>ClassPtr</name></member>
+    <member refid="namespaceista_1_1owl2_1aea7bff0a03a57c105831602ad1ad9ee5" kind="typedef"><name>DatatypePtr</name></member>
+    <member refid="namespaceista_1_1owl2_1ac45509b50fa4c5f3d54540686b5ef3c8" kind="typedef"><name>ObjectPropertyPtr</name></member>
+    <member refid="namespaceista_1_1owl2_1a78c3d4f506d1b71dab796d7c944ab3a0" kind="typedef"><name>DataPropertyPtr</name></member>
+    <member refid="namespaceista_1_1owl2_1af717f3d5f9456c923c8ef094b0531686" kind="typedef"><name>AnnotationPropertyPtr</name></member>
+    <member refid="namespaceista_1_1owl2_1ae9ccd6be1115c4f13576535b3dda0a57" kind="typedef"><name>NamedIndividualPtr</name></member>
+    <member refid="namespaceista_1_1owl2_1ab284d083244574c79371e0e408b9d4dd" kind="typedef"><name>AnonymousIndividualPtr</name></member>
+    <member refid="namespaceista_1_1owl2_1a5b4cac34809fec06518732ba9d2c3d3f" kind="typedef"><name>OntologyPtr</name></member>
+    <member refid="namespaceista_1_1owl2_1aeeae930ad21e1d27b91aa556e2190c18" kind="function"><name>makeAnnotation</name></member>
+    <member refid="namespaceista_1_1owl2_1a727864e7270c7367465a5df927f39392" kind="function"><name>makeAnnotation</name></member>
+    <member refid="namespaceista_1_1owl2_1a4e390854aa1dae3703e10252f985110e" kind="function"><name>makeAnnotation</name></member>
+    <member refid="namespaceista_1_1owl2_1ac39c91f6c39e4468ca5610fb4360c1fe" kind="function"><name>formatObjectPropertyExpression</name></member>
+    <member refid="namespaceista_1_1owl2_1acf338c217966d139979b2abcad955cd4" kind="function"><name>formatIndividual</name></member>
+    <member refid="namespaceista_1_1owl2_1adafe0668771c4600e18bd24c8c5c8b2c" kind="function"><name>formatAnnotationSubject</name></member>
+    <member refid="namespaceista_1_1owl2_1a88df2dad88b8049b7b21ce6bddaf2849" kind="function"><name>formatAnnotationValue</name></member>
+  </compound>
+  <compound refid="namespaceista_1_1owl2_1_1facets" kind="namespace"><name>ista::owl2::facets</name>
+    <member refid="namespaceista_1_1owl2_1_1facets_1ac6de1704702f4525f67e05a1a64238ca" kind="variable"><name>MIN_INCLUSIVE</name></member>
+    <member refid="namespaceista_1_1owl2_1_1facets_1aeab328ba2b464912f380e7c2556cd7bf" kind="variable"><name>MAX_INCLUSIVE</name></member>
+    <member refid="namespaceista_1_1owl2_1_1facets_1af28966079f4e347469e4720d8b8658e8" kind="variable"><name>MIN_EXCLUSIVE</name></member>
+    <member refid="namespaceista_1_1owl2_1_1facets_1afd2c07bdbfd3902e46453d7eedd18aa7" kind="variable"><name>MAX_EXCLUSIVE</name></member>
+    <member refid="namespaceista_1_1owl2_1_1facets_1a0e790b2777173927b7f891245861cbc8" kind="variable"><name>LENGTH</name></member>
+    <member refid="namespaceista_1_1owl2_1_1facets_1a0d8c1562706c985ae152a38bc4537802" kind="variable"><name>MIN_LENGTH</name></member>
+    <member refid="namespaceista_1_1owl2_1_1facets_1a02d949712d4d1911c4fe19505aceadd3" kind="variable"><name>MAX_LENGTH</name></member>
+    <member refid="namespaceista_1_1owl2_1_1facets_1ac004b7bce27e2d89258bb3f85099fc4d" kind="variable"><name>PATTERN</name></member>
+  </compound>
+  <compound refid="namespaceista_1_1owl2_1_1reasoner" kind="namespace"><name>ista::owl2::reasoner</name>
+  </compound>
+  <compound refid="namespaceista_1_1owl2_1_1xsd" kind="namespace"><name>ista::owl2::xsd</name>
+    <member refid="namespaceista_1_1owl2_1_1xsd_1a5304a0b9e4b877c08ce1d825085f591c" kind="variable"><name>STRING</name></member>
+    <member refid="namespaceista_1_1owl2_1_1xsd_1ab83e0bc4bbbac37fd628cbadd5fef76e" kind="variable"><name>INTEGER</name></member>
+    <member refid="namespaceista_1_1owl2_1_1xsd_1ae08928252c864eda872ca431094fca5e" kind="variable"><name>INT</name></member>
+    <member refid="namespaceista_1_1owl2_1_1xsd_1ae075d948b23ef1562d61e97da122b43e" kind="variable"><name>LONG</name></member>
+    <member refid="namespaceista_1_1owl2_1_1xsd_1acd81f5b7c6a2e5efb37f8f5df957506e" kind="variable"><name>DOUBLE</name></member>
+    <member refid="namespaceista_1_1owl2_1_1xsd_1aa25c0e11335be2908613c94d8e9f8be1" kind="variable"><name>FLOAT</name></member>
+    <member refid="namespaceista_1_1owl2_1_1xsd_1a7dfe058ce9d369861daf9a029ac023d6" kind="variable"><name>BOOLEAN</name></member>
+    <member refid="namespaceista_1_1owl2_1_1xsd_1a7163df11242ac88133dc0ff4adfde260" kind="variable"><name>DATE_TIME</name></member>
+    <member refid="namespaceista_1_1owl2_1_1xsd_1aa95f4a553776a831eda6845323590ac0" kind="variable"><name>DATE</name></member>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="annotation_8cpp" kind="file"><name>annotation.cpp</name>
+  </compound>
+  <compound refid="annotation_8hpp" kind="file"><name>annotation.hpp</name>
+  </compound>
+  <compound refid="axiom_8cpp" kind="file"><name>axiom.cpp</name>
+  </compound>
+  <compound refid="axiom_8hpp" kind="file"><name>axiom.hpp</name>
+  </compound>
+  <compound refid="class__expression_8cpp" kind="file"><name>class_expression.cpp</name>
+  </compound>
+  <compound refid="class__expression_8hpp" kind="file"><name>class_expression.hpp</name>
+  </compound>
+  <compound refid="data__range_8cpp" kind="file"><name>data_range.cpp</name>
+  </compound>
+  <compound refid="data__range_8hpp" kind="file"><name>data_range.hpp</name>
+  </compound>
+  <compound refid="core_2entity_8hpp" kind="file"><name>entity.hpp</name>
+  </compound>
+  <compound refid="entity_8hpp" kind="file"><name>entity.hpp</name>
+  </compound>
+  <compound refid="iri_8cpp" kind="file"><name>iri.cpp</name>
+  </compound>
+  <compound refid="iri_8hpp" kind="file"><name>iri.hpp</name>
+  </compound>
+  <compound refid="literal_8cpp" kind="file"><name>literal.cpp</name>
+  </compound>
+  <compound refid="literal_8hpp" kind="file"><name>literal.hpp</name>
+  </compound>
+  <compound refid="ontology_8cpp" kind="file"><name>ontology.cpp</name>
+  </compound>
+  <compound refid="ontology_8hpp" kind="file"><name>ontology.hpp</name>
+  </compound>
+  <compound refid="ontology__filter_8cpp" kind="file"><name>ontology_filter.cpp</name>
+  </compound>
+  <compound refid="ontology__filter_8hpp" kind="file"><name>ontology_filter.hpp</name>
+  </compound>
+  <compound refid="owl2_8hpp" kind="file"><name>owl2.hpp</name>
+  </compound>
+  <compound refid="csv__parser_8cpp" kind="file"><name>csv_parser.cpp</name>
+  </compound>
+  <compound refid="csv__parser_8hpp" kind="file"><name>csv_parser.hpp</name>
+  </compound>
+  <compound refid="rdfxml__parser_8cpp" kind="file"><name>rdfxml_parser.cpp</name>
+  </compound>
+  <compound refid="rdfxml__parser_8hpp" kind="file"><name>rdfxml_parser.hpp</name>
+  </compound>
+  <compound refid="konclude__wrapper_8cpp" kind="file"><name>konclude_wrapper.cpp</name>
+  </compound>
+  <compound refid="konclude__wrapper_8hpp" kind="file"><name>konclude_wrapper.hpp</name>
+  </compound>
+  <compound refid="functional__serializer_8cpp" kind="file"><name>functional_serializer.cpp</name>
+  </compound>
+  <compound refid="functional__serializer_8hpp" kind="file"><name>functional_serializer.hpp</name>
+  </compound>
+  <compound refid="rdfxml__serializer_8cpp" kind="file"><name>rdfxml_serializer.cpp</name>
+  </compound>
+  <compound refid="rdfxml__serializer_8hpp" kind="file"><name>rdfxml_serializer.hpp</name>
+  </compound>
+  <compound refid="dir_a0473cab9a91a76fce53fd6eebf06533" kind="dir"><name>D:/projects/ista/lib/owl2/core</name>
+  </compound>
+  <compound refid="dir_97aefd0d527b934f1d99a682da8fe6a9" kind="dir"><name>D:/projects/ista/lib</name>
+  </compound>
+  <compound refid="dir_d630f01cd53abff97d44ce6d74ab556d" kind="dir"><name>D:/projects/ista/lib/owl2</name>
+  </compound>
+  <compound refid="dir_3e917f2bd2d315ef6e240335f6f6a295" kind="dir"><name>D:/projects/ista/lib/owl2/parser</name>
+  </compound>
+  <compound refid="dir_396282372a14aa02a8946dacfb18c4b0" kind="dir"><name>D:/projects/ista/lib/owl2/reasoner</name>
+  </compound>
+  <compound refid="dir_a78a4cf07cf6c6b89181d07787f88adf" kind="dir"><name>D:/projects/ista/lib/owl2/serializer</name>
+  </compound>
+</doxygenindex>

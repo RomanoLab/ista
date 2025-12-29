@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1DataUnionOf" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::DataUnionOf</compoundname>
+    <basecompoundref refid="classista_1_1owl2_1_1DataRange" prot="public" virt="non-virtual">ista::owl2::DataRange</basecompoundref>
+    <includes refid="data__range_8hpp" local="no">data_range.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classista_1_1owl2_1_1DataUnionOf_1a12f8e6ba95d156bb6dab7b245ca453e4" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="namespaceista_1_1owl2_1a419553adf775765f8b59cfed39cca902" kindref="member">DataRangePtr</ref> &gt;</type>
+        <definition>std::vector&lt;DataRangePtr&gt; ista::owl2::DataUnionOf::operands_</definition>
+        <argsstring></argsstring>
+        <name>operands_</name>
+        <qualifiedname>ista::owl2::DataUnionOf::operands_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="82" column="17" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="82" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1DataUnionOf_1a274ccf3eacb0fa3ad2f7bff9e283b22e" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::DataUnionOf::DataUnionOf</definition>
+        <argsstring>(const std::vector&lt; DataRangePtr &gt; &amp;operands)</argsstring>
+        <name>DataUnionOf</name>
+        <qualifiedname>ista::owl2::DataUnionOf::DataUnionOf</qualifiedname>
+        <param>
+          <type>const std::vector&lt; <ref refid="namespaceista_1_1owl2_1a419553adf775765f8b59cfed39cca902" kindref="member">DataRangePtr</ref> &gt; &amp;</type>
+          <declname>operands</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="73" column="14" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="73" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1DataUnionOf_1ac66c132e06a900b69be1ecc97d8ede4f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="namespaceista_1_1owl2_1a419553adf775765f8b59cfed39cca902" kindref="member">DataRangePtr</ref> &gt;</type>
+        <definition>std::vector&lt; DataRangePtr &gt; ista::owl2::DataUnionOf::getOperands</definition>
+        <argsstring>() const</argsstring>
+        <name>getOperands</name>
+        <qualifiedname>ista::owl2::DataUnionOf::getOperands</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="76" column="17" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="76" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1DataUnionOf_1ad531465657ba2c6032de077b06a18542" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::DataUnionOf::toFunctionalSyntax</definition>
+        <argsstring>() const override</argsstring>
+        <name>toFunctionalSyntax</name>
+        <qualifiedname>ista::owl2::DataUnionOf::toFunctionalSyntax</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1DataRange_1abe52a263c7481aa3d078f895a62c7547">toFunctionalSyntax</reimplements>
+        <briefdescription>
+<para>Convert to OWL2 Functional Syntax. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="78" column="17" bodyfile="D:/projects/ista/lib/owl2/core/data_range.cpp" bodystart="26" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1DataUnionOf_1a1d67f4692c97823a39b8a12b7f324d00" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::DataUnionOf::getDataRangeType</definition>
+        <argsstring>() const override</argsstring>
+        <name>getDataRangeType</name>
+        <qualifiedname>ista::owl2::DataUnionOf::getDataRangeType</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1DataRange_1abc8e583db3cb378e0e055ecb5607288b">getDataRangeType</reimplements>
+        <briefdescription>
+<para>Get the type of this data range. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="79" column="17" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="79" bodyend="79"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Union of data ranges. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ista::owl2::DataRange</label>
+        <link refid="classista_1_1owl2_1_1DataRange"/>
+      </node>
+      <node id="1">
+        <label>ista::owl2::DataUnionOf</label>
+        <link refid="classista_1_1owl2_1_1DataUnionOf"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ista::owl2::DataRange</label>
+        <link refid="classista_1_1owl2_1_1DataRange"/>
+      </node>
+      <node id="1">
+        <label>ista::owl2::DataUnionOf</label>
+        <link refid="classista_1_1owl2_1_1DataUnionOf"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="71" column="1" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="71" bodyend="83"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1DataUnionOf_1a274ccf3eacb0fa3ad2f7bff9e283b22e" prot="public" virt="non-virtual"><scope>ista::owl2::DataUnionOf</scope><name>DataUnionOf</name></member>
+      <member refid="classista_1_1owl2_1_1DataUnionOf_1a1d67f4692c97823a39b8a12b7f324d00" prot="public" virt="virtual"><scope>ista::owl2::DataUnionOf</scope><name>getDataRangeType</name></member>
+      <member refid="classista_1_1owl2_1_1DataUnionOf_1ac66c132e06a900b69be1ecc97d8ede4f" prot="public" virt="non-virtual"><scope>ista::owl2::DataUnionOf</scope><name>getOperands</name></member>
+      <member refid="classista_1_1owl2_1_1DataUnionOf_1a12f8e6ba95d156bb6dab7b245ca453e4" prot="private" virt="non-virtual"><scope>ista::owl2::DataUnionOf</scope><name>operands_</name></member>
+      <member refid="classista_1_1owl2_1_1DataUnionOf_1ad531465657ba2c6032de077b06a18542" prot="public" virt="virtual"><scope>ista::owl2::DataUnionOf</scope><name>toFunctionalSyntax</name></member>
+      <member refid="classista_1_1owl2_1_1DataRange_1af96348d6c75791cb43e898a5b0a4d677" prot="public" virt="virtual"><scope>ista::owl2::DataUnionOf</scope><name>~DataRange</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

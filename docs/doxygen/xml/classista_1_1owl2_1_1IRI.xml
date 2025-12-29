@@ -1,0 +1,357 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1IRI" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::IRI</compoundname>
+    <includes refid="iri_8hpp" local="no">iri.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classista_1_1owl2_1_1IRI_1ae58d83b86bf9e88e72208fdb9f711560" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::IRI::full_iri_</definition>
+        <argsstring></argsstring>
+        <name>full_iri_</name>
+        <qualifiedname>ista::owl2::IRI::full_iri_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/iri.hpp" line="78" column="17" bodyfile="D:/projects/ista/lib/owl2/core/iri.hpp" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1IRI_1a3efde026ae5f2ed89c871174642400d3" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::IRI::namespace_uri_</definition>
+        <argsstring></argsstring>
+        <name>namespace_uri_</name>
+        <qualifiedname>ista::owl2::IRI::namespace_uri_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/iri.hpp" line="79" column="17" bodyfile="D:/projects/ista/lib/owl2/core/iri.hpp" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1IRI_1ae140262f666515d24e483b44df2a3cc8" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; std::string &gt;</type>
+        <definition>std::optional&lt;std::string&gt; ista::owl2::IRI::prefix_</definition>
+        <argsstring></argsstring>
+        <name>prefix_</name>
+        <qualifiedname>ista::owl2::IRI::prefix_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/iri.hpp" line="80" column="19" bodyfile="D:/projects/ista/lib/owl2/core/iri.hpp" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1IRI_1ada717c5b36a8213a09b3df74717494e9" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; std::string &gt;</type>
+        <definition>std::optional&lt;std::string&gt; ista::owl2::IRI::local_name_</definition>
+        <argsstring></argsstring>
+        <name>local_name_</name>
+        <qualifiedname>ista::owl2::IRI::local_name_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/iri.hpp" line="81" column="19" bodyfile="D:/projects/ista/lib/owl2/core/iri.hpp" bodystart="81" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1IRI_1ababb4bda3a28f3ca4e99f873257b17af" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::IRI::IRI</definition>
+        <argsstring>(const std::string &amp;iri_string)</argsstring>
+        <name>IRI</name>
+        <qualifiedname>ista::owl2::IRI::IRI</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>iri_string</declname>
+        </param>
+        <briefdescription>
+<para>Construct <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> from full <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>iri_string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Full <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> (e.g., &quot;http://example.org/ontology#Class1&quot;) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/iri.hpp" line="22" column="14" bodyfile="D:/projects/ista/lib/owl2/core/iri.cpp" bodystart="7" bodyend="27"/>
+        <referencedby refid="classista_1_1owl2_1_1IRI_1a3b912e059ddf1419b95eab0428e41aab" compoundref="iri_8hpp" startline="69" endline="69">operator!=</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1IRI_1aa80a9308ff46b2133a3165f3a47d4da2" compoundref="iri_8hpp" startline="70" endline="70">operator&lt;</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1IRI_1a5297897bbced379f09b25abf5c79d7cc" compoundref="iri_8hpp" startline="68" endline="68">operator==</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1IRI_1a5ed55513a7c7b2b40e0169349ef49c5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::IRI::IRI</definition>
+        <argsstring>(const std::string &amp;prefix, const std::string &amp;local_name, const std::string &amp;namespace_uri)</argsstring>
+        <name>IRI</name>
+        <qualifiedname>ista::owl2::IRI::IRI</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>prefix</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>local_name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>namespace_uri</declname>
+        </param>
+        <briefdescription>
+<para>Construct <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> from prefix and local name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>prefix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Namespace prefix (e.g., &quot;ex&quot;) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>local_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Local name within namespace (e.g., &quot;Class1&quot;) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>namespace_uri</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Full namespace URI (e.g., &quot;http://example.org/ontology#&quot;) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/iri.hpp" line="30" column="5" bodyfile="D:/projects/ista/lib/owl2/core/iri.cpp" bodystart="29" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1IRI_1add16c12a986f833581a2e1ae39e63277" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::IRI::getFullIRI</definition>
+        <argsstring>() const</argsstring>
+        <name>getFullIRI</name>
+        <qualifiedname>ista::owl2::IRI::getFullIRI</qualifiedname>
+        <briefdescription>
+<para>Get the full <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Full <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/iri.hpp" line="36" column="17" bodyfile="D:/projects/ista/lib/owl2/core/iri.hpp" bodystart="36" bodyend="36"/>
+        <referencedby refid="structstd_1_1hash_3_01ista_1_1owl2_1_1IRI_01_4_1a6e3849474630f76742b38631ab943f4f" compoundref="iri_8hpp" startline="91" endline="93">std::hash&lt; ista::owl2::IRI &gt;::operator()</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1IRI_1a1aac1537b3171c2343175335be3771e0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::optional&lt; std::string &gt;</type>
+        <definition>std::optional&lt; std::string &gt; ista::owl2::IRI::getPrefix</definition>
+        <argsstring>() const</argsstring>
+        <name>getPrefix</name>
+        <qualifiedname>ista::owl2::IRI::getPrefix</qualifiedname>
+        <briefdescription>
+<para>Get the namespace prefix (if available). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Optional prefix </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/iri.hpp" line="42" column="19" bodyfile="D:/projects/ista/lib/owl2/core/iri.hpp" bodystart="42" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1IRI_1ab6aa4aa646199419240557a2ab0ad18a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::optional&lt; std::string &gt;</type>
+        <definition>std::optional&lt; std::string &gt; ista::owl2::IRI::getLocalName</definition>
+        <argsstring>() const</argsstring>
+        <name>getLocalName</name>
+        <qualifiedname>ista::owl2::IRI::getLocalName</qualifiedname>
+        <briefdescription>
+<para>Get the local name (if available). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Optional local name </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/iri.hpp" line="48" column="19" bodyfile="D:/projects/ista/lib/owl2/core/iri.hpp" bodystart="48" bodyend="48"/>
+        <referencedby refid="classista_1_1owl2_1_1CSVParser_1ae03994dbd246e812aef90c4514e51b9e" compoundref="csv__parser_8cpp" startline="111" endline="262">ista::owl2::CSVParser::parse_node_type</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1IRI_1afe2dbb1cfdf037b8db3a35be3bcf984e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::IRI::getNamespace</definition>
+        <argsstring>() const</argsstring>
+        <name>getNamespace</name>
+        <qualifiedname>ista::owl2::IRI::getNamespace</qualifiedname>
+        <briefdescription>
+<para>Get the namespace URI. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Namespace URI </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/iri.hpp" line="54" column="17" bodyfile="D:/projects/ista/lib/owl2/core/iri.hpp" bodystart="54" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1IRI_1af84bcf15c9961c7961f2805063d2cd66" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::IRI::getAbbreviated</definition>
+        <argsstring>() const</argsstring>
+        <name>getAbbreviated</name>
+        <qualifiedname>ista::owl2::IRI::getAbbreviated</qualifiedname>
+        <briefdescription>
+<para>Get abbreviated form (prefix:localName) if available. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Abbreviated <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> or full <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> if no abbreviation exists </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/iri.hpp" line="60" column="17" bodyfile="D:/projects/ista/lib/owl2/core/iri.cpp" bodystart="36" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1IRI_1a3577aa9ddb89e031845c14abe90adb8a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::IRI::isAbbreviated</definition>
+        <argsstring>() const</argsstring>
+        <name>isAbbreviated</name>
+        <qualifiedname>ista::owl2::IRI::isAbbreviated</qualifiedname>
+        <briefdescription>
+<para>Check if this <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> is abbreviated. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/iri.hpp" line="65" column="10" bodyfile="D:/projects/ista/lib/owl2/core/iri.hpp" bodystart="65" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1IRI_1a5297897bbced379f09b25abf5c79d7cc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::IRI::operator==</definition>
+        <argsstring>(const IRI &amp;other) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>ista::owl2::IRI::operator==</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1IRI_1ababb4bda3a28f3ca4e99f873257b17af" kindref="member">IRI</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/iri.hpp" line="68" column="10" bodyfile="D:/projects/ista/lib/owl2/core/iri.hpp" bodystart="68" bodyend="68"/>
+        <references refid="classista_1_1owl2_1_1IRI_1ababb4bda3a28f3ca4e99f873257b17af" compoundref="iri_8cpp" startline="7" endline="27">IRI</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1IRI_1a3b912e059ddf1419b95eab0428e41aab" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::IRI::operator!=</definition>
+        <argsstring>(const IRI &amp;other) const</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>ista::owl2::IRI::operator!=</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1IRI_1ababb4bda3a28f3ca4e99f873257b17af" kindref="member">IRI</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/iri.hpp" line="69" column="10" bodyfile="D:/projects/ista/lib/owl2/core/iri.hpp" bodystart="69" bodyend="69"/>
+        <references refid="classista_1_1owl2_1_1IRI_1ababb4bda3a28f3ca4e99f873257b17af" compoundref="iri_8cpp" startline="7" endline="27">IRI</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1IRI_1aa80a9308ff46b2133a3165f3a47d4da2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::IRI::operator&lt;</definition>
+        <argsstring>(const IRI &amp;other) const</argsstring>
+        <name>operator&lt;</name>
+        <qualifiedname>ista::owl2::IRI::operator&lt;</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1IRI_1ababb4bda3a28f3ca4e99f873257b17af" kindref="member">IRI</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/iri.hpp" line="70" column="5" bodyfile="D:/projects/ista/lib/owl2/core/iri.hpp" bodystart="70" bodyend="70"/>
+        <references refid="classista_1_1owl2_1_1IRI_1ababb4bda3a28f3ca4e99f873257b17af" compoundref="iri_8cpp" startline="7" endline="27">IRI</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1IRI_1abeda7230673f8bb46fd0608b8cce8382" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::IRI::toString</definition>
+        <argsstring>() const</argsstring>
+        <name>toString</name>
+        <qualifiedname>ista::owl2::IRI::toString</qualifiedname>
+        <briefdescription>
+<para>Convert to string (returns full <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/iri.hpp" line="75" column="17" bodyfile="D:/projects/ista/lib/owl2/core/iri.hpp" bodystart="75" bodyend="75"/>
+        <referencedby refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a3a0dc62c67cce6d549583980a8dbb0ab" compoundref="konclude__wrapper_8cpp" startline="249" endline="281">ista::owl2::reasoner::KoncludeWrapper::check_satisfiability</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Internationalized Resource Identifier (<ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>). </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Represents IRIs used throughout OWL2 ontologies. Supports both full and abbreviated forms. </para>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/core/iri.hpp" line="16" column="1" bodyfile="D:/projects/ista/lib/owl2/core/iri.hpp" bodystart="16" bodyend="82"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1IRI_1ae58d83b86bf9e88e72208fdb9f711560" prot="private" virt="non-virtual"><scope>ista::owl2::IRI</scope><name>full_iri_</name></member>
+      <member refid="classista_1_1owl2_1_1IRI_1af84bcf15c9961c7961f2805063d2cd66" prot="public" virt="non-virtual"><scope>ista::owl2::IRI</scope><name>getAbbreviated</name></member>
+      <member refid="classista_1_1owl2_1_1IRI_1add16c12a986f833581a2e1ae39e63277" prot="public" virt="non-virtual"><scope>ista::owl2::IRI</scope><name>getFullIRI</name></member>
+      <member refid="classista_1_1owl2_1_1IRI_1ab6aa4aa646199419240557a2ab0ad18a" prot="public" virt="non-virtual"><scope>ista::owl2::IRI</scope><name>getLocalName</name></member>
+      <member refid="classista_1_1owl2_1_1IRI_1afe2dbb1cfdf037b8db3a35be3bcf984e" prot="public" virt="non-virtual"><scope>ista::owl2::IRI</scope><name>getNamespace</name></member>
+      <member refid="classista_1_1owl2_1_1IRI_1a1aac1537b3171c2343175335be3771e0" prot="public" virt="non-virtual"><scope>ista::owl2::IRI</scope><name>getPrefix</name></member>
+      <member refid="classista_1_1owl2_1_1IRI_1ababb4bda3a28f3ca4e99f873257b17af" prot="public" virt="non-virtual"><scope>ista::owl2::IRI</scope><name>IRI</name></member>
+      <member refid="classista_1_1owl2_1_1IRI_1a5ed55513a7c7b2b40e0169349ef49c5d" prot="public" virt="non-virtual"><scope>ista::owl2::IRI</scope><name>IRI</name></member>
+      <member refid="classista_1_1owl2_1_1IRI_1a3577aa9ddb89e031845c14abe90adb8a" prot="public" virt="non-virtual"><scope>ista::owl2::IRI</scope><name>isAbbreviated</name></member>
+      <member refid="classista_1_1owl2_1_1IRI_1ada717c5b36a8213a09b3df74717494e9" prot="private" virt="non-virtual"><scope>ista::owl2::IRI</scope><name>local_name_</name></member>
+      <member refid="classista_1_1owl2_1_1IRI_1a3efde026ae5f2ed89c871174642400d3" prot="private" virt="non-virtual"><scope>ista::owl2::IRI</scope><name>namespace_uri_</name></member>
+      <member refid="classista_1_1owl2_1_1IRI_1a3b912e059ddf1419b95eab0428e41aab" prot="public" virt="non-virtual"><scope>ista::owl2::IRI</scope><name>operator!=</name></member>
+      <member refid="classista_1_1owl2_1_1IRI_1aa80a9308ff46b2133a3165f3a47d4da2" prot="public" virt="non-virtual"><scope>ista::owl2::IRI</scope><name>operator&lt;</name></member>
+      <member refid="classista_1_1owl2_1_1IRI_1a5297897bbced379f09b25abf5c79d7cc" prot="public" virt="non-virtual"><scope>ista::owl2::IRI</scope><name>operator==</name></member>
+      <member refid="classista_1_1owl2_1_1IRI_1ae140262f666515d24e483b44df2a3cc8" prot="private" virt="non-virtual"><scope>ista::owl2::IRI</scope><name>prefix_</name></member>
+      <member refid="classista_1_1owl2_1_1IRI_1abeda7230673f8bb46fd0608b8cce8382" prot="public" virt="non-virtual"><scope>ista::owl2::IRI</scope><name>toString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

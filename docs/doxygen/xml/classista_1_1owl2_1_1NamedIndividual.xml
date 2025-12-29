@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1NamedIndividual" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::NamedIndividual</compoundname>
+    <basecompoundref refid="classista_1_1owl2_1_1Entity" prot="public" virt="non-virtual">ista::owl2::Entity</basecompoundref>
+    <includes refid="core_2entity_8hpp" local="no">entity.hpp</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1NamedIndividual_1a7d5ac04e43d0bce6f419b2a751300318" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::NamedIndividual::NamedIndividual</definition>
+        <argsstring>(const IRI &amp;iri)</argsstring>
+        <name>NamedIndividual</name>
+        <qualifiedname>ista::owl2::NamedIndividual::NamedIndividual</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &amp;</type>
+          <declname>iri</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="93" column="14" bodyfile="D:/projects/ista/lib/owl2/core/entity.hpp" bodystart="93" bodyend="93"/>
+        <references refid="classista_1_1owl2_1_1Entity_1a111253c02830d3982cfee5b4b9cd1ac8" compoundref="core_2entity_8hpp" startline="17" endline="17">ista::owl2::Entity::Entity</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1NamedIndividual_1aad3d10caf98591dbac670ba1e39d09b9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::NamedIndividual::getEntityType</definition>
+        <argsstring>() const override</argsstring>
+        <name>getEntityType</name>
+        <qualifiedname>ista::owl2::NamedIndividual::getEntityType</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1Entity_1a7eaf4cac49d6f5a3c97e138e7aed7f94">getEntityType</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="95" column="17" bodyfile="D:/projects/ista/lib/owl2/core/entity.hpp" bodystart="95" bodyend="95"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>OWL2 Named <ref refid="structIndividual" kindref="compound">Individual</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ista::owl2::Entity</label>
+        <link refid="classista_1_1owl2_1_1Entity"/>
+      </node>
+      <node id="1">
+        <label>ista::owl2::NamedIndividual</label>
+        <link refid="classista_1_1owl2_1_1NamedIndividual"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ista::owl2::Entity</label>
+        <link refid="classista_1_1owl2_1_1Entity"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>iri_</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>ista::owl2::IRI</label>
+        <link refid="classista_1_1owl2_1_1IRI"/>
+      </node>
+      <node id="1">
+        <label>ista::owl2::NamedIndividual</label>
+        <link refid="classista_1_1owl2_1_1NamedIndividual"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="91" column="1" bodyfile="D:/projects/ista/lib/owl2/core/entity.hpp" bodystart="91" bodyend="96"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1Entity_1a111253c02830d3982cfee5b4b9cd1ac8" prot="public" virt="non-virtual"><scope>ista::owl2::NamedIndividual</scope><name>Entity</name></member>
+      <member refid="classista_1_1owl2_1_1NamedIndividual_1aad3d10caf98591dbac670ba1e39d09b9" prot="public" virt="virtual"><scope>ista::owl2::NamedIndividual</scope><name>getEntityType</name></member>
+      <member refid="classista_1_1owl2_1_1Entity_1a7450ac96112b23d4514cf60be3c3ac41" prot="public" virt="non-virtual"><scope>ista::owl2::NamedIndividual</scope><name>getIRI</name></member>
+      <member refid="classista_1_1owl2_1_1Entity_1a126a750eda40c881a5ea4b1fdb412ee0" prot="protected" virt="non-virtual"><scope>ista::owl2::NamedIndividual</scope><name>iri_</name></member>
+      <member refid="classista_1_1owl2_1_1NamedIndividual_1a7d5ac04e43d0bce6f419b2a751300318" prot="public" virt="non-virtual"><scope>ista::owl2::NamedIndividual</scope><name>NamedIndividual</name></member>
+      <member refid="classista_1_1owl2_1_1Entity_1ab710382cee94c7bbaca255a4d62bffa9" prot="public" virt="non-virtual"><scope>ista::owl2::NamedIndividual</scope><name>operator!=</name></member>
+      <member refid="classista_1_1owl2_1_1Entity_1addc9bc76aa4acdd281d6a7e11a9d9afb" prot="public" virt="non-virtual"><scope>ista::owl2::NamedIndividual</scope><name>operator&lt;</name></member>
+      <member refid="classista_1_1owl2_1_1Entity_1a0e207ab4f355df68e5adfe107668cec6" prot="public" virt="non-virtual"><scope>ista::owl2::NamedIndividual</scope><name>operator==</name></member>
+      <member refid="classista_1_1owl2_1_1Entity_1ae65d7a7f48db51fd0758ac1ae4291b4e" prot="public" virt="virtual"><scope>ista::owl2::NamedIndividual</scope><name>~Entity</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -14,6 +14,7 @@
 #include "nfd.h"
 
 #include <iostream>
+#include <fstream>
 #include <algorithm>
 #include <cmath>
 #include <ctime>
@@ -41,6 +42,9 @@ KnowledgeGraphEditor::KnowledgeGraphEditor()
     , show_ontology_loader_(false)
     , show_about_dialog_(false)
     , show_preferences_(false)
+    , show_add_data_source_menu_(false)
+    , show_database_config_dialog_(false)
+    , db_type_selection_("mysql")
     , pref_show_namespace_prefix_(false)
 {
 }
@@ -211,6 +215,9 @@ int KnowledgeGraphEditor::run() {
             }
             ImGui::EndPopup();
         }
+
+        // Handle database configuration dialog
+        render_database_config_dialog();
 
         // Rendering
         ImGui::Render();
@@ -764,22 +771,47 @@ void KnowledgeGraphEditor::render_data_source_panel() {
     }
 
     if (ImGui::Button("Add Data Source")) {
-        nfdchar_t *dataPath;
-        nfdfilteritem_t filterItem[4] = { 
-            { "CSV Files", "csv,tsv,tab" },
-            { "Excel Files", "xlsx,xls" },
-            { "SQLite Database", "db,sqlite,sqlite3" },
-            { "All Files", "*" } 
-        };
-        nfdresult_t result = NFD_OpenDialog(&dataPath, filterItem, 4, nullptr);
+        ImGui::OpenPopup("AddDataSourceMenu");
+    }
+    
+    // Render the popup menu right after the button
+    if (ImGui::BeginPopup("AddDataSourceMenu")) {
+        ImGui::Text("Add Data Source");
+        ImGui::Separator();
         
-        if (result == NFD_OKAY) {
-            std::string filepath(dataPath);
-            add_data_source(filepath);
-            NFD_FreePath(dataPath);
-        } else if (result == NFD_ERROR) {
-            std::cerr << "File dialog error: " << NFD_GetError() << std::endl;
+        if (ImGui::MenuItem("From File...")) {
+            // Open file dialog
+            nfdchar_t *dataPath;
+            nfdfilteritem_t filterItem[4] = { 
+                { "CSV Files", "csv,tsv,tab" },
+                { "Excel Files", "xlsx,xls" },
+                { "SQLite Database", "db,sqlite,sqlite3" },
+                { "All Files", "*" } 
+            };
+            nfdresult_t result = NFD_OpenDialog(&dataPath, filterItem, 4, nullptr);
+            
+            if (result == NFD_OKAY) {
+                std::string filepath(dataPath);
+                add_data_source(filepath);
+                NFD_FreePath(dataPath);
+            } else if (result == NFD_ERROR) {
+                std::cerr << "File dialog error: " << NFD_GetError() << std::endl;
+            }
+            ImGui::CloseCurrentPopup();
         }
+        
+        if (ImGui::MenuItem("From Database...")) {
+            // Open database configuration dialog
+            show_database_config_dialog_ = true;
+            temp_database_config_ = DataSource();
+            temp_database_config_.is_database = true;
+            temp_database_config_.format = "mysql";  // Default to MySQL
+            temp_database_config_.db_config.port = get_default_port("mysql");
+            db_type_selection_ = "mysql";
+            ImGui::CloseCurrentPopup();
+        }
+        
+        ImGui::EndPopup();
     }
 
     ImGui::Separator();
@@ -788,15 +820,22 @@ void KnowledgeGraphEditor::render_data_source_panel() {
     for (size_t i = 0; i < data_sources_.size(); ++i) {
         ImGui::PushID(static_cast<int>(i));
         
-        // Extract filename from path
-        std::string filename = data_sources_[i].filepath;
-        size_t last_slash = filename.find_last_of("/\\");
-        if (last_slash != std::string::npos) {
-            filename = filename.substr(last_slash + 1);
+        // Extract filename from path or use database identifier
+        std::string display_name;
+        if (data_sources_[i].is_database) {
+            // For databases, show an icon and the connection identifier
+            display_name = "[DB] " + data_sources_[i].filepath;
+        } else {
+            // For files, extract just the filename
+            display_name = data_sources_[i].filepath;
+            size_t last_slash = display_name.find_last_of("/\\");
+            if (last_slash != std::string::npos) {
+                display_name = display_name.substr(last_slash + 1);
+            }
         }
         
         bool is_selected = (selected_data_source_ == static_cast<int>(i));
-        if (ImGui::Selectable(filename.c_str(), is_selected)) {
+        if (ImGui::Selectable(display_name.c_str(), is_selected)) {
             selected_data_source_ = static_cast<int>(i);
         }
 
@@ -817,8 +856,25 @@ void KnowledgeGraphEditor::render_data_source_panel() {
         
         const auto& ds = data_sources_[selected_data_source_];
         
-        // Show format
+        // Show format and type
+        ImGui::Text("Type: %s", ds.is_database ? "Database" : "File");
         ImGui::Text("Format: %s", ds.format.c_str());
+        
+        // Show database connection details if it's a database
+        if (ds.is_database) {
+            ImGui::Separator();
+            ImGui::Text("Connection Details:");
+            
+            if (ds.db_config.use_connection_string) {
+                ImGui::Text("Connection String:");
+                ImGui::TextWrapped("%s", ds.db_config.connection_string.c_str());
+            } else {
+                ImGui::Text("Host: %s", ds.db_config.host.c_str());
+                ImGui::Text("Port: %d", ds.db_config.port);
+                ImGui::Text("Database: %s", ds.db_config.database.c_str());
+                ImGui::Text("Username: %s", ds.db_config.username.c_str());
+            }
+        }
         
         // Show error message if metadata loading failed
         if (!ds.error_message.empty()) {
@@ -1387,6 +1443,248 @@ void KnowledgeGraphEditor::load_sql_metadata(DataSource& ds) {
 void KnowledgeGraphEditor::map_data_source_to_class(const std::string& source_id, 
                                                     const std::string& class_iri) {
     // TODO: Implement data source to class mapping
+}
+
+void KnowledgeGraphEditor::render_database_config_dialog() {
+    if (show_database_config_dialog_) {
+        ImGui::OpenPopup("Database Configuration");
+        show_database_config_dialog_ = false;
+    }
+    
+    ImGui::SetNextWindowSize(ImVec2(600, 500), ImGuiCond_FirstUseEver);
+    if (ImGui::BeginPopupModal("Database Configuration", nullptr, ImGuiWindowFlags_AlwaysAutoResize)) {
+        ImGui::Text("Configure Database Connection");
+        ImGui::Separator();
+        
+        // Database type selection
+        ImGui::Text("Database Type:");
+        ImGui::SameLine();
+        
+        const char* db_types[] = { "MySQL", "PostgreSQL", "SQL Server" };
+        const char* db_type_values[] = { "mysql", "postgres", "sqlserver" };
+        int current_type = 0;
+        if (db_type_selection_ == "postgres") current_type = 1;
+        else if (db_type_selection_ == "sqlserver") current_type = 2;
+        
+        if (ImGui::Combo("##DBType", &current_type, db_types, IM_ARRAYSIZE(db_types))) {
+            db_type_selection_ = db_type_values[current_type];
+            temp_database_config_.format = db_type_selection_;
+            
+            // Update default port when type changes
+            if (temp_database_config_.db_config.port == get_default_port("mysql") ||
+                temp_database_config_.db_config.port == get_default_port("postgres") ||
+                temp_database_config_.db_config.port == get_default_port("sqlserver")) {
+                temp_database_config_.db_config.port = get_default_port(db_type_selection_);
+            }
+        }
+        
+        ImGui::Separator();
+        
+        // Connection method tabs
+        if (ImGui::BeginTabBar("ConnectionTabs")) {
+            if (ImGui::BeginTabItem("Standard Connection")) {
+                ImGui::Spacing();
+                
+                // Host
+                ImGui::Text("Host:");
+                ImGui::SameLine(150);
+                char host_buf[256];
+                strncpy(host_buf, temp_database_config_.db_config.host.c_str(), sizeof(host_buf) - 1);
+                host_buf[sizeof(host_buf) - 1] = '\0';
+                if (ImGui::InputText("##Host", host_buf, sizeof(host_buf))) {
+                    temp_database_config_.db_config.host = host_buf;
+                }
+                
+                // Port
+                ImGui::Text("Port:");
+                ImGui::SameLine(150);
+                int port = temp_database_config_.db_config.port;
+                if (ImGui::InputInt("##Port", &port)) {
+                    temp_database_config_.db_config.port = port;
+                }
+                ImGui::SameLine();
+                ImGui::TextDisabled("(?)");
+                if (ImGui::IsItemHovered()) {
+                    ImGui::SetTooltip("Default ports:\nMySQL: 3306\nPostgreSQL: 5432\nSQL Server: 1433");
+                }
+                
+                // Database name
+                ImGui::Text("Database:");
+                ImGui::SameLine(150);
+                char db_buf[256];
+                strncpy(db_buf, temp_database_config_.db_config.database.c_str(), sizeof(db_buf) - 1);
+                db_buf[sizeof(db_buf) - 1] = '\0';
+                if (ImGui::InputText("##Database", db_buf, sizeof(db_buf))) {
+                    temp_database_config_.db_config.database = db_buf;
+                }
+                
+                // Username
+                ImGui::Text("Username:");
+                ImGui::SameLine(150);
+                char user_buf[256];
+                strncpy(user_buf, temp_database_config_.db_config.username.c_str(), sizeof(user_buf) - 1);
+                user_buf[sizeof(user_buf) - 1] = '\0';
+                if (ImGui::InputText("##Username", user_buf, sizeof(user_buf))) {
+                    temp_database_config_.db_config.username = user_buf;
+                }
+                
+                // Password
+                ImGui::Text("Password:");
+                ImGui::SameLine(150);
+                char pass_buf[256];
+                strncpy(pass_buf, temp_database_config_.db_config.password.c_str(), sizeof(pass_buf) - 1);
+                pass_buf[sizeof(pass_buf) - 1] = '\0';
+                if (ImGui::InputText("##Password", pass_buf, sizeof(pass_buf), ImGuiInputTextFlags_Password)) {
+                    temp_database_config_.db_config.password = pass_buf;
+                }
+                
+                temp_database_config_.db_config.use_connection_string = false;
+                
+                ImGui::EndTabItem();
+            }
+            
+            if (ImGui::BeginTabItem("Connection String")) {
+                ImGui::Spacing();
+                ImGui::Text("Enter a custom connection string:");
+                ImGui::Spacing();
+                
+                char conn_str_buf[1024];
+                strncpy(conn_str_buf, temp_database_config_.db_config.connection_string.c_str(), sizeof(conn_str_buf) - 1);
+                conn_str_buf[sizeof(conn_str_buf) - 1] = '\0';
+                if (ImGui::InputTextMultiline("##ConnectionString", conn_str_buf, sizeof(conn_str_buf), ImVec2(550, 100))) {
+                    temp_database_config_.db_config.connection_string = conn_str_buf;
+                }
+                
+                ImGui::Spacing();
+                ImGui::TextWrapped("Example formats:");
+                ImGui::Spacing();
+                
+                if (db_type_selection_ == "mysql") {
+                    ImGui::TextWrapped("MySQL: Server=localhost;Database=mydb;Uid=user;Pwd=password;");
+                } else if (db_type_selection_ == "postgres") {
+                    ImGui::TextWrapped("PostgreSQL: Host=localhost;Database=mydb;Username=user;Password=password;Port=5432;");
+                } else if (db_type_selection_ == "sqlserver") {
+                    ImGui::TextWrapped("SQL Server: Server=localhost,1433;Database=mydb;User Id=user;Password=password;");
+                }
+                
+                temp_database_config_.db_config.use_connection_string = true;
+                
+                ImGui::EndTabItem();
+            }
+            
+            ImGui::EndTabBar();
+        }
+        
+        ImGui::Separator();
+        ImGui::Spacing();
+        
+        // Information box
+        ImGui::PushStyleColor(ImGuiCol_ChildBg, ImVec4(0.15f, 0.15f, 0.2f, 1.0f));
+        ImGui::BeginChild("InfoBox", ImVec2(550, 60), true);
+        ImGui::TextColored(ImVec4(0.8f, 0.8f, 1.0f, 1.0f), "Note:");
+        ImGui::TextWrapped("Connection will be tested when you click 'Connect'. Make sure the database server is accessible and credentials are correct.");
+        ImGui::EndChild();
+        ImGui::PopStyleColor();
+        
+        ImGui::Spacing();
+        ImGui::Separator();
+        
+        // Buttons
+        if (ImGui::Button("Test Connection", ImVec2(150, 0))) {
+            // TODO: Implement connection testing
+            std::cout << "Testing connection to " << db_type_selection_ << " database..." << std::endl;
+            // For now, just show that the feature is planned
+            ImGui::OpenPopup("ConnectionTest");
+        }
+        
+        // Connection test popup
+        if (ImGui::BeginPopupModal("ConnectionTest", nullptr, ImGuiWindowFlags_AlwaysAutoResize)) {
+            ImGui::Text("Connection testing is not yet implemented.");
+            ImGui::Separator();
+            ImGui::Text("This will be available when database libraries are integrated:");
+            ImGui::BulletText("MySQL: libmysqlclient or MySQL Connector/C++");
+            ImGui::BulletText("PostgreSQL: libpq");
+            ImGui::BulletText("SQL Server: ODBC or FreeTDS");
+            ImGui::Separator();
+            if (ImGui::Button("OK", ImVec2(120, 0))) {
+                ImGui::CloseCurrentPopup();
+            }
+            ImGui::EndPopup();
+        }
+        
+        ImGui::SameLine();
+        if (ImGui::Button("Connect", ImVec2(150, 0))) {
+            // Validate input
+            bool valid = false;
+            if (temp_database_config_.db_config.use_connection_string) {
+                valid = !temp_database_config_.db_config.connection_string.empty();
+            } else {
+                valid = !temp_database_config_.db_config.host.empty() &&
+                       !temp_database_config_.db_config.database.empty() &&
+                       !temp_database_config_.db_config.username.empty() &&
+                       temp_database_config_.db_config.port > 0;
+            }
+            
+            if (valid) {
+                // Add the database configuration to data sources
+                temp_database_config_.metadata_loaded = false;
+                temp_database_config_.error_message = "Database support requires additional libraries (not yet implemented)";
+                
+                // Generate a display name for the database
+                if (temp_database_config_.db_config.use_connection_string) {
+                    temp_database_config_.filepath = db_type_selection_ + " (custom connection)";
+                } else {
+                    temp_database_config_.filepath = db_type_selection_ + "://" + 
+                        temp_database_config_.db_config.host + ":" + 
+                        std::to_string(temp_database_config_.db_config.port) + "/" +
+                        temp_database_config_.db_config.database;
+                }
+                
+                data_sources_.push_back(temp_database_config_);
+                
+                std::cout << "Added database configuration: " << temp_database_config_.filepath << std::endl;
+                ImGui::CloseCurrentPopup();
+            } else {
+                ImGui::OpenPopup("ValidationError");
+            }
+        }
+        
+        // Validation error popup
+        if (ImGui::BeginPopupModal("ValidationError", nullptr, ImGuiWindowFlags_AlwaysAutoResize)) {
+            ImGui::Text("Please fill in all required fields:");
+            if (temp_database_config_.db_config.use_connection_string) {
+                ImGui::BulletText("Connection String");
+            } else {
+                ImGui::BulletText("Host");
+                ImGui::BulletText("Port (must be > 0)");
+                ImGui::BulletText("Database");
+                ImGui::BulletText("Username");
+            }
+            ImGui::Separator();
+            if (ImGui::Button("OK", ImVec2(120, 0))) {
+                ImGui::CloseCurrentPopup();
+            }
+            ImGui::EndPopup();
+        }
+        
+        ImGui::SameLine();
+        if (ImGui::Button("Cancel", ImVec2(150, 0))) {
+            ImGui::CloseCurrentPopup();
+        }
+        
+        ImGui::EndPopup();
+    }
+}
+
+int KnowledgeGraphEditor::get_default_port(const std::string& db_type) const {
+    if (db_type == "mysql") {
+        return 3306;
+    } else if (db_type == "postgres") {
+        return 5432;
+    } else if (db_type == "sqlserver") {
+        return 1433;
+    }
+    return 0;
 }
 
 } // namespace gui

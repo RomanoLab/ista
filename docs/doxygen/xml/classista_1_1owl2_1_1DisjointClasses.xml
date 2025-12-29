@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1DisjointClasses" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::DisjointClasses</compoundname>
+    <basecompoundref refid="classista_1_1owl2_1_1Axiom" prot="public" virt="non-virtual">ista::owl2::Axiom</basecompoundref>
+    <includes refid="axiom_8hpp" local="no">axiom.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classista_1_1owl2_1_1DisjointClasses_1af3d59e0d3a03132952d11a7a367a5302" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="namespaceista_1_1owl2_1a61b3005e8a7011a323fdc822a191da25" kindref="member">ClassExpressionPtr</ref> &gt;</type>
+        <definition>std::vector&lt;ClassExpressionPtr&gt; ista::owl2::DisjointClasses::class_expressions_</definition>
+        <argsstring></argsstring>
+        <name>class_expressions_</name>
+        <qualifiedname>ista::owl2::DisjointClasses::class_expressions_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="162" column="17" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="162" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1DisjointClasses_1a9a862078981c442f51dadb496ca53fa6" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::DisjointClasses::DisjointClasses</definition>
+        <argsstring>(const std::vector&lt; ClassExpressionPtr &gt; &amp;class_expressions)</argsstring>
+        <name>DisjointClasses</name>
+        <qualifiedname>ista::owl2::DisjointClasses::DisjointClasses</qualifiedname>
+        <param>
+          <type>const std::vector&lt; <ref refid="namespaceista_1_1owl2_1a61b3005e8a7011a323fdc822a191da25" kindref="member">ClassExpressionPtr</ref> &gt; &amp;</type>
+          <declname>class_expressions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="151" column="14" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="151" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1DisjointClasses_1aedd7e61574edd4f71dc590ab95b0357b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="namespaceista_1_1owl2_1a61b3005e8a7011a323fdc822a191da25" kindref="member">ClassExpressionPtr</ref> &gt;</type>
+        <definition>std::vector&lt; ClassExpressionPtr &gt; ista::owl2::DisjointClasses::getClassExpressions</definition>
+        <argsstring>() const</argsstring>
+        <name>getClassExpressions</name>
+        <qualifiedname>ista::owl2::DisjointClasses::getClassExpressions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="154" column="17" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="154" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1DisjointClasses_1ac4070d4f7c08ad6a5e223aedd871c3c6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::DisjointClasses::toFunctionalSyntax</definition>
+        <argsstring>() const override</argsstring>
+        <name>toFunctionalSyntax</name>
+        <qualifiedname>ista::owl2::DisjointClasses::toFunctionalSyntax</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1Axiom_1abb5141ba6bd01498e779edef9eeb11e4">toFunctionalSyntax</reimplements>
+        <briefdescription>
+<para>Convert to OWL2 Functional Syntax. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="158" column="17" bodyfile="D:/projects/ista/lib/owl2/core/axiom.cpp" bodystart="122" bodyend="129"/>
+        <references refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" compoundref="axiom_8cpp" startline="11" endline="21">ista::owl2::Axiom::formatAnnotations</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1DisjointClasses_1afa8e4fdf66cc7a77a41d6db4f384b2c5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::DisjointClasses::getAxiomType</definition>
+        <argsstring>() const override</argsstring>
+        <name>getAxiomType</name>
+        <qualifiedname>ista::owl2::DisjointClasses::getAxiomType</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1Axiom_1abb223166f4ef93273628b162caab215a">getAxiomType</reimplements>
+        <briefdescription>
+<para>Get the type of this axiom. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="159" column="17" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="159" bodyend="159"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classista_1_1owl2_1_1DisjointClasses" kindref="compound">DisjointClasses</ref> axiom: all pairs are disjoint. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ista::owl2::Axiom</label>
+        <link refid="classista_1_1owl2_1_1Axiom"/>
+      </node>
+      <node id="1">
+        <label>ista::owl2::DisjointClasses</label>
+        <link refid="classista_1_1owl2_1_1DisjointClasses"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ista::owl2::Axiom</label>
+        <link refid="classista_1_1owl2_1_1Axiom"/>
+      </node>
+      <node id="1">
+        <label>ista::owl2::DisjointClasses</label>
+        <link refid="classista_1_1owl2_1_1DisjointClasses"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="149" column="1" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="149" bodyend="163"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1Axiom_1ae1259860d3c95a2cb42fa4d993339b68" prot="public" virt="non-virtual"><scope>ista::owl2::DisjointClasses</scope><name>addAnnotation</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1a05b3b8e7ddc42b14d1d77830f0b4949b" prot="protected" virt="non-virtual"><scope>ista::owl2::DisjointClasses</scope><name>annotations_</name></member>
+      <member refid="classista_1_1owl2_1_1DisjointClasses_1af3d59e0d3a03132952d11a7a367a5302" prot="private" virt="non-virtual"><scope>ista::owl2::DisjointClasses</scope><name>class_expressions_</name></member>
+      <member refid="classista_1_1owl2_1_1DisjointClasses_1a9a862078981c442f51dadb496ca53fa6" prot="public" virt="non-virtual"><scope>ista::owl2::DisjointClasses</scope><name>DisjointClasses</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" prot="protected" virt="non-virtual"><scope>ista::owl2::DisjointClasses</scope><name>formatAnnotations</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1a4711720ba16843d59d2bb4bbea3b59b1" prot="public" virt="non-virtual"><scope>ista::owl2::DisjointClasses</scope><name>getAnnotations</name></member>
+      <member refid="classista_1_1owl2_1_1DisjointClasses_1afa8e4fdf66cc7a77a41d6db4f384b2c5" prot="public" virt="virtual"><scope>ista::owl2::DisjointClasses</scope><name>getAxiomType</name></member>
+      <member refid="classista_1_1owl2_1_1DisjointClasses_1aedd7e61574edd4f71dc590ab95b0357b" prot="public" virt="non-virtual"><scope>ista::owl2::DisjointClasses</scope><name>getClassExpressions</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1a63abdbe0c16756478cc705e0e3cdc7b4" prot="public" virt="non-virtual"><scope>ista::owl2::DisjointClasses</scope><name>hasAnnotations</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1af9bbe00a1d3ff20aa1f04ae3a6ad41b4" prot="public" virt="non-virtual"><scope>ista::owl2::DisjointClasses</scope><name>setAnnotations</name></member>
+      <member refid="classista_1_1owl2_1_1DisjointClasses_1ac4070d4f7c08ad6a5e223aedd871c3c6" prot="public" virt="virtual"><scope>ista::owl2::DisjointClasses</scope><name>toFunctionalSyntax</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1acdf39a5f1ada2ce68b0d230f4f4d1c32" prot="public" virt="virtual"><scope>ista::owl2::DisjointClasses</scope><name>~Axiom</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

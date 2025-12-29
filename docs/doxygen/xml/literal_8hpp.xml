@@ -1,0 +1,297 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="literal_8hpp" kind="file" language="C++">
+    <compoundname>literal.hpp</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">optional</includes>
+    <includes refid="iri_8hpp" local="yes">iri.hpp</includes>
+    <includedby refid="annotation_8hpp" local="yes">D:/projects/ista/lib/owl2/core/annotation.hpp</includedby>
+    <includedby refid="axiom_8hpp" local="yes">D:/projects/ista/lib/owl2/core/axiom.hpp</includedby>
+    <includedby refid="class__expression_8hpp" local="yes">D:/projects/ista/lib/owl2/core/class_expression.hpp</includedby>
+    <includedby refid="data__range_8hpp" local="yes">D:/projects/ista/lib/owl2/core/data_range.hpp</includedby>
+    <includedby refid="literal_8cpp" local="yes">D:/projects/ista/lib/owl2/core/literal.cpp</includedby>
+    <includedby refid="ontology__filter_8hpp" local="yes">D:/projects/ista/lib/owl2/core/ontology_filter.hpp</includedby>
+    <includedby refid="owl2_8hpp" local="yes">D:/projects/ista/lib/owl2/owl2.hpp</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>iri.hpp</label>
+        <link refid="iri_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/projects/ista/lib/owl2/core/literal.hpp</label>
+        <link refid="literal_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>optional</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="5">
+        <label>unordered_map</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>D:/projects/ista/lib/owl2/core/annotation.cpp</label>
+        <link refid="annotation_8cpp"/>
+      </node>
+      <node id="2">
+        <label>D:/projects/ista/lib/owl2/core/annotation.hpp</label>
+        <link refid="annotation_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>D:/projects/ista/lib/owl2/core/axiom.cpp</label>
+        <link refid="axiom_8cpp"/>
+      </node>
+      <node id="4">
+        <label>D:/projects/ista/lib/owl2/core/axiom.hpp</label>
+        <link refid="axiom_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>D:/projects/ista/lib/owl2/core/class_expression.cpp</label>
+        <link refid="class__expression_8cpp"/>
+      </node>
+      <node id="21">
+        <label>D:/projects/ista/lib/owl2/core/class_expression.hpp</label>
+        <link refid="class__expression_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>D:/projects/ista/lib/owl2/core/data_range.cpp</label>
+        <link refid="data__range_8cpp"/>
+      </node>
+      <node id="23">
+        <label>D:/projects/ista/lib/owl2/core/data_range.hpp</label>
+        <link refid="data__range_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>D:/projects/ista/lib/owl2/core/literal.cpp</label>
+        <link refid="literal_8cpp"/>
+      </node>
+      <node id="1">
+        <label>D:/projects/ista/lib/owl2/core/literal.hpp</label>
+        <link refid="literal_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>D:/projects/ista/lib/owl2/core/ontology.cpp</label>
+        <link refid="ontology_8cpp"/>
+      </node>
+      <node id="6">
+        <label>D:/projects/ista/lib/owl2/core/ontology.hpp</label>
+        <link refid="ontology_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>D:/projects/ista/lib/owl2/core/ontology_filter.cpp</label>
+        <link refid="ontology__filter_8cpp"/>
+      </node>
+      <node id="8">
+        <label>D:/projects/ista/lib/owl2/core/ontology_filter.hpp</label>
+        <link refid="ontology__filter_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>D:/projects/ista/lib/owl2/owl2.hpp</label>
+        <link refid="owl2_8hpp"/>
+      </node>
+      <node id="12">
+        <label>D:/projects/ista/lib/owl2/parser/csv_parser.cpp</label>
+        <link refid="csv__parser_8cpp"/>
+      </node>
+      <node id="11">
+        <label>D:/projects/ista/lib/owl2/parser/csv_parser.hpp</label>
+        <link refid="csv__parser_8hpp"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp</label>
+        <link refid="rdfxml__parser_8cpp"/>
+      </node>
+      <node id="13">
+        <label>D:/projects/ista/lib/owl2/parser/rdfxml_parser.hpp</label>
+        <link refid="rdfxml__parser_8hpp"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.cpp</label>
+        <link refid="konclude__wrapper_8cpp"/>
+      </node>
+      <node id="16">
+        <label>D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp</label>
+        <link refid="konclude__wrapper_8hpp"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>D:/projects/ista/lib/owl2/serializer/functional_serializer.cpp</label>
+        <link refid="functional__serializer_8cpp"/>
+      </node>
+      <node id="17">
+        <label>D:/projects/ista/lib/owl2/serializer/functional_serializer.hpp</label>
+        <link refid="functional__serializer_8hpp"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp</label>
+        <link refid="rdfxml__serializer_8cpp"/>
+      </node>
+      <node id="19">
+        <label>D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp</label>
+        <link refid="rdfxml__serializer_8hpp"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classista_1_1owl2_1_1Literal" prot="public">ista::owl2::Literal</innerclass>
+    <innernamespace refid="namespaceista">ista</innernamespace>
+    <innernamespace refid="namespaceista_1_1owl2">ista::owl2</innernamespace>
+    <innernamespace refid="namespaceista_1_1owl2_1_1xsd">ista::owl2::xsd</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>ISTA_OWL2_LITERAL_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ISTA_OWL2_LITERAL_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;optional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="iri_8hpp" kindref="compound">iri.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceista" kindref="compound">ista</ref><sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceista_1_1owl2" kindref="compound">owl2</ref><sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="classista_1_1owl2_1_1Literal" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classista_1_1owl2_1_1Literal_1ab867743552ddbcddd7c033130fdfa2e9" kindref="member">Literal</ref><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Literal_1ab867743552ddbcddd7c033130fdfa2e9" kindref="member">Literal</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>lexical_form,<sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::optional&lt;std::string&gt;&amp;<sp/>language_tag<sp/>=<sp/>std::nullopt);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classista_1_1owl2_1_1Literal_1ab867743552ddbcddd7c033130fdfa2e9" kindref="member">Literal</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>lexical_form,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>&amp;<sp/>datatype);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="36" refid="classista_1_1owl2_1_1Literal_1a56ddceb68c4792370cfff4377de3bd82" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classista_1_1owl2_1_1Literal_1a56ddceb68c4792370cfff4377de3bd82" kindref="member">getLexicalForm</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>lexical_form_;<sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="41" refid="classista_1_1owl2_1_1Literal_1a1a401b1636dccb06149708938e1a3309" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;IRI&gt;<sp/><ref refid="classista_1_1owl2_1_1Literal_1a1a401b1636dccb06149708938e1a3309" kindref="member">getDatatype</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>datatype_;<sp/>}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="46" refid="classista_1_1owl2_1_1Literal_1a2dd15c00eed524111fa1ce0d84b0ebfa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;std::string&gt;<sp/><ref refid="classista_1_1owl2_1_1Literal_1a2dd15c00eed524111fa1ce0d84b0ebfa" kindref="member">getLanguageTag</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>language_tag_;<sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="51" refid="classista_1_1owl2_1_1Literal_1ae932960f494da87033ec95728e493f29" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Literal_1ae932960f494da87033ec95728e493f29" kindref="member">isTyped</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>datatype_.has_value();<sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="56" refid="classista_1_1owl2_1_1Literal_1aa69c95995f5ca2051548a199c8d00ca8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Literal_1aa69c95995f5ca2051548a199c8d00ca8" kindref="member">hasLanguageTag</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>language_tag_.has_value();<sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classista_1_1owl2_1_1Literal_1a70858bd4ab042d4a23653e35170cd8f5" kindref="member">toString</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Comparison<sp/>operators</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Literal_1a7ec4872adc79a2dffad376aaeca5c4dd" kindref="member">operator==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Literal" kindref="compound">Literal</ref>&amp;<sp/>other)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65" refid="classista_1_1owl2_1_1Literal_1a907d905329c2b80bae5b64370423ce97" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Literal_1a907d905329c2b80bae5b64370423ce97" kindref="member">operator!=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Literal_1ab867743552ddbcddd7c033130fdfa2e9" kindref="member">Literal</ref>&amp;<sp/>other)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!(*</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>==<sp/>other);<sp/>}</highlight></codeline>
+<codeline lineno="66" refid="classista_1_1owl2_1_1Literal_1a7162404fb52bdf89400155e2d05216bf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Literal_1a7162404fb52bdf89400155e2d05216bf" kindref="member">operator&lt;</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Literal_1ab867743552ddbcddd7c033130fdfa2e9" kindref="member">Literal</ref>&amp;<sp/>other)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>lexical_form_<sp/>&lt;<sp/>other.lexical_form_;<sp/>}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>lexical_form_;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;IRI&gt;<sp/>datatype_;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;std::string&gt;<sp/>language_tag_;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Common<sp/>XSD<sp/>datatypes<sp/>as<sp/>constants</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="namespaceista_1_1owl2_1_1xsd" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceista_1_1owl2_1_1xsd" kindref="compound">xsd</ref><sp/>{</highlight></codeline>
+<codeline lineno="76" refid="namespaceista_1_1owl2_1_1xsd_1a5304a0b9e4b877c08ce1d825085f591c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref><sp/><ref refid="namespaceista_1_1owl2_1_1xsd_1a5304a0b9e4b877c08ce1d825085f591c" kindref="member">STRING</ref>(</highlight><highlight class="stringliteral">&quot;http://www.w3.org/2001/XMLSchema#string&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="77" refid="namespaceista_1_1owl2_1_1xsd_1ab83e0bc4bbbac37fd628cbadd5fef76e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref><sp/><ref refid="namespaceista_1_1owl2_1_1xsd_1ab83e0bc4bbbac37fd628cbadd5fef76e" kindref="member">INTEGER</ref>(</highlight><highlight class="stringliteral">&quot;http://www.w3.org/2001/XMLSchema#integer&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="78" refid="namespaceista_1_1owl2_1_1xsd_1ae08928252c864eda872ca431094fca5e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref><sp/><ref refid="namespaceista_1_1owl2_1_1xsd_1ae08928252c864eda872ca431094fca5e" kindref="member">INT</ref>(</highlight><highlight class="stringliteral">&quot;http://www.w3.org/2001/XMLSchema#int&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="79" refid="namespaceista_1_1owl2_1_1xsd_1ae075d948b23ef1562d61e97da122b43e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref><sp/><ref refid="namespaceista_1_1owl2_1_1xsd_1ae075d948b23ef1562d61e97da122b43e" kindref="member">LONG</ref>(</highlight><highlight class="stringliteral">&quot;http://www.w3.org/2001/XMLSchema#long&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="80" refid="namespaceista_1_1owl2_1_1xsd_1acd81f5b7c6a2e5efb37f8f5df957506e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref><sp/><ref refid="namespaceista_1_1owl2_1_1xsd_1acd81f5b7c6a2e5efb37f8f5df957506e" kindref="member">DOUBLE</ref>(</highlight><highlight class="stringliteral">&quot;http://www.w3.org/2001/XMLSchema#double&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="81" refid="namespaceista_1_1owl2_1_1xsd_1aa25c0e11335be2908613c94d8e9f8be1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref><sp/><ref refid="namespaceista_1_1owl2_1_1xsd_1aa25c0e11335be2908613c94d8e9f8be1" kindref="member">FLOAT</ref>(</highlight><highlight class="stringliteral">&quot;http://www.w3.org/2001/XMLSchema#float&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="82" refid="namespaceista_1_1owl2_1_1xsd_1a7dfe058ce9d369861daf9a029ac023d6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref><sp/><ref refid="namespaceista_1_1owl2_1_1xsd_1a7dfe058ce9d369861daf9a029ac023d6" kindref="member">BOOLEAN</ref>(</highlight><highlight class="stringliteral">&quot;http://www.w3.org/2001/XMLSchema#boolean&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="83" refid="namespaceista_1_1owl2_1_1xsd_1a7163df11242ac88133dc0ff4adfde260" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref><sp/><ref refid="namespaceista_1_1owl2_1_1xsd_1a7163df11242ac88133dc0ff4adfde260" kindref="member">DATE_TIME</ref>(</highlight><highlight class="stringliteral">&quot;http://www.w3.org/2001/XMLSchema#dateTime&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="84" refid="namespaceista_1_1owl2_1_1xsd_1aa95f4a553776a831eda6845323590ac0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref><sp/><ref refid="namespaceista_1_1owl2_1_1xsd_1aa95f4a553776a831eda6845323590ac0" kindref="member">DATE</ref>(</highlight><highlight class="stringliteral">&quot;http://www.w3.org/2001/XMLSchema#date&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>owl2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>ista</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>ISTA_OWL2_LITERAL_HPP</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/projects/ista/lib/owl2/core/literal.hpp"/>
+  </compounddef>
+</doxygen>

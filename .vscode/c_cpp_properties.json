@@ -1,0 +1,66 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/lib",
+                "${workspaceFolder}/lib/owl2",
+                "${workspaceFolder}/external/pybind11/include",
+                "${workspaceFolder}/external/pugixml/src",
+                "C:/Users/jdr2160/miniconda3/include"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.19041.0",
+            "compilerPath": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.33.31629/bin/Hostx64/x64/cl.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "windows-msvc-x64",
+            "configurationProvider": "ms-vscode.cmake-tools"
+        },
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/lib",
+                "${workspaceFolder}/lib/owl2",
+                "${workspaceFolder}/external/pybind11/include",
+                "${workspaceFolder}/external/pugixml/src",
+                "/usr/include/python3.8",
+                "/usr/include/python3.9",
+                "/usr/include/python3.10"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/g++",
+            "cStandard": "c17",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "linux-gcc-x64"
+        },
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/lib",
+                "${workspaceFolder}/lib/owl2",
+                "${workspaceFolder}/external/pybind11/include",
+                "${workspaceFolder}/external/pugixml/src",
+                "/usr/local/include/python3.8",
+                "/usr/local/include/python3.9",
+                "/opt/homebrew/include/python3.10"
+            ],
+            "defines": [],
+            "macFrameworkPath": [
+                "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+            ],
+            "compilerPath": "/usr/bin/clang++",
+            "cStandard": "c17",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "macos-clang-x64"
+        }
+    ],
+    "version": 4
+}

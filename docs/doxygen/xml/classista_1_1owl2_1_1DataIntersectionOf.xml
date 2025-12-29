@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1DataIntersectionOf" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::DataIntersectionOf</compoundname>
+    <basecompoundref refid="classista_1_1owl2_1_1DataRange" prot="public" virt="non-virtual">ista::owl2::DataRange</basecompoundref>
+    <includes refid="data__range_8hpp" local="no">data_range.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classista_1_1owl2_1_1DataIntersectionOf_1a93fc6d6a5a8ee6c14619750678af031e" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="namespaceista_1_1owl2_1a419553adf775765f8b59cfed39cca902" kindref="member">DataRangePtr</ref> &gt;</type>
+        <definition>std::vector&lt;DataRangePtr&gt; ista::owl2::DataIntersectionOf::operands_</definition>
+        <argsstring></argsstring>
+        <name>operands_</name>
+        <qualifiedname>ista::owl2::DataIntersectionOf::operands_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="65" column="17" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="65" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1DataIntersectionOf_1a5544d9bf7a39f92a76f172a956358250" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::DataIntersectionOf::DataIntersectionOf</definition>
+        <argsstring>(const std::vector&lt; DataRangePtr &gt; &amp;operands)</argsstring>
+        <name>DataIntersectionOf</name>
+        <qualifiedname>ista::owl2::DataIntersectionOf::DataIntersectionOf</qualifiedname>
+        <param>
+          <type>const std::vector&lt; <ref refid="namespaceista_1_1owl2_1a419553adf775765f8b59cfed39cca902" kindref="member">DataRangePtr</ref> &gt; &amp;</type>
+          <declname>operands</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="56" column="14" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="56" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1DataIntersectionOf_1ad527e2b28e48eea98ac073ea25abe852" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="namespaceista_1_1owl2_1a419553adf775765f8b59cfed39cca902" kindref="member">DataRangePtr</ref> &gt;</type>
+        <definition>std::vector&lt; DataRangePtr &gt; ista::owl2::DataIntersectionOf::getOperands</definition>
+        <argsstring>() const</argsstring>
+        <name>getOperands</name>
+        <qualifiedname>ista::owl2::DataIntersectionOf::getOperands</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="59" column="17" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="59" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1DataIntersectionOf_1a89be2bd5aec959e2484f81082a328ec8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::DataIntersectionOf::toFunctionalSyntax</definition>
+        <argsstring>() const override</argsstring>
+        <name>toFunctionalSyntax</name>
+        <qualifiedname>ista::owl2::DataIntersectionOf::toFunctionalSyntax</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1DataRange_1abe52a263c7481aa3d078f895a62c7547">toFunctionalSyntax</reimplements>
+        <briefdescription>
+<para>Convert to OWL2 Functional Syntax. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="61" column="17" bodyfile="D:/projects/ista/lib/owl2/core/data_range.cpp" bodystart="11" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1DataIntersectionOf_1a3205e0ad92e1ca7f1cc8b69b5db2f89d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::DataIntersectionOf::getDataRangeType</definition>
+        <argsstring>() const override</argsstring>
+        <name>getDataRangeType</name>
+        <qualifiedname>ista::owl2::DataIntersectionOf::getDataRangeType</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1DataRange_1abc8e583db3cb378e0e055ecb5607288b">getDataRangeType</reimplements>
+        <briefdescription>
+<para>Get the type of this data range. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="62" column="17" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="62" bodyend="62"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Intersection of data ranges. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>ista::owl2::DataIntersectionOf</label>
+        <link refid="classista_1_1owl2_1_1DataIntersectionOf"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ista::owl2::DataRange</label>
+        <link refid="classista_1_1owl2_1_1DataRange"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>ista::owl2::DataIntersectionOf</label>
+        <link refid="classista_1_1owl2_1_1DataIntersectionOf"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ista::owl2::DataRange</label>
+        <link refid="classista_1_1owl2_1_1DataRange"/>
+      </node>
+    </collaborationgraph>
+    <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="54" column="1" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="54" bodyend="66"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1DataIntersectionOf_1a5544d9bf7a39f92a76f172a956358250" prot="public" virt="non-virtual"><scope>ista::owl2::DataIntersectionOf</scope><name>DataIntersectionOf</name></member>
+      <member refid="classista_1_1owl2_1_1DataIntersectionOf_1a3205e0ad92e1ca7f1cc8b69b5db2f89d" prot="public" virt="virtual"><scope>ista::owl2::DataIntersectionOf</scope><name>getDataRangeType</name></member>
+      <member refid="classista_1_1owl2_1_1DataIntersectionOf_1ad527e2b28e48eea98ac073ea25abe852" prot="public" virt="non-virtual"><scope>ista::owl2::DataIntersectionOf</scope><name>getOperands</name></member>
+      <member refid="classista_1_1owl2_1_1DataIntersectionOf_1a93fc6d6a5a8ee6c14619750678af031e" prot="private" virt="non-virtual"><scope>ista::owl2::DataIntersectionOf</scope><name>operands_</name></member>
+      <member refid="classista_1_1owl2_1_1DataIntersectionOf_1a89be2bd5aec959e2484f81082a328ec8" prot="public" virt="virtual"><scope>ista::owl2::DataIntersectionOf</scope><name>toFunctionalSyntax</name></member>
+      <member refid="classista_1_1owl2_1_1DataRange_1af96348d6c75791cb43e898a5b0a4d677" prot="public" virt="virtual"><scope>ista::owl2::DataIntersectionOf</scope><name>~DataRange</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

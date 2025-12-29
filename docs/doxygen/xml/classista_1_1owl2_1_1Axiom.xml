@@ -1,0 +1,558 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1Axiom" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>ista::owl2::Axiom</compoundname>
+    <derivedcompoundref refid="classista_1_1owl2_1_1AnnotationAssertion" prot="public" virt="non-virtual">ista::owl2::AnnotationAssertion</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1AnnotationPropertyDomain" prot="public" virt="non-virtual">ista::owl2::AnnotationPropertyDomain</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1AnnotationPropertyRange" prot="public" virt="non-virtual">ista::owl2::AnnotationPropertyRange</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1AsymmetricObjectProperty" prot="public" virt="non-virtual">ista::owl2::AsymmetricObjectProperty</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1ClassAssertion" prot="public" virt="non-virtual">ista::owl2::ClassAssertion</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1DataPropertyAssertion" prot="public" virt="non-virtual">ista::owl2::DataPropertyAssertion</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1DataPropertyDomain" prot="public" virt="non-virtual">ista::owl2::DataPropertyDomain</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1DataPropertyRange" prot="public" virt="non-virtual">ista::owl2::DataPropertyRange</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1DatatypeDefinition" prot="public" virt="non-virtual">ista::owl2::DatatypeDefinition</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1Declaration" prot="public" virt="non-virtual">ista::owl2::Declaration</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1DifferentIndividuals" prot="public" virt="non-virtual">ista::owl2::DifferentIndividuals</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1DisjointClasses" prot="public" virt="non-virtual">ista::owl2::DisjointClasses</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1DisjointDataProperties" prot="public" virt="non-virtual">ista::owl2::DisjointDataProperties</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1DisjointObjectProperties" prot="public" virt="non-virtual">ista::owl2::DisjointObjectProperties</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1DisjointUnion" prot="public" virt="non-virtual">ista::owl2::DisjointUnion</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1EquivalentClasses" prot="public" virt="non-virtual">ista::owl2::EquivalentClasses</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1EquivalentDataProperties" prot="public" virt="non-virtual">ista::owl2::EquivalentDataProperties</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1EquivalentObjectProperties" prot="public" virt="non-virtual">ista::owl2::EquivalentObjectProperties</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1FunctionalDataProperty" prot="public" virt="non-virtual">ista::owl2::FunctionalDataProperty</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1FunctionalObjectProperty" prot="public" virt="non-virtual">ista::owl2::FunctionalObjectProperty</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1HasKey" prot="public" virt="non-virtual">ista::owl2::HasKey</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1InverseFunctionalObjectProperty" prot="public" virt="non-virtual">ista::owl2::InverseFunctionalObjectProperty</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1InverseObjectProperties" prot="public" virt="non-virtual">ista::owl2::InverseObjectProperties</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1IrreflexiveObjectProperty" prot="public" virt="non-virtual">ista::owl2::IrreflexiveObjectProperty</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1NegativeDataPropertyAssertion" prot="public" virt="non-virtual">ista::owl2::NegativeDataPropertyAssertion</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1NegativeObjectPropertyAssertion" prot="public" virt="non-virtual">ista::owl2::NegativeObjectPropertyAssertion</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1ObjectPropertyAssertion" prot="public" virt="non-virtual">ista::owl2::ObjectPropertyAssertion</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1ObjectPropertyDomain" prot="public" virt="non-virtual">ista::owl2::ObjectPropertyDomain</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1ObjectPropertyRange" prot="public" virt="non-virtual">ista::owl2::ObjectPropertyRange</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1ReflexiveObjectProperty" prot="public" virt="non-virtual">ista::owl2::ReflexiveObjectProperty</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1SameIndividual" prot="public" virt="non-virtual">ista::owl2::SameIndividual</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1SubAnnotationPropertyOf" prot="public" virt="non-virtual">ista::owl2::SubAnnotationPropertyOf</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1SubClassOf" prot="public" virt="non-virtual">ista::owl2::SubClassOf</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1SubDataPropertyOf" prot="public" virt="non-virtual">ista::owl2::SubDataPropertyOf</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1SubObjectPropertyOf" prot="public" virt="non-virtual">ista::owl2::SubObjectPropertyOf</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1SymmetricObjectProperty" prot="public" virt="non-virtual">ista::owl2::SymmetricObjectProperty</derivedcompoundref>
+    <derivedcompoundref refid="classista_1_1owl2_1_1TransitiveObjectProperty" prot="public" virt="non-virtual">ista::owl2::TransitiveObjectProperty</derivedcompoundref>
+    <includes refid="axiom_8hpp" local="no">axiom.hpp</includes>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classista_1_1owl2_1_1Axiom_1a05b3b8e7ddc42b14d1d77830f0b4949b" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classista_1_1owl2_1_1Annotation" kindref="compound">Annotation</ref> &gt;</type>
+        <definition>std::vector&lt;Annotation&gt; ista::owl2::Axiom::annotations_</definition>
+        <argsstring></argsstring>
+        <name>annotations_</name>
+        <qualifiedname>ista::owl2::Axiom::annotations_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="61" column="17" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="61" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1Axiom_1ae1259860d3c95a2cb42fa4d993339b68" compoundref="axiom_8hpp" startline="49" endline="51">addAnnotation</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" compoundref="axiom_8cpp" startline="11" endline="21">formatAnnotations</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Axiom_1a4711720ba16843d59d2bb4bbea3b59b1" compoundref="axiom_8hpp" startline="39" endline="39">getAnnotations</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Axiom_1a63abdbe0c16756478cc705e0e3cdc7b4" compoundref="axiom_8hpp" startline="44" endline="44">hasAnnotations</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Axiom_1af9bbe00a1d3ff20aa1f04ae3a6ad41b4" compoundref="axiom_8hpp" startline="56" endline="58">setAnnotations</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1Axiom_1acdf39a5f1ada2ce68b0d230f4f4d1c32" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual ista::owl2::Axiom::~Axiom</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Axiom</name>
+        <qualifiedname>ista::owl2::Axiom::~Axiom</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="24" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Axiom_1abb5141ba6bd01498e779edef9eeb11e4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::string</type>
+        <definition>virtual std::string ista::owl2::Axiom::toFunctionalSyntax</definition>
+        <argsstring>() const =0</argsstring>
+        <name>toFunctionalSyntax</name>
+        <qualifiedname>ista::owl2::Axiom::toFunctionalSyntax</qualifiedname>
+        <reimplementedby refid="classista_1_1owl2_1_1AnnotationAssertion_1a0ac4aa97e3f200a89d0fbdf300075e8f">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1AnnotationPropertyDomain_1aa9db14f2a343beff11a73dc3557e4e30">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1AnnotationPropertyRange_1a2dadf60a46c9a24ad09c98eb6e1c40a1">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1AsymmetricObjectProperty_1a0d4eff7057f13d9930cc0e8fc252f0ff">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1ClassAssertion_1a3c36d64aed2d453c39d11f2e6a93f1ef">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1DataPropertyAssertion_1a079e0c091f4aaf0586ca95d5548e891d">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1DataPropertyDomain_1a4f1c8ec2c2ea4e10e965d345f449eea4">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1DataPropertyRange_1ae9fc2d350da0ca0f1af9b057be2352a2">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1DatatypeDefinition_1a524af252494b739804e4934a47326412">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1Declaration_1ac7e02d21b3d25e690b072cc925df2c10">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1DifferentIndividuals_1aee9e81afcad28d80b331d477a3f2f392">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1DisjointClasses_1ac4070d4f7c08ad6a5e223aedd871c3c6">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1DisjointDataProperties_1a42d30abb866637b1b6fd1ae432fbbb36">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1DisjointObjectProperties_1ad177ba54b243a38ec922de773743cc6e">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1DisjointUnion_1aea2097ac09551729badc14499ac0253c">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1EquivalentClasses_1a6c7d5f82e216e1c42e4cef4d4bef427f">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1EquivalentDataProperties_1a1dbf5c97b1187f3fe5e7b3d6b4b1f2d5">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1EquivalentObjectProperties_1a3e9708afe6192ff26825d2d31d37657c">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1FunctionalDataProperty_1a787a1f036bfa2b191658650485a36648">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1FunctionalObjectProperty_1ab19dc8410b3d80efb59a6aad9aaab535">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1HasKey_1a266dcf1edf0d1eaff73f251f0bf783ef">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1InverseFunctionalObjectProperty_1ab0e926508339fa564ae0708cc42f2fa4">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1InverseObjectProperties_1ac6dcc206debbada8bed3a798e0b4ac0e">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1IrreflexiveObjectProperty_1a75641fe57bce0eda3239a4112132925e">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1NegativeDataPropertyAssertion_1ab6e6fba098c7c7b8a2f2ee109c49ed5f">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1NegativeObjectPropertyAssertion_1af0f0c10b47fc87ae4dc7c39b602bc08d">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1ObjectPropertyAssertion_1ae4c6b42880350575471635f53c251d19">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1ObjectPropertyDomain_1adda9ab3b3ca9f34c795c586644cdd9d1">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1ObjectPropertyRange_1aa1295af4afa2346d00079415adc0d431">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1ReflexiveObjectProperty_1a973ff5ca73796b26fb0a7abb1e8d0d07">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1SameIndividual_1a6cbb4f114dca10be0a2c526678098e92">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1SubAnnotationPropertyOf_1a07b15da9891f892156c2213de6a5669e">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1SubClassOf_1a55da35c4aa36d26a296448bde8762f56">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1SubDataPropertyOf_1a8eadcb7d4945afaac4a39cc2400f4c6c">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1SubObjectPropertyOf_1ae390a1267baa6f73ce37e7fb2c5fe324">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1SymmetricObjectProperty_1a144d0e10da4e5960663a22a40b18ddbb">toFunctionalSyntax</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1TransitiveObjectProperty_1a28ecd0d526349fc8fd357ceb941e2071">toFunctionalSyntax</reimplementedby>
+        <briefdescription>
+<para>Convert to OWL2 Functional Syntax. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="29" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Axiom_1abb223166f4ef93273628b162caab215a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::string</type>
+        <definition>virtual std::string ista::owl2::Axiom::getAxiomType</definition>
+        <argsstring>() const =0</argsstring>
+        <name>getAxiomType</name>
+        <qualifiedname>ista::owl2::Axiom::getAxiomType</qualifiedname>
+        <reimplementedby refid="classista_1_1owl2_1_1AnnotationAssertion_1a5a802bf9f305ae981ccfeee4872dab14">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1AnnotationPropertyDomain_1a4937d399f0939fd3507cd624ee73c7a7">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1AnnotationPropertyRange_1a3ea6d3fccb56ca4bc0847cc2259fe4d3">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1AsymmetricObjectProperty_1a6e970ee70309547d09f0053f66330bfe">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1ClassAssertion_1ade6a13b2dc0d1fbd1023c1a41a4339b1">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1DataPropertyAssertion_1a9008455c3f2ec7ce587b5193ca56000c">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1DataPropertyDomain_1aae2933fbd461783ad877e4f86e5072ba">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1DataPropertyRange_1a85ff95dc1d1471fadec734c32133812f">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1DatatypeDefinition_1a5089ac6a212183498b659a43e90666e6">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1Declaration_1a1c3a036598150a4bdd92dad6e9387212">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1DifferentIndividuals_1a26a325932a8a93524bd1763c7b650160">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1DisjointClasses_1afa8e4fdf66cc7a77a41d6db4f384b2c5">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1DisjointDataProperties_1aa9cf60a4c340019e07edc6089f41dea7">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1DisjointObjectProperties_1a9f907ff832ed492b50b2a9c417db3c63">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1DisjointUnion_1a6b1436e01385a50a1a2932db3b3cd595">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1EquivalentClasses_1a66891bf9898a23cd264d860cb6af6d1c">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1EquivalentDataProperties_1aa81e329a24716d970f8fc5e23015a74b">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1EquivalentObjectProperties_1ac18db073f6692c26d61161076b981035">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1FunctionalDataProperty_1a4de6bbdd0ecd9bb41898cb8de4286cd7">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1FunctionalObjectProperty_1a63b1adbe374dd5ca074d2009055b5248">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1HasKey_1ab7744a8089dbab6c4aaa981258bfaa76">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1InverseFunctionalObjectProperty_1aa423998ee02e29a3b4a8c78e092d63d5">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1InverseObjectProperties_1ace4ed43d7bf4b3809ef844062fa186cc">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1IrreflexiveObjectProperty_1a0318c750a3ffc409902efd1aaa4bae03">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1NegativeDataPropertyAssertion_1a2421a4b753e4c5d2c6d7d1db9fa9d446">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1NegativeObjectPropertyAssertion_1a77e98400c4a3aee87022350a630d0406">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1ObjectPropertyAssertion_1ac3e5dfa43978af56338eeb9019718553">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1ObjectPropertyDomain_1abb5ce1dbdce02e4c615b2c955c5a288e">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1ObjectPropertyRange_1a8b3ff99d99deae32b0e1e3ee75aa9ea4">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1ReflexiveObjectProperty_1acba1fe01ec29b681de01e17fb2edf93c">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1SameIndividual_1a8fc659af2b499a2947205f99ad91e491">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1SubAnnotationPropertyOf_1af6f1c886cc79339bf1050ea37bd47606">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1SubClassOf_1a59ecbb99b8c7110b9f1f345f8b025f9d">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1SubDataPropertyOf_1a2c9272fb349ea00d878a5bd6cd23433b">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1SubObjectPropertyOf_1ac1b6bbb8368fa6c18564bfdb6fff405c">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1SymmetricObjectProperty_1a89e940d8567e4c0c038209fdcabf5ff9">getAxiomType</reimplementedby>
+        <reimplementedby refid="classista_1_1owl2_1_1TransitiveObjectProperty_1a9fc1a3d53b4165f0b3622d973bbc1220">getAxiomType</reimplementedby>
+        <briefdescription>
+<para>Get the type of this axiom. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="34" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Axiom_1a4711720ba16843d59d2bb4bbea3b59b1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="classista_1_1owl2_1_1Annotation" kindref="compound">Annotation</ref> &gt;</type>
+        <definition>std::vector&lt; Annotation &gt; ista::owl2::Axiom::getAnnotations</definition>
+        <argsstring>() const</argsstring>
+        <name>getAnnotations</name>
+        <qualifiedname>ista::owl2::Axiom::getAnnotations</qualifiedname>
+        <briefdescription>
+<para>Get annotations on this axiom. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="39" column="17" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="39" bodyend="39"/>
+        <references refid="classista_1_1owl2_1_1Axiom_1a05b3b8e7ddc42b14d1d77830f0b4949b" compoundref="axiom_8hpp" startline="61">annotations_</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Axiom_1a63abdbe0c16756478cc705e0e3cdc7b4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::Axiom::hasAnnotations</definition>
+        <argsstring>() const</argsstring>
+        <name>hasAnnotations</name>
+        <qualifiedname>ista::owl2::Axiom::hasAnnotations</qualifiedname>
+        <briefdescription>
+<para>Check if this axiom has annotations. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="44" column="10" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="44" bodyend="44"/>
+        <references refid="classista_1_1owl2_1_1Axiom_1a05b3b8e7ddc42b14d1d77830f0b4949b" compoundref="axiom_8hpp" startline="61">annotations_</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Axiom_1ae1259860d3c95a2cb42fa4d993339b68" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::Axiom::addAnnotation</definition>
+        <argsstring>(const Annotation &amp;annotation)</argsstring>
+        <name>addAnnotation</name>
+        <qualifiedname>ista::owl2::Axiom::addAnnotation</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1Annotation" kindref="compound">Annotation</ref> &amp;</type>
+          <declname>annotation</declname>
+        </param>
+        <briefdescription>
+<para>Add an annotation to this axiom. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="49" column="10" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="49" bodyend="51"/>
+        <references refid="classista_1_1owl2_1_1Axiom_1a05b3b8e7ddc42b14d1d77830f0b4949b" compoundref="axiom_8hpp" startline="61">annotations_</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Axiom_1af9bbe00a1d3ff20aa1f04ae3a6ad41b4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::Axiom::setAnnotations</definition>
+        <argsstring>(const std::vector&lt; Annotation &gt; &amp;annotations)</argsstring>
+        <name>setAnnotations</name>
+        <qualifiedname>ista::owl2::Axiom::setAnnotations</qualifiedname>
+        <param>
+          <type>const std::vector&lt; <ref refid="classista_1_1owl2_1_1Annotation" kindref="compound">Annotation</ref> &gt; &amp;</type>
+          <declname>annotations</declname>
+        </param>
+        <briefdescription>
+<para>Set all annotations. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="56" column="10" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="56" bodyend="58"/>
+        <references refid="classista_1_1owl2_1_1Axiom_1a05b3b8e7ddc42b14d1d77830f0b4949b" compoundref="axiom_8hpp" startline="61">annotations_</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::Axiom::formatAnnotations</definition>
+        <argsstring>() const</argsstring>
+        <name>formatAnnotations</name>
+        <qualifiedname>ista::owl2::Axiom::formatAnnotations</qualifiedname>
+        <briefdescription>
+<para>Helper to format annotations in functional syntax. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="66" column="17" bodyfile="D:/projects/ista/lib/owl2/core/axiom.cpp" bodystart="11" bodyend="21"/>
+        <references refid="classista_1_1owl2_1_1Axiom_1a05b3b8e7ddc42b14d1d77830f0b4949b" compoundref="axiom_8hpp" startline="61">annotations_</references>
+        <referencedby refid="classista_1_1owl2_1_1AnnotationAssertion_1a0ac4aa97e3f200a89d0fbdf300075e8f" compoundref="axiom_8cpp" startline="371" endline="376">ista::owl2::AnnotationAssertion::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1AnnotationPropertyDomain_1aa9db14f2a343beff11a73dc3557e4e30" compoundref="axiom_8cpp" startline="384" endline="388">ista::owl2::AnnotationPropertyDomain::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1AnnotationPropertyRange_1a2dadf60a46c9a24ad09c98eb6e1c40a1" compoundref="axiom_8cpp" startline="390" endline="394">ista::owl2::AnnotationPropertyRange::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1AsymmetricObjectProperty_1a0d4eff7057f13d9930cc0e8fc252f0ff" compoundref="axiom_8cpp" startline="224" endline="227">ista::owl2::AsymmetricObjectProperty::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1ClassAssertion_1a3c36d64aed2d453c39d11f2e6a93f1ef" compoundref="axiom_8cpp" startline="333" endline="337">ista::owl2::ClassAssertion::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1DataPropertyAssertion_1a079e0c091f4aaf0586ca95d5548e891d" compoundref="axiom_8cpp" startline="353" endline="358">ista::owl2::DataPropertyAssertion::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1DataPropertyDomain_1a4f1c8ec2c2ea4e10e965d345f449eea4" compoundref="axiom_8cpp" startline="262" endline="266">ista::owl2::DataPropertyDomain::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1DataPropertyRange_1ae9fc2d350da0ca0f1af9b057be2352a2" compoundref="axiom_8cpp" startline="268" endline="272">ista::owl2::DataPropertyRange::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1DatatypeDefinition_1a524af252494b739804e4934a47326412" compoundref="axiom_8cpp" startline="283" endline="287">ista::owl2::DatatypeDefinition::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Declaration_1ac7e02d21b3d25e690b072cc925df2c10" compoundref="axiom_8cpp" startline="77" endline="101">ista::owl2::Declaration::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1DifferentIndividuals_1aee9e81afcad28d80b331d477a3f2f392" compoundref="axiom_8cpp" startline="324" endline="331">ista::owl2::DifferentIndividuals::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1DisjointClasses_1ac4070d4f7c08ad6a5e223aedd871c3c6" compoundref="axiom_8cpp" startline="122" endline="129">ista::owl2::DisjointClasses::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1DisjointDataProperties_1a42d30abb866637b1b6fd1ae432fbbb36" compoundref="axiom_8cpp" startline="253" endline="260">ista::owl2::DisjointDataProperties::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1DisjointObjectProperties_1ad177ba54b243a38ec922de773743cc6e" compoundref="axiom_8cpp" startline="172" endline="179">ista::owl2::DisjointObjectProperties::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1DisjointUnion_1aea2097ac09551729badc14499ac0253c" compoundref="axiom_8cpp" startline="131" endline="139">ista::owl2::DisjointUnion::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1EquivalentClasses_1a6c7d5f82e216e1c42e4cef4d4bef427f" compoundref="axiom_8cpp" startline="113" endline="120">ista::owl2::EquivalentClasses::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1EquivalentDataProperties_1a1dbf5c97b1187f3fe5e7b3d6b4b1f2d5" compoundref="axiom_8cpp" startline="244" endline="251">ista::owl2::EquivalentDataProperties::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1EquivalentObjectProperties_1a3e9708afe6192ff26825d2d31d37657c" compoundref="axiom_8cpp" startline="163" endline="170">ista::owl2::EquivalentObjectProperties::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1FunctionalDataProperty_1a787a1f036bfa2b191658650485a36648" compoundref="axiom_8cpp" startline="274" endline="277">ista::owl2::FunctionalDataProperty::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1FunctionalObjectProperty_1ab19dc8410b3d80efb59a6aad9aaab535" compoundref="axiom_8cpp" startline="199" endline="202">ista::owl2::FunctionalObjectProperty::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1HasKey_1a266dcf1edf0d1eaff73f251f0bf783ef" compoundref="axiom_8cpp" startline="293" endline="309">ista::owl2::HasKey::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1InverseFunctionalObjectProperty_1ab0e926508339fa564ae0708cc42f2fa4" compoundref="axiom_8cpp" startline="204" endline="207">ista::owl2::InverseFunctionalObjectProperty::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1InverseObjectProperties_1ac6dcc206debbada8bed3a798e0b4ac0e" compoundref="axiom_8cpp" startline="181" endline="185">ista::owl2::InverseObjectProperties::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1IrreflexiveObjectProperty_1a75641fe57bce0eda3239a4112132925e" compoundref="axiom_8cpp" startline="214" endline="217">ista::owl2::IrreflexiveObjectProperty::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1NegativeDataPropertyAssertion_1ab6e6fba098c7c7b8a2f2ee109c49ed5f" compoundref="axiom_8cpp" startline="360" endline="365">ista::owl2::NegativeDataPropertyAssertion::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1NegativeObjectPropertyAssertion_1af0f0c10b47fc87ae4dc7c39b602bc08d" compoundref="axiom_8cpp" startline="346" endline="351">ista::owl2::NegativeObjectPropertyAssertion::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1ObjectPropertyAssertion_1ae4c6b42880350575471635f53c251d19" compoundref="axiom_8cpp" startline="339" endline="344">ista::owl2::ObjectPropertyAssertion::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1ObjectPropertyDomain_1adda9ab3b3ca9f34c795c586644cdd9d1" compoundref="axiom_8cpp" startline="187" endline="191">ista::owl2::ObjectPropertyDomain::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1ObjectPropertyRange_1aa1295af4afa2346d00079415adc0d431" compoundref="axiom_8cpp" startline="193" endline="197">ista::owl2::ObjectPropertyRange::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1ReflexiveObjectProperty_1a973ff5ca73796b26fb0a7abb1e8d0d07" compoundref="axiom_8cpp" startline="209" endline="212">ista::owl2::ReflexiveObjectProperty::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1SameIndividual_1a6cbb4f114dca10be0a2c526678098e92" compoundref="axiom_8cpp" startline="315" endline="322">ista::owl2::SameIndividual::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1SubAnnotationPropertyOf_1a07b15da9891f892156c2213de6a5669e" compoundref="axiom_8cpp" startline="378" endline="382">ista::owl2::SubAnnotationPropertyOf::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1SubClassOf_1a55da35c4aa36d26a296448bde8762f56" compoundref="axiom_8cpp" startline="107" endline="111">ista::owl2::SubClassOf::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1SubDataPropertyOf_1a8eadcb7d4945afaac4a39cc2400f4c6c" compoundref="axiom_8cpp" startline="238" endline="242">ista::owl2::SubDataPropertyOf::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1SubObjectPropertyOf_1ae390a1267baa6f73ce37e7fb2c5fe324" compoundref="axiom_8cpp" startline="145" endline="161">ista::owl2::SubObjectPropertyOf::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1SymmetricObjectProperty_1a144d0e10da4e5960663a22a40b18ddbb" compoundref="axiom_8cpp" startline="219" endline="222">ista::owl2::SymmetricObjectProperty::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1TransitiveObjectProperty_1a28ecd0d526349fc8fd357ceb941e2071" compoundref="axiom_8cpp" startline="229" endline="232">ista::owl2::TransitiveObjectProperty::toFunctionalSyntax</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Base class for all OWL2 axioms. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>All axioms can have annotations attached to them. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ista::owl2::AnnotationAssertion</label>
+        <link refid="classista_1_1owl2_1_1AnnotationAssertion"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>ista::owl2::AnnotationPropertyDomain</label>
+        <link refid="classista_1_1owl2_1_1AnnotationPropertyDomain"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ista::owl2::AnnotationPropertyRange</label>
+        <link refid="classista_1_1owl2_1_1AnnotationPropertyRange"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>ista::owl2::AsymmetricObjectProperty</label>
+        <link refid="classista_1_1owl2_1_1AsymmetricObjectProperty"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ista::owl2::Axiom</label>
+        <link refid="classista_1_1owl2_1_1Axiom"/>
+      </node>
+      <node id="6">
+        <label>ista::owl2::ClassAssertion</label>
+        <link refid="classista_1_1owl2_1_1ClassAssertion"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>ista::owl2::DataPropertyAssertion</label>
+        <link refid="classista_1_1owl2_1_1DataPropertyAssertion"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>ista::owl2::DataPropertyDomain</label>
+        <link refid="classista_1_1owl2_1_1DataPropertyDomain"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>ista::owl2::DataPropertyRange</label>
+        <link refid="classista_1_1owl2_1_1DataPropertyRange"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>ista::owl2::DatatypeDefinition</label>
+        <link refid="classista_1_1owl2_1_1DatatypeDefinition"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>ista::owl2::Declaration</label>
+        <link refid="classista_1_1owl2_1_1Declaration"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>ista::owl2::DifferentIndividuals</label>
+        <link refid="classista_1_1owl2_1_1DifferentIndividuals"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>ista::owl2::DisjointClasses</label>
+        <link refid="classista_1_1owl2_1_1DisjointClasses"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>ista::owl2::DisjointDataProperties</label>
+        <link refid="classista_1_1owl2_1_1DisjointDataProperties"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>ista::owl2::DisjointObjectProperties</label>
+        <link refid="classista_1_1owl2_1_1DisjointObjectProperties"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>ista::owl2::DisjointUnion</label>
+        <link refid="classista_1_1owl2_1_1DisjointUnion"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>ista::owl2::EquivalentClasses</label>
+        <link refid="classista_1_1owl2_1_1EquivalentClasses"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>ista::owl2::EquivalentDataProperties</label>
+        <link refid="classista_1_1owl2_1_1EquivalentDataProperties"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>ista::owl2::EquivalentObjectProperties</label>
+        <link refid="classista_1_1owl2_1_1EquivalentObjectProperties"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>ista::owl2::FunctionalDataProperty</label>
+        <link refid="classista_1_1owl2_1_1FunctionalDataProperty"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>ista::owl2::FunctionalObjectProperty</label>
+        <link refid="classista_1_1owl2_1_1FunctionalObjectProperty"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>ista::owl2::HasKey</label>
+        <link refid="classista_1_1owl2_1_1HasKey"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>ista::owl2::InverseFunctionalObjectProperty</label>
+        <link refid="classista_1_1owl2_1_1InverseFunctionalObjectProperty"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>ista::owl2::InverseObjectProperties</label>
+        <link refid="classista_1_1owl2_1_1InverseObjectProperties"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>ista::owl2::IrreflexiveObjectProperty</label>
+        <link refid="classista_1_1owl2_1_1IrreflexiveObjectProperty"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>ista::owl2::NegativeDataPropertyAssertion</label>
+        <link refid="classista_1_1owl2_1_1NegativeDataPropertyAssertion"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>ista::owl2::NegativeObjectPropertyAssertion</label>
+        <link refid="classista_1_1owl2_1_1NegativeObjectPropertyAssertion"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>ista::owl2::ObjectPropertyAssertion</label>
+        <link refid="classista_1_1owl2_1_1ObjectPropertyAssertion"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>ista::owl2::ObjectPropertyDomain</label>
+        <link refid="classista_1_1owl2_1_1ObjectPropertyDomain"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>ista::owl2::ObjectPropertyRange</label>
+        <link refid="classista_1_1owl2_1_1ObjectPropertyRange"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>ista::owl2::ReflexiveObjectProperty</label>
+        <link refid="classista_1_1owl2_1_1ReflexiveObjectProperty"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>ista::owl2::SameIndividual</label>
+        <link refid="classista_1_1owl2_1_1SameIndividual"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>ista::owl2::SubAnnotationPropertyOf</label>
+        <link refid="classista_1_1owl2_1_1SubAnnotationPropertyOf"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>ista::owl2::SubClassOf</label>
+        <link refid="classista_1_1owl2_1_1SubClassOf"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>ista::owl2::SubDataPropertyOf</label>
+        <link refid="classista_1_1owl2_1_1SubDataPropertyOf"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>ista::owl2::SubObjectPropertyOf</label>
+        <link refid="classista_1_1owl2_1_1SubObjectPropertyOf"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>ista::owl2::SymmetricObjectProperty</label>
+        <link refid="classista_1_1owl2_1_1SymmetricObjectProperty"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>ista::owl2::TransitiveObjectProperty</label>
+        <link refid="classista_1_1owl2_1_1TransitiveObjectProperty"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="22" column="1" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="22" bodyend="67"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1Axiom_1ae1259860d3c95a2cb42fa4d993339b68" prot="public" virt="non-virtual"><scope>ista::owl2::Axiom</scope><name>addAnnotation</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1a05b3b8e7ddc42b14d1d77830f0b4949b" prot="protected" virt="non-virtual"><scope>ista::owl2::Axiom</scope><name>annotations_</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" prot="protected" virt="non-virtual"><scope>ista::owl2::Axiom</scope><name>formatAnnotations</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1a4711720ba16843d59d2bb4bbea3b59b1" prot="public" virt="non-virtual"><scope>ista::owl2::Axiom</scope><name>getAnnotations</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1abb223166f4ef93273628b162caab215a" prot="public" virt="pure-virtual"><scope>ista::owl2::Axiom</scope><name>getAxiomType</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1a63abdbe0c16756478cc705e0e3cdc7b4" prot="public" virt="non-virtual"><scope>ista::owl2::Axiom</scope><name>hasAnnotations</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1af9bbe00a1d3ff20aa1f04ae3a6ad41b4" prot="public" virt="non-virtual"><scope>ista::owl2::Axiom</scope><name>setAnnotations</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1abb5141ba6bd01498e779edef9eeb11e4" prot="public" virt="pure-virtual"><scope>ista::owl2::Axiom</scope><name>toFunctionalSyntax</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1acdf39a5f1ada2ce68b0d230f4f4d1c32" prot="public" virt="virtual"><scope>ista::owl2::Axiom</scope><name>~Axiom</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

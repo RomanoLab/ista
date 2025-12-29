@@ -1,0 +1,478 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::reasoner::KoncludeWrapper</compoundname>
+    <includes refid="konclude__wrapper_8hpp" local="no">konclude_wrapper.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a4d36b7a5ebad3a3839ee1330be9e3ce0" prot="private" static="no" mutable="no">
+        <type><ref refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig" kindref="compound">KoncludeConfig</ref></type>
+        <definition>KoncludeConfig ista::owl2::reasoner::KoncludeWrapper::config_</definition>
+        <argsstring></argsstring>
+        <name>config_</name>
+        <qualifiedname>ista::owl2::reasoner::KoncludeWrapper::config_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" line="160" column="20" bodyfile="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1ad2fa2dcc98054d98f3e7dc3770ad1351" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::reasoner::KoncludeWrapper::last_output_file_</definition>
+        <argsstring></argsstring>
+        <name>last_output_file_</name>
+        <qualifiedname>ista::owl2::reasoner::KoncludeWrapper::last_output_file_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" line="161" column="17" bodyfile="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" bodystart="161" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a78beeb1f908f51aa6c59d4ceadbb7de1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::reasoner::KoncludeWrapper::KoncludeWrapper</definition>
+        <argsstring>()=default</argsstring>
+        <name>KoncludeWrapper</name>
+        <qualifiedname>ista::owl2::reasoner::KoncludeWrapper::KoncludeWrapper</qualifiedname>
+        <briefdescription>
+<para>Construct a Konclude wrapper with default configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" line="86" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a2b43e80be18bb10992c21b4f40aa8cfb" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::reasoner::KoncludeWrapper::KoncludeWrapper</definition>
+        <argsstring>(const KoncludeConfig &amp;config)</argsstring>
+        <name>KoncludeWrapper</name>
+        <qualifiedname>ista::owl2::reasoner::KoncludeWrapper::KoncludeWrapper</qualifiedname>
+        <param>
+          <type>const <ref refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig" kindref="compound">KoncludeConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+<para>Construct a Konclude wrapper with custom configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" line="91" column="14" bodyfile="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.cpp" bodystart="22" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a47c94d32fbc9e88fa121de8813908a9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::reasoner::KoncludeWrapper::set_konclude_path</definition>
+        <argsstring>(const std::string &amp;path)</argsstring>
+        <name>set_konclude_path</name>
+        <qualifiedname>ista::owl2::reasoner::KoncludeWrapper::set_konclude_path</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+<para>Set the path to Konclude executable. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" line="96" column="10" bodyfile="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.cpp" bodystart="25" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1acfffa42f7e10dc87adbf6e59d4dbfe6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::reasoner::KoncludeWrapper::set_worker_threads</definition>
+        <argsstring>(int threads)</argsstring>
+        <name>set_worker_threads</name>
+        <qualifiedname>ista::owl2::reasoner::KoncludeWrapper::set_worker_threads</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>threads</declname>
+        </param>
+        <briefdescription>
+<para>Set the number of worker threads. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>threads</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of threads (-1 for auto-detection) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" line="102" column="10" bodyfile="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.cpp" bodystart="29" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a46524a9ea066a0e9a69750cf3da23b9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::reasoner::KoncludeWrapper::set_verbose</definition>
+        <argsstring>(bool verbose)</argsstring>
+        <name>set_verbose</name>
+        <qualifiedname>ista::owl2::reasoner::KoncludeWrapper::set_verbose</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>verbose</declname>
+        </param>
+        <briefdescription>
+<para>Enable or disable verbose output. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" line="107" column="10" bodyfile="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.cpp" bodystart="33" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a4ca029c1caabd3850d1f582a606e3683" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult" kindref="compound">ReasoningResult</ref></type>
+        <definition>ReasoningResult ista::owl2::reasoner::KoncludeWrapper::check_consistency</definition>
+        <argsstring>(const Ontology &amp;ontology)</argsstring>
+        <name>check_consistency</name>
+        <qualifiedname>ista::owl2::reasoner::KoncludeWrapper::check_consistency</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <briefdescription>
+<para>Check if the ontology is consistent. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ontology</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ontology to check </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult" kindref="compound">ReasoningResult</ref> with is_consistent set appropriately </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" line="115" column="21" bodyfile="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.cpp" bodystart="195" bodyend="221"/>
+        <references refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult_1a03e96f0c6ac8f8e112c94e7e12dea1fa" compoundref="konclude__wrapper_8hpp" startline="51">ista::owl2::reasoner::ReasoningResult::error_message</references>
+        <references refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult_1ace94e3f5c5eb9491781968594f864077" compoundref="konclude__wrapper_8hpp" startline="50">ista::owl2::reasoner::ReasoningResult::is_consistent</references>
+        <references refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult_1a6ec510c0be0c89cb46b96f27364c22fe" compoundref="konclude__wrapper_8hpp" startline="49">ista::owl2::reasoner::ReasoningResult::success</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a8940078ac089acaa0e97be4a8feba090" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult" kindref="compound">ReasoningResult</ref></type>
+        <definition>ReasoningResult ista::owl2::reasoner::KoncludeWrapper::classify</definition>
+        <argsstring>(const Ontology &amp;ontology)</argsstring>
+        <name>classify</name>
+        <qualifiedname>ista::owl2::reasoner::KoncludeWrapper::classify</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <briefdescription>
+<para>Classify the ontology (compute class hierarchy). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ontology</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ontology to classify </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult" kindref="compound">ReasoningResult</ref> with inferred subclass axioms </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" line="123" column="21" bodyfile="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.cpp" bodystart="223" bodyend="234"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a01efb4e405f5f1851fe93dc319498cd7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult" kindref="compound">ReasoningResult</ref></type>
+        <definition>ReasoningResult ista::owl2::reasoner::KoncludeWrapper::realize</definition>
+        <argsstring>(const Ontology &amp;ontology)</argsstring>
+        <name>realize</name>
+        <qualifiedname>ista::owl2::reasoner::KoncludeWrapper::realize</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <briefdescription>
+<para>Realize the ontology (compute instance types). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ontology</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ontology to realize </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult" kindref="compound">ReasoningResult</ref> with inferred class assertions </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" line="131" column="21" bodyfile="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.cpp" bodystart="236" bodyend="247"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a3a0dc62c67cce6d549583980a8dbb0ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult" kindref="compound">ReasoningResult</ref></type>
+        <definition>ReasoningResult ista::owl2::reasoner::KoncludeWrapper::check_satisfiability</definition>
+        <argsstring>(const Ontology &amp;ontology, const IRI &amp;class_iri)</argsstring>
+        <name>check_satisfiability</name>
+        <qualifiedname>ista::owl2::reasoner::KoncludeWrapper::check_satisfiability</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &amp;</type>
+          <declname>class_iri</declname>
+        </param>
+        <briefdescription>
+<para>Check if a specific class is satisfiable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ontology</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ontology context </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>class_iri</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> of the class to check </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult" kindref="compound">ReasoningResult</ref> with is_consistent indicating satisfiability </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" line="140" column="21" bodyfile="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.cpp" bodystart="249" bodyend="281"/>
+        <references refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult_1ace94e3f5c5eb9491781968594f864077" compoundref="konclude__wrapper_8hpp" startline="50">ista::owl2::reasoner::ReasoningResult::is_consistent</references>
+        <references refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult_1a6ec510c0be0c89cb46b96f27364c22fe" compoundref="konclude__wrapper_8hpp" startline="49">ista::owl2::reasoner::ReasoningResult::success</references>
+        <references refid="classista_1_1owl2_1_1IRI_1abeda7230673f8bb46fd0608b8cce8382" compoundref="iri_8hpp" startline="75" endline="75">ista::owl2::IRI::toString</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a276452035d9dbd998157db9f5a446f55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &gt;</type>
+        <definition>std::optional&lt; Ontology &gt; ista::owl2::reasoner::KoncludeWrapper::load_inferred_ontology</definition>
+        <argsstring>()</argsstring>
+        <name>load_inferred_ontology</name>
+        <qualifiedname>ista::owl2::reasoner::KoncludeWrapper::load_inferred_ontology</qualifiedname>
+        <briefdescription>
+<para>Load the inferred ontology from the last reasoning operation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The ontology with inferred axioms, or empty ontology if none </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" line="147" column="19" bodyfile="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.cpp" bodystart="283" bodyend="297"/>
+        <references refid="classista_1_1owl2_1_1RDFXMLParser_1afc1445c4e5fbaab711f50cff7540dafa" compoundref="rdfxml__parser_8cpp" startline="821" endline="832">ista::owl2::RDFXMLParser::parseFromFile</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1af6eb3c0dc732f81bb6685e7c906ee385" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig" kindref="compound">KoncludeConfig</ref> &amp;</type>
+        <definition>const KoncludeConfig &amp; ista::owl2::reasoner::KoncludeWrapper::get_config</definition>
+        <argsstring>() const</argsstring>
+        <name>get_config</name>
+        <qualifiedname>ista::owl2::reasoner::KoncludeWrapper::get_config</qualifiedname>
+        <briefdescription>
+<para>Get the configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" line="152" column="26" bodyfile="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" bodystart="152" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a5bc9bfd423578ca87261eb02ff228cd4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::reasoner::KoncludeWrapper::is_available</definition>
+        <argsstring>() const</argsstring>
+        <name>is_available</name>
+        <qualifiedname>ista::owl2::reasoner::KoncludeWrapper::is_available</qualifiedname>
+        <briefdescription>
+<para>Check if Konclude is available at the configured path. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" line="157" column="10" bodyfile="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.cpp" bodystart="37" bodyend="45"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a4f832683f3f0a6aaba009edba9f10474" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult" kindref="compound">ReasoningResult</ref></type>
+        <definition>ReasoningResult ista::owl2::reasoner::KoncludeWrapper::execute_command</definition>
+        <argsstring>(const std::string &amp;command, const std::string &amp;input_file, const std::string &amp;output_file, const std::vector&lt; std::string &gt; &amp;extra_args={})</argsstring>
+        <name>execute_command</name>
+        <qualifiedname>ista::owl2::reasoner::KoncludeWrapper::execute_command</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>input_file</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>output_file</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>extra_args</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+<para>Execute a Konclude command. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" line="166" column="21" bodyfile="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.cpp" bodystart="116" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1aa6a997d616c29081407b0f7542ace88d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::reasoner::KoncludeWrapper::save_to_temp_file</definition>
+        <argsstring>(const Ontology &amp;ontology)</argsstring>
+        <name>save_to_temp_file</name>
+        <qualifiedname>ista::owl2::reasoner::KoncludeWrapper::save_to_temp_file</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <briefdescription>
+<para>Save ontology to a temporary file. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" line="176" column="17" bodyfile="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.cpp" bodystart="47" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a9273ea8200b8d9c5343ae7ee8c3db2cb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double ista::owl2::reasoner::KoncludeWrapper::parse_timing_info</definition>
+        <argsstring>(const std::string &amp;output)</argsstring>
+        <name>parse_timing_info</name>
+        <qualifiedname>ista::owl2::reasoner::KoncludeWrapper::parse_timing_info</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>output</declname>
+        </param>
+        <briefdescription>
+<para>Parse Konclude output for timing information. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" line="181" column="12" bodyfile="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.cpp" bodystart="97" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a227d8bb68e3c55c04f6c9b978257db34" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::reasoner::KoncludeWrapper::build_command</definition>
+        <argsstring>(const std::string &amp;command, const std::string &amp;input_file, const std::string &amp;output_file, const std::vector&lt; std::string &gt; &amp;extra_args)</argsstring>
+        <name>build_command</name>
+        <qualifiedname>ista::owl2::reasoner::KoncludeWrapper::build_command</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>input_file</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>output_file</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>extra_args</declname>
+        </param>
+        <briefdescription>
+<para>Build command line arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" line="186" column="17" bodyfile="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.cpp" bodystart="63" bodyend="95"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Wrapper for Konclude OWL2 reasoner. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class provides a C++ interface to the Konclude reasoner via command-line. Konclude is a high-performance, parallel OWL 2 DL reasoner.</para>
+<para>Supported reasoning tasks:<itemizedlist>
+<listitem><para>Consistency checking</para>
+</listitem><listitem><para>Classification (compute class hierarchy)</para>
+</listitem><listitem><para>Realization (compute instance types)</para>
+</listitem><listitem><para>Satisfiability checking</para>
+</listitem></itemizedlist>
+</para>
+<para>Example usage: <programlisting><codeline><highlight class="normal"><ref refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a78beeb1f908f51aa6c59d4ceadbb7de1" kindref="member">KoncludeWrapper</ref><sp/>reasoner;</highlight></codeline>
+<codeline><highlight class="normal">reasoner.set_konclude_path(</highlight><highlight class="stringliteral">&quot;/path/to/Konclude&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">Ontology<sp/>onto<sp/>=<sp/>...;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>result<sp/>=<sp/>reasoner.classify(onto);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(result.success)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Load<sp/>inferred<sp/>axioms</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Ontology<sp/>inferred<sp/>=<sp/>reasoner.load_inferred_ontology();</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> </para>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" line="81" column="1" bodyfile="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" bodystart="81" bodyend="192"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a227d8bb68e3c55c04f6c9b978257db34" prot="private" virt="non-virtual"><scope>ista::owl2::reasoner::KoncludeWrapper</scope><name>build_command</name></member>
+      <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a4ca029c1caabd3850d1f582a606e3683" prot="public" virt="non-virtual"><scope>ista::owl2::reasoner::KoncludeWrapper</scope><name>check_consistency</name></member>
+      <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a3a0dc62c67cce6d549583980a8dbb0ab" prot="public" virt="non-virtual"><scope>ista::owl2::reasoner::KoncludeWrapper</scope><name>check_satisfiability</name></member>
+      <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a8940078ac089acaa0e97be4a8feba090" prot="public" virt="non-virtual"><scope>ista::owl2::reasoner::KoncludeWrapper</scope><name>classify</name></member>
+      <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a4d36b7a5ebad3a3839ee1330be9e3ce0" prot="private" virt="non-virtual"><scope>ista::owl2::reasoner::KoncludeWrapper</scope><name>config_</name></member>
+      <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a4f832683f3f0a6aaba009edba9f10474" prot="private" virt="non-virtual"><scope>ista::owl2::reasoner::KoncludeWrapper</scope><name>execute_command</name></member>
+      <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1af6eb3c0dc732f81bb6685e7c906ee385" prot="public" virt="non-virtual"><scope>ista::owl2::reasoner::KoncludeWrapper</scope><name>get_config</name></member>
+      <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a5bc9bfd423578ca87261eb02ff228cd4" prot="public" virt="non-virtual"><scope>ista::owl2::reasoner::KoncludeWrapper</scope><name>is_available</name></member>
+      <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a78beeb1f908f51aa6c59d4ceadbb7de1" prot="public" virt="non-virtual"><scope>ista::owl2::reasoner::KoncludeWrapper</scope><name>KoncludeWrapper</name></member>
+      <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a2b43e80be18bb10992c21b4f40aa8cfb" prot="public" virt="non-virtual"><scope>ista::owl2::reasoner::KoncludeWrapper</scope><name>KoncludeWrapper</name></member>
+      <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1ad2fa2dcc98054d98f3e7dc3770ad1351" prot="private" virt="non-virtual"><scope>ista::owl2::reasoner::KoncludeWrapper</scope><name>last_output_file_</name></member>
+      <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a276452035d9dbd998157db9f5a446f55" prot="public" virt="non-virtual"><scope>ista::owl2::reasoner::KoncludeWrapper</scope><name>load_inferred_ontology</name></member>
+      <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a9273ea8200b8d9c5343ae7ee8c3db2cb" prot="private" virt="non-virtual"><scope>ista::owl2::reasoner::KoncludeWrapper</scope><name>parse_timing_info</name></member>
+      <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a01efb4e405f5f1851fe93dc319498cd7" prot="public" virt="non-virtual"><scope>ista::owl2::reasoner::KoncludeWrapper</scope><name>realize</name></member>
+      <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1aa6a997d616c29081407b0f7542ace88d" prot="private" virt="non-virtual"><scope>ista::owl2::reasoner::KoncludeWrapper</scope><name>save_to_temp_file</name></member>
+      <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a47c94d32fbc9e88fa121de8813908a9e" prot="public" virt="non-virtual"><scope>ista::owl2::reasoner::KoncludeWrapper</scope><name>set_konclude_path</name></member>
+      <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a46524a9ea066a0e9a69750cf3da23b9e" prot="public" virt="non-virtual"><scope>ista::owl2::reasoner::KoncludeWrapper</scope><name>set_verbose</name></member>
+      <member refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1acfffa42f7e10dc87adbf6e59d4dbfe6a" prot="public" virt="non-virtual"><scope>ista::owl2::reasoner::KoncludeWrapper</scope><name>set_worker_threads</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

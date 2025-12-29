@@ -1,0 +1,44 @@
+{
+    // C/C++ IntelliSense settings
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/lib",
+        "${workspaceFolder}/lib/owl2",
+        "${workspaceFolder}/external/pybind11/include",
+        "${workspaceFolder}/external/pugixml/src"
+    ],
+    "C_Cpp.default.cppStandard": "c++20",
+    "C_Cpp.default.compilerPath": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.33.31629/bin/Hostx64/x64/cl.exe",
+
+    // Clangd settings (if using clangd extension instead of C/C++)
+    "clangd.arguments": [
+        "--background-index",
+        "--clang-tidy",
+        "--completion-style=detailed",
+        "--header-insertion=never",
+        "--header-insertion-decorators",
+        "--log=error"
+    ],
+    "clangd.path": "clangd",
+
+    // File associations
+    "files.associations": {
+        "*.hpp": "cpp",
+        "*.cpp": "cpp",
+        "*.tpp": "cpp",
+        "pybind11.h": "cpp"
+    },
+
+    // CMake settings
+    "cmake.configureSettings": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+    },
+
+    // Disable certain error squiggles for external headers
+    "C_Cpp.errorSquiggles": "Enabled",
+    "C_Cpp.intelliSenseEngine": "Default",
+
+    // Python settings
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/ista"
+    ]
+}

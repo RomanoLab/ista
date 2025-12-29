@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="structIndividual" kind="struct" language="C++" prot="public">
+    <compoundname>Individual</compoundname>
+    <derivedcompoundref refid="structAnonymousIndividual" prot="public" virt="non-virtual">AnonymousIndividual</derivedcompoundref>
+    <derivedcompoundref refid="structNamedInvidual" prot="public" virt="non-virtual">NamedInvidual</derivedcompoundref>
+    <includes refid="entity_8hpp" local="no">entity.hpp</includes>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>AnonymousIndividual</label>
+        <link refid="structAnonymousIndividual"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Individual</label>
+        <link refid="structIndividual"/>
+      </node>
+      <node id="3">
+        <label>NamedInvidual</label>
+        <link refid="structNamedInvidual"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="D:/projects/ista/lib/owl2/entity.hpp" line="42" column="1" bodyfile="D:/projects/ista/lib/owl2/entity.hpp" bodystart="43" bodyend="45"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

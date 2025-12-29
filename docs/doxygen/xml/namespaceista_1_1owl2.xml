@@ -1,0 +1,493 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="namespaceista_1_1owl2" kind="namespace" language="C++">
+    <compoundname>ista::owl2</compoundname>
+    <innerclass refid="classista_1_1owl2_1_1Annotation" prot="public">ista::owl2::Annotation</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1Axiom" prot="public">ista::owl2::Axiom</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1Declaration" prot="public">ista::owl2::Declaration</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1SubClassOf" prot="public">ista::owl2::SubClassOf</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1EquivalentClasses" prot="public">ista::owl2::EquivalentClasses</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1DisjointClasses" prot="public">ista::owl2::DisjointClasses</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1DisjointUnion" prot="public">ista::owl2::DisjointUnion</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1SubObjectPropertyOf" prot="public">ista::owl2::SubObjectPropertyOf</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1EquivalentObjectProperties" prot="public">ista::owl2::EquivalentObjectProperties</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1DisjointObjectProperties" prot="public">ista::owl2::DisjointObjectProperties</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1InverseObjectProperties" prot="public">ista::owl2::InverseObjectProperties</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1ObjectPropertyDomain" prot="public">ista::owl2::ObjectPropertyDomain</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1ObjectPropertyRange" prot="public">ista::owl2::ObjectPropertyRange</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1FunctionalObjectProperty" prot="public">ista::owl2::FunctionalObjectProperty</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1InverseFunctionalObjectProperty" prot="public">ista::owl2::InverseFunctionalObjectProperty</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1ReflexiveObjectProperty" prot="public">ista::owl2::ReflexiveObjectProperty</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1IrreflexiveObjectProperty" prot="public">ista::owl2::IrreflexiveObjectProperty</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1SymmetricObjectProperty" prot="public">ista::owl2::SymmetricObjectProperty</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1AsymmetricObjectProperty" prot="public">ista::owl2::AsymmetricObjectProperty</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1TransitiveObjectProperty" prot="public">ista::owl2::TransitiveObjectProperty</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1SubDataPropertyOf" prot="public">ista::owl2::SubDataPropertyOf</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1EquivalentDataProperties" prot="public">ista::owl2::EquivalentDataProperties</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1DisjointDataProperties" prot="public">ista::owl2::DisjointDataProperties</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1DataPropertyDomain" prot="public">ista::owl2::DataPropertyDomain</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1DataPropertyRange" prot="public">ista::owl2::DataPropertyRange</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1FunctionalDataProperty" prot="public">ista::owl2::FunctionalDataProperty</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1DatatypeDefinition" prot="public">ista::owl2::DatatypeDefinition</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1HasKey" prot="public">ista::owl2::HasKey</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1SameIndividual" prot="public">ista::owl2::SameIndividual</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1DifferentIndividuals" prot="public">ista::owl2::DifferentIndividuals</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1ClassAssertion" prot="public">ista::owl2::ClassAssertion</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1ObjectPropertyAssertion" prot="public">ista::owl2::ObjectPropertyAssertion</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1NegativeObjectPropertyAssertion" prot="public">ista::owl2::NegativeObjectPropertyAssertion</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1DataPropertyAssertion" prot="public">ista::owl2::DataPropertyAssertion</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1NegativeDataPropertyAssertion" prot="public">ista::owl2::NegativeDataPropertyAssertion</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1AnnotationAssertion" prot="public">ista::owl2::AnnotationAssertion</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1SubAnnotationPropertyOf" prot="public">ista::owl2::SubAnnotationPropertyOf</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1AnnotationPropertyDomain" prot="public">ista::owl2::AnnotationPropertyDomain</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1AnnotationPropertyRange" prot="public">ista::owl2::AnnotationPropertyRange</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1ClassExpression" prot="public">ista::owl2::ClassExpression</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1NamedClass" prot="public">ista::owl2::NamedClass</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1ObjectIntersectionOf" prot="public">ista::owl2::ObjectIntersectionOf</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1ObjectUnionOf" prot="public">ista::owl2::ObjectUnionOf</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1ObjectSomeValuesFrom" prot="public">ista::owl2::ObjectSomeValuesFrom</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1ObjectAllValuesFrom" prot="public">ista::owl2::ObjectAllValuesFrom</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1DataRange" prot="public">ista::owl2::DataRange</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1NamedDatatype" prot="public">ista::owl2::NamedDatatype</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1DataIntersectionOf" prot="public">ista::owl2::DataIntersectionOf</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1DataUnionOf" prot="public">ista::owl2::DataUnionOf</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1DataComplementOf" prot="public">ista::owl2::DataComplementOf</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1DataOneOf" prot="public">ista::owl2::DataOneOf</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1DatatypeRestriction" prot="public">ista::owl2::DatatypeRestriction</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1Entity" prot="public">ista::owl2::Entity</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1Class" prot="public">ista::owl2::Class</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1Datatype" prot="public">ista::owl2::Datatype</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1ObjectProperty" prot="public">ista::owl2::ObjectProperty</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1DataProperty" prot="public">ista::owl2::DataProperty</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1AnnotationProperty" prot="public">ista::owl2::AnnotationProperty</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1NamedIndividual" prot="public">ista::owl2::NamedIndividual</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1AnonymousIndividual" prot="public">ista::owl2::AnonymousIndividual</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1IRI" prot="public">ista::owl2::IRI</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1Literal" prot="public">ista::owl2::Literal</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1Ontology" prot="public">ista::owl2::Ontology</innerclass>
+    <innerclass refid="structista_1_1owl2_1_1FilterCriteria" prot="public">ista::owl2::FilterCriteria</innerclass>
+    <innerclass refid="structista_1_1owl2_1_1FilterResult" prot="public">ista::owl2::FilterResult</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1OntologyFilter" prot="public">ista::owl2::OntologyFilter</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1CSVParseException" prot="public">ista::owl2::CSVParseException</innerclass>
+    <innerclass refid="structista_1_1owl2_1_1NodeTypeConfig" prot="public">ista::owl2::NodeTypeConfig</innerclass>
+    <innerclass refid="structista_1_1owl2_1_1RelationshipTypeConfig" prot="public">ista::owl2::RelationshipTypeConfig</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1CSVParser" prot="public">ista::owl2::CSVParser</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1RDFXMLParseException" prot="public">ista::owl2::RDFXMLParseException</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1RDFXMLParser" prot="public">ista::owl2::RDFXMLParser</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1FunctionalSyntaxSerializer" prot="public">ista::owl2::FunctionalSyntaxSerializer</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1RDFXMLSerializer" prot="public">ista::owl2::RDFXMLSerializer</innerclass>
+    <innernamespace refid="namespaceista_1_1owl2_1_1facets">ista::owl2::facets</innernamespace>
+    <innernamespace refid="namespaceista_1_1owl2_1_1xsd">ista::owl2::xsd</innernamespace>
+    <innernamespace refid="namespaceista_1_1owl2_1_1reasoner">ista::owl2::reasoner</innernamespace>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespaceista_1_1owl2_1a61f55fb50b668c2a4fc68c63be3e8574" prot="public" static="no">
+        <type>std::variant&lt; <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>, <ref refid="classista_1_1owl2_1_1Literal" kindref="compound">Literal</ref>, <ref refid="structAnonymousIndividual" kindref="compound">AnonymousIndividual</ref> &gt;</type>
+        <definition>using ista::owl2::AnnotationValue =  std::variant&lt;IRI, Literal, AnonymousIndividual&gt;</definition>
+        <argsstring></argsstring>
+        <name>AnnotationValue</name>
+        <qualifiedname>ista::owl2::AnnotationValue</qualifiedname>
+        <briefdescription>
+<para>Represents an OWL2 annotation value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>An annotation value can be an <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>, a <ref refid="classista_1_1owl2_1_1Literal" kindref="compound">Literal</ref>, or an <ref refid="classista_1_1owl2_1_1AnonymousIndividual" kindref="compound">AnonymousIndividual</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/annotation.hpp" line="18" column="1" bodyfile="D:/projects/ista/lib/owl2/core/annotation.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceista_1_1owl2_1a08e247e0199d79cc565e79e2639a7e82" prot="public" static="no">
+        <type>std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1Annotation" kindref="compound">Annotation</ref> &gt;</type>
+        <definition>using ista::owl2::AnnotationPtr =  std::shared_ptr&lt;Annotation&gt;</definition>
+        <argsstring></argsstring>
+        <name>AnnotationPtr</name>
+        <qualifiedname>ista::owl2::AnnotationPtr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/annotation.hpp" line="103" column="1" bodyfile="D:/projects/ista/lib/owl2/core/annotation.hpp" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceista_1_1owl2_1ae305b46823ac53f0c71aed391a90f835" prot="public" static="no">
+        <type>std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1Axiom" kindref="compound">Axiom</ref> &gt;</type>
+        <definition>using ista::owl2::AxiomPtr =  std::shared_ptr&lt;Axiom&gt;</definition>
+        <argsstring></argsstring>
+        <name>AxiomPtr</name>
+        <qualifiedname>ista::owl2::AxiomPtr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="69" column="1" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceista_1_1owl2_1ad17b74082fc9976eec3e4c085ebdec53" prot="public" static="no">
+        <type>std::variant&lt; <ref refid="structObjectProperty" kindref="compound">ObjectProperty</ref>, std::pair&lt; <ref refid="structObjectProperty" kindref="compound">ObjectProperty</ref>, bool &gt; &gt;</type>
+        <definition>using ista::owl2::ObjectPropertyExpression =  std::variant&lt;ObjectProperty, std::pair&lt;ObjectProperty, bool&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>ObjectPropertyExpression</name>
+        <qualifiedname>ista::owl2::ObjectPropertyExpression</qualifiedname>
+        <briefdescription>
+<para>Object property expression - can be a property or its inverse. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="194" column="1" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceista_1_1owl2_1a8327f2edd65d42a9498697dce8118d84" prot="public" static="no">
+        <type>std::variant&lt; <ref refid="classista_1_1owl2_1_1NamedIndividual" kindref="compound">NamedIndividual</ref>, <ref refid="structAnonymousIndividual" kindref="compound">AnonymousIndividual</ref> &gt;</type>
+        <definition>using ista::owl2::Individual =  std::variant&lt;NamedIndividual, AnonymousIndividual&gt;</definition>
+        <argsstring></argsstring>
+        <name>Individual</name>
+        <qualifiedname>ista::owl2::Individual</qualifiedname>
+        <briefdescription>
+<para><ref refid="structIndividual" kindref="compound">Individual</ref> - can be named or anonymous. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="615" column="1" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="615" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceista_1_1owl2_1a7a451dd92f3728ab467f5f52ac3679f0" prot="public" static="no">
+        <type>std::variant&lt; <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>, <ref refid="structAnonymousIndividual" kindref="compound">AnonymousIndividual</ref> &gt;</type>
+        <definition>using ista::owl2::AnnotationSubject =  std::variant&lt;IRI, AnonymousIndividual&gt;</definition>
+        <argsstring></argsstring>
+        <name>AnnotationSubject</name>
+        <qualifiedname>ista::owl2::AnnotationSubject</qualifiedname>
+        <briefdescription>
+<para><ref refid="classista_1_1owl2_1_1Annotation" kindref="compound">Annotation</ref> subject - can be <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> or anonymous individual. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="770" column="1" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="770" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceista_1_1owl2_1a419553adf775765f8b59cfed39cca902" prot="public" static="no">
+        <type>std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1DataRange" kindref="compound">DataRange</ref> &gt;</type>
+        <definition>typedef std::shared_ptr&lt; DataRange &gt; ista::owl2::DataRangePtr =  std::shared_ptr&lt;DataRange&gt;</definition>
+        <argsstring></argsstring>
+        <name>DataRangePtr</name>
+        <qualifiedname>ista::owl2::DataRangePtr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/class_expression.hpp" line="14" column="1" bodyfile="D:/projects/ista/lib/owl2/core/class_expression.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceista_1_1owl2_1a61b3005e8a7011a323fdc822a191da25" prot="public" static="no">
+        <type>std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1ClassExpression" kindref="compound">ClassExpression</ref> &gt;</type>
+        <definition>using ista::owl2::ClassExpressionPtr =  std::shared_ptr&lt;ClassExpression&gt;</definition>
+        <argsstring></argsstring>
+        <name>ClassExpressionPtr</name>
+        <qualifiedname>ista::owl2::ClassExpressionPtr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/class_expression.hpp" line="23" column="1" bodyfile="D:/projects/ista/lib/owl2/core/class_expression.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceista_1_1owl2_1a0d288444e5ed181610f80a105ae2db43" prot="public" static="no">
+        <type>std::shared_ptr&lt; <ref refid="structClass" kindref="compound">Class</ref> &gt;</type>
+        <definition>using ista::owl2::ClassPtr =  std::shared_ptr&lt;Class&gt;</definition>
+        <argsstring></argsstring>
+        <name>ClassPtr</name>
+        <qualifiedname>ista::owl2::ClassPtr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="122" column="1" bodyfile="D:/projects/ista/lib/owl2/core/entity.hpp" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceista_1_1owl2_1aea7bff0a03a57c105831602ad1ad9ee5" prot="public" static="no">
+        <type>std::shared_ptr&lt; <ref refid="structDatatype" kindref="compound">Datatype</ref> &gt;</type>
+        <definition>using ista::owl2::DatatypePtr =  std::shared_ptr&lt;Datatype&gt;</definition>
+        <argsstring></argsstring>
+        <name>DatatypePtr</name>
+        <qualifiedname>ista::owl2::DatatypePtr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="123" column="1" bodyfile="D:/projects/ista/lib/owl2/core/entity.hpp" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceista_1_1owl2_1ac45509b50fa4c5f3d54540686b5ef3c8" prot="public" static="no">
+        <type>std::shared_ptr&lt; <ref refid="structObjectProperty" kindref="compound">ObjectProperty</ref> &gt;</type>
+        <definition>using ista::owl2::ObjectPropertyPtr =  std::shared_ptr&lt;ObjectProperty&gt;</definition>
+        <argsstring></argsstring>
+        <name>ObjectPropertyPtr</name>
+        <qualifiedname>ista::owl2::ObjectPropertyPtr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="124" column="1" bodyfile="D:/projects/ista/lib/owl2/core/entity.hpp" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceista_1_1owl2_1a78c3d4f506d1b71dab796d7c944ab3a0" prot="public" static="no">
+        <type>std::shared_ptr&lt; <ref refid="structDataProperty" kindref="compound">DataProperty</ref> &gt;</type>
+        <definition>using ista::owl2::DataPropertyPtr =  std::shared_ptr&lt;DataProperty&gt;</definition>
+        <argsstring></argsstring>
+        <name>DataPropertyPtr</name>
+        <qualifiedname>ista::owl2::DataPropertyPtr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="125" column="1" bodyfile="D:/projects/ista/lib/owl2/core/entity.hpp" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceista_1_1owl2_1af717f3d5f9456c923c8ef094b0531686" prot="public" static="no">
+        <type>std::shared_ptr&lt; <ref refid="structAnnotationProperty" kindref="compound">AnnotationProperty</ref> &gt;</type>
+        <definition>using ista::owl2::AnnotationPropertyPtr =  std::shared_ptr&lt;AnnotationProperty&gt;</definition>
+        <argsstring></argsstring>
+        <name>AnnotationPropertyPtr</name>
+        <qualifiedname>ista::owl2::AnnotationPropertyPtr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="126" column="1" bodyfile="D:/projects/ista/lib/owl2/core/entity.hpp" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceista_1_1owl2_1ae9ccd6be1115c4f13576535b3dda0a57" prot="public" static="no">
+        <type>std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1NamedIndividual" kindref="compound">NamedIndividual</ref> &gt;</type>
+        <definition>using ista::owl2::NamedIndividualPtr =  std::shared_ptr&lt;NamedIndividual&gt;</definition>
+        <argsstring></argsstring>
+        <name>NamedIndividualPtr</name>
+        <qualifiedname>ista::owl2::NamedIndividualPtr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="127" column="1" bodyfile="D:/projects/ista/lib/owl2/core/entity.hpp" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceista_1_1owl2_1ab284d083244574c79371e0e408b9d4dd" prot="public" static="no">
+        <type>std::shared_ptr&lt; <ref refid="structAnonymousIndividual" kindref="compound">AnonymousIndividual</ref> &gt;</type>
+        <definition>using ista::owl2::AnonymousIndividualPtr =  std::shared_ptr&lt;AnonymousIndividual&gt;</definition>
+        <argsstring></argsstring>
+        <name>AnonymousIndividualPtr</name>
+        <qualifiedname>ista::owl2::AnonymousIndividualPtr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="128" column="1" bodyfile="D:/projects/ista/lib/owl2/core/entity.hpp" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceista_1_1owl2_1a5b4cac34809fec06518732ba9d2c3d3f" prot="public" static="no">
+        <type>std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &gt;</type>
+        <definition>using ista::owl2::OntologyPtr =  std::shared_ptr&lt;Ontology&gt;</definition>
+        <argsstring></argsstring>
+        <name>OntologyPtr</name>
+        <qualifiedname>ista::owl2::OntologyPtr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="163" column="1" bodyfile="D:/projects/ista/lib/owl2/core/ontology.hpp" bodystart="163" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceista_1_1owl2_1aeeae930ad21e1d27b91aa556e2190c18" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classista_1_1owl2_1_1Annotation" kindref="compound">Annotation</ref></type>
+        <definition>Annotation ista::owl2::makeAnnotation</definition>
+        <argsstring>(const AnnotationProperty &amp;property, const IRI &amp;value)</argsstring>
+        <name>makeAnnotation</name>
+        <qualifiedname>ista::owl2::makeAnnotation</qualifiedname>
+        <param>
+          <type>const <ref refid="structAnnotationProperty" kindref="compound">AnnotationProperty</ref> &amp;</type>
+          <declname>property</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Helper function to create an annotation with an <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/annotation.hpp" line="108" column="19" bodyfile="D:/projects/ista/lib/owl2/core/annotation.hpp" bodystart="108" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceista_1_1owl2_1a727864e7270c7367465a5df927f39392" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classista_1_1owl2_1_1Annotation" kindref="compound">Annotation</ref></type>
+        <definition>Annotation ista::owl2::makeAnnotation</definition>
+        <argsstring>(const AnnotationProperty &amp;property, const Literal &amp;value)</argsstring>
+        <name>makeAnnotation</name>
+        <qualifiedname>ista::owl2::makeAnnotation</qualifiedname>
+        <param>
+          <type>const <ref refid="structAnnotationProperty" kindref="compound">AnnotationProperty</ref> &amp;</type>
+          <declname>property</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1Literal" kindref="compound">Literal</ref> &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Helper function to create an annotation with a <ref refid="classista_1_1owl2_1_1Literal" kindref="compound">Literal</ref> value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/annotation.hpp" line="115" column="19" bodyfile="D:/projects/ista/lib/owl2/core/annotation.hpp" bodystart="115" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceista_1_1owl2_1a4e390854aa1dae3703e10252f985110e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classista_1_1owl2_1_1Annotation" kindref="compound">Annotation</ref></type>
+        <definition>Annotation ista::owl2::makeAnnotation</definition>
+        <argsstring>(const AnnotationProperty &amp;property, const AnonymousIndividual &amp;value)</argsstring>
+        <name>makeAnnotation</name>
+        <qualifiedname>ista::owl2::makeAnnotation</qualifiedname>
+        <param>
+          <type>const <ref refid="structAnnotationProperty" kindref="compound">AnnotationProperty</ref> &amp;</type>
+          <declname>property</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structAnonymousIndividual" kindref="compound">AnonymousIndividual</ref> &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Helper function to create an annotation with an <ref refid="classista_1_1owl2_1_1AnonymousIndividual" kindref="compound">AnonymousIndividual</ref> value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/annotation.hpp" line="122" column="19" bodyfile="D:/projects/ista/lib/owl2/core/annotation.hpp" bodystart="122" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceista_1_1owl2_1ac39c91f6c39e4468ca5610fb4360c1fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::formatObjectPropertyExpression</definition>
+        <argsstring>(const ObjectPropertyExpression &amp;ope)</argsstring>
+        <name>formatObjectPropertyExpression</name>
+        <qualifiedname>ista::owl2::formatObjectPropertyExpression</qualifiedname>
+        <param>
+          <type>const <ref refid="namespaceista_1_1owl2_1ad17b74082fc9976eec3e4c085ebdec53" kindref="member">ObjectPropertyExpression</ref> &amp;</type>
+          <declname>ope</declname>
+        </param>
+        <briefdescription>
+<para>Format an object property expression in functional syntax. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.cpp" line="27" column="13" bodyfile="D:/projects/ista/lib/owl2/core/axiom.cpp" bodystart="27" bodyend="36" declfile="D:/projects/ista/lib/owl2/core/axiom.hpp" declline="860" declcolumn="13"/>
+        <referencedby refid="classista_1_1owl2_1_1AsymmetricObjectProperty_1a0d4eff7057f13d9930cc0e8fc252f0ff" compoundref="axiom_8cpp" startline="224" endline="227">ista::owl2::AsymmetricObjectProperty::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1DisjointObjectProperties_1ad177ba54b243a38ec922de773743cc6e" compoundref="axiom_8cpp" startline="172" endline="179">ista::owl2::DisjointObjectProperties::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1EquivalentObjectProperties_1a3e9708afe6192ff26825d2d31d37657c" compoundref="axiom_8cpp" startline="163" endline="170">ista::owl2::EquivalentObjectProperties::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1FunctionalObjectProperty_1ab19dc8410b3d80efb59a6aad9aaab535" compoundref="axiom_8cpp" startline="199" endline="202">ista::owl2::FunctionalObjectProperty::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1HasKey_1a266dcf1edf0d1eaff73f251f0bf783ef" compoundref="axiom_8cpp" startline="293" endline="309">ista::owl2::HasKey::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1InverseFunctionalObjectProperty_1ab0e926508339fa564ae0708cc42f2fa4" compoundref="axiom_8cpp" startline="204" endline="207">ista::owl2::InverseFunctionalObjectProperty::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1InverseObjectProperties_1ac6dcc206debbada8bed3a798e0b4ac0e" compoundref="axiom_8cpp" startline="181" endline="185">ista::owl2::InverseObjectProperties::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1IrreflexiveObjectProperty_1a75641fe57bce0eda3239a4112132925e" compoundref="axiom_8cpp" startline="214" endline="217">ista::owl2::IrreflexiveObjectProperty::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1NegativeObjectPropertyAssertion_1af0f0c10b47fc87ae4dc7c39b602bc08d" compoundref="axiom_8cpp" startline="346" endline="351">ista::owl2::NegativeObjectPropertyAssertion::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1ObjectPropertyAssertion_1ae4c6b42880350575471635f53c251d19" compoundref="axiom_8cpp" startline="339" endline="344">ista::owl2::ObjectPropertyAssertion::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1ObjectPropertyDomain_1adda9ab3b3ca9f34c795c586644cdd9d1" compoundref="axiom_8cpp" startline="187" endline="191">ista::owl2::ObjectPropertyDomain::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1ObjectPropertyRange_1aa1295af4afa2346d00079415adc0d431" compoundref="axiom_8cpp" startline="193" endline="197">ista::owl2::ObjectPropertyRange::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1ReflexiveObjectProperty_1a973ff5ca73796b26fb0a7abb1e8d0d07" compoundref="axiom_8cpp" startline="209" endline="212">ista::owl2::ReflexiveObjectProperty::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1SubObjectPropertyOf_1ae390a1267baa6f73ce37e7fb2c5fe324" compoundref="axiom_8cpp" startline="145" endline="161">ista::owl2::SubObjectPropertyOf::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1SymmetricObjectProperty_1a144d0e10da4e5960663a22a40b18ddbb" compoundref="axiom_8cpp" startline="219" endline="222">ista::owl2::SymmetricObjectProperty::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1TransitiveObjectProperty_1a28ecd0d526349fc8fd357ceb941e2071" compoundref="axiom_8cpp" startline="229" endline="232">ista::owl2::TransitiveObjectProperty::toFunctionalSyntax</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceista_1_1owl2_1acf338c217966d139979b2abcad955cd4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::formatIndividual</definition>
+        <argsstring>(const Individual &amp;individual)</argsstring>
+        <name>formatIndividual</name>
+        <qualifiedname>ista::owl2::formatIndividual</qualifiedname>
+        <param>
+          <type>const <ref refid="namespaceista_1_1owl2_1a8327f2edd65d42a9498697dce8118d84" kindref="member">Individual</ref><ref refid="structIndividual" kindref="compound">Individual</ref> &amp;</type>
+          <declname>individual</declname>
+        </param>
+        <briefdescription>
+<para>Format an individual in functional syntax. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.cpp" line="38" column="13" bodyfile="D:/projects/ista/lib/owl2/core/axiom.cpp" bodystart="38" bodyend="47" declfile="D:/projects/ista/lib/owl2/core/axiom.hpp" declline="865" declcolumn="13"/>
+        <referencedby refid="classista_1_1owl2_1_1ClassAssertion_1a3c36d64aed2d453c39d11f2e6a93f1ef" compoundref="axiom_8cpp" startline="333" endline="337">ista::owl2::ClassAssertion::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1DataPropertyAssertion_1a079e0c091f4aaf0586ca95d5548e891d" compoundref="axiom_8cpp" startline="353" endline="358">ista::owl2::DataPropertyAssertion::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1DifferentIndividuals_1aee9e81afcad28d80b331d477a3f2f392" compoundref="axiom_8cpp" startline="324" endline="331">ista::owl2::DifferentIndividuals::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1NegativeDataPropertyAssertion_1ab6e6fba098c7c7b8a2f2ee109c49ed5f" compoundref="axiom_8cpp" startline="360" endline="365">ista::owl2::NegativeDataPropertyAssertion::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1NegativeObjectPropertyAssertion_1af0f0c10b47fc87ae4dc7c39b602bc08d" compoundref="axiom_8cpp" startline="346" endline="351">ista::owl2::NegativeObjectPropertyAssertion::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1ObjectPropertyAssertion_1ae4c6b42880350575471635f53c251d19" compoundref="axiom_8cpp" startline="339" endline="344">ista::owl2::ObjectPropertyAssertion::toFunctionalSyntax</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1SameIndividual_1a6cbb4f114dca10be0a2c526678098e92" compoundref="axiom_8cpp" startline="315" endline="322">ista::owl2::SameIndividual::toFunctionalSyntax</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceista_1_1owl2_1adafe0668771c4600e18bd24c8c5c8b2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::formatAnnotationSubject</definition>
+        <argsstring>(const AnnotationSubject &amp;subject)</argsstring>
+        <name>formatAnnotationSubject</name>
+        <qualifiedname>ista::owl2::formatAnnotationSubject</qualifiedname>
+        <param>
+          <type>const <ref refid="namespaceista_1_1owl2_1a7a451dd92f3728ab467f5f52ac3679f0" kindref="member">AnnotationSubject</ref> &amp;</type>
+          <declname>subject</declname>
+        </param>
+        <briefdescription>
+<para>Format an annotation subject in functional syntax. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.cpp" line="49" column="13" bodyfile="D:/projects/ista/lib/owl2/core/axiom.cpp" bodystart="49" bodyend="58" declfile="D:/projects/ista/lib/owl2/core/axiom.hpp" declline="870" declcolumn="13"/>
+        <referencedby refid="classista_1_1owl2_1_1AnnotationAssertion_1a0ac4aa97e3f200a89d0fbdf300075e8f" compoundref="axiom_8cpp" startline="371" endline="376">ista::owl2::AnnotationAssertion::toFunctionalSyntax</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceista_1_1owl2_1a88df2dad88b8049b7b21ce6bddaf2849" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::formatAnnotationValue</definition>
+        <argsstring>(const AnnotationValue &amp;value)</argsstring>
+        <name>formatAnnotationValue</name>
+        <qualifiedname>ista::owl2::formatAnnotationValue</qualifiedname>
+        <param>
+          <type>const <ref refid="namespaceista_1_1owl2_1a61f55fb50b668c2a4fc68c63be3e8574" kindref="member">AnnotationValue</ref> &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Format an annotation value in functional syntax. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.cpp" line="60" column="13" bodyfile="D:/projects/ista/lib/owl2/core/axiom.cpp" bodystart="60" bodyend="71" declfile="D:/projects/ista/lib/owl2/core/axiom.hpp" declline="875" declcolumn="13"/>
+        <referencedby refid="classista_1_1owl2_1_1AnnotationAssertion_1a0ac4aa97e3f200a89d0fbdf300075e8f" compoundref="axiom_8cpp" startline="371" endline="376">ista::owl2::AnnotationAssertion::toFunctionalSyntax</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>OWL2 ontology manipulation library. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This namespace contains all classes and functions for working with OWL2 ontologies. </para>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/core/annotation.cpp" line="5" column="1"/>
+  </compounddef>
+</doxygen>

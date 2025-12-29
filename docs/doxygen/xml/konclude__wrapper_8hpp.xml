@@ -1,0 +1,307 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="konclude__wrapper_8hpp" kind="file" language="C++">
+    <compoundname>konclude_wrapper.hpp</compoundname>
+    <includes refid="ontology_8hpp" local="yes">../core/ontology.hpp</includes>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">optional</includes>
+    <includes local="no">stdexcept</includes>
+    <includes local="no">filesystem</includes>
+    <includes local="no">cstdlib</includes>
+    <includedby refid="konclude__wrapper_8cpp" local="yes">D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.cpp</includedby>
+    <incdepgraph>
+      <node id="15">
+        <label>annotation.hpp</label>
+        <link refid="annotation_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>axiom.hpp</label>
+        <link refid="axiom_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>class_expression.hpp</label>
+        <link refid="class__expression_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>data_range.hpp</label>
+        <link refid="data__range_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>entity.hpp</label>
+        <link refid="core_2entity_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>iri.hpp</label>
+        <link refid="iri_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>literal.hpp</label>
+        <link refid="literal_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>../core/ontology.hpp</label>
+        <link refid="ontology_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp</label>
+        <link refid="konclude__wrapper_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>cstdlib</label>
+      </node>
+      <node id="19">
+        <label>filesystem</label>
+      </node>
+      <node id="8">
+        <label>memory</label>
+      </node>
+      <node id="6">
+        <label>optional</label>
+      </node>
+      <node id="18">
+        <label>stdexcept</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+      <node id="5">
+        <label>unordered_map</label>
+      </node>
+      <node id="17">
+        <label>unordered_set</label>
+      </node>
+      <node id="14">
+        <label>utility</label>
+      </node>
+      <node id="16">
+        <label>variant</label>
+      </node>
+      <node id="12">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.cpp</label>
+        <link refid="konclude__wrapper_8cpp"/>
+      </node>
+      <node id="1">
+        <label>D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp</label>
+        <link refid="konclude__wrapper_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classista_1_1owl2_1_1reasoner_1_1KoncludeException" prot="public">ista::owl2::reasoner::KoncludeException</innerclass>
+    <innerclass refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig" prot="public">ista::owl2::reasoner::KoncludeConfig</innerclass>
+    <innerclass refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult" prot="public">ista::owl2::reasoner::ReasoningResult</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper" prot="public">ista::owl2::reasoner::KoncludeWrapper</innerclass>
+    <innernamespace refid="namespaceista">ista</innernamespace>
+    <innernamespace refid="namespaceista_1_1owl2">ista::owl2</innernamespace>
+    <innernamespace refid="namespaceista_1_1owl2_1_1reasoner">ista::owl2::reasoner</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>ISTA_OWL2_KONCLUDE_WRAPPER_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ISTA_OWL2_KONCLUDE_WRAPPER_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ontology_8hpp" kindref="compound">../core/ontology.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;optional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdexcept&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;filesystem&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdlib&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceista" kindref="compound">ista</ref><sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceista_1_1owl2" kindref="compound">owl2</ref><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceista_1_1owl2_1_1reasoner" kindref="compound">reasoner</ref><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="classista_1_1owl2_1_1reasoner_1_1KoncludeException" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classista_1_1owl2_1_1reasoner_1_1KoncludeException_1a70ecb650e1a304fb3909e5693fad9966" kindref="member">KoncludeException</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>std::runtime_error<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="21" refid="classista_1_1owl2_1_1reasoner_1_1KoncludeException_1a70ecb650e1a304fb3909e5693fad9966" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1reasoner_1_1KoncludeException_1a70ecb650e1a304fb3909e5693fad9966" kindref="member">KoncludeException</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>message)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="namespacestd" kindref="compound">std</ref>::runtime_error(</highlight><highlight class="stringliteral">&quot;Konclude<sp/>Reasoner<sp/>Error:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>message)<sp/>{}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig" kindref="compound">KoncludeConfig</ref><sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Path<sp/>to<sp/>Konclude<sp/>executable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig_1ae71389f56db68c760e3e620e3a271ee0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig_1ae71389f56db68c760e3e620e3a271ee0" kindref="member">konclude_path</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Konclude&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Number<sp/>of<sp/>worker<sp/>threads<sp/>(-1<sp/>=<sp/>auto)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig_1a39b70042d089f925703219b098b517ae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig_1a39b70042d089f925703219b098b517ae" kindref="member">worker_threads</ref><sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Enable<sp/>verbose<sp/>output</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig_1acd76c21e87307b68aff707f170ac85c3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig_1acd76c21e87307b68aff707f170ac85c3" kindref="member">verbose</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Timeout<sp/>in<sp/>seconds<sp/>(0<sp/>=<sp/>no<sp/>timeout)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig_1acdcf863876ae463cdc152788dbbbd69c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig_1acdcf863876ae463cdc152788dbbbd69c" kindref="member">timeout_seconds</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Temporary<sp/>directory<sp/>for<sp/>intermediate<sp/>files</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig_1a7a5f4bb4efc74f7554aa50733e93b188" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig_1a7a5f4bb4efc74f7554aa50733e93b188" kindref="member">temp_dir</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult" kindref="compound">ReasoningResult</ref><sp/>{</highlight></codeline>
+<codeline lineno="49" refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult_1a6ec510c0be0c89cb46b96f27364c22fe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult_1a6ec510c0be0c89cb46b96f27364c22fe" kindref="member">success</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50" refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult_1ace94e3f5c5eb9491781968594f864077" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult_1ace94e3f5c5eb9491781968594f864077" kindref="member">is_consistent</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51" refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult_1a03e96f0c6ac8f8e112c94e7e12dea1fa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult_1a03e96f0c6ac8f8e112c94e7e12dea1fa" kindref="member">error_message</ref>;</highlight></codeline>
+<codeline lineno="52" refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult_1affeafe4f2f00905c89d37f2adcdf60cd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/><ref refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult_1affeafe4f2f00905c89d37f2adcdf60cd" kindref="member">inferred_axioms</ref>;</highlight></codeline>
+<codeline lineno="53" refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult_1acef1c3fac6d2eb1225969800b21556e1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult_1acef1c3fac6d2eb1225969800b21556e1" kindref="member">reasoning_time_seconds</ref><sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a78beeb1f908f51aa6c59d4ceadbb7de1" kindref="member">KoncludeWrapper</ref><sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="86" refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a78beeb1f908f51aa6c59d4ceadbb7de1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a78beeb1f908f51aa6c59d4ceadbb7de1" kindref="member">KoncludeWrapper</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a78beeb1f908f51aa6c59d4ceadbb7de1" kindref="member">KoncludeWrapper</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig" kindref="compound">KoncludeConfig</ref>&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a47c94d32fbc9e88fa121de8813908a9e" kindref="member">set_konclude_path</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>path);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1acfffa42f7e10dc87adbf6e59d4dbfe6a" kindref="member">set_worker_threads</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>threads);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a46524a9ea066a0e9a69750cf3da23b9e" kindref="member">set_verbose</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>verbose);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult" kindref="compound">ReasoningResult</ref><sp/><ref refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a4ca029c1caabd3850d1f582a606e3683" kindref="member">check_consistency</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref>&amp;<sp/>ontology);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult" kindref="compound">ReasoningResult</ref><sp/><ref refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a8940078ac089acaa0e97be4a8feba090" kindref="member">classify</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref>&amp;<sp/>ontology);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult" kindref="compound">ReasoningResult</ref><sp/><ref refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a01efb4e405f5f1851fe93dc319498cd7" kindref="member">realize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref>&amp;<sp/>ontology);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult" kindref="compound">ReasoningResult</ref><sp/><ref refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a3a0dc62c67cce6d549583980a8dbb0ab" kindref="member">check_satisfiability</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref>&amp;<sp/>ontology,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>&amp;<sp/>class_iri);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;Ontology&gt;<sp/><ref refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a276452035d9dbd998157db9f5a446f55" kindref="member">load_inferred_ontology</ref>();</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="152" refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1af6eb3c0dc732f81bb6685e7c906ee385" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig" kindref="compound">KoncludeConfig</ref>&amp;<sp/><ref refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1af6eb3c0dc732f81bb6685e7c906ee385" kindref="member">get_config</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>config_;<sp/>}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper_1a5bc9bfd423578ca87261eb02ff228cd4" kindref="member">is_available</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig" kindref="compound">KoncludeConfig</ref><sp/>config_;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>last_output_file_;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult" kindref="compound">ReasoningResult</ref><sp/>execute_command(</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>command,</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>input_file,</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>output_file,</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::string&gt;&amp;<sp/>extra_args<sp/>=<sp/>{}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>save_to_temp_file(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref>&amp;<sp/>ontology);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>parse_timing_info(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>output);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>build_command(</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>command,</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>input_file,</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>output_file,</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::string&gt;&amp;<sp/>extra_args</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>reasoner</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>owl2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>ista</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>ISTA_OWL2_KONCLUDE_WRAPPER_HPP</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp"/>
+  </compounddef>
+</doxygen>

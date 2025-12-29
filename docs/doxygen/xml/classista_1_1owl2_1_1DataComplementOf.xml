@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1DataComplementOf" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::DataComplementOf</compoundname>
+    <basecompoundref refid="classista_1_1owl2_1_1DataRange" prot="public" virt="non-virtual">ista::owl2::DataRange</basecompoundref>
+    <includes refid="data__range_8hpp" local="no">data_range.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classista_1_1owl2_1_1DataComplementOf_1ac064a20bbd39f13be56df2963c9589c3" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceista_1_1owl2_1a419553adf775765f8b59cfed39cca902" kindref="member">DataRangePtr</ref></type>
+        <definition>DataRangePtr ista::owl2::DataComplementOf::data_range_</definition>
+        <argsstring></argsstring>
+        <name>data_range_</name>
+        <qualifiedname>ista::owl2::DataComplementOf::data_range_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="99" column="18" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="99" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1DataComplementOf_1a02335ee8e5b6061bfbb9d36c91d80150" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::DataComplementOf::DataComplementOf</definition>
+        <argsstring>(const DataRangePtr &amp;data_range)</argsstring>
+        <name>DataComplementOf</name>
+        <qualifiedname>ista::owl2::DataComplementOf::DataComplementOf</qualifiedname>
+        <param>
+          <type>const <ref refid="namespaceista_1_1owl2_1a419553adf775765f8b59cfed39cca902" kindref="member">DataRangePtr</ref> &amp;</type>
+          <declname>data_range</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="90" column="14" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="90" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1DataComplementOf_1acdc6576bbd77156ca36cfce6b1f69c56" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceista_1_1owl2_1a419553adf775765f8b59cfed39cca902" kindref="member">DataRangePtr</ref></type>
+        <definition>DataRangePtr ista::owl2::DataComplementOf::getDataRange</definition>
+        <argsstring>() const</argsstring>
+        <name>getDataRange</name>
+        <qualifiedname>ista::owl2::DataComplementOf::getDataRange</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="93" column="18" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="93" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1DataComplementOf_1a6a45b0d20ab1384b27f6b199bcdc18f1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::DataComplementOf::toFunctionalSyntax</definition>
+        <argsstring>() const override</argsstring>
+        <name>toFunctionalSyntax</name>
+        <qualifiedname>ista::owl2::DataComplementOf::toFunctionalSyntax</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1DataRange_1abe52a263c7481aa3d078f895a62c7547">toFunctionalSyntax</reimplements>
+        <briefdescription>
+<para>Convert to OWL2 Functional Syntax. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="95" column="17" bodyfile="D:/projects/ista/lib/owl2/core/data_range.cpp" bodystart="41" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1DataComplementOf_1a83de3d2e709e781059923136d61c6fb1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::DataComplementOf::getDataRangeType</definition>
+        <argsstring>() const override</argsstring>
+        <name>getDataRangeType</name>
+        <qualifiedname>ista::owl2::DataComplementOf::getDataRangeType</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1DataRange_1abc8e583db3cb378e0e055ecb5607288b">getDataRangeType</reimplements>
+        <briefdescription>
+<para>Get the type of this data range. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="96" column="17" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="96" bodyend="96"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Complement of a data range. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>ista::owl2::DataComplementOf</label>
+        <link refid="classista_1_1owl2_1_1DataComplementOf"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ista::owl2::DataRange</label>
+        <link refid="classista_1_1owl2_1_1DataRange"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>ista::owl2::DataComplementOf</label>
+        <link refid="classista_1_1owl2_1_1DataComplementOf"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ista::owl2::DataRange</label>
+        <link refid="classista_1_1owl2_1_1DataRange"/>
+      </node>
+    </collaborationgraph>
+    <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="88" column="1" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="88" bodyend="100"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1DataComplementOf_1ac064a20bbd39f13be56df2963c9589c3" prot="private" virt="non-virtual"><scope>ista::owl2::DataComplementOf</scope><name>data_range_</name></member>
+      <member refid="classista_1_1owl2_1_1DataComplementOf_1a02335ee8e5b6061bfbb9d36c91d80150" prot="public" virt="non-virtual"><scope>ista::owl2::DataComplementOf</scope><name>DataComplementOf</name></member>
+      <member refid="classista_1_1owl2_1_1DataComplementOf_1acdc6576bbd77156ca36cfce6b1f69c56" prot="public" virt="non-virtual"><scope>ista::owl2::DataComplementOf</scope><name>getDataRange</name></member>
+      <member refid="classista_1_1owl2_1_1DataComplementOf_1a83de3d2e709e781059923136d61c6fb1" prot="public" virt="virtual"><scope>ista::owl2::DataComplementOf</scope><name>getDataRangeType</name></member>
+      <member refid="classista_1_1owl2_1_1DataComplementOf_1a6a45b0d20ab1384b27f6b199bcdc18f1" prot="public" virt="virtual"><scope>ista::owl2::DataComplementOf</scope><name>toFunctionalSyntax</name></member>
+      <member refid="classista_1_1owl2_1_1DataRange_1af96348d6c75791cb43e898a5b0a4d677" prot="public" virt="virtual"><scope>ista::owl2::DataComplementOf</scope><name>~DataRange</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

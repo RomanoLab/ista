@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="structista_1_1owl2_1_1FilterCriteria" kind="struct" language="C++" prot="public">
+    <compoundname>ista::owl2::FilterCriteria</compoundname>
+    <includes refid="ontology__filter_8hpp" local="no">ontology_filter.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structista_1_1owl2_1_1FilterCriteria_1a164bd8f86d499bba709f0b50ade662fc" prot="public" static="no" mutable="no">
+        <type>std::unordered_set&lt; <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &gt;</type>
+        <definition>std::unordered_set&lt;IRI&gt; ista::owl2::FilterCriteria::include_individuals</definition>
+        <argsstring></argsstring>
+        <name>include_individuals</name>
+        <qualifiedname>ista::owl2::FilterCriteria::include_individuals</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology_filter.hpp" line="28" column="24" bodyfile="D:/projects/ista/lib/owl2/core/ontology_filter.hpp" bodystart="28" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1OntologyFilter_1a05fbcd33f210d57cdf321e0d96297b60" compoundref="ontology__filter_8cpp" startline="139" endline="218">ista::owl2::OntologyFilter::applyFilter</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1FilterCriteria_1aea7192979aae25c94580f410b1d8d7fb" prot="public" static="no" mutable="no">
+        <type>std::unordered_set&lt; <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &gt;</type>
+        <definition>std::unordered_set&lt;IRI&gt; ista::owl2::FilterCriteria::include_classes</definition>
+        <argsstring></argsstring>
+        <name>include_classes</name>
+        <qualifiedname>ista::owl2::FilterCriteria::include_classes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology_filter.hpp" line="31" column="24" bodyfile="D:/projects/ista/lib/owl2/core/ontology_filter.hpp" bodystart="31" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1OntologyFilter_1a05fbcd33f210d57cdf321e0d96297b60" compoundref="ontology__filter_8cpp" startline="139" endline="218">ista::owl2::OntologyFilter::applyFilter</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1FilterCriteria_1a802cc8f0c0ce656cc8f3295907d16c36" prot="public" static="no" mutable="no">
+        <type>std::unordered_set&lt; <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &gt;</type>
+        <definition>std::unordered_set&lt;IRI&gt; ista::owl2::FilterCriteria::exclude_individuals</definition>
+        <argsstring></argsstring>
+        <name>exclude_individuals</name>
+        <qualifiedname>ista::owl2::FilterCriteria::exclude_individuals</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology_filter.hpp" line="34" column="24" bodyfile="D:/projects/ista/lib/owl2/core/ontology_filter.hpp" bodystart="34" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1OntologyFilter_1a05fbcd33f210d57cdf321e0d96297b60" compoundref="ontology__filter_8cpp" startline="139" endline="218">ista::owl2::OntologyFilter::applyFilter</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1FilterCriteria_1a5900e9c421d1f65fb8d9d82345e1f1bd" prot="public" static="no" mutable="no">
+        <type>std::unordered_map&lt; <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>, std::unordered_set&lt; std::string &gt; &gt;</type>
+        <definition>std::unordered_map&lt;IRI, std::unordered_set&lt;std::string&gt; &gt; ista::owl2::FilterCriteria::property_value_filters</definition>
+        <argsstring></argsstring>
+        <name>property_value_filters</name>
+        <qualifiedname>ista::owl2::FilterCriteria::property_value_filters</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology_filter.hpp" line="37" column="24" bodyfile="D:/projects/ista/lib/owl2/core/ontology_filter.hpp" bodystart="37" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1OntologyFilter_1a05fbcd33f210d57cdf321e0d96297b60" compoundref="ontology__filter_8cpp" startline="139" endline="218">ista::owl2::OntologyFilter::applyFilter</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1FilterCriteria_1a54c61a9c7e8661f961dcec5a9db5cd31" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ista::owl2::FilterCriteria::max_depth</definition>
+        <argsstring></argsstring>
+        <name>max_depth</name>
+        <qualifiedname>ista::owl2::FilterCriteria::max_depth</qualifiedname>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology_filter.hpp" line="40" column="9" bodyfile="D:/projects/ista/lib/owl2/core/ontology_filter.hpp" bodystart="40" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1OntologyFilter_1a05fbcd33f210d57cdf321e0d96297b60" compoundref="ontology__filter_8cpp" startline="139" endline="218">ista::owl2::OntologyFilter::applyFilter</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1FilterCriteria_1a66c598f1946b9570608337c31239495c" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ista::owl2::FilterCriteria::include_class_hierarchy</definition>
+        <argsstring></argsstring>
+        <name>include_class_hierarchy</name>
+        <qualifiedname>ista::owl2::FilterCriteria::include_class_hierarchy</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology_filter.hpp" line="43" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology_filter.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1FilterCriteria_1a7a5c4d40f40cf84da30e7dc197db0138" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ista::owl2::FilterCriteria::include_property_hierarchy</definition>
+        <argsstring></argsstring>
+        <name>include_property_hierarchy</name>
+        <qualifiedname>ista::owl2::FilterCriteria::include_property_hierarchy</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology_filter.hpp" line="46" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology_filter.hpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1FilterCriteria_1ae1485fa30f50257dbf9c02532c2aa426" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ista::owl2::FilterCriteria::include_declarations</definition>
+        <argsstring></argsstring>
+        <name>include_declarations</name>
+        <qualifiedname>ista::owl2::FilterCriteria::include_declarations</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology_filter.hpp" line="49" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology_filter.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1FilterCriteria_1abb64413e85f97a22742614663b34434e" prot="public" static="no" mutable="no">
+        <type>std::function&lt; bool(const <ref refid="namespaceista_1_1owl2_1ae305b46823ac53f0c71aed391a90f835" kindref="member">AxiomPtr</ref> &amp;)&gt;</type>
+        <definition>std::function&lt;bool(const AxiomPtr&amp;)&gt; ista::owl2::FilterCriteria::custom_filter</definition>
+        <argsstring></argsstring>
+        <name>custom_filter</name>
+        <qualifiedname>ista::owl2::FilterCriteria::custom_filter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology_filter.hpp" line="52" column="19" bodyfile="D:/projects/ista/lib/owl2/core/ontology_filter.hpp" bodystart="52" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1OntologyFilter_1a05fbcd33f210d57cdf321e0d96297b60" compoundref="ontology__filter_8cpp" startline="139" endline="218">ista::owl2::OntologyFilter::applyFilter</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structista_1_1owl2_1_1FilterCriteria_1a7873082dfa32f27b54e35bc2f45aeb4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::FilterCriteria::FilterCriteria</definition>
+        <argsstring>()=default</argsstring>
+        <name>FilterCriteria</name>
+        <qualifiedname>ista::owl2::FilterCriteria::FilterCriteria</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology_filter.hpp" line="54" column="5"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Criteria for filtering ontology content. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This struct holds all the filtering options that can be applied to an ontology to extract a subgraph. </para>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/core/ontology_filter.hpp" line="26" column="1" bodyfile="D:/projects/ista/lib/owl2/core/ontology_filter.hpp" bodystart="26" bodyend="55"/>
+    <listofallmembers>
+      <member refid="structista_1_1owl2_1_1FilterCriteria_1abb64413e85f97a22742614663b34434e" prot="public" virt="non-virtual"><scope>ista::owl2::FilterCriteria</scope><name>custom_filter</name></member>
+      <member refid="structista_1_1owl2_1_1FilterCriteria_1a802cc8f0c0ce656cc8f3295907d16c36" prot="public" virt="non-virtual"><scope>ista::owl2::FilterCriteria</scope><name>exclude_individuals</name></member>
+      <member refid="structista_1_1owl2_1_1FilterCriteria_1a7873082dfa32f27b54e35bc2f45aeb4e" prot="public" virt="non-virtual"><scope>ista::owl2::FilterCriteria</scope><name>FilterCriteria</name></member>
+      <member refid="structista_1_1owl2_1_1FilterCriteria_1a66c598f1946b9570608337c31239495c" prot="public" virt="non-virtual"><scope>ista::owl2::FilterCriteria</scope><name>include_class_hierarchy</name></member>
+      <member refid="structista_1_1owl2_1_1FilterCriteria_1aea7192979aae25c94580f410b1d8d7fb" prot="public" virt="non-virtual"><scope>ista::owl2::FilterCriteria</scope><name>include_classes</name></member>
+      <member refid="structista_1_1owl2_1_1FilterCriteria_1ae1485fa30f50257dbf9c02532c2aa426" prot="public" virt="non-virtual"><scope>ista::owl2::FilterCriteria</scope><name>include_declarations</name></member>
+      <member refid="structista_1_1owl2_1_1FilterCriteria_1a164bd8f86d499bba709f0b50ade662fc" prot="public" virt="non-virtual"><scope>ista::owl2::FilterCriteria</scope><name>include_individuals</name></member>
+      <member refid="structista_1_1owl2_1_1FilterCriteria_1a7a5c4d40f40cf84da30e7dc197db0138" prot="public" virt="non-virtual"><scope>ista::owl2::FilterCriteria</scope><name>include_property_hierarchy</name></member>
+      <member refid="structista_1_1owl2_1_1FilterCriteria_1a54c61a9c7e8661f961dcec5a9db5cd31" prot="public" virt="non-virtual"><scope>ista::owl2::FilterCriteria</scope><name>max_depth</name></member>
+      <member refid="structista_1_1owl2_1_1FilterCriteria_1a5900e9c421d1f65fb8d9d82345e1f1bd" prot="public" virt="non-virtual"><scope>ista::owl2::FilterCriteria</scope><name>property_value_filters</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

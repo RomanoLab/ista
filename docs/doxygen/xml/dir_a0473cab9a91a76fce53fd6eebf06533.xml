@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="dir_a0473cab9a91a76fce53fd6eebf06533" kind="dir">
+    <compoundname>D:/projects/ista/lib/owl2/core</compoundname>
+    <innerfile refid="annotation_8cpp">annotation.cpp</innerfile>
+    <innerfile refid="annotation_8hpp">annotation.hpp</innerfile>
+    <innerfile refid="axiom_8cpp">axiom.cpp</innerfile>
+    <innerfile refid="axiom_8hpp">axiom.hpp</innerfile>
+    <innerfile refid="class__expression_8cpp">class_expression.cpp</innerfile>
+    <innerfile refid="class__expression_8hpp">class_expression.hpp</innerfile>
+    <innerfile refid="data__range_8cpp">data_range.cpp</innerfile>
+    <innerfile refid="data__range_8hpp">data_range.hpp</innerfile>
+    <innerfile refid="core_2entity_8hpp">entity.hpp</innerfile>
+    <innerfile refid="iri_8cpp">iri.cpp</innerfile>
+    <innerfile refid="iri_8hpp">iri.hpp</innerfile>
+    <innerfile refid="literal_8cpp">literal.cpp</innerfile>
+    <innerfile refid="literal_8hpp">literal.hpp</innerfile>
+    <innerfile refid="ontology_8cpp">ontology.cpp</innerfile>
+    <innerfile refid="ontology_8hpp">ontology.hpp</innerfile>
+    <innerfile refid="ontology__filter_8cpp">ontology_filter.cpp</innerfile>
+    <innerfile refid="ontology__filter_8hpp">ontology_filter.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/core/"/>
+  </compounddef>
+</doxygen>

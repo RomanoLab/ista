@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="structstd_1_1hash_3_01ista_1_1owl2_1_1Class_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>std::hash&lt; ista::owl2::Class &gt;</compoundname>
+    <includes refid="core_2entity_8hpp" local="no">entity.hpp</includes>
+    <templateparamlist>
+    </templateparamlist>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structstd_1_1hash_3_01ista_1_1owl2_1_1Class_01_4_1a00df7579ccc6b09ab96bc7e872263411" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t std::hash&lt; ista::owl2::Class &gt;::operator()</definition>
+        <argsstring>(const ista::owl2::Class &amp;c) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>std::hash&lt; ista::owl2::Class &gt;::operator()</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1Class" kindref="compound">ista::owl2::Class</ref> &amp;</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="137" column="16" bodyfile="D:/projects/ista/lib/owl2/core/entity.hpp" bodystart="137" bodyend="139"/>
+        <references refid="classista_1_1owl2_1_1Entity_1a7450ac96112b23d4514cf60be3c3ac41" compoundref="core_2entity_8hpp" startline="20" endline="20">ista::owl2::Entity::getIRI</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="136" column="5" bodyfile="D:/projects/ista/lib/owl2/core/entity.hpp" bodystart="136" bodyend="140"/>
+    <listofallmembers>
+      <member refid="structstd_1_1hash_3_01ista_1_1owl2_1_1Class_01_4_1a00df7579ccc6b09ab96bc7e872263411" prot="public" virt="non-virtual"><scope>std::hash&lt; ista::owl2::Class &gt;</scope><name>operator()</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1NamedDatatype" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::NamedDatatype</compoundname>
+    <basecompoundref refid="classista_1_1owl2_1_1DataRange" prot="public" virt="non-virtual">ista::owl2::DataRange</basecompoundref>
+    <includes refid="data__range_8hpp" local="no">data_range.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classista_1_1owl2_1_1NamedDatatype_1ac141469f60a8aa7c8b8a14b2a0693969" prot="private" static="no" mutable="no">
+        <type><ref refid="structDatatype" kindref="compound">Datatype</ref></type>
+        <definition>Datatype ista::owl2::NamedDatatype::datatype_</definition>
+        <argsstring></argsstring>
+        <name>datatype_</name>
+        <qualifiedname>ista::owl2::NamedDatatype::datatype_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="48" column="14" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1NamedDatatype_1a95d658788be77e2aadae055cf6172ef8" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::NamedDatatype::NamedDatatype</definition>
+        <argsstring>(const Datatype &amp;datatype)</argsstring>
+        <name>NamedDatatype</name>
+        <qualifiedname>ista::owl2::NamedDatatype::NamedDatatype</qualifiedname>
+        <param>
+          <type>const <ref refid="structDatatype" kindref="compound">Datatype</ref> &amp;</type>
+          <declname>datatype</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="40" column="14" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="40" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1NamedDatatype_1ae636245b6d250f290487eef81f99530c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structDatatype" kindref="compound">Datatype</ref></type>
+        <definition>Datatype ista::owl2::NamedDatatype::getDatatype</definition>
+        <argsstring>() const</argsstring>
+        <name>getDatatype</name>
+        <qualifiedname>ista::owl2::NamedDatatype::getDatatype</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="42" column="14" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="42" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1NamedDatatype_1a4fb4582eaa82ffb09b4fdf032e5f6d6f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::NamedDatatype::toFunctionalSyntax</definition>
+        <argsstring>() const override</argsstring>
+        <name>toFunctionalSyntax</name>
+        <qualifiedname>ista::owl2::NamedDatatype::toFunctionalSyntax</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1DataRange_1abe52a263c7481aa3d078f895a62c7547">toFunctionalSyntax</reimplements>
+        <briefdescription>
+<para>Convert to OWL2 Functional Syntax. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="44" column="17" bodyfile="D:/projects/ista/lib/owl2/core/data_range.cpp" bodystart="7" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1NamedDatatype_1a6847b1cf76ea668dc57981974b58a125" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::NamedDatatype::getDataRangeType</definition>
+        <argsstring>() const override</argsstring>
+        <name>getDataRangeType</name>
+        <qualifiedname>ista::owl2::NamedDatatype::getDataRangeType</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1DataRange_1abc8e583db3cb378e0e055ecb5607288b">getDataRangeType</reimplements>
+        <briefdescription>
+<para>Get the type of this data range. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="45" column="17" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="45" bodyend="45"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Named datatype (wraps a <ref refid="classista_1_1owl2_1_1Datatype" kindref="compound">Datatype</ref> entity). </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ista::owl2::DataRange</label>
+        <link refid="classista_1_1owl2_1_1DataRange"/>
+      </node>
+      <node id="1">
+        <label>ista::owl2::NamedDatatype</label>
+        <link refid="classista_1_1owl2_1_1NamedDatatype"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ista::owl2::DataRange</label>
+        <link refid="classista_1_1owl2_1_1DataRange"/>
+      </node>
+      <node id="1">
+        <label>ista::owl2::NamedDatatype</label>
+        <link refid="classista_1_1owl2_1_1NamedDatatype"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="38" column="1" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="38" bodyend="49"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1NamedDatatype_1ac141469f60a8aa7c8b8a14b2a0693969" prot="private" virt="non-virtual"><scope>ista::owl2::NamedDatatype</scope><name>datatype_</name></member>
+      <member refid="classista_1_1owl2_1_1NamedDatatype_1a6847b1cf76ea668dc57981974b58a125" prot="public" virt="virtual"><scope>ista::owl2::NamedDatatype</scope><name>getDataRangeType</name></member>
+      <member refid="classista_1_1owl2_1_1NamedDatatype_1ae636245b6d250f290487eef81f99530c" prot="public" virt="non-virtual"><scope>ista::owl2::NamedDatatype</scope><name>getDatatype</name></member>
+      <member refid="classista_1_1owl2_1_1NamedDatatype_1a95d658788be77e2aadae055cf6172ef8" prot="public" virt="non-virtual"><scope>ista::owl2::NamedDatatype</scope><name>NamedDatatype</name></member>
+      <member refid="classista_1_1owl2_1_1NamedDatatype_1a4fb4582eaa82ffb09b4fdf032e5f6d6f" prot="public" virt="virtual"><scope>ista::owl2::NamedDatatype</scope><name>toFunctionalSyntax</name></member>
+      <member refid="classista_1_1owl2_1_1DataRange_1af96348d6c75791cb43e898a5b0a4d677" prot="public" virt="virtual"><scope>ista::owl2::NamedDatatype</scope><name>~DataRange</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

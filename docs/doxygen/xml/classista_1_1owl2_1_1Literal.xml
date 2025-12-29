@@ -1,0 +1,309 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1Literal" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::Literal</compoundname>
+    <includes refid="literal_8hpp" local="no">literal.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classista_1_1owl2_1_1Literal_1a47fe80530c8f6c832e381854c2fc3788" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::Literal::lexical_form_</definition>
+        <argsstring></argsstring>
+        <name>lexical_form_</name>
+        <qualifiedname>ista::owl2::Literal::lexical_form_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/literal.hpp" line="69" column="17" bodyfile="D:/projects/ista/lib/owl2/core/literal.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1Literal_1a3093f7f0ca4fa03886bd418e3c8a0144" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &gt;</type>
+        <definition>std::optional&lt;IRI&gt; ista::owl2::Literal::datatype_</definition>
+        <argsstring></argsstring>
+        <name>datatype_</name>
+        <qualifiedname>ista::owl2::Literal::datatype_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/literal.hpp" line="70" column="19" bodyfile="D:/projects/ista/lib/owl2/core/literal.hpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1Literal_1a63515228a98ca27f9d431bce8d4c4e24" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; std::string &gt;</type>
+        <definition>std::optional&lt;std::string&gt; ista::owl2::Literal::language_tag_</definition>
+        <argsstring></argsstring>
+        <name>language_tag_</name>
+        <qualifiedname>ista::owl2::Literal::language_tag_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/literal.hpp" line="71" column="19" bodyfile="D:/projects/ista/lib/owl2/core/literal.hpp" bodystart="71" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1Literal_1ab867743552ddbcddd7c033130fdfa2e9" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::Literal::Literal</definition>
+        <argsstring>(const std::string &amp;lexical_form, const std::optional&lt; std::string &gt; &amp;language_tag=std::nullopt)</argsstring>
+        <name>Literal</name>
+        <qualifiedname>ista::owl2::Literal::Literal</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>lexical_form</declname>
+        </param>
+        <param>
+          <type>const std::optional&lt; std::string &gt; &amp;</type>
+          <declname>language_tag</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+<para>Construct a plain literal with optional language tag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lexical_form</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string value </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>language_tag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional language tag (e.g., &quot;en&quot;, &quot;de&quot;) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/literal.hpp" line="23" column="14" bodyfile="D:/projects/ista/lib/owl2/core/literal.cpp" bodystart="6" bodyend="10"/>
+        <referencedby refid="classista_1_1owl2_1_1Literal_1a907d905329c2b80bae5b64370423ce97" compoundref="literal_8hpp" startline="65" endline="65">operator!=</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Literal_1a7162404fb52bdf89400155e2d05216bf" compoundref="literal_8hpp" startline="66" endline="66">operator&lt;</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Literal_1a7ec4872adc79a2dffad376aaeca5c4dd" compoundref="literal_8cpp" startline="29" endline="49">operator==</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Literal_1a0a2e06ef44299c84034ef9cfb499f0b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::Literal::Literal</definition>
+        <argsstring>(const std::string &amp;lexical_form, const IRI &amp;datatype)</argsstring>
+        <name>Literal</name>
+        <qualifiedname>ista::owl2::Literal::Literal</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>lexical_form</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &amp;</type>
+          <declname>datatype</declname>
+        </param>
+        <briefdescription>
+<para>Construct a typed literal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lexical_form</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string value </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>datatype</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> of the datatype </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/literal.hpp" line="31" column="5" bodyfile="D:/projects/ista/lib/owl2/core/literal.cpp" bodystart="12" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Literal_1a56ddceb68c4792370cfff4377de3bd82" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::Literal::getLexicalForm</definition>
+        <argsstring>() const</argsstring>
+        <name>getLexicalForm</name>
+        <qualifiedname>ista::owl2::Literal::getLexicalForm</qualifiedname>
+        <briefdescription>
+<para>Get the lexical form (string representation). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/literal.hpp" line="36" column="17" bodyfile="D:/projects/ista/lib/owl2/core/literal.hpp" bodystart="36" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Literal_1a1a401b1636dccb06149708938e1a3309" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &gt;</type>
+        <definition>std::optional&lt; IRI &gt; ista::owl2::Literal::getDatatype</definition>
+        <argsstring>() const</argsstring>
+        <name>getDatatype</name>
+        <qualifiedname>ista::owl2::Literal::getDatatype</qualifiedname>
+        <briefdescription>
+<para>Get the datatype <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/literal.hpp" line="41" column="19" bodyfile="D:/projects/ista/lib/owl2/core/literal.hpp" bodystart="41" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Literal_1a2dd15c00eed524111fa1ce0d84b0ebfa" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::optional&lt; std::string &gt;</type>
+        <definition>std::optional&lt; std::string &gt; ista::owl2::Literal::getLanguageTag</definition>
+        <argsstring>() const</argsstring>
+        <name>getLanguageTag</name>
+        <qualifiedname>ista::owl2::Literal::getLanguageTag</qualifiedname>
+        <briefdescription>
+<para>Get the language tag. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/literal.hpp" line="46" column="19" bodyfile="D:/projects/ista/lib/owl2/core/literal.hpp" bodystart="46" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Literal_1ae932960f494da87033ec95728e493f29" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::Literal::isTyped</definition>
+        <argsstring>() const</argsstring>
+        <name>isTyped</name>
+        <qualifiedname>ista::owl2::Literal::isTyped</qualifiedname>
+        <briefdescription>
+<para>Check if this is a typed literal. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/literal.hpp" line="51" column="10" bodyfile="D:/projects/ista/lib/owl2/core/literal.hpp" bodystart="51" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Literal_1aa69c95995f5ca2051548a199c8d00ca8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::Literal::hasLanguageTag</definition>
+        <argsstring>() const</argsstring>
+        <name>hasLanguageTag</name>
+        <qualifiedname>ista::owl2::Literal::hasLanguageTag</qualifiedname>
+        <briefdescription>
+<para>Check if this has a language tag. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/literal.hpp" line="56" column="10" bodyfile="D:/projects/ista/lib/owl2/core/literal.hpp" bodystart="56" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Literal_1a70858bd4ab042d4a23653e35170cd8f5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::Literal::toString</definition>
+        <argsstring>() const</argsstring>
+        <name>toString</name>
+        <qualifiedname>ista::owl2::Literal::toString</qualifiedname>
+        <briefdescription>
+<para>Convert to string representation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/literal.hpp" line="61" column="17" bodyfile="D:/projects/ista/lib/owl2/core/literal.cpp" bodystart="17" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Literal_1a7ec4872adc79a2dffad376aaeca5c4dd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::Literal::operator==</definition>
+        <argsstring>(const Literal &amp;other) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>ista::owl2::Literal::operator==</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1Literal_1ab867743552ddbcddd7c033130fdfa2e9" kindref="member">Literal</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/literal.hpp" line="64" column="10" bodyfile="D:/projects/ista/lib/owl2/core/literal.cpp" bodystart="29" bodyend="49"/>
+        <references refid="classista_1_1owl2_1_1Literal_1ab867743552ddbcddd7c033130fdfa2e9" compoundref="literal_8cpp" startline="6" endline="10">Literal</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Literal_1a907d905329c2b80bae5b64370423ce97" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::Literal::operator!=</definition>
+        <argsstring>(const Literal &amp;other) const</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>ista::owl2::Literal::operator!=</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1Literal_1ab867743552ddbcddd7c033130fdfa2e9" kindref="member">Literal</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/literal.hpp" line="65" column="10" bodyfile="D:/projects/ista/lib/owl2/core/literal.hpp" bodystart="65" bodyend="65"/>
+        <references refid="classista_1_1owl2_1_1Literal_1ab867743552ddbcddd7c033130fdfa2e9" compoundref="literal_8cpp" startline="6" endline="10">Literal</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Literal_1a7162404fb52bdf89400155e2d05216bf" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::Literal::operator&lt;</definition>
+        <argsstring>(const Literal &amp;other) const</argsstring>
+        <name>operator&lt;</name>
+        <qualifiedname>ista::owl2::Literal::operator&lt;</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1Literal_1ab867743552ddbcddd7c033130fdfa2e9" kindref="member">Literal</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/literal.hpp" line="66" column="5" bodyfile="D:/projects/ista/lib/owl2/core/literal.hpp" bodystart="66" bodyend="66"/>
+        <references refid="classista_1_1owl2_1_1Literal_1ab867743552ddbcddd7c033130fdfa2e9" compoundref="literal_8cpp" startline="6" endline="10">Literal</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Represents an OWL2 literal value. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Literals are data values with optional datatype and language tags. </para>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/core/literal.hpp" line="16" column="1" bodyfile="D:/projects/ista/lib/owl2/core/literal.hpp" bodystart="16" bodyend="72"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1Literal_1a3093f7f0ca4fa03886bd418e3c8a0144" prot="private" virt="non-virtual"><scope>ista::owl2::Literal</scope><name>datatype_</name></member>
+      <member refid="classista_1_1owl2_1_1Literal_1a1a401b1636dccb06149708938e1a3309" prot="public" virt="non-virtual"><scope>ista::owl2::Literal</scope><name>getDatatype</name></member>
+      <member refid="classista_1_1owl2_1_1Literal_1a2dd15c00eed524111fa1ce0d84b0ebfa" prot="public" virt="non-virtual"><scope>ista::owl2::Literal</scope><name>getLanguageTag</name></member>
+      <member refid="classista_1_1owl2_1_1Literal_1a56ddceb68c4792370cfff4377de3bd82" prot="public" virt="non-virtual"><scope>ista::owl2::Literal</scope><name>getLexicalForm</name></member>
+      <member refid="classista_1_1owl2_1_1Literal_1aa69c95995f5ca2051548a199c8d00ca8" prot="public" virt="non-virtual"><scope>ista::owl2::Literal</scope><name>hasLanguageTag</name></member>
+      <member refid="classista_1_1owl2_1_1Literal_1ae932960f494da87033ec95728e493f29" prot="public" virt="non-virtual"><scope>ista::owl2::Literal</scope><name>isTyped</name></member>
+      <member refid="classista_1_1owl2_1_1Literal_1a63515228a98ca27f9d431bce8d4c4e24" prot="private" virt="non-virtual"><scope>ista::owl2::Literal</scope><name>language_tag_</name></member>
+      <member refid="classista_1_1owl2_1_1Literal_1a47fe80530c8f6c832e381854c2fc3788" prot="private" virt="non-virtual"><scope>ista::owl2::Literal</scope><name>lexical_form_</name></member>
+      <member refid="classista_1_1owl2_1_1Literal_1ab867743552ddbcddd7c033130fdfa2e9" prot="public" virt="non-virtual"><scope>ista::owl2::Literal</scope><name>Literal</name></member>
+      <member refid="classista_1_1owl2_1_1Literal_1a0a2e06ef44299c84034ef9cfb499f0b7" prot="public" virt="non-virtual"><scope>ista::owl2::Literal</scope><name>Literal</name></member>
+      <member refid="classista_1_1owl2_1_1Literal_1a907d905329c2b80bae5b64370423ce97" prot="public" virt="non-virtual"><scope>ista::owl2::Literal</scope><name>operator!=</name></member>
+      <member refid="classista_1_1owl2_1_1Literal_1a7162404fb52bdf89400155e2d05216bf" prot="public" virt="non-virtual"><scope>ista::owl2::Literal</scope><name>operator&lt;</name></member>
+      <member refid="classista_1_1owl2_1_1Literal_1a7ec4872adc79a2dffad376aaeca5c4dd" prot="public" virt="non-virtual"><scope>ista::owl2::Literal</scope><name>operator==</name></member>
+      <member refid="classista_1_1owl2_1_1Literal_1a70858bd4ab042d4a23653e35170cd8f5" prot="public" virt="non-virtual"><scope>ista::owl2::Literal</scope><name>toString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

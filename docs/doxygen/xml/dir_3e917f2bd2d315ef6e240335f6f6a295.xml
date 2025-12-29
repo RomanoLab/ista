@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="dir_3e917f2bd2d315ef6e240335f6f6a295" kind="dir">
+    <compoundname>D:/projects/ista/lib/owl2/parser</compoundname>
+    <innerfile refid="csv__parser_8cpp">csv_parser.cpp</innerfile>
+    <innerfile refid="csv__parser_8hpp">csv_parser.hpp</innerfile>
+    <innerfile refid="rdfxml__parser_8cpp">rdfxml_parser.cpp</innerfile>
+    <innerfile refid="rdfxml__parser_8hpp">rdfxml_parser.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/parser/"/>
+  </compounddef>
+</doxygen>

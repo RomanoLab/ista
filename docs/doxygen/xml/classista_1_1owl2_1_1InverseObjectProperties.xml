@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1InverseObjectProperties" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::InverseObjectProperties</compoundname>
+    <basecompoundref refid="classista_1_1owl2_1_1Axiom" prot="public" virt="non-virtual">ista::owl2::Axiom</basecompoundref>
+    <includes refid="axiom_8hpp" local="no">axiom.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classista_1_1owl2_1_1InverseObjectProperties_1a99c51d50183a6e7efd2b877866df2efc" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceista_1_1owl2_1ad17b74082fc9976eec3e4c085ebdec53" kindref="member">ObjectPropertyExpression</ref></type>
+        <definition>ObjectPropertyExpression ista::owl2::InverseObjectProperties::property1_</definition>
+        <argsstring></argsstring>
+        <name>property1_</name>
+        <qualifiedname>ista::owl2::InverseObjectProperties::property1_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="276" column="30" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="276" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1InverseObjectProperties_1a9df5482fd023947c6c75bf5eedc3f9a3" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceista_1_1owl2_1ad17b74082fc9976eec3e4c085ebdec53" kindref="member">ObjectPropertyExpression</ref></type>
+        <definition>ObjectPropertyExpression ista::owl2::InverseObjectProperties::property2_</definition>
+        <argsstring></argsstring>
+        <name>property2_</name>
+        <qualifiedname>ista::owl2::InverseObjectProperties::property2_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="277" column="30" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="277" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1InverseObjectProperties_1a571b08ea0dec191692cd4ff41a5dd333" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::InverseObjectProperties::InverseObjectProperties</definition>
+        <argsstring>(const ObjectPropertyExpression &amp;property1, const ObjectPropertyExpression &amp;property2)</argsstring>
+        <name>InverseObjectProperties</name>
+        <qualifiedname>ista::owl2::InverseObjectProperties::InverseObjectProperties</qualifiedname>
+        <param>
+          <type>const <ref refid="namespaceista_1_1owl2_1ad17b74082fc9976eec3e4c085ebdec53" kindref="member">ObjectPropertyExpression</ref> &amp;</type>
+          <declname>property1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespaceista_1_1owl2_1ad17b74082fc9976eec3e4c085ebdec53" kindref="member">ObjectPropertyExpression</ref> &amp;</type>
+          <declname>property2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="265" column="5" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="265" bodyend="267"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1InverseObjectProperties_1aaeb8ce6176c8e603493434f810ef88b1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceista_1_1owl2_1ad17b74082fc9976eec3e4c085ebdec53" kindref="member">ObjectPropertyExpression</ref></type>
+        <definition>ObjectPropertyExpression ista::owl2::InverseObjectProperties::getProperty1</definition>
+        <argsstring>() const</argsstring>
+        <name>getProperty1</name>
+        <qualifiedname>ista::owl2::InverseObjectProperties::getProperty1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="269" column="30" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="269" bodyend="269"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1InverseObjectProperties_1ae3eefde38deec75e420fd845d0cdae3a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceista_1_1owl2_1ad17b74082fc9976eec3e4c085ebdec53" kindref="member">ObjectPropertyExpression</ref></type>
+        <definition>ObjectPropertyExpression ista::owl2::InverseObjectProperties::getProperty2</definition>
+        <argsstring>() const</argsstring>
+        <name>getProperty2</name>
+        <qualifiedname>ista::owl2::InverseObjectProperties::getProperty2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="270" column="30" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="270" bodyend="270"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1InverseObjectProperties_1ac6dcc206debbada8bed3a798e0b4ac0e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::InverseObjectProperties::toFunctionalSyntax</definition>
+        <argsstring>() const override</argsstring>
+        <name>toFunctionalSyntax</name>
+        <qualifiedname>ista::owl2::InverseObjectProperties::toFunctionalSyntax</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1Axiom_1abb5141ba6bd01498e779edef9eeb11e4">toFunctionalSyntax</reimplements>
+        <briefdescription>
+<para>Convert to OWL2 Functional Syntax. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="272" column="17" bodyfile="D:/projects/ista/lib/owl2/core/axiom.cpp" bodystart="181" bodyend="185"/>
+        <references refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" compoundref="axiom_8cpp" startline="11" endline="21">ista::owl2::Axiom::formatAnnotations</references>
+        <references refid="namespaceista_1_1owl2_1ac39c91f6c39e4468ca5610fb4360c1fe" compoundref="axiom_8cpp" startline="27" endline="36">ista::owl2::formatObjectPropertyExpression</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1InverseObjectProperties_1ace4ed43d7bf4b3809ef844062fa186cc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::InverseObjectProperties::getAxiomType</definition>
+        <argsstring>() const override</argsstring>
+        <name>getAxiomType</name>
+        <qualifiedname>ista::owl2::InverseObjectProperties::getAxiomType</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1Axiom_1abb223166f4ef93273628b162caab215a">getAxiomType</reimplements>
+        <briefdescription>
+<para>Get the type of this axiom. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="273" column="17" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="273" bodyend="273"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classista_1_1owl2_1_1InverseObjectProperties" kindref="compound">InverseObjectProperties</ref> axiom. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ista::owl2::Axiom</label>
+        <link refid="classista_1_1owl2_1_1Axiom"/>
+      </node>
+      <node id="1">
+        <label>ista::owl2::InverseObjectProperties</label>
+        <link refid="classista_1_1owl2_1_1InverseObjectProperties"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ista::owl2::Axiom</label>
+        <link refid="classista_1_1owl2_1_1Axiom"/>
+      </node>
+      <node id="1">
+        <label>ista::owl2::InverseObjectProperties</label>
+        <link refid="classista_1_1owl2_1_1InverseObjectProperties"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="263" column="1" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="263" bodyend="278"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1Axiom_1ae1259860d3c95a2cb42fa4d993339b68" prot="public" virt="non-virtual"><scope>ista::owl2::InverseObjectProperties</scope><name>addAnnotation</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1a05b3b8e7ddc42b14d1d77830f0b4949b" prot="protected" virt="non-virtual"><scope>ista::owl2::InverseObjectProperties</scope><name>annotations_</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" prot="protected" virt="non-virtual"><scope>ista::owl2::InverseObjectProperties</scope><name>formatAnnotations</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1a4711720ba16843d59d2bb4bbea3b59b1" prot="public" virt="non-virtual"><scope>ista::owl2::InverseObjectProperties</scope><name>getAnnotations</name></member>
+      <member refid="classista_1_1owl2_1_1InverseObjectProperties_1ace4ed43d7bf4b3809ef844062fa186cc" prot="public" virt="virtual"><scope>ista::owl2::InverseObjectProperties</scope><name>getAxiomType</name></member>
+      <member refid="classista_1_1owl2_1_1InverseObjectProperties_1aaeb8ce6176c8e603493434f810ef88b1" prot="public" virt="non-virtual"><scope>ista::owl2::InverseObjectProperties</scope><name>getProperty1</name></member>
+      <member refid="classista_1_1owl2_1_1InverseObjectProperties_1ae3eefde38deec75e420fd845d0cdae3a" prot="public" virt="non-virtual"><scope>ista::owl2::InverseObjectProperties</scope><name>getProperty2</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1a63abdbe0c16756478cc705e0e3cdc7b4" prot="public" virt="non-virtual"><scope>ista::owl2::InverseObjectProperties</scope><name>hasAnnotations</name></member>
+      <member refid="classista_1_1owl2_1_1InverseObjectProperties_1a571b08ea0dec191692cd4ff41a5dd333" prot="public" virt="non-virtual"><scope>ista::owl2::InverseObjectProperties</scope><name>InverseObjectProperties</name></member>
+      <member refid="classista_1_1owl2_1_1InverseObjectProperties_1a99c51d50183a6e7efd2b877866df2efc" prot="private" virt="non-virtual"><scope>ista::owl2::InverseObjectProperties</scope><name>property1_</name></member>
+      <member refid="classista_1_1owl2_1_1InverseObjectProperties_1a9df5482fd023947c6c75bf5eedc3f9a3" prot="private" virt="non-virtual"><scope>ista::owl2::InverseObjectProperties</scope><name>property2_</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1af9bbe00a1d3ff20aa1f04ae3a6ad41b4" prot="public" virt="non-virtual"><scope>ista::owl2::InverseObjectProperties</scope><name>setAnnotations</name></member>
+      <member refid="classista_1_1owl2_1_1InverseObjectProperties_1ac6dcc206debbada8bed3a798e0b4ac0e" prot="public" virt="virtual"><scope>ista::owl2::InverseObjectProperties</scope><name>toFunctionalSyntax</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1acdf39a5f1ada2ce68b0d230f4f4d1c32" prot="public" virt="virtual"><scope>ista::owl2::InverseObjectProperties</scope><name>~Axiom</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

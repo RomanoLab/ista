@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="namespaceista_1_1owl2_1_1reasoner" kind="namespace" language="C++">
+    <compoundname>ista::owl2::reasoner</compoundname>
+    <innerclass refid="classista_1_1owl2_1_1reasoner_1_1KoncludeException" prot="public">ista::owl2::reasoner::KoncludeException</innerclass>
+    <innerclass refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig" prot="public">ista::owl2::reasoner::KoncludeConfig</innerclass>
+    <innerclass refid="structista_1_1owl2_1_1reasoner_1_1ReasoningResult" prot="public">ista::owl2::reasoner::ReasoningResult</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1reasoner_1_1KoncludeWrapper" prot="public">ista::owl2::reasoner::KoncludeWrapper</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.cpp" line="20" column="1"/>
+  </compounddef>
+</doxygen>

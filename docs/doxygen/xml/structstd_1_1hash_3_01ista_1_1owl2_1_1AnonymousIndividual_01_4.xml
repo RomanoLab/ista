@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="structstd_1_1hash_3_01ista_1_1owl2_1_1AnonymousIndividual_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>std::hash&lt; ista::owl2::AnonymousIndividual &gt;</compoundname>
+    <includes refid="core_2entity_8hpp" local="no">entity.hpp</includes>
+    <templateparamlist>
+    </templateparamlist>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structstd_1_1hash_3_01ista_1_1owl2_1_1AnonymousIndividual_01_4_1a5e6b307eea93f5f8c11b6c3d43acc553" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t std::hash&lt; ista::owl2::AnonymousIndividual &gt;::operator()</definition>
+        <argsstring>(const ista::owl2::AnonymousIndividual &amp;ai) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>std::hash&lt; ista::owl2::AnonymousIndividual &gt;::operator()</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1AnonymousIndividual" kindref="compound">ista::owl2::AnonymousIndividual</ref> &amp;</type>
+          <declname>ai</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="179" column="16" bodyfile="D:/projects/ista/lib/owl2/core/entity.hpp" bodystart="179" bodyend="181"/>
+        <references refid="classista_1_1owl2_1_1AnonymousIndividual_1a46897575ce6e97968b4ec986b9656379" compoundref="core_2entity_8hpp" startline="105" endline="105">ista::owl2::AnonymousIndividual::getNodeID</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="178" column="5" bodyfile="D:/projects/ista/lib/owl2/core/entity.hpp" bodystart="178" bodyend="182"/>
+    <listofallmembers>
+      <member refid="structstd_1_1hash_3_01ista_1_1owl2_1_1AnonymousIndividual_01_4_1a5e6b307eea93f5f8c11b6c3d43acc553" prot="public" virt="non-virtual"><scope>std::hash&lt; ista::owl2::AnonymousIndividual &gt;</scope><name>operator()</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

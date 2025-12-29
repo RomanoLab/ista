@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="structEntity" kind="struct" language="C++" prot="public">
+    <compoundname>Entity</compoundname>
+    <derivedcompoundref refid="structClass" prot="public" virt="non-virtual">Class</derivedcompoundref>
+    <derivedcompoundref refid="structDataProperty" prot="public" virt="non-virtual">DataProperty</derivedcompoundref>
+    <derivedcompoundref refid="structDatatype" prot="public" virt="non-virtual">Datatype</derivedcompoundref>
+    <derivedcompoundref refid="structNamedInvidual" prot="public" virt="non-virtual">NamedInvidual</derivedcompoundref>
+    <derivedcompoundref refid="structObjectProperty" prot="public" virt="non-virtual">ObjectProperty</derivedcompoundref>
+    <includes refid="entity_8hpp" local="no">entity.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structEntity_1aa7296b46f78ff82279659e7abe2b4717" prot="public" static="no" mutable="no">
+        <type>IRI</type>
+        <definition>IRI Entity::iri</definition>
+        <argsstring></argsstring>
+        <name>iri</name>
+        <qualifiedname>Entity::iri</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/entity.hpp" line="9" column="9" bodyfile="D:/projects/ista/lib/owl2/entity.hpp" bodystart="9" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Class</label>
+        <link refid="structClass"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>DataProperty</label>
+        <link refid="structDataProperty"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Datatype</label>
+        <link refid="structDatatype"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Entity</label>
+        <link refid="structEntity"/>
+      </node>
+      <node id="5">
+        <label>NamedInvidual</label>
+        <link refid="structNamedInvidual"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>ObjectProperty</label>
+        <link refid="structObjectProperty"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="D:/projects/ista/lib/owl2/entity.hpp" line="7" column="1" bodyfile="D:/projects/ista/lib/owl2/entity.hpp" bodystart="8" bodyend="10"/>
+    <listofallmembers>
+      <member refid="structEntity_1aa7296b46f78ff82279659e7abe2b4717" prot="public" virt="non-virtual"><scope>Entity</scope><name>iri</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

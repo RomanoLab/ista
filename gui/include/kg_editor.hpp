@@ -140,8 +140,11 @@ private:
     // Data source panel state
     struct DataSource {
         std::string filepath;
-        std::string format;  // "csv", "tsv", "excel", "sqlite", "postgres", "mysql"
+        std::string format;  // "csv", "tsv", "excel", "sqlite", "postgres", "mysql", "sqlserver"
         std::optional<std::string> mapped_class_iri;
+        
+        // Source type
+        bool is_database = false;  // true for database, false for file
         
         // Metadata (populated without loading full file)
         bool metadata_loaded = false;
@@ -157,7 +160,16 @@ private:
         std::string active_sheet;
         
         // For SQL databases
-        std::string connection_string;
+        struct DatabaseConfig {
+            std::string host = "localhost";
+            int port = 0;  // 0 means use default
+            std::string database;
+            std::string username;
+            std::string password;
+            std::string connection_string;  // Full connection string (for custom configs)
+            bool use_connection_string = false;  // If true, use connection_string directly
+        };
+        DatabaseConfig db_config;
         std::vector<std::string> table_names;
         std::string active_table;
     };
@@ -174,6 +186,16 @@ private:
     bool show_ontology_loader_;
     bool show_about_dialog_;
     bool show_preferences_;
+    bool show_add_data_source_menu_;
+    bool show_database_config_dialog_;
+    
+    // Database configuration state
+    std::string db_type_selection_;  // "mysql", "postgres", "sqlserver"
+    DataSource temp_database_config_;  // Temporary config while setting up
+    
+    // Helper methods for database dialogs
+    void render_database_config_dialog();
+    int get_default_port(const std::string& db_type) const;
     
     // Preferences
     bool pref_show_namespace_prefix_;

@@ -1,0 +1,205 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1ObjectPropertyAssertion" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::ObjectPropertyAssertion</compoundname>
+    <basecompoundref refid="classista_1_1owl2_1_1Axiom" prot="public" virt="non-virtual">ista::owl2::Axiom</basecompoundref>
+    <includes refid="axiom_8hpp" local="no">axiom.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classista_1_1owl2_1_1ObjectPropertyAssertion_1a1b875407630d08cc04e75ca9c0792a1a" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceista_1_1owl2_1ad17b74082fc9976eec3e4c085ebdec53" kindref="member">ObjectPropertyExpression</ref></type>
+        <definition>ObjectPropertyExpression ista::owl2::ObjectPropertyAssertion::property_</definition>
+        <argsstring></argsstring>
+        <name>property_</name>
+        <qualifiedname>ista::owl2::ObjectPropertyAssertion::property_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="689" column="30" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="689" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1ObjectPropertyAssertion_1a655e817fbabb0151eb4ca35640a6e25d" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceista_1_1owl2_1a8327f2edd65d42a9498697dce8118d84" kindref="member">Individual</ref><ref refid="structIndividual" kindref="compound">Individual</ref></type>
+        <definition>Individual ista::owl2::ObjectPropertyAssertion::source_</definition>
+        <argsstring></argsstring>
+        <name>source_</name>
+        <qualifiedname>ista::owl2::ObjectPropertyAssertion::source_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="690" column="16" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="690" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1ObjectPropertyAssertion_1a983955f4500629b0dd834e80bfa54484" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceista_1_1owl2_1a8327f2edd65d42a9498697dce8118d84" kindref="member">Individual</ref><ref refid="structIndividual" kindref="compound">Individual</ref></type>
+        <definition>Individual ista::owl2::ObjectPropertyAssertion::target_</definition>
+        <argsstring></argsstring>
+        <name>target_</name>
+        <qualifiedname>ista::owl2::ObjectPropertyAssertion::target_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="691" column="16" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="691" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1ObjectPropertyAssertion_1a7039057808460f966f638c8ec28f2ac6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::ObjectPropertyAssertion::ObjectPropertyAssertion</definition>
+        <argsstring>(const ObjectPropertyExpression &amp;property, const Individual &amp;source, const Individual &amp;target)</argsstring>
+        <name>ObjectPropertyAssertion</name>
+        <qualifiedname>ista::owl2::ObjectPropertyAssertion::ObjectPropertyAssertion</qualifiedname>
+        <param>
+          <type>const <ref refid="namespaceista_1_1owl2_1ad17b74082fc9976eec3e4c085ebdec53" kindref="member">ObjectPropertyExpression</ref> &amp;</type>
+          <declname>property</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespaceista_1_1owl2_1a8327f2edd65d42a9498697dce8118d84" kindref="member">Individual</ref><ref refid="structIndividual" kindref="compound">Individual</ref> &amp;</type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespaceista_1_1owl2_1a8327f2edd65d42a9498697dce8118d84" kindref="member">Individual</ref><ref refid="structIndividual" kindref="compound">Individual</ref> &amp;</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="676" column="5" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="676" bodyend="679"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1ObjectPropertyAssertion_1a74f60f61eb950cc8578557a12e4850a2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceista_1_1owl2_1ad17b74082fc9976eec3e4c085ebdec53" kindref="member">ObjectPropertyExpression</ref></type>
+        <definition>ObjectPropertyExpression ista::owl2::ObjectPropertyAssertion::getProperty</definition>
+        <argsstring>() const</argsstring>
+        <name>getProperty</name>
+        <qualifiedname>ista::owl2::ObjectPropertyAssertion::getProperty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="681" column="30" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="681" bodyend="681"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1ObjectPropertyAssertion_1a49a845f40e140dd85c281fb2c160f932" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceista_1_1owl2_1a8327f2edd65d42a9498697dce8118d84" kindref="member">Individual</ref><ref refid="structIndividual" kindref="compound">Individual</ref></type>
+        <definition>Individual ista::owl2::ObjectPropertyAssertion::getSource</definition>
+        <argsstring>() const</argsstring>
+        <name>getSource</name>
+        <qualifiedname>ista::owl2::ObjectPropertyAssertion::getSource</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="682" column="16" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="682" bodyend="682"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1ObjectPropertyAssertion_1abddab0e7326556abc3af48fcb5259313" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceista_1_1owl2_1a8327f2edd65d42a9498697dce8118d84" kindref="member">Individual</ref><ref refid="structIndividual" kindref="compound">Individual</ref></type>
+        <definition>Individual ista::owl2::ObjectPropertyAssertion::getTarget</definition>
+        <argsstring>() const</argsstring>
+        <name>getTarget</name>
+        <qualifiedname>ista::owl2::ObjectPropertyAssertion::getTarget</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="683" column="16" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="683" bodyend="683"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1ObjectPropertyAssertion_1ae4c6b42880350575471635f53c251d19" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::ObjectPropertyAssertion::toFunctionalSyntax</definition>
+        <argsstring>() const override</argsstring>
+        <name>toFunctionalSyntax</name>
+        <qualifiedname>ista::owl2::ObjectPropertyAssertion::toFunctionalSyntax</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1Axiom_1abb5141ba6bd01498e779edef9eeb11e4">toFunctionalSyntax</reimplements>
+        <briefdescription>
+<para>Convert to OWL2 Functional Syntax. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="685" column="17" bodyfile="D:/projects/ista/lib/owl2/core/axiom.cpp" bodystart="339" bodyend="344"/>
+        <references refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" compoundref="axiom_8cpp" startline="11" endline="21">ista::owl2::Axiom::formatAnnotations</references>
+        <references refid="namespaceista_1_1owl2_1acf338c217966d139979b2abcad955cd4" compoundref="axiom_8cpp" startline="38" endline="47">ista::owl2::formatIndividual</references>
+        <references refid="namespaceista_1_1owl2_1ac39c91f6c39e4468ca5610fb4360c1fe" compoundref="axiom_8cpp" startline="27" endline="36">ista::owl2::formatObjectPropertyExpression</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1ObjectPropertyAssertion_1ac3e5dfa43978af56338eeb9019718553" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::ObjectPropertyAssertion::getAxiomType</definition>
+        <argsstring>() const override</argsstring>
+        <name>getAxiomType</name>
+        <qualifiedname>ista::owl2::ObjectPropertyAssertion::getAxiomType</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1Axiom_1abb223166f4ef93273628b162caab215a">getAxiomType</reimplements>
+        <briefdescription>
+<para>Get the type of this axiom. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="686" column="17" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="686" bodyend="686"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classista_1_1owl2_1_1ObjectPropertyAssertion" kindref="compound">ObjectPropertyAssertion</ref> axiom. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ista::owl2::Axiom</label>
+        <link refid="classista_1_1owl2_1_1Axiom"/>
+      </node>
+      <node id="1">
+        <label>ista::owl2::ObjectPropertyAssertion</label>
+        <link refid="classista_1_1owl2_1_1ObjectPropertyAssertion"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ista::owl2::Axiom</label>
+        <link refid="classista_1_1owl2_1_1Axiom"/>
+      </node>
+      <node id="1">
+        <label>ista::owl2::ObjectPropertyAssertion</label>
+        <link refid="classista_1_1owl2_1_1ObjectPropertyAssertion"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="674" column="1" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="674" bodyend="692"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1Axiom_1ae1259860d3c95a2cb42fa4d993339b68" prot="public" virt="non-virtual"><scope>ista::owl2::ObjectPropertyAssertion</scope><name>addAnnotation</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1a05b3b8e7ddc42b14d1d77830f0b4949b" prot="protected" virt="non-virtual"><scope>ista::owl2::ObjectPropertyAssertion</scope><name>annotations_</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" prot="protected" virt="non-virtual"><scope>ista::owl2::ObjectPropertyAssertion</scope><name>formatAnnotations</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1a4711720ba16843d59d2bb4bbea3b59b1" prot="public" virt="non-virtual"><scope>ista::owl2::ObjectPropertyAssertion</scope><name>getAnnotations</name></member>
+      <member refid="classista_1_1owl2_1_1ObjectPropertyAssertion_1ac3e5dfa43978af56338eeb9019718553" prot="public" virt="virtual"><scope>ista::owl2::ObjectPropertyAssertion</scope><name>getAxiomType</name></member>
+      <member refid="classista_1_1owl2_1_1ObjectPropertyAssertion_1a74f60f61eb950cc8578557a12e4850a2" prot="public" virt="non-virtual"><scope>ista::owl2::ObjectPropertyAssertion</scope><name>getProperty</name></member>
+      <member refid="classista_1_1owl2_1_1ObjectPropertyAssertion_1a49a845f40e140dd85c281fb2c160f932" prot="public" virt="non-virtual"><scope>ista::owl2::ObjectPropertyAssertion</scope><name>getSource</name></member>
+      <member refid="classista_1_1owl2_1_1ObjectPropertyAssertion_1abddab0e7326556abc3af48fcb5259313" prot="public" virt="non-virtual"><scope>ista::owl2::ObjectPropertyAssertion</scope><name>getTarget</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1a63abdbe0c16756478cc705e0e3cdc7b4" prot="public" virt="non-virtual"><scope>ista::owl2::ObjectPropertyAssertion</scope><name>hasAnnotations</name></member>
+      <member refid="classista_1_1owl2_1_1ObjectPropertyAssertion_1a7039057808460f966f638c8ec28f2ac6" prot="public" virt="non-virtual"><scope>ista::owl2::ObjectPropertyAssertion</scope><name>ObjectPropertyAssertion</name></member>
+      <member refid="classista_1_1owl2_1_1ObjectPropertyAssertion_1a1b875407630d08cc04e75ca9c0792a1a" prot="private" virt="non-virtual"><scope>ista::owl2::ObjectPropertyAssertion</scope><name>property_</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1af9bbe00a1d3ff20aa1f04ae3a6ad41b4" prot="public" virt="non-virtual"><scope>ista::owl2::ObjectPropertyAssertion</scope><name>setAnnotations</name></member>
+      <member refid="classista_1_1owl2_1_1ObjectPropertyAssertion_1a655e817fbabb0151eb4ca35640a6e25d" prot="private" virt="non-virtual"><scope>ista::owl2::ObjectPropertyAssertion</scope><name>source_</name></member>
+      <member refid="classista_1_1owl2_1_1ObjectPropertyAssertion_1a983955f4500629b0dd834e80bfa54484" prot="private" virt="non-virtual"><scope>ista::owl2::ObjectPropertyAssertion</scope><name>target_</name></member>
+      <member refid="classista_1_1owl2_1_1ObjectPropertyAssertion_1ae4c6b42880350575471635f53c251d19" prot="public" virt="virtual"><scope>ista::owl2::ObjectPropertyAssertion</scope><name>toFunctionalSyntax</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1acdf39a5f1ada2ce68b0d230f4f4d1c32" prot="public" virt="virtual"><scope>ista::owl2::ObjectPropertyAssertion</scope><name>~Axiom</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

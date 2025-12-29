@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1NamedClass" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::NamedClass</compoundname>
+    <basecompoundref refid="classista_1_1owl2_1_1ClassExpression" prot="public" virt="non-virtual">ista::owl2::ClassExpression</basecompoundref>
+    <includes refid="class__expression_8hpp" local="no">class_expression.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classista_1_1owl2_1_1NamedClass_1a161ce5807d151a3432017ae51630cebc" prot="private" static="no" mutable="no">
+        <type><ref refid="structClass" kindref="compound">Class</ref></type>
+        <definition>Class ista::owl2::NamedClass::class_</definition>
+        <argsstring></argsstring>
+        <name>class_</name>
+        <qualifiedname>ista::owl2::NamedClass::class_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/class_expression.hpp" line="32" column="11" bodyfile="D:/projects/ista/lib/owl2/core/class_expression.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1NamedClass_1a8c547e5ef5eed41e0bf2f3226e66a060" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::NamedClass::NamedClass</definition>
+        <argsstring>(const Class &amp;cls)</argsstring>
+        <name>NamedClass</name>
+        <qualifiedname>ista::owl2::NamedClass::NamedClass</qualifiedname>
+        <param>
+          <type>const <ref refid="structClass" kindref="compound">Class</ref> &amp;</type>
+          <declname>cls</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/class_expression.hpp" line="27" column="14" bodyfile="D:/projects/ista/lib/owl2/core/class_expression.hpp" bodystart="27" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1NamedClass_1a681383c2bc3230e5c250de95f56cdcfd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structClass" kindref="compound">Class</ref></type>
+        <definition>Class ista::owl2::NamedClass::getClass</definition>
+        <argsstring>() const</argsstring>
+        <name>getClass</name>
+        <qualifiedname>ista::owl2::NamedClass::getClass</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/class_expression.hpp" line="28" column="11" bodyfile="D:/projects/ista/lib/owl2/core/class_expression.hpp" bodystart="28" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1NamedClass_1a9dee70ca5ffc86050e3652ef57f3a3e3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::NamedClass::toFunctionalSyntax</definition>
+        <argsstring>() const override</argsstring>
+        <name>toFunctionalSyntax</name>
+        <qualifiedname>ista::owl2::NamedClass::toFunctionalSyntax</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1ClassExpression_1ad4aeb7d012b1b53d20e6fb43cde7a1ea">toFunctionalSyntax</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/class_expression.hpp" line="29" column="17" bodyfile="D:/projects/ista/lib/owl2/core/class_expression.cpp" bodystart="7" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1NamedClass_1a8042d2ee96f83ed10aa16519599a9539" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::NamedClass::getExpressionType</definition>
+        <argsstring>() const override</argsstring>
+        <name>getExpressionType</name>
+        <qualifiedname>ista::owl2::NamedClass::getExpressionType</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1ClassExpression_1a15e960b8ed26c64c517ea85f543806d9">getExpressionType</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/class_expression.hpp" line="30" column="17" bodyfile="D:/projects/ista/lib/owl2/core/class_expression.hpp" bodystart="30" bodyend="30"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ista::owl2::ClassExpression</label>
+        <link refid="classista_1_1owl2_1_1ClassExpression"/>
+      </node>
+      <node id="1">
+        <label>ista::owl2::NamedClass</label>
+        <link refid="classista_1_1owl2_1_1NamedClass"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ista::owl2::ClassExpression</label>
+        <link refid="classista_1_1owl2_1_1ClassExpression"/>
+      </node>
+      <node id="1">
+        <label>ista::owl2::NamedClass</label>
+        <link refid="classista_1_1owl2_1_1NamedClass"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/projects/ista/lib/owl2/core/class_expression.hpp" line="25" column="1" bodyfile="D:/projects/ista/lib/owl2/core/class_expression.hpp" bodystart="25" bodyend="33"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1NamedClass_1a161ce5807d151a3432017ae51630cebc" prot="private" virt="non-virtual"><scope>ista::owl2::NamedClass</scope><name>class_</name></member>
+      <member refid="classista_1_1owl2_1_1NamedClass_1a681383c2bc3230e5c250de95f56cdcfd" prot="public" virt="non-virtual"><scope>ista::owl2::NamedClass</scope><name>getClass</name></member>
+      <member refid="classista_1_1owl2_1_1NamedClass_1a8042d2ee96f83ed10aa16519599a9539" prot="public" virt="virtual"><scope>ista::owl2::NamedClass</scope><name>getExpressionType</name></member>
+      <member refid="classista_1_1owl2_1_1NamedClass_1a8c547e5ef5eed41e0bf2f3226e66a060" prot="public" virt="non-virtual"><scope>ista::owl2::NamedClass</scope><name>NamedClass</name></member>
+      <member refid="classista_1_1owl2_1_1NamedClass_1a9dee70ca5ffc86050e3652ef57f3a3e3" prot="public" virt="virtual"><scope>ista::owl2::NamedClass</scope><name>toFunctionalSyntax</name></member>
+      <member refid="classista_1_1owl2_1_1ClassExpression_1a85c474cc91b72cc925bb7d13bfc3fc46" prot="public" virt="virtual"><scope>ista::owl2::NamedClass</scope><name>~ClassExpression</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

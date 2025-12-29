@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="structista_1_1owl2_1_1NodeTypeConfig" kind="struct" language="C++" prot="public">
+    <compoundname>ista::owl2::NodeTypeConfig</compoundname>
+    <includes refid="csv__parser_8hpp" local="no">csv_parser.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structista_1_1owl2_1_1NodeTypeConfig_1ad4bfb1fbddd64bc813e487e411ecf660" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::NodeTypeConfig::iri_column_name</definition>
+        <argsstring></argsstring>
+        <name>iri_column_name</name>
+        <qualifiedname>ista::owl2::NodeTypeConfig::iri_column_name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" line="34" column="17" bodyfile="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" bodystart="34" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1CSVParser_1ae03994dbd246e812aef90c4514e51b9e" compoundref="csv__parser_8cpp" startline="111" endline="262">ista::owl2::CSVParser::parse_node_type</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1NodeTypeConfig_1a6367adba07cb50cdcfa2e7b73684a48e" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ista::owl2::NodeTypeConfig::has_headers</definition>
+        <argsstring></argsstring>
+        <name>has_headers</name>
+        <qualifiedname>ista::owl2::NodeTypeConfig::has_headers</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" line="37" column="10" bodyfile="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" bodystart="37" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1CSVParser_1ae03994dbd246e812aef90c4514e51b9e" compoundref="csv__parser_8cpp" startline="111" endline="262">ista::owl2::CSVParser::parse_node_type</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1NodeTypeConfig_1ae0a6fb01a7c7d05ffb9577d68385fdb1" prot="public" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &gt;</type>
+        <definition>std::unordered_map&lt;std::string, IRI&gt; ista::owl2::NodeTypeConfig::data_property_map</definition>
+        <argsstring></argsstring>
+        <name>data_property_map</name>
+        <qualifiedname>ista::owl2::NodeTypeConfig::data_property_map</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" line="40" column="24" bodyfile="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" bodystart="40" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1CSVParser_1ae03994dbd246e812aef90c4514e51b9e" compoundref="csv__parser_8cpp" startline="111" endline="262">ista::owl2::CSVParser::parse_node_type</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1NodeTypeConfig_1a3412952d8318699f855ab1712a488c07" prot="public" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::function&lt; std::string(const std::string &amp;)&gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::function&lt;std::string(const std::string&amp;)&gt; &gt; ista::owl2::NodeTypeConfig::data_transforms</definition>
+        <argsstring></argsstring>
+        <name>data_transforms</name>
+        <qualifiedname>ista::owl2::NodeTypeConfig::data_transforms</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" line="44" column="24" bodyfile="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" bodystart="44" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1CSVParser_1ae03994dbd246e812aef90c4514e51b9e" compoundref="csv__parser_8cpp" startline="111" endline="262">ista::owl2::CSVParser::parse_node_type</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1NodeTypeConfig_1a1668e1f388d6eecb84253fea83e9e867" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::NodeTypeConfig::filter_column</definition>
+        <argsstring></argsstring>
+        <name>filter_column</name>
+        <qualifiedname>ista::owl2::NodeTypeConfig::filter_column</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" line="47" column="17" bodyfile="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" bodystart="47" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1CSVParser_1ae03994dbd246e812aef90c4514e51b9e" compoundref="csv__parser_8cpp" startline="111" endline="262">ista::owl2::CSVParser::parse_node_type</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1NodeTypeConfig_1aa51f04504b65a160c74b033ca75871b2" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::NodeTypeConfig::filter_value</definition>
+        <argsstring></argsstring>
+        <name>filter_value</name>
+        <qualifiedname>ista::owl2::NodeTypeConfig::filter_value</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" line="48" column="17" bodyfile="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" bodystart="48" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1CSVParser_1ae03994dbd246e812aef90c4514e51b9e" compoundref="csv__parser_8cpp" startline="111" endline="262">ista::owl2::CSVParser::parse_node_type</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1NodeTypeConfig_1a8a626d06b65c19cfca146839bf034e57" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ista::owl2::NodeTypeConfig::merge_mode</definition>
+        <argsstring></argsstring>
+        <name>merge_mode</name>
+        <qualifiedname>ista::owl2::NodeTypeConfig::merge_mode</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" line="51" column="10" bodyfile="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" bodystart="51" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1CSVParser_1ae03994dbd246e812aef90c4514e51b9e" compoundref="csv__parser_8cpp" startline="111" endline="262">ista::owl2::CSVParser::parse_node_type</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1NodeTypeConfig_1ad7307172f1b8a1a188794b47aa21c6f5" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &gt;</type>
+        <definition>std::optional&lt;IRI&gt; ista::owl2::NodeTypeConfig::merge_property_iri</definition>
+        <argsstring></argsstring>
+        <name>merge_property_iri</name>
+        <qualifiedname>ista::owl2::NodeTypeConfig::merge_property_iri</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" line="52" column="19" bodyfile="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" bodystart="52" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1CSVParser_1ae03994dbd246e812aef90c4514e51b9e" compoundref="csv__parser_8cpp" startline="111" endline="262">ista::owl2::CSVParser::parse_node_type</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1NodeTypeConfig_1a5d6e7c1debdf7a1fb32597618d4718b7" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::NodeTypeConfig::merge_column_name</definition>
+        <argsstring></argsstring>
+        <name>merge_column_name</name>
+        <qualifiedname>ista::owl2::NodeTypeConfig::merge_column_name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" line="53" column="17" bodyfile="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" bodystart="53" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1CSVParser_1ae03994dbd246e812aef90c4514e51b9e" compoundref="csv__parser_8cpp" startline="111" endline="262">ista::owl2::CSVParser::parse_node_type</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structista_1_1owl2_1_1NodeTypeConfig_1a9ae09b3dca146068752e82bdc9354e76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::NodeTypeConfig::NodeTypeConfig</definition>
+        <argsstring>()=default</argsstring>
+        <name>NodeTypeConfig</name>
+        <qualifiedname>ista::owl2::NodeTypeConfig::NodeTypeConfig</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" line="31" column="5"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Configuration for parsing node types from CSV files. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" line="29" column="1" bodyfile="D:/projects/ista/lib/owl2/parser/csv_parser.hpp" bodystart="29" bodyend="54"/>
+    <listofallmembers>
+      <member refid="structista_1_1owl2_1_1NodeTypeConfig_1ae0a6fb01a7c7d05ffb9577d68385fdb1" prot="public" virt="non-virtual"><scope>ista::owl2::NodeTypeConfig</scope><name>data_property_map</name></member>
+      <member refid="structista_1_1owl2_1_1NodeTypeConfig_1a3412952d8318699f855ab1712a488c07" prot="public" virt="non-virtual"><scope>ista::owl2::NodeTypeConfig</scope><name>data_transforms</name></member>
+      <member refid="structista_1_1owl2_1_1NodeTypeConfig_1a1668e1f388d6eecb84253fea83e9e867" prot="public" virt="non-virtual"><scope>ista::owl2::NodeTypeConfig</scope><name>filter_column</name></member>
+      <member refid="structista_1_1owl2_1_1NodeTypeConfig_1aa51f04504b65a160c74b033ca75871b2" prot="public" virt="non-virtual"><scope>ista::owl2::NodeTypeConfig</scope><name>filter_value</name></member>
+      <member refid="structista_1_1owl2_1_1NodeTypeConfig_1a6367adba07cb50cdcfa2e7b73684a48e" prot="public" virt="non-virtual"><scope>ista::owl2::NodeTypeConfig</scope><name>has_headers</name></member>
+      <member refid="structista_1_1owl2_1_1NodeTypeConfig_1ad4bfb1fbddd64bc813e487e411ecf660" prot="public" virt="non-virtual"><scope>ista::owl2::NodeTypeConfig</scope><name>iri_column_name</name></member>
+      <member refid="structista_1_1owl2_1_1NodeTypeConfig_1a5d6e7c1debdf7a1fb32597618d4718b7" prot="public" virt="non-virtual"><scope>ista::owl2::NodeTypeConfig</scope><name>merge_column_name</name></member>
+      <member refid="structista_1_1owl2_1_1NodeTypeConfig_1a8a626d06b65c19cfca146839bf034e57" prot="public" virt="non-virtual"><scope>ista::owl2::NodeTypeConfig</scope><name>merge_mode</name></member>
+      <member refid="structista_1_1owl2_1_1NodeTypeConfig_1ad7307172f1b8a1a188794b47aa21c6f5" prot="public" virt="non-virtual"><scope>ista::owl2::NodeTypeConfig</scope><name>merge_property_iri</name></member>
+      <member refid="structista_1_1owl2_1_1NodeTypeConfig_1a9ae09b3dca146068752e82bdc9354e76" prot="public" virt="non-virtual"><scope>ista::owl2::NodeTypeConfig</scope><name>NodeTypeConfig</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

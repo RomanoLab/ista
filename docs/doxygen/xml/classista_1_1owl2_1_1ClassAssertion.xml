@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1ClassAssertion" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::ClassAssertion</compoundname>
+    <basecompoundref refid="classista_1_1owl2_1_1Axiom" prot="public" virt="non-virtual">ista::owl2::Axiom</basecompoundref>
+    <includes refid="axiom_8hpp" local="no">axiom.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classista_1_1owl2_1_1ClassAssertion_1a9d65cff83964417703daee6e154a3a3b" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceista_1_1owl2_1a61b3005e8a7011a323fdc822a191da25" kindref="member">ClassExpressionPtr</ref></type>
+        <definition>ClassExpressionPtr ista::owl2::ClassAssertion::class_expression_</definition>
+        <argsstring></argsstring>
+        <name>class_expression_</name>
+        <qualifiedname>ista::owl2::ClassAssertion::class_expression_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="667" column="24" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="667" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1ClassAssertion_1abe9b0eb25ce6fb7c9bd2ab288fba2873" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceista_1_1owl2_1a8327f2edd65d42a9498697dce8118d84" kindref="member">Individual</ref><ref refid="structIndividual" kindref="compound">Individual</ref></type>
+        <definition>Individual ista::owl2::ClassAssertion::individual_</definition>
+        <argsstring></argsstring>
+        <name>individual_</name>
+        <qualifiedname>ista::owl2::ClassAssertion::individual_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="668" column="16" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="668" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1ClassAssertion_1a3ee4b40019ab4fe821d0a173a4ea3386" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::ClassAssertion::ClassAssertion</definition>
+        <argsstring>(const ClassExpressionPtr &amp;class_expression, const Individual &amp;individual)</argsstring>
+        <name>ClassAssertion</name>
+        <qualifiedname>ista::owl2::ClassAssertion::ClassAssertion</qualifiedname>
+        <param>
+          <type>const <ref refid="namespaceista_1_1owl2_1a61b3005e8a7011a323fdc822a191da25" kindref="member">ClassExpressionPtr</ref> &amp;</type>
+          <declname>class_expression</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespaceista_1_1owl2_1a8327f2edd65d42a9498697dce8118d84" kindref="member">Individual</ref><ref refid="structIndividual" kindref="compound">Individual</ref> &amp;</type>
+          <declname>individual</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="656" column="5" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="656" bodyend="658"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1ClassAssertion_1a4853fbed0a175a3c9c254cc57a87a914" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceista_1_1owl2_1a61b3005e8a7011a323fdc822a191da25" kindref="member">ClassExpressionPtr</ref></type>
+        <definition>ClassExpressionPtr ista::owl2::ClassAssertion::getClassExpression</definition>
+        <argsstring>() const</argsstring>
+        <name>getClassExpression</name>
+        <qualifiedname>ista::owl2::ClassAssertion::getClassExpression</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="660" column="24" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="660" bodyend="660"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1ClassAssertion_1a6d7cabb0f33e3520619eea7c41fea871" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceista_1_1owl2_1a8327f2edd65d42a9498697dce8118d84" kindref="member">Individual</ref><ref refid="structIndividual" kindref="compound">Individual</ref></type>
+        <definition>Individual ista::owl2::ClassAssertion::getIndividual</definition>
+        <argsstring>() const</argsstring>
+        <name>getIndividual</name>
+        <qualifiedname>ista::owl2::ClassAssertion::getIndividual</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="661" column="16" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="661" bodyend="661"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1ClassAssertion_1a3c36d64aed2d453c39d11f2e6a93f1ef" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::ClassAssertion::toFunctionalSyntax</definition>
+        <argsstring>() const override</argsstring>
+        <name>toFunctionalSyntax</name>
+        <qualifiedname>ista::owl2::ClassAssertion::toFunctionalSyntax</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1Axiom_1abb5141ba6bd01498e779edef9eeb11e4">toFunctionalSyntax</reimplements>
+        <briefdescription>
+<para>Convert to OWL2 Functional Syntax. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="663" column="17" bodyfile="D:/projects/ista/lib/owl2/core/axiom.cpp" bodystart="333" bodyend="337"/>
+        <references refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" compoundref="axiom_8cpp" startline="11" endline="21">ista::owl2::Axiom::formatAnnotations</references>
+        <references refid="namespaceista_1_1owl2_1acf338c217966d139979b2abcad955cd4" compoundref="axiom_8cpp" startline="38" endline="47">ista::owl2::formatIndividual</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1ClassAssertion_1ade6a13b2dc0d1fbd1023c1a41a4339b1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::ClassAssertion::getAxiomType</definition>
+        <argsstring>() const override</argsstring>
+        <name>getAxiomType</name>
+        <qualifiedname>ista::owl2::ClassAssertion::getAxiomType</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1Axiom_1abb223166f4ef93273628b162caab215a">getAxiomType</reimplements>
+        <briefdescription>
+<para>Get the type of this axiom. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="664" column="17" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="664" bodyend="664"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classista_1_1owl2_1_1ClassAssertion" kindref="compound">ClassAssertion</ref> axiom. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ista::owl2::Axiom</label>
+        <link refid="classista_1_1owl2_1_1Axiom"/>
+      </node>
+      <node id="1">
+        <label>ista::owl2::ClassAssertion</label>
+        <link refid="classista_1_1owl2_1_1ClassAssertion"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ista::owl2::Axiom</label>
+        <link refid="classista_1_1owl2_1_1Axiom"/>
+      </node>
+      <node id="1">
+        <label>ista::owl2::ClassAssertion</label>
+        <link refid="classista_1_1owl2_1_1ClassAssertion"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/projects/ista/lib/owl2/core/axiom.hpp" line="654" column="1" bodyfile="D:/projects/ista/lib/owl2/core/axiom.hpp" bodystart="654" bodyend="669"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1Axiom_1ae1259860d3c95a2cb42fa4d993339b68" prot="public" virt="non-virtual"><scope>ista::owl2::ClassAssertion</scope><name>addAnnotation</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1a05b3b8e7ddc42b14d1d77830f0b4949b" prot="protected" virt="non-virtual"><scope>ista::owl2::ClassAssertion</scope><name>annotations_</name></member>
+      <member refid="classista_1_1owl2_1_1ClassAssertion_1a9d65cff83964417703daee6e154a3a3b" prot="private" virt="non-virtual"><scope>ista::owl2::ClassAssertion</scope><name>class_expression_</name></member>
+      <member refid="classista_1_1owl2_1_1ClassAssertion_1a3ee4b40019ab4fe821d0a173a4ea3386" prot="public" virt="non-virtual"><scope>ista::owl2::ClassAssertion</scope><name>ClassAssertion</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1abd29dfbc7097db55daeecfb2d7b4b2a3" prot="protected" virt="non-virtual"><scope>ista::owl2::ClassAssertion</scope><name>formatAnnotations</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1a4711720ba16843d59d2bb4bbea3b59b1" prot="public" virt="non-virtual"><scope>ista::owl2::ClassAssertion</scope><name>getAnnotations</name></member>
+      <member refid="classista_1_1owl2_1_1ClassAssertion_1ade6a13b2dc0d1fbd1023c1a41a4339b1" prot="public" virt="virtual"><scope>ista::owl2::ClassAssertion</scope><name>getAxiomType</name></member>
+      <member refid="classista_1_1owl2_1_1ClassAssertion_1a4853fbed0a175a3c9c254cc57a87a914" prot="public" virt="non-virtual"><scope>ista::owl2::ClassAssertion</scope><name>getClassExpression</name></member>
+      <member refid="classista_1_1owl2_1_1ClassAssertion_1a6d7cabb0f33e3520619eea7c41fea871" prot="public" virt="non-virtual"><scope>ista::owl2::ClassAssertion</scope><name>getIndividual</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1a63abdbe0c16756478cc705e0e3cdc7b4" prot="public" virt="non-virtual"><scope>ista::owl2::ClassAssertion</scope><name>hasAnnotations</name></member>
+      <member refid="classista_1_1owl2_1_1ClassAssertion_1abe9b0eb25ce6fb7c9bd2ab288fba2873" prot="private" virt="non-virtual"><scope>ista::owl2::ClassAssertion</scope><name>individual_</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1af9bbe00a1d3ff20aa1f04ae3a6ad41b4" prot="public" virt="non-virtual"><scope>ista::owl2::ClassAssertion</scope><name>setAnnotations</name></member>
+      <member refid="classista_1_1owl2_1_1ClassAssertion_1a3c36d64aed2d453c39d11f2e6a93f1ef" prot="public" virt="virtual"><scope>ista::owl2::ClassAssertion</scope><name>toFunctionalSyntax</name></member>
+      <member refid="classista_1_1owl2_1_1Axiom_1acdf39a5f1ada2ce68b0d230f4f4d1c32" prot="public" virt="virtual"><scope>ista::owl2::ClassAssertion</scope><name>~Axiom</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

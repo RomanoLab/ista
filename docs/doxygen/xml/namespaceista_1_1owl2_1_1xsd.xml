@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="namespaceista_1_1owl2_1_1xsd" kind="namespace" language="C++">
+    <compoundname>ista::owl2::xsd</compoundname>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceista_1_1owl2_1_1xsd_1a5304a0b9e4b877c08ce1d825085f591c" prot="public" static="no" mutable="no">
+        <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref></type>
+        <definition>const IRI ista::owl2::xsd::STRING(&quot;http://www.w3.org/2001/XMLSchema#string&quot;)</definition>
+        <argsstring>(&quot;http://www.w3.org/2001/XMLSchema#string&quot;)</argsstring>
+        <name>STRING</name>
+        <qualifiedname>ista::owl2::xsd::STRING</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/literal.hpp" line="76" column="15"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceista_1_1owl2_1_1xsd_1ab83e0bc4bbbac37fd628cbadd5fef76e" prot="public" static="no" mutable="no">
+        <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref></type>
+        <definition>const IRI ista::owl2::xsd::INTEGER(&quot;http://www.w3.org/2001/XMLSchema#integer&quot;)</definition>
+        <argsstring>(&quot;http://www.w3.org/2001/XMLSchema#integer&quot;)</argsstring>
+        <name>INTEGER</name>
+        <qualifiedname>ista::owl2::xsd::INTEGER</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/literal.hpp" line="77" column="15"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceista_1_1owl2_1_1xsd_1ae08928252c864eda872ca431094fca5e" prot="public" static="no" mutable="no">
+        <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref></type>
+        <definition>const IRI ista::owl2::xsd::INT(&quot;http://www.w3.org/2001/XMLSchema#int&quot;)</definition>
+        <argsstring>(&quot;http://www.w3.org/2001/XMLSchema#int&quot;)</argsstring>
+        <name>INT</name>
+        <qualifiedname>ista::owl2::xsd::INT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/literal.hpp" line="78" column="15"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceista_1_1owl2_1_1xsd_1ae075d948b23ef1562d61e97da122b43e" prot="public" static="no" mutable="no">
+        <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref></type>
+        <definition>const IRI ista::owl2::xsd::LONG(&quot;http://www.w3.org/2001/XMLSchema#long&quot;)</definition>
+        <argsstring>(&quot;http://www.w3.org/2001/XMLSchema#long&quot;)</argsstring>
+        <name>LONG</name>
+        <qualifiedname>ista::owl2::xsd::LONG</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/literal.hpp" line="79" column="15"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceista_1_1owl2_1_1xsd_1acd81f5b7c6a2e5efb37f8f5df957506e" prot="public" static="no" mutable="no">
+        <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref></type>
+        <definition>const IRI ista::owl2::xsd::DOUBLE(&quot;http://www.w3.org/2001/XMLSchema#double&quot;)</definition>
+        <argsstring>(&quot;http://www.w3.org/2001/XMLSchema#double&quot;)</argsstring>
+        <name>DOUBLE</name>
+        <qualifiedname>ista::owl2::xsd::DOUBLE</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/literal.hpp" line="80" column="15"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceista_1_1owl2_1_1xsd_1aa25c0e11335be2908613c94d8e9f8be1" prot="public" static="no" mutable="no">
+        <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref></type>
+        <definition>const IRI ista::owl2::xsd::FLOAT(&quot;http://www.w3.org/2001/XMLSchema#float&quot;)</definition>
+        <argsstring>(&quot;http://www.w3.org/2001/XMLSchema#float&quot;)</argsstring>
+        <name>FLOAT</name>
+        <qualifiedname>ista::owl2::xsd::FLOAT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/literal.hpp" line="81" column="15"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceista_1_1owl2_1_1xsd_1a7dfe058ce9d369861daf9a029ac023d6" prot="public" static="no" mutable="no">
+        <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref></type>
+        <definition>const IRI ista::owl2::xsd::BOOLEAN(&quot;http://www.w3.org/2001/XMLSchema#boolean&quot;)</definition>
+        <argsstring>(&quot;http://www.w3.org/2001/XMLSchema#boolean&quot;)</argsstring>
+        <name>BOOLEAN</name>
+        <qualifiedname>ista::owl2::xsd::BOOLEAN</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/literal.hpp" line="82" column="15"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceista_1_1owl2_1_1xsd_1a7163df11242ac88133dc0ff4adfde260" prot="public" static="no" mutable="no">
+        <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref></type>
+        <definition>const IRI ista::owl2::xsd::DATE_TIME(&quot;http://www.w3.org/2001/XMLSchema#dateTime&quot;)</definition>
+        <argsstring>(&quot;http://www.w3.org/2001/XMLSchema#dateTime&quot;)</argsstring>
+        <name>DATE_TIME</name>
+        <qualifiedname>ista::owl2::xsd::DATE_TIME</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/literal.hpp" line="83" column="15"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceista_1_1owl2_1_1xsd_1aa95f4a553776a831eda6845323590ac0" prot="public" static="no" mutable="no">
+        <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref></type>
+        <definition>const IRI ista::owl2::xsd::DATE(&quot;http://www.w3.org/2001/XMLSchema#date&quot;)</definition>
+        <argsstring>(&quot;http://www.w3.org/2001/XMLSchema#date&quot;)</argsstring>
+        <name>DATE</name>
+        <qualifiedname>ista::owl2::xsd::DATE</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/literal.hpp" line="84" column="15"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/core/literal.hpp" line="75" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="dir_a78a4cf07cf6c6b89181d07787f88adf" kind="dir">
+    <compoundname>D:/projects/ista/lib/owl2/serializer</compoundname>
+    <innerfile refid="functional__serializer_8cpp">functional_serializer.cpp</innerfile>
+    <innerfile refid="functional__serializer_8hpp">functional_serializer.hpp</innerfile>
+    <innerfile refid="rdfxml__serializer_8cpp">rdfxml_serializer.cpp</innerfile>
+    <innerfile refid="rdfxml__serializer_8hpp">rdfxml_serializer.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/serializer/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,733 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::RDFXMLParser::Parser</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ac043cbcd946c9b4e7b2e6dc3fbf4a854" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::RDFXMLParser::Parser::content_</definition>
+        <argsstring></argsstring>
+        <name>content_</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::content_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="60" column="17" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a3b3b5e5d9c1e5880cd42fe5241a5ed88" prot="private" static="no" mutable="no">
+        <type>pugi::xml_document</type>
+        <definition>pugi::xml_document ista::owl2::RDFXMLParser::Parser::doc_</definition>
+        <argsstring></argsstring>
+        <name>doc_</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::doc_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="61" column="24" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a36533d4e012922a2f4d37fca7c86d5bc" prot="private" static="no" mutable="no">
+        <type>pugi::xml_node</type>
+        <definition>pugi::xml_node ista::owl2::RDFXMLParser::Parser::rdf_root_</definition>
+        <argsstring></argsstring>
+        <name>rdf_root_</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::rdf_root_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="62" column="20" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1aae5f15308bb03cdb98f63b19237fd60e" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::string &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::string&gt; ista::owl2::RDFXMLParser::Parser::namespaces_</definition>
+        <argsstring></argsstring>
+        <name>namespaces_</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::namespaces_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="63" column="24" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ac7e0c236463ea9698fd42373ea62603d" prot="private" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string ista::owl2::RDFXMLParser::Parser::RDF_NS</definition>
+        <argsstring></argsstring>
+        <name>RDF_NS</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::RDF_NS</qualifiedname>
+        <initializer>= &quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="66" column="23" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ae69435d5a46ed252fdecc24aec70f857" prot="private" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string ista::owl2::RDFXMLParser::Parser::RDFS_NS</definition>
+        <argsstring></argsstring>
+        <name>RDFS_NS</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::RDFS_NS</qualifiedname>
+        <initializer>= &quot;http://www.w3.org/2000/01/rdf-schema#&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="67" column="23" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a628b9036d9ef979c2101847f6b665211" prot="private" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string ista::owl2::RDFXMLParser::Parser::OWL_NS</definition>
+        <argsstring></argsstring>
+        <name>OWL_NS</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::OWL_NS</qualifiedname>
+        <initializer>= &quot;http://www.w3.org/2002/07/owl#&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="68" column="23" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a62193f4d45b75cb40098766c82111a6b" prot="private" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string ista::owl2::RDFXMLParser::Parser::XSD_NS</definition>
+        <argsstring></argsstring>
+        <name>XSD_NS</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::XSD_NS</qualifiedname>
+        <initializer>= &quot;http://www.w3.org/2001/XMLSchema#&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="69" column="23" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ad9fed486cfb1c7bfd77f5cf48a07fd22" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::RDFXMLParser::Parser::Parser</definition>
+        <argsstring>(const std::string &amp;rdfxml_content)</argsstring>
+        <name>Parser</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::Parser</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>rdfxml_content</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="16" column="14" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="16" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1aaac251c56dba2e7b97a4a05f4e590c0d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref></type>
+        <definition>Ontology ista::owl2::RDFXMLParser::Parser::parse</definition>
+        <argsstring>()</argsstring>
+        <name>parse</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::parse</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="19" column="14" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="19" bodyend="57"/>
+        <references refid="classista_1_1owl2_1_1Ontology_1a5d4759c58c914ddcf9d26adbb2ae4821" compoundref="ontology_8cpp" startline="41" endline="44">ista::owl2::Ontology::registerPrefix</references>
+        <referencedby refid="classista_1_1owl2_1_1RDFXMLParser_1a7d1d842fd843bca9e5f369a562c74518" compoundref="rdfxml__parser_8cpp" startline="816" endline="819">ista::owl2::RDFXMLParser::parse</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a74c0829d469fb4299c16ab54fc1c747c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLParser::Parser::extractNamespaces</definition>
+        <argsstring>()</argsstring>
+        <name>extractNamespaces</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::extractNamespaces</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="75" column="10" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="75" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a6775a08e0cd6dbc8cfc3ba5986c0bcff" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref></type>
+        <definition>IRI ista::owl2::RDFXMLParser::Parser::resolveIRI</definition>
+        <argsstring>(const std::string &amp;iri_string)</argsstring>
+        <name>resolveIRI</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::resolveIRI</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>iri_string</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="103" column="9" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="103" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a4c016b95780d15ad26b5f3e3d9803f20" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::RDFXMLParser::Parser::getAttributeIRI</definition>
+        <argsstring>(const pugi::xml_node &amp;node, const char *attr_name)</argsstring>
+        <name>getAttributeIRI</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::getAttributeIRI</qualifiedname>
+        <param>
+          <type>const pugi::xml_node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>attr_name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="122" column="17" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="122" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1add980afbc8cab09fdeeb68752b41ee88" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::optional&lt; std::string &gt;</type>
+        <definition>std::optional&lt; std::string &gt; ista::owl2::RDFXMLParser::Parser::getOptionalAttributeIRI</definition>
+        <argsstring>(const pugi::xml_node &amp;node, const char *attr_name)</argsstring>
+        <name>getOptionalAttributeIRI</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::getOptionalAttributeIRI</qualifiedname>
+        <param>
+          <type>const pugi::xml_node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>attr_name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="131" column="19" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="131" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a3bf4d160d1475e0a223ca11f26bbe9f0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLParser::Parser::parseOntologyHeader</definition>
+        <argsstring>(Ontology &amp;ontology)</argsstring>
+        <name>parseOntologyHeader</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::parseOntologyHeader</qualifiedname>
+        <param>
+          <type><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="143" column="10" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="143" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a94fe3e45f97fe7e3733eb25ecc38994c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLParser::Parser::parseOntologyAnnotation</definition>
+        <argsstring>(Ontology &amp;ontology, const pugi::xml_node &amp;node)</argsstring>
+        <name>parseOntologyAnnotation</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::parseOntologyAnnotation</qualifiedname>
+        <param>
+          <type><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <param>
+          <type>const pugi::xml_node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="190" column="10" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="190" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a0b3401a2c3ad7b104ba3967f3cb8dbd7" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLParser::Parser::parseDeclarations</definition>
+        <argsstring>(Ontology &amp;ontology)</argsstring>
+        <name>parseDeclarations</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::parseDeclarations</qualifiedname>
+        <param>
+          <type><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="209" column="10" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="209" bodyend="254"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ae5669512ce3760a23e0caf57b3bb9233" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLParser::Parser::parseAxioms</definition>
+        <argsstring>(Ontology &amp;ontology)</argsstring>
+        <name>parseAxioms</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::parseAxioms</qualifiedname>
+        <param>
+          <type><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="260" column="10" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="260" bodyend="278"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ab93f37b811a618f7d91b47552990a8b9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLParser::Parser::parseClassAxioms</definition>
+        <argsstring>(Ontology &amp;ontology, const pugi::xml_node &amp;node)</argsstring>
+        <name>parseClassAxioms</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::parseClassAxioms</qualifiedname>
+        <param>
+          <type><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <param>
+          <type>const pugi::xml_node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="280" column="10" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="280" bodyend="304"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a5914ce680a88f63164c10ea05bb9ecf8" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLParser::Parser::parseSubClassOf</definition>
+        <argsstring>(Ontology &amp;ontology, const ClassExpressionPtr &amp;subclass, const pugi::xml_node &amp;node)</argsstring>
+        <name>parseSubClassOf</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::parseSubClassOf</qualifiedname>
+        <param>
+          <type><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespaceista_1_1owl2_1a61b3005e8a7011a323fdc822a191da25" kindref="member">ClassExpressionPtr</ref> &amp;</type>
+          <declname>subclass</declname>
+        </param>
+        <param>
+          <type>const pugi::xml_node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="306" column="10" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="306" bodyend="313"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a45791411185c66b551b4e9a77df8cc0d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLParser::Parser::parseEquivalentClass</definition>
+        <argsstring>(Ontology &amp;ontology, const ClassExpressionPtr &amp;cls1, const pugi::xml_node &amp;node)</argsstring>
+        <name>parseEquivalentClass</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::parseEquivalentClass</qualifiedname>
+        <param>
+          <type><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespaceista_1_1owl2_1a61b3005e8a7011a323fdc822a191da25" kindref="member">ClassExpressionPtr</ref> &amp;</type>
+          <declname>cls1</declname>
+        </param>
+        <param>
+          <type>const pugi::xml_node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="315" column="10" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="315" bodyend="323"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a6616cf29db0d19a27b931a37b4bd2dc3" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLParser::Parser::parseDisjointClasses</definition>
+        <argsstring>(Ontology &amp;ontology, const pugi::xml_node &amp;node)</argsstring>
+        <name>parseDisjointClasses</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::parseDisjointClasses</qualifiedname>
+        <param>
+          <type><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <param>
+          <type>const pugi::xml_node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="325" column="10" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="325" bodyend="352"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a88488db509096e654d7fc169fcd5dd1a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLParser::Parser::parseObjectPropertyAxioms</definition>
+        <argsstring>(Ontology &amp;ontology, const pugi::xml_node &amp;node)</argsstring>
+        <name>parseObjectPropertyAxioms</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::parseObjectPropertyAxioms</qualifiedname>
+        <param>
+          <type><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <param>
+          <type>const pugi::xml_node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="354" column="10" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="354" bodyend="439"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a7c244c38078567f118a99c0f76fc840d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLParser::Parser::parseDataPropertyAxioms</definition>
+        <argsstring>(Ontology &amp;ontology, const pugi::xml_node &amp;node)</argsstring>
+        <name>parseDataPropertyAxioms</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::parseDataPropertyAxioms</qualifiedname>
+        <param>
+          <type><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <param>
+          <type>const pugi::xml_node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="441" column="10" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="441" bodyend="509"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ad3a444dbe91683c45d7e4afface34fd7" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLParser::Parser::parseIndividualAxioms</definition>
+        <argsstring>(Ontology &amp;ontology, const pugi::xml_node &amp;node)</argsstring>
+        <name>parseIndividualAxioms</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::parseIndividualAxioms</qualifiedname>
+        <param>
+          <type><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <param>
+          <type>const pugi::xml_node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="511" column="10" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="511" bodyend="540"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1aef5af3d7d75eeef9997ebc9697ed37c1" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLParser::Parser::parseDescriptionAxioms</definition>
+        <argsstring>(Ontology &amp;ontology, const pugi::xml_node &amp;node)</argsstring>
+        <name>parseDescriptionAxioms</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::parseDescriptionAxioms</qualifiedname>
+        <param>
+          <type><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <param>
+          <type>const pugi::xml_node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="542" column="10" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="542" bodyend="567"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a4e75903be35bb27b2885225db2d198d0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLParser::Parser::parsePropertyAssertion</definition>
+        <argsstring>(Ontology &amp;ontology, const NamedIndividual &amp;ind, const pugi::xml_node &amp;node)</argsstring>
+        <name>parsePropertyAssertion</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::parsePropertyAssertion</qualifiedname>
+        <param>
+          <type><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1NamedIndividual" kindref="compound">NamedIndividual</ref> &amp;</type>
+          <declname>ind</declname>
+        </param>
+        <param>
+          <type>const pugi::xml_node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="569" column="10" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="569" bodyend="600"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a96a9959c76723923086f99ebee71f110" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceista_1_1owl2_1a61b3005e8a7011a323fdc822a191da25" kindref="member">ClassExpressionPtr</ref></type>
+        <definition>ClassExpressionPtr ista::owl2::RDFXMLParser::Parser::parseClassExpression</definition>
+        <argsstring>(const pugi::xml_node &amp;node)</argsstring>
+        <name>parseClassExpression</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::parseClassExpression</qualifiedname>
+        <param>
+          <type>const pugi::xml_node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="606" column="24" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="606" bodyend="643"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1acb71a548f0a68a114453357af86c3ac4" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceista_1_1owl2_1a61b3005e8a7011a323fdc822a191da25" kindref="member">ClassExpressionPtr</ref></type>
+        <definition>ClassExpressionPtr ista::owl2::RDFXMLParser::Parser::parseComplexClassExpression</definition>
+        <argsstring>(const pugi::xml_node &amp;node)</argsstring>
+        <name>parseComplexClassExpression</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::parseComplexClassExpression</qualifiedname>
+        <param>
+          <type>const pugi::xml_node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="645" column="24" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="645" bodyend="657"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1aded2e386bce3faf42d7787a9e3727354" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceista_1_1owl2_1a61b3005e8a7011a323fdc822a191da25" kindref="member">ClassExpressionPtr</ref></type>
+        <definition>ClassExpressionPtr ista::owl2::RDFXMLParser::Parser::parseRestriction</definition>
+        <argsstring>(const pugi::xml_node &amp;node)</argsstring>
+        <name>parseRestriction</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::parseRestriction</qualifiedname>
+        <param>
+          <type>const pugi::xml_node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="659" column="24" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="659" bodyend="697"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a61e1f22da30423267471c6bc341e7221" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceista_1_1owl2_1a61b3005e8a7011a323fdc822a191da25" kindref="member">ClassExpressionPtr</ref></type>
+        <definition>ClassExpressionPtr ista::owl2::RDFXMLParser::Parser::parseIntersectionOf</definition>
+        <argsstring>(const pugi::xml_node &amp;node)</argsstring>
+        <name>parseIntersectionOf</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::parseIntersectionOf</qualifiedname>
+        <param>
+          <type>const pugi::xml_node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="699" column="24" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="699" bodyend="715"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ab37b5b1edec3fa965c9046734576a437" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceista_1_1owl2_1a61b3005e8a7011a323fdc822a191da25" kindref="member">ClassExpressionPtr</ref></type>
+        <definition>ClassExpressionPtr ista::owl2::RDFXMLParser::Parser::parseUnionOf</definition>
+        <argsstring>(const pugi::xml_node &amp;node)</argsstring>
+        <name>parseUnionOf</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::parseUnionOf</qualifiedname>
+        <param>
+          <type>const pugi::xml_node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="717" column="24" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="717" bodyend="733"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ae6d940764fbfb595a86ea41eb923e861" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::RDFXMLParser::Parser::parseAnnotations</definition>
+        <argsstring>(const pugi::xml_node &amp;node, const AxiomPtr &amp;axiom)</argsstring>
+        <name>parseAnnotations</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::parseAnnotations</qualifiedname>
+        <param>
+          <type>const pugi::xml_node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespaceista_1_1owl2_1ae305b46823ac53f0c71aed391a90f835" kindref="member">AxiomPtr</ref> &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="739" column="10" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="739" bodyend="743"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ac941ee6319fa82cb365a07026e69b654" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceista_1_1owl2_1a61f55fb50b668c2a4fc68c63be3e8574" kindref="member">AnnotationValue</ref></type>
+        <definition>AnnotationValue ista::owl2::RDFXMLParser::Parser::parseAnnotationValue</definition>
+        <argsstring>(const pugi::xml_node &amp;node)</argsstring>
+        <name>parseAnnotationValue</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::parseAnnotationValue</qualifiedname>
+        <param>
+          <type>const pugi::xml_node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="745" column="21" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="745" bodyend="768"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a87637981caf21f381c82d0bb025ea690" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classista_1_1owl2_1_1Literal" kindref="compound">Literal</ref></type>
+        <definition>Literal ista::owl2::RDFXMLParser::Parser::parseLiteral</definition>
+        <argsstring>(const pugi::xml_node &amp;node)</argsstring>
+        <name>parseLiteral</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::parseLiteral</qualifiedname>
+        <param>
+          <type>const pugi::xml_node &amp;</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="770" column="13" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="770" bodyend="792"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ac920ffe83e899463073594200437a7d9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref></type>
+        <definition>IRI ista::owl2::RDFXMLParser::Parser::resolveNodeName</definition>
+        <argsstring>(const std::string &amp;node_name)</argsstring>
+        <name>resolveNodeName</name>
+        <qualifiedname>ista::owl2::RDFXMLParser::Parser::resolveNodeName</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>node_name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="794" column="9" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="794" bodyend="809"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" line="14" column="1" bodyfile="D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp" bodystart="14" bodyend="810"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ac043cbcd946c9b4e7b2e6dc3fbf4a854" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>content_</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a3b3b5e5d9c1e5880cd42fe5241a5ed88" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>doc_</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a74c0829d469fb4299c16ab54fc1c747c" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>extractNamespaces</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a4c016b95780d15ad26b5f3e3d9803f20" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>getAttributeIRI</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1add980afbc8cab09fdeeb68752b41ee88" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>getOptionalAttributeIRI</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1aae5f15308bb03cdb98f63b19237fd60e" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>namespaces_</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a628b9036d9ef979c2101847f6b665211" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>OWL_NS</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1aaac251c56dba2e7b97a4a05f4e590c0d" prot="public" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>parse</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ae6d940764fbfb595a86ea41eb923e861" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>parseAnnotations</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ac941ee6319fa82cb365a07026e69b654" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>parseAnnotationValue</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ae5669512ce3760a23e0caf57b3bb9233" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>parseAxioms</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ab93f37b811a618f7d91b47552990a8b9" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>parseClassAxioms</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a96a9959c76723923086f99ebee71f110" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>parseClassExpression</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1acb71a548f0a68a114453357af86c3ac4" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>parseComplexClassExpression</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a7c244c38078567f118a99c0f76fc840d" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>parseDataPropertyAxioms</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a0b3401a2c3ad7b104ba3967f3cb8dbd7" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>parseDeclarations</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1aef5af3d7d75eeef9997ebc9697ed37c1" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>parseDescriptionAxioms</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a6616cf29db0d19a27b931a37b4bd2dc3" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>parseDisjointClasses</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a45791411185c66b551b4e9a77df8cc0d" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>parseEquivalentClass</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ad3a444dbe91683c45d7e4afface34fd7" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>parseIndividualAxioms</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a61e1f22da30423267471c6bc341e7221" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>parseIntersectionOf</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a87637981caf21f381c82d0bb025ea690" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>parseLiteral</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a88488db509096e654d7fc169fcd5dd1a" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>parseObjectPropertyAxioms</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a94fe3e45f97fe7e3733eb25ecc38994c" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>parseOntologyAnnotation</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a3bf4d160d1475e0a223ca11f26bbe9f0" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>parseOntologyHeader</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a4e75903be35bb27b2885225db2d198d0" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>parsePropertyAssertion</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ad9fed486cfb1c7bfd77f5cf48a07fd22" prot="public" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>Parser</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1aded2e386bce3faf42d7787a9e3727354" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>parseRestriction</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a5914ce680a88f63164c10ea05bb9ecf8" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>parseSubClassOf</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ab37b5b1edec3fa965c9046734576a437" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>parseUnionOf</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ac7e0c236463ea9698fd42373ea62603d" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>RDF_NS</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a36533d4e012922a2f4d37fca7c86d5bc" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>rdf_root_</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ae69435d5a46ed252fdecc24aec70f857" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>RDFS_NS</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a6775a08e0cd6dbc8cfc3ba5986c0bcff" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>resolveIRI</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ac920ffe83e899463073594200437a7d9" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>resolveNodeName</name></member>
+      <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a62193f4d45b75cb40098766c82111a6b" prot="private" virt="non-virtual"><scope>ista::owl2::RDFXMLParser::Parser</scope><name>XSD_NS</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1DatatypeRestriction" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::DatatypeRestriction</compoundname>
+    <basecompoundref refid="classista_1_1owl2_1_1DataRange" prot="public" virt="non-virtual">ista::owl2::DataRange</basecompoundref>
+    <includes refid="data__range_8hpp" local="no">data_range.hpp</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classista_1_1owl2_1_1DatatypeRestriction_1a3335cf362c8a08673862c2d46543bb37" prot="public" static="no">
+        <type>std::pair&lt; <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>, <ref refid="classista_1_1owl2_1_1Literal" kindref="compound">Literal</ref> &gt;</type>
+        <definition>using ista::owl2::DatatypeRestriction::FacetRestriction =  std::pair&lt;IRI, Literal&gt;</definition>
+        <argsstring></argsstring>
+        <name>FacetRestriction</name>
+        <qualifiedname>ista::owl2::DatatypeRestriction::FacetRestriction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="126" column="5" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="126" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classista_1_1owl2_1_1DatatypeRestriction_1afbdb458094b3dbe0224c60ac5dca919d" prot="private" static="no" mutable="no">
+        <type><ref refid="structDatatype" kindref="compound">Datatype</ref></type>
+        <definition>Datatype ista::owl2::DatatypeRestriction::datatype_</definition>
+        <argsstring></argsstring>
+        <name>datatype_</name>
+        <qualifiedname>ista::owl2::DatatypeRestriction::datatype_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="139" column="14" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1DatatypeRestriction_1a421ecb38a98e834d0ccadcffebd78cbc" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classista_1_1owl2_1_1DatatypeRestriction_1a3335cf362c8a08673862c2d46543bb37" kindref="member">FacetRestriction</ref> &gt;</type>
+        <definition>std::vector&lt;FacetRestriction&gt; ista::owl2::DatatypeRestriction::restrictions_</definition>
+        <argsstring></argsstring>
+        <name>restrictions_</name>
+        <qualifiedname>ista::owl2::DatatypeRestriction::restrictions_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="140" column="17" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="140" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1DatatypeRestriction_1a7fe3ce4adcfee57af74e92b7aff16011" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::DatatypeRestriction::DatatypeRestriction</definition>
+        <argsstring>(const Datatype &amp;datatype, const std::vector&lt; FacetRestriction &gt; &amp;restrictions)</argsstring>
+        <name>DatatypeRestriction</name>
+        <qualifiedname>ista::owl2::DatatypeRestriction::DatatypeRestriction</qualifiedname>
+        <param>
+          <type>const <ref refid="structDatatype" kindref="compound">Datatype</ref> &amp;</type>
+          <declname>datatype</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; <ref refid="classista_1_1owl2_1_1DatatypeRestriction_1a3335cf362c8a08673862c2d46543bb37" kindref="member">FacetRestriction</ref> &gt; &amp;</type>
+          <declname>restrictions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="128" column="5" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="128" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1DatatypeRestriction_1a51e18f9f67d1f87b5e9f32e9dabbb962" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structDatatype" kindref="compound">Datatype</ref></type>
+        <definition>Datatype ista::owl2::DatatypeRestriction::getDatatype</definition>
+        <argsstring>() const</argsstring>
+        <name>getDatatype</name>
+        <qualifiedname>ista::owl2::DatatypeRestriction::getDatatype</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="132" column="14" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="132" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1DatatypeRestriction_1adb53c447927f729a50fba58d802c1866" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="classista_1_1owl2_1_1DatatypeRestriction_1a3335cf362c8a08673862c2d46543bb37" kindref="member">FacetRestriction</ref> &gt;</type>
+        <definition>std::vector&lt; FacetRestriction &gt; ista::owl2::DatatypeRestriction::getRestrictions</definition>
+        <argsstring>() const</argsstring>
+        <name>getRestrictions</name>
+        <qualifiedname>ista::owl2::DatatypeRestriction::getRestrictions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="133" column="17" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="133" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1DatatypeRestriction_1aac4a2eb16ba1cbd645d50ff3c7494af5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::DatatypeRestriction::toFunctionalSyntax</definition>
+        <argsstring>() const override</argsstring>
+        <name>toFunctionalSyntax</name>
+        <qualifiedname>ista::owl2::DatatypeRestriction::toFunctionalSyntax</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1DataRange_1abe52a263c7481aa3d078f895a62c7547">toFunctionalSyntax</reimplements>
+        <briefdescription>
+<para>Convert to OWL2 Functional Syntax. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="135" column="17" bodyfile="D:/projects/ista/lib/owl2/core/data_range.cpp" bodystart="64" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1DatatypeRestriction_1ac09d7198020ab79608d77a2bc1816354" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::DatatypeRestriction::getDataRangeType</definition>
+        <argsstring>() const override</argsstring>
+        <name>getDataRangeType</name>
+        <qualifiedname>ista::owl2::DatatypeRestriction::getDataRangeType</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1DataRange_1abc8e583db3cb378e0e055ecb5607288b">getDataRangeType</reimplements>
+        <briefdescription>
+<para>Get the type of this data range. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="136" column="17" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="136" bodyend="136"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Facet restriction on a datatype. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Represents constraining facets like minInclusive, maxExclusive, etc. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ista::owl2::DataRange</label>
+        <link refid="classista_1_1owl2_1_1DataRange"/>
+      </node>
+      <node id="1">
+        <label>ista::owl2::DatatypeRestriction</label>
+        <link refid="classista_1_1owl2_1_1DatatypeRestriction"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ista::owl2::DataRange</label>
+        <link refid="classista_1_1owl2_1_1DataRange"/>
+      </node>
+      <node id="1">
+        <label>ista::owl2::DatatypeRestriction</label>
+        <link refid="classista_1_1owl2_1_1DatatypeRestriction"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/projects/ista/lib/owl2/core/data_range.hpp" line="124" column="1" bodyfile="D:/projects/ista/lib/owl2/core/data_range.hpp" bodystart="124" bodyend="141"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1DatatypeRestriction_1afbdb458094b3dbe0224c60ac5dca919d" prot="private" virt="non-virtual"><scope>ista::owl2::DatatypeRestriction</scope><name>datatype_</name></member>
+      <member refid="classista_1_1owl2_1_1DatatypeRestriction_1a7fe3ce4adcfee57af74e92b7aff16011" prot="public" virt="non-virtual"><scope>ista::owl2::DatatypeRestriction</scope><name>DatatypeRestriction</name></member>
+      <member refid="classista_1_1owl2_1_1DatatypeRestriction_1a3335cf362c8a08673862c2d46543bb37" prot="public" virt="non-virtual"><scope>ista::owl2::DatatypeRestriction</scope><name>FacetRestriction</name></member>
+      <member refid="classista_1_1owl2_1_1DatatypeRestriction_1ac09d7198020ab79608d77a2bc1816354" prot="public" virt="virtual"><scope>ista::owl2::DatatypeRestriction</scope><name>getDataRangeType</name></member>
+      <member refid="classista_1_1owl2_1_1DatatypeRestriction_1a51e18f9f67d1f87b5e9f32e9dabbb962" prot="public" virt="non-virtual"><scope>ista::owl2::DatatypeRestriction</scope><name>getDatatype</name></member>
+      <member refid="classista_1_1owl2_1_1DatatypeRestriction_1adb53c447927f729a50fba58d802c1866" prot="public" virt="non-virtual"><scope>ista::owl2::DatatypeRestriction</scope><name>getRestrictions</name></member>
+      <member refid="classista_1_1owl2_1_1DatatypeRestriction_1a421ecb38a98e834d0ccadcffebd78cbc" prot="private" virt="non-virtual"><scope>ista::owl2::DatatypeRestriction</scope><name>restrictions_</name></member>
+      <member refid="classista_1_1owl2_1_1DatatypeRestriction_1aac4a2eb16ba1cbd645d50ff3c7494af5" prot="public" virt="virtual"><scope>ista::owl2::DatatypeRestriction</scope><name>toFunctionalSyntax</name></member>
+      <member refid="classista_1_1owl2_1_1DataRange_1af96348d6c75791cb43e898a5b0a4d677" prot="public" virt="virtual"><scope>ista::owl2::DatatypeRestriction</scope><name>~DataRange</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

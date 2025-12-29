@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="namespacestd" kind="namespace" language="C++">
+    <compoundname>std</compoundname>
+    <innerclass refid="structstd_1_1hash_3_01ista_1_1owl2_1_1Class_01_4" prot="public">std::hash&lt; ista::owl2::Class &gt;</innerclass>
+    <innerclass refid="structstd_1_1hash_3_01ista_1_1owl2_1_1Datatype_01_4" prot="public">std::hash&lt; ista::owl2::Datatype &gt;</innerclass>
+    <innerclass refid="structstd_1_1hash_3_01ista_1_1owl2_1_1ObjectProperty_01_4" prot="public">std::hash&lt; ista::owl2::ObjectProperty &gt;</innerclass>
+    <innerclass refid="structstd_1_1hash_3_01ista_1_1owl2_1_1DataProperty_01_4" prot="public">std::hash&lt; ista::owl2::DataProperty &gt;</innerclass>
+    <innerclass refid="structstd_1_1hash_3_01ista_1_1owl2_1_1AnnotationProperty_01_4" prot="public">std::hash&lt; ista::owl2::AnnotationProperty &gt;</innerclass>
+    <innerclass refid="structstd_1_1hash_3_01ista_1_1owl2_1_1NamedIndividual_01_4" prot="public">std::hash&lt; ista::owl2::NamedIndividual &gt;</innerclass>
+    <innerclass refid="structstd_1_1hash_3_01ista_1_1owl2_1_1AnonymousIndividual_01_4" prot="public">std::hash&lt; ista::owl2::AnonymousIndividual &gt;</innerclass>
+    <innerclass refid="structstd_1_1hash_3_01ista_1_1owl2_1_1IRI_01_4" prot="public">std::hash&lt; ista::owl2::IRI &gt;</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/core/entity.hpp" line="134" column="1"/>
+  </compounddef>
+</doxygen>

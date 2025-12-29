@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1ObjectSomeValuesFrom" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::ObjectSomeValuesFrom</compoundname>
+    <basecompoundref refid="classista_1_1owl2_1_1ClassExpression" prot="public" virt="non-virtual">ista::owl2::ClassExpression</basecompoundref>
+    <includes refid="class__expression_8hpp" local="no">class_expression.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classista_1_1owl2_1_1ObjectSomeValuesFrom_1a4c021fc36c74045faeb9a8b4edb276e4" prot="private" static="no" mutable="no">
+        <type><ref refid="structObjectProperty" kindref="compound">ObjectProperty</ref></type>
+        <definition>ObjectProperty ista::owl2::ObjectSomeValuesFrom::property_</definition>
+        <argsstring></argsstring>
+        <name>property_</name>
+        <qualifiedname>ista::owl2::ObjectSomeValuesFrom::property_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/class_expression.hpp" line="66" column="20" bodyfile="D:/projects/ista/lib/owl2/core/class_expression.hpp" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1ObjectSomeValuesFrom_1ab07958bfd39ddbbb22780b9edede7f76" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceista_1_1owl2_1a61b3005e8a7011a323fdc822a191da25" kindref="member">ClassExpressionPtr</ref></type>
+        <definition>ClassExpressionPtr ista::owl2::ObjectSomeValuesFrom::filler_</definition>
+        <argsstring></argsstring>
+        <name>filler_</name>
+        <qualifiedname>ista::owl2::ObjectSomeValuesFrom::filler_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/class_expression.hpp" line="67" column="24" bodyfile="D:/projects/ista/lib/owl2/core/class_expression.hpp" bodystart="67" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1ObjectSomeValuesFrom_1aa6dd92aa3192e44c884f4873c1463557" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::ObjectSomeValuesFrom::ObjectSomeValuesFrom</definition>
+        <argsstring>(const ObjectProperty &amp;property, const ClassExpressionPtr &amp;filler)</argsstring>
+        <name>ObjectSomeValuesFrom</name>
+        <qualifiedname>ista::owl2::ObjectSomeValuesFrom::ObjectSomeValuesFrom</qualifiedname>
+        <param>
+          <type>const <ref refid="structObjectProperty" kindref="compound">ObjectProperty</ref> &amp;</type>
+          <declname>property</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespaceista_1_1owl2_1a61b3005e8a7011a323fdc822a191da25" kindref="member">ClassExpressionPtr</ref> &amp;</type>
+          <declname>filler</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/class_expression.hpp" line="59" column="5" bodyfile="D:/projects/ista/lib/owl2/core/class_expression.hpp" bodystart="59" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1ObjectSomeValuesFrom_1a266a987da471f023f44cb685ff1b5005" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structObjectProperty" kindref="compound">ObjectProperty</ref></type>
+        <definition>ObjectProperty ista::owl2::ObjectSomeValuesFrom::getProperty</definition>
+        <argsstring>() const</argsstring>
+        <name>getProperty</name>
+        <qualifiedname>ista::owl2::ObjectSomeValuesFrom::getProperty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/class_expression.hpp" line="61" column="20" bodyfile="D:/projects/ista/lib/owl2/core/class_expression.hpp" bodystart="61" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1ObjectSomeValuesFrom_1aee6afdbe1daf50b6f6f1c6d7f83ac06a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceista_1_1owl2_1a61b3005e8a7011a323fdc822a191da25" kindref="member">ClassExpressionPtr</ref></type>
+        <definition>ClassExpressionPtr ista::owl2::ObjectSomeValuesFrom::getFiller</definition>
+        <argsstring>() const</argsstring>
+        <name>getFiller</name>
+        <qualifiedname>ista::owl2::ObjectSomeValuesFrom::getFiller</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/class_expression.hpp" line="62" column="24" bodyfile="D:/projects/ista/lib/owl2/core/class_expression.hpp" bodystart="62" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1ObjectSomeValuesFrom_1a72e1c567a0f8e65091c1a56e0de0f168" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::ObjectSomeValuesFrom::toFunctionalSyntax</definition>
+        <argsstring>() const override</argsstring>
+        <name>toFunctionalSyntax</name>
+        <qualifiedname>ista::owl2::ObjectSomeValuesFrom::toFunctionalSyntax</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1ClassExpression_1ad4aeb7d012b1b53d20e6fb43cde7a1ea">toFunctionalSyntax</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/class_expression.hpp" line="63" column="17" bodyfile="D:/projects/ista/lib/owl2/core/class_expression.cpp" bodystart="41" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1ObjectSomeValuesFrom_1af72162bb0e901428faa9f107922655fe" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::ObjectSomeValuesFrom::getExpressionType</definition>
+        <argsstring>() const override</argsstring>
+        <name>getExpressionType</name>
+        <qualifiedname>ista::owl2::ObjectSomeValuesFrom::getExpressionType</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1ClassExpression_1a15e960b8ed26c64c517ea85f543806d9">getExpressionType</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/class_expression.hpp" line="64" column="17" bodyfile="D:/projects/ista/lib/owl2/core/class_expression.hpp" bodystart="64" bodyend="64"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ista::owl2::ClassExpression</label>
+        <link refid="classista_1_1owl2_1_1ClassExpression"/>
+      </node>
+      <node id="1">
+        <label>ista::owl2::ObjectSomeValuesFrom</label>
+        <link refid="classista_1_1owl2_1_1ObjectSomeValuesFrom"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ista::owl2::ClassExpression</label>
+        <link refid="classista_1_1owl2_1_1ClassExpression"/>
+      </node>
+      <node id="1">
+        <label>ista::owl2::ObjectSomeValuesFrom</label>
+        <link refid="classista_1_1owl2_1_1ObjectSomeValuesFrom"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/projects/ista/lib/owl2/core/class_expression.hpp" line="57" column="1" bodyfile="D:/projects/ista/lib/owl2/core/class_expression.hpp" bodystart="57" bodyend="68"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1ObjectSomeValuesFrom_1ab07958bfd39ddbbb22780b9edede7f76" prot="private" virt="non-virtual"><scope>ista::owl2::ObjectSomeValuesFrom</scope><name>filler_</name></member>
+      <member refid="classista_1_1owl2_1_1ObjectSomeValuesFrom_1af72162bb0e901428faa9f107922655fe" prot="public" virt="virtual"><scope>ista::owl2::ObjectSomeValuesFrom</scope><name>getExpressionType</name></member>
+      <member refid="classista_1_1owl2_1_1ObjectSomeValuesFrom_1aee6afdbe1daf50b6f6f1c6d7f83ac06a" prot="public" virt="non-virtual"><scope>ista::owl2::ObjectSomeValuesFrom</scope><name>getFiller</name></member>
+      <member refid="classista_1_1owl2_1_1ObjectSomeValuesFrom_1a266a987da471f023f44cb685ff1b5005" prot="public" virt="non-virtual"><scope>ista::owl2::ObjectSomeValuesFrom</scope><name>getProperty</name></member>
+      <member refid="classista_1_1owl2_1_1ObjectSomeValuesFrom_1aa6dd92aa3192e44c884f4873c1463557" prot="public" virt="non-virtual"><scope>ista::owl2::ObjectSomeValuesFrom</scope><name>ObjectSomeValuesFrom</name></member>
+      <member refid="classista_1_1owl2_1_1ObjectSomeValuesFrom_1a4c021fc36c74045faeb9a8b4edb276e4" prot="private" virt="non-virtual"><scope>ista::owl2::ObjectSomeValuesFrom</scope><name>property_</name></member>
+      <member refid="classista_1_1owl2_1_1ObjectSomeValuesFrom_1a72e1c567a0f8e65091c1a56e0de0f168" prot="public" virt="virtual"><scope>ista::owl2::ObjectSomeValuesFrom</scope><name>toFunctionalSyntax</name></member>
+      <member refid="classista_1_1owl2_1_1ClassExpression_1a85c474cc91b72cc925bb7d13bfc3fc46" prot="public" virt="virtual"><scope>ista::owl2::ObjectSomeValuesFrom</scope><name>~ClassExpression</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

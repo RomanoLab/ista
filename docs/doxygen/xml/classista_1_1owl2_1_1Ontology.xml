@@ -1,0 +1,1543 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1Ontology" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::Ontology</compoundname>
+    <includes refid="ontology_8hpp" local="no">ontology.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classista_1_1owl2_1_1Ontology_1a7037d2a28084fc0fd1d8572845f7f322" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &gt;</type>
+        <definition>std::optional&lt;IRI&gt; ista::owl2::Ontology::ontology_iri_</definition>
+        <argsstring></argsstring>
+        <name>ontology_iri_</name>
+        <qualifiedname>ista::owl2::Ontology::ontology_iri_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="147" column="19" bodyfile="D:/projects/ista/lib/owl2/core/ontology.hpp" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1Ontology_1ab9b5a426d48c517cc2161019c377bbbd" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &gt;</type>
+        <definition>std::optional&lt;IRI&gt; ista::owl2::Ontology::version_iri_</definition>
+        <argsstring></argsstring>
+        <name>version_iri_</name>
+        <qualifiedname>ista::owl2::Ontology::version_iri_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="148" column="19" bodyfile="D:/projects/ista/lib/owl2/core/ontology.hpp" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1Ontology_1a68598d913b6fe7aed0999afa194d28d4" prot="private" static="no" mutable="no">
+        <type>std::unordered_set&lt; <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &gt;</type>
+        <definition>std::unordered_set&lt;IRI&gt; ista::owl2::Ontology::imports_</definition>
+        <argsstring></argsstring>
+        <name>imports_</name>
+        <qualifiedname>ista::owl2::Ontology::imports_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="149" column="24" bodyfile="D:/projects/ista/lib/owl2/core/ontology.hpp" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1Ontology_1a9bc4777e46c038542d375b696d4d009b" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classista_1_1owl2_1_1Annotation" kindref="compound">Annotation</ref> &gt;</type>
+        <definition>std::vector&lt;Annotation&gt; ista::owl2::Ontology::ontology_annotations_</definition>
+        <argsstring></argsstring>
+        <name>ontology_annotations_</name>
+        <qualifiedname>ista::owl2::Ontology::ontology_annotations_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="150" column="17" bodyfile="D:/projects/ista/lib/owl2/core/ontology.hpp" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1Ontology_1ae560804ca9b01b653230dc82d064dc4a" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::string &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::string&gt; ista::owl2::Ontology::prefix_to_namespace_</definition>
+        <argsstring></argsstring>
+        <name>prefix_to_namespace_</name>
+        <qualifiedname>ista::owl2::Ontology::prefix_to_namespace_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="151" column="24" bodyfile="D:/projects/ista/lib/owl2/core/ontology.hpp" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1Ontology_1a8ab6e846f5554c3beb41449c186e1a45" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::string &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::string&gt; ista::owl2::Ontology::namespace_to_prefix_</definition>
+        <argsstring></argsstring>
+        <name>namespace_to_prefix_</name>
+        <qualifiedname>ista::owl2::Ontology::namespace_to_prefix_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="152" column="24" bodyfile="D:/projects/ista/lib/owl2/core/ontology.hpp" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1Ontology_1aa75b6394bbcbdfd68dc3e9565e102e71" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="namespaceista_1_1owl2_1ae305b46823ac53f0c71aed391a90f835" kindref="member">AxiomPtr</ref> &gt;</type>
+        <definition>std::vector&lt;AxiomPtr&gt; ista::owl2::Ontology::axioms_</definition>
+        <argsstring></argsstring>
+        <name>axioms_</name>
+        <qualifiedname>ista::owl2::Ontology::axioms_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="153" column="17" bodyfile="D:/projects/ista/lib/owl2/core/ontology.hpp" bodystart="153" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a90d1287e6f7833e204316b228c208240" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::Ontology::Ontology</definition>
+        <argsstring>()</argsstring>
+        <name>Ontology</name>
+        <qualifiedname>ista::owl2::Ontology::Ontology</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="20" column="5" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="11" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a9ddb7eb4b99bfad4cc49c6e8b6168650" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::Ontology::Ontology</definition>
+        <argsstring>(const IRI &amp;ontology_iri)</argsstring>
+        <name>Ontology</name>
+        <qualifiedname>ista::owl2::Ontology::Ontology</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &amp;</type>
+          <declname>ontology_iri</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="21" column="14" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="15" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1ad5f9ef9f2a1b6f50671717cfa1271021" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::Ontology::Ontology</definition>
+        <argsstring>(const IRI &amp;ontology_iri, const IRI &amp;version_iri)</argsstring>
+        <name>Ontology</name>
+        <qualifiedname>ista::owl2::Ontology::Ontology</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &amp;</type>
+          <declname>ontology_iri</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &amp;</type>
+          <declname>version_iri</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="22" column="5" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="20" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a6d0e91b569042123bfaa3f0f50a47866" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::Ontology::~Ontology</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Ontology</name>
+        <qualifiedname>ista::owl2::Ontology::~Ontology</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="23" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1aa06397dd98c67f3b66a2f5e2a2473e1d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &gt;</type>
+        <definition>std::optional&lt; IRI &gt; ista::owl2::Ontology::getOntologyIRI</definition>
+        <argsstring>() const</argsstring>
+        <name>getOntologyIRI</name>
+        <qualifiedname>ista::owl2::Ontology::getOntologyIRI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="26" column="19" bodyfile="D:/projects/ista/lib/owl2/core/ontology.hpp" bodystart="26" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1ae39978737af14aa86783a90030b2e6f3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::Ontology::setOntologyIRI</definition>
+        <argsstring>(const IRI &amp;iri)</argsstring>
+        <name>setOntologyIRI</name>
+        <qualifiedname>ista::owl2::Ontology::setOntologyIRI</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &amp;</type>
+          <declname>iri</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="27" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology.hpp" bodystart="27" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1abbc3d0c7c79885c9bb3c4a91925d2bd2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &gt;</type>
+        <definition>std::optional&lt; IRI &gt; ista::owl2::Ontology::getVersionIRI</definition>
+        <argsstring>() const</argsstring>
+        <name>getVersionIRI</name>
+        <qualifiedname>ista::owl2::Ontology::getVersionIRI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="28" column="19" bodyfile="D:/projects/ista/lib/owl2/core/ontology.hpp" bodystart="28" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a2105b7111827d718876a69b1aaacd354" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::Ontology::setVersionIRI</definition>
+        <argsstring>(const IRI &amp;iri)</argsstring>
+        <name>setVersionIRI</name>
+        <qualifiedname>ista::owl2::Ontology::setVersionIRI</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &amp;</type>
+          <declname>iri</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="29" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology.hpp" bodystart="29" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a776e97b4f81e585e23e44e01bd625a6f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::unordered_set&lt; <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &gt;</type>
+        <definition>std::unordered_set&lt; IRI &gt; ista::owl2::Ontology::getImports</definition>
+        <argsstring>() const</argsstring>
+        <name>getImports</name>
+        <qualifiedname>ista::owl2::Ontology::getImports</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="30" column="24" bodyfile="D:/projects/ista/lib/owl2/core/ontology.hpp" bodystart="30" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a9b4669972793a84feb54f776da6cf9c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::Ontology::addImport</definition>
+        <argsstring>(const IRI &amp;import_iri)</argsstring>
+        <name>addImport</name>
+        <qualifiedname>ista::owl2::Ontology::addImport</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &amp;</type>
+          <declname>import_iri</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="31" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="25" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1ae36b1a94708e6956b6bf74276e1573aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::Ontology::removeImport</definition>
+        <argsstring>(const IRI &amp;import_iri)</argsstring>
+        <name>removeImport</name>
+        <qualifiedname>ista::owl2::Ontology::removeImport</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &amp;</type>
+          <declname>import_iri</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="32" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="29" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1afdab584ca0f4efdbc033544cb5a27a90" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::Ontology::hasImport</definition>
+        <argsstring>(const IRI &amp;import_iri) const</argsstring>
+        <name>hasImport</name>
+        <qualifiedname>ista::owl2::Ontology::hasImport</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &amp;</type>
+          <declname>import_iri</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="33" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="33" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a913f794f65a6a694fee0eedd1c9026bd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="classista_1_1owl2_1_1Annotation" kindref="compound">Annotation</ref> &gt;</type>
+        <definition>std::vector&lt; Annotation &gt; ista::owl2::Ontology::getOntologyAnnotations</definition>
+        <argsstring>() const</argsstring>
+        <name>getOntologyAnnotations</name>
+        <qualifiedname>ista::owl2::Ontology::getOntologyAnnotations</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="34" column="17" bodyfile="D:/projects/ista/lib/owl2/core/ontology.hpp" bodystart="34" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a85c4bcb533987f0aa7ab6fef0562e204" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::Ontology::addOntologyAnnotation</definition>
+        <argsstring>(const Annotation &amp;annotation)</argsstring>
+        <name>addOntologyAnnotation</name>
+        <qualifiedname>ista::owl2::Ontology::addOntologyAnnotation</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1Annotation" kindref="compound">Annotation</ref> &amp;</type>
+          <declname>annotation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="35" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="37" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a0dbefe6498a02f54ba05360ce5643273" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::Ontology::setOntologyAnnotations</definition>
+        <argsstring>(const std::vector&lt; Annotation &gt; &amp;annotations)</argsstring>
+        <name>setOntologyAnnotations</name>
+        <qualifiedname>ista::owl2::Ontology::setOntologyAnnotations</qualifiedname>
+        <param>
+          <type>const std::vector&lt; <ref refid="classista_1_1owl2_1_1Annotation" kindref="compound">Annotation</ref> &gt; &amp;</type>
+          <declname>annotations</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="36" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology.hpp" bodystart="36" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a413a66bc09fd7a6a406de212703edac4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::Ontology::clearOntologyAnnotations</definition>
+        <argsstring>()</argsstring>
+        <name>clearOntologyAnnotations</name>
+        <qualifiedname>ista::owl2::Ontology::clearOntologyAnnotations</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="39" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology.hpp" bodystart="39" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a5d4759c58c914ddcf9d26adbb2ae4821" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::Ontology::registerPrefix</definition>
+        <argsstring>(const std::string &amp;prefix, const std::string &amp;namespace_uri)</argsstring>
+        <name>registerPrefix</name>
+        <qualifiedname>ista::owl2::Ontology::registerPrefix</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>prefix</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>namespace_uri</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="42" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="41" bodyend="44"/>
+        <referencedby refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1aaac251c56dba2e7b97a4a05f4e590c0d" compoundref="rdfxml__parser_8cpp" startline="19" endline="57">ista::owl2::RDFXMLParser::Parser::parse</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a62c043f7eeb443dad024e52d482e79ae" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; std::string &gt;</type>
+        <definition>std::optional&lt; std::string &gt; ista::owl2::Ontology::getNamespaceForPrefix</definition>
+        <argsstring>(const std::string &amp;prefix) const</argsstring>
+        <name>getNamespaceForPrefix</name>
+        <qualifiedname>ista::owl2::Ontology::getNamespaceForPrefix</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>prefix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="43" column="19" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="46" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a2b1dbc8297c0cd8bdcca920330bf29e3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; std::string &gt;</type>
+        <definition>std::optional&lt; std::string &gt; ista::owl2::Ontology::getPrefixForNamespace</definition>
+        <argsstring>(const std::string &amp;namespace_uri) const</argsstring>
+        <name>getPrefixForNamespace</name>
+        <qualifiedname>ista::owl2::Ontology::getPrefixForNamespace</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>namespace_uri</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="44" column="19" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="54" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a1ddb72efc5c657427f3eaed5badbd6e6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::unordered_map&lt; std::string, std::string &gt;</type>
+        <definition>std::unordered_map&lt; std::string, std::string &gt; ista::owl2::Ontology::getPrefixMap</definition>
+        <argsstring>() const</argsstring>
+        <name>getPrefixMap</name>
+        <qualifiedname>ista::owl2::Ontology::getPrefixMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="45" column="24" bodyfile="D:/projects/ista/lib/owl2/core/ontology.hpp" bodystart="45" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a5856de70b8d63d0b2e5d03440b6d0ddc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::Ontology::removePrefix</definition>
+        <argsstring>(const std::string &amp;prefix)</argsstring>
+        <name>removePrefix</name>
+        <qualifiedname>ista::owl2::Ontology::removePrefix</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>prefix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="48" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="62" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1ac108b62dbebd3b924b0ab5b4e078b101" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::Ontology::clearPrefixes</definition>
+        <argsstring>()</argsstring>
+        <name>clearPrefixes</name>
+        <qualifiedname>ista::owl2::Ontology::clearPrefixes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="49" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="70" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1ae0c1d302cdfbc753b1fd721dad2e5c72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::Ontology::addAxiom</definition>
+        <argsstring>(const AxiomPtr &amp;axiom)</argsstring>
+        <name>addAxiom</name>
+        <qualifiedname>ista::owl2::Ontology::addAxiom</qualifiedname>
+        <param>
+          <type>const <ref refid="namespaceista_1_1owl2_1ae305b46823ac53f0c71aed391a90f835" kindref="member">AxiomPtr</ref> &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="52" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="82" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a16687f276f636b625c0ea32d258125ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::Ontology::removeAxiom</definition>
+        <argsstring>(const AxiomPtr &amp;axiom)</argsstring>
+        <name>removeAxiom</name>
+        <qualifiedname>ista::owl2::Ontology::removeAxiom</qualifiedname>
+        <param>
+          <type>const <ref refid="namespaceista_1_1owl2_1ae305b46823ac53f0c71aed391a90f835" kindref="member">AxiomPtr</ref> &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="53" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="90" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1ad164565597fe673144c79f0d778a3635" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::Ontology::containsAxiom</definition>
+        <argsstring>(const AxiomPtr &amp;axiom) const</argsstring>
+        <name>containsAxiom</name>
+        <qualifiedname>ista::owl2::Ontology::containsAxiom</qualifiedname>
+        <param>
+          <type>const <ref refid="namespaceista_1_1owl2_1ae305b46823ac53f0c71aed391a90f835" kindref="member">AxiomPtr</ref> &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="54" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="99" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a304594adb433e2efec19f6c576b234ea" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="namespaceista_1_1owl2_1ae305b46823ac53f0c71aed391a90f835" kindref="member">AxiomPtr</ref> &gt;</type>
+        <definition>std::vector&lt; AxiomPtr &gt; ista::owl2::Ontology::getAxioms</definition>
+        <argsstring>() const</argsstring>
+        <name>getAxioms</name>
+        <qualifiedname>ista::owl2::Ontology::getAxioms</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="55" column="17" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="103" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a2cda64d88748c1cc24b4959f68afbc9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::Ontology::clearAxioms</definition>
+        <argsstring>()</argsstring>
+        <name>clearAxioms</name>
+        <qualifiedname>ista::owl2::Ontology::clearAxioms</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="56" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="107" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a5d36d4fee838ec30be5614930275be33" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1Declaration" kindref="compound">Declaration</ref> &gt; &gt;</type>
+        <definition>std::vector&lt; std::shared_ptr&lt; Declaration &gt; &gt; ista::owl2::Ontology::getDeclarationAxioms</definition>
+        <argsstring>() const</argsstring>
+        <name>getDeclarationAxioms</name>
+        <qualifiedname>ista::owl2::Ontology::getDeclarationAxioms</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="59" column="17" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="111" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a24ee02b421098f5c1eb17c5edc97c57a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="namespaceista_1_1owl2_1ae305b46823ac53f0c71aed391a90f835" kindref="member">AxiomPtr</ref> &gt;</type>
+        <definition>std::vector&lt; AxiomPtr &gt; ista::owl2::Ontology::getClassAxioms</definition>
+        <argsstring>() const</argsstring>
+        <name>getClassAxioms</name>
+        <qualifiedname>ista::owl2::Ontology::getClassAxioms</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="60" column="17" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="121" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a7ea6a599f0fce06f7b6fc63d9d758059" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="namespaceista_1_1owl2_1ae305b46823ac53f0c71aed391a90f835" kindref="member">AxiomPtr</ref> &gt;</type>
+        <definition>std::vector&lt; AxiomPtr &gt; ista::owl2::Ontology::getObjectPropertyAxioms</definition>
+        <argsstring>() const</argsstring>
+        <name>getObjectPropertyAxioms</name>
+        <qualifiedname>ista::owl2::Ontology::getObjectPropertyAxioms</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="61" column="17" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="131" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a65b0dc430354667afcaed8ce6ae12993" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="namespaceista_1_1owl2_1ae305b46823ac53f0c71aed391a90f835" kindref="member">AxiomPtr</ref> &gt;</type>
+        <definition>std::vector&lt; AxiomPtr &gt; ista::owl2::Ontology::getDataPropertyAxioms</definition>
+        <argsstring>() const</argsstring>
+        <name>getDataPropertyAxioms</name>
+        <qualifiedname>ista::owl2::Ontology::getDataPropertyAxioms</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="62" column="17" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="141" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1adc6e66f7b4896fcc5688c83cec083bfa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="namespaceista_1_1owl2_1ae305b46823ac53f0c71aed391a90f835" kindref="member">AxiomPtr</ref> &gt;</type>
+        <definition>std::vector&lt; AxiomPtr &gt; ista::owl2::Ontology::getAssertionAxioms</definition>
+        <argsstring>() const</argsstring>
+        <name>getAssertionAxioms</name>
+        <qualifiedname>ista::owl2::Ontology::getAssertionAxioms</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="63" column="17" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="151" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1aad322912a37cc9e96586577397e6cbb1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="namespaceista_1_1owl2_1ae305b46823ac53f0c71aed391a90f835" kindref="member">AxiomPtr</ref> &gt;</type>
+        <definition>std::vector&lt; AxiomPtr &gt; ista::owl2::Ontology::getAnnotationAxioms</definition>
+        <argsstring>() const</argsstring>
+        <name>getAnnotationAxioms</name>
+        <qualifiedname>ista::owl2::Ontology::getAnnotationAxioms</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="64" column="17" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="161" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1afe2ca53667c56ba8f6b6667ae1cdf93d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1SubClassOf" kindref="compound">SubClassOf</ref> &gt; &gt;</type>
+        <definition>std::vector&lt; std::shared_ptr&lt; SubClassOf &gt; &gt; ista::owl2::Ontology::getSubClassAxiomsForSubClass</definition>
+        <argsstring>(const Class &amp;cls) const</argsstring>
+        <name>getSubClassAxiomsForSubClass</name>
+        <qualifiedname>ista::owl2::Ontology::getSubClassAxiomsForSubClass</qualifiedname>
+        <param>
+          <type>const <ref refid="structClass" kindref="compound">Class</ref> &amp;</type>
+          <declname>cls</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="67" column="17" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="172" bodyend="184"/>
+        <references refid="classista_1_1owl2_1_1Entity_1a7450ac96112b23d4514cf60be3c3ac41" compoundref="core_2entity_8hpp" startline="20" endline="20">ista::owl2::Entity::getIRI</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1afc7ad1023981940d5bb997ab23bacd59" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1SubClassOf" kindref="compound">SubClassOf</ref> &gt; &gt;</type>
+        <definition>std::vector&lt; std::shared_ptr&lt; SubClassOf &gt; &gt; ista::owl2::Ontology::getSubClassAxiomsForSuperClass</definition>
+        <argsstring>(const Class &amp;cls) const</argsstring>
+        <name>getSubClassAxiomsForSuperClass</name>
+        <qualifiedname>ista::owl2::Ontology::getSubClassAxiomsForSuperClass</qualifiedname>
+        <param>
+          <type>const <ref refid="structClass" kindref="compound">Class</ref> &amp;</type>
+          <declname>cls</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="68" column="17" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="186" bodyend="198"/>
+        <references refid="classista_1_1owl2_1_1Entity_1a7450ac96112b23d4514cf60be3c3ac41" compoundref="core_2entity_8hpp" startline="20" endline="20">ista::owl2::Entity::getIRI</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1afbea71fc3fb0d640a36cf768fcf14bd1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1EquivalentClasses" kindref="compound">EquivalentClasses</ref> &gt; &gt;</type>
+        <definition>std::vector&lt; std::shared_ptr&lt; EquivalentClasses &gt; &gt; ista::owl2::Ontology::getEquivalentClassesAxioms</definition>
+        <argsstring>(const Class &amp;cls) const</argsstring>
+        <name>getEquivalentClassesAxioms</name>
+        <qualifiedname>ista::owl2::Ontology::getEquivalentClassesAxioms</qualifiedname>
+        <param>
+          <type>const <ref refid="structClass" kindref="compound">Class</ref> &amp;</type>
+          <declname>cls</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="69" column="17" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="200" bodyend="215"/>
+        <references refid="classista_1_1owl2_1_1Entity_1a7450ac96112b23d4514cf60be3c3ac41" compoundref="core_2entity_8hpp" startline="20" endline="20">ista::owl2::Entity::getIRI</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a21557c821220cbff341db72864a6bfa0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1DisjointClasses" kindref="compound">DisjointClasses</ref> &gt; &gt;</type>
+        <definition>std::vector&lt; std::shared_ptr&lt; DisjointClasses &gt; &gt; ista::owl2::Ontology::getDisjointClassesAxioms</definition>
+        <argsstring>(const Class &amp;cls) const</argsstring>
+        <name>getDisjointClassesAxioms</name>
+        <qualifiedname>ista::owl2::Ontology::getDisjointClassesAxioms</qualifiedname>
+        <param>
+          <type>const <ref refid="structClass" kindref="compound">Class</ref> &amp;</type>
+          <declname>cls</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="70" column="17" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="217" bodyend="232"/>
+        <references refid="classista_1_1owl2_1_1Entity_1a7450ac96112b23d4514cf60be3c3ac41" compoundref="core_2entity_8hpp" startline="20" endline="20">ista::owl2::Entity::getIRI</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a1c4ca5e159a5500bc60d6c433a0a411f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1SubObjectPropertyOf" kindref="compound">SubObjectPropertyOf</ref> &gt; &gt;</type>
+        <definition>std::vector&lt; std::shared_ptr&lt; SubObjectPropertyOf &gt; &gt; ista::owl2::Ontology::getSubObjectPropertyAxioms</definition>
+        <argsstring>(const ObjectProperty &amp;property) const</argsstring>
+        <name>getSubObjectPropertyAxioms</name>
+        <qualifiedname>ista::owl2::Ontology::getSubObjectPropertyAxioms</qualifiedname>
+        <param>
+          <type>const <ref refid="structObjectProperty" kindref="compound">ObjectProperty</ref> &amp;</type>
+          <declname>property</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="71" column="17" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="234" bodyend="243"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1aebd57fe6329ac257ceac639f987f9dab" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1SubDataPropertyOf" kindref="compound">SubDataPropertyOf</ref> &gt; &gt;</type>
+        <definition>std::vector&lt; std::shared_ptr&lt; SubDataPropertyOf &gt; &gt; ista::owl2::Ontology::getSubDataPropertyAxioms</definition>
+        <argsstring>(const DataProperty &amp;property) const</argsstring>
+        <name>getSubDataPropertyAxioms</name>
+        <qualifiedname>ista::owl2::Ontology::getSubDataPropertyAxioms</qualifiedname>
+        <param>
+          <type>const <ref refid="structDataProperty" kindref="compound">DataProperty</ref> &amp;</type>
+          <declname>property</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="73" column="17" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="245" bodyend="257"/>
+        <references refid="classista_1_1owl2_1_1Entity_1a7450ac96112b23d4514cf60be3c3ac41" compoundref="core_2entity_8hpp" startline="20" endline="20">ista::owl2::Entity::getIRI</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a0b83890fe6b03bd11dec3eec7feb8714" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1ClassAssertion" kindref="compound">ClassAssertion</ref> &gt; &gt;</type>
+        <definition>std::vector&lt; std::shared_ptr&lt; ClassAssertion &gt; &gt; ista::owl2::Ontology::getClassAssertions</definition>
+        <argsstring>(const NamedIndividual &amp;individual) const</argsstring>
+        <name>getClassAssertions</name>
+        <qualifiedname>ista::owl2::Ontology::getClassAssertions</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1NamedIndividual" kindref="compound">NamedIndividual</ref> &amp;</type>
+          <declname>individual</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="75" column="17" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="259" bodyend="273"/>
+        <references refid="classista_1_1owl2_1_1Entity_1a7450ac96112b23d4514cf60be3c3ac41" compoundref="core_2entity_8hpp" startline="20" endline="20">ista::owl2::Entity::getIRI</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a379fc42774fd69ac2d371d7cd5e29ffe" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1ObjectPropertyAssertion" kindref="compound">ObjectPropertyAssertion</ref> &gt; &gt;</type>
+        <definition>std::vector&lt; std::shared_ptr&lt; ObjectPropertyAssertion &gt; &gt; ista::owl2::Ontology::getObjectPropertyAssertions</definition>
+        <argsstring>(const NamedIndividual &amp;individual) const</argsstring>
+        <name>getObjectPropertyAssertions</name>
+        <qualifiedname>ista::owl2::Ontology::getObjectPropertyAssertions</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1NamedIndividual" kindref="compound">NamedIndividual</ref> &amp;</type>
+          <declname>individual</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="77" column="17" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="275" bodyend="289"/>
+        <references refid="classista_1_1owl2_1_1Entity_1a7450ac96112b23d4514cf60be3c3ac41" compoundref="core_2entity_8hpp" startline="20" endline="20">ista::owl2::Entity::getIRI</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a6af7a822e59a953f1f11ff34f8c3c2a8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1DataPropertyAssertion" kindref="compound">DataPropertyAssertion</ref> &gt; &gt;</type>
+        <definition>std::vector&lt; std::shared_ptr&lt; DataPropertyAssertion &gt; &gt; ista::owl2::Ontology::getDataPropertyAssertions</definition>
+        <argsstring>(const NamedIndividual &amp;individual) const</argsstring>
+        <name>getDataPropertyAssertions</name>
+        <qualifiedname>ista::owl2::Ontology::getDataPropertyAssertions</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1NamedIndividual" kindref="compound">NamedIndividual</ref> &amp;</type>
+          <declname>individual</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="79" column="17" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="291" bodyend="305"/>
+        <references refid="classista_1_1owl2_1_1Entity_1a7450ac96112b23d4514cf60be3c3ac41" compoundref="core_2entity_8hpp" startline="20" endline="20">ista::owl2::Entity::getIRI</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a6ed785e3937a7d923648c49ce9a75089" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unordered_set&lt; <ref refid="structClass" kindref="compound">Class</ref> &gt;</type>
+        <definition>std::unordered_set&lt; Class &gt; ista::owl2::Ontology::getClasses</definition>
+        <argsstring>() const</argsstring>
+        <name>getClasses</name>
+        <qualifiedname>ista::owl2::Ontology::getClasses</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="83" column="24" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="308" bodyend="318"/>
+        <references refid="classista_1_1owl2_1_1Declaration_1a7267779b3efd411e00f5ddbda89fb84aac18e8f1f430ea227dbd63d0d9a2bc5fb" compoundref="axiom_8hpp" startline="81">ista::owl2::Declaration::CLASS</references>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1aedb054d380c6fa7deb015f49150e91ef" compoundref="ontology_8cpp" startline="380" endline="382">containsClass</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1a9c2523f0f285088a5feb529de8127feb" compoundref="ontology_8hpp" startline="99" endline="99">getClassCount</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1ab34c29d56999157d02b88d8c3732a3eb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unordered_set&lt; <ref refid="structObjectProperty" kindref="compound">ObjectProperty</ref> &gt;</type>
+        <definition>std::unordered_set&lt; ObjectProperty &gt; ista::owl2::Ontology::getObjectProperties</definition>
+        <argsstring>() const</argsstring>
+        <name>getObjectProperties</name>
+        <qualifiedname>ista::owl2::Ontology::getObjectProperties</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="84" column="24" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="320" bodyend="330"/>
+        <references refid="classista_1_1owl2_1_1Declaration_1a7267779b3efd411e00f5ddbda89fb84aa15811145fc9372d5172d51bb90cff185" compoundref="axiom_8hpp" startline="83">ista::owl2::Declaration::OBJECT_PROPERTY</references>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1a2c5817b7faec430aa3906e34e60bfa8e" compoundref="ontology_8cpp" startline="384" endline="386">containsObjectProperty</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1a2662c949ca02a59613294b15961198f3" compoundref="ontology_8hpp" startline="100" endline="100">getObjectPropertyCount</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a82a4d15fd1673cab83edfeb7a6826e23" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unordered_set&lt; <ref refid="structDataProperty" kindref="compound">DataProperty</ref> &gt;</type>
+        <definition>std::unordered_set&lt; DataProperty &gt; ista::owl2::Ontology::getDataProperties</definition>
+        <argsstring>() const</argsstring>
+        <name>getDataProperties</name>
+        <qualifiedname>ista::owl2::Ontology::getDataProperties</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="85" column="24" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="332" bodyend="342"/>
+        <references refid="classista_1_1owl2_1_1Declaration_1a7267779b3efd411e00f5ddbda89fb84aa1bba77ff4e31c40bd1bd9a2f4361435b" compoundref="axiom_8hpp" startline="84">ista::owl2::Declaration::DATA_PROPERTY</references>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1a5a65720646781685a85792bd73923aca" compoundref="ontology_8cpp" startline="388" endline="390">containsDataProperty</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1a5341aa7a01a720b66e13440bf7f28c36" compoundref="ontology_8hpp" startline="101" endline="101">getDataPropertyCount</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a1006342790878e9bae434febd283351d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unordered_set&lt; <ref refid="structAnnotationProperty" kindref="compound">AnnotationProperty</ref> &gt;</type>
+        <definition>std::unordered_set&lt; AnnotationProperty &gt; ista::owl2::Ontology::getAnnotationProperties</definition>
+        <argsstring>() const</argsstring>
+        <name>getAnnotationProperties</name>
+        <qualifiedname>ista::owl2::Ontology::getAnnotationProperties</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="86" column="24" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="344" bodyend="354"/>
+        <references refid="classista_1_1owl2_1_1Declaration_1a7267779b3efd411e00f5ddbda89fb84aa977f6e2e17a16e1f652ff35ff6bb4baf" compoundref="axiom_8hpp" startline="85">ista::owl2::Declaration::ANNOTATION_PROPERTY</references>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1a8728d5a18d8ba5753e34a1ea653d35af" compoundref="ontology_8cpp" startline="392" endline="394">containsAnnotationProperty</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1a11cdc927f6ddc386025ff0e0d410ab89" compoundref="ontology_8cpp" startline="404" endline="407">getEntityCount</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1ab2647568576b66db9c3e610ceb9be7ea" compoundref="ontology_8cpp" startline="409" endline="425">getStatistics</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a4bdfb670409150935f13c0d601244c97" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unordered_set&lt; <ref refid="classista_1_1owl2_1_1NamedIndividual" kindref="compound">NamedIndividual</ref> &gt;</type>
+        <definition>std::unordered_set&lt; NamedIndividual &gt; ista::owl2::Ontology::getIndividuals</definition>
+        <argsstring>() const</argsstring>
+        <name>getIndividuals</name>
+        <qualifiedname>ista::owl2::Ontology::getIndividuals</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="87" column="24" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="356" bodyend="366"/>
+        <references refid="classista_1_1owl2_1_1Declaration_1a7267779b3efd411e00f5ddbda89fb84aa8dd87ab6a2d5be88caea8d4ca1d74ea0" compoundref="axiom_8hpp" startline="86">ista::owl2::Declaration::NAMED_INDIVIDUAL</references>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1a5ade8ff527c246ac2a8aea02cd0aaf7b" compoundref="ontology_8cpp" startline="396" endline="398">containsIndividual</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1a09636f4dfae8da859918854327e05cfd" compoundref="ontology_8hpp" startline="102" endline="102">getIndividualCount</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a36e88ed26c9b1cad92716e683823d446" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unordered_set&lt; <ref refid="structDatatype" kindref="compound">Datatype</ref> &gt;</type>
+        <definition>std::unordered_set&lt; Datatype &gt; ista::owl2::Ontology::getDatatypes</definition>
+        <argsstring>() const</argsstring>
+        <name>getDatatypes</name>
+        <qualifiedname>ista::owl2::Ontology::getDatatypes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="88" column="24" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="368" bodyend="378"/>
+        <references refid="classista_1_1owl2_1_1Declaration_1a7267779b3efd411e00f5ddbda89fb84aa02ff2101e64dbed6c34c715aa8d5cfea" compoundref="axiom_8hpp" startline="82">ista::owl2::Declaration::DATATYPE</references>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1a14c42a5963a2d2a0ecc0c2d3fa046fd3" compoundref="ontology_8cpp" startline="400" endline="402">containsDatatype</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1a11cdc927f6ddc386025ff0e0d410ab89" compoundref="ontology_8cpp" startline="404" endline="407">getEntityCount</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1ab2647568576b66db9c3e610ceb9be7ea" compoundref="ontology_8cpp" startline="409" endline="425">getStatistics</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1aedb054d380c6fa7deb015f49150e91ef" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::Ontology::containsClass</definition>
+        <argsstring>(const Class &amp;cls) const</argsstring>
+        <name>containsClass</name>
+        <qualifiedname>ista::owl2::Ontology::containsClass</qualifiedname>
+        <param>
+          <type>const <ref refid="structClass" kindref="compound">Class</ref> &amp;</type>
+          <declname>cls</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="89" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="380" bodyend="382"/>
+        <references refid="classista_1_1owl2_1_1Ontology_1a6ed785e3937a7d923648c49ce9a75089" compoundref="ontology_8cpp" startline="308" endline="318">getClasses</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a2c5817b7faec430aa3906e34e60bfa8e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::Ontology::containsObjectProperty</definition>
+        <argsstring>(const ObjectProperty &amp;property) const</argsstring>
+        <name>containsObjectProperty</name>
+        <qualifiedname>ista::owl2::Ontology::containsObjectProperty</qualifiedname>
+        <param>
+          <type>const <ref refid="structObjectProperty" kindref="compound">ObjectProperty</ref> &amp;</type>
+          <declname>property</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="90" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="384" bodyend="386"/>
+        <references refid="classista_1_1owl2_1_1Ontology_1ab34c29d56999157d02b88d8c3732a3eb" compoundref="ontology_8cpp" startline="320" endline="330">getObjectProperties</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a5a65720646781685a85792bd73923aca" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::Ontology::containsDataProperty</definition>
+        <argsstring>(const DataProperty &amp;property) const</argsstring>
+        <name>containsDataProperty</name>
+        <qualifiedname>ista::owl2::Ontology::containsDataProperty</qualifiedname>
+        <param>
+          <type>const <ref refid="structDataProperty" kindref="compound">DataProperty</ref> &amp;</type>
+          <declname>property</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="91" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="388" bodyend="390"/>
+        <references refid="classista_1_1owl2_1_1Ontology_1a82a4d15fd1673cab83edfeb7a6826e23" compoundref="ontology_8cpp" startline="332" endline="342">getDataProperties</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a8728d5a18d8ba5753e34a1ea653d35af" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::Ontology::containsAnnotationProperty</definition>
+        <argsstring>(const AnnotationProperty &amp;property) const</argsstring>
+        <name>containsAnnotationProperty</name>
+        <qualifiedname>ista::owl2::Ontology::containsAnnotationProperty</qualifiedname>
+        <param>
+          <type>const <ref refid="structAnnotationProperty" kindref="compound">AnnotationProperty</ref> &amp;</type>
+          <declname>property</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="92" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="392" bodyend="394"/>
+        <references refid="classista_1_1owl2_1_1Ontology_1a1006342790878e9bae434febd283351d" compoundref="ontology_8cpp" startline="344" endline="354">getAnnotationProperties</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a5ade8ff527c246ac2a8aea02cd0aaf7b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::Ontology::containsIndividual</definition>
+        <argsstring>(const NamedIndividual &amp;individual) const</argsstring>
+        <name>containsIndividual</name>
+        <qualifiedname>ista::owl2::Ontology::containsIndividual</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1NamedIndividual" kindref="compound">NamedIndividual</ref> &amp;</type>
+          <declname>individual</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="93" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="396" bodyend="398"/>
+        <references refid="classista_1_1owl2_1_1Ontology_1a4bdfb670409150935f13c0d601244c97" compoundref="ontology_8cpp" startline="356" endline="366">getIndividuals</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a14c42a5963a2d2a0ecc0c2d3fa046fd3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::Ontology::containsDatatype</definition>
+        <argsstring>(const Datatype &amp;datatype) const</argsstring>
+        <name>containsDatatype</name>
+        <qualifiedname>ista::owl2::Ontology::containsDatatype</qualifiedname>
+        <param>
+          <type>const <ref refid="structDatatype" kindref="compound">Datatype</ref> &amp;</type>
+          <declname>datatype</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="94" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="400" bodyend="402"/>
+        <references refid="classista_1_1owl2_1_1Ontology_1a36e88ed26c9b1cad92716e683823d446" compoundref="ontology_8cpp" startline="368" endline="378">getDatatypes</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a506dcf3e7f2680ec3c4ec699cc9a77cc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t ista::owl2::Ontology::getAxiomCount</definition>
+        <argsstring>() const</argsstring>
+        <name>getAxiomCount</name>
+        <qualifiedname>ista::owl2::Ontology::getAxiomCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="97" column="12" bodyfile="D:/projects/ista/lib/owl2/core/ontology.hpp" bodystart="97" bodyend="97"/>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1ab2647568576b66db9c3e610ceb9be7ea" compoundref="ontology_8cpp" startline="409" endline="425">getStatistics</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a11cdc927f6ddc386025ff0e0d410ab89" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t ista::owl2::Ontology::getEntityCount</definition>
+        <argsstring>() const</argsstring>
+        <name>getEntityCount</name>
+        <qualifiedname>ista::owl2::Ontology::getEntityCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="98" column="12" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="404" bodyend="407"/>
+        <references refid="classista_1_1owl2_1_1Ontology_1a1006342790878e9bae434febd283351d" compoundref="ontology_8cpp" startline="344" endline="354">getAnnotationProperties</references>
+        <references refid="classista_1_1owl2_1_1Ontology_1a9c2523f0f285088a5feb529de8127feb" compoundref="ontology_8hpp" startline="99" endline="99">getClassCount</references>
+        <references refid="classista_1_1owl2_1_1Ontology_1a5341aa7a01a720b66e13440bf7f28c36" compoundref="ontology_8hpp" startline="101" endline="101">getDataPropertyCount</references>
+        <references refid="classista_1_1owl2_1_1Ontology_1a36e88ed26c9b1cad92716e683823d446" compoundref="ontology_8cpp" startline="368" endline="378">getDatatypes</references>
+        <references refid="classista_1_1owl2_1_1Ontology_1a09636f4dfae8da859918854327e05cfd" compoundref="ontology_8hpp" startline="102" endline="102">getIndividualCount</references>
+        <references refid="classista_1_1owl2_1_1Ontology_1a2662c949ca02a59613294b15961198f3" compoundref="ontology_8hpp" startline="100" endline="100">getObjectPropertyCount</references>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1ab2647568576b66db9c3e610ceb9be7ea" compoundref="ontology_8cpp" startline="409" endline="425">getStatistics</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a9c2523f0f285088a5feb529de8127feb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t ista::owl2::Ontology::getClassCount</definition>
+        <argsstring>() const</argsstring>
+        <name>getClassCount</name>
+        <qualifiedname>ista::owl2::Ontology::getClassCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="99" column="12" bodyfile="D:/projects/ista/lib/owl2/core/ontology.hpp" bodystart="99" bodyend="99"/>
+        <references refid="classista_1_1owl2_1_1Ontology_1a6ed785e3937a7d923648c49ce9a75089" compoundref="ontology_8cpp" startline="308" endline="318">getClasses</references>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1a11cdc927f6ddc386025ff0e0d410ab89" compoundref="ontology_8cpp" startline="404" endline="407">getEntityCount</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1ab2647568576b66db9c3e610ceb9be7ea" compoundref="ontology_8cpp" startline="409" endline="425">getStatistics</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a2662c949ca02a59613294b15961198f3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t ista::owl2::Ontology::getObjectPropertyCount</definition>
+        <argsstring>() const</argsstring>
+        <name>getObjectPropertyCount</name>
+        <qualifiedname>ista::owl2::Ontology::getObjectPropertyCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="100" column="12" bodyfile="D:/projects/ista/lib/owl2/core/ontology.hpp" bodystart="100" bodyend="100"/>
+        <references refid="classista_1_1owl2_1_1Ontology_1ab34c29d56999157d02b88d8c3732a3eb" compoundref="ontology_8cpp" startline="320" endline="330">getObjectProperties</references>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1a11cdc927f6ddc386025ff0e0d410ab89" compoundref="ontology_8cpp" startline="404" endline="407">getEntityCount</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1ab2647568576b66db9c3e610ceb9be7ea" compoundref="ontology_8cpp" startline="409" endline="425">getStatistics</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a5341aa7a01a720b66e13440bf7f28c36" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t ista::owl2::Ontology::getDataPropertyCount</definition>
+        <argsstring>() const</argsstring>
+        <name>getDataPropertyCount</name>
+        <qualifiedname>ista::owl2::Ontology::getDataPropertyCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="101" column="12" bodyfile="D:/projects/ista/lib/owl2/core/ontology.hpp" bodystart="101" bodyend="101"/>
+        <references refid="classista_1_1owl2_1_1Ontology_1a82a4d15fd1673cab83edfeb7a6826e23" compoundref="ontology_8cpp" startline="332" endline="342">getDataProperties</references>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1a11cdc927f6ddc386025ff0e0d410ab89" compoundref="ontology_8cpp" startline="404" endline="407">getEntityCount</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1ab2647568576b66db9c3e610ceb9be7ea" compoundref="ontology_8cpp" startline="409" endline="425">getStatistics</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a09636f4dfae8da859918854327e05cfd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t ista::owl2::Ontology::getIndividualCount</definition>
+        <argsstring>() const</argsstring>
+        <name>getIndividualCount</name>
+        <qualifiedname>ista::owl2::Ontology::getIndividualCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="102" column="12" bodyfile="D:/projects/ista/lib/owl2/core/ontology.hpp" bodystart="102" bodyend="102"/>
+        <references refid="classista_1_1owl2_1_1Ontology_1a4bdfb670409150935f13c0d601244c97" compoundref="ontology_8cpp" startline="356" endline="366">getIndividuals</references>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1a11cdc927f6ddc386025ff0e0d410ab89" compoundref="ontology_8cpp" startline="404" endline="407">getEntityCount</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1ab2647568576b66db9c3e610ceb9be7ea" compoundref="ontology_8cpp" startline="409" endline="425">getStatistics</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1ab2647568576b66db9c3e610ceb9be7ea" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::Ontology::getStatistics</definition>
+        <argsstring>() const</argsstring>
+        <name>getStatistics</name>
+        <qualifiedname>ista::owl2::Ontology::getStatistics</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="103" column="17" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="409" bodyend="425"/>
+        <references refid="classista_1_1owl2_1_1Ontology_1a1006342790878e9bae434febd283351d" compoundref="ontology_8cpp" startline="344" endline="354">getAnnotationProperties</references>
+        <references refid="classista_1_1owl2_1_1Ontology_1a506dcf3e7f2680ec3c4ec699cc9a77cc" compoundref="ontology_8hpp" startline="97" endline="97">getAxiomCount</references>
+        <references refid="classista_1_1owl2_1_1Ontology_1a9c2523f0f285088a5feb529de8127feb" compoundref="ontology_8hpp" startline="99" endline="99">getClassCount</references>
+        <references refid="classista_1_1owl2_1_1Ontology_1a5341aa7a01a720b66e13440bf7f28c36" compoundref="ontology_8hpp" startline="101" endline="101">getDataPropertyCount</references>
+        <references refid="classista_1_1owl2_1_1Ontology_1a36e88ed26c9b1cad92716e683823d446" compoundref="ontology_8cpp" startline="368" endline="378">getDatatypes</references>
+        <references refid="classista_1_1owl2_1_1Ontology_1a11cdc927f6ddc386025ff0e0d410ab89" compoundref="ontology_8cpp" startline="404" endline="407">getEntityCount</references>
+        <references refid="classista_1_1owl2_1_1Ontology_1a09636f4dfae8da859918854327e05cfd" compoundref="ontology_8hpp" startline="102" endline="102">getIndividualCount</references>
+        <references refid="classista_1_1owl2_1_1Ontology_1a2662c949ca02a59613294b15961198f3" compoundref="ontology_8hpp" startline="100" endline="100">getObjectPropertyCount</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a1e42513679e7d6340b68b0b1a8f77b55" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::Ontology::toFunctionalSyntax</definition>
+        <argsstring>() const</argsstring>
+        <name>toFunctionalSyntax</name>
+        <qualifiedname>ista::owl2::Ontology::toFunctionalSyntax</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="106" column="17" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="428" bodyend="430"/>
+        <references refid="classista_1_1owl2_1_1Ontology_1a1e42513679e7d6340b68b0b1a8f77b55" compoundref="ontology_8cpp" startline="428" endline="430">toFunctionalSyntax</references>
+        <referencedby refid="classista_1_1owl2_1_1FunctionalSyntaxSerializer_1a6a2ef523bf327716659cb98f0c51fdb6" compoundref="functional__serializer_8cpp" startline="7" endline="9">ista::owl2::FunctionalSyntaxSerializer::serialize</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1FunctionalSyntaxSerializer_1aa9be510f430db32b7bdda8abec35928c" compoundref="functional__serializer_8cpp" startline="11" endline="13">ista::owl2::FunctionalSyntaxSerializer::serialize</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1Ontology_1a1e42513679e7d6340b68b0b1a8f77b55" compoundref="ontology_8cpp" startline="428" endline="430">toFunctionalSyntax</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a6669c4413bea23f464ea23b4ea4fd3e2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::Ontology::toFunctionalSyntax</definition>
+        <argsstring>(const std::string &amp;indent) const</argsstring>
+        <name>toFunctionalSyntax</name>
+        <qualifiedname>ista::owl2::Ontology::toFunctionalSyntax</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>indent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="107" column="17" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="432" bodyend="462"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a225834906bceea69d0ae3b37fa5b2e2c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1Ontology_1a90d1287e6f7833e204316b228c208240" kindref="member">Ontology</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; Ontology &gt; ista::owl2::Ontology::createSubgraph</definition>
+        <argsstring>(const class OntologyFilter &amp;filter) const</argsstring>
+        <name>createSubgraph</name>
+        <qualifiedname>ista::owl2::Ontology::createSubgraph</qualifiedname>
+        <param>
+          <type>const class <ref refid="classista_1_1owl2_1_1OntologyFilter" kindref="compound">OntologyFilter</ref> &amp;</type>
+          <declname>filter</declname>
+        </param>
+        <briefdescription>
+<para>Create a filtered subgraph using <ref refid="classista_1_1owl2_1_1OntologyFilter" kindref="compound">OntologyFilter</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classista_1_1owl2_1_1OntologyFilter" kindref="compound">OntologyFilter</ref> to apply (must reference this ontology) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Shared pointer to the filtered ontology </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="115" column="21" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="517" bodyend="520"/>
+        <references refid="classista_1_1owl2_1_1OntologyFilter_1a42f58574eeb431335d08f914dd4cf7f1" compoundref="ontology__filter_8cpp" startline="259" endline="261">ista::owl2::OntologyFilter::execute</references>
+        <references refid="structista_1_1owl2_1_1FilterResult_1af871fff98d85e591dd2eb6913c952111" compoundref="ontology__filter_8hpp" startline="64">ista::owl2::FilterResult::ontology</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1ac137744891c0214127facaac23013b16" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unordered_set&lt; <ref refid="classista_1_1owl2_1_1NamedIndividual" kindref="compound">NamedIndividual</ref> &gt;</type>
+        <definition>std::unordered_set&lt; NamedIndividual &gt; ista::owl2::Ontology::getIndividualsOfClass</definition>
+        <argsstring>(const Class &amp;cls) const</argsstring>
+        <name>getIndividualsOfClass</name>
+        <qualifiedname>ista::owl2::Ontology::getIndividualsOfClass</qualifiedname>
+        <param>
+          <type>const <ref refid="structClass" kindref="compound">Class</ref> &amp;</type>
+          <declname>cls</declname>
+        </param>
+        <briefdescription>
+<para>Get all individuals that are instances of a class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cls</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The class to query </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Set of individuals that have <ref refid="classista_1_1owl2_1_1ClassAssertion" kindref="compound">ClassAssertion</ref> axioms for this class </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="122" column="24" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="522" bodyend="540"/>
+        <references refid="classista_1_1owl2_1_1Entity_1a7450ac96112b23d4514cf60be3c3ac41" compoundref="core_2entity_8hpp" startline="20" endline="20">ista::owl2::Entity::getIRI</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a1b4b0cebf3f0a08142223a8dec60d641" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="classista_1_1owl2_1_1NamedIndividual" kindref="compound">NamedIndividual</ref> &gt;</type>
+        <definition>std::vector&lt; NamedIndividual &gt; ista::owl2::Ontology::getNeighbors</definition>
+        <argsstring>(const NamedIndividual &amp;individual, int depth=1) const</argsstring>
+        <name>getNeighbors</name>
+        <qualifiedname>ista::owl2::Ontology::getNeighbors</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1NamedIndividual" kindref="compound">NamedIndividual</ref> &amp;</type>
+          <declname>individual</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>depth</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>Get neighboring individuals within specified depth. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Uses BFS to traverse the ontology graph via object property assertions.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>individual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The starting individual </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>depth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum number of hops (default 1) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Vector of individuals reachable within depth hops </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="133" column="17" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="542" bodyend="603"/>
+        <references refid="classista_1_1owl2_1_1Entity_1a7450ac96112b23d4514cf60be3c3ac41" compoundref="core_2entity_8hpp" startline="20" endline="20">ista::owl2::Entity::getIRI</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a701278c21bea7a0d09857bccf7505b6b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::Ontology::hasPath</definition>
+        <argsstring>(const NamedIndividual &amp;from, const NamedIndividual &amp;to) const</argsstring>
+        <name>hasPath</name>
+        <qualifiedname>ista::owl2::Ontology::hasPath</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1NamedIndividual" kindref="compound">NamedIndividual</ref> &amp;</type>
+          <declname>from</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1NamedIndividual" kindref="compound">NamedIndividual</ref> &amp;</type>
+          <declname>to</declname>
+        </param>
+        <briefdescription>
+<para>Check if a path exists between two individuals. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Uses BFS to determine reachability through object property assertions.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>from</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting individual </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>to</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Target individual </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if a path exists, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="144" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="605" bodyend="658"/>
+        <references refid="classista_1_1owl2_1_1Entity_1a7450ac96112b23d4514cf60be3c3ac41" compoundref="core_2entity_8hpp" startline="20" endline="20">ista::owl2::Entity::getIRI</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1ac844b751e78e5ed8db0c0d17fd0fec10" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::Ontology::initializeStandardPrefixes</definition>
+        <argsstring>()</argsstring>
+        <name>initializeStandardPrefixes</name>
+        <qualifiedname>ista::owl2::Ontology::initializeStandardPrefixes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="155" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="75" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a3d755c6a85b48400c2437405a98f8900" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::Ontology::isClassAxiom</definition>
+        <argsstring>(const AxiomPtr &amp;axiom) const</argsstring>
+        <name>isClassAxiom</name>
+        <qualifiedname>ista::owl2::Ontology::isClassAxiom</qualifiedname>
+        <param>
+          <type>const <ref refid="namespaceista_1_1owl2_1ae305b46823ac53f0c71aed391a90f835" kindref="member">AxiomPtr</ref> &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="156" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="464" bodyend="469"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1ad147c0d88be35dcf78356051c6cffd0d" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::Ontology::isObjectPropertyAxiom</definition>
+        <argsstring>(const AxiomPtr &amp;axiom) const</argsstring>
+        <name>isObjectPropertyAxiom</name>
+        <qualifiedname>ista::owl2::Ontology::isObjectPropertyAxiom</qualifiedname>
+        <param>
+          <type>const <ref refid="namespaceista_1_1owl2_1ae305b46823ac53f0c71aed391a90f835" kindref="member">AxiomPtr</ref> &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="157" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="471" bodyend="485"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a7e7e9c8682b02252746cb8e63ccc6f70" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::Ontology::isDataPropertyAxiom</definition>
+        <argsstring>(const AxiomPtr &amp;axiom) const</argsstring>
+        <name>isDataPropertyAxiom</name>
+        <qualifiedname>ista::owl2::Ontology::isDataPropertyAxiom</qualifiedname>
+        <param>
+          <type>const <ref refid="namespaceista_1_1owl2_1ae305b46823ac53f0c71aed391a90f835" kindref="member">AxiomPtr</ref> &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="158" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="487" bodyend="494"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a1effe050752d839c4e37e58f204ee9e9" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::Ontology::isAssertionAxiom</definition>
+        <argsstring>(const AxiomPtr &amp;axiom) const</argsstring>
+        <name>isAssertionAxiom</name>
+        <qualifiedname>ista::owl2::Ontology::isAssertionAxiom</qualifiedname>
+        <param>
+          <type>const <ref refid="namespaceista_1_1owl2_1ae305b46823ac53f0c71aed391a90f835" kindref="member">AxiomPtr</ref> &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="159" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="496" bodyend="504"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1Ontology_1a3e4989c3891c5b635ffc8c3ef326bd4f" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::Ontology::isAnnotationAxiom</definition>
+        <argsstring>(const AxiomPtr &amp;axiom) const</argsstring>
+        <name>isAnnotationAxiom</name>
+        <qualifiedname>ista::owl2::Ontology::isAnnotationAxiom</qualifiedname>
+        <param>
+          <type>const <ref refid="namespaceista_1_1owl2_1ae305b46823ac53f0c71aed391a90f835" kindref="member">AxiomPtr</ref> &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="160" column="10" bodyfile="D:/projects/ista/lib/owl2/core/ontology.cpp" bodystart="506" bodyend="511"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="18" column="1" bodyfile="D:/projects/ista/lib/owl2/core/ontology.hpp" bodystart="18" bodyend="161"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1Ontology_1ae0c1d302cdfbc753b1fd721dad2e5c72" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>addAxiom</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a9b4669972793a84feb54f776da6cf9c0" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>addImport</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a85c4bcb533987f0aa7ab6fef0562e204" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>addOntologyAnnotation</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1aa75b6394bbcbdfd68dc3e9565e102e71" prot="private" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>axioms_</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a2cda64d88748c1cc24b4959f68afbc9a" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>clearAxioms</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a413a66bc09fd7a6a406de212703edac4" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>clearOntologyAnnotations</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1ac108b62dbebd3b924b0ab5b4e078b101" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>clearPrefixes</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a8728d5a18d8ba5753e34a1ea653d35af" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>containsAnnotationProperty</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1ad164565597fe673144c79f0d778a3635" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>containsAxiom</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1aedb054d380c6fa7deb015f49150e91ef" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>containsClass</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a5a65720646781685a85792bd73923aca" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>containsDataProperty</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a14c42a5963a2d2a0ecc0c2d3fa046fd3" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>containsDatatype</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a5ade8ff527c246ac2a8aea02cd0aaf7b" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>containsIndividual</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a2c5817b7faec430aa3906e34e60bfa8e" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>containsObjectProperty</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a225834906bceea69d0ae3b37fa5b2e2c" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>createSubgraph</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1aad322912a37cc9e96586577397e6cbb1" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getAnnotationAxioms</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a1006342790878e9bae434febd283351d" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getAnnotationProperties</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1adc6e66f7b4896fcc5688c83cec083bfa" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getAssertionAxioms</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a506dcf3e7f2680ec3c4ec699cc9a77cc" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getAxiomCount</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a304594adb433e2efec19f6c576b234ea" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getAxioms</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a0b83890fe6b03bd11dec3eec7feb8714" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getClassAssertions</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a24ee02b421098f5c1eb17c5edc97c57a" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getClassAxioms</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a9c2523f0f285088a5feb529de8127feb" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getClassCount</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a6ed785e3937a7d923648c49ce9a75089" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getClasses</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a82a4d15fd1673cab83edfeb7a6826e23" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getDataProperties</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a6af7a822e59a953f1f11ff34f8c3c2a8" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getDataPropertyAssertions</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a65b0dc430354667afcaed8ce6ae12993" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getDataPropertyAxioms</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a5341aa7a01a720b66e13440bf7f28c36" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getDataPropertyCount</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a36e88ed26c9b1cad92716e683823d446" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getDatatypes</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a5d36d4fee838ec30be5614930275be33" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getDeclarationAxioms</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a21557c821220cbff341db72864a6bfa0" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getDisjointClassesAxioms</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a11cdc927f6ddc386025ff0e0d410ab89" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getEntityCount</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1afbea71fc3fb0d640a36cf768fcf14bd1" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getEquivalentClassesAxioms</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a776e97b4f81e585e23e44e01bd625a6f" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getImports</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a09636f4dfae8da859918854327e05cfd" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getIndividualCount</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a4bdfb670409150935f13c0d601244c97" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getIndividuals</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1ac137744891c0214127facaac23013b16" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getIndividualsOfClass</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a62c043f7eeb443dad024e52d482e79ae" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getNamespaceForPrefix</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a1b4b0cebf3f0a08142223a8dec60d641" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getNeighbors</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1ab34c29d56999157d02b88d8c3732a3eb" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getObjectProperties</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a379fc42774fd69ac2d371d7cd5e29ffe" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getObjectPropertyAssertions</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a7ea6a599f0fce06f7b6fc63d9d758059" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getObjectPropertyAxioms</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a2662c949ca02a59613294b15961198f3" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getObjectPropertyCount</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a913f794f65a6a694fee0eedd1c9026bd" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getOntologyAnnotations</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1aa06397dd98c67f3b66a2f5e2a2473e1d" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getOntologyIRI</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a2b1dbc8297c0cd8bdcca920330bf29e3" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getPrefixForNamespace</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a1ddb72efc5c657427f3eaed5badbd6e6" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getPrefixMap</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1ab2647568576b66db9c3e610ceb9be7ea" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getStatistics</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1afe2ca53667c56ba8f6b6667ae1cdf93d" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getSubClassAxiomsForSubClass</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1afc7ad1023981940d5bb997ab23bacd59" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getSubClassAxiomsForSuperClass</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1aebd57fe6329ac257ceac639f987f9dab" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getSubDataPropertyAxioms</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a1c4ca5e159a5500bc60d6c433a0a411f" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getSubObjectPropertyAxioms</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1abbc3d0c7c79885c9bb3c4a91925d2bd2" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>getVersionIRI</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1afdab584ca0f4efdbc033544cb5a27a90" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>hasImport</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a701278c21bea7a0d09857bccf7505b6b" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>hasPath</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a68598d913b6fe7aed0999afa194d28d4" prot="private" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>imports_</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1ac844b751e78e5ed8db0c0d17fd0fec10" prot="private" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>initializeStandardPrefixes</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a3e4989c3891c5b635ffc8c3ef326bd4f" prot="private" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>isAnnotationAxiom</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a1effe050752d839c4e37e58f204ee9e9" prot="private" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>isAssertionAxiom</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a3d755c6a85b48400c2437405a98f8900" prot="private" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>isClassAxiom</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a7e7e9c8682b02252746cb8e63ccc6f70" prot="private" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>isDataPropertyAxiom</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1ad147c0d88be35dcf78356051c6cffd0d" prot="private" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>isObjectPropertyAxiom</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a8ab6e846f5554c3beb41449c186e1a45" prot="private" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>namespace_to_prefix_</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a90d1287e6f7833e204316b228c208240" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>Ontology</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a9ddb7eb4b99bfad4cc49c6e8b6168650" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>Ontology</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1ad5f9ef9f2a1b6f50671717cfa1271021" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>Ontology</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a9bc4777e46c038542d375b696d4d009b" prot="private" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>ontology_annotations_</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a7037d2a28084fc0fd1d8572845f7f322" prot="private" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>ontology_iri_</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1ae560804ca9b01b653230dc82d064dc4a" prot="private" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>prefix_to_namespace_</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a5d4759c58c914ddcf9d26adbb2ae4821" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>registerPrefix</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a16687f276f636b625c0ea32d258125ea" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>removeAxiom</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1ae36b1a94708e6956b6bf74276e1573aa" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>removeImport</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a5856de70b8d63d0b2e5d03440b6d0ddc" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>removePrefix</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a0dbefe6498a02f54ba05360ce5643273" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>setOntologyAnnotations</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1ae39978737af14aa86783a90030b2e6f3" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>setOntologyIRI</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a2105b7111827d718876a69b1aaacd354" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>setVersionIRI</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a1e42513679e7d6340b68b0b1a8f77b55" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>toFunctionalSyntax</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a6669c4413bea23f464ea23b4ea4fd3e2" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>toFunctionalSyntax</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1ab9b5a426d48c517cc2161019c377bbbd" prot="private" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>version_iri_</name></member>
+      <member refid="classista_1_1owl2_1_1Ontology_1a6d0e91b569042123bfaa3f0f50a47866" prot="public" virt="non-virtual"><scope>ista::owl2::Ontology</scope><name>~Ontology</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

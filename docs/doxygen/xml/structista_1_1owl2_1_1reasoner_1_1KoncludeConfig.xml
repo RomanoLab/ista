@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig" kind="struct" language="C++" prot="public">
+    <compoundname>ista::owl2::reasoner::KoncludeConfig</compoundname>
+    <includes refid="konclude__wrapper_8hpp" local="no">konclude_wrapper.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig_1ae71389f56db68c760e3e620e3a271ee0" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::reasoner::KoncludeConfig::konclude_path</definition>
+        <argsstring></argsstring>
+        <name>konclude_path</name>
+        <qualifiedname>ista::owl2::reasoner::KoncludeConfig::konclude_path</qualifiedname>
+        <initializer>= &quot;Konclude&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" line="30" column="17" bodyfile="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig_1a39b70042d089f925703219b098b517ae" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ista::owl2::reasoner::KoncludeConfig::worker_threads</definition>
+        <argsstring></argsstring>
+        <name>worker_threads</name>
+        <qualifiedname>ista::owl2::reasoner::KoncludeConfig::worker_threads</qualifiedname>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" line="33" column="9" bodyfile="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig_1acd76c21e87307b68aff707f170ac85c3" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ista::owl2::reasoner::KoncludeConfig::verbose</definition>
+        <argsstring></argsstring>
+        <name>verbose</name>
+        <qualifiedname>ista::owl2::reasoner::KoncludeConfig::verbose</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" line="36" column="10" bodyfile="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig_1acdcf863876ae463cdc152788dbbbd69c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ista::owl2::reasoner::KoncludeConfig::timeout_seconds</definition>
+        <argsstring></argsstring>
+        <name>timeout_seconds</name>
+        <qualifiedname>ista::owl2::reasoner::KoncludeConfig::timeout_seconds</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" line="39" column="9" bodyfile="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig_1a7a5f4bb4efc74f7554aa50733e93b188" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::reasoner::KoncludeConfig::temp_dir</definition>
+        <argsstring></argsstring>
+        <name>temp_dir</name>
+        <qualifiedname>ista::owl2::reasoner::KoncludeConfig::temp_dir</qualifiedname>
+        <initializer>= &quot;.&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" line="42" column="17" bodyfile="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Configuration for Konclude reasoner. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" line="28" column="1" bodyfile="D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp" bodystart="28" bodyend="43"/>
+    <listofallmembers>
+      <member refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig_1ae71389f56db68c760e3e620e3a271ee0" prot="public" virt="non-virtual"><scope>ista::owl2::reasoner::KoncludeConfig</scope><name>konclude_path</name></member>
+      <member refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig_1a7a5f4bb4efc74f7554aa50733e93b188" prot="public" virt="non-virtual"><scope>ista::owl2::reasoner::KoncludeConfig</scope><name>temp_dir</name></member>
+      <member refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig_1acdcf863876ae463cdc152788dbbbd69c" prot="public" virt="non-virtual"><scope>ista::owl2::reasoner::KoncludeConfig</scope><name>timeout_seconds</name></member>
+      <member refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig_1acd76c21e87307b68aff707f170ac85c3" prot="public" virt="non-virtual"><scope>ista::owl2::reasoner::KoncludeConfig</scope><name>verbose</name></member>
+      <member refid="structista_1_1owl2_1_1reasoner_1_1KoncludeConfig_1a39b70042d089f925703219b098b517ae" prot="public" virt="non-virtual"><scope>ista::owl2::reasoner::KoncludeConfig</scope><name>worker_threads</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

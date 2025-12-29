@@ -1,0 +1,416 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="ontology_8hpp" kind="file" language="C++">
+    <compoundname>ontology.hpp</compoundname>
+    <includes refid="iri_8hpp" local="yes">iri.hpp</includes>
+    <includes refid="core_2entity_8hpp" local="yes">entity.hpp</includes>
+    <includes refid="axiom_8hpp" local="yes">axiom.hpp</includes>
+    <includes refid="annotation_8hpp" local="yes">annotation.hpp</includes>
+    <includes local="no">string</includes>
+    <includes local="no">unordered_set</includes>
+    <includes local="no">unordered_map</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">optional</includes>
+    <includedby refid="ontology_8cpp" local="yes">D:/projects/ista/lib/owl2/core/ontology.cpp</includedby>
+    <includedby refid="ontology__filter_8hpp" local="yes">D:/projects/ista/lib/owl2/core/ontology_filter.hpp</includedby>
+    <includedby refid="owl2_8hpp" local="yes">D:/projects/ista/lib/owl2/owl2.hpp</includedby>
+    <includedby refid="csv__parser_8hpp" local="yes">D:/projects/ista/lib/owl2/parser/csv_parser.hpp</includedby>
+    <includedby refid="rdfxml__parser_8hpp" local="yes">D:/projects/ista/lib/owl2/parser/rdfxml_parser.hpp</includedby>
+    <includedby refid="konclude__wrapper_8hpp" local="yes">D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp</includedby>
+    <includedby refid="functional__serializer_8hpp" local="yes">D:/projects/ista/lib/owl2/serializer/functional_serializer.hpp</includedby>
+    <includedby refid="rdfxml__serializer_8hpp" local="yes">D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp</includedby>
+    <incdepgraph>
+      <node id="14">
+        <label>annotation.hpp</label>
+        <link refid="annotation_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>axiom.hpp</label>
+        <link refid="axiom_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>class_expression.hpp</label>
+        <link refid="class__expression_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>data_range.hpp</label>
+        <link refid="data__range_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>entity.hpp</label>
+        <link refid="core_2entity_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>iri.hpp</label>
+        <link refid="iri_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>literal.hpp</label>
+        <link refid="literal_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/projects/ista/lib/owl2/core/ontology.hpp</label>
+        <link refid="ontology_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>memory</label>
+      </node>
+      <node id="5">
+        <label>optional</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+      <node id="4">
+        <label>unordered_map</label>
+      </node>
+      <node id="16">
+        <label>unordered_set</label>
+      </node>
+      <node id="13">
+        <label>utility</label>
+      </node>
+      <node id="15">
+        <label>variant</label>
+      </node>
+      <node id="11">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>D:/projects/ista/lib/owl2/core/ontology.cpp</label>
+        <link refid="ontology_8cpp"/>
+      </node>
+      <node id="1">
+        <label>D:/projects/ista/lib/owl2/core/ontology.hpp</label>
+        <link refid="ontology_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>D:/projects/ista/lib/owl2/core/ontology_filter.cpp</label>
+        <link refid="ontology__filter_8cpp"/>
+      </node>
+      <node id="3">
+        <label>D:/projects/ista/lib/owl2/core/ontology_filter.hpp</label>
+        <link refid="ontology__filter_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>D:/projects/ista/lib/owl2/owl2.hpp</label>
+        <link refid="owl2_8hpp"/>
+      </node>
+      <node id="7">
+        <label>D:/projects/ista/lib/owl2/parser/csv_parser.cpp</label>
+        <link refid="csv__parser_8cpp"/>
+      </node>
+      <node id="6">
+        <label>D:/projects/ista/lib/owl2/parser/csv_parser.hpp</label>
+        <link refid="csv__parser_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>D:/projects/ista/lib/owl2/parser/rdfxml_parser.cpp</label>
+        <link refid="rdfxml__parser_8cpp"/>
+      </node>
+      <node id="8">
+        <label>D:/projects/ista/lib/owl2/parser/rdfxml_parser.hpp</label>
+        <link refid="rdfxml__parser_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.cpp</label>
+        <link refid="konclude__wrapper_8cpp"/>
+      </node>
+      <node id="11">
+        <label>D:/projects/ista/lib/owl2/reasoner/konclude_wrapper.hpp</label>
+        <link refid="konclude__wrapper_8hpp"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>D:/projects/ista/lib/owl2/serializer/functional_serializer.cpp</label>
+        <link refid="functional__serializer_8cpp"/>
+      </node>
+      <node id="12">
+        <label>D:/projects/ista/lib/owl2/serializer/functional_serializer.hpp</label>
+        <link refid="functional__serializer_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.cpp</label>
+        <link refid="rdfxml__serializer_8cpp"/>
+      </node>
+      <node id="14">
+        <label>D:/projects/ista/lib/owl2/serializer/rdfxml_serializer.hpp</label>
+        <link refid="rdfxml__serializer_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classista_1_1owl2_1_1Ontology" prot="public">ista::owl2::Ontology</innerclass>
+    <innernamespace refid="namespaceista">ista</innernamespace>
+    <innernamespace refid="namespaceista_1_1owl2">ista::owl2</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>ISTA_OWL2_ONTOLOGY_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ISTA_OWL2_ONTOLOGY_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="iri_8hpp" kindref="compound">iri.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="core_2entity_8hpp" kindref="compound">entity.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="axiom_8hpp" kindref="compound">axiom.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="annotation_8hpp" kindref="compound">annotation.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_set&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;optional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceista" kindref="compound">ista</ref><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceista_1_1owl2" kindref="compound">owl2</ref><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="classista_1_1owl2_1_1Ontology" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classista_1_1owl2_1_1Ontology_1a90d1287e6f7833e204316b228c208240" kindref="member">Ontology</ref><sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classista_1_1owl2_1_1Ontology_1a90d1287e6f7833e204316b228c208240" kindref="member">Ontology</ref>();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1a90d1287e6f7833e204316b228c208240" kindref="member">Ontology</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>&amp;<sp/>ontology_iri);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classista_1_1owl2_1_1Ontology_1a90d1287e6f7833e204316b228c208240" kindref="member">Ontology</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>&amp;<sp/>ontology_iri,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>&amp;<sp/>version_iri);</highlight></codeline>
+<codeline lineno="23" refid="classista_1_1owl2_1_1Ontology_1a6d0e91b569042123bfaa3f0f50a47866" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classista_1_1owl2_1_1Ontology_1a6d0e91b569042123bfaa3f0f50a47866" kindref="member">~Ontology</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Metadata<sp/>management</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classista_1_1owl2_1_1Ontology_1aa06397dd98c67f3b66a2f5e2a2473e1d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;IRI&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1aa06397dd98c67f3b66a2f5e2a2473e1d" kindref="member">getOntologyIRI</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ontology_iri_;<sp/>}</highlight></codeline>
+<codeline lineno="27" refid="classista_1_1owl2_1_1Ontology_1ae39978737af14aa86783a90030b2e6f3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1ae39978737af14aa86783a90030b2e6f3" kindref="member">setOntologyIRI</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>&amp;<sp/>iri)<sp/>{<sp/>ontology_iri_<sp/>=<sp/>iri;<sp/>}</highlight></codeline>
+<codeline lineno="28" refid="classista_1_1owl2_1_1Ontology_1abbc3d0c7c79885c9bb3c4a91925d2bd2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;IRI&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1abbc3d0c7c79885c9bb3c4a91925d2bd2" kindref="member">getVersionIRI</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>version_iri_;<sp/>}</highlight></codeline>
+<codeline lineno="29" refid="classista_1_1owl2_1_1Ontology_1a2105b7111827d718876a69b1aaacd354" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1a2105b7111827d718876a69b1aaacd354" kindref="member">setVersionIRI</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>&amp;<sp/>iri)<sp/>{<sp/>version_iri_<sp/>=<sp/>iri;<sp/>}</highlight></codeline>
+<codeline lineno="30" refid="classista_1_1owl2_1_1Ontology_1a776e97b4f81e585e23e44e01bd625a6f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_set&lt;IRI&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1a776e97b4f81e585e23e44e01bd625a6f" kindref="member">getImports</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>imports_;<sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1a9b4669972793a84feb54f776da6cf9c0" kindref="member">addImport</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>&amp;<sp/>import_iri);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1ae36b1a94708e6956b6bf74276e1573aa" kindref="member">removeImport</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>&amp;<sp/>import_iri);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1afdab584ca0f4efdbc033544cb5a27a90" kindref="member">hasImport</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref>&amp;<sp/>import_iri)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34" refid="classista_1_1owl2_1_1Ontology_1a913f794f65a6a694fee0eedd1c9026bd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Annotation&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1a913f794f65a6a694fee0eedd1c9026bd" kindref="member">getOntologyAnnotations</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ontology_annotations_;<sp/>}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1a85c4bcb533987f0aa7ab6fef0562e204" kindref="member">addOntologyAnnotation</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Annotation" kindref="compound">Annotation</ref>&amp;<sp/>annotation);</highlight></codeline>
+<codeline lineno="36" refid="classista_1_1owl2_1_1Ontology_1a0dbefe6498a02f54ba05360ce5643273" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1a0dbefe6498a02f54ba05360ce5643273" kindref="member">setOntologyAnnotations</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;Annotation&gt;&amp;<sp/>annotations)<sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ontology_annotations_<sp/>=<sp/>annotations;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="39" refid="classista_1_1owl2_1_1Ontology_1a413a66bc09fd7a6a406de212703edac4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1a413a66bc09fd7a6a406de212703edac4" kindref="member">clearOntologyAnnotations</ref>()<sp/>{<sp/>ontology_annotations_.clear();<sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Prefix<sp/>management</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1a5d4759c58c914ddcf9d26adbb2ae4821" kindref="member">registerPrefix</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>prefix,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>namespace_uri);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;std::string&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1a62c043f7eeb443dad024e52d482e79ae" kindref="member">getNamespaceForPrefix</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>prefix)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;std::string&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1a2b1dbc8297c0cd8bdcca920330bf29e3" kindref="member">getPrefixForNamespace</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>namespace_uri)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45" refid="classista_1_1owl2_1_1Ontology_1a1ddb72efc5c657427f3eaed5badbd6e6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>std::string&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1a1ddb72efc5c657427f3eaed5badbd6e6" kindref="member">getPrefixMap</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>prefix_to_namespace_;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1a5856de70b8d63d0b2e5d03440b6d0ddc" kindref="member">removePrefix</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>prefix);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1ac108b62dbebd3b924b0ab5b4e078b101" kindref="member">clearPrefixes</ref>();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Axiom<sp/>management</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1ae0c1d302cdfbc753b1fd721dad2e5c72" kindref="member">addAxiom</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceista_1_1owl2_1ae305b46823ac53f0c71aed391a90f835" kindref="member">AxiomPtr</ref>&amp;<sp/>axiom);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1a16687f276f636b625c0ea32d258125ea" kindref="member">removeAxiom</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceista_1_1owl2_1ae305b46823ac53f0c71aed391a90f835" kindref="member">AxiomPtr</ref>&amp;<sp/>axiom);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1ad164565597fe673144c79f0d778a3635" kindref="member">containsAxiom</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceista_1_1owl2_1ae305b46823ac53f0c71aed391a90f835" kindref="member">AxiomPtr</ref>&amp;<sp/>axiom)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;AxiomPtr&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1a304594adb433e2efec19f6c576b234ea" kindref="member">getAxioms</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1a2cda64d88748c1cc24b4959f68afbc9a" kindref="member">clearAxioms</ref>();</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Axiom<sp/>queries<sp/>by<sp/>type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;Declaration&gt;&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1a5d36d4fee838ec30be5614930275be33" kindref="member">getDeclarationAxioms</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;AxiomPtr&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1a24ee02b421098f5c1eb17c5edc97c57a" kindref="member">getClassAxioms</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;AxiomPtr&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1a7ea6a599f0fce06f7b6fc63d9d758059" kindref="member">getObjectPropertyAxioms</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;AxiomPtr&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1a65b0dc430354667afcaed8ce6ae12993" kindref="member">getDataPropertyAxioms</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;AxiomPtr&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1adc6e66f7b4896fcc5688c83cec083bfa" kindref="member">getAssertionAxioms</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;AxiomPtr&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1aad322912a37cc9e96586577397e6cbb1" kindref="member">getAnnotationAxioms</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Specific<sp/>axiom<sp/>queries</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;SubClassOf&gt;&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1afe2ca53667c56ba8f6b6667ae1cdf93d" kindref="member">getSubClassAxiomsForSubClass</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Class" kindref="compound">Class</ref>&amp;<sp/>cls)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;SubClassOf&gt;&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1afc7ad1023981940d5bb997ab23bacd59" kindref="member">getSubClassAxiomsForSuperClass</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Class" kindref="compound">Class</ref>&amp;<sp/>cls)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;EquivalentClasses&gt;&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1afbea71fc3fb0d640a36cf768fcf14bd1" kindref="member">getEquivalentClassesAxioms</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Class" kindref="compound">Class</ref>&amp;<sp/>cls)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;DisjointClasses&gt;&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1a21557c821220cbff341db72864a6bfa0" kindref="member">getDisjointClassesAxioms</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Class" kindref="compound">Class</ref>&amp;<sp/>cls)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;SubObjectPropertyOf&gt;&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1a1c4ca5e159a5500bc60d6c433a0a411f" kindref="member">getSubObjectPropertyAxioms</ref>(</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1ObjectProperty" kindref="compound">ObjectProperty</ref>&amp;<sp/>property)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;SubDataPropertyOf&gt;&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1aebd57fe6329ac257ceac639f987f9dab" kindref="member">getSubDataPropertyAxioms</ref>(</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1DataProperty" kindref="compound">DataProperty</ref>&amp;<sp/>property)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;ClassAssertion&gt;&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1a0b83890fe6b03bd11dec3eec7feb8714" kindref="member">getClassAssertions</ref>(</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1NamedIndividual" kindref="compound">NamedIndividual</ref>&amp;<sp/>individual)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;ObjectPropertyAssertion&gt;&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1a379fc42774fd69ac2d371d7cd5e29ffe" kindref="member">getObjectPropertyAssertions</ref>(</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1NamedIndividual" kindref="compound">NamedIndividual</ref>&amp;<sp/>individual)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;DataPropertyAssertion&gt;&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1a6af7a822e59a953f1f11ff34f8c3c2a8" kindref="member">getDataPropertyAssertions</ref>(</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1NamedIndividual" kindref="compound">NamedIndividual</ref>&amp;<sp/>individual)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Entity<sp/>queries</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_set&lt;Class&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1a6ed785e3937a7d923648c49ce9a75089" kindref="member">getClasses</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_set&lt;ObjectProperty&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1ab34c29d56999157d02b88d8c3732a3eb" kindref="member">getObjectProperties</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_set&lt;DataProperty&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1a82a4d15fd1673cab83edfeb7a6826e23" kindref="member">getDataProperties</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_set&lt;AnnotationProperty&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1a1006342790878e9bae434febd283351d" kindref="member">getAnnotationProperties</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_set&lt;NamedIndividual&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1a4bdfb670409150935f13c0d601244c97" kindref="member">getIndividuals</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_set&lt;Datatype&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1a36e88ed26c9b1cad92716e683823d446" kindref="member">getDatatypes</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1aedb054d380c6fa7deb015f49150e91ef" kindref="member">containsClass</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Class" kindref="compound">Class</ref>&amp;<sp/>cls)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1a2c5817b7faec430aa3906e34e60bfa8e" kindref="member">containsObjectProperty</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1ObjectProperty" kindref="compound">ObjectProperty</ref>&amp;<sp/>property)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1a5a65720646781685a85792bd73923aca" kindref="member">containsDataProperty</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1DataProperty" kindref="compound">DataProperty</ref>&amp;<sp/>property)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1a8728d5a18d8ba5753e34a1ea653d35af" kindref="member">containsAnnotationProperty</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1AnnotationProperty" kindref="compound">AnnotationProperty</ref>&amp;<sp/>property)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1a5ade8ff527c246ac2a8aea02cd0aaf7b" kindref="member">containsIndividual</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1NamedIndividual" kindref="compound">NamedIndividual</ref>&amp;<sp/>individual)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1a14c42a5963a2d2a0ecc0c2d3fa046fd3" kindref="member">containsDatatype</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Datatype" kindref="compound">Datatype</ref>&amp;<sp/>datatype)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Statistics</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="classista_1_1owl2_1_1Ontology_1a506dcf3e7f2680ec3c4ec699cc9a77cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1a506dcf3e7f2680ec3c4ec699cc9a77cc" kindref="member">getAxiomCount</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>axioms_.size();<sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1a11cdc927f6ddc386025ff0e0d410ab89" kindref="member">getEntityCount</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="99" refid="classista_1_1owl2_1_1Ontology_1a9c2523f0f285088a5feb529de8127feb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1a9c2523f0f285088a5feb529de8127feb" kindref="member">getClassCount</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1a6ed785e3937a7d923648c49ce9a75089" kindref="member">getClasses</ref>().size();<sp/>}</highlight></codeline>
+<codeline lineno="100" refid="classista_1_1owl2_1_1Ontology_1a2662c949ca02a59613294b15961198f3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1a2662c949ca02a59613294b15961198f3" kindref="member">getObjectPropertyCount</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1ab34c29d56999157d02b88d8c3732a3eb" kindref="member">getObjectProperties</ref>().size();<sp/>}</highlight></codeline>
+<codeline lineno="101" refid="classista_1_1owl2_1_1Ontology_1a5341aa7a01a720b66e13440bf7f28c36" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1a5341aa7a01a720b66e13440bf7f28c36" kindref="member">getDataPropertyCount</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1a82a4d15fd1673cab83edfeb7a6826e23" kindref="member">getDataProperties</ref>().size();<sp/>}</highlight></codeline>
+<codeline lineno="102" refid="classista_1_1owl2_1_1Ontology_1a09636f4dfae8da859918854327e05cfd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1a09636f4dfae8da859918854327e05cfd" kindref="member">getIndividualCount</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1a4bdfb670409150935f13c0d601244c97" kindref="member">getIndividuals</ref>().size();<sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classista_1_1owl2_1_1Ontology_1ab2647568576b66db9c3e610ceb9be7ea" kindref="member">getStatistics</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Serialization</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classista_1_1owl2_1_1Ontology_1a1e42513679e7d6340b68b0b1a8f77b55" kindref="member">toFunctionalSyntax</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classista_1_1owl2_1_1Ontology_1a1e42513679e7d6340b68b0b1a8f77b55" kindref="member">toFunctionalSyntax</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>indent)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Filtering<sp/>and<sp/>Subgraph<sp/>Extraction</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Ontology&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1a225834906bceea69d0ae3b37fa5b2e2c" kindref="member">createSubgraph</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1OntologyFilter" kindref="compound">OntologyFilter</ref>&amp;<sp/>filter)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_set&lt;NamedIndividual&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1ac137744891c0214127facaac23013b16" kindref="member">getIndividualsOfClass</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Class" kindref="compound">Class</ref>&amp;<sp/>cls)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;NamedIndividual&gt;<sp/><ref refid="classista_1_1owl2_1_1Ontology_1a1b4b0cebf3f0a08142223a8dec60d641" kindref="member">getNeighbors</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1NamedIndividual" kindref="compound">NamedIndividual</ref>&amp;<sp/>individual,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>depth<sp/>=<sp/>1)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1Ontology_1a701278c21bea7a0d09857bccf7505b6b" kindref="member">hasPath</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1NamedIndividual" kindref="compound">NamedIndividual</ref>&amp;<sp/>from,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1NamedIndividual" kindref="compound">NamedIndividual</ref>&amp;<sp/>to)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;IRI&gt;<sp/>ontology_iri_;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;IRI&gt;<sp/>version_iri_;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_set&lt;IRI&gt;<sp/>imports_;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Annotation&gt;<sp/>ontology_annotations_;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>std::string&gt;<sp/>prefix_to_namespace_;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>std::string&gt;<sp/>namespace_to_prefix_;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;AxiomPtr&gt;<sp/>axioms_;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initializeStandardPrefixes();</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isClassAxiom(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceista_1_1owl2_1ae305b46823ac53f0c71aed391a90f835" kindref="member">AxiomPtr</ref>&amp;<sp/>axiom)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isObjectPropertyAxiom(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceista_1_1owl2_1ae305b46823ac53f0c71aed391a90f835" kindref="member">AxiomPtr</ref>&amp;<sp/>axiom)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isDataPropertyAxiom(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceista_1_1owl2_1ae305b46823ac53f0c71aed391a90f835" kindref="member">AxiomPtr</ref>&amp;<sp/>axiom)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isAssertionAxiom(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceista_1_1owl2_1ae305b46823ac53f0c71aed391a90f835" kindref="member">AxiomPtr</ref>&amp;<sp/>axiom)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isAnnotationAxiom(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceista_1_1owl2_1ae305b46823ac53f0c71aed391a90f835" kindref="member">AxiomPtr</ref>&amp;<sp/>axiom)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163" refid="namespaceista_1_1owl2_1a5b4cac34809fec06518732ba9d2c3d3f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespaceista_1_1owl2_1a5b4cac34809fec06518732ba9d2c3d3f" kindref="member">OntologyPtr</ref><sp/>=<sp/>std::shared_ptr&lt;Ontology&gt;;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>owl2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>ista</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>ISTA_OWL2_ONTOLOGY_HPP</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/projects/ista/lib/owl2/core/ontology.hpp"/>
+  </compounddef>
+</doxygen>
