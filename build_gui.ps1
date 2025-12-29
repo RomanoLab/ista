@@ -5,6 +5,7 @@
 $ErrorActionPreference = "Stop"
 
 $PROJECT_DIR = $PSScriptRoot
+$ORIGINAL_DIR = Get-Location
 Set-Location $PROJECT_DIR
 
 Write-Host "=========================================" -ForegroundColor Cyan
@@ -107,5 +108,9 @@ if ($BUILD_STATUS -eq 0) {
     Write-Host "Check build.log for errors:"
     Write-Host "  Get-Content build\build.log -Tail 50"
     Write-Host ""
+    Set-Location $ORIGINAL_DIR
     exit 1
 }
+
+# Return to original directory
+Set-Location $ORIGINAL_DIR

@@ -86,6 +86,7 @@ public:
 private:
     // GUI rendering methods
     void render_menu_bar();
+    void render_toolbar();
     void render_graph_view();
     void render_properties_panel();
     void render_data_source_panel();

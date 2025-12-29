@@ -21,9 +21,16 @@
 // Serializers
 #include "serializer/functional_serializer.hpp"
 #include "serializer/rdfxml_serializer.hpp"
+#include "serializer/manchester_serializer.hpp"
+#include "serializer/owlxml_serializer.hpp"
+#include "serializer/turtle_serializer.hpp"
 
 // Parsers
 #include "parser/rdfxml_parser.hpp"
+#include "parser/functional_parser.hpp"
+#include "parser/manchester_parser.hpp"
+#include "parser/owlxml_parser.hpp"
+#include "parser/turtle_parser.hpp"
 
 /**
  * @namespace ista::owl2
