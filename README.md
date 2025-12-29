@@ -10,6 +10,7 @@ A hybrid Python/C++ toolkit for manipulating and building knowledge graphs with 
 
 - **Python Package (`ista/`)**: Tools for building knowledge graphs from third-party data sources
 - **C++ Library (`lib/`)**: High-performance OWL2 ontology manipulation library (`libista`)
+- **GUI Application (`gui/`)**: Cross-platform graphical interface for knowledge graph population
 
 ## Components
 
@@ -50,6 +51,27 @@ A modern C++20 library for parsing, creating, and manipulating OWL2 ontologies.
 
 See [lib/README.md](lib/README.md) for detailed C++ library documentation.
 
+### GUI Application
+
+A lightweight, cross-platform graphical interface for populating OWL2 knowledge graphs.
+
+**Key Features:**
+- Interactive visualization of ontology class hierarchies
+- Graphical view of individuals and relationships
+- Load and save OWL2 ontologies (RDF/XML format)
+- Pan, zoom, and navigate large knowledge graphs
+- Select and inspect classes and individuals
+- (Planned) Map CSV/Excel data sources to ontology classes
+- (Planned) Batch population of individuals from data sources
+
+**Technology:**
+- Built with Dear ImGui (lightweight immediate-mode GUI)
+- Uses GLFW for cross-platform window management
+- OpenGL 3.3 for hardware-accelerated rendering
+- Runs on Windows, macOS, and Linux
+
+See [gui/README.md](gui/README.md) for detailed GUI documentation and [gui/QUICKSTART.md](gui/QUICKSTART.md) for a quick start guide.
+
 ## Project Status
 
 ### Completed Features
@@ -65,13 +87,16 @@ See [lib/README.md](lib/README.md) for detailed C++ library documentation.
 - [x] **Graph converters (NetworkX, igraph, ista.graph)**
 - [x] **Ontology-to-graph and graph-to-ontology conversion**
 - [x] Example programs and documentation
+- [x] **Cross-platform GUI application for knowledge graph visualization**
 
 ### In Progress / Planned
 
+- [ ] GUI: CSV/Excel data source mapping and batch population
+- [ ] GUI: Force-directed graph layout algorithm
+- [ ] GUI: Graph filtering and search functionality
 - [ ] Turtle parser and serializer
 - [ ] Manchester Syntax support
 - [ ] Graph summarization and characterization tools
-- [ ] Conversion tools between graph representations
 - [ ] Fast subgraph generators
 - [ ] Performance optimizations for large graphs
 
@@ -93,6 +118,26 @@ cmake --build .
 ```
 
 The library will be built as `libista` (or `ista.lib` on Windows).
+
+### GUI Application
+
+First, download the GUI dependencies (Dear ImGui and GLFW):
+
+```bash
+cd gui
+./setup_dependencies.sh
+cd ..
+```
+
+Then build the GUI along with the library:
+
+```bash
+mkdir build && cd build
+cmake .. -DBUILD_GUI=ON
+cmake --build .
+```
+
+The executable will be at `build/gui/ista_gui`. See [gui/QUICKSTART.md](gui/QUICKSTART.md) for a quick start guide.
 
 ## Quick Start
 

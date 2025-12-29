@@ -1,0 +1,11 @@
+patient_id,age,diagnosis,treatment,outcome
+PT001,45,Diabetes,Metformin,Improved
+PT002,62,Hypertension,Lisinopril,Stable
+PT003,38,Asthma,Albuterol,Improved
+PT004,71,COPD,Tiotropium,Stable
+PT005,55,Diabetes,Insulin,Controlled
+PT006,49,Hypertension,Amlodipine,Improved
+PT007,33,Asthma,Montelukast,Improved
+PT008,68,COPD,Budesonide,Stable
+PT009,52,Diabetes,Metformin,Controlled
+PT010,41,Hypertension,Losartan,Improved
