@@ -1,163 +1,205 @@
-# OWL2 Interfaces in ista
+# OWL2 Interface in ista
 
-The ista package provides **two OWL2 ontology manipulation interfaces** that serve different purposes and use cases.
+The ista package provides a **native C++ OWL2 ontology manipulation library** with Python bindings for high-performance knowledge graph operations.
 
 ## Overview
 
-| Feature | owlready2 (Legacy) | ista.owl2 (New C++ Library) |
-|---------|-------------------|---------------------------|
-| **Purpose** | Database parsing & KB building | High-performance ontology manipulation |
-| **Language** | Pure Python | C++ with Python bindings |
-| **Performance** | Moderate | High (optimized C++) |
-| **Main Use Cases** | - Parse CSV/Excel/MySQL to ontologies<br>- Build knowledge graphs from databases | - Create ontologies programmatically<br>- Parse/serialize RDF/XML<br>- Subgraph extraction<br>- Graph analysis |
-| **Module** | `owlready2` (external) | `ista.owl2` (built-in) |
-| **Status** | Maintained (legacy workflows) | Active development |
+ista.owl2 is a modern C++20 library with Python bindings that provides complete OWL 2 ontology manipulation capabilities without any external dependencies.
+
+| Feature | Details |
+|---------|---------|
+| **Language** | C++ with Python bindings (pybind11) |
+| **Performance** | High (optimized C++) |
+| **Main Use Cases** | - Create/manipulate ontologies programmatically<br>- Parse/serialize RDF/XML & Functional Syntax<br>- Individual and property management<br>- Search and query operations<br>- Subgraph extraction<br>- Graph analysis |
+| **Module** | `ista.owl2` (built-in) |
+| **Dependencies** | None (fully native) |
 
 ---
 
-## 1. owlready2 (Legacy Database Parsing)
+## Core Functionality
 
-### What is it?
-[owlready2](https://pypi.org/project/Owlready2/) is an external Python library for manipulating OWL 2.0 ontologies. It was the original ontology library used by ista for building knowledge graphs from structured data sources.
+### 1. Ontology Creation and Management
 
-### When to use it?
-- **Database to Ontology**: Converting CSV files, Excel spreadsheets, or MySQL databases into OWL ontologies
-- **Legacy Projects**: Working with existing ista projects (e.g., `examples/projects/alzkb/`, `examples/projects/neurokb/`)
-- **Compatibility**: When you need features specific to owlready2's ecosystem
-
-### Core Components Using owlready2
-
-#### Database Parsers (`ista/database_parser.py`)
-```python
-from ista import FlatFileDatabaseParser, MySQLDatabaseParser
-import owlready2
-
-# Create an ontology using owlready2
-onto = owlready2.get_ontology("http://example.org/myonto")
-
-# Parse CSV/Excel files into the ontology
-parser = FlatFileDatabaseParser(
-    name="MyData",
-    destination=onto,
-    data_dir="./data"
-)
-
-# The parser populates the ontology with individuals and relationships
-parser.parse_node_type(...)
-```
-
-#### Utility Functions (`ista/util.py`)
-```python
-from ista.util import (
-    safe_add_property,           # Handle functional/non-functional properties
-    get_onto_class_by_node_type, # Dynamic class lookup
-    print_onto_stats,            # Print ontology statistics
-)
-```
-
-#### Command-Line Tool (`ista/ista.py`)
-```bash
-ista -i input.owl -o output.owl -c config/ -d data/
-```
-
-### Example Workflow
-```python
-import owlready2
-from ista import FlatFileDatabaseParser
-
-# 1. Create or load an ontology with owlready2
-onto = owlready2.get_ontology("http://example.org/biomedical")
-onto.load()
-
-# 2. Define classes
-with onto:
-    class Disease(owlready2.Thing): pass
-    class Gene(owlready2.Thing): pass
-
-# 3. Parse database into ontology
-parser = FlatFileDatabaseParser("GeneDB", onto, "./data")
-# ... parser populates ontology ...
-
-# 4. Save
-onto.save(file="output.owl", format="rdfxml")
-```
-
-### Limitations
-- **Performance**: Pure Python, slower for large ontologies
-- **Memory**: Can be memory-intensive for very large graphs
-- **Subgraph Extraction**: No built-in high-performance filtering
-
----
-
-## 2. ista.owl2 (New C++ Library)
-
-### What is it?
-`ista.owl2` is a high-performance C++ library with Python bindings (via pybind11) for OWL 2 ontology manipulation. It provides the same core functionality as owlready2 but with significantly better performance, plus advanced features like subgraph extraction.
-
-### When to use it?
-- **New Projects**: All new ontology manipulation code
-- **Performance-Critical**: Large ontologies, frequent operations
-- **Subgraph Extraction**: Filtering, neighborhood extraction, path finding
-- **Serialization**: Fast RDF/XML parsing and generation
-- **Graph Analysis**: Converting ontologies to graph formats (NetworkX, igraph)
-
-### Core Components
-
-#### Core Ontology Types
 ```python
 from ista import owl2
 
-# Create ontology
-ont = owl2.Ontology(owl2.IRI("http://example.org/biomedical"))
+# Create a new ontology
+onto = owl2.Ontology(owl2.IRI("http://example.org/biomedical"))
 
-# Create entities
+# Or with version IRI
+onto = owl2.Ontology(
+    owl2.IRI("http://example.org/biomedical"),
+    owl2.IRI("http://example.org/biomedical/v1.0")
+)
+
+# Manage prefixes
+onto.register_prefix("bio", "http://example.org/biomedical#")
+onto.register_prefix("gene", "http://example.org/genes#")
+
+# Get statistics
+print(f"Axioms: {onto.get_axiom_count()}")
+print(f"Classes: {onto.get_class_count()}")
+print(f"Individuals: {onto.get_individual_count()}")
+```
+
+### 2. Classes and Properties
+
+```python
+from ista import owl2
+
+# Create classes
 disease_cls = owl2.Class(owl2.IRI("http://example.org/Disease"))
 gene_cls = owl2.Class(owl2.IRI("http://example.org/Gene"))
-associated_with = owl2.ObjectProperty(owl2.IRI("http://example.org/associatedWith"))
+drug_cls = owl2.Class(owl2.IRI("http://example.org/Drug"))
 
-# Create individuals
-alzheimers = owl2.NamedIndividual(owl2.IRI("http://example.org/Alzheimers"))
-apoe = owl2.NamedIndividual(owl2.IRI("http://example.org/APOE"))
+# Create object properties
+targets = owl2.ObjectProperty(owl2.IRI("http://example.org/targets"))
+treats = owl2.ObjectProperty(owl2.IRI("http://example.org/treats"))
 
-# Add axioms
-ont.add_axiom(owl2.ClassAssertion(disease_cls, alzheimers))
-ont.add_axiom(owl2.ClassAssertion(gene_cls, apoe))
-ont.add_axiom(owl2.ObjectPropertyAssertion(associated_with, apoe, alzheimers))
+# Create data properties
+has_name = owl2.DataProperty(owl2.IRI("http://example.org/hasName"))
+drugbank_id = owl2.DataProperty(owl2.IRI("http://example.org/drugbankId"))
 ```
 
-#### Serialization & Parsing
+### 3. Individual Creation and Management
+
 ```python
 from ista import owl2
 
-# Serialize to RDF/XML
-rdf_xml = owl2.RDFXMLSerializer.serialize(ont)
-with open("output.owl", "w") as f:
-    f.write(rdf_xml)
+# Create individuals with automatic class assertion
+aspirin = onto.create_individual(
+    drug_cls,
+    owl2.IRI("http://example.org/aspirin")
+)
 
-# Serialize to Functional Syntax
-functional = owl2.FunctionalSyntaxSerializer.serialize(ont)
+cox1 = onto.create_individual(
+    gene_cls,
+    owl2.IRI("http://example.org/COX1")
+)
 
-# Parse from RDF/XML
-ont = owl2.RDFXMLParser.parse_from_file("input.owl")
+alzheimers = onto.create_individual(
+    disease_cls,
+    owl2.IRI("http://example.org/Alzheimers")
+)
+
+# Add additional class memberships
+onto.add_class_assertion(aspirin, owl2.Class(owl2.IRI("http://example.org/NSAID")))
 ```
 
-#### High-Performance Subgraph Extraction
+### 4. Property Assertions
+
+```python
+from ista import owl2
+
+# Data property assertions
+onto.add_data_property_assertion(
+    aspirin,
+    has_name,
+    owl2.Literal("Aspirin")
+)
+
+onto.add_data_property_assertion(
+    aspirin,
+    drugbank_id,
+    owl2.Literal("DB00945")
+)
+
+# Object property assertions
+onto.add_object_property_assertion(
+    aspirin,  # subject
+    targets,  # property
+    cox1      # object
+)
+
+onto.add_object_property_assertion(
+    aspirin,
+    treats,
+    alzheimers
+)
+```
+
+### 5. Search and Query Operations
+
+```python
+from ista import owl2
+
+# Search by data property value
+results = onto.search_by_data_property(
+    drugbank_id,
+    owl2.Literal("DB00945")
+)
+print(f"Found {len(results)} drugs with ID DB00945")
+
+# Search by object property
+drugs_targeting_cox1 = onto.search_by_object_property(targets, cox1)
+for drug in drugs_targeting_cox1:
+    print(f"Drug: {drug.get_iri().get_local_name()}")
+
+# Get all assertions for a property
+relationships = onto.get_object_property_assertions_for_property(targets)
+for subject, object in relationships:
+    print(f"{subject.get_iri().get_local_name()} -> {object.get_iri().get_local_name()}")
+
+# Get classes for an individual
+classes = onto.get_classes_for_individual(aspirin)
+for cls in classes:
+    print(f"Aspirin is a: {cls.get_iri().get_local_name()}")
+
+# Check instance membership
+if onto.is_instance_of(aspirin, drug_cls):
+    print("Aspirin is a drug")
+
+# Get all individuals of a class
+all_drugs = onto.get_individuals_of_class(drug_cls)
+print(f"Found {len(all_drugs)} drugs in ontology")
+```
+
+### 6. Property Characteristics
+
+```python
+from ista import owl2
+
+# Check if a property is functional
+if onto.is_functional_data_property(drugbank_id):
+    print("drugbank_id is functional (unique per individual)")
+
+if onto.is_functional_object_property(targets):
+    print("targets is functional")
+```
+
+### 7. Serialization and Parsing
+
+```python
+from ista import owl2
+
+# Parse from RDF/XML file
+onto = owl2.RDFXMLParser.parse_from_file("input.owl")
+
+# Serialize to RDF/XML
+serializer = owl2.RDFXMLSerializer()
+rdf_content = serializer.serialize(onto)
+
+# Save to file
+with open("output.owl", "w") as f:
+    f.write(rdf_content)
+
+# Serialize to Functional Syntax
+functional = onto.to_functional_syntax()
+print(functional)
+```
+
+### 8. High-Performance Subgraph Extraction
+
 ```python
 from ista import owl2
 
 # Create filter
-filter_obj = owl2.OntologyFilter(ont)
+filter_obj = owl2.OntologyFilter(onto)
 
 # Extract k-hop neighborhood (BFS, O(V+E))
 result = filter_obj.extract_neighborhood(
     owl2.IRI("http://example.org/Alzheimers"),
     depth=2
-)
-
-# Find shortest path between entities
-result = filter_obj.extract_path(
-    owl2.IRI("http://example.org/Disease1"),
-    owl2.IRI("http://example.org/Drug1")
 )
 
 # Filter by class membership
@@ -166,208 +208,299 @@ result = filter_obj.filter_by_classes({
     owl2.IRI("http://example.org/Gene")
 })
 
-# Random sampling
-result = filter_obj.random_sample(n=100, seed=42)
+# Extract specific individuals
+result = filter_obj.filter_by_individuals({
+    owl2.IRI("http://example.org/aspirin"),
+    owl2.IRI("http://example.org/ibuprofen")
+})
 
-# Access results
+# Access filtered results
 print(f"Original: {result.original_axiom_count} axioms")
 print(f"Filtered: {result.filtered_axiom_count} axioms")
-print(f"Individuals: {result.filtered_individual_count}")
 subgraph = result.ontology  # The filtered ontology
 ```
 
-#### Builder Pattern for Complex Filters
+### 9. Graph Analysis
+
 ```python
 from ista import owl2
 
-# Chain filter operations
-result = (owl2.OntologyFilter(ont)
-          .with_classes({owl2.IRI("http://example.org/Gene")})
-          .with_max_depth(2)
-          .execute())
-```
-
-#### Convenience Methods on Ontology
-```python
-from ista import owl2
-
-# Get all individuals of a class
-persons = ont.get_individuals_of_class(
-    owl2.Class(owl2.IRI("http://example.org/Person"))
-)
-
-# Get k-hop neighbors
-neighbors = ont.get_neighbors(
-    owl2.NamedIndividual(owl2.IRI("http://example.org/Alice")),
+# Get k-hop neighbors of an individual
+neighbors = onto.get_neighbors(
+    owl2.NamedIndividual(owl2.IRI("http://example.org/aspirin")),
     depth=2
 )
 
-# Check if path exists
-has_path = ont.has_path(
-    owl2.NamedIndividual(owl2.IRI("http://example.org/Alice")),
-    owl2.NamedIndividual(owl2.IRI("http://example.org/Bob"))
+# Check if path exists between two individuals
+has_path = onto.has_path(
+    owl2.NamedIndividual(owl2.IRI("http://example.org/aspirin")),
+    owl2.NamedIndividual(owl2.IRI("http://example.org/Alzheimers"))
 )
 ```
 
-### Complete API Reference
+---
 
-See the [module docstring](../ista/owl2.py) for the complete API, including:
+## Database Parsing Integration
 
-**Core Types**: `IRI`, `Literal`  
-**Entities**: `Entity`, `Class`, `ObjectProperty`, `DataProperty`, `NamedIndividual`  
-**Axioms**: `ClassAssertion`, `ObjectPropertyAssertion`, `DataPropertyAssertion`, `SubClassOf`, `Declaration`, etc.  
-**Ontology**: `Ontology` (main container)  
-**Serialization**: `RDFXMLSerializer`, `FunctionalSyntaxSerializer`, `RDFXMLParser`  
-**Filtering**: `OntologyFilter`, `FilterCriteria`, `FilterResult`  
+ista provides database parsers that integrate seamlessly with ista.owl2:
 
-### Performance Characteristics
+```python
+from ista import FlatFileDatabaseParser, owl2
 
-All filtering operations are implemented in optimized C++:
+# Create ontology
+onto = owl2.Ontology(owl2.IRI("http://example.org/mydata"))
+
+# Define classes and properties
+drug_cls = owl2.Class(owl2.IRI("http://example.org/Drug"))
+has_name = owl2.DataProperty(owl2.IRI("http://example.org/hasName"))
+drugbank_id = owl2.DataProperty(owl2.IRI("http://example.org/drugbankId"))
+
+# Parse CSV files into ontology
+parser = FlatFileDatabaseParser("DrugData", onto, "./data")
+
+parser.parse_node_type(
+    node_type="Drug",
+    source_filename="drugs.csv",
+    fmt="csv",
+    parse_config={
+        "iri_column_name": "drug_id",
+        "headers": True,
+        "data_property_map": {
+            "name": has_name,
+            "drugbank_id": drugbank_id,
+        },
+        "merge_column": {
+            "source_column_name": "drugbank_id",
+            "data_property": drugbank_id,
+        },
+    }
+)
+
+# Save populated ontology
+serializer = owl2.RDFXMLSerializer()
+with open("drugs.owl", "w") as f:
+    f.write(serializer.serialize(onto))
+```
+
+---
+
+## Complete API Reference
+
+### Core Types
+
+**IRI Management**
+- `IRI(iri_string)` - Create IRI from string
+- `IRI(prefix, local_name, namespace)` - Create from components
+- `.get_full_iri()`, `.get_local_name()`, `.get_namespace()`
+
+**Literals**
+- `Literal(value)` - Create literal value
+- `Literal(value, datatype_iri)` - Typed literal
+- `Literal(value, language_tag)` - Language-tagged literal
+
+### Entities
+
+- `Class(iri)` - OWL class
+- `ObjectProperty(iri)` - Object property
+- `DataProperty(iri)` - Data property
+- `AnnotationProperty(iri)` - Annotation property
+- `NamedIndividual(iri)` - Individual/instance
+- `Datatype(iri)` - Datatype
+
+### Ontology Methods
+
+**Individual Management**
+- `create_individual(cls, iri)` → Creates individual with class assertion
+- `add_class_assertion(individual, cls)` → Add class membership
+
+**Property Assertions**
+- `add_data_property_assertion(individual, property, literal)` → Add data property
+- `add_object_property_assertion(subject, property, object)` → Add object property
+
+**Search & Query**
+- `search_by_data_property(property, value)` → Find individuals by data property
+- `search_by_object_property(property, object)` → Find subjects by object property
+- `get_object_property_assertions_for_property(property)` → All assertions for property
+- `get_data_property_assertions_for_property(property)` → All data assertions
+- `get_classes_for_individual(individual)` → Classes individual belongs to
+- `is_instance_of(individual, cls)` → Check class membership
+- `get_individuals_of_class(cls)` → All instances of a class
+
+**Property Characteristics**
+- `is_functional_object_property(property)` → Check if functional
+- `is_functional_data_property(property)` → Check if functional
+
+**Graph Operations**
+- `get_neighbors(individual, depth)` → K-hop neighborhood
+- `has_path(from_individual, to_individual)` → Path existence check
+
+**Statistics**
+- `get_axiom_count()`, `get_class_count()`, `get_individual_count()`
+- `get_statistics()` → Formatted statistics string
+
+### Serialization
+
+**RDF/XML**
+- `RDFXMLParser.parse_from_file(filename)` → Load ontology
+- `RDFXMLSerializer().serialize(ontology)` → Save as RDF/XML
+
+**Functional Syntax**
+- `ontology.to_functional_syntax()` → Convert to OWL Functional Syntax
+
+### Filtering
+
+**OntologyFilter**
+- `OntologyFilter(ontology)` - Create filter
+- `.filter_by_individuals(iri_set)` → Extract specific individuals
+- `.filter_by_classes(class_iri_set)` → Filter by class membership
+- `.extract_neighborhood(individual_iri, depth)` → K-hop neighborhood
+- `.extract_path(from_iri, to_iri)` → Path between individuals
+- `.random_sample(n, seed)` → Random sample
+
+**FilterResult**
+- `.ontology` - The filtered ontology
+- `.original_axiom_count`, `.filtered_axiom_count`
+- `.original_individual_count`, `.filtered_individual_count`
+- `.included_individuals` - Set of included IRIs
+
+---
+
+## Performance Characteristics
+
+All operations are implemented in optimized C++:
 
 | Operation | Time Complexity | Space Complexity |
 |-----------|----------------|------------------|
+| `create_individual()` | O(1) | O(1) |
+| `add_*_property_assertion()` | O(1) | O(1) |
+| `search_by_*_property()` | O(A) | O(k) |
+| `get_individuals_of_class()` | O(A) | O(k) |
 | `extract_neighborhood(k)` | O(V + E) | O(V) |
 | `extract_path()` | O(V + E) | O(V) |
 | `filter_by_individuals()` | O(A) | O(V + A) |
-| `filter_by_classes()` | O(V + A) | O(V + A) |
-| `random_sample()` | O(n) | O(n) |
 
 Where:
 - V = number of individuals (vertices)
 - E = number of object property assertions (edges)
 - A = number of axioms
-- n = sample size
+- k = number of results
 
 ---
 
-## Comparison: Which Should I Use?
+## Utility Functions
 
-### Use **owlready2** when:
-- ✓ Parsing databases (CSV, Excel, MySQL) into ontologies
-- ✓ Working with existing ista projects (alzkb, neurokb, etc.)
-- ✓ You need owlready2-specific features (reasoning, SWRL rules, etc.)
-- ✓ Compatibility with existing owlready2 code is required
-
-### Use **ista.owl2** when:
-- ✓ Building new ontology manipulation code
-- ✓ Performance is critical (large ontologies, frequent operations)
-- ✓ You need subgraph extraction or filtering
-- ✓ Converting between ontologies and graph formats (NetworkX, igraph)
-- ✓ You want type safety and C++ performance
-
-### Can I use both?
-Yes! You can use both in the same project. For example:
-1. Use owlready2 database parsers to build an ontology from data
-2. Export to RDF/XML
-3. Load into ista.owl2 for high-performance filtering and analysis
-
----
-
-## Migration Path (Future Development)
-
-### Phase 1: Coexistence (Current)
-- Both libraries available
-- Use each for their strengths
-- Document best practices (this document)
-
-### Phase 2: Interoperability (Planned)
-Add converters between the two libraries:
+ista provides several utility functions that work with ista.owl2:
 
 ```python
-# Future API (not yet implemented)
-from ista.converters import owlready2_to_ista_owl2, ista_owl2_to_owlready2
+from ista.util import (
+    safe_add_property,           # Add property with duplicate checking
+    get_onto_class_by_node_type, # Find class by local name
+    safe_make_individual_name,   # Generate unique individual names
+    print_onto_stats,            # Print ontology statistics
+)
 
-# Parse database with owlready2
-owlready2_ont = owlready2.get_ontology("...")
-parser.parse_into(owlready2_ont)
+# Safe property addition (checks for duplicates)
+safe_add_property(onto, individual, property, value)
 
-# Convert to ista.owl2 for filtering
-ista_ont = owlready2_to_ista_owl2(owlready2_ont)
-result = owl2.OntologyFilter(ista_ont).extract_neighborhood(...)
+# Find class by name
+drug_class = get_onto_class_by_node_type(onto, "Drug")
 
-# Convert back if needed
-final_ont = ista_owl2_to_owlready2(result.ontology)
-```
-
-### Phase 3: Full Migration (Long-term)
-Once ista.owl2 is feature-complete:
-- Rewrite database parsers to use ista.owl2
-- Deprecate owlready2 dependency (make it optional)
-- Maintain backward compatibility via conversion utilities
-
----
-
-## Installation & Setup
-
-### Installing owlready2
-```bash
-pip install owlready2
-```
-
-### Building ista.owl2
-```bash
-# Install in development mode (builds C++ extension)
-pip install -e .
-
-# Or build manually
-mkdir build && cd build
-cmake .. -DBUILD_PYTHON_BINDINGS=ON
-cmake --build . --config Release
-```
-
-### Checking Availability
-```python
-from ista import owl2
-
-if owl2.is_available():
-    print("ista.owl2 C++ library is available!")
-else:
-    print("C++ library not built. Please run: pip install -e .")
+# Print statistics
+print_onto_stats(onto)
 ```
 
 ---
 
 ## Examples
 
-### owlready2 Examples
-- `examples/projects/alzkb/alzkb.py` - Alzheimer's knowledge base
-- `examples/projects/neurokb/neurokb.py` - Neuroscience knowledge base
+### Complete Workflow Example
 
-### ista.owl2 Examples
-- `examples/subgraph_extraction_example.py` - Biomedical subgraph extraction
-- `examples/graph_conversion_example.py` - Convert to NetworkX/igraph
-- `examples/owl2_roundtrip_example.py` - Create, serialize, parse
-- `test_subgraph.py` - Test suite for filtering features
+```python
+from ista import owl2
+
+# 1. Create ontology
+onto = owl2.Ontology(owl2.IRI("http://example.org/pharma"))
+onto.register_prefix("pharma", "http://example.org/pharma#")
+
+# 2. Define schema
+drug = owl2.Class(owl2.IRI("http://example.org/pharma#Drug"))
+gene = owl2.Class(owl2.IRI("http://example.org/pharma#Gene"))
+targets = owl2.ObjectProperty(owl2.IRI("http://example.org/pharma#targets"))
+has_name = owl2.DataProperty(owl2.IRI("http://example.org/pharma#hasName"))
+
+# 3. Create individuals
+aspirin = onto.create_individual(drug, owl2.IRI("http://example.org/pharma#aspirin"))
+cox1 = onto.create_individual(gene, owl2.IRI("http://example.org/pharma#COX1"))
+
+# 4. Add properties
+onto.add_data_property_assertion(aspirin, has_name, owl2.Literal("Aspirin"))
+onto.add_object_property_assertion(aspirin, targets, cox1)
+
+# 5. Query
+drugs = onto.get_individuals_of_class(drug)
+print(f"Total drugs: {len(drugs)}")
+
+# 6. Save
+serializer = owl2.RDFXMLSerializer()
+with open("pharma.owl", "w") as f:
+    f.write(serializer.serialize(onto))
+```
+
+### More Examples
+
+- `examples/test_new_api.py` - Comprehensive API demonstration
+- `examples/kg_projects/neurokb/neurokb.py` - Neuroscience knowledge base
+- `examples/kg_projects/alzkb/alzkb.py` - Alzheimer's knowledge base
 
 ---
 
-## FAQ
+## Installation
 
-**Q: Why have two OWL2 libraries?**  
-A: owlready2 was the original library used for database parsing. ista.owl2 is a new C++ library that provides better performance and advanced features. We maintain both during the transition period.
+The ista.owl2 library is built automatically when you install ista:
 
-**Q: Will owlready2 be removed?**  
-A: Not in the near future. It will remain for database parsing workflows until ista.owl2 provides equivalent functionality.
+```bash
+# Install in development mode (builds C++ extension)
+pip install -e .
 
-**Q: Can I convert between the two formats?**  
-A: Not directly yet, but you can serialize with one and parse with the other via RDF/XML. Direct converters are planned for Phase 2.
+# Or install from PyPI (when available)
+pip install ista
+```
 
-**Q: Which is faster?**  
-A: ista.owl2 is significantly faster due to optimized C++ implementation, especially for large ontologies and filtering operations.
+### Build Requirements
 
-**Q: Do they use the same file formats?**  
-A: Yes, both work with standard OWL2 formats (RDF/XML, Functional Syntax, etc.).
+- C++20 compatible compiler (GCC 10+, Clang 10+, MSVC 2019+)
+- CMake 3.15+
+- Python 3.7+
+- pybind11 (automatically downloaded)
+
+---
+
+## Migration from owlready2
+
+ista previously used owlready2 for OWL ontology manipulation. As of version 0.2.0, we've migrated entirely to the native ista.owl2 implementation for better performance and control.
+
+**Key differences:**
+
+| Operation | owlready2 (Old) | ista.owl2 (New) |
+|-----------|----------------|-----------------|
+| Load ontology | `owlready2.get_ontology("file://...").load()` | `owl2.RDFXMLParser.parse_from_file(...)` |
+| Create individual | `SomeClass("name")` | `onto.create_individual(cls, iri)` |
+| Add property | `individual.property = value` | `onto.add_data_property_assertion(...)` |
+| Search | `onto.search(property=value)` | `onto.search_by_data_property(property, value)` |
+| Save | `onto.save(file=f, format="rdfxml")` | `serializer.serialize(onto)` |
+
+See `docs/OWLREADY2_MIGRATION_ANALYSIS.md` for complete migration guide.
 
 ---
 
 ## Getting Help
 
-- **ista.owl2 Documentation**: See module docstrings in `ista/owl2.py`
-- **owlready2 Documentation**: https://owlready2.readthedocs.io/
-- **Issues**: https://github.com/JDRomano2/ista/issues (update with your actual repo)
-- **Examples**: See `examples/` directory
+- **API Documentation**: See Python docstrings and this guide
+- **C++ Documentation**: See `lib/README.md` and Doxygen docs
+- **Examples**: `examples/` directory
+- **Issues**: https://github.com/JDRomano2/ista/issues
 
 ---
 
-*Last Updated: 2025-01-XX*  
-*ista Version: 0.x.x*
+*Last Updated: 2025-12-30*  
+*ista Version: 0.2.0*

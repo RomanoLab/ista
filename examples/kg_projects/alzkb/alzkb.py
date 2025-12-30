@@ -1,19 +1,20 @@
-from ista import FlatFileDatabaseParser, MySQLDatabaseParser
-from ista.util import print_onto_stats
-
-import owlready2
-
 import secrets
 
 import ipdb
 
-onto = owlready2.get_ontology("file://D:\\projects\\ista\\examples\\projects\\alzkb\\alzkb.rdf").load()
+from ista import FlatFileDatabaseParser, MySQLDatabaseParser, owl2
+from ista.util import print_onto_stats
+
+# Load ontology using ista.owl2
+onto = owl2.RDFXMLParser.parse_from_file(
+    "D:\\projects\\ista\\examples\\projects\\alzkb\\alzkb.rdf"
+)
 data_dir = "D:\\data\\"
 
 mysql_config = {
-    'host': secrets.MYSQL_HOSTNAME,
-    'user': secrets.MYSQL_USERNAME,
-    'passwd': secrets.MYSQL_PASSWORD
+    "host": secrets.MYSQL_HOSTNAME,
+    "user": secrets.MYSQL_USERNAME,
+    "passwd": secrets.MYSQL_PASSWORD,
 }
 
 epa = FlatFileDatabaseParser("epa", onto, data_dir)
@@ -44,7 +45,7 @@ drugbank.parse_node_type(
         },
     },
     merge=False,
-    skip=False
+    skip=False,
 )
 
 ncbigene.parse_node_type(
@@ -52,9 +53,7 @@ ncbigene.parse_node_type(
     source_filename="Homo_sapiens.gene_info",
     fmt="tsv-pandas",
     parse_config={
-        "compound_fields": {
-            "dbXrefs": {"delimiter": "|", "field_split_prefix": ":"}
-        },
+        "compound_fields": {"dbXrefs": {"delimiter": "|", "field_split_prefix": ":"}},
         "iri_column_name": "Symbol",
         "headers": True,
         "data_property_map": {
@@ -69,7 +68,7 @@ ncbigene.parse_node_type(
         },
     },
     merge=False,
-    skip=False
+    skip=False,
 )
 
 hetionet.parse_node_type(
@@ -81,16 +80,11 @@ hetionet.parse_node_type(
         "headers": True,
         "filter_column": "kind",
         "filter_value": "Pharmacologic Class",
-        "data_transforms": {
-            "id": lambda x: x.split("::")[-1]
-        },
-        "data_property_map": {
-            "id": onto.xrefNciThesaurus,
-            "name": onto.commonName
-        }
+        "data_transforms": {"id": lambda x: x.split("::")[-1]},
+        "data_property_map": {"id": onto.xrefNciThesaurus, "name": onto.commonName},
     },
     merge=False,
-    skip=False
+    skip=False,
 )
 # hetionet.parse_node_type(
 #     node_type="ChemicalEffect",
@@ -121,16 +115,11 @@ hetionet.parse_node_type(
         "headers": True,
         "filter_column": "kind",
         "filter_value": "Symptom",
-        "data_transforms": {
-            "id": lambda x: x.split("::")[-1]
-        },
-        "data_property_map": {
-            "id": onto.xrefMeSH,
-            "name": onto.commonName
-        }
+        "data_transforms": {"id": lambda x: x.split("::")[-1]},
+        "data_property_map": {"id": onto.xrefMeSH, "name": onto.commonName},
     },
     merge=False,
-    skip=False
+    skip=False,
 )
 hetionet.parse_node_type(  # ANATOMY RESOLUTION NEEDS TO BE REFINED!
     node_type="BodyPart",
@@ -141,16 +130,11 @@ hetionet.parse_node_type(  # ANATOMY RESOLUTION NEEDS TO BE REFINED!
         "headers": True,
         "filter_column": "kind",
         "filter_value": "Anatomy",
-        "data_transforms": {
-            "id": lambda x: x.split("::")[-1]
-        },
-        "data_property_map": {
-            "id": onto.xrefUberon,
-            "name": onto.commonName
-        }
+        "data_transforms": {"id": lambda x: x.split("::")[-1]},
+        "data_property_map": {"id": onto.xrefUberon, "name": onto.commonName},
     },
     merge=False,
-    skip=False
+    skip=False,
 )
 hetionet.parse_node_type(
     node_type="BiologicalProcess",
@@ -161,16 +145,11 @@ hetionet.parse_node_type(
         "headers": True,
         "filter_column": "kind",
         "filter_value": "Biological Process",
-        "data_transforms": {
-            "id": lambda x: x.split("::")[-1]
-        },
-        "data_property_map": {
-            "id": onto.xrefGeneOntology,
-            "name": onto.commonName
-        }
+        "data_transforms": {"id": lambda x: x.split("::")[-1]},
+        "data_property_map": {"id": onto.xrefGeneOntology, "name": onto.commonName},
     },
     merge=False,
-    skip=False
+    skip=False,
 )
 hetionet.parse_node_type(
     node_type="MolecularFunction",
@@ -181,16 +160,11 @@ hetionet.parse_node_type(
         "headers": True,
         "filter_column": "kind",
         "filter_value": "Molecular Function",
-        "data_transforms": {
-            "id": lambda x: x.split("::")[-1]
-        },
-        "data_property_map": {
-            "id": onto.xrefGeneOntology,
-            "name": onto.commonName
-        }
+        "data_transforms": {"id": lambda x: x.split("::")[-1]},
+        "data_property_map": {"id": onto.xrefGeneOntology, "name": onto.commonName},
     },
     merge=False,
-    skip=False
+    skip=False,
 )
 hetionet.parse_node_type(
     node_type="CellularComponent",
@@ -201,16 +175,11 @@ hetionet.parse_node_type(
         "headers": True,
         "filter_column": "kind",
         "filter_value": "Cellular Component",
-        "data_transforms": {
-            "id": lambda x: x.split("::")[-1]
-        },
-        "data_property_map": {
-            "id": onto.xrefGeneOntology,
-            "name": onto.commonName
-        }
+        "data_transforms": {"id": lambda x: x.split("::")[-1]},
+        "data_property_map": {"id": onto.xrefGeneOntology, "name": onto.commonName},
     },
     merge=False,
-    skip=False
+    skip=False,
 )
 
 aopdb.parse_node_type(
@@ -221,11 +190,11 @@ aopdb.parse_node_type(
         "data_property_map": {"ChemicalID": onto.xrefMeSH},
         "merge_column": {
             "source_column_name": "DTX_id",
-            "data_property": onto.xrefDTXSID
-        }
+            "data_property": onto.xrefDTXSID,
+        },
     },
     merge=True,
-    skip=False
+    skip=False,
 )
 aopdb.parse_node_type(
     node_type="Pathway",
@@ -237,10 +206,10 @@ aopdb.parse_node_type(
             "path_name": onto.commonName,
             "ext_source": onto.sourceDatabase,
         },
-        "custom_sql_query": "SELECT DISTINCT path_id, path_name, ext_source FROM aopdb.pathway_gene WHERE tax_id = 9606;"
+        "custom_sql_query": "SELECT DISTINCT path_id, path_name, ext_source FROM aopdb.pathway_gene WHERE tax_id = 9606;",
     },
     merge=False,
-    skip=False
+    skip=False,
 )
 
 disgenet.parse_node_type(
@@ -253,10 +222,10 @@ disgenet.parse_node_type(
         "data_property_map": {
             "diseaseId": onto.xrefUmlsCUI,
             "name": onto.commonName,
-        }
+        },
     },
     merge=False,
-    skip=False
+    skip=False,
 )
 disgenet.parse_node_type(
     node_type="Disease",
@@ -269,14 +238,12 @@ disgenet.parse_node_type(
         "filter_value": "DO",
         "merge_column": {
             "source_column_name": "diseaseId",
-            "data_property": onto.xrefUmlsCUI
+            "data_property": onto.xrefUmlsCUI,
         },
-        "data_property_map": {
-            "code": onto.xrefDiseaseOntology
-        }
+        "data_property_map": {"code": onto.xrefDiseaseOntology},
     },
     merge=True,
-    skip=False
+    skip=False,
 )
 
 disgenet.parse_relationship_type(
@@ -292,10 +259,10 @@ disgenet.parse_relationship_type(
         "object_match_property": onto.xrefUmlsCUI,
         "filter_column": "diseaseType",
         "filter_value": "disease",
-        "headers": True
+        "headers": True,
     },
     merge=False,
-    skip=False
+    skip=False,
 )
 
 hetionet.parse_relationship_type(
@@ -314,34 +281,40 @@ hetionet.parse_relationship_type(
         "headers": True,
         "data_transforms": {
             "source": lambda x: x.split("::")[-1],
-            "target": lambda x: int(x.split("::")[-1])  # I foresee this causing problems in the future - should all IDs be cast to str?
+            "target": lambda x: int(
+                x.split("::")[-1]
+            ),  # I foresee this causing problems in the future - should all IDs be cast to str?
         },
     },
     merge=True,  # Merge with aopdb/ctd chemical-gene ixns
-    skip=False
+    skip=False,
 )
-hetionet.parse_relationship_type(
-    relationship_type=onto.chemicalDecreasesExpression,
-    source_filename="hetionet-v1.0-edges.sif",
-    fmt="tsv",
-    parse_config={
-        "subject_node_type": onto.Drug,
-        "subject_column_name": "source",
-        "subject_match_property": onto.xrefDrugbank,
-        "object_node_type": onto.Gene,
-        "object_column_name": "target",
-        "object_match_property": onto.xrefNcbiGene,
-        "filter_column": "metaedge",
-        "filter_value": "CdG",
-        "headers": True,
-        "data_transforms": {
-            "source": lambda x: x.split("::")[-1],
-            "target": lambda x: int(x.split("::")[-1])  # I foresee this causing problems in the future - should all IDs be cast to str?
+(
+    hetionet.parse_relationship_type(
+        relationship_type=onto.chemicalDecreasesExpression,
+        source_filename="hetionet-v1.0-edges.sif",
+        fmt="tsv",
+        parse_config={
+            "subject_node_type": onto.Drug,
+            "subject_column_name": "source",
+            "subject_match_property": onto.xrefDrugbank,
+            "object_node_type": onto.Gene,
+            "object_column_name": "target",
+            "object_match_property": onto.xrefNcbiGene,
+            "filter_column": "metaedge",
+            "filter_value": "CdG",
+            "headers": True,
+            "data_transforms": {
+                "source": lambda x: x.split("::")[-1],
+                "target": lambda x: int(
+                    x.split("::")[-1]
+                ),  # I foresee this causing problems in the future - should all IDs be cast to str?
+            },
         },
-    },
-    merge=True,
-    skip=False
-),
+        merge=True,
+        skip=False,
+    ),
+)
 hetionet.parse_relationship_type(
     relationship_type=onto.chemicalBindsGene,
     source_filename="hetionet-v1.0-edges.sif",
@@ -358,11 +331,13 @@ hetionet.parse_relationship_type(
         "headers": True,
         "data_transforms": {
             "source": lambda x: x.split("::")[-1],
-            "target": lambda x: int(x.split("::")[-1])  # I foresee this causing problems in the future - should all IDs be cast to str?
+            "target": lambda x: int(
+                x.split("::")[-1]
+            ),  # I foresee this causing problems in the future - should all IDs be cast to str?
         },
     },
     merge=False,
-    skip=False
+    skip=False,
 )
 hetionet.parse_relationship_type(
     relationship_type=onto.geneInteractsWithGene,
@@ -380,11 +355,13 @@ hetionet.parse_relationship_type(
         "headers": True,
         "data_transforms": {
             "source": lambda x: int(x.split("::")[-1]),
-            "target": lambda x: int(x.split("::")[-1])  # I foresee this causing problems in the future - should all IDs be cast to str?
+            "target": lambda x: int(
+                x.split("::")[-1]
+            ),  # I foresee this causing problems in the future - should all IDs be cast to str?
         },
     },
     merge=False,
-    skip=False
+    skip=False,
 )
 hetionet.parse_relationship_type(
     relationship_type=onto.geneCovariesWithGene,
@@ -402,11 +379,13 @@ hetionet.parse_relationship_type(
         "headers": True,
         "data_transforms": {
             "source": lambda x: int(x.split("::")[-1]),
-            "target": lambda x: int(x.split("::")[-1])  # I foresee this causing problems in the future - should all IDs be cast to str?
+            "target": lambda x: int(
+                x.split("::")[-1]
+            ),  # I foresee this causing problems in the future - should all IDs be cast to str?
         },
     },
     merge=False,
-    skip=False
+    skip=False,
 )
 hetionet.parse_relationship_type(
     relationship_type=onto.geneRegulatesGene,
@@ -424,11 +403,13 @@ hetionet.parse_relationship_type(
         "headers": True,
         "data_transforms": {
             "source": lambda x: int(x.split("::")[-1]),
-            "target": lambda x: int(x.split("::")[-1])  # I foresee this causing problems in the future - should all IDs be cast to str?
+            "target": lambda x: int(
+                x.split("::")[-1]
+            ),  # I foresee this causing problems in the future - should all IDs be cast to str?
         },
     },
     merge=False,
-    skip=False
+    skip=False,
 )
 hetionet.parse_relationship_type(
     relationship_type=onto.drugInClass,
@@ -446,11 +427,13 @@ hetionet.parse_relationship_type(
         "headers": True,
         "data_transforms": {
             "source": lambda x: x.split("::")[-1],
-            "target": lambda x: x.split("::")[-1]  # I foresee this causing problems in the future - should all IDs be cast to str?
+            "target": lambda x: x.split("::")[
+                -1
+            ],  # I foresee this causing problems in the future - should all IDs be cast to str?
         },
     },
     merge=False,
-    skip=False
+    skip=False,
 )
 hetionet.parse_relationship_type(
     relationship_type=onto.drugCausesEffect,
@@ -468,11 +451,11 @@ hetionet.parse_relationship_type(
         "headers": True,
         "data_transforms": {
             "source": lambda x: x.split("::")[-1],
-            "target": lambda x: x.split("::")[-1]
+            "target": lambda x: x.split("::")[-1],
         },
     },
     merge=False,
-    skip=False
+    skip=False,
 )
 hetionet.parse_relationship_type(
     relationship_type=onto.symptomManifestationOfDisease,
@@ -480,7 +463,7 @@ hetionet.parse_relationship_type(
     fmt="tsv",
     parse_config={
         "subject_node_type": onto.Symptom,
-        "subject_column_name": "target", # Flip target and source
+        "subject_column_name": "target",  # Flip target and source
         "subject_match_property": onto.xrefMeSH,
         "object_node_type": onto.Disease,
         "object_column_name": "source",
@@ -489,12 +472,14 @@ hetionet.parse_relationship_type(
         "filter_value": "DpS",
         "headers": True,
         "data_transforms": {
-            "source": lambda x: x.split("DOID:")[-1], # Note: Because hetionet prefixes DOIDs with 'DOID:'
-            "target": lambda x: x.split("::")[-1]
+            "source": lambda x: x.split("DOID:")[
+                -1
+            ],  # Note: Because hetionet prefixes DOIDs with 'DOID:'
+            "target": lambda x: x.split("::")[-1],
         },
     },
     merge=False,
-    skip=False
+    skip=False,
 )
 hetionet.parse_relationship_type(
     relationship_type=onto.drugTreatsDisease,
@@ -512,11 +497,13 @@ hetionet.parse_relationship_type(
         "headers": True,
         "data_transforms": {
             "source": lambda x: x.split("::")[-1],
-            "target": lambda x: x.split(":")[-1] # Note: Because hetionet prefixes DOIDs with 'DOID:'
+            "target": lambda x: x.split(":")[
+                -1
+            ],  # Note: Because hetionet prefixes DOIDs with 'DOID:'
         },
     },
     merge=False,
-    skip=False
+    skip=False,
 )
 hetionet.parse_relationship_type(  # Hetionet makes a messy distinction between 'treats' and 'palliates' which we ignore
     relationship_type=onto.drugTreatsDisease,
@@ -534,11 +521,13 @@ hetionet.parse_relationship_type(  # Hetionet makes a messy distinction between 
         "headers": True,
         "data_transforms": {
             "source": lambda x: x.split("::")[-1],
-            "target": lambda x: x.split(":")[-1] # Note: Because hetionet prefixes DOIDs with 'DOID:'
+            "target": lambda x: x.split(":")[
+                -1
+            ],  # Note: Because hetionet prefixes DOIDs with 'DOID:'
         },
     },
     merge=False,
-    skip=False
+    skip=False,
 )
 hetionet.parse_relationship_type(
     relationship_type=onto.diseaseLocalizesToAnatomy,
@@ -555,12 +544,14 @@ hetionet.parse_relationship_type(
         "filter_value": "DlA",
         "headers": True,
         "data_transforms": {
-            "source": lambda x: x.split(":")[-1], # Note: Because hetionet prefixes DOIDs with 'DOID:'
-            "target": lambda x: x.split("::")[-1]
+            "source": lambda x: x.split(":")[
+                -1
+            ],  # Note: Because hetionet prefixes DOIDs with 'DOID:'
+            "target": lambda x: x.split("::")[-1],
         },
     },
     merge=False,
-    skip=False
+    skip=False,
 )
 hetionet.parse_relationship_type(
     relationship_type=onto.diseaseAssociatesWithDisease,
@@ -577,12 +568,16 @@ hetionet.parse_relationship_type(
         "filter_value": "DrD",
         "headers": True,
         "data_transforms": {
-            "source": lambda x: x.split(":")[-1], # Note: Because hetionet prefixes DOIDs with 'DOID:'
-            "target": lambda x: x.split(":")[-1] # Note: Because hetionet prefixes DOIDs with 'DOID:'
+            "source": lambda x: x.split(":")[
+                -1
+            ],  # Note: Because hetionet prefixes DOIDs with 'DOID:'
+            "target": lambda x: x.split(":")[
+                -1
+            ],  # Note: Because hetionet prefixes DOIDs with 'DOID:'
         },
     },
     merge=False,
-    skip=False
+    skip=False,
 )
 hetionet.parse_relationship_type(
     relationship_type=onto.geneParticipatesInBiologicalProcess,
@@ -599,12 +594,16 @@ hetionet.parse_relationship_type(
         "filter_value": "GpBP",
         "headers": True,
         "data_transforms": {
-            "source": lambda x: int(x.split("::")[-1]), # Note: Because hetionet prefixes DOIDs with 'DOID:'
-            "target": lambda x: x.split("::")[-1] # Note: Because hetionet prefixes DOIDs with 'DOID:'
+            "source": lambda x: int(
+                x.split("::")[-1]
+            ),  # Note: Because hetionet prefixes DOIDs with 'DOID:'
+            "target": lambda x: x.split("::")[
+                -1
+            ],  # Note: Because hetionet prefixes DOIDs with 'DOID:'
         },
     },
     merge=False,
-    skip=False
+    skip=False,
 )
 hetionet.parse_relationship_type(
     relationship_type=onto.geneAssociatedWithCellularComponent,
@@ -621,12 +620,16 @@ hetionet.parse_relationship_type(
         "filter_value": "GpCC",
         "headers": True,
         "data_transforms": {
-            "source": lambda x: int(x.split("::")[-1]), # Note: Because hetionet prefixes DOIDs with 'DOID:'
-            "target": lambda x: x.split("::")[-1] # Note: Because hetionet prefixes DOIDs with 'DOID:'
+            "source": lambda x: int(
+                x.split("::")[-1]
+            ),  # Note: Because hetionet prefixes DOIDs with 'DOID:'
+            "target": lambda x: x.split("::")[
+                -1
+            ],  # Note: Because hetionet prefixes DOIDs with 'DOID:'
         },
     },
     merge=False,
-    skip=False
+    skip=False,
 )
 hetionet.parse_relationship_type(
     relationship_type=onto.geneHasMolecularFunction,
@@ -643,18 +646,22 @@ hetionet.parse_relationship_type(
         "filter_value": "GpMF",
         "headers": True,
         "data_transforms": {
-            "source": lambda x: int(x.split("::")[-1]), # Note: Because hetionet prefixes DOIDs with 'DOID:'
-            "target": lambda x: x.split("::")[-1] # Note: Because hetionet prefixes DOIDs with 'DOID:'
+            "source": lambda x: int(
+                x.split("::")[-1]
+            ),  # Note: Because hetionet prefixes DOIDs with 'DOID:'
+            "target": lambda x: x.split("::")[
+                -1
+            ],  # Note: Because hetionet prefixes DOIDs with 'DOID:'
         },
     },
     merge=False,
-    skip=False
+    skip=False,
 )
 
 aopdb.parse_relationship_type(
     relationship_type=onto.geneInPathway,
     inverse_relationship_type=onto.PathwayContainsGene,
-    parse_config = {
+    parse_config={
         "subject_node_type": onto.Gene,
         "subject_column_name": "entrez",
         "subject_match_property": onto.xrefNcbiGene,
@@ -666,7 +673,7 @@ aopdb.parse_relationship_type(
         "source_table": "pathway_gene",
     },
     merge=False,
-    skip=False
+    skip=False,
 )
 hetionet.parse_relationship_type(
     relationship_type=onto.bodyPartOverexpressesGene,
@@ -684,11 +691,11 @@ hetionet.parse_relationship_type(
         "headers": True,
         "data_transforms": {
             "source": lambda x: x.split("::")[-1],
-            "target": lambda x: int(x.split("::")[-1])
+            "target": lambda x: int(x.split("::")[-1]),
         },
     },
     merge=False,
-    skip=False
+    skip=False,
 )
 hetionet.parse_relationship_type(
     relationship_type=onto.bodyPartUnderexpressesGene,
@@ -706,11 +713,11 @@ hetionet.parse_relationship_type(
         "headers": True,
         "data_transforms": {
             "source": lambda x: x.split("::")[-1],
-            "target": lambda x: int(x.split("::")[-1])
+            "target": lambda x: int(x.split("::")[-1]),
         },
     },
     merge=False,
-    skip=False
+    skip=False,
 )
 
 # POSSIBLE ISSUE: Normalize Drug > Chemical or vice versa? Gonna have to look for 'gaps'
@@ -718,5 +725,9 @@ hetionet.parse_relationship_type(
 
 print_onto_stats(onto)
 
-with open("./alzkb-populated.rdf", 'wb') as fp:
-    onto.save(file=fp, format="rdfxml")
+# Save using ista.owl2 serializer
+serializer = owl2.RDFXMLSerializer()
+rdf_content = serializer.serialize(onto)
+
+with open("./alzkb-populated.rdf", "w") as fp:
+    fp.write(rdf_content)

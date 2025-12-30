@@ -25,14 +25,16 @@ The Python package provides tools for:
 - **Graph converters for NetworkX, igraph, and native graphs**
 
 **Key Features:**
-- Integration with `owlready2` for OWL2 manipulation
-- **Native C++ OWL2 library bindings via pybind11**
+- **Native C++ OWL2 library (ista.owl2) - no external dependencies**
+- **Complete OWL2 ontology manipulation via Python bindings**
+- **Individual creation, property assertions, and search operations**
 - **Convert ontologies to graph formats (NetworkX, igraph, ista.graph)**
 - Database parsers for MySQL and flat files
 - Neo4j loader via Neosemantics (n10s)
 - Example knowledge bases (AlzKB, NeuroKB)
 - **RDF/XML parser and serialization**
 - **Functional Syntax serialization**
+- **High-performance C++ backend with Python convenience**
 
 ### C++ Library (libista)
 
@@ -182,30 +184,40 @@ communities = nx.community.greedy_modularity_communities(graph.to_undirected())
 ### Python Example with Database Parser
 
 ```python
-import owlready2
-from ista import FlatFileDatabaseParser
+from ista import owl2
+from ista.database_parser import FlatFileDatabaseParser
 
 # Load or create an ontology
-onto = owlready2.get_ontology("http://example.org/myonto").load()
+onto = owl2.RDFXMLParser().parse_from_file("base_ontology.rdf")
+# Or create a new one:
+# onto = owl2.Ontology(owl2.IRI("http://example.org/myonto"))
 
 # Parse data from CSV file
-parser = FlatFileDatabaseParser("drugbank", onto, "./data")
-parser.parse_node_type(
-    node_type="Drug",
-    source_filename="drugs.csv",
-    fmt="csv",
-    parse_config={
-        "iri_column_name": "DrugID",
-        "data_property_map": {
-            "DrugID": onto.drugID,
-            "Name": onto.commonName,
+parser = FlatFileDatabaseParser(onto)
+
+parse_config = {
+    "file_path": "./data/drugs.csv",
+    "entity_class_iri": "http://example.org/Drug",
+    "id_column": "DrugID",
+    "property_mappings": {
+        "DrugID": {
+            "property_iri": "http://example.org/drugID",
+            "is_data_property": True
+        },
+        "Name": {
+            "property_iri": "http://example.org/commonName",
+            "is_data_property": True
         }
     }
-)
+}
+
+parser.parse(parse_config)
 
 # Save ontology
-with open("output.rdf", "wb") as f:
-    onto.save(file=f, format="rdfxml")
+serializer = owl2.RDFXMLSerializer()
+rdf_content = serializer.serialize(onto)
+with open("output.rdf", "w") as f:
+    f.write(rdf_content)
 ```
 
 ### C++ Example

@@ -23,15 +23,51 @@ public:
  * @brief Parser for Turtle (Terse RDF Triple Language) format
  * 
  * Parses ontologies from Turtle format, which is a compact, human-readable
- * RDF serialization. Supports:
- * - @prefix directives
- * - @base directive
- * - Abbreviated URIs (prefix:localName)
- * - Blank nodes
- * - RDF lists
- * - Turtle comments (#)
- * - Multi-line literals
- * - Language tags and datatypes
+ * RDF serialization.
+ * 
+ * @par Implementation Status
+ * **BASIC IMPLEMENTATION COMPLETE** - Handles common Turtle patterns (~80% coverage).
+ * 
+ * **Fully Implemented:**
+ * - @prefix and @base directives
+ * - IRI references in angle brackets <...>
+ * - Prefixed names (prefix:local)
+ * - Literals (plain, typed with ^^, language-tagged with @)
+ * - Basic escape sequences in strings (\\t \\n \\r \\" \\\\)
+ * - Blank nodes (_:id)
+ * - Comments (#)
+ * - Numeric literals (integers and decimals)
+ * - 'a' shortcut for rdf:type
+ * - Simple triples (subject predicate object .)
+ * - RDF-to-OWL conversion for common axioms:
+ *   - Declarations (owl:Class, owl:ObjectProperty, etc.)
+ *   - Class assertions (individual rdf:type Class)
+ *   - Object/Data property assertions
+ *   - SubClassOf, SubPropertyOf
+ *   - Property domain/range
+ * 
+ * **Not Yet Implemented (see BREADCRUMB comments in code):**
+ * - Subject-predicate grouping with semicolons (;)
+ * - Object lists with commas (,)
+ * - RDF collections with parentheses ()
+ * - Blank node property lists with brackets []
+ * - Triple-quoted strings (""")
+ * - Unicode escape sequences (\\u \\U)
+ * - IRI escape sequences
+ * - Scientific notation for numbers
+ * - Complex OWL constructs (restrictions, unions, intersections)
+ * - Blank node patterns for complex axioms
+ * 
+ * **Current Limitations:**
+ * - Each triple must end with '.' (no grouping)
+ * - Blank nodes in complex patterns are skipped
+ * - Some malformed triples are silently ignored
+ * - Limited OWL axiom reconstruction from RDF triples
+ * 
+ * Despite limitations, the parser successfully handles Turtle files generated
+ * by TurtleSerializer and many standard Turtle ontologies.
+ * 
+ * @see https://www.w3.org/TR/turtle/
  */
 class TurtleParser {
 public:

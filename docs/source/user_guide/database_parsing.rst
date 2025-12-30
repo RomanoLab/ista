@@ -1,623 +1,692 @@
 Database Parsing
 ================
 
-The ista database parser enables conversion of structured databases (Excel, CSV, JSON) into
-OWL2 ontologies. This facilitates integration of existing knowledge bases and data sources
-into formal ontologies.
+The ista database parsers enable conversion of structured databases (CSV, TSV, Excel, MySQL) into
+OWL2 ontologies using the native ista.owl2 library. This facilitates integration of existing knowledge
+bases and data sources into formal ontologies.
 
 Overview
 --------
 
 The database parser provides:
 
-- **Automatic Entity Extraction**: Identify entities from database columns
-- **Relationship Mapping**: Map database relationships to OWL2 properties
-- **Flexible Configuration**: Customize parsing rules and mappings
-- **Data Type Handling**: Properly handle different data types
-- **Batch Processing**: Efficiently process large databases
+- **Automatic Individual Extraction**: Create OWL individuals from database rows
+- **Property Mapping**: Map database columns to OWL2 data and object properties
+- **Flexible Configuration**: Customize parsing rules via parse_config dictionaries
+- **Merge Operations**: Merge new data with existing individuals
+- **Relationship Parsing**: Extract relationships from separate tables/files
+- **Data Transformations**: Apply transformations to values during parsing
 
 Supported Formats
 -----------------
 
-- Excel files (.xlsx, .xls)
-- CSV files (.csv)
-- TSV files (.tsv)
-- JSON files (.json)
-- Pandas DataFrames (in-memory)
+- **Flat Files**: CSV, TSV, Excel (.xlsx)
+- **Databases**: MySQL databases
+- **Pandas DataFrames**: In-memory pandas support (via TSV adapter)
 
-DatabaseParser Class
---------------------
+Parser Classes
+--------------
 
-Basic Usage
-~~~~~~~~~~~
+FlatFileDatabaseParser
+~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: python
-
-    from ista.database_parser import DatabaseParser
-    from ista import owl2
-
-    # Load database
-    parser = DatabaseParser("disease_database.xlsx")
-
-    # Configure entity extraction
-    parser.set_entity_column("Disease Name")
-
-    # Generate ontology
-    ont = parser.to_ontology()
-
-    # Save result
-    serializer = owl2.FunctionalSyntaxSerializer()
-    serializer.serialize(ont, "diseases.ofn")
-
-Configuration
-~~~~~~~~~~~~~
+Parses flat files (CSV, TSV, Excel) into ontologies.
 
 .. code-block:: python
 
-    # Set base IRI
-    parser.set_base_iri("http://example.org/diseases#")
+    from ista import FlatFileDatabaseParser, owl2
 
-    # Set entity column (primary entities)
-    parser.set_entity_column("Disease Name")
+    # Load base ontology
+    onto = owl2.RDFXMLParser.parse_from_file("my_ontology.owl")
 
-    # Set entity type
-    parser.set_entity_type(owl2.EntityType.CLASS)
+    # Create parser for a database directory
+    parser = FlatFileDatabaseParser(
+        name="DrugDB",        # Database name
+        destination=onto,     # Target ontology
+        data_dir="./data"     # Directory containing database files
+    )
 
-    # Set property mappings
-    parser.set_property_mappings({
-        "Symptoms": "hasSymptom",
-        "Treatments": "hasTreatment",
-        "Genes": "associatedWithGene",
-        "Prevalence": "hasPrevalence"
-    })
+MySQLDatabaseParser
+~~~~~~~~~~~~~~~~~~~
 
-Entity Extraction
------------------
+Parses MySQL database tables into ontologies.
 
-Single Entity Column
+.. code-block:: python
+
+    from ista import MySQLDatabaseParser, owl2
+
+    # MySQL configuration
+    mysql_config = {
+        'host': 'localhost',
+        'user': 'myuser',
+        'passwd': 'mypassword',
+        'socket': '/path/to/mysql.sock'  # Optional
+    }
+
+    # Load base ontology
+    onto = owl2.RDFXMLParser.parse_from_file("my_ontology.owl")
+
+    # Create parser
+    parser = MySQLDatabaseParser(
+        name="BioDB",         # MySQL database name
+        destination=onto,     # Target ontology
+        config_dict=mysql_config
+    )
+
+Parsing Nodes (Individuals)
+----------------------------
+
+Basic Node Parsing
+~~~~~~~~~~~~~~~~~~
+
+Parse database rows into OWL individuals:
+
+.. code-block:: python
+
+    from ista import FlatFileDatabaseParser, owl2
+
+    onto = owl2.Ontology(owl2.IRI("http://example.org/drugs"))
+
+    # Create classes and properties first
+    drug_class = owl2.Class(owl2.IRI("http://example.org/Drug"))
+    has_name = owl2.DataProperty(owl2.IRI("http://example.org/hasName"))
+    drugbank_id = owl2.DataProperty(owl2.IRI("http://example.org/drugbankId"))
+
+    parser = FlatFileDatabaseParser("DrugDB", onto, "./data")
+
+    parser.parse_node_type(
+        node_type="Drug",                    # Class name in ontology
+        source_filename="drugs.csv",         # Source file
+        fmt="csv",                           # Format: csv, tsv, xlsx
+        parse_config={
+            "iri_column_name": "drug_id",    # Column for IRI generation
+            "headers": True,                 # File has headers
+            "data_property_map": {
+                "name": has_name,            # Map columns to properties
+                "drugbank_id": drugbank_id,
+            },
+            "merge_column": {                 # Merge strategy
+                "source_column_name": "drugbank_id",
+                "data_property": drugbank_id,
+            },
+        },
+        merge=True,      # Merge with existing individuals
+        skip=False       # Set True to skip this parsing step
+    )
+
+Configuration Options
+~~~~~~~~~~~~~~~~~~~~~
+
+**Required parse_config keys:**
+
+- ``iri_column_name``: Column used to generate individual IRIs
+- ``headers``: Whether the file has column headers (True/False or list of header names)
+
+**Optional parse_config keys:**
+
+- ``data_property_map``: Dictionary mapping column names to DataProperty objects
+- ``merge_column``: Dictionary specifying how to merge with existing individuals
+
+  - ``source_column_name``: Column to check for existing individuals
+  - ``data_property``: DataProperty to search on
+
+- ``filter_column``: Column to filter rows
+- ``filter_value``: Value that filter_column must contain
+- ``skip_n_lines``: Number of lines to skip after headers
+- ``compound_fields``: Dictionary for parsing delimited multi-value fields
+- ``data_transforms``: Dictionary of lambda functions to transform values
+- ``custom_sql_query``: Custom SQL query (MySQL only)
+
+File Formats
+~~~~~~~~~~~~
+
+**CSV Files:**
+
+.. code-block:: python
+
+    parser.parse_node_type(
+        node_type="Gene",
+        source_filename="genes.csv",
+        fmt="csv",
+        parse_config={
+            "iri_column_name": "gene_symbol",
+            "headers": True,
+            "data_property_map": {
+                "gene_symbol": onto.geneSymbol,
+                "description": onto.hasDescription,
+            }
+        }
+    )
+
+**TSV Files:**
+
+.. code-block:: python
+
+    parser.parse_node_type(
+        node_type="Disease",
+        source_filename="diseases.tsv",
+        fmt="tsv",
+        parse_config={
+            "iri_column_name": "disease_id",
+            "headers": True,
+            "data_property_map": {
+                "disease_name": onto.commonName,
+                "umls_cui": onto.xrefUmlsCUI,
+            }
+        }
+    )
+
+**Excel Files:**
+
+.. code-block:: python
+
+    parser.parse_node_type(
+        node_type="Drug",
+        source_filename="drugs.xlsx",
+        fmt="xlsx",
+        parse_config={
+            "iri_column_name": "DrugID",
+            "headers": True,
+            "data_property_map": {
+                "DrugName": onto.commonName,
+                "SMILES": onto.hasSMILES,
+            }
+        }
+    )
+
+**Pandas DataFrames:**
+
+.. code-block:: python
+
+    # Use tsv-pandas format for in-memory DataFrames
+    parser.parse_node_type(
+        node_type="Protein",
+        source_filename="proteins.tsv",  # Pandas-compatible
+        fmt="tsv-pandas",
+        parse_config={
+            "iri_column_name": "uniprot_id",
+            "headers": True,
+            "data_property_map": {
+                "protein_name": onto.proteinName,
+                "mass": onto.molecularMass,
+            }
+        }
+    )
+
+Merging vs Creating New
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+**merge=False**: Always create new individuals
+
+.. code-block:: python
+
+    parser.parse_node_type(
+        node_type="Sample",
+        source_filename="samples.csv",
+        fmt="csv",
+        parse_config={
+            "iri_column_name": "sample_id",
+            "headers": True,
+            "data_property_map": {
+                "sample_id": onto.sampleId,
+                "date": onto.collectionDate,
+            }
+        },
+        merge=False  # Always create new individuals
+    )
+
+**merge=True**: Merge with existing individuals based on merge_column
+
+.. code-block:: python
+
+    parser.parse_node_type(
+        node_type="Drug",
+        source_filename="additional_drug_info.csv",
+        fmt="csv",
+        parse_config={
+            "iri_column_name": "drug_name",
+            "headers": True,
+            "data_property_map": {
+                "fda_approved": onto.fdaApproved,
+                "year_approved": onto.yearApproved,
+            },
+            "merge_column": {
+                "source_column_name": "drugbank_id",
+                "data_property": onto.drugbankId,
+            }
+        },
+        merge=True  # Merge with existing drugs
+    )
+
+Data Transformations
 ~~~~~~~~~~~~~~~~~~~~
 
-Extract entities from one primary column:
+Apply transformations to column values:
 
 .. code-block:: python
 
-    # Disease database example
-    parser = DatabaseParser("diseases.xlsx")
-    parser.set_entity_column("Disease Name")
-    parser.set_base_iri("http://example.org/bio#")
-
-    # Each row becomes a class
-    # "Alzheimer's Disease" -> bio:AlzheimersDisease
-    ont = parser.to_ontology()
-
-Multiple Entity Columns
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-Extract different entity types from different columns:
-
-.. code-block:: python
-
-    parser = DatabaseParser("interactions.csv")
-
-    # Proteins as named individuals
-    parser.add_entity_column(
-        column_name="Protein A",
-        entity_type=owl2.EntityType.NAMED_INDIVIDUAL,
-        iri_prefix="protein"
+    parser.parse_node_type(
+        node_type="Gene",
+        source_filename="genes.tsv",
+        fmt="tsv",
+        parse_config={
+            "iri_column_name": "gene_id",
+            "headers": True,
+            "data_transforms": {
+                # Extract numeric ID from formatted string
+                "gene_id": lambda x: int(x.split("::")[-1]),
+                # Convert to uppercase
+                "gene_symbol": lambda x: x.upper(),
+            },
+            "data_property_map": {
+                "gene_id": onto.geneId,
+                "gene_symbol": onto.geneSymbol,
+            }
+        }
     )
 
-    # Also extract Protein B
-    parser.add_entity_column(
-        column_name="Protein B",
-        entity_type=owl2.EntityType.NAMED_INDIVIDUAL,
-        iri_prefix="protein"
+Compound Fields
+~~~~~~~~~~~~~~~
+
+Parse multi-value fields with delimiters:
+
+.. code-block:: python
+
+    parser.parse_node_type(
+        node_type="Gene",
+        source_filename="gene_xrefs.tsv",
+        fmt="tsv",
+        parse_config={
+            "iri_column_name": "Symbol",
+            "headers": True,
+            "compound_fields": {
+                "dbXrefs": {
+                    "delimiter": "|",          # Split on pipe
+                    "field_split_prefix": ":"  # Further split on colon
+                }
+            },
+            "data_property_map": {
+                "Ensembl": onto.xrefEnsembl,
+                "HGNC": onto.xrefHGNC,
+            }
+        }
     )
-
-    # Interaction types as classes
-    parser.add_entity_column(
-        column_name="Interaction Type",
-        entity_type=owl2.EntityType.CLASS,
-        iri_prefix="interaction"
-    )
-
-    ont = parser.to_ontology()
-
-IRI Generation
-~~~~~~~~~~~~~~
-
-Control how IRIs are generated from values:
-
-.. code-block:: python
-
-    # Default: CamelCase conversion
-    # "Alzheimer's Disease" -> "AlzheimersDisease"
-    parser.set_iri_style("camelcase")
-
-    # Snake case
-    # "Alzheimer's Disease" -> "alzheimers_disease"
-    parser.set_iri_style("snakecase")
-
-    # Kebab case
-    # "Alzheimer's Disease" -> "alzheimers-disease"
-    parser.set_iri_style("kebabcase")
-
-    # Custom function
-    def custom_iri_generator(value):
-        # Custom IRI generation logic
-        return value.upper().replace(" ", "_")
-
-    parser.set_iri_generator(custom_iri_generator)
-
-Property Mapping
-----------------
-
-Simple Property Mapping
-~~~~~~~~~~~~~~~~~~~~~~~
-
-Map columns to object properties:
-
-.. code-block:: python
-
-    parser.set_property_mappings({
-        "Symptoms": "hasSymptom",
-        "Treatments": "hasTreatment",
-        "Risk Factors": "hasRiskFactor"
-    })
-
-    # Creates axioms like:
-    # AlzheimersDisease hasSymptom MemoryLoss
-    # AlzheimersDisease hasTreatment Donepezil
-
-Data Property Mapping
-~~~~~~~~~~~~~~~~~~~~~~
-
-Map columns to data properties with literal values:
-
-.. code-block:: python
-
-    parser.set_data_property_mappings({
-        "Prevalence": ("hasPrevalence", "xsd:float"),
-        "Age of Onset": ("hasAgeOfOnset", "xsd:integer"),
-        "Description": ("hasDescription", "xsd:string"),
-        "IsCurable": ("isCurable", "xsd:boolean")
-    })
-
-    # Creates axioms like:
-    # AlzheimersDisease hasPrevalence "0.05"^^xsd:float
-    # AlzheimersDisease hasAgeOfOnset "65"^^xsd:integer
-
-Multi-Valued Properties
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-Handle cells with multiple values:
-
-.. code-block:: python
-
-    # Configure delimiter
-    parser.set_value_delimiter(";")
 
     # Example data:
-    # Disease Name | Symptoms
-    # Alzheimer's  | Memory Loss; Confusion; Disorientation
+    # Symbol | dbXrefs
+    # BRCA1  | Ensembl:ENSG00000012048|HGNC:1100
+    #
+    # Creates properties:
+    # BRCA1 xrefEnsembl "ENSG00000012048"
+    # BRCA1 xrefHGNC "1100"
 
-    # Creates multiple axioms:
-    # Alzheimers hasSymptom MemoryLoss
-    # Alzheimers hasSymptom Confusion
-    # Alzheimers hasSymptom Disorientation
+Filtering Rows
+~~~~~~~~~~~~~~
 
-Complex Mappings
-~~~~~~~~~~~~~~~~
-
-Define complex relationship mappings:
+Filter which rows to process:
 
 .. code-block:: python
 
-    # Bidirectional relationships
-    parser.add_bidirectional_mapping(
-        column="Related Diseases",
-        forward_property="relatedTo",
-        inverse_property="relatedTo"  # Symmetric
-    )
-
-    # Typed relationships
-    parser.add_typed_relationship(
-        subject_column="Gene",
-        object_column="Disease",
-        relationship_column="Association Type",
-        property_mapping={
-            "Causal": "causes",
-            "Risk Factor": "increasesRiskOf",
-            "Protective": "protectsAgainst"
+    parser.parse_node_type(
+        node_type="Disease",
+        source_filename="diseases.tsv",
+        fmt="tsv",
+        parse_config={
+            "iri_column_name": "disease_id",
+            "headers": True,
+            "filter_column": "disease_type",
+            "filter_value": "genetic",  # Only process genetic diseases
+            "data_property_map": {
+                "disease_name": onto.commonName,
+            }
         }
     )
 
-Hierarchical Structures
------------------------
+Parsing Relationships
+---------------------
 
-Parent-Child Relationships
+Basic Relationship Parsing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Parse relationships from a separate file/table:
+
+.. code-block:: python
+
+    parser.parse_relationship_type(
+        relationship_type=onto.geneAssociatesWithDisease,
+        source_filename="gene_disease_associations.tsv",
+        fmt="tsv",
+        parse_config={
+            "subject_node_type": onto.Gene,
+            "subject_column_name": "gene_symbol",
+            "subject_match_property": onto.geneSymbol,
+            "object_node_type": onto.Disease,
+            "object_column_name": "disease_id",
+            "object_match_property": onto.diseaseId,
+            "headers": True
+        }
+    )
+
+Bidirectional Relationships
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Create inverse relationships:
+
+.. code-block:: python
+
+    parser.parse_relationship_type(
+        relationship_type=onto.geneInPathway,
+        inverse_relationship_type=onto.pathwayContainsGene,
+        source_filename="gene_pathways.csv",
+        fmt="csv",
+        parse_config={
+            "subject_node_type": onto.Gene,
+            "subject_column_name": "gene_id",
+            "subject_match_property": onto.geneId,
+            "object_node_type": onto.Pathway,
+            "object_column_name": "pathway_id",
+            "object_match_property": onto.pathwayId,
+            "headers": True
+        }
+    )
+
+Relationship Transformations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Transform relationship values:
+
+.. code-block:: python
+
+    parser.parse_relationship_type(
+        relationship_type=onto.chemicalIncreasesExpression,
+        source_filename="interactions.tsv",
+        fmt="tsv",
+        parse_config={
+            "subject_node_type": onto.Drug,
+            "subject_column_name": "drug_id",
+            "subject_match_property": onto.drugbankId,
+            "object_node_type": onto.Gene,
+            "object_column_name": "gene_id",
+            "object_match_property": onto.geneId,
+            "filter_column": "interaction_type",
+            "filter_value": "upregulation",
+            "headers": True,
+            "data_transforms": {
+                "drug_id": lambda x: x.split("::")[-1],
+                "gene_id": lambda x: int(x.split("::")[-1])
+            }
+        }
+    )
+
+MySQL Examples
+--------------
+
+Parsing from MySQL Tables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: python
 
-    # Extract class hierarchy from parent column
-    parser = DatabaseParser("taxonomy.csv")
-    parser.set_entity_column("Term")
-    parser.set_parent_column("Parent Term")
+    from ista import MySQLDatabaseParser, owl2
 
-    # Creates SubClassOf axioms automatically
-    # If row has: Term="Protein", Parent="Molecule"
-    # Creates: Protein SubClassOf Molecule
+    mysql_config = {
+        'host': 'localhost',
+        'user': 'biouser',
+        'passwd': 'biopass'
+    }
 
-    ont = parser.to_ontology()
+    onto = owl2.Ontology(owl2.IRI("http://example.org/bio"))
+    parser = MySQLDatabaseParser("biomedical_db", onto, mysql_config)
 
-Multi-Level Hierarchies
-~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: python
-
-    # Database with multiple hierarchy levels
-    # Category | Subcategory | Term
-    # Biological | Protein | Enzyme
-
-    parser.set_hierarchy_columns([
-        "Category",
-        "Subcategory",
-        "Term"
-    ])
-
-    # Creates:
-    # Enzyme SubClassOf Protein
-    # Protein SubClassOf Biological
-
-Annotations
------------
-
-Label and Comment Extraction
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: python
-
-    # Add labels from column
-    parser.add_annotation_mapping(
-        column="Display Name",
-        property=owl2.IRI("rdfs", "label", "..."),
-        language="en"
+    # Parse a table
+    parser.parse_node_type(
+        node_type="Protein",
+        source_table="proteins",
+        parse_config={
+            "iri_column_name": "uniprot_id",
+            "data_property_map": {
+                "protein_name": onto.proteinName,
+                "organism": onto.fromOrganism,
+            },
+            "merge_column": {
+                "source_column_name": "uniprot_id",
+                "data_property": onto.uniprotId,
+            }
+        },
+        merge=True
     )
 
-    # Add definitions
-    parser.add_annotation_mapping(
-        column="Definition",
-        property=owl2.IRI("obo", "IAO_0000115", "..."),
-        language="en"
+Custom SQL Queries
+~~~~~~~~~~~~~~~~~~
+
+.. code-block:: python
+
+    # Use custom SQL query
+    parser.parse_node_type(
+        node_type="Pathway",
+        source_table="pathways",  # Not actually used when custom_sql_query is set
+        parse_config={
+            "iri_column_name": "pathway_id",
+            "custom_sql_query": """
+                SELECT DISTINCT pathway_id, pathway_name, source_db
+                FROM pathway_genes
+                WHERE organism = 'Homo sapiens'
+            """,
+            "data_property_map": {
+                "pathway_name": onto.pathwayName,
+                "source_db": onto.sourceDatabase,
+            }
+        },
+        merge=False
     )
 
-    # Add comments
-    parser.add_annotation_mapping(
-        column="Notes",
-        property=owl2.IRI("rdfs", "comment", "..."),
-        language="en"
-    )
-
-Database Metadata
-~~~~~~~~~~~~~~~~~
+MySQL Relationships
+~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: python
 
-    # Add provenance annotations
-    parser.set_provenance({
-        "source": "Disease Database v2.0",
-        "date": "2024-01-15",
-        "curator": "John Doe",
-        "license": "CC BY 4.0"
-    })
-
-    # These are added as ontology-level annotations
-
-Advanced Features
------------------
-
-Filtering and Validation
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: python
-
-    # Filter rows before processing
-    def row_filter(row):
-        # Only include rows where Status is "Approved"
-        return row.get("Status") == "Approved"
-
-    parser.set_row_filter(row_filter)
-
-    # Validate values
-    def value_validator(column, value):
-        if column == "Prevalence":
-            # Must be numeric
-            try:
-                float(value)
-                return True
-            except ValueError:
-                return False
-        return True
-
-    parser.set_value_validator(value_validator)
-
-Custom Axiom Generation
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: python
-
-    # Add custom axiom generation logic
-    def custom_axiom_generator(row, ont, base_iri):
-        disease_name = row["Disease Name"]
-        disease_iri = create_iri(base_iri, disease_name)
-
-        # Custom logic: if prevalence > 0.1, add "CommonDisease" class
-        prevalence = float(row.get("Prevalence", 0))
-        if prevalence > 0.1:
-            common_disease = owl2.Class(create_iri(base_iri, "CommonDisease"))
-            ont.add_axiom(owl2.SubClassOf(
-                owl2.Class(disease_iri),
-                common_disease
-            ))
-
-    parser.add_custom_generator(custom_axiom_generator)
-
-Relationship Inference
-~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: python
-
-    # Infer transitive relationships
-    parser.enable_transitivity_inference(
-        property="partOf",
-        max_depth=5
-    )
-
-    # If A partOf B and B partOf C, infer A partOf C
-
-    # Infer symmetric relationships
-    parser.mark_as_symmetric("relatedTo")
-
-Handling Missing Data
-~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: python
-
-    # Configure missing data handling
-    parser.set_missing_value_strategy(
-        strategy="skip",  # or "default", "infer"
-        default_value=None
-    )
-
-    # Skip rows with missing critical values
-    parser.set_required_columns(["Disease Name", "Category"])
-
-Examples
---------
-
-Disease Database
-~~~~~~~~~~~~~~~~
-
-.. code-block:: python
-
-    from ista.database_parser import DatabaseParser
-    from ista import owl2
-
-    # Load disease database
-    parser = DatabaseParser("diseases.xlsx")
-
-    # Configure
-    parser.set_base_iri("http://example.org/diseases#")
-    parser.set_entity_column("Disease Name")
-    parser.set_entity_type(owl2.EntityType.CLASS)
-
-    # Set up hierarchy
-    parser.set_parent_column("Disease Category")
-
-    # Map properties
-    parser.set_property_mappings({
-        "Symptoms": "hasSymptom",
-        "Treatments": "hasTreatment",
-        "Risk Factors": "hasRiskFactor"
-    })
-
-    # Map data properties
-    parser.set_data_property_mappings({
-        "Prevalence": ("hasPrevalence", "xsd:float"),
-        "Age of Onset": ("hasAgeOfOnset", "xsd:integer")
-    })
-
-    # Add annotations
-    parser.add_annotation_mapping("Definition",
-                                   owl2.IRI("obo", "IAO_0000115", "..."),
-                                   language="en")
-
-    # Generate ontology
-    ont = parser.to_ontology()
-
-    # Save
-    serializer = owl2.FunctionalSyntaxSerializer()
-    serializer.serialize(ont, "diseases.ofn")
-
-Protein Interaction Database
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: python
-
-    # Protein-protein interactions
-    parser = DatabaseParser("ppi.csv")
-
-    parser.set_base_iri("http://example.org/proteins#")
-
-    # Both proteins are individuals
-    parser.add_entity_column("Protein A",
-                             owl2.EntityType.NAMED_INDIVIDUAL,
-                             iri_prefix="protein")
-    parser.add_entity_column("Protein B",
-                             owl2.EntityType.NAMED_INDIVIDUAL,
-                             iri_prefix="protein")
-
-    # Interaction type determines property
-    parser.add_typed_relationship(
-        subject_column="Protein A",
-        object_column="Protein B",
-        relationship_column="Interaction Type",
-        property_mapping={
-            "Binding": "bindsTo",
-            "Phosphorylation": "phosphorylates",
-            "Activation": "activates",
-            "Inhibition": "inhibits"
+    parser.parse_relationship_type(
+        relationship_type=onto.proteinInteractsWithProtein,
+        parse_config={
+            "subject_node_type": onto.Protein,
+            "subject_column_name": "protein_a",
+            "subject_match_property": onto.uniprotId,
+            "object_node_type": onto.Protein,
+            "object_column_name": "protein_b",
+            "object_match_property": onto.uniprotId,
+            "source_table": "protein_interactions",
+            "source_table_type": "foreignKey",
+            "custom_sql_query": """
+                SELECT protein_a, protein_b, confidence
+                FROM protein_interactions
+                WHERE confidence > 0.8
+            """
         }
     )
 
-    # Add confidence scores as data properties
-    parser.set_data_property_mappings({
-        "Confidence Score": ("hasConfidence", "xsd:float")
-    })
-
-    ont = parser.to_ontology()
-
-Gene-Disease Associations
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: python
-
-    # Gene-disease association database
-    parser = DatabaseParser("gene_disease.tsv", delimiter="\t")
-
-    parser.set_base_iri("http://example.org/biomedical#")
-
-    # Genes and diseases as different entity types
-    parser.add_entity_column("Gene Symbol",
-                             owl2.EntityType.NAMED_INDIVIDUAL,
-                             iri_prefix="gene")
-    parser.add_entity_column("Disease Name",
-                             owl2.EntityType.CLASS,
-                             iri_prefix="disease")
-
-    # Association types
-    parser.add_typed_relationship(
-        subject_column="Gene Symbol",
-        object_column="Disease Name",
-        relationship_column="Association",
-        property_mapping={
-            "Causal Mutation": "hasCausalMutation",
-            "Risk Factor": "isRiskFactorFor",
-            "Biomarker": "isBiomarkerFor"
-        }
-    )
-
-    # Add evidence codes as annotations
-    parser.add_relationship_annotation(
-        annotation_column="Evidence Code",
-        property=owl2.IRI("obo", "ECO_0000000", "...")
-    )
-
-    ont = parser.to_ontology()
-
-Batch Processing
+Complete Example
 ----------------
 
-Processing Multiple Files
-~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: python
+
+    from ista import FlatFileDatabaseParser, MySQLDatabaseParser, owl2
+
+    # 1. Load base ontology
+    onto = owl2.RDFXMLParser.parse_from_file("biomedical_ontology.owl")
+
+    # 2. Create parsers
+    drug_parser = FlatFileDatabaseParser("DrugBank", onto, "./data")
+    gene_parser = FlatFileDatabaseParser("GeneDB", onto, "./data")
+    disease_parser = FlatFileDatabaseParser("DiseaseDB", onto, "./data")
+
+    # 3. Parse drugs
+    drug_parser.parse_node_type(
+        node_type="Drug",
+        source_filename="drugs.csv",
+        fmt="csv",
+        parse_config={
+            "iri_column_name": "drugbank_id",
+            "headers": True,
+            "data_property_map": {
+                "name": onto.commonName,
+                "drugbank_id": onto.drugbankId,
+                "cas_number": onto.casNumber,
+            },
+            "merge_column": {
+                "source_column_name": "drugbank_id",
+                "data_property": onto.drugbankId,
+            }
+        },
+        merge=True
+    )
+
+    # 4. Parse genes
+    gene_parser.parse_node_type(
+        node_type="Gene",
+        source_filename="genes.tsv",
+        fmt="tsv-pandas",
+        parse_config={
+            "iri_column_name": "gene_symbol",
+            "headers": True,
+            "compound_fields": {
+                "cross_refs": {
+                    "delimiter": "|",
+                    "field_split_prefix": ":"
+                }
+            },
+            "data_property_map": {
+                "gene_symbol": onto.geneSymbol,
+                "gene_id": onto.geneId,
+                "HGNC": onto.xrefHGNC,
+                "Ensembl": onto.xrefEnsembl,
+            }
+        },
+        merge=False
+    )
+
+    # 5. Parse diseases
+    disease_parser.parse_node_type(
+        node_type="Disease",
+        source_filename="diseases.csv",
+        fmt="csv",
+        parse_config={
+            "iri_column_name": "disease_id",
+            "headers": True,
+            "filter_column": "category",
+            "filter_value": "genetic",
+            "data_property_map": {
+                "disease_name": onto.commonName,
+                "umls_cui": onto.xrefUmlsCUI,
+            }
+        },
+        merge=False
+    )
+
+    # 6. Parse relationships
+    drug_parser.parse_relationship_type(
+        relationship_type=onto.drugTargetsGene,
+        source_filename="drug_targets.tsv",
+        fmt="tsv",
+        parse_config={
+            "subject_node_type": onto.Drug,
+            "subject_column_name": "drugbank_id",
+            "subject_match_property": onto.drugbankId,
+            "object_node_type": onto.Gene,
+            "object_column_name": "gene_symbol",
+            "object_match_property": onto.geneSymbol,
+            "headers": True
+        }
+    )
+
+    gene_parser.parse_relationship_type(
+        relationship_type=onto.geneAssociatesWithDisease,
+        source_filename="gene_disease.tsv",
+        fmt="tsv",
+        parse_config={
+            "subject_node_type": onto.Gene,
+            "subject_column_name": "gene_symbol",
+            "subject_match_property": onto.geneSymbol,
+            "object_node_type": onto.Disease,
+            "object_column_name": "disease_id",
+            "object_match_property": onto.xrefUmlsCUI,
+            "filter_column": "association_type",
+            "filter_value": "causal",
+            "headers": True
+        }
+    )
+
+    # 7. Print statistics
+    from ista.util import print_onto_stats
+    print_onto_stats(onto)
+
+    # 8. Save populated ontology
+    serializer = owl2.RDFXMLSerializer()
+    rdf_content = serializer.serialize(onto)
+    with open("populated_biomedical.owl", "w") as f:
+        f.write(rdf_content)
+
+Utility Functions
+-----------------
+
+ista provides utility functions in ``ista.util``:
 
 .. code-block:: python
 
-    import glob
-    from ista.database_parser import DatabaseParser
+    from ista.util import (
+        safe_add_property,           # Safely add properties with duplicate checking
+        get_onto_class_by_node_type, # Find class by local name
+        safe_make_individual_name,   # Generate unique individual IRI suffixes
+        print_onto_stats,            # Print ontology statistics
+    )
 
-    # Process all CSV files in directory
-    files = glob.glob("data/*.csv")
+    # Find a class by name
+    drug_class = get_onto_class_by_node_type(onto, "Drug")
 
-    all_ontologies = []
-    for file in files:
-        parser = DatabaseParser(file)
-        # Configure parser...
-        ont = parser.to_ontology()
-        all_ontologies.append(ont)
+    # Generate safe individual name
+    individual_name = safe_make_individual_name("Aspirin", drug_class)
+    # Returns: "drug_aspirin"
 
-    # Merge ontologies
-    merged = merge_ontologies(all_ontologies)
+    # Print statistics
+    print_onto_stats(onto)
 
-Large File Processing
-~~~~~~~~~~~~~~~~~~~~~
+Best Practices
+--------------
 
-.. code-block:: python
-
-    # Process large files in chunks
-    parser = DatabaseParser("large_database.csv")
-    parser.set_chunk_size(1000)  # Process 1000 rows at a time
-
-    # Stream processing
-    for chunk_ont in parser.stream_to_ontologies():
-        # Process each chunk
-        print(f"Processed chunk with {chunk_ont.get_axiom_count()} axioms")
+1. **Load Base Ontology First**: Start with a base ontology defining classes and properties
+2. **Define Schema**: Create all classes and properties before parsing data
+3. **Use Merge Strategically**: Merge when combining data from multiple sources
+4. **Apply Transformations**: Clean and normalize data during parsing
+5. **Filter Early**: Use filter_column to reduce unnecessary processing
+6. **Test on Samples**: Test parsing configuration on small data samples first
+7. **Add Provenance**: Document data sources as ontology annotations
+8. **Check Statistics**: Use print_onto_stats to verify parsing results
 
 Performance Tips
 ----------------
 
-1. **Set Column Types**: Explicitly set data types to avoid inference
-2. **Batch Axiom Addition**: Use bulk add methods when available
-3. **Filter Early**: Apply row filters before processing
-4. **Chunk Large Files**: Process in chunks for memory efficiency
-5. **Use Caching**: Cache frequently accessed entity IRIs
-
-.. code-block:: python
-
-    # Optimize performance
-    parser = DatabaseParser("large_db.csv")
-
-    # Pre-filter data
-    parser.set_row_filter(lambda r: r["Status"] == "Active")
-
-    # Set explicit types
-    parser.set_column_types({
-        "Prevalence": float,
-        "Year": int,
-        "Description": str
-    })
-
-    # Enable caching
-    parser.enable_iri_cache()
-
-    # Process in chunks
-    parser.set_chunk_size(5000)
+1. Set ``skip=True`` for parse operations you don't need
+2. Use ``filter_column`` to reduce rows processed
+3. Process smaller files first to validate configuration
+4. Use appropriate file formats (CSV is faster than Excel for large files)
+5. For MySQL, use indexed columns in merge_column
 
 Error Handling
 --------------
 
 .. code-block:: python
 
-    from ista.database_parser import ParsingError
-
     try:
-        parser = DatabaseParser("database.xlsx")
-        parser.set_entity_column("Name")
-        ont = parser.to_ontology()
-    except ParsingError as e:
-        print(f"Parsing error: {e}")
-        print(f"Row: {e.row_number}")
-        print(f"Column: {e.column_name}")
+        parser.parse_node_type(...)
     except FileNotFoundError:
-        print("Database file not found")
+        print("Source file not found")
+    except KeyError as e:
+        print(f"Column not found: {e}")
     except Exception as e:
-        print(f"Unexpected error: {e}")
-
-Best Practices
---------------
-
-1. **Validate Input Data**: Check for missing values, duplicates, data types
-2. **Document Mappings**: Keep track of column-to-property mappings
-3. **Test with Samples**: Test parsing logic on small data samples first
-4. **Use Consistent IRIs**: Ensure IRI generation is consistent and reversible
-5. **Add Provenance**: Always include source information as annotations
-6. **Version Control**: Track changes to parsing configurations
-7. **Validate Output**: Check generated ontology for consistency
+        print(f"Parsing error: {e}")
 
 See Also
 --------
 
+- :doc:`owl2_interfaces` - OWL2 interface documentation
 - :doc:`python_library` - Python library guide
 - :doc:`../api/owl2` - Complete API reference
-- :doc:`../examples` - Example parsing workflows
-- pandas documentation: https://pandas.pydata.org/
+- Example knowledge bases: ``examples/kg_projects/neurokb/``, ``examples/kg_projects/alzkb/``

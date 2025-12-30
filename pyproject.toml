@@ -28,7 +28,6 @@ classifiers = [
 dependencies = [
     "mysqlclient",
     "openpyxl",
-    "owlready2",
     "pandas",
     "tqdm",
     "pybind11>=2.6.0",

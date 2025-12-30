@@ -96,7 +96,6 @@ Core dependencies (automatically installed):
 
 .. code-block:: text
 
-   owlready2      # OWL2 manipulation (legacy)
    pandas         # Data manipulation
    openpyxl       # Excel file support
    tqdm           # Progress bars

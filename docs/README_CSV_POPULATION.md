@@ -165,15 +165,15 @@ for row in reader:
         # Add property...
 ```
 
-## Comparison with owlready2 Implementation
+## Performance Characteristics
 
-| Feature | Native owl2 | owlready2 |
-|---------|-------------|-----------|
-| Performance | High (C++) | Medium (Python) |
-| Memory Usage | Low | Medium-High |
-| API Complexity | Lower-level | Higher-level |
-| Dataset Size | Very Large | Medium |
-| Dependencies | None (native) | owlready2 |
+| Aspect | Native owl2 |
+|--------|-------------|
+| Performance | High (C++) |
+| Memory Usage | Low |
+| API Style | Direct, explicit |
+| Dataset Size | Very Large |
+| Dependencies | None (native) |
 
 ## Advanced Usage
 
@@ -263,7 +263,7 @@ These features are available in the C++ API but require completing the Python bi
 
 - `owl2_example.py` - Basic OWL2 ontology creation
 - `graph_conversion_example.py` - Converting ontologies to/from graphs
-- `kg_projects/alzkb/alzkb.py` - Real-world large-scale example using owlready2
+- `kg_projects/alzkb/alzkb.py` - Real-world large-scale example
 
 ## License
 

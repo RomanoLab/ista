@@ -1,15 +1,15 @@
 import csv
 import os
 
-import owlready2
-import MySQLdb
-from tqdm import tqdm
-from openpyxl import load_workbook
-import pandas as pd
-
 import ipdb
+import MySQLdb
+import pandas as pd
+from openpyxl import load_workbook
+from tqdm import tqdm
 
+from . import owl2
 from .util import *
+
 
 class DatabaseParser:
     """
@@ -19,7 +19,8 @@ class DatabaseParser:
     This class should not be instantiated directly; instead, you should instantiate
     one of its descendant classes that corresponds to the format of the data source.
     """
-    def __init__(self, name, onto: owlready2.namespace.Ontology):
+
+    def __init__(self, name, onto: owl2.Ontology):
         self.name = name
         self.ont = onto
 
@@ -34,21 +35,24 @@ class DatabaseParser:
         node_properties: dict,
         merge_column: dict,
         existing_class: str = None,
-        skip_create_new_node: bool = False
+        skip_create_new_node: bool = False,
     ):
         if not existing_class:
             cl = get_onto_class_by_node_type(self.ont, node_type)
         else:
             cl = get_onto_class_by_node_type(self.ont, existing_class)
         if cl == None:
-            raise RuntimeError("Class label {0} not found in ComptoxAI ontology".format(node_type))
+            raise RuntimeError(
+                "Class label {0} not found in ComptoxAI ontology".format(node_type)
+            )
 
         # Find node if it exists
         merge_col = merge_column["source_column_name"]
-        merge_prop_name = merge_column["data_property"].name
+        merge_prop = merge_column["data_property"]
 
-        # kwargs approach is necessary because keywords are only known at compile time...
-        match = self.ont.search(**{merge_prop_name: fields[merge_col]})
+        # Search for existing individual with this property value
+        merge_value = owl2.Literal(fields[merge_col])
+        match = self.ont.search_by_data_property(merge_prop, merge_value)
 
         try:
             assert len(match) <= 1
@@ -61,22 +65,32 @@ class DatabaseParser:
             if skip_create_new_node:
                 return
             individual_name = fields[source_node_label]
-            new_or_matched_individual = cl(safe_make_individual_name(individual_name, cl))
+            # Create IRI for new individual
+            individual_iri_str = safe_make_individual_name(individual_name, cl)
+            onto_iri = self.ont.get_ontology_iri()
+            if onto_iri:
+                base_iri = onto_iri.value().get_namespace()
+            else:
+                base_iri = "http://example.org/onto#"
+            individual_iri = owl2.IRI(base_iri + individual_iri_str)
+            new_or_matched_individual = self.ont.create_individual(cl, individual_iri)
         else:
             new_or_matched_individual = match[0]
 
             # Make sure to append the new class label if we are supposed to
             if existing_class:
-                new_or_matched_individual.is_a.append(
-                    get_onto_class_by_node_type(self.ont, node_type)
-                )
+                new_class = get_onto_class_by_node_type(self.ont, node_type)
+                self.ont.add_class_assertion(new_or_matched_individual, new_class)
 
         if node_properties:
             for field, d_prop in node_properties.items():
                 # Make sure we don't overwrite the field we already matched on
                 if field == merge_col:
                     continue
-                safe_add_property(new_or_matched_individual, d_prop, fields[field])
+                value = (
+                    owl2.Literal(fields[field]) if fields[field] is not None else None
+                )
+                safe_add_property(self.ont, new_or_matched_individual, d_prop, value)
 
     def _write_new_node(
         self,
@@ -85,18 +99,31 @@ class DatabaseParser:
         source_node_label: str,
         node_properties: dict = None,
     ):
-
         cl = get_onto_class_by_node_type(self.ont, node_type)
 
         individual_name = fields[source_node_label]
 
         # new_individual = cl(individual_name.lower())
-        new_individual = cl(safe_make_individual_name(individual_name, cl))
+        # Create IRI for new individual
+        individual_iri_str = safe_make_individual_name(individual_name, cl)
+        onto_iri = self.ont.get_ontology_iri()
+        if onto_iri:
+            base_iri = onto_iri.value().get_namespace()
+        else:
+            base_iri = "http://example.org/onto#"
+        individual_iri = owl2.IRI(base_iri + individual_iri_str)
+        new_individual = self.ont.create_individual(cl, individual_iri)
 
         if node_properties:
             for field, d_prop in node_properties.items():
                 try:
-                    safe_add_property(new_individual, d_prop, fields[field])
+                    value = (
+                        owl2.Literal(fields[field])
+                        if fields[field] is not None
+                        else None
+                    )
+
+                    safe_add_property(self.ont, new_individual, d_prop, value)
                 except KeyError:
                     # TODO: Log missing properties!
                     pass
@@ -111,15 +138,21 @@ class FlatFileDatabaseParser(DatabaseParser):
     name : str
         Name of the database. The individual data files should be contained in a
         directory with the same name (case-sensitive).
-    destination : owlready2.namespace.Ontology
+    destination : owl2.Ontology
         Ontology to be populated with the database's contents.
     """
-    def __init__(self, name: str, destination: owlready2.namespace.Ontology, data_dir):
+
+    def __init__(self, name: str, destination: owl2.Ontology, data_dir):
         super().__init__(name, destination)
         self.data_dir = data_dir
 
     def get_file_pointer_by_flatfile_name(self, filename):
-        file_pointer = open(os.path.join(self.data_dir, self.name, filename), "r", encoding="utf-8", errors="ignore")
+        file_pointer = open(
+            os.path.join(self.data_dir, self.name, filename),
+            "r",
+            encoding="utf-8",
+            errors="ignore",
+        )
         return file_pointer
 
     def get_file_pointer_by_node_label(self, node_label):
@@ -134,7 +167,16 @@ class FlatFileDatabaseParser(DatabaseParser):
 
         self.headers = headers
 
-    def parse_relationship_type(self, relationship_type, source_filename: str, fmt: str, parse_config: dict, inverse_relationship_type = None, merge: bool = False, skip: bool = False):
+    def parse_relationship_type(
+        self,
+        relationship_type,
+        source_filename: str,
+        fmt: str,
+        parse_config: dict,
+        inverse_relationship_type=None,
+        merge: bool = False,
+        skip: bool = False,
+    ):
         if skip:
             return
 
@@ -224,11 +266,11 @@ class FlatFileDatabaseParser(DatabaseParser):
             if type(obj_ids) is not list:
                 obj_ids = [obj_ids]
 
-            
-
             for sid in subj_ids:
                 for oid in obj_ids:
-                    subject_match = self.ont.search(**{sub_match_prop_name: sid})
+                    subject_match = self.ont.search_by_data_property(
+                        parse_config["subject_match_property"], owl2.Literal(sid)
+                    )
                     if len(subject_match) == 0:
                         continue
                     # try:
@@ -236,8 +278,10 @@ class FlatFileDatabaseParser(DatabaseParser):
                     # except AssertionError:
                     #     ipdb.set_trace()
                     #     print()
-                    
-                    object_match = self.ont.search(**{obj_match_prop_name: oid})
+
+                    object_match = self.ont.search_by_data_property(
+                        parse_config["object_match_property"], owl2.Literal(oid)
+                    )
                     if len(object_match) == 0:
                         continue
                     # try:
@@ -248,12 +292,14 @@ class FlatFileDatabaseParser(DatabaseParser):
 
                     if no_rel_added:
                         no_rel_added = False
-                    
+
                     for sm in subject_match:
                         for om in object_match:
-                            safe_add_property(sm, relationship_type, om)
+                            safe_add_property(self.ont, sm, relationship_type, om)
                             if inverse_relationship_type:
-                                safe_add_property(om, inverse_relationship_type, sm)
+                                safe_add_property(
+                                    self.ont, om, inverse_relationship_type, sm
+                                )
 
         if no_rel_added:
             print("WARNING: NO RELATIONSHIPS ADDED TO ONTOLOGY")
@@ -271,18 +317,18 @@ class FlatFileDatabaseParser(DatabaseParser):
         skip: bool = False,
     ):
         """
-    Parameters
-    ----------
-    node_type : str
-      String name corresponding to the node type in the destination database.
-    source_node_label : str
-      String used to identify the node type in the source database.
-    merge : bool
-      When `True`, entities that already exist in the database will be *merged*
-      with the new data. When `False`, a new entity will be created in the
-      graph database regardless of whether a matching entity already exists in
-      the database.
-    """
+        Parameters
+        ----------
+        node_type : str
+          String name corresponding to the node type in the destination database.
+        source_node_label : str
+          String used to identify the node type in the source database.
+        merge : bool
+          When `True`, entities that already exist in the database will be *merged*
+          with the new data. When `False`, a new entity will be created in the
+          graph database regardless of whether a matching entity already exists in
+          the database.
+        """
         if skip:
             return
 
@@ -445,14 +491,13 @@ class MySQLDatabaseParser(DatabaseParser):
     name : str
         Name of the database. Must be identical (case-sensitive) to the name
         of the database on the MySQL server.
-    destination : owlready2.namespace.Ontology
+    destination : owl2.Ontology
         Ontology to be populated with the database's contents.
     config_dict : dict
         Configuration details needed to connect to the MySQL database.
     """
-    def __init__(
-        self, name: str, destination: owlready2.namespace.Ontology, config_dict: dict
-    ):
+
+    def __init__(self, name: str, destination: owl2.Ontology, config_dict: dict):
         super().__init__(name, destination)
 
         if "socket" in config_dict:
@@ -461,7 +506,7 @@ class MySQLDatabaseParser(DatabaseParser):
                 user=config_dict["user"],
                 password=config_dict["passwd"],
                 database=name,
-                unix_socket=config_dict["socket"]
+                unix_socket=config_dict["socket"],
             )
         else:
             self.conn = MySQLdb.Connection(
@@ -471,15 +516,22 @@ class MySQLDatabaseParser(DatabaseParser):
                 database=name,
             )
 
-    def parse_relationship_type(self, relationship_type, parse_config: dict, inverse_relationship_type = None, merge: bool = False, skip: bool = False):
+    def parse_relationship_type(
+        self,
+        relationship_type,
+        parse_config: dict,
+        inverse_relationship_type=None,
+        merge: bool = False,
+        skip: bool = False,
+    ):
         if skip:
             return
-        
+
         no_rel_added = True
 
         print("PARSING RELATIONSHIP TYPE: {0}".format(relationship_type))
         print("FROM SOURCE DATABASE: {0}".format(self.name))
-        
+
         s_node_type = parse_config["subject_node_type"]
         o_node_type = parse_config["object_node_type"]
 
@@ -488,7 +540,9 @@ class MySQLDatabaseParser(DatabaseParser):
         if "custom_sql_query" in parse_config:
             fetch_lines_query = parse_config["custom_sql_query"]
         else:
-            fetch_lines_query = "SELECT * FROM {0};".format(parse_config["source_table"])
+            fetch_lines_query = "SELECT * FROM {0};".format(
+                parse_config["source_table"]
+            )
         c.execute(fetch_lines_query)
 
         headers = [cc[0] for cc in c.description]
@@ -506,9 +560,13 @@ class MySQLDatabaseParser(DatabaseParser):
                     fields[c_f_name] = fields[c_f_name].split(c_f_config["delimiter"])
 
             if "data_transforms" in parse_config:
-                for dt_f_name, dt_f_transform in parse_config["data_transforms"].items():
+                for dt_f_name, dt_f_transform in parse_config[
+                    "data_transforms"
+                ].items():
                     if type(fields[dt_f_name]) == list:
-                        fields[dt_f_name] = [dt_f_transform(x) for x in fields[dt_f_name]]
+                        fields[dt_f_name] = [
+                            dt_f_transform(x) for x in fields[dt_f_name]
+                        ]
                     else:
                         fields[dt_f_name] = dt_f_transform(fields[dt_f_name])
 
@@ -526,7 +584,9 @@ class MySQLDatabaseParser(DatabaseParser):
 
             for sid in subj_ids:
                 for oid in obj_ids:
-                    subject_match = self.ont.search(**{sub_match_prop_name: sid})
+                    subject_match = self.ont.search_by_data_property(
+                        parse_config["subject_match_property"], owl2.Literal(sid)
+                    )
                     if len(subject_match) == 0:
                         continue
                     try:
@@ -534,7 +594,9 @@ class MySQLDatabaseParser(DatabaseParser):
                     except AssertionError:
                         ipdb.set_trace()
                         print()
-                    object_match = self.ont.search(**{obj_match_prop_name: oid})
+                    object_match = self.ont.search_by_data_property(
+                        parse_config["object_match_property"], owl2.Literal(oid)
+                    )
                     if len(object_match) == 0:
                         continue
                     try:
@@ -544,11 +606,15 @@ class MySQLDatabaseParser(DatabaseParser):
                         print()
 
                     if no_rel_added:
-                        no_rel_added=False
+                        no_rel_added = False
 
-                    safe_add_property(subject_match[0], relationship_type, object_match[0])
+                    safe_add_property(
+                        subject_match[0], relationship_type, object_match[0]
+                    )
                     if inverse_relationship_type:
-                        safe_add_property(object_match[0], inverse_relationship_type, subject_match[0])
+                        safe_add_property(
+                            object_match[0], inverse_relationship_type, subject_match[0]
+                        )
 
         c.close()
 
@@ -630,5 +696,6 @@ class MySQLDatabaseParser(DatabaseParser):
 
         if no_node_added:
             print("WARNING: NO NODES/PROPERTIES ADDED TO ONTOLOGY")
+
 
 # class XMLDatabaseParser(DatabaseParser):

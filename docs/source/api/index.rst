@@ -8,9 +8,6 @@ This section documents the Python API for ista.
    :caption: Python Modules:
 
    owl2
-   converters
-   database_parser
-   graph
 
 Core Modules
 ------------

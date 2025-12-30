@@ -9,19 +9,6 @@ ista Documentation
 
 The project combines Python's flexibility for data integration with C++'s performance for knowledge graph manipulation.
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-   getting_started
-   installation
-   user_guide/index
-   api/index
-   cpp_api/index
-   examples
-   contributing
-   changelog
-
 Features
 --------
 
@@ -76,6 +63,22 @@ Python Example
    # Extract subgraphs
    filter_obj = owl2.OntologyFilter(ont)
    result = filter_obj.extract_neighborhood(alice.get_iri(), depth=2)
+
+Documentation Contents
+======================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   getting_started
+   installation
+   user_guide/index
+   api/index
+   cpp_api/index
+   examples
+   contributing
+   changelog
 
 Indices and Tables
 ==================

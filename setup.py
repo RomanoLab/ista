@@ -1,8 +1,9 @@
-from setuptools import setup, Extension, find_packages
-from setuptools.command.build_ext import build_ext
-import sys
 import os
 import subprocess
+import sys
+
+from setuptools import Extension, find_packages, setup
+from setuptools.command.build_ext import build_ext
 
 with open("README.md", "r", encoding="utf-8") as fp:
     readme = fp.read()
@@ -74,7 +75,6 @@ setup(
     install_requires=[
         "mysqlclient",
         "openpyxl",
-        "owlready2",
         "pandas",
         "tqdm",
         "pybind11>=2.6.0",

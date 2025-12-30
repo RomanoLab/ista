@@ -66,14 +66,16 @@ The Ontology class is the main container for OWL2 axioms:
 
     # Add axioms
     disease_iri = owl2.IRI("ex", "Disease", "http://example.org/")
-    ont.add_axiom(owl2.Declaration(owl2.CLASS, disease_iri))
+    disease_class = owl2.Class(disease_iri)
+    declaration = owl2.Declaration(owl2.Declaration.EntityType.CLASS, disease_iri)
+    ont.add_axiom(declaration)
 
     # Query axioms
     count = ont.get_axiom_count()
     axioms = ont.get_axioms()
 
     # Check if axiom exists
-    has_axiom = ont.contains_axiom(axiom)
+    has_axiom = ont.contains_axiom(declaration)
 
 Entity Types
 ------------
@@ -86,12 +88,19 @@ OWL2 classes represent sets of individuals:
 .. code-block:: python
 
     # Declare a class
-    disease = owl2.Class(owl2.IRI("ex", "Disease", "..."))
-    ont.add_axiom(owl2.Declaration(owl2.CLASS, disease.get_iri()))
+    disease_iri = owl2.IRI("ex", "Disease", "http://example.org/")
+    disease = owl2.Class(disease_iri)
+    declaration = owl2.Declaration(owl2.Declaration.EntityType.CLASS, disease_iri)
+    ont.add_axiom(declaration)
 
     # Subclass axiom
-    alzheimers = owl2.Class(owl2.IRI("ex", "AlzheimersDisease", "..."))
-    ont.add_axiom(owl2.SubClassOf(alzheimers, disease))
+    alzheimers_iri = owl2.IRI("ex", "AlzheimersDisease", "http://example.org/")
+    alzheimers = owl2.Class(alzheimers_iri)
+    alzheimers_decl = owl2.Declaration(owl2.Declaration.EntityType.CLASS, alzheimers_iri)
+    ont.add_axiom(alzheimers_decl)
+
+    subclass_axiom = owl2.SubClassOf(owl2.NamedClass(alzheimers), owl2.NamedClass(disease))
+    ont.add_axiom(subclass_axiom)
 
 Object Properties
 ~~~~~~~~~~~~~~~~~
@@ -101,12 +110,17 @@ Object properties relate individuals to other individuals:
 .. code-block:: python
 
     # Declare object property
-    causes = owl2.ObjectProperty(owl2.IRI("ex", "causes", "..."))
-    ont.add_axiom(owl2.Declaration(owl2.OBJECT_PROPERTY, causes.get_iri()))
+    causes_iri = owl2.IRI("ex", "causes", "http://example.org/")
+    causes = owl2.ObjectProperty(causes_iri)
+    declaration = owl2.Declaration(owl2.Declaration.EntityType.OBJECT_PROPERTY, causes_iri)
+    ont.add_axiom(declaration)
 
     # Property characteristics
-    ont.add_axiom(owl2.TransitiveObjectProperty(causes))
-    ont.add_axiom(owl2.AsymmetricObjectProperty(causes))
+    transitive_axiom = owl2.TransitiveObjectProperty(causes)
+    ont.add_axiom(transitive_axiom)
+
+    asymmetric_axiom = owl2.AsymmetricObjectProperty(causes)
+    ont.add_axiom(asymmetric_axiom)
 
 Data Properties
 ~~~~~~~~~~~~~~~
@@ -116,12 +130,19 @@ Data properties relate individuals to literal values:
 .. code-block:: python
 
     # Declare data property
-    has_age = owl2.DataProperty(owl2.IRI("ex", "hasAge", "..."))
-    ont.add_axiom(owl2.Declaration(owl2.DATA_PROPERTY, has_age.get_iri()))
+    has_age_iri = owl2.IRI("ex", "hasAge", "http://example.org/")
+    has_age = owl2.DataProperty(has_age_iri)
+    declaration = owl2.Declaration(owl2.Declaration.EntityType.DATA_PROPERTY, has_age_iri)
+    ont.add_axiom(declaration)
 
     # Domain and range
-    ont.add_axiom(owl2.DataPropertyDomain(has_age, person_class))
-    ont.add_axiom(owl2.DataPropertyRange(has_age, xsd_integer))
+    person_class = owl2.NamedClass(owl2.Class(owl2.IRI("ex", "Person", "http://example.org/")))
+    domain_axiom = owl2.DataPropertyDomain(has_age, person_class)
+    ont.add_axiom(domain_axiom)
+
+    xsd_integer = owl2.Datatype(owl2.IRI("http://www.w3.org/2001/XMLSchema#integer"))
+    range_axiom = owl2.DataPropertyRange(has_age, xsd_integer)
+    ont.add_axiom(range_axiom)
 
 Individuals
 ~~~~~~~~~~~
@@ -130,16 +151,47 @@ Named individuals are instances of classes:
 
 .. code-block:: python
 
-    # Declare individual
-    john = owl2.NamedIndividual(owl2.IRI("ex", "John", "..."))
-    ont.add_axiom(owl2.Declaration(owl2.NAMED_INDIVIDUAL, john.get_iri()))
+    # Create individual with class assertion
+    john_iri = owl2.IRI("ex", "John", "http://example.org/")
+    person_class = owl2.Class(owl2.IRI("ex", "Person", "http://example.org/"))
+    john = ont.create_individual(person_class, john_iri)
 
-    # Class assertion
-    ont.add_axiom(owl2.ClassAssertion(person_class, john))
+    # Add property assertions
+    knows_prop = owl2.ObjectProperty(owl2.IRI("ex", "knows", "http://example.org/"))
+    mary = owl2.NamedIndividual(owl2.IRI("ex", "Mary", "http://example.org/"))
+    ont.add_object_property_assertion(john, knows_prop, mary)
 
-    # Property assertions
-    ont.add_axiom(owl2.ObjectPropertyAssertion(knows_prop, john, mary))
-    ont.add_axiom(owl2.DataPropertyAssertion(has_age, john, owl2.Literal("30")))
+    has_age = owl2.DataProperty(owl2.IRI("ex", "hasAge", "http://example.org/"))
+    age_value = owl2.Literal("30")
+    ont.add_data_property_assertion(john, has_age, age_value)
+
+Querying Individuals
+~~~~~~~~~~~~~~~~~~~~~
+
+Search and query individuals in the ontology:
+
+.. code-block:: python
+
+    # Search by data property value
+    has_name = owl2.DataProperty(owl2.IRI("ex", "hasName", "http://example.org/"))
+    name_value = owl2.Literal("John")
+    results = ont.search_by_data_property(has_name, name_value)
+
+    # Search by object property
+    knows_prop = owl2.ObjectProperty(owl2.IRI("ex", "knows", "http://example.org/"))
+    mary = owl2.NamedIndividual(owl2.IRI("ex", "Mary", "http://example.org/"))
+    results = ont.search_by_object_property(knows_prop, mary)
+
+    # Get all property assertions for an individual
+    data_props = ont.get_data_property_assertions_for_individual(john)
+    obj_props = ont.get_object_property_assertions_for_individual(john)
+
+    # Check class membership
+    person_class = owl2.Class(owl2.IRI("ex", "Person", "http://example.org/"))
+    is_person = ont.is_instance_of(john, person_class)
+
+    # Get all classes for an individual
+    classes = ont.get_classes_for_individual(john)
 
 Class Expressions
 -----------------
@@ -149,6 +201,9 @@ OWL2 supports complex class expressions:
 .. code-block:: python
 
     # Intersection (AND)
+    class1 = owl2.NamedClass(owl2.Class(owl2.IRI("ex", "Class1", "http://example.org/")))
+    class2 = owl2.NamedClass(owl2.Class(owl2.IRI("ex", "Class2", "http://example.org/")))
+    class3 = owl2.NamedClass(owl2.Class(owl2.IRI("ex", "Class3", "http://example.org/")))
     expr1 = owl2.ObjectIntersectionOf([class1, class2, class3])
 
     # Union (OR)
@@ -158,6 +213,8 @@ OWL2 supports complex class expressions:
     expr3 = owl2.ObjectComplementOf(class1)
 
     # Existential restriction (∃)
+    has_part = owl2.ObjectProperty(owl2.IRI("ex", "hasPart", "http://example.org/"))
+    protein_class = owl2.NamedClass(owl2.Class(owl2.IRI("ex", "Protein", "http://example.org/")))
     expr4 = owl2.ObjectSomeValuesFrom(has_part, protein_class)
 
     # Universal restriction (∀)
@@ -168,23 +225,36 @@ OWL2 supports complex class expressions:
     expr7 = owl2.ObjectMaxCardinality(5, has_part, protein_class)
     expr8 = owl2.ObjectExactCardinality(3, has_part, protein_class)
 
-Serialization
--------------
+Parsing and Serialization
+--------------------------
 
-Save and Load Ontologies
+Load and Save Ontologies
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: python
 
-    from ista.owl2 import FunctionalSyntaxSerializer, FunctionalSyntaxParser
+    from ista.owl2 import RDFXMLParser, RDFXMLSerializer
+    from ista.owl2 import FunctionalSyntaxParser, FunctionalSyntaxSerializer
 
-    # Save to file
-    serializer = FunctionalSyntaxSerializer()
-    serializer.serialize(ont, "output.ofn")
+    # Parse RDF/XML
+    parser = RDFXMLParser()
+    ont = parser.parse_from_file("ontology.rdf")
 
-    # Load from file
+    # Parse Functional Syntax
     parser = FunctionalSyntaxParser()
-    loaded_ont = parser.parse("output.ofn")
+    ont = parser.parse_from_file("ontology.ofn")
+
+    # Serialize to RDF/XML
+    serializer = RDFXMLSerializer()
+    rdf_content = serializer.serialize(ont)
+    with open("output.rdf", "w") as f:
+        f.write(rdf_content)
+
+    # Serialize to Functional Syntax
+    serializer = FunctionalSyntaxSerializer()
+    ofn_content = serializer.serialize(ont)
+    with open("output.ofn", "w") as f:
+        f.write(ofn_content)
 
 Subgraph Extraction
 -------------------
@@ -193,13 +263,13 @@ Extract relevant portions of large ontologies:
 
 .. code-block:: python
 
-    from ista.owl2 import OntologyFilter, FilterCriteria, FilterResult
+    from ista.owl2 import OntologyFilter, FilterCriteria
 
     # Create filter
     filter_obj = OntologyFilter(ontology)
 
     # Extract neighborhood around an IRI
-    seed_iri = owl2.IRI("ex", "AlzheimersDisease", "...")
+    seed_iri = owl2.IRI("ex", "AlzheimersDisease", "http://example.org/")
     result = filter_obj.extract_neighborhood(
         seed_iri=seed_iri,
         depth=2,
@@ -241,25 +311,36 @@ Convert ontologies to graph formats:
 Database Parsing
 ----------------
 
-Parse structured databases into knowledge graphs:
+Parse structured databases into knowledge graphs. See :doc:`database_parsing` for detailed documentation.
 
 .. code-block:: python
 
-    from ista.database_parser import DatabaseParser
+    from ista import owl2
+    from ista.database_parser import FlatFileDatabaseParser
 
-    # Parse Excel/CSV database
-    parser = DatabaseParser("disease_database.xlsx")
+    # Load base ontology
+    ont = owl2.RDFXMLParser().parse_from_file("base_ontology.rdf")
 
-    # Configure entity extraction
-    parser.set_entity_column("Disease Name")
-    parser.set_property_mappings({
-        "Symptoms": "hasSymptom",
-        "Treatments": "hasTreatment",
-        "Genes": "associatedWithGene"
-    })
+    # Parse CSV/TSV/Excel file
+    parser = FlatFileDatabaseParser(ont)
 
-    # Generate ontology
-    ont = parser.to_ontology()
+    parse_config = {
+        "file_path": "diseases.csv",
+        "entity_class_iri": "http://example.org/Disease",
+        "id_column": "DiseaseID",
+        "property_mappings": {
+            "Name": {"property_iri": "http://example.org/hasName", "is_data_property": True},
+            "Symptom": {"property_iri": "http://example.org/hasSymptom", "is_data_property": True}
+        }
+    }
+
+    parser.parse(parse_config)
+
+    # Save updated ontology
+    serializer = owl2.RDFXMLSerializer()
+    rdf_content = serializer.serialize(ont)
+    with open("populated_ontology.rdf", "w") as f:
+        f.write(rdf_content)
 
 Best Practices
 --------------
@@ -267,7 +348,7 @@ Best Practices
 1. **IRI Management**: Use consistent IRI patterns with prefixes
 2. **Axiom Organization**: Group related axioms together
 3. **Memory Efficiency**: Use subgraph extraction for large ontologies
-4. **Validation**: Check axiom consistency before serialization
+4. **Property Assertions**: Use ``create_individual()`` to automatically add declarations and class assertions
 5. **Documentation**: Add rdfs:label and rdfs:comment annotations
 
 Common Patterns
@@ -289,28 +370,59 @@ Building an Ontology from Scratch
         return owl2.IRI("bio", name, base_iri)
 
     # Define classes
-    protein = owl2.Class(make_iri("Protein"))
-    enzyme = owl2.Class(make_iri("Enzyme"))
+    protein_iri = make_iri("Protein")
+    protein = owl2.Class(protein_iri)
 
-    ont.add_axiom(owl2.Declaration(owl2.CLASS, protein.get_iri()))
-    ont.add_axiom(owl2.Declaration(owl2.CLASS, enzyme.get_iri()))
-    ont.add_axiom(owl2.SubClassOf(enzyme, protein))
+    enzyme_iri = make_iri("Enzyme")
+    enzyme = owl2.Class(enzyme_iri)
+
+    # Declare classes
+    ont.add_axiom(owl2.Declaration(owl2.Declaration.EntityType.CLASS, protein_iri))
+    ont.add_axiom(owl2.Declaration(owl2.Declaration.EntityType.CLASS, enzyme_iri))
+
+    # Add subclass relationship
+    subclass_axiom = owl2.SubClassOf(owl2.NamedClass(enzyme), owl2.NamedClass(protein))
+    ont.add_axiom(subclass_axiom)
 
     # Add annotations
-    ont.add_axiom(owl2.AnnotationAssertion(
-        owl2.IRI("rdfs", "label", "..."),
-        protein.get_iri(),
-        owl2.Literal("Protein", language="en")
-    ))
+    rdfs_label = owl2.AnnotationProperty(owl2.IRI("http://www.w3.org/2000/01/rdf-schema#label"))
+    label_value = owl2.Literal("Protein", language="en")
+    annotation_assertion = owl2.AnnotationAssertion(rdfs_label, protein_iri, label_value)
+    ont.add_axiom(annotation_assertion)
 
     # Save
-    serializer = owl2.FunctionalSyntaxSerializer()
-    serializer.serialize(ont, "biomedical.ofn")
+    serializer = owl2.RDFXMLSerializer()
+    rdf_content = serializer.serialize(ont)
+    with open("biomedical.rdf", "w") as f:
+        f.write(rdf_content)
+
+Working with Utility Functions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The ``ista.util`` module provides helper functions for common operations:
+
+.. code-block:: python
+
+    from ista import owl2
+    from ista.util import safe_add_property, get_onto_class_by_node_type
+
+    # Safely add property (checks for duplicates)
+    ont = owl2.Ontology(owl2.IRI("http://example.org/onto"))
+    individual = owl2.NamedIndividual(owl2.IRI("http://example.org/John"))
+    prop = owl2.DataProperty(owl2.IRI("http://example.org/hasName"))
+    value = owl2.Literal("John")
+
+    safe_add_property(ont, individual, prop, value)
+
+    # Get class by type name
+    classes = ont.get_classes()
+    disease_class = get_onto_class_by_node_type(classes, "Disease")
 
 See Also
 --------
 
 - :doc:`owl2_interfaces` - Detailed OWL2 interface documentation
+- :doc:`database_parsing` - Database parsing guide
 - :doc:`subgraph_extraction` - Advanced subgraph extraction techniques
 - :doc:`graph_converters` - Graph conversion utilities
 - :doc:`../api/owl2` - Complete API reference

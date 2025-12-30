@@ -46,52 +46,55 @@ try:
 
     # Import specific items to ensure they're available
     from _libista_owl2 import (
+        ANNOTATION_PROPERTY,
+        # Entity type constants
+        CLASS,
+        DATA_PROPERTY,
+        DATATYPE,
         # Core types
         IRI,
-        Literal,
+        NAMED_INDIVIDUAL,
+        OBJECT_PROPERTY,
+        # Axioms
+        Axiom,
+        Class,
+        ClassAssertion,
+        # Class Expressions
+        ClassExpression,
+        DataProperty,
+        DataPropertyAssertion,
+        DataPropertyDomain,
+        DataPropertyRange,
+        Declaration,
         # Entities
         Entity,
         EntityType,
-        Class,
-        ObjectProperty,
-        DataProperty,
-        NamedIndividual,
-        # Class Expressions
-        ClassExpression,
-        NamedClass,
-        # Axioms
-        Axiom,
-        Declaration,
-        SubClassOf,
-        ClassAssertion,
-        ObjectPropertyAssertion,
-        DataPropertyAssertion,
-        ObjectPropertyDomain,
-        ObjectPropertyRange,
-        DataPropertyDomain,
-        DataPropertyRange,
-        FunctionalObjectProperty,
-        FunctionalDataProperty,
-        # Ontology
-        Ontology,
-        # Serializers & Parsers
-        FunctionalSyntaxSerializer,
-        RDFXMLSerializer,
-        RDFXMLParser,
-        RDFXMLParseException,
-        # Subgraph extraction (high-performance C++ filtering)
-        OntologyFilter,
         FilterCriteria,
         FilterResult,
+        FunctionalDataProperty,
+        FunctionalObjectProperty,
+        # Serializers & Parsers
+        FunctionalSyntaxSerializer,
+        Literal,
+        NamedClass,
+        NamedIndividual,
+        ObjectProperty,
+        ObjectPropertyAssertion,
+        ObjectPropertyDomain,
+        ObjectPropertyRange,
+        # Ontology
+        Ontology,
+        # Subgraph extraction (high-performance C++ filtering)
+        OntologyFilter,
+        RDFXMLParseException,
+        RDFXMLParser,
+        RDFXMLSerializer,
+        SubClassOf,
+        TurtleParseException,
+        TurtleParser,
+        TurtleSerializer,
         # Constants
         xsd,
-        # Entity type constants
-        CLASS,
-        OBJECT_PROPERTY,
-        DATA_PROPERTY,
-        NAMED_INDIVIDUAL,
-        DATATYPE,
-        ANNOTATION_PROPERTY,
     )
 
     HAS_CPP_BINDINGS = True
@@ -167,6 +170,9 @@ if HAS_CPP_BINDINGS:
         "RDFXMLSerializer",
         "RDFXMLParser",
         "RDFXMLParseException",
+        "TurtleSerializer",
+        "TurtleParser",
+        "TurtleParseException",
         # Subgraph extraction
         "OntologyFilter",
         "FilterCriteria",

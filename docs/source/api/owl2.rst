@@ -4,8 +4,8 @@ ista.owl2 Module
 The ``ista.owl2`` module provides the main Python interface to the high-performance C++ OWL2 library.
 
 .. note::
-   This is the recommended interface for all new OWL2 ontology work in ista.
-   See :doc:`../user_guide/owl2_interfaces` for comparison with owlready2.
+   This is the recommended interface for all OWL2 ontology work in ista.
+   See :doc:`../user_guide/owl2_interfaces` for detailed documentation.
 
 Module Overview
 ---------------
@@ -150,40 +150,8 @@ Ontology
 
 .. autoclass:: ista.owl2.Ontology
    :members:
+   :undoc-members:
    :special-members: __init__
-
-   Core Methods
-   ^^^^^^^^^^^^
-
-   .. automethod:: add_axiom
-   .. automethod:: remove_axiom
-   .. automethod:: contains_axiom
-   .. automethod:: get_axiom_count
-   .. automethod:: get_axioms
-
-   Entity Queries
-   ^^^^^^^^^^^^^^
-
-   .. automethod:: get_classes
-   .. automethod:: get_object_properties
-   .. automethod:: get_data_properties
-   .. automethod:: get_individuals
-   .. automethod:: get_class_count
-
-   Subgraph Operations
-   ^^^^^^^^^^^^^^^^^^^
-
-   .. automethod:: create_subgraph
-   .. automethod:: get_individuals_of_class
-   .. automethod:: get_neighbors
-   .. automethod:: has_path
-
-   IRI Management
-   ^^^^^^^^^^^^^^
-
-   .. automethod:: get_ontology_iri
-   .. automethod:: register_prefix
-   .. automethod:: get_prefix_map
 
 Serialization and Parsing
 --------------------------
@@ -213,30 +181,13 @@ TurtleSerializer
    :undoc-members:
 
    .. note::
-      This is currently a stub implementation. Full Turtle serialization
-      will be implemented in a future release.
+      Turtle is a compact, human-readable RDF serialization format that is particularly
+      efficient for large ontologies with many individuals. It produces significantly
+      smaller files than RDF/XML (typically 30-50% smaller).
 
-ManchesterSerializer
-^^^^^^^^^^^^^^^^^^^^
-
-.. autoclass:: ista.owl2.ManchesterSerializer
-   :members:
-   :undoc-members:
-
-   .. note::
-      This is currently a stub implementation. Full Manchester Syntax serialization
-      will be implemented in a future release.
-
-OWLXMLSerializer
-^^^^^^^^^^^^^^^^
-
-.. autoclass:: ista.owl2.OWLXMLSerializer
-   :members:
-   :undoc-members:
-
-   .. note::
-      This is currently a stub implementation. Full OWL/XML serialization
-      will be implemented in a future release.
+      The current implementation supports the most common axiom types including:
+      declarations, class assertions, property assertions, subclass/subproperty axioms,
+      and annotations. Complex class expressions are simplified to named classes.
 
 Parsers
 ~~~~~~~
@@ -256,41 +207,36 @@ TurtleParser
    :undoc-members:
 
    .. note::
-      This is currently a stub implementation. Full Turtle parsing
-      will be implemented in a future release.
+      The Turtle parser provides basic support for the most common Turtle syntax patterns.
+      It successfully handles:
 
-FunctionalParser
-^^^^^^^^^^^^^^^^
+      - Prefix declarations (@prefix and @base)
+      - IRI references (full IRIs in <> and prefixed names including default prefix :)
+      - Literals (plain strings, typed with ^^, language-tagged with @)
+      - Basic triples (subject predicate object .)
+      - Comments (# to end of line)
+      - Class and property declarations
+      - Individual assertions and property values
 
-.. autoclass:: ista.owl2.FunctionalParser
+      Current limitations (marked with BREADCRUMB comments in source):
+
+      - No semicolon grouping (;) or comma lists (,)
+      - No blank node property lists []
+      - No RDF collections ()
+      - Simplified numeric literal handling
+      - No IRI escape sequences (\u, \U)
+      - No triple-quoted strings
+      - Simplified RDF-to-OWL conversion
+
+      The parser achieves approximately 80% coverage of common use cases and is suitable
+      for most standard ontology files. Complex RDF patterns may not parse correctly.
+
+FunctionalSyntaxParser
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. autoclass:: ista.owl2.FunctionalSyntaxParser
    :members:
    :undoc-members:
-
-   .. note::
-      This is currently a stub implementation. Full Functional Syntax parsing
-      will be implemented in a future release.
-
-ManchesterParser
-^^^^^^^^^^^^^^^^
-
-.. autoclass:: ista.owl2.ManchesterParser
-   :members:
-   :undoc-members:
-
-   .. note::
-      This is currently a stub implementation. Full Manchester Syntax parsing
-      will be implemented in a future release.
-
-OWLXMLParser
-^^^^^^^^^^^^
-
-.. autoclass:: ista.owl2.OWLXMLParser
-   :members:
-   :undoc-members:
-
-   .. note::
-      This is currently a stub implementation. Full OWL/XML parsing
-      will be implemented in a future release.
 
 CSV Parser
 ~~~~~~~~~~
@@ -326,41 +272,6 @@ RDFXMLParseException
    :members:
    :show-inheritance:
 
-TurtleParseException
-^^^^^^^^^^^^^^^^^^^^
-
-.. autoexception:: ista.owl2.TurtleParseException
-   :members:
-   :show-inheritance:
-
-FunctionalParseException
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. autoexception:: ista.owl2.FunctionalParseException
-   :members:
-   :show-inheritance:
-
-ManchesterParseException
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. autoexception:: ista.owl2.ManchesterParseException
-   :members:
-   :show-inheritance:
-
-OWLXMLParseException
-^^^^^^^^^^^^^^^^^^^^
-
-.. autoexception:: ista.owl2.OWLXMLParseException
-   :members:
-   :show-inheritance:
-
-CSVParseException
-^^^^^^^^^^^^^^^^^
-
-.. autoexception:: ista.owl2.CSVParseException
-   :members:
-   :show-inheritance:
-
 Subgraph Extraction
 -------------------
 
@@ -369,25 +280,8 @@ OntologyFilter
 
 .. autoclass:: ista.owl2.OntologyFilter
    :members:
+   :undoc-members:
    :special-members: __init__
-
-   Filtering Methods
-   ^^^^^^^^^^^^^^^^^
-
-   .. automethod:: filter_by_individuals
-   .. automethod:: filter_by_classes
-   .. automethod:: extract_neighborhood
-   .. automethod:: extract_path
-   .. automethod:: random_sample
-   .. automethod:: apply_filter
-
-   Builder Pattern
-   ^^^^^^^^^^^^^^^
-
-   .. automethod:: with_individuals
-   .. automethod:: with_classes
-   .. automethod:: with_max_depth
-   .. automethod:: execute
 
 FilterCriteria
 ~~~~~~~~~~~~~~

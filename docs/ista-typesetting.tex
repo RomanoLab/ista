@@ -1,0 +1,159 @@
+% ista-options.tex  (plain TeX, not LaTeX)
+% Compile with: pdftex ista-options.tex   (or: tex ista-options.tex -> dvi)
+
+\magnification=\magstep1
+\parindent=0pt
+\parskip=6pt
+\headline={}
+\footline={\hfil\tenrm ista typesetting options\hfil\folio}
+
+% --- Fonts (Computer Modern family) ---
+\font\tenrm=cmr10
+\font\tenbf=cmbx10
+\font\tentt=cmtt10
+\font\tensf=cmss10
+\font\tensc=cmcsc10
+\font\bigrm=cmr10 scaled 2000
+\font\bigbf=cmbx10 scaled 2000
+\font\bigtt=cmtt10 scaled 2000
+\font\bigsf=cmss10 scaled 2000
+\font\bigsc=cmcsc10 scaled 2000
+
+\tenrm
+
+% --- Minimal "verbatim" for code display ---
+\def\begincode{%
+  \par\smallskip
+  \hrule\smallskip
+  \begingroup
+    \parindent=0pt
+    \tentt
+    \catcode`\\=12 \catcode`\{=12 \catcode`\}=12
+    \catcode`\$=12 \catcode`\&=12 \catcode`\#=12
+    \catcode`\%=12 \catcode`\~=12 \catcode`\_=12
+    \obeylines \obeyspaces
+}
+\def\endcode{%
+  \endgroup
+  \smallskip\hrule
+  \par\bigskip
+}
+
+% --- A little section helper ---
+\def\Option#1#2#3{%
+  {\tenbf #1}\par
+  Rendered (normal size): #2\par
+  Rendered (large): {\bigrm #2}\par
+  Code:\par
+  \begincode
+#3
+  \endcode
+}
+
+% --- Definitions of the options ---
+\def\istaPlain{{\tenrm ista}}
+
+\def\istaSC{{\tensc ista}}
+\def\istaSCcaps{{\tensc ISTA}}
+
+\def\istaTT{{\tentt ista}}
+\def\istaTTtracked{{\tentt i\kern0.05em s\kern0.05em t\kern0.05em a}}
+
+\def\istaSF{{\tensf ista}}
+
+\def\istaMathRM{$\rm ista$}
+
+% TeX-logo-style kerning + lowering (two variants)
+\def\istaKernLowerS{{\tenrm i\kern-0.08em\lower0.20ex\hbox{s}\kern-0.06em t\kern-0.02em a}}
+\def\istaKernLowerT{{\tenrm i\kern-0.06em s\kern-0.04em\lower0.18ex\hbox{t}\kern-0.02em a}}
+
+% "Graph node" dot on i (dotless i + raised bullet)
+\def\istaNodeDot{{\tenrm \i\kern-0.02em\raise0.55ex\hbox{$\scriptstyle\bullet$}\kern0.06em sta}}
+
+% A lightweight "conversion" mark: a ↔ above the word (plain-TeX-friendly)
+\def\istaConvert{%
+  {\setbox0=\hbox{\tenrm ista}%
+   \hbox{\vbox{\offinterlineskip
+     \halign{\hfil##\hfil\cr
+       \hbox{$\leftrightarrow$}\cr
+       \noalign{\kern1pt}
+       \box0\cr}}}}%
+}
+
+% Tighten the s-t gap (CM Roman doesn't have an st ligature, but this reads "designed")
+\def\istaTightST{{\tenrm i s\kern-0.10em t a}}
+
+% --- Title ---
+{\bigbf ista} {\tenrm typesetting comparison (plain TeX)}\par
+\smallskip
+This file shows several “Knuth-adjacent” ways to typeset the name.\par
+\bigskip
+\hrule
+\bigskip
+
+% --- Render each option + show the code used ---
+\Option
+  {1) Plain roman (baseline)}
+  {\istaPlain}
+  {\def\istaPlain{{\tenrm ista}}}
+
+\Option
+  {2) Small caps}
+  {\istaSC}
+  {\def\istaSC{{\tensc ista}}}
+
+\Option
+  {3) Small caps (all-caps shape, still small-caps glyphs)}
+  {\istaSCcaps}
+  {\def\istaSCcaps{{\tensc ISTA}}}
+
+\Option
+  {4) Monospace / typewriter}
+  {\istaTT}
+  {\def\istaTT{{\tentt ista}}}
+
+\Option
+  {5) Monospace with subtle tracking}
+  {\istaTTtracked}
+  {\def\istaTTtracked{{\tentt i\kern0.05em s\kern0.05em t\kern0.05em a}}}
+
+\Option
+  {6) Sans serif}
+  {\istaSF}
+  {\def\istaSF{{\tensf ista}}}
+
+\Option
+  {7) Math roman token (operator-ish feel)}
+  {\istaMathRM}
+  {\def\istaMathRM{$\rm ista$}}
+
+\Option
+  {8) TeX-logo trick variant A (lower the ‘s’)}
+  {\istaKernLowerS}
+  {\def\istaKernLowerS{{\tenrm i\kern-0.08em\lower0.20ex\hbox{s}\kern-0.06em t\kern-0.02em a}}}
+
+\Option
+  {9) TeX-logo trick variant B (lower the ‘t’)}
+  {\istaKernLowerT}
+  {\def\istaKernLowerT{{\tenrm i\kern-0.06em s\kern-0.04em\lower0.18ex\hbox{t}\kern-0.02em a}}}
+
+\Option
+  {10) “Knowledge graph” dot on the i (node dot)}
+  {\istaNodeDot}
+  {\def\istaNodeDot{{\tenrm \i\kern-0.02em\raise0.55ex\hbox{$\scriptstyle\bullet$}\kern0.06em sta}}}
+
+\Option
+  {11) Conversion mark (↔ above the word)}
+  {\istaConvert}
+  {\def\istaConvert{{\setbox0=\hbox{\tenrm ista}\hbox{\vbox{\offinterlineskip
+    \halign{\hfil##\hfil\cr
+      \hbox{$\leftrightarrow$}\cr
+      \noalign{\kern1pt}
+      \box0\cr}}}}}}
+
+\Option
+  {12) Tightened “s-t” spacing}
+  {\istaTightST}
+  {\def\istaTightST{{\tenrm i s\kern-0.10em t a}}}
+
+\bye

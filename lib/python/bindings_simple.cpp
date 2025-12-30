@@ -735,6 +735,28 @@ PYBIND11_MODULE(_libista_owl2, m) {
                    "Serialize ontology to RDF/XML file");
 
     // ========================================================================
+    // Turtle Serializer
+    // ========================================================================
+    py::class_<TurtleSerializer>(m, "TurtleSerializer", 
+        "Serializer for Turtle (Terse RDF Triple Language) format.\n\n"
+        "Turtle is a compact, human-readable RDF serialization that is particularly\n"
+        "efficient for large ontologies with many individuals. It produces smaller files\n"
+        "than RDF/XML and is faster to parse.")
+        .def_static("serialize", 
+                   py::overload_cast<const Ontology&>(&TurtleSerializer::serialize),
+                   py::arg("ontology"),
+                   "Serialize ontology to Turtle string")
+        .def_static("serialize", 
+                   py::overload_cast<const Ontology&, const std::map<std::string, std::string>&>(&TurtleSerializer::serialize),
+                   py::arg("ontology"),
+                   py::arg("prefixes"),
+                   "Serialize ontology to Turtle string with custom prefix mappings")
+        .def_static("serialize_to_file", &TurtleSerializer::serializeToFile,
+                   py::arg("ontology"),
+                   py::arg("filename"),
+                   "Serialize ontology to Turtle file");
+
+    // ========================================================================
     // RDF/XML Parser
     // ========================================================================
     py::class_<RDFXMLParser>(m, "RDFXMLParser", "Parser for OWL2 RDF/XML format")
@@ -799,18 +821,6 @@ PYBIND11_MODULE(_libista_owl2, m) {
                    "Parse ontology from OWL/XML file");
     
     py::register_exception<OWLXMLParseException>(m, "OWLXMLParseException");
-
-    // ========================================================================
-    // Turtle Serializer
-    // ========================================================================
-    py::class_<TurtleSerializer>(m, "TurtleSerializer", "Serializer for Turtle format")
-        .def_static("serialize", py::overload_cast<const Ontology&>(&TurtleSerializer::serialize),
-                   py::arg("ontology"),
-                   "Serialize ontology to Turtle string")
-        .def_static("serialize_to_file", &TurtleSerializer::serializeToFile,
-                   py::arg("ontology"),
-                   py::arg("filename"),
-                   "Serialize ontology to Turtle file");
 
     // ========================================================================
     // Manchester Syntax Serializer
