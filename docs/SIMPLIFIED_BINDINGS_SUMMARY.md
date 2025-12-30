@@ -240,7 +240,7 @@ Ontology(<http://example.org/family>
 ## Usage Example
 
 ```python
-import _libista_owl2 as owl2
+import ista.owl2 as owl2
 
 # Create ontology
 onto = owl2.Ontology(owl2.IRI("http://example.org/myonto"))

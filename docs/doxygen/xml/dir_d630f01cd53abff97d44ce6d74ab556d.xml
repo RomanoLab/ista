@@ -7,6 +7,7 @@
     <innerdir refid="dir_396282372a14aa02a8946dacfb18c4b0">D:/projects/ista/lib/owl2/reasoner</innerdir>
     <innerdir refid="dir_a78a4cf07cf6c6b89181d07787f88adf">D:/projects/ista/lib/owl2/serializer</innerdir>
     <innerfile refid="entity_8hpp">entity.hpp</innerfile>
+    <innerfile refid="generalDefs_8hpp">generalDefs.hpp</innerfile>
     <innerfile refid="owl2_8hpp">owl2.hpp</innerfile>
     <briefdescription>
     </briefdescription>

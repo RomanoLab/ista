@@ -14,6 +14,13 @@
 #include "../owl2/owl2.hpp"
 #include "../owl2/parser/rdfxml_parser.hpp"
 #include "../owl2/parser/csv_parser.hpp"
+#include "../owl2/parser/turtle_parser.hpp"
+#include "../owl2/parser/functional_parser.hpp"
+#include "../owl2/parser/manchester_parser.hpp"
+#include "../owl2/parser/owlxml_parser.hpp"
+#include "../owl2/serializer/turtle_serializer.hpp"
+#include "../owl2/serializer/manchester_serializer.hpp"
+#include "../owl2/serializer/owlxml_serializer.hpp"
 #include "../owl2/core/ontology_filter.hpp"
 
 namespace py = pybind11;
@@ -418,6 +425,139 @@ PYBIND11_MODULE(_libista_owl2, m) {
              py::arg("indent"),
              "Convert the ontology to OWL2 Functional Syntax with custom indentation")
         
+        // Individual and property manipulation
+        .def("create_individual", &Ontology::createIndividual,
+             py::arg("cls"),
+             py::arg("individual_iri"),
+             "Create a new individual of the specified class\n\n"
+             "This creates a NamedIndividual and adds a ClassAssertion axiom.\n\n"
+             "Args:\n"
+             "    cls: The class to instantiate\n"
+             "    individual_iri: The IRI for the new individual\n\n"
+             "Returns:\n"
+             "    The created NamedIndividual")
+        .def("add_data_property_assertion", &Ontology::addDataPropertyAssertion,
+             py::arg("individual"),
+             py::arg("property"),
+             py::arg("value"),
+             "Add a data property assertion\n\n"
+             "Creates and adds a DataPropertyAssertion axiom.\n\n"
+             "Args:\n"
+             "    individual: The subject individual\n"
+             "    property: The data property\n"
+             "    value: The literal value\n\n"
+             "Returns:\n"
+             "    True if the axiom was added successfully")
+        .def("add_object_property_assertion", &Ontology::addObjectPropertyAssertion,
+             py::arg("subject"),
+             py::arg("property"),
+             py::arg("object"),
+             "Add an object property assertion\n\n"
+             "Creates and adds an ObjectPropertyAssertion axiom.\n\n"
+             "Args:\n"
+             "    subject: The subject individual\n"
+             "    property: The object property\n"
+             "    object: The object individual\n\n"
+             "Returns:\n"
+             "    True if the axiom was added successfully")
+        .def("add_class_assertion", &Ontology::addClassAssertion,
+             py::arg("individual"),
+             py::arg("cls"),
+             "Add a class assertion to an existing individual\n\n"
+             "Args:\n"
+             "    individual: The individual\n"
+             "    cls: The class to assert\n\n"
+             "Returns:\n"
+             "    True if the axiom was added successfully")
+        
+        // Property-based search
+        .def("search_by_data_property", &Ontology::searchByDataProperty,
+             py::arg("property"),
+             py::arg("value"),
+             "Search for individuals by data property value\n\n"
+             "Args:\n"
+             "    property: The data property to search\n"
+             "    value: The literal value to match\n\n"
+             "Returns:\n"
+             "    List of individuals with matching data property assertions")
+        .def("search_by_object_property", &Ontology::searchByObjectProperty,
+             py::arg("property"),
+             py::arg("object"),
+             "Search for individuals by object property value\n\n"
+             "Args:\n"
+             "    property: The object property to search\n"
+             "    object: The object individual to match\n\n"
+             "Returns:\n"
+             "    List of subject individuals with matching object property assertions")
+        
+        // Property assertion queries
+        .def("get_object_property_assertions_for_individual", 
+             py::overload_cast<const NamedIndividual&>(&Ontology::getObjectPropertyAssertions, py::const_),
+             py::arg("individual"),
+             "Get all object property assertions for an individual\n\n"
+             "Args:\n"
+             "    individual: The individual\n\n"
+             "Returns:\n"
+             "    List of ObjectPropertyAssertion axioms")
+        .def("get_object_property_assertions_for_property",
+             py::overload_cast<const ObjectProperty&>(&Ontology::getObjectPropertyAssertions, py::const_),
+             py::arg("property"),
+             "Get all object property assertions for a property\n\n"
+             "Args:\n"
+             "    property: The object property\n\n"
+             "Returns:\n"
+             "    List of (subject, object) pairs")
+        .def("get_data_property_assertions_for_individual",
+             py::overload_cast<const NamedIndividual&>(&Ontology::getDataPropertyAssertions, py::const_),
+             py::arg("individual"),
+             "Get all data property assertions for an individual\n\n"
+             "Args:\n"
+             "    individual: The individual\n\n"
+             "Returns:\n"
+             "    List of DataPropertyAssertion axioms")
+        .def("get_data_property_assertions_for_property",
+             py::overload_cast<const DataProperty&>(&Ontology::getDataPropertyAssertions, py::const_),
+             py::arg("property"),
+             "Get all data property assertions for a property\n\n"
+             "Args:\n"
+             "    property: The data property\n\n"
+             "Returns:\n"
+             "    List of (subject, value) pairs")
+        
+        // Individual class queries
+        .def("get_classes_for_individual", &Ontology::getClassesForIndividual,
+             py::arg("individual"),
+             "Get all classes that an individual is asserted to be an instance of\n\n"
+             "Args:\n"
+             "    individual: The individual to query\n\n"
+             "Returns:\n"
+             "    List of classes")
+        .def("is_instance_of", &Ontology::isInstanceOf,
+             py::arg("individual"),
+             py::arg("cls"),
+             "Check if an individual is an instance of a class\n\n"
+             "Args:\n"
+             "    individual: The individual to check\n"
+             "    cls: The class to check membership of\n\n"
+             "Returns:\n"
+             "    True if there is a ClassAssertion axiom")
+        
+        // Property characteristics
+        .def("is_functional_object_property", &Ontology::isFunctionalObjectProperty,
+             py::arg("property"),
+             "Check if an object property is functional\n\n"
+             "Args:\n"
+             "    property: The object property to check\n\n"
+             "Returns:\n"
+             "    True if there is a FunctionalObjectProperty axiom")
+        .def("is_functional_data_property", &Ontology::isFunctionalDataProperty,
+             py::arg("property"),
+             "Check if a data property is functional\n\n"
+             "Args:\n"
+             "    property: The data property to check\n\n"
+             "Returns:\n"
+             "    True if there is a FunctionalDataProperty axiom")
+        
         // Filtering and subgraph extraction methods
         .def("create_subgraph", &Ontology::createSubgraph,
              py::arg("filter"),
@@ -607,6 +747,94 @@ PYBIND11_MODULE(_libista_owl2, m) {
     
     // Parser exception
     py::register_exception<RDFXMLParseException>(m, "RDFXMLParseException");
+
+    // ========================================================================
+    // Turtle Parser
+    // ========================================================================
+    py::class_<TurtleParser>(m, "TurtleParser", "Parser for Turtle format")
+        .def_static("parse", &TurtleParser::parseFromString,
+                   py::arg("turtle_content"),
+                   "Parse ontology from Turtle string")
+        .def_static("parse_from_file", &TurtleParser::parseFromFile,
+                   py::arg("filename"),
+                   "Parse ontology from Turtle file");
+    
+    py::register_exception<TurtleParseException>(m, "TurtleParseException");
+
+    // ========================================================================
+    // Functional Syntax Parser
+    // ========================================================================
+    py::class_<FunctionalParser>(m, "FunctionalParser", "Parser for OWL2 Functional Syntax")
+        .def_static("parse", &FunctionalParser::parseFromString,
+                   py::arg("functional_content"),
+                   "Parse ontology from Functional Syntax string")
+        .def_static("parse_from_file", &FunctionalParser::parseFromFile,
+                   py::arg("filename"),
+                   "Parse ontology from Functional Syntax file");
+    
+    py::register_exception<FunctionalParseException>(m, "FunctionalParseException");
+
+    // ========================================================================
+    // Manchester Syntax Parser
+    // ========================================================================
+    py::class_<ManchesterParser>(m, "ManchesterParser", "Parser for Manchester Syntax")
+        .def_static("parse", &ManchesterParser::parseFromString,
+                   py::arg("manchester_content"),
+                   "Parse ontology from Manchester Syntax string")
+        .def_static("parse_from_file", &ManchesterParser::parseFromFile,
+                   py::arg("filename"),
+                   "Parse ontology from Manchester Syntax file");
+    
+    py::register_exception<ManchesterParseException>(m, "ManchesterParseException");
+
+    // ========================================================================
+    // OWL/XML Parser
+    // ========================================================================
+    py::class_<OWLXMLParser>(m, "OWLXMLParser", "Parser for OWL/XML format")
+        .def_static("parse", &OWLXMLParser::parseFromString,
+                   py::arg("owlxml_content"),
+                   "Parse ontology from OWL/XML string")
+        .def_static("parse_from_file", &OWLXMLParser::parseFromFile,
+                   py::arg("filename"),
+                   "Parse ontology from OWL/XML file");
+    
+    py::register_exception<OWLXMLParseException>(m, "OWLXMLParseException");
+
+    // ========================================================================
+    // Turtle Serializer
+    // ========================================================================
+    py::class_<TurtleSerializer>(m, "TurtleSerializer", "Serializer for Turtle format")
+        .def_static("serialize", py::overload_cast<const Ontology&>(&TurtleSerializer::serialize),
+                   py::arg("ontology"),
+                   "Serialize ontology to Turtle string")
+        .def_static("serialize_to_file", &TurtleSerializer::serializeToFile,
+                   py::arg("ontology"),
+                   py::arg("filename"),
+                   "Serialize ontology to Turtle file");
+
+    // ========================================================================
+    // Manchester Syntax Serializer
+    // ========================================================================
+    py::class_<ManchesterSerializer>(m, "ManchesterSerializer", "Serializer for Manchester Syntax")
+        .def_static("serialize", &ManchesterSerializer::serialize,
+                   py::arg("ontology"),
+                   "Serialize ontology to Manchester Syntax string")
+        .def_static("serialize_to_file", &ManchesterSerializer::serializeToFile,
+                   py::arg("ontology"),
+                   py::arg("filename"),
+                   "Serialize ontology to Manchester Syntax file");
+
+    // ========================================================================
+    // OWL/XML Serializer
+    // ========================================================================
+    py::class_<OWLXMLSerializer>(m, "OWLXMLSerializer", "Serializer for OWL/XML format")
+        .def_static("serialize", &OWLXMLSerializer::serialize,
+                   py::arg("ontology"),
+                   "Serialize ontology to OWL/XML string")
+        .def_static("serialize_to_file", &OWLXMLSerializer::serializeToFile,
+                   py::arg("ontology"),
+                   py::arg("filename"),
+                   "Serialize ontology to OWL/XML file");
 
     // ========================================================================
     // CSV Parser

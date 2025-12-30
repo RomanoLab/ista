@@ -381,6 +381,13 @@
     <member refid="classista_1_1owl2_1_1FunctionalObjectProperty_1ab19dc8410b3d80efb59a6aad9aaab535" kind="function"><name>toFunctionalSyntax</name></member>
     <member refid="classista_1_1owl2_1_1FunctionalObjectProperty_1a63b1adbe374dd5ca074d2009055b5248" kind="function"><name>getAxiomType</name></member>
   </compound>
+  <compound refid="classista_1_1owl2_1_1FunctionalParseException" kind="class"><name>ista::owl2::FunctionalParseException</name>
+    <member refid="classista_1_1owl2_1_1FunctionalParseException_1a8cd7fd3dd5488057e1d994379943b9b0" kind="function"><name>FunctionalParseException</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1FunctionalParser" kind="class"><name>ista::owl2::FunctionalParser</name>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1a29b5ab02aa0f50b6a9e476c6f1e3a0d7" kind="function"><name>parseFromString</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1ab53562b97cb7fd835234fcc4511aab11" kind="function"><name>parseFromFile</name></member>
+  </compound>
   <compound refid="classista_1_1owl2_1_1FunctionalSyntaxSerializer" kind="class"><name>ista::owl2::FunctionalSyntaxSerializer</name>
     <member refid="classista_1_1owl2_1_1FunctionalSyntaxSerializer_1a6a2ef523bf327716659cb98f0c51fdb6" kind="function"><name>serialize</name></member>
     <member refid="classista_1_1owl2_1_1FunctionalSyntaxSerializer_1a737da1655be10815a7c6ab463e34debd" kind="function"><name>serializeToFile</name></member>
@@ -509,6 +516,17 @@
     <member refid="classista_1_1owl2_1_1Literal_1a7ec4872adc79a2dffad376aaeca5c4dd" kind="function"><name>operator==</name></member>
     <member refid="classista_1_1owl2_1_1Literal_1a907d905329c2b80bae5b64370423ce97" kind="function"><name>operator!=</name></member>
     <member refid="classista_1_1owl2_1_1Literal_1a7162404fb52bdf89400155e2d05216bf" kind="function"><name>operator&lt;</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1ManchesterParseException" kind="class"><name>ista::owl2::ManchesterParseException</name>
+    <member refid="classista_1_1owl2_1_1ManchesterParseException_1a845aa52dd395c24e64d4ba14f429b8d4" kind="function"><name>ManchesterParseException</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1ManchesterParser" kind="class"><name>ista::owl2::ManchesterParser</name>
+    <member refid="classista_1_1owl2_1_1ManchesterParser_1a6706138bd299ffcc40e160634d7aa271" kind="function"><name>parseFromString</name></member>
+    <member refid="classista_1_1owl2_1_1ManchesterParser_1ab3541b315120cb823f1bb617fb8d3f03" kind="function"><name>parseFromFile</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1ManchesterSerializer" kind="class"><name>ista::owl2::ManchesterSerializer</name>
+    <member refid="classista_1_1owl2_1_1ManchesterSerializer_1ab3622cd50a2d24e61c634e9bb296cb83" kind="function"><name>serialize</name></member>
+    <member refid="classista_1_1owl2_1_1ManchesterSerializer_1a97a05e2a7467f44792126e61cb0d36fc" kind="function"><name>serializeToFile</name></member>
   </compound>
   <compound refid="classista_1_1owl2_1_1NamedClass" kind="class"><name>ista::owl2::NamedClass</name>
     <member refid="classista_1_1owl2_1_1NamedClass_1a161ce5807d151a3432017ae51630cebc" kind="variable"><name>class_</name></member>
@@ -749,6 +767,62 @@
     <member refid="classista_1_1owl2_1_1OntologyFilter_1ad712044479c3788938255ed4b4a5e4af" kind="function"><name>addDeclarations</name></member>
     <member refid="classista_1_1owl2_1_1OntologyFilter_1a6cf29292370190260724f1f4d9eb17e7" kind="function"><name>copyMetadata</name></member>
   </compound>
+  <compound refid="classista_1_1owl2_1_1OWLXMLParseException" kind="class"><name>ista::owl2::OWLXMLParseException</name>
+    <member refid="classista_1_1owl2_1_1OWLXMLParseException_1a1aafb45d3d3f5f526783a63390a364f6" kind="function"><name>OWLXMLParseException</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1OWLXMLParser" kind="class"><name>ista::owl2::OWLXMLParser</name>
+    <member refid="classista_1_1owl2_1_1OWLXMLParser_1acab5038f27a52a550eabd217e22e2a0e" kind="function"><name>parseFromString</name></member>
+    <member refid="classista_1_1owl2_1_1OWLXMLParser_1a8f1532a6b0e496ca4ea3805a8f2c4984" kind="function"><name>parseFromFile</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1OWLXMLSerializer" kind="class"><name>ista::owl2::OWLXMLSerializer</name>
+    <member refid="classista_1_1owl2_1_1OWLXMLSerializer_1ae724f22f60daeb7bee71f916047b0004" kind="function"><name>serialize</name></member>
+    <member refid="classista_1_1owl2_1_1OWLXMLSerializer_1a2ee25145143239c106c0138cb82388fd" kind="function"><name>serializeToFile</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser" kind="class"><name>ista::owl2::FunctionalParser::Parser</name>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1ac5dd487d89ba87d14132f2b1d9f2b7bd" kind="variable"><name>content_</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1ad869c59c4b6aa380944820c2542b68e1" kind="variable"><name>pos_</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1ae84fde25bd653dec25c40e229d99c888" kind="variable"><name>line_</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a21ea531233c3f5e3d7dfd0cd211113dd" kind="variable"><name>col_</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1ad6f837fa29215d8368c1dcf9199bf8bd" kind="variable"><name>prefixes_</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a6b8522f2cb628f63aea059c64eabb087" kind="variable"><name>current_ontology_</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a52711ffc702d42bf644b3b52d6e627fc" kind="function"><name>Parser</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a53fed8895bfe886c9d5eb2e7c676d0ef" kind="function"><name>parse</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1afe069e2c2ff697a54a026041b58aee9d" kind="function"><name>skipWhitespace</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1af949d6909a6afe907171a27c6e36f433" kind="function"><name>skipComment</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a3f3fce47dbcf33eef0a548f875f00607" kind="function"><name>isAtEnd</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1ae9321368d838b36e007d1f51b4a5a895" kind="function"><name>peek</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1aeae826c517f33edae66ef37c42330ca3" kind="function"><name>advance</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a786960cf8af31fe23feb4aa74f6577a1" kind="function"><name>match</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1ae6b73aee15b55c5e9c32cf7f32296d29" kind="function"><name>match</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a42f04d9ae2f53cc9147193e635f1ac50" kind="function"><name>readToken</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a627bc0cf6880105482ad3e26db369e11" kind="function"><name>readQuotedString</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a1b21b4235231c863dc6e52e2c15078a3" kind="function"><name>readIRI</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a840f72b379a7713dfbf418567c262245" kind="function"><name>parseOntologyDocument</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a03853c6026fd76d48dd80815ba792e3b" kind="function"><name>parsePrefixDeclaration</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a90cb4246248f335eaf55505bcef4c967" kind="function"><name>parseOntology</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a89564199db670befd771b2f867002652" kind="function"><name>parseAxiom</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1ad97bf1d5f5d8313eaf3e28b8e9ad7a9b" kind="function"><name>parseDeclaration</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1aff0aa2194587d734a418bc683e194415" kind="function"><name>parseClassAxiom</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1abb612cfd4f4be600f8b94b3ef3bd2846" kind="function"><name>parseObjectPropertyAxiom</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1aec649cfdede00882a936fcadcfdbf091" kind="function"><name>parseDataPropertyAxiom</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1abb45742a36a46b89b3fb38009ca7559a" kind="function"><name>parseAssertionAxiom</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a1f2364a04623bc1eb72547a3da3491d5" kind="function"><name>parseAnnotationAxiom</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1afc310271d1487c04aeef072ebfabd2bf" kind="function"><name>parseClass</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a30359ea294c067948d6b5ffa94ae5a13" kind="function"><name>parseObjectProperty</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a67414915e693e5351e350476da1e6fc3" kind="function"><name>parseDataProperty</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a498f2814e2c26a2e35b4bd6c7c437c2a" kind="function"><name>parseAnnotationProperty</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a58e6e305a1cabebd016a567ccd6b0b6b" kind="function"><name>parseNamedIndividual</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1aaf79a9ba899f6303ca1253ce013e9495" kind="function"><name>parseDatatype</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1aa88060da61e7b1608a8b766d8c6d1cf4" kind="function"><name>parseClassExpression</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a25c9ce7f9a1d9791535cfe26885061a8" kind="function"><name>parseDataRange</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a00fe09886e4e920fec0b9a11edbc5997" kind="function"><name>parseLiteral</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1acc2c94ccf4327f80016fdd1b79b77d9c" kind="function"><name>parseAnnotations</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a32282e1de52090839ffc6ede88e8d750" kind="function"><name>parseAnnotation</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a5b1bc464ae50897c5ba310fef9048e9e" kind="function"><name>expect</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1ad99965e7de37242054dc1284bedf6376" kind="function"><name>expect</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a088c0b8b7a07b9aa492123bc24a6d33b" kind="function"><name>expandIRI</name></member>
+    <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a6c906162b545c03f2207fca6ba2dfc67" kind="function"><name>error</name></member>
+  </compound>
   <compound refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser" kind="class"><name>ista::owl2::RDFXMLParser::Parser</name>
     <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ac043cbcd946c9b4e7b2e6dc3fbf4a854" kind="variable"><name>content_</name></member>
     <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a3b3b5e5d9c1e5880cd42fe5241a5ed88" kind="variable"><name>doc_</name></member>
@@ -786,6 +860,42 @@
     <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ac941ee6319fa82cb365a07026e69b654" kind="function"><name>parseAnnotationValue</name></member>
     <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1a87637981caf21f381c82d0bb025ea690" kind="function"><name>parseLiteral</name></member>
     <member refid="classista_1_1owl2_1_1RDFXMLParser_1_1Parser_1ac920ffe83e899463073594200437a7d9" kind="function"><name>resolveNodeName</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1TurtleParser_1_1Parser" kind="class"><name>ista::owl2::TurtleParser::Parser</name>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a8814c41c744d317d488054d2daef29e4" kind="variable"><name>content_</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a23074b384e4ef29233ab0b8eb60bc53f" kind="variable"><name>pos_</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a8b835b2dd25ba11a28e391b64ef53904" kind="variable"><name>line_</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1acf882f3aaa4e78e95567d2562143934d" kind="variable"><name>col_</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a6dbc688c0189f47a86072803194086ed" kind="variable"><name>prefixes_</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a1a645ee7c36982fbce1a6eab25ea9410" kind="variable"><name>base_uri_</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1ad98fd5f6fed6b297e37d1e8513686fe1" kind="function"><name>Parser</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a9968c47bc999b6f81a926bcc71337627" kind="function"><name>parse</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a14624f715e4b27c87c6b57c310dbd003" kind="function"><name>skipWhitespace</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a723e9d09dc1eefadea3fbffc773db8cb" kind="function"><name>skipComment</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a31f926d55cbd9963350b9cf11d66fa07" kind="function"><name>isAtEnd</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a72ac9c878fce541433b93c7955962de3" kind="function"><name>peek</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1af208cf3a6b90f3cf50a8ab19fe7e2597" kind="function"><name>advance</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1ae35270974475aadaaacd233019982b53" kind="function"><name>match</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1adbff3df30d9d29a57a3f716b513db023" kind="function"><name>match</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a8ccd4b3450425544951de6f32c271889" kind="function"><name>parseDirective</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a68e149f812a5231b5be02c4fc3dff659" kind="function"><name>parsePrefixDirective</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1ae26a020025b8c79e4cea6fc1c97441a4" kind="function"><name>parseBaseDirective</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a91d2aa4a04bcfb8e9caa0b26c3fcaec0" kind="function"><name>parseTriples</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a524b874a45df320017299c24fab007f5" kind="function"><name>parseSubject</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a7ff584d11aceb48305f36199a32b07c2" kind="function"><name>parsePredicate</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a5e28e981182819f73ad20a869db6b169" kind="function"><name>parseObject</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a3101c14bab66a3980b5f1286267728dd" kind="function"><name>parseIRIRef</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1aafb7ea8c2e8cca90e4b855248b9340f2" kind="function"><name>parsePrefixedName</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a539565c28ed22ef62cce81e002bbb96c" kind="function"><name>parseBlankNode</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1aaacd5da24f0643c9d3c85c05a9dc1d5f" kind="function"><name>parseLiteral</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a91c3f15df76a349371536628d91ca07e" kind="function"><name>parseCollection</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1ad9669998dfff06bbd6b1e17d4178f16f" kind="function"><name>parseBlankNodePropertyList</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1aa3c75de6e5d1d8526542210324538256" kind="function"><name>resolveIRI</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1aea77698eb27c8a90f9610813cdc86b9a" kind="function"><name>expandPrefix</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a531a9205b7eac605e87e9251beba0052" kind="function"><name>isNameStartChar</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1aab84b3ee5e32d46ffabb01e3c9b6a984" kind="function"><name>isNameChar</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a006f15e407401f271f43f3c332319a3b" kind="function"><name>error</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a7e023a5b86b33536677cc85ef5b73984" kind="function"><name>triplesToOntology</name></member>
   </compound>
   <compound refid="classista_1_1owl2_1_1RDFXMLParseException" kind="class"><name>ista::owl2::RDFXMLParseException</name>
     <member refid="classista_1_1owl2_1_1RDFXMLParseException_1aee49285111f06812c368bb838d9c330b" kind="function"><name>RDFXMLParseException</name></member>
@@ -886,6 +996,26 @@
     <member refid="classista_1_1owl2_1_1TransitiveObjectProperty_1a28ecd0d526349fc8fd357ceb941e2071" kind="function"><name>toFunctionalSyntax</name></member>
     <member refid="classista_1_1owl2_1_1TransitiveObjectProperty_1a9fc1a3d53b4165f0b3622d973bbc1220" kind="function"><name>getAxiomType</name></member>
   </compound>
+  <compound refid="structista_1_1owl2_1_1TurtleParser_1_1Parser_1_1Triple" kind="struct"><name>ista::owl2::TurtleParser::Parser::Triple</name>
+    <member refid="structista_1_1owl2_1_1TurtleParser_1_1Parser_1_1Triple_1af1684aed3ca54e6f97a007c4cb7226c6" kind="variable"><name>subject</name></member>
+    <member refid="structista_1_1owl2_1_1TurtleParser_1_1Parser_1_1Triple_1aa0faec8e9ade8ee9d4a518f3cffd7333" kind="variable"><name>predicate</name></member>
+    <member refid="structista_1_1owl2_1_1TurtleParser_1_1Parser_1_1Triple_1ae0fd9acdccf8ec7a56fb76a18bdf07b2" kind="variable"><name>object</name></member>
+    <member refid="structista_1_1owl2_1_1TurtleParser_1_1Parser_1_1Triple_1a38a264bf3f8d4f0406d3eaf03a690a2e" kind="variable"><name>object_is_literal</name></member>
+    <member refid="structista_1_1owl2_1_1TurtleParser_1_1Parser_1_1Triple_1a4015e7cbb8eed736fa6a56ed9d30aacc" kind="variable"><name>literal_datatype</name></member>
+    <member refid="structista_1_1owl2_1_1TurtleParser_1_1Parser_1_1Triple_1aa8b67738992dbef3e537518376a3938d" kind="variable"><name>literal_language</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1TurtleParseException" kind="class"><name>ista::owl2::TurtleParseException</name>
+    <member refid="classista_1_1owl2_1_1TurtleParseException_1a94186ac28c5076d4f8fde21b40cc3d8d" kind="function"><name>TurtleParseException</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1TurtleParser" kind="class"><name>ista::owl2::TurtleParser</name>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1ad55a32de1f4c0cfed44a9c82a2421a8d" kind="function"><name>parseFromString</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1af014bdf1185a72383d78d22d8b69d903" kind="function"><name>parseFromFile</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1TurtleSerializer" kind="class"><name>ista::owl2::TurtleSerializer</name>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1af3166fbac505bdc7206d3128e78bfdfc" kind="function"><name>serialize</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1a491ad16952d26dce4eace8bfddf534e4" kind="function"><name>serializeToFile</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1a5414c1a3e42b80235bb3a9f5f6ff7761" kind="function"><name>serialize</name></member>
+  </compound>
   <compound refid="namespaceista" kind="namespace"><name>ista</name>
   </compound>
   <compound refid="namespaceista_1_1owl2" kind="namespace"><name>ista::owl2</name>
@@ -974,15 +1104,37 @@
   </compound>
   <compound refid="ontology__filter_8hpp" kind="file"><name>ontology_filter.hpp</name>
   </compound>
+  <compound refid="generalDefs_8hpp" kind="file"><name>generalDefs.hpp</name>
+    <member refid="generalDefs_8hpp_1a6a58e21f29d9f2640020676d9b854c72" kind="typedef"><name>NonNegativeInteger</name></member>
+    <member refid="generalDefs_8hpp_1ae039f9ac3160053987d1a6b33597935f" kind="typedef"><name>QuotedString</name></member>
+    <member refid="generalDefs_8hpp_1ad1dd4069be4d34001f1a9fdbc7c6b744" kind="typedef"><name>LanguageTag</name></member>
+    <member refid="generalDefs_8hpp_1ac6cc8580ccefc8e2136721fd1784aecb" kind="typedef"><name>NodeID</name></member>
+  </compound>
   <compound refid="owl2_8hpp" kind="file"><name>owl2.hpp</name>
   </compound>
   <compound refid="csv__parser_8cpp" kind="file"><name>csv_parser.cpp</name>
   </compound>
   <compound refid="csv__parser_8hpp" kind="file"><name>csv_parser.hpp</name>
   </compound>
+  <compound refid="functional__parser_8cpp" kind="file"><name>functional_parser.cpp</name>
+  </compound>
+  <compound refid="functional__parser_8hpp" kind="file"><name>functional_parser.hpp</name>
+  </compound>
+  <compound refid="manchester__parser_8cpp" kind="file"><name>manchester_parser.cpp</name>
+  </compound>
+  <compound refid="manchester__parser_8hpp" kind="file"><name>manchester_parser.hpp</name>
+  </compound>
+  <compound refid="owlxml__parser_8cpp" kind="file"><name>owlxml_parser.cpp</name>
+  </compound>
+  <compound refid="owlxml__parser_8hpp" kind="file"><name>owlxml_parser.hpp</name>
+  </compound>
   <compound refid="rdfxml__parser_8cpp" kind="file"><name>rdfxml_parser.cpp</name>
   </compound>
   <compound refid="rdfxml__parser_8hpp" kind="file"><name>rdfxml_parser.hpp</name>
+  </compound>
+  <compound refid="turtle__parser_8cpp" kind="file"><name>turtle_parser.cpp</name>
+  </compound>
+  <compound refid="turtle__parser_8hpp" kind="file"><name>turtle_parser.hpp</name>
   </compound>
   <compound refid="konclude__wrapper_8cpp" kind="file"><name>konclude_wrapper.cpp</name>
   </compound>
@@ -992,9 +1144,21 @@
   </compound>
   <compound refid="functional__serializer_8hpp" kind="file"><name>functional_serializer.hpp</name>
   </compound>
+  <compound refid="manchester__serializer_8cpp" kind="file"><name>manchester_serializer.cpp</name>
+  </compound>
+  <compound refid="manchester__serializer_8hpp" kind="file"><name>manchester_serializer.hpp</name>
+  </compound>
+  <compound refid="owlxml__serializer_8cpp" kind="file"><name>owlxml_serializer.cpp</name>
+  </compound>
+  <compound refid="owlxml__serializer_8hpp" kind="file"><name>owlxml_serializer.hpp</name>
+  </compound>
   <compound refid="rdfxml__serializer_8cpp" kind="file"><name>rdfxml_serializer.cpp</name>
   </compound>
   <compound refid="rdfxml__serializer_8hpp" kind="file"><name>rdfxml_serializer.hpp</name>
+  </compound>
+  <compound refid="turtle__serializer_8cpp" kind="file"><name>turtle_serializer.cpp</name>
+  </compound>
+  <compound refid="turtle__serializer_8hpp" kind="file"><name>turtle_serializer.hpp</name>
   </compound>
   <compound refid="dir_a0473cab9a91a76fce53fd6eebf06533" kind="dir"><name>D:/projects/ista/lib/owl2/core</name>
   </compound>

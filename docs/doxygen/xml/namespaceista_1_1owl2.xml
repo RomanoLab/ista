@@ -72,10 +72,21 @@
     <innerclass refid="structista_1_1owl2_1_1NodeTypeConfig" prot="public">ista::owl2::NodeTypeConfig</innerclass>
     <innerclass refid="structista_1_1owl2_1_1RelationshipTypeConfig" prot="public">ista::owl2::RelationshipTypeConfig</innerclass>
     <innerclass refid="classista_1_1owl2_1_1CSVParser" prot="public">ista::owl2::CSVParser</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1FunctionalParseException" prot="public">ista::owl2::FunctionalParseException</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1FunctionalParser" prot="public">ista::owl2::FunctionalParser</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1ManchesterParseException" prot="public">ista::owl2::ManchesterParseException</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1ManchesterParser" prot="public">ista::owl2::ManchesterParser</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1OWLXMLParseException" prot="public">ista::owl2::OWLXMLParseException</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1OWLXMLParser" prot="public">ista::owl2::OWLXMLParser</innerclass>
     <innerclass refid="classista_1_1owl2_1_1RDFXMLParseException" prot="public">ista::owl2::RDFXMLParseException</innerclass>
     <innerclass refid="classista_1_1owl2_1_1RDFXMLParser" prot="public">ista::owl2::RDFXMLParser</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1TurtleParseException" prot="public">ista::owl2::TurtleParseException</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1TurtleParser" prot="public">ista::owl2::TurtleParser</innerclass>
     <innerclass refid="classista_1_1owl2_1_1FunctionalSyntaxSerializer" prot="public">ista::owl2::FunctionalSyntaxSerializer</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1ManchesterSerializer" prot="public">ista::owl2::ManchesterSerializer</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1OWLXMLSerializer" prot="public">ista::owl2::OWLXMLSerializer</innerclass>
     <innerclass refid="classista_1_1owl2_1_1RDFXMLSerializer" prot="public">ista::owl2::RDFXMLSerializer</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1TurtleSerializer" prot="public">ista::owl2::TurtleSerializer</innerclass>
     <innernamespace refid="namespaceista_1_1owl2_1_1facets">ista::owl2::facets</innernamespace>
     <innernamespace refid="namespaceista_1_1owl2_1_1xsd">ista::owl2::xsd</innernamespace>
     <innernamespace refid="namespaceista_1_1owl2_1_1reasoner">ista::owl2::reasoner</innernamespace>

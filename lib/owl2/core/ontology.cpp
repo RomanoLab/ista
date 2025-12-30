@@ -657,5 +657,241 @@ bool Ontology::hasPath(const NamedIndividual& from, const NamedIndividual& to) c
     return false;
 }
 
+// ============================================================================
+// Individual and Property Manipulation
+// ============================================================================
+
+NamedIndividual Ontology::createIndividual(const Class& cls, const IRI& individual_iri) {
+    NamedIndividual individual(individual_iri);
+    
+    // Add declaration axiom for the individual
+    auto decl = std::make_shared<Declaration>(Declaration::EntityType::NAMED_INDIVIDUAL, individual_iri);
+    addAxiom(decl);
+    
+    // Add class assertion axiom
+    auto class_expr = std::make_shared<NamedClass>(cls);
+    auto class_assertion = std::make_shared<ClassAssertion>(class_expr, individual);
+    addAxiom(class_assertion);
+    
+    return individual;
+}
+
+bool Ontology::addDataPropertyAssertion(const NamedIndividual& individual, 
+                                         const DataProperty& property, 
+                                         const Literal& value) {
+    auto axiom = std::make_shared<DataPropertyAssertion>(property, individual, value);
+    return addAxiom(axiom);
+}
+
+bool Ontology::addObjectPropertyAssertion(const NamedIndividual& subject,
+                                           const ObjectProperty& property,
+                                           const NamedIndividual& object) {
+    auto axiom = std::make_shared<ObjectPropertyAssertion>(property, subject, object);
+    return addAxiom(axiom);
+}
+
+bool Ontology::addClassAssertion(const NamedIndividual& individual, const Class& cls) {
+    auto class_expr = std::make_shared<NamedClass>(cls);
+    auto axiom = std::make_shared<ClassAssertion>(class_expr, individual);
+    return addAxiom(axiom);
+}
+
+// ============================================================================
+// Property-based Search
+// ============================================================================
+
+std::vector<NamedIndividual> Ontology::searchByDataProperty(const DataProperty& property, 
+                                                             const Literal& value) const {
+    std::vector<NamedIndividual> results;
+    
+    for (const auto& axiom : axioms_) {
+        if (auto data_prop_assertion = std::dynamic_pointer_cast<DataPropertyAssertion>(axiom)) {
+            // Check if this is the property we're looking for
+            if (data_prop_assertion->getProperty() == property) {
+                // Check if the value matches
+                if (data_prop_assertion->getTarget() == value) {
+                    // Extract the individual (source)
+                    Individual source = data_prop_assertion->getSource();
+                    if (std::holds_alternative<NamedIndividual>(source)) {
+                        results.push_back(std::get<NamedIndividual>(source));
+                    }
+                }
+            }
+        }
+    }
+    
+    return results;
+}
+
+std::vector<NamedIndividual> Ontology::searchByObjectProperty(const ObjectProperty& property,
+                                                               const NamedIndividual& object) const {
+    std::vector<NamedIndividual> results;
+    
+    for (const auto& axiom : axioms_) {
+        if (auto obj_prop_assertion = std::dynamic_pointer_cast<ObjectPropertyAssertion>(axiom)) {
+            // Check if this is the property we're looking for
+            ObjectPropertyExpression prop_expr = obj_prop_assertion->getProperty();
+            if (std::holds_alternative<ObjectProperty>(prop_expr)) {
+                if (std::get<ObjectProperty>(prop_expr) == property) {
+                    // Check if the object matches
+                    Individual target = obj_prop_assertion->getTarget();
+                    if (std::holds_alternative<NamedIndividual>(target)) {
+                        if (std::get<NamedIndividual>(target) == object) {
+                            // Extract the subject (source)
+                            Individual source = obj_prop_assertion->getSource();
+                            if (std::holds_alternative<NamedIndividual>(source)) {
+                                results.push_back(std::get<NamedIndividual>(source));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    return results;
+}
+
+// ============================================================================
+// Property Assertion Queries
+// ============================================================================
+
+std::vector<std::pair<NamedIndividual, NamedIndividual>> 
+Ontology::getObjectPropertyAssertions(const ObjectProperty& property) const {
+    std::vector<std::pair<NamedIndividual, NamedIndividual>> results;
+    
+    for (const auto& axiom : axioms_) {
+        if (auto obj_prop_assertion = std::dynamic_pointer_cast<ObjectPropertyAssertion>(axiom)) {
+            // Check if this is the property we're looking for
+            ObjectPropertyExpression prop_expr = obj_prop_assertion->getProperty();
+            if (std::holds_alternative<ObjectProperty>(prop_expr)) {
+                if (std::get<ObjectProperty>(prop_expr) == property) {
+                    // Extract both individuals
+                    Individual source = obj_prop_assertion->getSource();
+                    Individual target = obj_prop_assertion->getTarget();
+                    
+                    if (std::holds_alternative<NamedIndividual>(source) &&
+                        std::holds_alternative<NamedIndividual>(target)) {
+                        results.emplace_back(
+                            std::get<NamedIndividual>(source),
+                            std::get<NamedIndividual>(target)
+                        );
+                    }
+                }
+            }
+        }
+    }
+    
+    return results;
+}
+
+std::vector<std::pair<NamedIndividual, Literal>> 
+Ontology::getDataPropertyAssertions(const DataProperty& property) const {
+    std::vector<std::pair<NamedIndividual, Literal>> results;
+    
+    for (const auto& axiom : axioms_) {
+        if (auto data_prop_assertion = std::dynamic_pointer_cast<DataPropertyAssertion>(axiom)) {
+            // Check if this is the property we're looking for
+            if (data_prop_assertion->getProperty() == property) {
+                // Extract the individual and literal
+                Individual source = data_prop_assertion->getSource();
+                
+                if (std::holds_alternative<NamedIndividual>(source)) {
+                    results.emplace_back(
+                        std::get<NamedIndividual>(source),
+                        data_prop_assertion->getTarget()
+                    );
+                }
+            }
+        }
+    }
+    
+    return results;
+}
+
+// ============================================================================
+// Individual Class Queries
+// ============================================================================
+
+std::vector<Class> Ontology::getClassesForIndividual(const NamedIndividual& individual) const {
+    std::vector<Class> results;
+    
+    for (const auto& axiom : axioms_) {
+        if (auto class_assertion = std::dynamic_pointer_cast<ClassAssertion>(axiom)) {
+            // Check if this is the individual we're looking for
+            Individual asserted_individual = class_assertion->getIndividual();
+            
+            if (std::holds_alternative<NamedIndividual>(asserted_individual)) {
+                if (std::get<NamedIndividual>(asserted_individual) == individual) {
+                    // Extract the class
+                    ClassExpressionPtr class_expr = class_assertion->getClassExpression();
+                    
+                    // Check if it's a simple named class (not a complex class expression)
+                    if (auto named_class = std::dynamic_pointer_cast<NamedClass>(class_expr)) {
+                        results.push_back(named_class->getClass());
+                    }
+                }
+            }
+        }
+    }
+    
+    return results;
+}
+
+bool Ontology::isInstanceOf(const NamedIndividual& individual, const Class& cls) const {
+    for (const auto& axiom : axioms_) {
+        if (auto class_assertion = std::dynamic_pointer_cast<ClassAssertion>(axiom)) {
+            // Check if this is the individual we're looking for
+            Individual asserted_individual = class_assertion->getIndividual();
+            
+            if (std::holds_alternative<NamedIndividual>(asserted_individual)) {
+                if (std::get<NamedIndividual>(asserted_individual) == individual) {
+                    // Check if the class matches
+                    ClassExpressionPtr class_expr = class_assertion->getClassExpression();
+                    
+                    if (auto named_class = std::dynamic_pointer_cast<NamedClass>(class_expr)) {
+                        if (named_class->getClass() == cls) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    return false;
+}
+
+// ============================================================================
+// Property Characteristics
+// ============================================================================
+
+bool Ontology::isFunctionalObjectProperty(const ObjectProperty& property) const {
+    for (const auto& axiom : axioms_) {
+        if (auto func_prop = std::dynamic_pointer_cast<FunctionalObjectProperty>(axiom)) {
+            ObjectPropertyExpression prop_expr = func_prop->getProperty();
+            if (std::holds_alternative<ObjectProperty>(prop_expr)) {
+                if (std::get<ObjectProperty>(prop_expr) == property) {
+                    return true;
+                }
+            }
+        }
+    }
+    
+    return false;
+}
+
+bool Ontology::isFunctionalDataProperty(const DataProperty& property) const {
+    for (const auto& axiom : axioms_) {
+        if (auto func_prop = std::dynamic_pointer_cast<FunctionalDataProperty>(axiom)) {
+            if (func_prop->getProperty() == property) {
+                return true;
+            }
+        }
+    }
+    
+    return false;
+}
+
 } // namespace owl2
 } // namespace ista

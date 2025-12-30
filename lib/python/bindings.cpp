@@ -12,6 +12,14 @@
 
 #include "../owl2/owl2.hpp"
 #include "../owl2/parser/rdfxml_parser.hpp"
+#include "../owl2/parser/csv_parser.hpp"
+#include "../owl2/parser/turtle_parser.hpp"
+#include "../owl2/parser/functional_parser.hpp"
+#include "../owl2/parser/manchester_parser.hpp"
+#include "../owl2/parser/owlxml_parser.hpp"
+#include "../owl2/serializer/turtle_serializer.hpp"
+#include "../owl2/serializer/manchester_serializer.hpp"
+#include "../owl2/serializer/owlxml_serializer.hpp"
 
 namespace py = pybind11;
 using namespace ista::owl2;
@@ -940,6 +948,162 @@ PYBIND11_MODULE(_libista_owl2, m) {
 
     // Exception for parser errors
     py::register_exception<RDFXMLParseException>(m, "RDFXMLParseException");
+
+    // ========================================================================
+    // Turtle Parser
+    // ========================================================================
+    py::class_<TurtleParser>(m, "TurtleParser", "Parser for Turtle format")
+        .def_static("parse", &TurtleParser::parseFromString,
+                   py::arg("turtle_content"),
+                   "Parse ontology from Turtle string")
+        .def_static("parse_from_file", &TurtleParser::parseFromFile,
+                   py::arg("filename"),
+                   "Parse ontology from Turtle file");
+
+    // ========================================================================
+    // Functional Syntax Parser
+    // ========================================================================
+    py::class_<FunctionalParser>(m, "FunctionalParser", "Parser for OWL2 Functional Syntax")
+        .def_static("parse", &FunctionalParser::parseFromString,
+                   py::arg("functional_content"),
+                   "Parse ontology from Functional Syntax string")
+        .def_static("parse_from_file", &FunctionalParser::parseFromFile,
+                   py::arg("filename"),
+                   "Parse ontology from Functional Syntax file");
+
+    // ========================================================================
+    // Manchester Syntax Parser
+    // ========================================================================
+    py::class_<ManchesterParser>(m, "ManchesterParser", "Parser for Manchester Syntax")
+        .def_static("parse", &ManchesterParser::parseFromString,
+                   py::arg("manchester_content"),
+                   "Parse ontology from Manchester Syntax string")
+        .def_static("parse_from_file", &ManchesterParser::parseFromFile,
+                   py::arg("filename"),
+                   "Parse ontology from Manchester Syntax file");
+
+    // ========================================================================
+    // OWL/XML Parser
+    // ========================================================================
+    py::class_<OWLXMLParser>(m, "OWLXMLParser", "Parser for OWL/XML format")
+        .def_static("parse", &OWLXMLParser::parseFromString,
+                   py::arg("owlxml_content"),
+                   "Parse ontology from OWL/XML string")
+        .def_static("parse_from_file", &OWLXMLParser::parseFromFile,
+                   py::arg("filename"),
+                   "Parse ontology from OWL/XML file");
+
+    // ========================================================================
+    // Turtle Serializer
+    // ========================================================================
+    py::class_<TurtleSerializer>(m, "TurtleSerializer", "Serializer for Turtle format")
+        .def_static("serialize", py::overload_cast<const Ontology&>(&TurtleSerializer::serialize),
+                   py::arg("ontology"),
+                   "Serialize ontology to Turtle string")
+        .def_static("serialize_to_file", &TurtleSerializer::serializeToFile,
+                   py::arg("ontology"),
+                   py::arg("filename"),
+                   "Serialize ontology to Turtle file");
+
+    // ========================================================================
+    // Manchester Syntax Serializer
+    // ========================================================================
+    py::class_<ManchesterSerializer>(m, "ManchesterSerializer", "Serializer for Manchester Syntax")
+        .def_static("serialize", &ManchesterSerializer::serialize,
+                   py::arg("ontology"),
+                   "Serialize ontology to Manchester Syntax string")
+        .def_static("serialize_to_file", &ManchesterSerializer::serializeToFile,
+                   py::arg("ontology"),
+                   py::arg("filename"),
+                   "Serialize ontology to Manchester Syntax file");
+
+    // ========================================================================
+    // OWL/XML Serializer
+    // ========================================================================
+    py::class_<OWLXMLSerializer>(m, "OWLXMLSerializer", "Serializer for OWL/XML format")
+        .def_static("serialize", &OWLXMLSerializer::serialize,
+                   py::arg("ontology"),
+                   "Serialize ontology to OWL/XML string")
+        .def_static("serialize_to_file", &OWLXMLSerializer::serializeToFile,
+                   py::arg("ontology"),
+                   py::arg("filename"),
+                   "Serialize ontology to OWL/XML file");
+
+    // ========================================================================
+    // CSV Parser
+    // ========================================================================
+    py::class_<NodeTypeConfig>(m, "NodeTypeConfig", "Configuration for parsing node types from CSV files")
+        .def(py::init<>(),
+             "Construct a NodeTypeConfig")
+        .def_readwrite("iri_column_name", &NodeTypeConfig::iri_column_name,
+                      "Column name that contains unique identifiers for creating IRIs")
+        .def_readwrite("has_headers", &NodeTypeConfig::has_headers,
+                      "Whether the file has a header row")
+        .def_readwrite("data_property_map", &NodeTypeConfig::data_property_map,
+                      "Map from CSV column names to data property IRIs")
+        .def_readwrite("data_transforms", &NodeTypeConfig::data_transforms,
+                      "Optional transform functions for column data")
+        .def_readwrite("filter_column", &NodeTypeConfig::filter_column,
+                      "Optional filter column name")
+        .def_readwrite("filter_value", &NodeTypeConfig::filter_value,
+                      "Optional filter value")
+        .def_readwrite("merge_mode", &NodeTypeConfig::merge_mode,
+                      "Whether to merge with existing individuals")
+        .def_readwrite("merge_property_iri", &NodeTypeConfig::merge_property_iri,
+                      "Optional property IRI for merging")
+        .def_readwrite("merge_column_name", &NodeTypeConfig::merge_column_name,
+                      "Column name for merge matching");
+
+    py::class_<RelationshipTypeConfig>(m, "RelationshipTypeConfig", "Configuration for parsing relationship types from CSV files")
+        .def(py::init<>(),
+             "Construct a RelationshipTypeConfig")
+        .def_readwrite("has_headers", &RelationshipTypeConfig::has_headers,
+                      "Whether the file has a header row")
+        .def_readwrite("subject_class_iri", &RelationshipTypeConfig::subject_class_iri,
+                      "Optional subject class IRI")
+        .def_readwrite("subject_column_name", &RelationshipTypeConfig::subject_column_name,
+                      "Subject column name")
+        .def_readwrite("subject_match_property_iri", &RelationshipTypeConfig::subject_match_property_iri,
+                      "Optional subject match property IRI")
+        .def_readwrite("object_class_iri", &RelationshipTypeConfig::object_class_iri,
+                      "Optional object class IRI")
+        .def_readwrite("object_column_name", &RelationshipTypeConfig::object_column_name,
+                      "Object column name")
+        .def_readwrite("object_match_property_iri", &RelationshipTypeConfig::object_match_property_iri,
+                      "Optional object match property IRI")
+        .def_readwrite("filter_column", &RelationshipTypeConfig::filter_column,
+                      "Optional filter column name")
+        .def_readwrite("filter_value", &RelationshipTypeConfig::filter_value,
+                      "Optional filter value")
+        .def_readwrite("data_transforms", &RelationshipTypeConfig::data_transforms,
+                      "Optional transform functions for column data");
+
+    py::class_<CSVParser>(m, "CSVParser", "High-performance CSV parser for populating OWL2 ontologies")
+        .def(py::init<Ontology&, const std::string&>(),
+             py::arg("ontology"),
+             py::arg("base_iri"),
+             "Construct a CSV parser")
+        .def("parse_node_type", &CSVParser::parse_node_type,
+             py::arg("filename"),
+             py::arg("class_iri"),
+             py::arg("config"),
+             py::arg("delimiter") = ',',
+             "Parse a CSV file to create individuals of a specific class")
+        .def("parse_relationship_type", &CSVParser::parse_relationship_type,
+             py::arg("filename"),
+             py::arg("property_iri"),
+             py::arg("config"),
+             py::arg("delimiter") = ',',
+             "Parse a CSV file to create relationships between individuals")
+        .def("set_iri_generator", &CSVParser::set_iri_generator,
+             py::arg("generator"),
+             "Set a custom IRI generator function")
+        .def("get_ontology", &CSVParser::get_ontology,
+             py::return_value_policy::reference,
+             "Get the ontology being populated");
+
+    // Exception for CSV parser errors
+    py::register_exception<CSVParseException>(m, "CSVParseException");
 
     // ========================================================================
     // Helper functions

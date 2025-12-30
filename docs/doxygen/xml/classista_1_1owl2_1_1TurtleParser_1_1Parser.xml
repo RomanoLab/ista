@@ -1,0 +1,587 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1TurtleParser_1_1Parser" kind="class" language="C++" prot="private">
+    <compoundname>ista::owl2::TurtleParser::Parser</compoundname>
+    <innerclass refid="structista_1_1owl2_1_1TurtleParser_1_1Parser_1_1Triple" prot="private">ista::owl2::TurtleParser::Parser::Triple</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a8814c41c744d317d488054d2daef29e4" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::TurtleParser::Parser::content_</definition>
+        <argsstring></argsstring>
+        <name>content_</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::content_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="64" column="21" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a23074b384e4ef29233ab0b8eb60bc53f" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t ista::owl2::TurtleParser::Parser::pos_</definition>
+        <argsstring></argsstring>
+        <name>pos_</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::pos_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="65" column="16" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a8b835b2dd25ba11a28e391b64ef53904" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t ista::owl2::TurtleParser::Parser::line_</definition>
+        <argsstring></argsstring>
+        <name>line_</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::line_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="66" column="16" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1acf882f3aaa4e78e95567d2562143934d" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t ista::owl2::TurtleParser::Parser::col_</definition>
+        <argsstring></argsstring>
+        <name>col_</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::col_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="67" column="16" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a6dbc688c0189f47a86072803194086ed" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::string &gt;</type>
+        <definition>std::map&lt;std::string, std::string&gt; ista::owl2::TurtleParser::Parser::prefixes_</definition>
+        <argsstring></argsstring>
+        <name>prefixes_</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::prefixes_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="68" column="18" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a1a645ee7c36982fbce1a6eab25ea9410" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::TurtleParser::Parser::base_uri_</definition>
+        <argsstring></argsstring>
+        <name>base_uri_</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::base_uri_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="69" column="21" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1ad98fd5f6fed6b297e37d1e8513686fe1" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::TurtleParser::Parser::Parser</definition>
+        <argsstring>(const std::string &amp;content)</argsstring>
+        <name>Parser</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::Parser</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>content</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="60" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a9968c47bc999b6f81a926bcc71337627" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref></type>
+        <definition>Ontology ista::owl2::TurtleParser::Parser::parse</definition>
+        <argsstring>()</argsstring>
+        <name>parse</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::parse</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="61" column="18"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a14624f715e4b27c87c6b57c310dbd003" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleParser::Parser::skipWhitespace</definition>
+        <argsstring>()</argsstring>
+        <name>skipWhitespace</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::skipWhitespace</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="72" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a723e9d09dc1eefadea3fbffc773db8cb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleParser::Parser::skipComment</definition>
+        <argsstring>()</argsstring>
+        <name>skipComment</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::skipComment</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="73" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a31f926d55cbd9963350b9cf11d66fa07" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::TurtleParser::Parser::isAtEnd</definition>
+        <argsstring>() const</argsstring>
+        <name>isAtEnd</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::isAtEnd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="74" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a72ac9c878fce541433b93c7955962de3" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>char</type>
+        <definition>char ista::owl2::TurtleParser::Parser::peek</definition>
+        <argsstring>() const</argsstring>
+        <name>peek</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::peek</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="75" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1af208cf3a6b90f3cf50a8ab19fe7e2597" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char</type>
+        <definition>char ista::owl2::TurtleParser::Parser::advance</definition>
+        <argsstring>()</argsstring>
+        <name>advance</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::advance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="76" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1ae35270974475aadaaacd233019982b53" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::TurtleParser::Parser::match</definition>
+        <argsstring>(char expected)</argsstring>
+        <name>match</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::match</qualifiedname>
+        <param>
+          <type>char</type>
+          <declname>expected</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="77" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1adbff3df30d9d29a57a3f716b513db023" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::TurtleParser::Parser::match</definition>
+        <argsstring>(const std::string &amp;expected)</argsstring>
+        <name>match</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::match</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>expected</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="78" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a8ccd4b3450425544951de6f32c271889" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleParser::Parser::parseDirective</definition>
+        <argsstring>()</argsstring>
+        <name>parseDirective</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::parseDirective</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="81" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a68e149f812a5231b5be02c4fc3dff659" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleParser::Parser::parsePrefixDirective</definition>
+        <argsstring>()</argsstring>
+        <name>parsePrefixDirective</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::parsePrefixDirective</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="82" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1ae26a020025b8c79e4cea6fc1c97441a4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleParser::Parser::parseBaseDirective</definition>
+        <argsstring>()</argsstring>
+        <name>parseBaseDirective</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::parseBaseDirective</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="83" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a91d2aa4a04bcfb8e9caa0b26c3fcaec0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; Triple &gt;</type>
+        <definition>std::vector&lt; Triple &gt; ista::owl2::TurtleParser::Parser::parseTriples</definition>
+        <argsstring>()</argsstring>
+        <name>parseTriples</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::parseTriples</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="95" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a524b874a45df320017299c24fab007f5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::TurtleParser::Parser::parseSubject</definition>
+        <argsstring>()</argsstring>
+        <name>parseSubject</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::parseSubject</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="96" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a7ff584d11aceb48305f36199a32b07c2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::TurtleParser::Parser::parsePredicate</definition>
+        <argsstring>()</argsstring>
+        <name>parsePredicate</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::parsePredicate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="97" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a5e28e981182819f73ad20a869db6b169" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleParser::Parser::parseObject</definition>
+        <argsstring>(std::vector&lt; Triple &gt; &amp;triples, const std::string &amp;subject, const std::string &amp;predicate)</argsstring>
+        <name>parseObject</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::parseObject</qualifiedname>
+        <param>
+          <type>std::vector&lt; Triple &gt; &amp;</type>
+          <declname>triples</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>subject</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>predicate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="98" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a3101c14bab66a3980b5f1286267728dd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::TurtleParser::Parser::parseIRIRef</definition>
+        <argsstring>()</argsstring>
+        <name>parseIRIRef</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::parseIRIRef</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="102" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1aafb7ea8c2e8cca90e4b855248b9340f2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::TurtleParser::Parser::parsePrefixedName</definition>
+        <argsstring>()</argsstring>
+        <name>parsePrefixedName</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::parsePrefixedName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="103" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a539565c28ed22ef62cce81e002bbb96c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::TurtleParser::Parser::parseBlankNode</definition>
+        <argsstring>()</argsstring>
+        <name>parseBlankNode</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::parseBlankNode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="104" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1aaacd5da24f0643c9d3c85c05a9dc1d5f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::TurtleParser::Parser::parseLiteral</definition>
+        <argsstring>(std::string &amp;datatype, std::string &amp;language)</argsstring>
+        <name>parseLiteral</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::parseLiteral</qualifiedname>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>datatype</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>language</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="105" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a91c3f15df76a349371536628d91ca07e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::TurtleParser::Parser::parseCollection</definition>
+        <argsstring>()</argsstring>
+        <name>parseCollection</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::parseCollection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="106" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1ad9669998dfff06bbd6b1e17d4178f16f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::TurtleParser::Parser::parseBlankNodePropertyList</definition>
+        <argsstring>()</argsstring>
+        <name>parseBlankNodePropertyList</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::parseBlankNodePropertyList</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="107" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1aa3c75de6e5d1d8526542210324538256" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::TurtleParser::Parser::resolveIRI</definition>
+        <argsstring>(const std::string &amp;iri)</argsstring>
+        <name>resolveIRI</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::resolveIRI</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>iri</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="110" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1aea77698eb27c8a90f9610813cdc86b9a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::TurtleParser::Parser::expandPrefix</definition>
+        <argsstring>(const std::string &amp;prefixed)</argsstring>
+        <name>expandPrefix</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::expandPrefix</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>prefixed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="111" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a531a9205b7eac605e87e9251beba0052" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::TurtleParser::Parser::isNameStartChar</definition>
+        <argsstring>(char c) const</argsstring>
+        <name>isNameStartChar</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::isNameStartChar</qualifiedname>
+        <param>
+          <type>char</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="112" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1aab84b3ee5e32d46ffabb01e3c9b6a984" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::TurtleParser::Parser::isNameChar</definition>
+        <argsstring>(char c) const</argsstring>
+        <name>isNameChar</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::isNameChar</qualifiedname>
+        <param>
+          <type>char</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="113" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a006f15e407401f271f43f3c332319a3b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleParser::Parser::error</definition>
+        <argsstring>(const std::string &amp;message)</argsstring>
+        <name>error</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::error</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="114" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a7e023a5b86b33536677cc85ef5b73984" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref></type>
+        <definition>Ontology ista::owl2::TurtleParser::Parser::triplesToOntology</definition>
+        <argsstring>(const std::vector&lt; Triple &gt; &amp;triples)</argsstring>
+        <name>triplesToOntology</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::triplesToOntology</qualifiedname>
+        <param>
+          <type>const std::vector&lt; Triple &gt; &amp;</type>
+          <declname>triples</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="117" column="18"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Internal parser implementation. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="58" column="5" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="58" bodyend="118"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1af208cf3a6b90f3cf50a8ab19fe7e2597" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>advance</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a1a645ee7c36982fbce1a6eab25ea9410" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>base_uri_</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1acf882f3aaa4e78e95567d2562143934d" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>col_</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a8814c41c744d317d488054d2daef29e4" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>content_</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a006f15e407401f271f43f3c332319a3b" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>error</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1aea77698eb27c8a90f9610813cdc86b9a" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>expandPrefix</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a31f926d55cbd9963350b9cf11d66fa07" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>isAtEnd</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1aab84b3ee5e32d46ffabb01e3c9b6a984" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>isNameChar</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a531a9205b7eac605e87e9251beba0052" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>isNameStartChar</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a8b835b2dd25ba11a28e391b64ef53904" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>line_</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1ae35270974475aadaaacd233019982b53" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>match</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1adbff3df30d9d29a57a3f716b513db023" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>match</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a9968c47bc999b6f81a926bcc71337627" prot="public" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>parse</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1ae26a020025b8c79e4cea6fc1c97441a4" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>parseBaseDirective</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a539565c28ed22ef62cce81e002bbb96c" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>parseBlankNode</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1ad9669998dfff06bbd6b1e17d4178f16f" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>parseBlankNodePropertyList</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a91c3f15df76a349371536628d91ca07e" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>parseCollection</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a8ccd4b3450425544951de6f32c271889" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>parseDirective</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a3101c14bab66a3980b5f1286267728dd" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>parseIRIRef</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1aaacd5da24f0643c9d3c85c05a9dc1d5f" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>parseLiteral</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a5e28e981182819f73ad20a869db6b169" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>parseObject</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a7ff584d11aceb48305f36199a32b07c2" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>parsePredicate</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a68e149f812a5231b5be02c4fc3dff659" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>parsePrefixDirective</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1aafb7ea8c2e8cca90e4b855248b9340f2" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>parsePrefixedName</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1ad98fd5f6fed6b297e37d1e8513686fe1" prot="public" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>Parser</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a524b874a45df320017299c24fab007f5" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>parseSubject</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a91d2aa4a04bcfb8e9caa0b26c3fcaec0" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>parseTriples</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a72ac9c878fce541433b93c7955962de3" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>peek</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a23074b384e4ef29233ab0b8eb60bc53f" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>pos_</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a6dbc688c0189f47a86072803194086ed" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>prefixes_</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1aa3c75de6e5d1d8526542210324538256" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>resolveIRI</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a723e9d09dc1eefadea3fbffc773db8cb" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>skipComment</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a14624f715e4b27c87c6b57c310dbd003" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>skipWhitespace</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a7e023a5b86b33536677cc85ef5b73984" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser</scope><name>triplesToOntology</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

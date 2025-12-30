@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1ManchesterSerializer" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::ManchesterSerializer</compoundname>
+    <includes refid="manchester__serializer_8hpp" local="no">manchester_serializer.hpp</includes>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1ManchesterSerializer_1ab3622cd50a2d24e61c634e9bb296cb83" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::ManchesterSerializer::serialize</definition>
+        <argsstring>(const Ontology &amp;ontology)</argsstring>
+        <name>serialize</name>
+        <qualifiedname>ista::owl2::ManchesterSerializer::serialize</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <briefdescription>
+<para>Serialize ontology to Manchester Syntax string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ontology</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ontology to serialize </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>String containing Manchester Syntax </para>
+</simplesect>
+<simplesect kind="note"><para>Not yet implemented </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/manchester_serializer.hpp" line="27" column="24" bodyfile="D:/projects/ista/lib/owl2/serializer/manchester_serializer.cpp" bodystart="8" bodyend="14"/>
+        <referencedby refid="classista_1_1owl2_1_1ManchesterSerializer_1a97a05e2a7467f44792126e61cb0d36fc" compoundref="manchester__serializer_8cpp" startline="16" endline="28">serializeToFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1ManchesterSerializer_1a97a05e2a7467f44792126e61cb0d36fc" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::ManchesterSerializer::serializeToFile</definition>
+        <argsstring>(const Ontology &amp;ontology, const std::string &amp;filename)</argsstring>
+        <name>serializeToFile</name>
+        <qualifiedname>ista::owl2::ManchesterSerializer::serializeToFile</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+<para>Serialize ontology to Manchester Syntax file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ontology</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ontology to serialize </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output file path </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if successful, false otherwise </para>
+</simplesect>
+<simplesect kind="note"><para>Not yet implemented </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/manchester_serializer.hpp" line="36" column="17" bodyfile="D:/projects/ista/lib/owl2/serializer/manchester_serializer.cpp" bodystart="16" bodyend="28"/>
+        <references refid="classista_1_1owl2_1_1ManchesterSerializer_1ab3622cd50a2d24e61c634e9bb296cb83" compoundref="manchester__serializer_8cpp" startline="8" endline="14">serialize</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Serializer for OWL 2 Manchester Syntax. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Writes ontologies to Manchester Syntax format, which is designed to be more human-readable than other OWL syntaxes.</para>
+<para><simplesect kind="note"><para>This is currently a stub implementation. Manchester Syntax serialization will be implemented in a future version. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/serializer/manchester_serializer.hpp" line="19" column="1" bodyfile="D:/projects/ista/lib/owl2/serializer/manchester_serializer.hpp" bodystart="19" bodyend="37"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1ManchesterSerializer_1ab3622cd50a2d24e61c634e9bb296cb83" prot="public" virt="non-virtual"><scope>ista::owl2::ManchesterSerializer</scope><name>serialize</name></member>
+      <member refid="classista_1_1owl2_1_1ManchesterSerializer_1a97a05e2a7467f44792126e61cb0d36fc" prot="public" virt="non-virtual"><scope>ista::owl2::ManchesterSerializer</scope><name>serializeToFile</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

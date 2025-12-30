@@ -6,11 +6,9 @@ namespace ista {
 namespace owl2 {
 
 Ontology OWLXMLParser::parseFromString(const std::string& content) {
+    // Stub implementation - returns empty ontology
     // TODO: Implement OWL/XML parser
-    throw OWLXMLParseException(
-        "OWL/XML parser is not yet implemented. "
-        "This feature is planned for a future release."
-    );
+    return Ontology();
 }
 
 Ontology OWLXMLParser::parseFromFile(const std::string& filename) {

@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="generalDefs_8hpp" kind="file" language="C++">
+    <compoundname>generalDefs.hpp</compoundname>
+    <includes local="no">cstdint</includes>
+    <includes local="no">string</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>D:/projects/ista/lib/owl2/generalDefs.hpp</label>
+        <link refid="generalDefs_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>cstdint</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="generalDefs_8hpp_1a6a58e21f29d9f2640020676d9b854c72" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>using NonNegativeInteger =  uint8_t</definition>
+        <argsstring></argsstring>
+        <name>NonNegativeInteger</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/generalDefs.hpp" line="7" column="1" bodyfile="D:/projects/ista/lib/owl2/generalDefs.hpp" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="generalDefs_8hpp_1ae039f9ac3160053987d1a6b33597935f" prot="public" static="no">
+        <type>std::string</type>
+        <definition>using QuotedString =  std::string</definition>
+        <argsstring></argsstring>
+        <name>QuotedString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/generalDefs.hpp" line="9" column="1" bodyfile="D:/projects/ista/lib/owl2/generalDefs.hpp" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="generalDefs_8hpp_1ad1dd4069be4d34001f1a9fdbc7c6b744" prot="public" static="no">
+        <type>std::string</type>
+        <definition>using LanguageTag =  std::string</definition>
+        <argsstring></argsstring>
+        <name>LanguageTag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/generalDefs.hpp" line="11" column="1" bodyfile="D:/projects/ista/lib/owl2/generalDefs.hpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="generalDefs_8hpp_1ac6cc8580ccefc8e2136721fd1784aecb" prot="public" static="no">
+        <type>std::string</type>
+        <definition>using NodeID =  std::string</definition>
+        <argsstring></argsstring>
+        <name>NodeID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/generalDefs.hpp" line="13" column="1" bodyfile="D:/projects/ista/lib/owl2/generalDefs.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>GENERAL_DEFS_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GENERAL_DEFS_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="generalDefs_8hpp_1a6a58e21f29d9f2640020676d9b854c72" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="generalDefs_8hpp_1a6a58e21f29d9f2640020676d9b854c72" kindref="member">NonNegativeInteger</ref><sp/>=<sp/>uint8_t;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="generalDefs_8hpp_1ae039f9ac3160053987d1a6b33597935f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="generalDefs_8hpp_1ae039f9ac3160053987d1a6b33597935f" kindref="member">QuotedString</ref><sp/>=<sp/>std::string;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="generalDefs_8hpp_1ad1dd4069be4d34001f1a9fdbc7c6b744" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="generalDefs_8hpp_1ad1dd4069be4d34001f1a9fdbc7c6b744" kindref="member">LanguageTag</ref><sp/>=<sp/>std::string;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="generalDefs_8hpp_1ac6cc8580ccefc8e2136721fd1784aecb" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="generalDefs_8hpp_1ac6cc8580ccefc8e2136721fd1784aecb" kindref="member">NodeID</ref><sp/>=<sp/>std::string;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="D:/projects/ista/lib/owl2/generalDefs.hpp"/>
+  </compounddef>
+</doxygen>

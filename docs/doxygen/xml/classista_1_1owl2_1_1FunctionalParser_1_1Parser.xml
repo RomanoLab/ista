@@ -1,0 +1,717 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1FunctionalParser_1_1Parser" kind="class" language="C++" prot="private">
+    <compoundname>ista::owl2::FunctionalParser::Parser</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1ac5dd487d89ba87d14132f2b1d9f2b7bd" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::FunctionalParser::Parser::content_</definition>
+        <argsstring></argsstring>
+        <name>content_</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::content_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="66" column="21" bodyfile="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1ad869c59c4b6aa380944820c2542b68e1" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t ista::owl2::FunctionalParser::Parser::pos_</definition>
+        <argsstring></argsstring>
+        <name>pos_</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::pos_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="67" column="16" bodyfile="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1ae84fde25bd653dec25c40e229d99c888" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t ista::owl2::FunctionalParser::Parser::line_</definition>
+        <argsstring></argsstring>
+        <name>line_</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::line_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="68" column="16" bodyfile="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a21ea531233c3f5e3d7dfd0cd211113dd" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t ista::owl2::FunctionalParser::Parser::col_</definition>
+        <argsstring></argsstring>
+        <name>col_</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::col_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="69" column="16" bodyfile="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1ad6f837fa29215d8368c1dcf9199bf8bd" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::string &gt;</type>
+        <definition>std::map&lt;std::string, std::string&gt; ista::owl2::FunctionalParser::Parser::prefixes_</definition>
+        <argsstring></argsstring>
+        <name>prefixes_</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::prefixes_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="70" column="18" bodyfile="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a6b8522f2cb628f63aea059c64eabb087" prot="private" static="no" mutable="no">
+        <type><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> *</type>
+        <definition>Ontology* ista::owl2::FunctionalParser::Parser::current_ontology_</definition>
+        <argsstring></argsstring>
+        <name>current_ontology_</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::current_ontology_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="124" column="18" bodyfile="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" bodystart="124" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a52711ffc702d42bf644b3b52d6e627fc" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::FunctionalParser::Parser::Parser</definition>
+        <argsstring>(const std::string &amp;content)</argsstring>
+        <name>Parser</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::Parser</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>content</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="62" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a53fed8895bfe886c9d5eb2e7c676d0ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref></type>
+        <definition>Ontology ista::owl2::FunctionalParser::Parser::parse</definition>
+        <argsstring>()</argsstring>
+        <name>parse</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::parse</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="63" column="18"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1afe069e2c2ff697a54a026041b58aee9d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::FunctionalParser::Parser::skipWhitespace</definition>
+        <argsstring>()</argsstring>
+        <name>skipWhitespace</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::skipWhitespace</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="73" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1af949d6909a6afe907171a27c6e36f433" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::FunctionalParser::Parser::skipComment</definition>
+        <argsstring>()</argsstring>
+        <name>skipComment</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::skipComment</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="74" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a3f3fce47dbcf33eef0a548f875f00607" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::FunctionalParser::Parser::isAtEnd</definition>
+        <argsstring>() const</argsstring>
+        <name>isAtEnd</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::isAtEnd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="75" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1ae9321368d838b36e007d1f51b4a5a895" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>char</type>
+        <definition>char ista::owl2::FunctionalParser::Parser::peek</definition>
+        <argsstring>() const</argsstring>
+        <name>peek</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::peek</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="76" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1aeae826c517f33edae66ef37c42330ca3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char</type>
+        <definition>char ista::owl2::FunctionalParser::Parser::advance</definition>
+        <argsstring>()</argsstring>
+        <name>advance</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::advance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="77" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a786960cf8af31fe23feb4aa74f6577a1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::FunctionalParser::Parser::match</definition>
+        <argsstring>(char expected)</argsstring>
+        <name>match</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::match</qualifiedname>
+        <param>
+          <type>char</type>
+          <declname>expected</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="78" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1ae6b73aee15b55c5e9c32cf7f32296d29" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::FunctionalParser::Parser::match</definition>
+        <argsstring>(const std::string &amp;expected)</argsstring>
+        <name>match</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::match</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>expected</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="79" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a42f04d9ae2f53cc9147193e635f1ac50" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::FunctionalParser::Parser::readToken</definition>
+        <argsstring>()</argsstring>
+        <name>readToken</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::readToken</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="82" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a627bc0cf6880105482ad3e26db369e11" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::FunctionalParser::Parser::readQuotedString</definition>
+        <argsstring>()</argsstring>
+        <name>readQuotedString</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::readQuotedString</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="83" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a1b21b4235231c863dc6e52e2c15078a3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::FunctionalParser::Parser::readIRI</definition>
+        <argsstring>()</argsstring>
+        <name>readIRI</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::readIRI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="84" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a840f72b379a7713dfbf418567c262245" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::FunctionalParser::Parser::parseOntologyDocument</definition>
+        <argsstring>()</argsstring>
+        <name>parseOntologyDocument</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::parseOntologyDocument</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="87" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a03853c6026fd76d48dd80815ba792e3b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::FunctionalParser::Parser::parsePrefixDeclaration</definition>
+        <argsstring>()</argsstring>
+        <name>parsePrefixDeclaration</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::parsePrefixDeclaration</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="88" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a90cb4246248f335eaf55505bcef4c967" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::FunctionalParser::Parser::parseOntology</definition>
+        <argsstring>(Ontology &amp;ontology)</argsstring>
+        <name>parseOntology</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::parseOntology</qualifiedname>
+        <param>
+          <type><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="89" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a89564199db670befd771b2f867002652" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1Axiom" kindref="compound">Axiom</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; Axiom &gt; ista::owl2::FunctionalParser::Parser::parseAxiom</definition>
+        <argsstring>()</argsstring>
+        <name>parseAxiom</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::parseAxiom</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="92" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1ad97bf1d5f5d8313eaf3e28b8e9ad7a9b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1Axiom" kindref="compound">Axiom</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; Axiom &gt; ista::owl2::FunctionalParser::Parser::parseDeclaration</definition>
+        <argsstring>()</argsstring>
+        <name>parseDeclaration</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::parseDeclaration</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="93" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1aff0aa2194587d734a418bc683e194415" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1Axiom" kindref="compound">Axiom</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; Axiom &gt; ista::owl2::FunctionalParser::Parser::parseClassAxiom</definition>
+        <argsstring>(const std::string &amp;axiomType)</argsstring>
+        <name>parseClassAxiom</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::parseClassAxiom</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>axiomType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="94" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1abb612cfd4f4be600f8b94b3ef3bd2846" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1Axiom" kindref="compound">Axiom</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; Axiom &gt; ista::owl2::FunctionalParser::Parser::parseObjectPropertyAxiom</definition>
+        <argsstring>(const std::string &amp;axiomType)</argsstring>
+        <name>parseObjectPropertyAxiom</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::parseObjectPropertyAxiom</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>axiomType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="95" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1aec649cfdede00882a936fcadcfdbf091" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1Axiom" kindref="compound">Axiom</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; Axiom &gt; ista::owl2::FunctionalParser::Parser::parseDataPropertyAxiom</definition>
+        <argsstring>(const std::string &amp;axiomType)</argsstring>
+        <name>parseDataPropertyAxiom</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::parseDataPropertyAxiom</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>axiomType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="96" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1abb45742a36a46b89b3fb38009ca7559a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1Axiom" kindref="compound">Axiom</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; Axiom &gt; ista::owl2::FunctionalParser::Parser::parseAssertionAxiom</definition>
+        <argsstring>(const std::string &amp;axiomType)</argsstring>
+        <name>parseAssertionAxiom</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::parseAssertionAxiom</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>axiomType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="97" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a1f2364a04623bc1eb72547a3da3491d5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1Axiom" kindref="compound">Axiom</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; Axiom &gt; ista::owl2::FunctionalParser::Parser::parseAnnotationAxiom</definition>
+        <argsstring>(const std::string &amp;axiomType)</argsstring>
+        <name>parseAnnotationAxiom</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::parseAnnotationAxiom</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>axiomType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="98" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1afc310271d1487c04aeef072ebfabd2bf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structClass" kindref="compound">Class</ref></type>
+        <definition>Class ista::owl2::FunctionalParser::Parser::parseClass</definition>
+        <argsstring>()</argsstring>
+        <name>parseClass</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::parseClass</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="101" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a30359ea294c067948d6b5ffa94ae5a13" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structObjectProperty" kindref="compound">ObjectProperty</ref></type>
+        <definition>ObjectProperty ista::owl2::FunctionalParser::Parser::parseObjectProperty</definition>
+        <argsstring>()</argsstring>
+        <name>parseObjectProperty</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::parseObjectProperty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="102" column="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a67414915e693e5351e350476da1e6fc3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDataProperty" kindref="compound">DataProperty</ref></type>
+        <definition>DataProperty ista::owl2::FunctionalParser::Parser::parseDataProperty</definition>
+        <argsstring>()</argsstring>
+        <name>parseDataProperty</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::parseDataProperty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="103" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a498f2814e2c26a2e35b4bd6c7c437c2a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structAnnotationProperty" kindref="compound">AnnotationProperty</ref></type>
+        <definition>AnnotationProperty ista::owl2::FunctionalParser::Parser::parseAnnotationProperty</definition>
+        <argsstring>()</argsstring>
+        <name>parseAnnotationProperty</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::parseAnnotationProperty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="104" column="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a58e6e305a1cabebd016a567ccd6b0b6b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classista_1_1owl2_1_1NamedIndividual" kindref="compound">NamedIndividual</ref></type>
+        <definition>NamedIndividual ista::owl2::FunctionalParser::Parser::parseNamedIndividual</definition>
+        <argsstring>()</argsstring>
+        <name>parseNamedIndividual</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::parseNamedIndividual</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="105" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1aaf79a9ba899f6303ca1253ce013e9495" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDatatype" kindref="compound">Datatype</ref></type>
+        <definition>Datatype ista::owl2::FunctionalParser::Parser::parseDatatype</definition>
+        <argsstring>()</argsstring>
+        <name>parseDatatype</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::parseDatatype</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="106" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1aa88060da61e7b1608a8b766d8c6d1cf4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1ClassExpression" kindref="compound">ClassExpression</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; ClassExpression &gt; ista::owl2::FunctionalParser::Parser::parseClassExpression</definition>
+        <argsstring>()</argsstring>
+        <name>parseClassExpression</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::parseClassExpression</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="109" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a25c9ce7f9a1d9791535cfe26885061a8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1DataRange" kindref="compound">DataRange</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; DataRange &gt; ista::owl2::FunctionalParser::Parser::parseDataRange</definition>
+        <argsstring>()</argsstring>
+        <name>parseDataRange</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::parseDataRange</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="110" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a00fe09886e4e920fec0b9a11edbc5997" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classista_1_1owl2_1_1Literal" kindref="compound">Literal</ref></type>
+        <definition>Literal ista::owl2::FunctionalParser::Parser::parseLiteral</definition>
+        <argsstring>()</argsstring>
+        <name>parseLiteral</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::parseLiteral</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="111" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1acc2c94ccf4327f80016fdd1b79b77d9c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="classista_1_1owl2_1_1Annotation" kindref="compound">Annotation</ref> &gt;</type>
+        <definition>std::vector&lt; Annotation &gt; ista::owl2::FunctionalParser::Parser::parseAnnotations</definition>
+        <argsstring>()</argsstring>
+        <name>parseAnnotations</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::parseAnnotations</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="114" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a32282e1de52090839ffc6ede88e8d750" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classista_1_1owl2_1_1Annotation" kindref="compound">Annotation</ref></type>
+        <definition>Annotation ista::owl2::FunctionalParser::Parser::parseAnnotation</definition>
+        <argsstring>()</argsstring>
+        <name>parseAnnotation</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::parseAnnotation</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="115" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a5b1bc464ae50897c5ba310fef9048e9e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::FunctionalParser::Parser::expect</definition>
+        <argsstring>(char c)</argsstring>
+        <name>expect</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::expect</qualifiedname>
+        <param>
+          <type>char</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="118" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1ad99965e7de37242054dc1284bedf6376" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::FunctionalParser::Parser::expect</definition>
+        <argsstring>(const std::string &amp;keyword)</argsstring>
+        <name>expect</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::expect</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>keyword</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="119" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a088c0b8b7a07b9aa492123bc24a6d33b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::FunctionalParser::Parser::expandIRI</definition>
+        <argsstring>(const std::string &amp;abbreviated)</argsstring>
+        <name>expandIRI</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::expandIRI</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>abbreviated</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="120" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a6c906162b545c03f2207fca6ba2dfc67" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::FunctionalParser::Parser::error</definition>
+        <argsstring>(const std::string &amp;message)</argsstring>
+        <name>error</name>
+        <qualifiedname>ista::owl2::FunctionalParser::Parser::error</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="121" column="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Internal parser implementation. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="60" column="5" bodyfile="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" bodystart="60" bodyend="125"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1aeae826c517f33edae66ef37c42330ca3" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>advance</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a21ea531233c3f5e3d7dfd0cd211113dd" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>col_</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1ac5dd487d89ba87d14132f2b1d9f2b7bd" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>content_</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a6b8522f2cb628f63aea059c64eabb087" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>current_ontology_</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a6c906162b545c03f2207fca6ba2dfc67" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>error</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a088c0b8b7a07b9aa492123bc24a6d33b" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>expandIRI</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a5b1bc464ae50897c5ba310fef9048e9e" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>expect</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1ad99965e7de37242054dc1284bedf6376" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>expect</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a3f3fce47dbcf33eef0a548f875f00607" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>isAtEnd</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1ae84fde25bd653dec25c40e229d99c888" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>line_</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a786960cf8af31fe23feb4aa74f6577a1" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>match</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1ae6b73aee15b55c5e9c32cf7f32296d29" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>match</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a53fed8895bfe886c9d5eb2e7c676d0ef" prot="public" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>parse</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a32282e1de52090839ffc6ede88e8d750" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>parseAnnotation</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a1f2364a04623bc1eb72547a3da3491d5" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>parseAnnotationAxiom</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a498f2814e2c26a2e35b4bd6c7c437c2a" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>parseAnnotationProperty</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1acc2c94ccf4327f80016fdd1b79b77d9c" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>parseAnnotations</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1abb45742a36a46b89b3fb38009ca7559a" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>parseAssertionAxiom</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a89564199db670befd771b2f867002652" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>parseAxiom</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1afc310271d1487c04aeef072ebfabd2bf" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>parseClass</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1aff0aa2194587d734a418bc683e194415" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>parseClassAxiom</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1aa88060da61e7b1608a8b766d8c6d1cf4" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>parseClassExpression</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a67414915e693e5351e350476da1e6fc3" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>parseDataProperty</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1aec649cfdede00882a936fcadcfdbf091" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>parseDataPropertyAxiom</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a25c9ce7f9a1d9791535cfe26885061a8" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>parseDataRange</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1aaf79a9ba899f6303ca1253ce013e9495" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>parseDatatype</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1ad97bf1d5f5d8313eaf3e28b8e9ad7a9b" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>parseDeclaration</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a00fe09886e4e920fec0b9a11edbc5997" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>parseLiteral</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a58e6e305a1cabebd016a567ccd6b0b6b" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>parseNamedIndividual</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a30359ea294c067948d6b5ffa94ae5a13" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>parseObjectProperty</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1abb612cfd4f4be600f8b94b3ef3bd2846" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>parseObjectPropertyAxiom</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a90cb4246248f335eaf55505bcef4c967" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>parseOntology</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a840f72b379a7713dfbf418567c262245" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>parseOntologyDocument</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a03853c6026fd76d48dd80815ba792e3b" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>parsePrefixDeclaration</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a52711ffc702d42bf644b3b52d6e627fc" prot="public" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>Parser</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1ae9321368d838b36e007d1f51b4a5a895" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>peek</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1ad869c59c4b6aa380944820c2542b68e1" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>pos_</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1ad6f837fa29215d8368c1dcf9199bf8bd" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>prefixes_</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a1b21b4235231c863dc6e52e2c15078a3" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>readIRI</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a627bc0cf6880105482ad3e26db369e11" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>readQuotedString</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1a42f04d9ae2f53cc9147193e635f1ac50" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>readToken</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1af949d6909a6afe907171a27c6e36f433" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>skipComment</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser_1afe069e2c2ff697a54a026041b58aee9d" prot="private" virt="non-virtual"><scope>ista::owl2::FunctionalParser::Parser</scope><name>skipWhitespace</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

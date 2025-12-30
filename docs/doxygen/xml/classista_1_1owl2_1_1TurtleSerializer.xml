@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1TurtleSerializer" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::TurtleSerializer</compoundname>
+    <includes refid="turtle__serializer_8hpp" local="no">turtle_serializer.hpp</includes>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1af3166fbac505bdc7206d3128e78bfdfc" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::TurtleSerializer::serialize</definition>
+        <argsstring>(const Ontology &amp;ontology)</argsstring>
+        <name>serialize</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::serialize</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <briefdescription>
+<para>Serialize ontology to Turtle string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ontology</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ontology to serialize </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>String containing Turtle format </para>
+</simplesect>
+<simplesect kind="note"><para>Not yet implemented </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="28" column="24" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="8" bodyend="14"/>
+        <referencedby refid="classista_1_1owl2_1_1TurtleSerializer_1a491ad16952d26dce4eace8bfddf534e4" compoundref="turtle__serializer_8cpp" startline="16" endline="28">serializeToFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1a491ad16952d26dce4eace8bfddf534e4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::TurtleSerializer::serializeToFile</definition>
+        <argsstring>(const Ontology &amp;ontology, const std::string &amp;filename)</argsstring>
+        <name>serializeToFile</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::serializeToFile</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+<para>Serialize ontology to Turtle file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ontology</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ontology to serialize </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output file path </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if successful, false otherwise </para>
+</simplesect>
+<simplesect kind="note"><para>Not yet implemented </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="37" column="17" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="16" bodyend="28"/>
+        <references refid="classista_1_1owl2_1_1TurtleSerializer_1af3166fbac505bdc7206d3128e78bfdfc" compoundref="turtle__serializer_8cpp" startline="8" endline="14">serialize</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1a5414c1a3e42b80235bb3a9f5f6ff7761" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::TurtleSerializer::serialize</definition>
+        <argsstring>(const Ontology &amp;ontology, const std::map&lt; std::string, std::string &gt; &amp;prefixes)</argsstring>
+        <name>serialize</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::serialize</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <param>
+          <type>const std::map&lt; std::string, std::string &gt; &amp;</type>
+          <declname>prefixes</declname>
+        </param>
+        <briefdescription>
+<para>Serialize with custom prefix mappings. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ontology</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ontology to serialize </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>prefixes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Map of prefix to namespace URI </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>String containing Turtle format </para>
+</simplesect>
+<simplesect kind="note"><para>Not yet implemented </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="46" column="24" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="30" bodyend="37"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Serializer for Turtle (Terse RDF Triple Language) format. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Writes ontologies to Turtle format, which is a compact, human-readable RDF serialization.</para>
+<para><simplesect kind="note"><para>This is currently a stub implementation. Turtle serialization will be implemented in a future version. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="20" column="1" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" bodystart="20" bodyend="48"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1af3166fbac505bdc7206d3128e78bfdfc" prot="public" virt="non-virtual"><scope>ista::owl2::TurtleSerializer</scope><name>serialize</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1a5414c1a3e42b80235bb3a9f5f6ff7761" prot="public" virt="non-virtual"><scope>ista::owl2::TurtleSerializer</scope><name>serialize</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1a491ad16952d26dce4eace8bfddf534e4" prot="public" virt="non-virtual"><scope>ista::owl2::TurtleSerializer</scope><name>serializeToFile</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -12,7 +12,14 @@
     <includes refid="ontology_8hpp" local="yes">core/ontology.hpp</includes>
     <includes refid="functional__serializer_8hpp" local="yes">serializer/functional_serializer.hpp</includes>
     <includes refid="rdfxml__serializer_8hpp" local="yes">serializer/rdfxml_serializer.hpp</includes>
+    <includes refid="manchester__serializer_8hpp" local="yes">serializer/manchester_serializer.hpp</includes>
+    <includes refid="owlxml__serializer_8hpp" local="yes">serializer/owlxml_serializer.hpp</includes>
+    <includes refid="turtle__serializer_8hpp" local="yes">serializer/turtle_serializer.hpp</includes>
     <includes refid="rdfxml__parser_8hpp" local="yes">parser/rdfxml_parser.hpp</includes>
+    <includes refid="functional__parser_8hpp" local="yes">parser/functional_parser.hpp</includes>
+    <includes refid="manchester__parser_8hpp" local="yes">parser/manchester_parser.hpp</includes>
+    <includes refid="owlxml__parser_8hpp" local="yes">parser/owlxml_parser.hpp</includes>
+    <includes refid="turtle__parser_8hpp" local="yes">parser/turtle_parser.hpp</includes>
     <incdepgraph>
       <node id="13">
         <label>core/annotation.hpp</label>
@@ -153,19 +160,83 @@
         </childnode>
         <childnode refid="22" relation="include">
         </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
       </node>
-      <node id="22">
+      <node id="28">
+        <label>parser/functional_parser.hpp</label>
+        <link refid="functional__parser_8hpp"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>parser/manchester_parser.hpp</label>
+        <link refid="manchester__parser_8hpp"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>parser/owlxml_parser.hpp</label>
+        <link refid="owlxml__parser_8hpp"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
         <label>parser/rdfxml_parser.hpp</label>
         <link refid="rdfxml__parser_8hpp"/>
         <childnode refid="16" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="23" relation="include">
+        <childnode refid="27" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>parser/turtle_parser.hpp</label>
+        <link refid="turtle__parser_8hpp"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
         </childnode>
       </node>
       <node id="18">
@@ -176,6 +247,22 @@
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>serializer/manchester_serializer.hpp</label>
+        <link refid="manchester__serializer_8hpp"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>serializer/owlxml_serializer.hpp</label>
+        <link refid="owlxml__serializer_8hpp"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
         </childnode>
       </node>
       <node id="20">
@@ -190,8 +277,21 @@
         <childnode refid="4" relation="include">
         </childnode>
       </node>
+      <node id="24">
+        <label>serializer/turtle_serializer.hpp</label>
+        <link refid="turtle__serializer_8hpp"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
       <node id="19">
         <label>fstream</label>
+      </node>
+      <node id="25">
+        <label>map</label>
       </node>
       <node id="7">
         <label>memory</label>
@@ -202,7 +302,7 @@
       <node id="21">
         <label>sstream</label>
       </node>
-      <node id="23">
+      <node id="27">
         <label>stdexcept</label>
       </node>
       <node id="3">
@@ -249,12 +349,19 @@
 <codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Serializers</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="functional__serializer_8hpp" kindref="compound">serializer/functional_serializer.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="rdfxml__serializer_8hpp" kindref="compound">serializer/rdfxml_serializer.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Parsers</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="rdfxml__parser_8hpp" kindref="compound">parser/rdfxml_parser.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="manchester__serializer_8hpp" kindref="compound">serializer/manchester_serializer.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="owlxml__serializer_8hpp" kindref="compound">serializer/owlxml_serializer.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="turtle__serializer_8hpp" kindref="compound">serializer/turtle_serializer.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Parsers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="rdfxml__parser_8hpp" kindref="compound">parser/rdfxml_parser.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="functional__parser_8hpp" kindref="compound">parser/functional_parser.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="manchester__parser_8hpp" kindref="compound">parser/manchester_parser.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="owlxml__parser_8hpp" kindref="compound">parser/owlxml_parser.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="turtle__parser_8hpp" kindref="compound">parser/turtle_parser.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>ISTA_OWL2_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>ISTA_OWL2_HPP</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="D:/projects/ista/lib/owl2/owl2.hpp"/>
   </compounddef>

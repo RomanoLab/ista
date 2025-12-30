@@ -1,0 +1,65 @@
+[run]
+# Coverage.py configuration
+
+# Source code to measure
+source = ista
+
+# Files to omit from coverage
+omit =
+    */tests/*
+    */test_*.py
+    */__pycache__/*
+    */site-packages/*
+    */external/*
+    */build/*
+    setup.py
+
+# Enable branch coverage
+branch = True
+
+[report]
+# Reporting options
+
+# Precision for coverage percentages
+precision = 2
+
+# Show missing lines
+show_missing = True
+
+# Skip covered files in report
+skip_covered = False
+
+# Skip empty files
+skip_empty = True
+
+# Fail if coverage is below this threshold
+# fail_under = 80
+
+# Files to exclude from report
+exclude_lines =
+    # Standard pragma
+    pragma: no cover
+
+    # Don't complain about missing debug-only code
+    def __repr__
+
+    # Don't complain if tests don't hit defensive assertion code
+    raise AssertionError
+    raise NotImplementedError
+
+    # Don't complain if non-runnable code isn't run
+    if __name__ == .__main__.:
+    if TYPE_CHECKING:
+
+    # Don't complain about abstract methods
+    @abstract
+    @abc.abstractmethod
+
+[html]
+# HTML report options
+directory = htmlcov
+title = Ista Test Coverage Report
+
+[xml]
+# XML report for CI/CD
+output = coverage.xml

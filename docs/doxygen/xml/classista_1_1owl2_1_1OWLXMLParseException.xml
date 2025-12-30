@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1OWLXMLParseException" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::OWLXMLParseException</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::runtime_error</basecompoundref>
+    <includes refid="owlxml__parser_8hpp" local="no">owlxml_parser.hpp</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1OWLXMLParseException_1a1aafb45d3d3f5f526783a63390a364f6" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::OWLXMLParseException::OWLXMLParseException</definition>
+        <argsstring>(const std::string &amp;message)</argsstring>
+        <name>OWLXMLParseException</name>
+        <qualifiedname>ista::owl2::OWLXMLParseException::OWLXMLParseException</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/owlxml_parser.hpp" line="16" column="14" bodyfile="D:/projects/ista/lib/owl2/parser/owlxml_parser.hpp" bodystart="16" bodyend="17"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Exception thrown when OWL/XML parsing fails. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>ista::owl2::OWLXMLParseException</label>
+        <link refid="classista_1_1owl2_1_1OWLXMLParseException"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::runtime_error</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>ista::owl2::OWLXMLParseException</label>
+        <link refid="classista_1_1owl2_1_1OWLXMLParseException"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::runtime_error</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/projects/ista/lib/owl2/parser/owlxml_parser.hpp" line="14" column="1" bodyfile="D:/projects/ista/lib/owl2/parser/owlxml_parser.hpp" bodystart="14" bodyend="18"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1OWLXMLParseException_1a1aafb45d3d3f5f526783a63390a364f6" prot="public" virt="non-virtual"><scope>ista::owl2::OWLXMLParseException</scope><name>OWLXMLParseException</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

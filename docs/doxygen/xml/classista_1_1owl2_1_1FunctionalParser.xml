@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1FunctionalParser" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::FunctionalParser</compoundname>
+    <includes refid="functional__parser_8hpp" local="no">functional_parser.hpp</includes>
+    <innerclass refid="classista_1_1owl2_1_1FunctionalParser_1_1Parser" prot="private">ista::owl2::FunctionalParser::Parser</innerclass>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1a29b5ab02aa0f50b6a9e476c6f1e3a0d7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref></type>
+        <definition>Ontology ista::owl2::FunctionalParser::parseFromString</definition>
+        <argsstring>(const std::string &amp;content)</argsstring>
+        <name>parseFromString</name>
+        <qualifiedname>ista::owl2::FunctionalParser::parseFromString</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>content</declname>
+          <defname>functional_content</defname>
+        </param>
+        <briefdescription>
+<para>Parse Functional Syntax from string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Functional Syntax content </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Parsed ontology </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classista_1_1owl2_1_1FunctionalParseException" kindref="compound">FunctionalParseException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if parsing fails</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>This is currently a stub implementation. Full Functional Syntax parsing will be implemented in a future version. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="46" column="21" bodyfile="D:/projects/ista/lib/owl2/parser/functional_parser.cpp" bodystart="12" bodyend="16"/>
+        <referencedby refid="classista_1_1owl2_1_1FunctionalParser_1ab53562b97cb7fd835234fcc4511aab11" compoundref="functional__parser_8cpp" startline="18" endline="27">parseFromFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1FunctionalParser_1ab53562b97cb7fd835234fcc4511aab11" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref></type>
+        <definition>Ontology ista::owl2::FunctionalParser::parseFromFile</definition>
+        <argsstring>(const std::string &amp;filename)</argsstring>
+        <name>parseFromFile</name>
+        <qualifiedname>ista::owl2::FunctionalParser::parseFromFile</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+<para>Parse Functional Syntax from file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to Functional Syntax file </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Parsed ontology </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classista_1_1owl2_1_1FunctionalParseException" kindref="compound">FunctionalParseException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if parsing fails </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="54" column="21" bodyfile="D:/projects/ista/lib/owl2/parser/functional_parser.cpp" bodystart="18" bodyend="27"/>
+        <references refid="classista_1_1owl2_1_1FunctionalParser_1a29b5ab02aa0f50b6a9e476c6f1e3a0d7" compoundref="functional__parser_8cpp" startline="12" endline="16">parseFromString</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Parser for OWL 2 Functional Syntax. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Parses ontologies from OWL 2 Functional Syntax format, which uses a Lisp-like syntax with parentheses and keywords.</para>
+<para>Supports:<itemizedlist>
+<listitem><para><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> declarations</para>
+</listitem><listitem><para>Prefix declarations</para>
+</listitem><listitem><para>Import statements</para>
+</listitem><listitem><para>All OWL 2 axiom types</para>
+</listitem><listitem><para><ref refid="classista_1_1owl2_1_1Class" kindref="compound">Class</ref> expressions</para>
+</listitem><listitem><para>Data ranges</para>
+</listitem><listitem><para>Annotations </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" line="38" column="1" bodyfile="D:/projects/ista/lib/owl2/parser/functional_parser.hpp" bodystart="38" bodyend="126"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1ab53562b97cb7fd835234fcc4511aab11" prot="public" virt="non-virtual"><scope>ista::owl2::FunctionalParser</scope><name>parseFromFile</name></member>
+      <member refid="classista_1_1owl2_1_1FunctionalParser_1a29b5ab02aa0f50b6a9e476c6f1e3a0d7" prot="public" virt="non-virtual"><scope>ista::owl2::FunctionalParser</scope><name>parseFromString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -3,6 +3,7 @@
 
 #include "../core/ontology.hpp"
 #include <string>
+#include <map>
 
 namespace ista {
 namespace owl2 {

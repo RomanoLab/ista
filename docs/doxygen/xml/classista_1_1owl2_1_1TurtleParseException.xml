@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1TurtleParseException" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::TurtleParseException</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::runtime_error</basecompoundref>
+    <includes refid="turtle__parser_8hpp" local="no">turtle_parser.hpp</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleParseException_1a94186ac28c5076d4f8fde21b40cc3d8d" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::TurtleParseException::TurtleParseException</definition>
+        <argsstring>(const std::string &amp;message)</argsstring>
+        <name>TurtleParseException</name>
+        <qualifiedname>ista::owl2::TurtleParseException::TurtleParseException</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="18" column="14" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="18" bodyend="19"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Exception thrown when Turtle parsing fails. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>ista::owl2::TurtleParseException</label>
+        <link refid="classista_1_1owl2_1_1TurtleParseException"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::runtime_error</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>ista::owl2::TurtleParseException</label>
+        <link refid="classista_1_1owl2_1_1TurtleParseException"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::runtime_error</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="16" column="1" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="16" bodyend="20"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1TurtleParseException_1a94186ac28c5076d4f8fde21b40cc3d8d" prot="public" virt="non-virtual"><scope>ista::owl2::TurtleParseException</scope><name>TurtleParseException</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

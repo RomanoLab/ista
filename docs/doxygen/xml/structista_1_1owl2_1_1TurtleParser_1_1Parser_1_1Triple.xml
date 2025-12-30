@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="structista_1_1owl2_1_1TurtleParser_1_1Parser_1_1Triple" kind="struct" language="C++" prot="private">
+    <compoundname>ista::owl2::TurtleParser::Parser::Triple</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structista_1_1owl2_1_1TurtleParser_1_1Parser_1_1Triple_1af1684aed3ca54e6f97a007c4cb7226c6" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::TurtleParser::Parser::Triple::subject</definition>
+        <argsstring></argsstring>
+        <name>subject</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::Triple::subject</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="87" column="25" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1TurtleParser_1_1Parser_1_1Triple_1aa0faec8e9ade8ee9d4a518f3cffd7333" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::TurtleParser::Parser::Triple::predicate</definition>
+        <argsstring></argsstring>
+        <name>predicate</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::Triple::predicate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="88" column="25" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1TurtleParser_1_1Parser_1_1Triple_1ae0fd9acdccf8ec7a56fb76a18bdf07b2" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::TurtleParser::Parser::Triple::object</definition>
+        <argsstring></argsstring>
+        <name>object</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::Triple::object</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="89" column="25" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1TurtleParser_1_1Parser_1_1Triple_1a38a264bf3f8d4f0406d3eaf03a690a2e" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ista::owl2::TurtleParser::Parser::Triple::object_is_literal</definition>
+        <argsstring></argsstring>
+        <name>object_is_literal</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::Triple::object_is_literal</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="90" column="18" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1TurtleParser_1_1Parser_1_1Triple_1a4015e7cbb8eed736fa6a56ed9d30aacc" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::TurtleParser::Parser::Triple::literal_datatype</definition>
+        <argsstring></argsstring>
+        <name>literal_datatype</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::Triple::literal_datatype</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="91" column="25" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1TurtleParser_1_1Parser_1_1Triple_1aa8b67738992dbef3e537518376a3938d" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::TurtleParser::Parser::Triple::literal_language</definition>
+        <argsstring></argsstring>
+        <name>literal_language</name>
+        <qualifiedname>ista::owl2::TurtleParser::Parser::Triple::literal_language</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="92" column="25" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="92" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="86" column="9" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="86" bodyend="93"/>
+    <listofallmembers>
+      <member refid="structista_1_1owl2_1_1TurtleParser_1_1Parser_1_1Triple_1a4015e7cbb8eed736fa6a56ed9d30aacc" prot="public" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser::Triple</scope><name>literal_datatype</name></member>
+      <member refid="structista_1_1owl2_1_1TurtleParser_1_1Parser_1_1Triple_1aa8b67738992dbef3e537518376a3938d" prot="public" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser::Triple</scope><name>literal_language</name></member>
+      <member refid="structista_1_1owl2_1_1TurtleParser_1_1Parser_1_1Triple_1ae0fd9acdccf8ec7a56fb76a18bdf07b2" prot="public" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser::Triple</scope><name>object</name></member>
+      <member refid="structista_1_1owl2_1_1TurtleParser_1_1Parser_1_1Triple_1a38a264bf3f8d4f0406d3eaf03a690a2e" prot="public" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser::Triple</scope><name>object_is_literal</name></member>
+      <member refid="structista_1_1owl2_1_1TurtleParser_1_1Parser_1_1Triple_1aa0faec8e9ade8ee9d4a518f3cffd7333" prot="public" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser::Triple</scope><name>predicate</name></member>
+      <member refid="structista_1_1owl2_1_1TurtleParser_1_1Parser_1_1Triple_1af1684aed3ca54e6f97a007c4cb7226c6" prot="public" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser::Triple</scope><name>subject</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

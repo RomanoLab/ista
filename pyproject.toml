@@ -4,3 +4,59 @@ requires = [
     "wheel"
 ]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "ista"
+version = "0.2.0"
+description = "A Python/C++ toolkit for building and manipulating knowledge graphs."
+readme = "README.md"
+requires-python = ">=3.7"
+authors = [
+    {name = "Joseph D. Romano"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: C++",
+]
+dependencies = [
+    "mysqlclient",
+    "openpyxl",
+    "owlready2",
+    "pandas",
+    "tqdm",
+    "pybind11>=2.6.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/JDRomano2/ista"
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "pytest-timeout>=2.1",
+]
+docs = [
+    "sphinx>=5.0",
+    "sphinx-rtd-theme>=1.0",
+    "breathe>=4.35",
+    "numpydoc>=1.5",
+    "myst-parser>=1.0",
+]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "pytest-timeout>=2.1",
+    "sphinx>=5.0",
+    "sphinx-rtd-theme>=1.0",
+    "breathe>=4.35",
+    "numpydoc>=1.5",
+    "myst-parser>=1.0",
+]

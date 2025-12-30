@@ -106,6 +106,130 @@ public:
     std::string toFunctionalSyntax() const;
     std::string toFunctionalSyntax(const std::string& indent) const;
 
+    // Individual and Property Manipulation
+    /**
+     * @brief Create a new individual of the specified class
+     * 
+     * This creates a NamedIndividual and adds a ClassAssertion axiom to the ontology.
+     * 
+     * @param cls The class to instantiate
+     * @param individual_iri The IRI for the new individual
+     * @return The created NamedIndividual
+     */
+    NamedIndividual createIndividual(const Class& cls, const IRI& individual_iri);
+    
+    /**
+     * @brief Add a data property assertion
+     * 
+     * Creates and adds a DataPropertyAssertion axiom.
+     * 
+     * @param individual The subject individual
+     * @param property The data property
+     * @param value The literal value
+     * @return true if the axiom was added successfully
+     */
+    bool addDataPropertyAssertion(const NamedIndividual& individual, 
+                                   const DataProperty& property, 
+                                   const Literal& value);
+    
+    /**
+     * @brief Add an object property assertion
+     * 
+     * Creates and adds an ObjectPropertyAssertion axiom.
+     * 
+     * @param subject The subject individual
+     * @param property The object property
+     * @param object The object individual
+     * @return true if the axiom was added successfully
+     */
+    bool addObjectPropertyAssertion(const NamedIndividual& subject,
+                                     const ObjectProperty& property,
+                                     const NamedIndividual& object);
+    
+    /**
+     * @brief Add a class assertion to an existing individual
+     * 
+     * @param individual The individual
+     * @param cls The class to assert
+     * @return true if the axiom was added successfully
+     */
+    bool addClassAssertion(const NamedIndividual& individual, const Class& cls);
+    
+    // Property-based Search
+    /**
+     * @brief Search for individuals by data property value
+     * 
+     * @param property The data property to search
+     * @param value The literal value to match
+     * @return Vector of individuals with matching data property assertions
+     */
+    std::vector<NamedIndividual> searchByDataProperty(const DataProperty& property, 
+                                                       const Literal& value) const;
+    
+    /**
+     * @brief Search for individuals by object property value
+     * 
+     * @param property The object property to search
+     * @param object The object individual to match
+     * @return Vector of subject individuals with matching object property assertions
+     */
+    std::vector<NamedIndividual> searchByObjectProperty(const ObjectProperty& property,
+                                                         const NamedIndividual& object) const;
+    
+    // Property Assertion Queries
+    /**
+     * @brief Get all object property assertions for a property
+     * 
+     * @param property The object property
+     * @return Vector of (subject, object) pairs
+     */
+    std::vector<std::pair<NamedIndividual, NamedIndividual>> 
+    getObjectPropertyAssertions(const ObjectProperty& property) const;
+    
+    /**
+     * @brief Get all data property assertions for a property
+     * 
+     * @param property The data property
+     * @return Vector of (subject, value) pairs
+     */
+    std::vector<std::pair<NamedIndividual, Literal>> 
+    getDataPropertyAssertions(const DataProperty& property) const;
+    
+    // Individual Class Queries
+    /**
+     * @brief Get all classes that an individual is asserted to be an instance of
+     * 
+     * @param individual The individual to query
+     * @return Vector of classes
+     */
+    std::vector<Class> getClassesForIndividual(const NamedIndividual& individual) const;
+    
+    /**
+     * @brief Check if an individual is an instance of a class
+     * 
+     * @param individual The individual to check
+     * @param cls The class to check membership of
+     * @return true if there is a ClassAssertion axiom
+     */
+    bool isInstanceOf(const NamedIndividual& individual, const Class& cls) const;
+    
+    // Property Characteristics
+    /**
+     * @brief Check if an object property is functional
+     * 
+     * @param property The object property to check
+     * @return true if there is a FunctionalObjectProperty axiom
+     */
+    bool isFunctionalObjectProperty(const ObjectProperty& property) const;
+    
+    /**
+     * @brief Check if a data property is functional
+     * 
+     * @param property The data property to check
+     * @return true if there is a FunctionalDataProperty axiom
+     */
+    bool isFunctionalDataProperty(const DataProperty& property) const;
+
     // Filtering and Subgraph Extraction
     /**
      * @brief Create a filtered subgraph using OntologyFilter

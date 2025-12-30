@@ -160,7 +160,14 @@ extensions = [
     # Third-party extensions
     "numpydoc",  # NumPy-style docstrings
     "breathe",  # C++ documentation via Doxygen
+    "myst_parser",  # Markdown support
 ]
+
+# Source file suffixes
+source_suffix = {
+    ".rst": "restructuredtext",
+    ".md": "markdown",
+}
 
 # Autosummary settings
 autosummary_generate = True

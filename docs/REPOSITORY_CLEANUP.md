@@ -80,7 +80,7 @@ All test files updated to:
 ```python
 import sys
 sys.path.insert(0, r"D:\projects\ista\build\lib\python\Debug")
-import _libista_owl2 as owl2
+import ista.owl2 as owl2
 ```
 
 **After**:
