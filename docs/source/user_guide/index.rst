@@ -13,6 +13,7 @@ Comprehensive guide to using ista for knowledge graph manipulation.
    graph_converters
    subgraph_extraction
    database_parsing
+   data_loading_schema
 
 Topics
 ------
@@ -25,4 +26,5 @@ Topics
    C++ Library Usage <cpp_library>
    Graph Converters <graph_converters>
    Subgraph Extraction <subgraph_extraction>
-   Database Parsing <database_parsing>
+   Data Loading <database_parsing>
+   Data Loading Schema Reference <data_loading_schema>

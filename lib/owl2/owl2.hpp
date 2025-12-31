@@ -32,6 +32,12 @@
 #include "parser/owlxml_parser.hpp"
 #include "parser/turtle_parser.hpp"
 
+// Data Loading
+#include "loader/transform_engine.hpp"
+#include "loader/yaml_parser.hpp"
+#include "loader/mapping_spec.hpp"
+#include "loader/data_loader.hpp"
+
 /**
  * @namespace ista::owl2
  * @brief OWL2 ontology manipulation library

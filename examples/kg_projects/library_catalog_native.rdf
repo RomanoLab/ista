@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:lib="http://example.org/library#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace">
+
+    <owl:Ontology rdf:about="http://example.org/library"/>
+
+    <owl:Class rdf:about="http://example.org/library#Author"/>
+
+    <owl:Class rdf:about="http://example.org/library#Book"/>
+
+    <owl:DatatypeProperty rdf:about="http://example.org/library#authorID"/>
+
+    <owl:DatatypeProperty rdf:about="http://example.org/library#name"/>
+
+    <owl:DatatypeProperty rdf:about="http://example.org/library#birthYear"/>
+
+    <owl:DatatypeProperty rdf:about="http://example.org/library#nationality"/>
+
+    <owl:DatatypeProperty rdf:about="http://example.org/library#bookID"/>
+
+    <owl:DatatypeProperty rdf:about="http://example.org/library#title"/>
+
+    <owl:DatatypeProperty rdf:about="http://example.org/library#publicationYear"/>
+
+    <owl:DatatypeProperty rdf:about="http://example.org/library#genre"/>
+
+    <owl:DatatypeProperty rdf:about="http://example.org/library#pages"/>
+
+    <owl:ObjectProperty rdf:about="http://example.org/library#writtenBy"/>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#AUTH001"/>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#AUTH001">
+        <rdf:type rdf:resource="http://example.org/library#Author"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#AUTH001">
+        <lib:authorID>AUTH001</lib:authorID>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#AUTH001">
+        <lib:name>Jane Austen</lib:name>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#AUTH001">
+        <lib:birthYear>1775</lib:birthYear>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#AUTH001">
+        <lib:nationality>British</lib:nationality>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#AUTH002"/>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#AUTH002">
+        <rdf:type rdf:resource="http://example.org/library#Author"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#AUTH002">
+        <lib:authorID>AUTH002</lib:authorID>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#AUTH002">
+        <lib:name>Mark Twain</lib:name>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#AUTH002">
+        <lib:birthYear>1835</lib:birthYear>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#AUTH002">
+        <lib:nationality>American</lib:nationality>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#AUTH003"/>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#AUTH003">
+        <rdf:type rdf:resource="http://example.org/library#Author"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#AUTH003">
+        <lib:authorID>AUTH003</lib:authorID>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#AUTH003">
+        <lib:name>Gabriel García Márquez</lib:name>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#AUTH003">
+        <lib:birthYear>1927</lib:birthYear>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#AUTH003">
+        <lib:nationality>Colombian</lib:nationality>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#AUTH004"/>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#AUTH004">
+        <rdf:type rdf:resource="http://example.org/library#Author"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#AUTH004">
+        <lib:authorID>AUTH004</lib:authorID>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#AUTH004">
+        <lib:name>Virginia Woolf</lib:name>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#AUTH004">
+        <lib:birthYear>1882</lib:birthYear>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#AUTH004">
+        <lib:nationality>British</lib:nationality>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#AUTH005"/>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#AUTH005">
+        <rdf:type rdf:resource="http://example.org/library#Author"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#AUTH005">
+        <lib:authorID>AUTH005</lib:authorID>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#AUTH005">
+        <lib:name>Haruki Murakami</lib:name>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#AUTH005">
+        <lib:birthYear>1949</lib:birthYear>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#AUTH005">
+        <lib:nationality>Japanese</lib:nationality>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK001"/>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK001">
+        <rdf:type rdf:resource="http://example.org/library#Book"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK001">
+        <lib:bookID>BOOK001</lib:bookID>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK001">
+        <lib:title>Pride and Prejudice</lib:title>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK001">
+        <lib:publicationYear>1813</lib:publicationYear>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK001">
+        <lib:genre>Romance</lib:genre>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK001">
+        <lib:pages>432</lib:pages>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK002"/>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK002">
+        <rdf:type rdf:resource="http://example.org/library#Book"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK002">
+        <lib:bookID>BOOK002</lib:bookID>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK002">
+        <lib:title>Adventures of Huckleberry Finn</lib:title>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK002">
+        <lib:publicationYear>1884</lib:publicationYear>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK002">
+        <lib:genre>Adventure</lib:genre>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK002">
+        <lib:pages>366</lib:pages>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK003"/>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK003">
+        <rdf:type rdf:resource="http://example.org/library#Book"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK003">
+        <lib:bookID>BOOK003</lib:bookID>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK003">
+        <lib:title>One Hundred Years of Solitude</lib:title>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK003">
+        <lib:publicationYear>1967</lib:publicationYear>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK003">
+        <lib:genre>Magical Realism</lib:genre>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK003">
+        <lib:pages>417</lib:pages>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK004"/>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK004">
+        <rdf:type rdf:resource="http://example.org/library#Book"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK004">
+        <lib:bookID>BOOK004</lib:bookID>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK004">
+        <lib:title>Mrs Dalloway</lib:title>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK004">
+        <lib:publicationYear>1925</lib:publicationYear>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK004">
+        <lib:genre>Modernist</lib:genre>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK004">
+        <lib:pages>194</lib:pages>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK005"/>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK005">
+        <rdf:type rdf:resource="http://example.org/library#Book"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK005">
+        <lib:bookID>BOOK005</lib:bookID>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK005">
+        <lib:title>Norwegian Wood</lib:title>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK005">
+        <lib:publicationYear>1987</lib:publicationYear>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK005">
+        <lib:genre>Romance</lib:genre>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK005">
+        <lib:pages>296</lib:pages>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK001">
+        <lib:writtenBy rdf:resource="http://example.org/library#AUTH001"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK002">
+        <lib:writtenBy rdf:resource="http://example.org/library#AUTH002"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK003">
+        <lib:writtenBy rdf:resource="http://example.org/library#AUTH003"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK004">
+        <lib:writtenBy rdf:resource="http://example.org/library#AUTH004"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/library#BOOK005">
+        <lib:writtenBy rdf:resource="http://example.org/library#AUTH005"/>
+    </owl:NamedIndividual>
+
+</rdf:RDF>

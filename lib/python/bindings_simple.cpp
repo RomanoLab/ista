@@ -22,6 +22,7 @@
 #include "../owl2/serializer/manchester_serializer.hpp"
 #include "../owl2/serializer/owlxml_serializer.hpp"
 #include "../owl2/core/ontology_filter.hpp"
+#include "../owl2/loader/data_loader.hpp"
 
 namespace py = pybind11;
 using namespace ista::owl2;
@@ -926,6 +927,208 @@ PYBIND11_MODULE(_libista_owl2, m) {
     
     // Parser exception
     py::register_exception<CSVParseException>(m, "CSVParseException");
+
+    // ========================================================================
+    // Data Loader
+    // ========================================================================
+    
+    // Use the loader namespace
+    using namespace ista::owl2::loader;
+    
+    // MappingMode enum
+    py::enum_<MappingMode>(m, "MappingMode", "Mode for node mapping")
+        .value("CREATE", MappingMode::CREATE, "Primary source - creates new individuals")
+        .value("ENRICH", MappingMode::ENRICH, "Secondary source - only adds properties to existing")
+        .export_values();
+    
+    // FilterDef struct
+    py::class_<FilterDef>(m, "FilterDef", "Filter criteria for rows")
+        .def(py::init<>())
+        .def_readwrite("column", &FilterDef::column, "Column to filter on")
+        .def_readwrite("value", &FilterDef::value, "Value to match")
+        .def_readwrite("contains", &FilterDef::contains, 
+                      "If true, value must be contained; if false, exact match");
+    
+    // MatchCriteria struct
+    py::class_<MatchCriteria>(m, "MatchCriteria", "Criteria for matching existing individuals")
+        .def(py::init<>())
+        .def_readwrite("source_column", &MatchCriteria::source_column, 
+                      "Column in data source to match")
+        .def_readwrite("target_property", &MatchCriteria::target_property, 
+                      "Property local name to match against in ontology");
+    
+    // PropertyMapping struct
+    py::class_<PropertyMapping>(m, "PropertyMapping", "Mapping from a source column to an ontology property")
+        .def(py::init<>())
+        .def_readwrite("column", &PropertyMapping::column, "Source column name")
+        .def_readwrite("property", &PropertyMapping::property, "Target property local name")
+        .def_readwrite("transform", &PropertyMapping::transform, "Optional transform name")
+        .def_readwrite("datatype", &PropertyMapping::datatype, "Optional XSD datatype");
+    
+    // DataSourceDef struct
+    py::class_<DataSourceDef>(m, "DataSourceDef", "Definition of a data source")
+        .def(py::init<>())
+        .def_readwrite("name", &DataSourceDef::name, "Data source name")
+        .def_readwrite("type", &DataSourceDef::type, "Type: csv, tsv, sqlite, mysql, postgres")
+        .def_readwrite("path", &DataSourceDef::path, "File path for file sources")
+        .def_readwrite("delimiter", &DataSourceDef::delimiter, "Field delimiter")
+        .def_readwrite("has_headers", &DataSourceDef::has_headers, "Whether file has header row");
+    
+    // NodeMapping struct
+    py::class_<NodeMapping>(m, "NodeMapping", "Mapping definition for creating/enriching individuals")
+        .def(py::init<>())
+        .def_readwrite("name", &NodeMapping::name, "Human-readable name")
+        .def_readwrite("source", &NodeMapping::source, "Reference to data source name")
+        .def_readwrite("target_class", &NodeMapping::target_class, "OWL class local name")
+        .def_readwrite("mode", &NodeMapping::mode, "CREATE or ENRICH mode")
+        .def_readwrite("iri_column", &NodeMapping::iri_column, "Column for IRI generation (CREATE)")
+        .def_readwrite("match", &NodeMapping::match, "Match criteria (ENRICH)")
+        .def_readwrite("filter", &NodeMapping::filter, "Row filtering")
+        .def_readwrite("properties", &NodeMapping::properties, "Property mappings")
+        .def_readwrite("skip", &NodeMapping::skip, "Skip this mapping during execution");
+    
+    // EntityRef struct
+    py::class_<EntityRef>(m, "EntityRef", "Reference to an entity in a relationship")
+        .def(py::init<>())
+        .def_readwrite("class_name", &EntityRef::class_name, "OWL class local name")
+        .def_readwrite("column", &EntityRef::column, "Column containing the value")
+        .def_readwrite("match_property", &EntityRef::match_property, "Property to match on")
+        .def_readwrite("transform", &EntityRef::transform, "Optional transform");
+    
+    // RelationshipMapping struct
+    py::class_<RelationshipMapping>(m, "RelationshipMapping", 
+        "Mapping definition for creating relationships between individuals")
+        .def(py::init<>())
+        .def_readwrite("name", &RelationshipMapping::name, "Human-readable name")
+        .def_readwrite("source", &RelationshipMapping::source, "Reference to data source name")
+        .def_readwrite("relationship", &RelationshipMapping::relationship, "Object property local name")
+        .def_readwrite("subject", &RelationshipMapping::subject, "Subject entity reference")
+        .def_readwrite("object", &RelationshipMapping::object, "Object entity reference")
+        .def_readwrite("filter", &RelationshipMapping::filter, "Row filtering")
+        .def_readwrite("inverse_relationship", &RelationshipMapping::inverse_relationship, 
+                      "Optional inverse relationship to also create")
+        .def_readwrite("skip", &RelationshipMapping::skip, "Skip this mapping");
+    
+    // TransformDef struct
+    py::class_<TransformDef>(m, "TransformDef", "Definition of a named transform")
+        .def(py::init<>())
+        .def_readwrite("type", &TransformDef::type, "Transform type or builtin name")
+        .def_readwrite("params", &TransformDef::params, "Transform parameters");
+    
+    // ValidationResult struct
+    py::class_<ValidationResult>(m, "ValidationResult", "Result of validating a mapping specification")
+        .def(py::init<>())
+        .def_readonly("is_valid", &ValidationResult::is_valid, "Whether the spec is valid")
+        .def_readonly("errors", &ValidationResult::errors, "List of errors")
+        .def_readonly("warnings", &ValidationResult::warnings, "List of warnings")
+        .def("__repr__", [](const ValidationResult& r) {
+            return "<ValidationResult valid=" + std::string(r.is_valid ? "True" : "False") + 
+                   " errors=" + std::to_string(r.errors.size()) + 
+                   " warnings=" + std::to_string(r.warnings.size()) + ">";
+        });
+    
+    // LoadingStats struct
+    py::class_<LoadingStats>(m, "LoadingStats", "Statistics from a loading operation")
+        .def(py::init<>())
+        .def_readonly("rows_processed", &LoadingStats::rows_processed)
+        .def_readonly("individuals_created", &LoadingStats::individuals_created)
+        .def_readonly("individuals_enriched", &LoadingStats::individuals_enriched)
+        .def_readonly("properties_added", &LoadingStats::properties_added)
+        .def_readonly("relationships_created", &LoadingStats::relationships_created)
+        .def_readonly("rows_skipped", &LoadingStats::rows_skipped)
+        .def_readonly("errors", &LoadingStats::errors)
+        .def_readonly("error_messages", &LoadingStats::error_messages)
+        .def("summary", &LoadingStats::summary, "Get a summary of the loading statistics")
+        .def("merge", &LoadingStats::merge, py::arg("other"), "Merge with another stats object")
+        .def("__repr__", [](const LoadingStats& s) {
+            return "<LoadingStats rows=" + std::to_string(s.rows_processed) + 
+                   " created=" + std::to_string(s.individuals_created) + 
+                   " enriched=" + std::to_string(s.individuals_enriched) + ">";
+        });
+    
+    // DataMappingSpec class
+    py::class_<DataMappingSpec>(m, "DataMappingSpec", 
+        "Complete mapping specification for populating an ontology from data sources")
+        .def(py::init<>())
+        .def_readwrite("version", &DataMappingSpec::version, "Spec version")
+        .def_readwrite("base_iri", &DataMappingSpec::base_iri, "Base IRI for individuals")
+        .def_readwrite("transforms", &DataMappingSpec::transforms, "Named transforms")
+        .def_readwrite("sources", &DataMappingSpec::sources, "Data sources")
+        .def_readwrite("node_mappings", &DataMappingSpec::node_mappings, "Node mappings")
+        .def_readwrite("relationship_mappings", &DataMappingSpec::relationship_mappings, 
+                      "Relationship mappings")
+        .def_static("load_from_file", &DataMappingSpec::load_from_file,
+                   py::arg("filepath"),
+                   "Load a mapping specification from a YAML file")
+        .def_static("parse", &DataMappingSpec::parse,
+                   py::arg("yaml_content"),
+                   "Parse a mapping specification from YAML string")
+        .def("validate", &DataMappingSpec::validate,
+             py::arg("ontology"),
+             "Validate the specification against an ontology")
+        .def("to_yaml", &DataMappingSpec::to_yaml,
+             "Serialize the specification to YAML string")
+        .def("save_to_file", &DataMappingSpec::save_to_file,
+             py::arg("filepath"),
+             "Save the specification to a YAML file")
+        .def("expand_entity_types", &DataMappingSpec::expand_entity_types,
+             "Expand entity_types into node_mappings")
+        .def("get_all_node_mappings", &DataMappingSpec::get_all_node_mappings,
+             "Get all node mappings (including expanded entity_types)")
+        .def("resolve_environment_variables", &DataMappingSpec::resolve_environment_variables,
+             "Resolve ${VAR_NAME} patterns in paths")
+        .def("__repr__", [](const DataMappingSpec& spec) {
+            return "<DataMappingSpec sources=" + std::to_string(spec.sources.size()) + 
+                   " node_mappings=" + std::to_string(spec.node_mappings.size()) + 
+                   " relationship_mappings=" + std::to_string(spec.relationship_mappings.size()) + ">";
+        });
+    
+    // DataLoader class
+    py::class_<DataLoader>(m, "DataLoader", 
+        "Main data loading engine for populating ontologies from data sources.\n\n"
+        "The DataLoader uses a mapping specification to populate an ontology\n"
+        "from one or more data sources. It supports both CREATE mode (for\n"
+        "primary data sources that define individual existence) and ENRICH\n"
+        "mode (for secondary sources that add properties to existing individuals).")
+        .def(py::init<Ontology&>(),
+             py::arg("ontology"),
+             "Create a DataLoader for the given ontology")
+        .def("set_mapping_spec", &DataLoader::set_mapping_spec,
+             py::arg("spec"),
+             "Set the mapping specification")
+        .def("load_mapping_spec", &DataLoader::load_mapping_spec,
+             py::arg("filepath"),
+             "Load the mapping specification from a YAML file")
+        .def("set_progress_callback", &DataLoader::set_progress_callback,
+             py::arg("callback"),
+             "Set a progress callback function(current, total, mapping_name)")
+        .def("execute", &DataLoader::execute,
+             "Execute all mappings in the specification\n\n"
+             "Returns:\n"
+             "    LoadingStats with statistics about the loading operation")
+        .def("execute_node_mapping", &DataLoader::execute_node_mapping,
+             py::arg("mapping_name"),
+             "Execute a specific node mapping by name")
+        .def("execute_relationship_mapping", &DataLoader::execute_relationship_mapping,
+             py::arg("mapping_name"),
+             "Execute a specific relationship mapping by name")
+        .def("execute_all_node_mappings", &DataLoader::execute_all_node_mappings,
+             "Execute all node mappings")
+        .def("execute_all_relationship_mappings", &DataLoader::execute_all_relationship_mappings,
+             "Execute all relationship mappings")
+        .def("mapping_spec", &DataLoader::mapping_spec,
+             py::return_value_policy::reference,
+             "Get the current mapping specification")
+        .def("validate", &DataLoader::validate,
+             "Validate the mapping specification against the ontology")
+        .def("__repr__", [](const DataLoader& loader) {
+            return "<DataLoader>";
+        });
+    
+    // Exceptions
+    py::register_exception<MappingSpecException>(m, "MappingSpecException");
+    py::register_exception<DataLoaderException>(m, "DataLoaderException");
+    py::register_exception<YamlParseException>(m, "YamlParseException");
 
     // ========================================================================
     // Version information

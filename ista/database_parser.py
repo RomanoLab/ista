@@ -1,5 +1,6 @@
 import csv
 import os
+import warnings
 
 import ipdb
 import MySQLdb
@@ -9,6 +10,18 @@ from tqdm import tqdm
 
 from . import owl2
 from .util import *
+
+
+def _emit_deprecation_warning(class_name: str):
+    """Emit a deprecation warning for legacy database parsers."""
+    warnings.warn(
+        f"{class_name} is deprecated and will be removed in a future version. "
+        f"Please migrate to the new DataLoader API using YAML mapping specifications. "
+        f"See the 'Data Loading' section in the documentation for migration guidance: "
+        f"https://ista.readthedocs.io/en/latest/user_guide/database_parsing.html",
+        DeprecationWarning,
+        stacklevel=3,
+    )
 
 
 class DatabaseParser:
@@ -133,6 +146,10 @@ class FlatFileDatabaseParser(DatabaseParser):
     """
     Parse a database saved to one or more flat files (e.g., CSV, TSV, etc.).
 
+    .. deprecated::
+        This class is deprecated. Use :class:`owl2.DataLoader` with YAML mapping
+        specifications instead. See the Data Loading documentation for migration guidance.
+
     Parameters
     ----------
     name : str
@@ -140,9 +157,12 @@ class FlatFileDatabaseParser(DatabaseParser):
         directory with the same name (case-sensitive).
     destination : owl2.Ontology
         Ontology to be populated with the database's contents.
+    data_dir : str
+        Path to the directory containing database files.
     """
 
     def __init__(self, name: str, destination: owl2.Ontology, data_dir):
+        _emit_deprecation_warning("FlatFileDatabaseParser")
         super().__init__(name, destination)
         self.data_dir = data_dir
 
@@ -483,6 +503,10 @@ class MySQLDatabaseParser(DatabaseParser):
     Parse a database stored on a MySQL server and populate its contents into
     an OWL ontology.
 
+    .. deprecated::
+        This class is deprecated. Use :class:`owl2.DataLoader` with YAML mapping
+        specifications instead. See the Data Loading documentation for migration guidance.
+
     The server must be locally accessible, and credentials should be passed at
     instantiation via the `config_dict` parameter (see below).
 
@@ -498,6 +522,7 @@ class MySQLDatabaseParser(DatabaseParser):
     """
 
     def __init__(self, name: str, destination: owl2.Ontology, config_dict: dict):
+        _emit_deprecation_warning("MySQLDatabaseParser")
         super().__init__(name, destination)
 
         if "socket" in config_dict:

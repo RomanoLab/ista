@@ -1,525 +1,667 @@
-Database Parsing
-================
+Data Loading
+============
 
-The ista database parsers enable conversion of structured databases (CSV, TSV, Excel, MySQL) into
-OWL2 ontologies using the native ista.owl2 library. This facilitates integration of existing knowledge
-bases and data sources into formal ontologies.
+The ista data loading system enables population of OWL2 ontologies from structured data sources
+(CSV, TSV, databases) using a declarative YAML-based mapping specification. This approach replaces
+the older Python-based database parsers with a more robust, documented, and GUI-compatible solution.
 
 Overview
 --------
 
-The database parser provides:
+The data loading system provides:
 
-- **Automatic Individual Extraction**: Create OWL individuals from database rows
-- **Property Mapping**: Map database columns to OWL2 data and object properties
-- **Flexible Configuration**: Customize parsing rules via parse_config dictionaries
-- **Merge Operations**: Merge new data with existing individuals
-- **Relationship Parsing**: Extract relationships from separate tables/files
-- **Data Transformations**: Apply transformations to values during parsing
+- **Declarative Mapping Specs**: Define data-to-ontology mappings in YAML files
+- **Primary/Enrichment Pattern**: One source defines individuals, others add properties
+- **Named Transforms**: Replace Python lambdas with reusable, named transformations
+- **High Performance**: Native C++ implementation with Python bindings
+- **GUI Compatible**: Same engine works from scripts and the graphical interface
+- **Validation**: Validate mappings against ontology schema before loading
 
-Supported Formats
------------------
+Quick Start
+-----------
 
-- **Flat Files**: CSV, TSV, Excel (.xlsx)
-- **Databases**: MySQL databases
-- **Pandas DataFrames**: In-memory pandas support (via TSV adapter)
-
-Parser Classes
---------------
-
-FlatFileDatabaseParser
-~~~~~~~~~~~~~~~~~~~~~~
-
-Parses flat files (CSV, TSV, Excel) into ontologies.
+Here's a minimal example of loading data from a CSV file:
 
 .. code-block:: python
 
-    from ista import FlatFileDatabaseParser, owl2
+    from ista import owl2
 
-    # Load base ontology
+    # Load your ontology
     onto = owl2.RDFXMLParser.parse_from_file("my_ontology.owl")
 
-    # Create parser for a database directory
-    parser = FlatFileDatabaseParser(
-        name="DrugDB",        # Database name
-        destination=onto,     # Target ontology
-        data_dir="./data"     # Directory containing database files
-    )
+    # Create a loader
+    loader = owl2.DataLoader(onto)
 
-MySQLDatabaseParser
-~~~~~~~~~~~~~~~~~~~
+    # Load mapping specification from YAML
+    loader.load_mapping_spec("drugs_mapping.yaml")
 
-Parses MySQL database tables into ontologies.
+    # Validate before loading
+    result = loader.validate()
+    if not result.is_valid:
+        for error in result.errors:
+            print(f"Error: {error}")
 
-.. code-block:: python
+    # Execute the loading
+    stats = loader.execute()
+    print(stats.summary())
 
-    from ista import MySQLDatabaseParser, owl2
+Example YAML mapping file (``drugs_mapping.yaml``):
 
-    # MySQL configuration
-    mysql_config = {
-        'host': 'localhost',
-        'user': 'myuser',
-        'passwd': 'mypassword',
-        'socket': '/path/to/mysql.sock'  # Optional
-    }
+.. code-block:: yaml
 
-    # Load base ontology
-    onto = owl2.RDFXMLParser.parse_from_file("my_ontology.owl")
+    version: "1.0"
+    base_iri: "http://example.org/drugs#"
 
-    # Create parser
-    parser = MySQLDatabaseParser(
-        name="BioDB",         # MySQL database name
-        destination=onto,     # Target ontology
-        config_dict=mysql_config
-    )
+    sources:
+      drugbank:
+        type: csv
+        path: "./data/drugs.csv"
+        has_headers: true
 
-Parsing Nodes (Individuals)
-----------------------------
+    node_mappings:
+      - name: "DrugBank Drugs"
+        source: drugbank
+        target_class: Drug
+        mode: create
+        iri_column: drugbank_id
+        properties:
+          - column: name
+            property: commonName
+          - column: drugbank_id
+            property: drugbankId
+          - column: cas_number
+            property: casNumber
 
-Basic Node Parsing
-~~~~~~~~~~~~~~~~~~
+Mapping Specification
+---------------------
 
-Parse database rows into OWL individuals:
+The mapping specification is a YAML file that defines how data sources map to ontology entities.
+See :doc:`data_loading_schema` for the complete YAML schema reference.
 
-.. code-block:: python
+Core Concepts
+~~~~~~~~~~~~~
 
-    from ista import FlatFileDatabaseParser, owl2
+**Data Sources**: Define where data comes from (CSV files, TSV files, databases)
 
-    onto = owl2.Ontology(owl2.IRI("http://example.org/drugs"))
+**Node Mappings**: Define how rows become individuals with properties
 
-    # Create classes and properties first
-    drug_class = owl2.Class(owl2.IRI("http://example.org/Drug"))
-    has_name = owl2.DataProperty(owl2.IRI("http://example.org/hasName"))
-    drugbank_id = owl2.DataProperty(owl2.IRI("http://example.org/drugbankId"))
+**Relationship Mappings**: Define how to create object property assertions between individuals
 
-    parser = FlatFileDatabaseParser("DrugDB", onto, "./data")
+**Transforms**: Named functions that transform column values during loading
 
-    parser.parse_node_type(
-        node_type="Drug",                    # Class name in ontology
-        source_filename="drugs.csv",         # Source file
-        fmt="csv",                           # Format: csv, tsv, xlsx
-        parse_config={
-            "iri_column_name": "drug_id",    # Column for IRI generation
-            "headers": True,                 # File has headers
-            "data_property_map": {
-                "name": has_name,            # Map columns to properties
-                "drugbank_id": drugbank_id,
-            },
-            "merge_column": {                 # Merge strategy
-                "source_column_name": "drugbank_id",
-                "data_property": drugbank_id,
-            },
-        },
-        merge=True,      # Merge with existing individuals
-        skip=False       # Set True to skip this parsing step
-    )
+**Modes**:
 
-Configuration Options
+- ``create``: Primary source that creates new individuals
+- ``enrich``: Secondary source that adds properties to existing individuals
+
+Primary Authority Pattern
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A key design principle is the "primary authority" pattern. For each entity type:
+
+1. One data source is the **primary authority** that defines which individuals exist
+2. Other sources can **enrich** those individuals with additional properties
+
+.. code-block:: yaml
+
+    node_mappings:
+      # Primary source - creates Drug individuals
+      - name: "DrugBank Drugs (Primary)"
+        source: drugbank
+        target_class: Drug
+        mode: create
+        iri_column: drugbank_id
+        properties:
+          - column: name
+            property: commonName
+          - column: drugbank_id
+            property: drugbankId
+
+      # Enrichment source - adds EPA toxicity data to existing drugs
+      - name: "EPA Toxicity Data"
+        source: epa_data
+        target_class: Drug
+        mode: enrich
+        match:
+          source_column: cas_number
+          target_property: casNumber
+        properties:
+          - column: toxicity_class
+            property: toxicityClassification
+          - column: ld50
+            property: ld50Value
+            datatype: xsd:double
+
+Data Sources
+------------
+
+CSV and TSV Files
+~~~~~~~~~~~~~~~~~
+
+.. code-block:: yaml
+
+    sources:
+      my_csv:
+        type: csv
+        path: "./data/file.csv"
+        has_headers: true
+        delimiter: ","  # Optional, defaults to comma
+
+      my_tsv:
+        type: tsv
+        path: "./data/file.tsv"
+        has_headers: true
+
+Environment Variables
 ~~~~~~~~~~~~~~~~~~~~~
 
-**Required parse_config keys:**
+Paths can use environment variables:
 
-- ``iri_column_name``: Column used to generate individual IRIs
-- ``headers``: Whether the file has column headers (True/False or list of header names)
+.. code-block:: yaml
 
-**Optional parse_config keys:**
+    sources:
+      drugbank:
+        type: csv
+        path: "${DATA_DIR}/drugbank/drugs.csv"
 
-- ``data_property_map``: Dictionary mapping column names to DataProperty objects
-- ``merge_column``: Dictionary specifying how to merge with existing individuals
+Call ``spec.resolve_environment_variables()`` or the loader does this automatically.
 
-  - ``source_column_name``: Column to check for existing individuals
-  - ``data_property``: DataProperty to search on
+Node Mappings
+-------------
 
-- ``filter_column``: Column to filter rows
-- ``filter_value``: Value that filter_column must contain
-- ``skip_n_lines``: Number of lines to skip after headers
-- ``compound_fields``: Dictionary for parsing delimited multi-value fields
-- ``data_transforms``: Dictionary of lambda functions to transform values
-- ``custom_sql_query``: Custom SQL query (MySQL only)
+Basic Node Mapping
+~~~~~~~~~~~~~~~~~~
 
-File Formats
-~~~~~~~~~~~~
+.. code-block:: yaml
 
-**CSV Files:**
+    node_mappings:
+      - name: "Gene Entities"
+        source: ncbi_gene
+        target_class: Gene
+        mode: create
+        iri_column: gene_id
+        properties:
+          - column: symbol
+            property: geneSymbol
+          - column: description
+            property: hasDescription
+          - column: chromosome
+            property: chromosome
 
-.. code-block:: python
-
-    parser.parse_node_type(
-        node_type="Gene",
-        source_filename="genes.csv",
-        fmt="csv",
-        parse_config={
-            "iri_column_name": "gene_symbol",
-            "headers": True,
-            "data_property_map": {
-                "gene_symbol": onto.geneSymbol,
-                "description": onto.hasDescription,
-            }
-        }
-    )
-
-**TSV Files:**
-
-.. code-block:: python
-
-    parser.parse_node_type(
-        node_type="Disease",
-        source_filename="diseases.tsv",
-        fmt="tsv",
-        parse_config={
-            "iri_column_name": "disease_id",
-            "headers": True,
-            "data_property_map": {
-                "disease_name": onto.commonName,
-                "umls_cui": onto.xrefUmlsCUI,
-            }
-        }
-    )
-
-**Excel Files:**
-
-.. code-block:: python
-
-    parser.parse_node_type(
-        node_type="Drug",
-        source_filename="drugs.xlsx",
-        fmt="xlsx",
-        parse_config={
-            "iri_column_name": "DrugID",
-            "headers": True,
-            "data_property_map": {
-                "DrugName": onto.commonName,
-                "SMILES": onto.hasSMILES,
-            }
-        }
-    )
-
-**Pandas DataFrames:**
-
-.. code-block:: python
-
-    # Use tsv-pandas format for in-memory DataFrames
-    parser.parse_node_type(
-        node_type="Protein",
-        source_filename="proteins.tsv",  # Pandas-compatible
-        fmt="tsv-pandas",
-        parse_config={
-            "iri_column_name": "uniprot_id",
-            "headers": True,
-            "data_property_map": {
-                "protein_name": onto.proteinName,
-                "mass": onto.molecularMass,
-            }
-        }
-    )
-
-Merging vs Creating New
+Property Mapping Options
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-**merge=False**: Always create new individuals
+Each property mapping can specify:
 
-.. code-block:: python
+- ``column``: Source column name (required)
+- ``property``: Target property local name (required)
+- ``transform``: Named transform to apply (optional)
+- ``datatype``: XSD datatype for typed literals (optional)
 
-    parser.parse_node_type(
-        node_type="Sample",
-        source_filename="samples.csv",
-        fmt="csv",
-        parse_config={
-            "iri_column_name": "sample_id",
-            "headers": True,
-            "data_property_map": {
-                "sample_id": onto.sampleId,
-                "date": onto.collectionDate,
-            }
-        },
-        merge=False  # Always create new individuals
-    )
+.. code-block:: yaml
 
-**merge=True**: Merge with existing individuals based on merge_column
+    properties:
+      - column: gene_id
+        property: geneId
+        datatype: xsd:integer
 
-.. code-block:: python
+      - column: gene_symbol
+        property: geneSymbol
+        transform: uppercase
 
-    parser.parse_node_type(
-        node_type="Drug",
-        source_filename="additional_drug_info.csv",
-        fmt="csv",
-        parse_config={
-            "iri_column_name": "drug_name",
-            "headers": True,
-            "data_property_map": {
-                "fda_approved": onto.fdaApproved,
-                "year_approved": onto.yearApproved,
-            },
-            "merge_column": {
-                "source_column_name": "drugbank_id",
-                "data_property": onto.drugbankId,
-            }
-        },
-        merge=True  # Merge with existing drugs
-    )
-
-Data Transformations
-~~~~~~~~~~~~~~~~~~~~
-
-Apply transformations to column values:
-
-.. code-block:: python
-
-    parser.parse_node_type(
-        node_type="Gene",
-        source_filename="genes.tsv",
-        fmt="tsv",
-        parse_config={
-            "iri_column_name": "gene_id",
-            "headers": True,
-            "data_transforms": {
-                # Extract numeric ID from formatted string
-                "gene_id": lambda x: int(x.split("::")[-1]),
-                # Convert to uppercase
-                "gene_symbol": lambda x: x.upper(),
-            },
-            "data_property_map": {
-                "gene_id": onto.geneId,
-                "gene_symbol": onto.geneSymbol,
-            }
-        }
-    )
-
-Compound Fields
-~~~~~~~~~~~~~~~
-
-Parse multi-value fields with delimiters:
-
-.. code-block:: python
-
-    parser.parse_node_type(
-        node_type="Gene",
-        source_filename="gene_xrefs.tsv",
-        fmt="tsv",
-        parse_config={
-            "iri_column_name": "Symbol",
-            "headers": True,
-            "compound_fields": {
-                "dbXrefs": {
-                    "delimiter": "|",          # Split on pipe
-                    "field_split_prefix": ":"  # Further split on colon
-                }
-            },
-            "data_property_map": {
-                "Ensembl": onto.xrefEnsembl,
-                "HGNC": onto.xrefHGNC,
-            }
-        }
-    )
-
-    # Example data:
-    # Symbol | dbXrefs
-    # BRCA1  | Ensembl:ENSG00000012048|HGNC:1100
-    #
-    # Creates properties:
-    # BRCA1 xrefEnsembl "ENSG00000012048"
-    # BRCA1 xrefHGNC "1100"
+      - column: aliases
+        property: hasAlias
+        transform: split_pipe
 
 Filtering Rows
 ~~~~~~~~~~~~~~
 
 Filter which rows to process:
 
-.. code-block:: python
+.. code-block:: yaml
 
-    parser.parse_node_type(
-        node_type="Disease",
-        source_filename="diseases.tsv",
-        fmt="tsv",
-        parse_config={
-            "iri_column_name": "disease_id",
-            "headers": True,
-            "filter_column": "disease_type",
-            "filter_value": "genetic",  # Only process genetic diseases
-            "data_property_map": {
-                "disease_name": onto.commonName,
-            }
-        }
-    )
+    node_mappings:
+      - name: "Human Genes Only"
+        source: ncbi_gene
+        target_class: Gene
+        mode: create
+        iri_column: gene_id
+        filter:
+          column: species
+          value: "Homo sapiens"
+          contains: false  # Exact match (default: true for substring)
+        properties:
+          - column: symbol
+            property: geneSymbol
 
-Parsing Relationships
+Enrichment Mode
+~~~~~~~~~~~~~~~
+
+Add properties to existing individuals:
+
+.. code-block:: yaml
+
+    node_mappings:
+      - name: "Add UniProt Cross-References"
+        source: uniprot_xrefs
+        target_class: Gene
+        mode: enrich
+        match:
+          source_column: ncbi_gene_id
+          target_property: geneId
+        properties:
+          - column: uniprot_id
+            property: xrefUniProt
+
+Relationship Mappings
 ---------------------
 
-Basic Relationship Parsing
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Create object property assertions between individuals:
 
-Parse relationships from a separate file/table:
+.. code-block:: yaml
 
-.. code-block:: python
+    relationship_mappings:
+      - name: "Drug-Gene Targets"
+        source: drug_targets
+        relationship: drugTargetsGene
+        subject:
+          class: Drug
+          column: drugbank_id
+          match_property: drugbankId
+        object:
+          class: Gene
+          column: gene_symbol
+          match_property: geneSymbol
 
-    parser.parse_relationship_type(
-        relationship_type=onto.geneAssociatesWithDisease,
-        source_filename="gene_disease_associations.tsv",
-        fmt="tsv",
-        parse_config={
-            "subject_node_type": onto.Gene,
-            "subject_column_name": "gene_symbol",
-            "subject_match_property": onto.geneSymbol,
-            "object_node_type": onto.Disease,
-            "object_column_name": "disease_id",
-            "object_match_property": onto.diseaseId,
-            "headers": True
-        }
-    )
+Inverse Relationships
+~~~~~~~~~~~~~~~~~~~~~
 
-Bidirectional Relationships
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Automatically create inverse relationships:
 
-Create inverse relationships:
+.. code-block:: yaml
 
-.. code-block:: python
+    relationship_mappings:
+      - name: "Gene-Disease Associations"
+        source: gene_disease
+        relationship: geneAssociatedWithDisease
+        inverse_relationship: diseaseAssociatedWithGene
+        subject:
+          class: Gene
+          column: gene_id
+          match_property: geneId
+        object:
+          class: Disease
+          column: disease_id
+          match_property: diseaseId
 
-    parser.parse_relationship_type(
-        relationship_type=onto.geneInPathway,
-        inverse_relationship_type=onto.pathwayContainsGene,
-        source_filename="gene_pathways.csv",
-        fmt="csv",
-        parse_config={
-            "subject_node_type": onto.Gene,
-            "subject_column_name": "gene_id",
-            "subject_match_property": onto.geneId,
-            "object_node_type": onto.Pathway,
-            "object_column_name": "pathway_id",
-            "object_match_property": onto.pathwayId,
-            "headers": True
-        }
-    )
+Transforms
+----------
 
-Relationship Transformations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Transforms modify column values during loading. They replace Python lambdas with
+named, reusable, and serializable functions.
 
-Transform relationship values:
-
-.. code-block:: python
-
-    parser.parse_relationship_type(
-        relationship_type=onto.chemicalIncreasesExpression,
-        source_filename="interactions.tsv",
-        fmt="tsv",
-        parse_config={
-            "subject_node_type": onto.Drug,
-            "subject_column_name": "drug_id",
-            "subject_match_property": onto.drugbankId,
-            "object_node_type": onto.Gene,
-            "object_column_name": "gene_id",
-            "object_match_property": onto.geneId,
-            "filter_column": "interaction_type",
-            "filter_value": "upregulation",
-            "headers": True,
-            "data_transforms": {
-                "drug_id": lambda x: x.split("::")[-1],
-                "gene_id": lambda x: int(x.split("::")[-1])
-            }
-        }
-    )
-
-MySQL Examples
---------------
-
-Parsing from MySQL Tables
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: python
-
-    from ista import MySQLDatabaseParser, owl2
-
-    mysql_config = {
-        'host': 'localhost',
-        'user': 'biouser',
-        'passwd': 'biopass'
-    }
-
-    onto = owl2.Ontology(owl2.IRI("http://example.org/bio"))
-    parser = MySQLDatabaseParser("biomedical_db", onto, mysql_config)
-
-    # Parse a table
-    parser.parse_node_type(
-        node_type="Protein",
-        source_table="proteins",
-        parse_config={
-            "iri_column_name": "uniprot_id",
-            "data_property_map": {
-                "protein_name": onto.proteinName,
-                "organism": onto.fromOrganism,
-            },
-            "merge_column": {
-                "source_column_name": "uniprot_id",
-                "data_property": onto.uniprotId,
-            }
-        },
-        merge=True
-    )
-
-Custom SQL Queries
-~~~~~~~~~~~~~~~~~~
-
-.. code-block:: python
-
-    # Use custom SQL query
-    parser.parse_node_type(
-        node_type="Pathway",
-        source_table="pathways",  # Not actually used when custom_sql_query is set
-        parse_config={
-            "iri_column_name": "pathway_id",
-            "custom_sql_query": """
-                SELECT DISTINCT pathway_id, pathway_name, source_db
-                FROM pathway_genes
-                WHERE organism = 'Homo sapiens'
-            """,
-            "data_property_map": {
-                "pathway_name": onto.pathwayName,
-                "source_db": onto.sourceDatabase,
-            }
-        },
-        merge=False
-    )
-
-MySQL Relationships
+Built-in Transforms
 ~~~~~~~~~~~~~~~~~~~
 
+The following transforms are available without definition:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 20 30 50
+
+   * - Transform
+     - Parameters
+     - Description
+   * - ``lowercase``
+     - (none)
+     - Convert to lowercase
+   * - ``uppercase``
+     - (none)
+     - Convert to uppercase
+   * - ``trim``
+     - (none)
+     - Remove leading/trailing whitespace
+   * - ``prefix``
+     - ``value``
+     - Add prefix to value
+   * - ``suffix``
+     - ``value``
+     - Add suffix to value
+   * - ``strip_prefix``
+     - ``value``
+     - Remove prefix if present
+   * - ``strip_suffix``
+     - ``value``
+     - Remove suffix if present
+   * - ``split``
+     - ``delimiter``, ``index``
+     - Split and return element at index
+   * - ``replace``
+     - ``old``, ``new``
+     - Replace substring
+   * - ``regex_extract``
+     - ``pattern``, ``group``
+     - Extract regex match group
+   * - ``to_int``
+     - (none)
+     - Convert to integer string
+   * - ``to_float``
+     - (none)
+     - Convert to float string
+   * - ``identity``
+     - (none)
+     - Return value unchanged
+   * - ``default_if_empty``
+     - ``default``
+     - Use default if value is empty
+   * - ``chain``
+     - ``transforms``
+     - Apply multiple transforms in sequence
+
+Custom Transforms
+~~~~~~~~~~~~~~~~~
+
+Define custom transforms in your mapping spec:
+
+.. code-block:: yaml
+
+    transforms:
+      # Simple transform using a builtin
+      extract_id:
+        type: split
+        params:
+          delimiter: "::"
+          index: "-1"
+
+      # Chained transforms
+      clean_gene_symbol:
+        type: chain
+        params:
+          transforms: "uppercase,trim"
+
+      # Prefix with namespace
+      add_drugbank_prefix:
+        type: prefix
+        params:
+          value: "DB:"
+
+Using Transforms
+~~~~~~~~~~~~~~~~
+
+Reference transforms by name in property mappings:
+
+.. code-block:: yaml
+
+    properties:
+      - column: raw_id
+        property: entityId
+        transform: extract_id
+
+      - column: gene_symbol
+        property: geneSymbol
+        transform: clean_gene_symbol
+
+Python API
+----------
+
+DataLoader Class
+~~~~~~~~~~~~~~~~
+
 .. code-block:: python
 
-    parser.parse_relationship_type(
-        relationship_type=onto.proteinInteractsWithProtein,
-        parse_config={
-            "subject_node_type": onto.Protein,
-            "subject_column_name": "protein_a",
-            "subject_match_property": onto.uniprotId,
-            "object_node_type": onto.Protein,
-            "object_column_name": "protein_b",
-            "object_match_property": onto.uniprotId,
-            "source_table": "protein_interactions",
-            "source_table_type": "foreignKey",
-            "custom_sql_query": """
-                SELECT protein_a, protein_b, confidence
-                FROM protein_interactions
-                WHERE confidence > 0.8
-            """
-        }
-    )
+    from ista import owl2
+
+    # Create loader for an ontology
+    loader = owl2.DataLoader(onto)
+
+    # Load mapping spec from file
+    loader.load_mapping_spec("mapping.yaml")
+
+    # Or set a spec object directly
+    spec = owl2.DataMappingSpec.load_from_file("mapping.yaml")
+    loader.set_mapping_spec(spec)
+
+    # Validate against ontology
+    result = loader.validate()
+    print(f"Valid: {result.is_valid}")
+    for error in result.errors:
+        print(f"  Error: {error}")
+    for warning in result.warnings:
+        print(f"  Warning: {warning}")
+
+    # Execute all mappings
+    stats = loader.execute()
+
+    # Or execute specific mappings
+    stats = loader.execute_node_mapping("DrugBank Drugs")
+    stats = loader.execute_relationship_mapping("Drug-Gene Targets")
+
+    # Execute by category
+    stats = loader.execute_all_node_mappings()
+    stats = loader.execute_all_relationship_mappings()
+
+Progress Callbacks
+~~~~~~~~~~~~~~~~~~
+
+Monitor loading progress:
+
+.. code-block:: python
+
+    def on_progress(current, total, mapping_name):
+        if total > 0:
+            pct = (current / total) * 100
+            print(f"{mapping_name}: {current}/{total} ({pct:.1f}%)")
+        else:
+            print(f"{mapping_name}: {current} rows processed")
+
+    loader.set_progress_callback(on_progress)
+    stats = loader.execute()
+
+Loading Statistics
+~~~~~~~~~~~~~~~~~~
+
+The ``LoadingStats`` object provides detailed statistics:
+
+.. code-block:: python
+
+    stats = loader.execute()
+
+    print(f"Rows processed: {stats.rows_processed}")
+    print(f"Individuals created: {stats.individuals_created}")
+    print(f"Individuals enriched: {stats.individuals_enriched}")
+    print(f"Properties added: {stats.properties_added}")
+    print(f"Relationships created: {stats.relationships_created}")
+    print(f"Rows skipped: {stats.rows_skipped}")
+    print(f"Errors: {stats.errors}")
+
+    if stats.error_messages:
+        for msg in stats.error_messages:
+            print(f"  {msg}")
+
+    # Or use the summary
+    print(stats.summary())
+
+Building Specs Programmatically
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Create mapping specs in code:
+
+.. code-block:: python
+
+    from ista import owl2
+
+    # Create empty spec
+    spec = owl2.DataMappingSpec()
+    spec.base_iri = "http://example.org/myonto#"
+
+    # Add a data source
+    source = owl2.DataSourceDef()
+    source.name = "drugs"
+    source.type = "csv"
+    source.path = "./data/drugs.csv"
+    source.has_headers = True
+    spec.sources["drugs"] = source
+
+    # Add a node mapping
+    mapping = owl2.NodeMapping()
+    mapping.name = "Drug Entities"
+    mapping.source = "drugs"
+    mapping.target_class = "Drug"
+    mapping.mode = owl2.MappingMode.CREATE
+    mapping.iri_column = "drug_id"
+
+    prop = owl2.PropertyMapping()
+    prop.column = "name"
+    prop.property = "commonName"
+    mapping.properties.append(prop)
+
+    spec.node_mappings.append(mapping)
+
+    # Save to YAML
+    spec.save_to_file("generated_mapping.yaml")
+
+    # Or use directly
+    loader = owl2.DataLoader(onto)
+    loader.set_mapping_spec(spec)
+    stats = loader.execute()
 
 Complete Example
 ----------------
 
 .. code-block:: python
 
-    from ista import FlatFileDatabaseParser, MySQLDatabaseParser, owl2
+    from ista import owl2
 
-    # 1. Load base ontology
+    # 1. Load base ontology with class and property definitions
     onto = owl2.RDFXMLParser.parse_from_file("biomedical_ontology.owl")
 
-    # 2. Create parsers
-    drug_parser = FlatFileDatabaseParser("DrugBank", onto, "./data")
-    gene_parser = FlatFileDatabaseParser("GeneDB", onto, "./data")
-    disease_parser = FlatFileDatabaseParser("DiseaseDB", onto, "./data")
+    # 2. Create loader
+    loader = owl2.DataLoader(onto)
 
-    # 3. Parse drugs
-    drug_parser.parse_node_type(
+    # 3. Load mapping specification
+    loader.load_mapping_spec("biomedical_mapping.yaml")
+
+    # 4. Add progress monitoring
+    def progress(current, total, name):
+        print(f"  {name}: {current} rows...")
+
+    loader.set_progress_callback(progress)
+
+    # 5. Validate
+    result = loader.validate()
+    if not result.is_valid:
+        print("Validation failed:")
+        for err in result.errors:
+            print(f"  {err}")
+        exit(1)
+
+    if result.warnings:
+        print("Warnings:")
+        for warn in result.warnings:
+            print(f"  {warn}")
+
+    # 6. Execute loading
+    print("Loading data...")
+    stats = loader.execute()
+
+    # 7. Print results
+    print(stats.summary())
+
+    # 8. Save populated ontology
+    owl2.RDFXMLSerializer.serialize_to_file(onto, "populated_ontology.owl")
+
+Example mapping file (``biomedical_mapping.yaml``):
+
+.. code-block:: yaml
+
+    version: "1.0"
+    base_iri: "http://example.org/bio#"
+
+    transforms:
+      clean_id:
+        type: strip_prefix
+        params:
+          value: "ID:"
+
+    sources:
+      drugbank:
+        type: csv
+        path: "./data/drugbank_drugs.csv"
+        has_headers: true
+
+      ncbi_gene:
+        type: tsv
+        path: "./data/ncbi_genes.tsv"
+        has_headers: true
+
+      drug_targets:
+        type: csv
+        path: "./data/drug_gene_targets.csv"
+        has_headers: true
+
+    node_mappings:
+      - name: "DrugBank Drugs"
+        source: drugbank
+        target_class: Drug
+        mode: create
+        iri_column: drugbank_id
+        properties:
+          - column: name
+            property: commonName
+          - column: drugbank_id
+            property: drugbankId
+          - column: cas_number
+            property: casNumber
+          - column: smiles
+            property: hasSMILES
+
+      - name: "NCBI Genes"
+        source: ncbi_gene
+        target_class: Gene
+        mode: create
+        iri_column: gene_id
+        filter:
+          column: species
+          value: "9606"
+        properties:
+          - column: gene_id
+            property: geneId
+            transform: clean_id
+          - column: symbol
+            property: geneSymbol
+            transform: uppercase
+          - column: description
+            property: hasDescription
+
+    relationship_mappings:
+      - name: "Drug-Gene Targets"
+        source: drug_targets
+        relationship: drugTargetsGene
+        inverse_relationship: geneTargetedByDrug
+        subject:
+          class: Drug
+          column: drugbank_id
+          match_property: drugbankId
+        object:
+          class: Gene
+          column: gene_symbol
+          match_property: geneSymbol
+
+Migration from Legacy Parsers
+-----------------------------
+
+If you're using the older ``FlatFileDatabaseParser`` or ``MySQLDatabaseParser``,
+here's how to migrate to the new system.
+
+Before (Python-based):
+
+.. code-block:: python
+
+    from ista import FlatFileDatabaseParser
+
+    parser = FlatFileDatabaseParser("DrugDB", onto, "./data")
+
+    parser.parse_node_type(
         node_type="Drug",
         source_filename="drugs.csv",
         fmt="csv",
@@ -529,7 +671,9 @@ Complete Example
             "data_property_map": {
                 "name": onto.commonName,
                 "drugbank_id": onto.drugbankId,
-                "cas_number": onto.casNumber,
+            },
+            "data_transforms": {
+                "drugbank_id": lambda x: x.upper(),
             },
             "merge_column": {
                 "source_column_name": "drugbank_id",
@@ -539,154 +683,63 @@ Complete Example
         merge=True
     )
 
-    # 4. Parse genes
-    gene_parser.parse_node_type(
-        node_type="Gene",
-        source_filename="genes.tsv",
-        fmt="tsv-pandas",
-        parse_config={
-            "iri_column_name": "gene_symbol",
-            "headers": True,
-            "compound_fields": {
-                "cross_refs": {
-                    "delimiter": "|",
-                    "field_split_prefix": ":"
-                }
-            },
-            "data_property_map": {
-                "gene_symbol": onto.geneSymbol,
-                "gene_id": onto.geneId,
-                "HGNC": onto.xrefHGNC,
-                "Ensembl": onto.xrefEnsembl,
-            }
-        },
-        merge=False
-    )
+After (YAML-based):
 
-    # 5. Parse diseases
-    disease_parser.parse_node_type(
-        node_type="Disease",
-        source_filename="diseases.csv",
-        fmt="csv",
-        parse_config={
-            "iri_column_name": "disease_id",
-            "headers": True,
-            "filter_column": "category",
-            "filter_value": "genetic",
-            "data_property_map": {
-                "disease_name": onto.commonName,
-                "umls_cui": onto.xrefUmlsCUI,
-            }
-        },
-        merge=False
-    )
+.. code-block:: yaml
 
-    # 6. Parse relationships
-    drug_parser.parse_relationship_type(
-        relationship_type=onto.drugTargetsGene,
-        source_filename="drug_targets.tsv",
-        fmt="tsv",
-        parse_config={
-            "subject_node_type": onto.Drug,
-            "subject_column_name": "drugbank_id",
-            "subject_match_property": onto.drugbankId,
-            "object_node_type": onto.Gene,
-            "object_column_name": "gene_symbol",
-            "object_match_property": onto.geneSymbol,
-            "headers": True
-        }
-    )
+    # drugs_mapping.yaml
+    sources:
+      drugdb:
+        type: csv
+        path: "./data/DrugDB/drugs.csv"
+        has_headers: true
 
-    gene_parser.parse_relationship_type(
-        relationship_type=onto.geneAssociatesWithDisease,
-        source_filename="gene_disease.tsv",
-        fmt="tsv",
-        parse_config={
-            "subject_node_type": onto.Gene,
-            "subject_column_name": "gene_symbol",
-            "subject_match_property": onto.geneSymbol,
-            "object_node_type": onto.Disease,
-            "object_column_name": "disease_id",
-            "object_match_property": onto.xrefUmlsCUI,
-            "filter_column": "association_type",
-            "filter_value": "causal",
-            "headers": True
-        }
-    )
-
-    # 7. Print statistics
-    from ista.util import print_onto_stats
-    print_onto_stats(onto)
-
-    # 8. Save populated ontology
-    serializer = owl2.RDFXMLSerializer()
-    rdf_content = serializer.serialize(onto)
-    with open("populated_biomedical.owl", "w") as f:
-        f.write(rdf_content)
-
-Utility Functions
------------------
-
-ista provides utility functions in ``ista.util``:
+    node_mappings:
+      - name: "DrugDB Drugs"
+        source: drugdb
+        target_class: Drug
+        mode: create  # or enrich for merge behavior
+        iri_column: drugbank_id
+        properties:
+          - column: name
+            property: commonName
+          - column: drugbank_id
+            property: drugbankId
+            transform: uppercase
 
 .. code-block:: python
 
-    from ista.util import (
-        safe_add_property,           # Safely add properties with duplicate checking
-        get_onto_class_by_node_type, # Find class by local name
-        safe_make_individual_name,   # Generate unique individual IRI suffixes
-        print_onto_stats,            # Print ontology statistics
-    )
+    from ista import owl2
 
-    # Find a class by name
-    drug_class = get_onto_class_by_node_type(onto, "Drug")
+    loader = owl2.DataLoader(onto)
+    loader.load_mapping_spec("drugs_mapping.yaml")
+    stats = loader.execute()
 
-    # Generate safe individual name
-    individual_name = safe_make_individual_name("Aspirin", drug_class)
-    # Returns: "drug_aspirin"
+Key Migration Notes
+~~~~~~~~~~~~~~~~~~~
 
-    # Print statistics
-    print_onto_stats(onto)
+1. **Replace lambdas with transforms**: Define named transforms instead of inline lambdas
+2. **merge=True becomes mode: enrich**: With a ``match`` criteria
+3. **merge=False becomes mode: create**: The default behavior
+4. **Property references**: Use property local names (strings) instead of property objects
+5. **File paths**: Are relative to the YAML file or use environment variables
 
 Best Practices
 --------------
 
-1. **Load Base Ontology First**: Start with a base ontology defining classes and properties
-2. **Define Schema**: Create all classes and properties before parsing data
-3. **Use Merge Strategically**: Merge when combining data from multiple sources
-4. **Apply Transformations**: Clean and normalize data during parsing
-5. **Filter Early**: Use filter_column to reduce unnecessary processing
-6. **Test on Samples**: Test parsing configuration on small data samples first
-7. **Add Provenance**: Document data sources as ontology annotations
-8. **Check Statistics**: Use print_onto_stats to verify parsing results
-
-Performance Tips
-----------------
-
-1. Set ``skip=True`` for parse operations you don't need
-2. Use ``filter_column`` to reduce rows processed
-3. Process smaller files first to validate configuration
-4. Use appropriate file formats (CSV is faster than Excel for large files)
-5. For MySQL, use indexed columns in merge_column
-
-Error Handling
---------------
-
-.. code-block:: python
-
-    try:
-        parser.parse_node_type(...)
-    except FileNotFoundError:
-        print("Source file not found")
-    except KeyError as e:
-        print(f"Column not found: {e}")
-    except Exception as e:
-        print(f"Parsing error: {e}")
+1. **Define Schema First**: Create your ontology with all classes and properties before loading data
+2. **Use Primary/Enrichment Pattern**: Clearly separate data sources by authority
+3. **Validate Before Loading**: Always call ``loader.validate()`` before ``loader.execute()``
+4. **Use Descriptive Names**: Give node and relationship mappings clear, descriptive names
+5. **Version Your Specs**: Include version info and keep specs in version control
+6. **Test on Samples**: Test with small data samples before running on full datasets
+7. **Monitor Progress**: Use progress callbacks for long-running loads
+8. **Check Statistics**: Review LoadingStats to verify expected counts
 
 See Also
 --------
 
+- :doc:`data_loading_schema` - Complete YAML schema reference
 - :doc:`owl2_interfaces` - OWL2 interface documentation
 - :doc:`python_library` - Python library guide
-- :doc:`../api/owl2` - Complete API reference
-- Example knowledge bases: ``examples/kg_projects/neurokb/``, ``examples/kg_projects/alzkb/``
+- Example knowledge bases: ``examples/kg_projects/``
