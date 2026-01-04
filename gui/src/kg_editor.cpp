@@ -950,25 +950,28 @@ void KnowledgeGraphEditor::render_graph_view() {
         }
     }
 
-    // Handle click on empty canvas (deselect all)
-    if (is_canvas_hovered && ImGui::IsMouseClicked(0) && !clicked_on_something && !selected_edge_) {
-        // Deselect all nodes
-        for (auto& n : nodes_) {
-            n.selected = false;
-        }
-        selected_node_ = nullptr;
-        selected_edge_ = nullptr;
-    }
-
-    // Handle panning (only when canvas is active)
-    if (is_canvas_hovered && ImGui::IsMouseDragging(2)) { // Right mouse button
-        ImVec2 delta = ImGui::GetMouseDragDelta(2);
+    // Handle panning with left-click drag on empty space
+    if (is_canvas_hovered && ImGui::IsMouseDragging(ImGuiMouseButton_Left) && !clicked_on_something) {
+        ImVec2 delta = ImGui::GetMouseDragDelta(ImGuiMouseButton_Left);
         view_offset_x_ += delta.x;
         view_offset_y_ += delta.y;
-        ImGui::ResetMouseDragDelta(2);
+        ImGui::ResetMouseDragDelta(ImGuiMouseButton_Left);
+    }
+    
+    // Handle click on empty canvas (deselect all)
+    if (is_canvas_hovered && ImGui::IsMouseClicked(0) && !clicked_on_something && !selected_edge_) {
+        // Only deselect if not dragging (to allow panning)
+        if (!ImGui::IsMouseDragging(ImGuiMouseButton_Left)) {
+            // Deselect all nodes
+            for (auto& n : nodes_) {
+                n.selected = false;
+            }
+            selected_node_ = nullptr;
+            selected_edge_ = nullptr;
+        }
     }
 
-    // Handle panning with middle mouse button or right mouse button
+    // Handle panning with middle mouse button or right mouse button (alternative)
     if (is_canvas_hovered && (ImGui::IsMouseDragging(ImGuiMouseButton_Middle) ||
                               ImGui::IsMouseDragging(ImGuiMouseButton_Right))) {
         ImVec2 delta = ImGui::GetMouseDragDelta(ImGuiMouseButton_Middle);
@@ -1432,35 +1435,108 @@ void KnowledgeGraphEditor::extract_object_properties() {
 }
 
 void KnowledgeGraphEditor::apply_hierarchical_layout() {
-    // Initialize nodes with random positions to avoid singularities
+    if (nodes_.empty()) return;
+    
+    // Initialize random number generator
     std::srand(static_cast<unsigned>(std::time(nullptr)));
-    const float initial_spread = 400.0f;
-
-    for (auto& node : nodes_) {
-        node.x = (std::rand() / static_cast<float>(RAND_MAX)) * initial_spread + 200.0f;
-        node.y = (std::rand() / static_cast<float>(RAND_MAX)) * initial_spread + 200.0f;
-        node.vx = 0.0f;
-        node.vy = 0.0f;
+    
+    // Build adjacency information to identify connected components
+    std::unordered_map<std::string, std::vector<std::string>> adjacency;
+    std::unordered_map<std::string, int> degree;
+    
+    for (const auto& node : nodes_) {
+        degree[node.id] = 0;
+        adjacency[node.id] = {};
     }
-
-    // Run force-directed layout
+    
+    for (const auto& edge : edges_) {
+        adjacency[edge.from].push_back(edge.to);
+        adjacency[edge.to].push_back(edge.from);
+        degree[edge.from]++;
+        degree[edge.to]++;
+    }
+    
+    // Separate connected nodes from isolated nodes
+    std::vector<GraphNode*> connected_nodes;
+    std::vector<GraphNode*> isolated_nodes;
+    
+    for (auto& node : nodes_) {
+        if (degree[node.id] > 0) {
+            connected_nodes.push_back(&node);
+        } else {
+            isolated_nodes.push_back(&node);
+        }
+    }
+    
+    // Initialize connected nodes with better distribution
+    const float connected_spread = 600.0f;
+    const float connected_center_x = 700.0f;
+    const float connected_center_y = 500.0f;
+    
+    for (auto* node : connected_nodes) {
+        // Use polar coordinates for more even distribution
+        float angle = (std::rand() / static_cast<float>(RAND_MAX)) * 2.0f * 3.14159f;
+        float radius = (std::rand() / static_cast<float>(RAND_MAX)) * connected_spread * 0.5f;
+        node->x = connected_center_x + radius * std::cos(angle);
+        node->y = connected_center_y + radius * std::sin(angle);
+        node->vx = 0.0f;
+        node->vy = 0.0f;
+    }
+    
+    // Place isolated nodes in a natural circular arrangement around the connected component
+    if (!isolated_nodes.empty()) {
+        const float isolation_radius = connected_spread * 0.7f + 150.0f;
+        const float angle_step = (2.0f * 3.14159f) / static_cast<float>(isolated_nodes.size());
+        
+        // Add some randomness to avoid perfect circle
+        for (size_t i = 0; i < isolated_nodes.size(); ++i) {
+            float base_angle = i * angle_step;
+            float angle_noise = ((std::rand() / static_cast<float>(RAND_MAX)) - 0.5f) * 0.3f;
+            float radius_noise = ((std::rand() / static_cast<float>(RAND_MAX)) - 0.5f) * 80.0f;
+            
+            float angle = base_angle + angle_noise;
+            float radius = isolation_radius + radius_noise;
+            
+            isolated_nodes[i]->x = connected_center_x + radius * std::cos(angle);
+            isolated_nodes[i]->y = connected_center_y + radius * std::sin(angle);
+            isolated_nodes[i]->vx = 0.0f;
+            isolated_nodes[i]->vy = 0.0f;
+        }
+    }
+    
+    // Run force-directed layout only on connected nodes
     apply_force_directed_layout();
 }
 
 void KnowledgeGraphEditor::apply_force_directed_layout() {
-    // Force-directed layout using Fruchterman-Reingold algorithm
+    // Improved force-directed layout with better overlap prevention
 
     if (nodes_.empty()) return;
 
-    // Layout parameters
-    const int iterations = 500;
-    const float area = 800.0f * 600.0f;  // Canvas area
-    const float k = std::sqrt(area / static_cast<float>(nodes_.size()));  // Optimal distance
-    const float c_repulsion = k * k;  // Repulsion constant
-    const float c_attraction = k;     // Attraction constant
-    float temperature = 100.0f;       // Initial temperature (max displacement)
-    const float cooling = 0.95f;      // Cooling rate
-    const float min_temp = 0.1f;      // Minimum temperature
+    // Count only connected nodes for better spacing
+    int connected_count = 0;
+    for (const auto& node : nodes_) {
+        bool has_edges = false;
+        for (const auto& edge : edges_) {
+            if (edge.from == node.id || edge.to == node.id) {
+                has_edges = true;
+                break;
+            }
+        }
+        if (has_edges) connected_count++;
+    }
+
+    if (connected_count == 0) return;
+
+    // Layout parameters - tuned for better spread and less overlap
+    const int iterations = 800;  // More iterations for better convergence
+    const float area = 1200.0f * 800.0f;  // Larger area for more space
+    const float k = std::sqrt(area / static_cast<float>(std::max(1, connected_count)));  // Optimal distance
+    const float c_repulsion = k * k * 2.5f;  // Stronger repulsion to prevent overlap
+    const float c_attraction = k * 0.8f;     // Slightly weaker attraction for more spread
+    float temperature = 150.0f;       // Higher initial temperature
+    const float cooling = 0.97f;      // Slower cooling for better settling
+    const float min_temp = 0.5f;      // Higher minimum for continued movement
 
     // Build node index map for fast lookup
     std::unordered_map<std::string, size_t> node_index;
@@ -1468,6 +1544,13 @@ void KnowledgeGraphEditor::apply_force_directed_layout() {
         node_index[nodes_[i].id] = i;
     }
 
+    // Build set of connected node IDs for faster lookup
+    std::unordered_set<std::string> connected_node_ids;
+    for (const auto& edge : edges_) {
+        connected_node_ids.insert(edge.from);
+        connected_node_ids.insert(edge.to);
+    }
+    
     // Run simulation iterations
     for (int iter = 0; iter < iterations; ++iter) {
         // Reset forces
@@ -1476,9 +1559,15 @@ void KnowledgeGraphEditor::apply_force_directed_layout() {
             node.vy = 0.0f;
         }
 
-        // Calculate repulsive forces between all pairs of nodes
+        // Calculate repulsive forces only between connected nodes
         for (size_t i = 0; i < nodes_.size(); ++i) {
+            // Skip isolated nodes in force calculations
+            if (connected_node_ids.find(nodes_[i].id) == connected_node_ids.end()) continue;
+            
             for (size_t j = i + 1; j < nodes_.size(); ++j) {
+                // Skip isolated nodes in force calculations
+                if (connected_node_ids.find(nodes_[j].id) == connected_node_ids.end()) continue;
+                
                 float dx = nodes_[i].x - nodes_[j].x;
                 float dy = nodes_[i].y - nodes_[j].y;
                 float dist_sq = dx * dx + dy * dy;
@@ -1526,8 +1615,11 @@ void KnowledgeGraphEditor::apply_force_directed_layout() {
             }
         }
 
-        // Update positions with temperature-based displacement limiting
+        // Update positions with temperature-based displacement limiting (only for connected nodes)
         for (auto& node : nodes_) {
+            // Skip isolated nodes - they stay in their initial positions
+            if (connected_node_ids.find(node.id) == connected_node_ids.end()) continue;
+            
             float force_mag = std::sqrt(node.vx * node.vx + node.vy * node.vy);
 
             if (force_mag > 0.01f) {
