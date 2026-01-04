@@ -177,3 +177,5 @@ examples/kg_projects/neurokb/neurokb-with-all-drug-relationships.rdf
 examples/kg_projects/neurokb/neurokb-with-drug-interactions.rdf
 examples/kg_projects/neurokb/neurokb-with-drug-relationships.rdf
 examples/kg_projects/neurokb/neurokb-with-indications.rdf
+imgui.ini
+.DS_Store
