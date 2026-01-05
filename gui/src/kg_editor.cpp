@@ -47,6 +47,8 @@ KnowledgeGraphEditor::KnowledgeGraphEditor()
     , db_type_selection_("mysql")
     , pref_show_namespace_prefix_(false)
 {
+    // Initialize search buffer
+    std::memset(search_buffer_, 0, sizeof(search_buffer_));
 }
 
 KnowledgeGraphEditor::~KnowledgeGraphEditor() {
@@ -672,6 +674,24 @@ void KnowledgeGraphEditor::render_graph_view() {
         return;
     }
 
+    // Search bar
+    ImGui::SetNextItemWidth(ImGui::GetContentRegionAvail().x - 80);
+    if (ImGui::InputTextWithHint("##search", "Search nodes/edges...", search_buffer_, sizeof(search_buffer_), 
+                                  ImGuiInputTextFlags_EnterReturnsTrue)) {
+        std::string query(search_buffer_);
+        if (!query.empty()) {
+            perform_search(query);
+        }
+    }
+    ImGui::SameLine();
+    if (ImGui::Button("Search", ImVec2(70, 0))) {
+        std::string query(search_buffer_);
+        if (!query.empty()) {
+            perform_search(query);
+        }
+    }
+    ImGui::Separator();
+
     // Get drawing area
     ImVec2 canvas_pos = ImGui::GetCursorScreenPos();
     ImVec2 canvas_size = ImGui::GetContentRegionAvail();
@@ -997,52 +1017,136 @@ void KnowledgeGraphEditor::render_properties_panel() {
     ImGui::Text("Ontology Properties");
     ImGui::Separator();
 
-    if (selected_edge_) {
-        // Display edge properties
-        ImGui::Text("Object Property");
-        ImGui::Separator();
-
-        std::string display_label = format_label(selected_edge_->label);
-        ImGui::Text("Property: %s", display_label.c_str());
-        ImGui::Text("Full Label: %s", selected_edge_->label.c_str());
-        ImGui::Separator();
-
-        // Find the source and target nodes
-        auto from_it = std::find_if(nodes_.begin(), nodes_.end(),
-                                    [this](const GraphNode& n) { return n.id == selected_edge_->from; });
-        auto to_it = std::find_if(nodes_.begin(), nodes_.end(),
-                                  [this](const GraphNode& n) { return n.id == selected_edge_->to; });
-
-        if (from_it != nodes_.end() && to_it != nodes_.end()) {
-            std::string from_label = format_label(from_it->label);
-            std::string to_label = format_label(to_it->label);
-
-            ImGui::Text("Domain: %s", from_label.c_str());
-            ImGui::Text("Domain IRI: %s", selected_edge_->from.c_str());
-            ImGui::Separator();
-            ImGui::Text("Range: %s", to_label.c_str());
-            ImGui::Text("Range IRI: %s", selected_edge_->to.c_str());
-        } else {
-            ImGui::Text("Domain IRI: %s", selected_edge_->from.c_str());
-            ImGui::Text("Range IRI: %s", selected_edge_->to.c_str());
+    // Ontology Summary Section (always shown when ontology is loaded)
+    if (ontology_) {
+        if (ImGui::CollapsingHeader("Ontology Summary", ImGuiTreeNodeFlags_DefaultOpen)) {
+            // Get ontology IRI if available
+            auto ontology_iri = ontology_->getOntologyIRI();
+            if (ontology_iri.has_value()) {
+                ImGui::Text("Ontology IRI:");
+                ImGui::TextWrapped("%s", ontology_iri.value().toString().c_str());
+            }
+            
+            ImGui::Spacing();
+            
+            // Count statistics
+            size_t class_count = ontology_->getClasses().size();
+            size_t individual_count = ontology_->getIndividuals().size();
+            size_t obj_prop_count = ontology_->getObjectPropertyCount();
+            size_t data_prop_count = ontology_->getDataPropertyCount();
+            size_t annot_prop_count = ontology_->getAnnotationProperties().size();
+            
+            ImGui::Text("Classes: %zu", class_count);
+            ImGui::Text("Individuals: %zu", individual_count);
+            ImGui::Text("Object Properties: %zu", obj_prop_count);
+            ImGui::Text("Data Properties: %zu", data_prop_count);
+            ImGui::Text("Annotation Properties: %zu", annot_prop_count);
+            
+            ImGui::Spacing();
+            
+            // Graph visualization statistics
+            size_t connected_nodes = 0;
+            size_t isolated_nodes = 0;
+            for (const auto& node : nodes_) {
+                bool has_edge = false;
+                for (const auto& edge : edges_) {
+                    if (edge.from == node.id || edge.to == node.id) {
+                        has_edge = true;
+                        break;
+                    }
+                }
+                if (has_edge) connected_nodes++;
+                else isolated_nodes++;
+            }
+            
+            ImGui::Text("Graph Nodes: %zu", nodes_.size());
+            ImGui::Text("  Connected: %zu", connected_nodes);
+            ImGui::Text("  Isolated: %zu", isolated_nodes);
+            ImGui::Text("Graph Edges: %zu", edges_.size());
         }
-
+        
         ImGui::Separator();
-        ImGui::Text("Type: %s", selected_edge_->is_subclass ? "SubClassOf" : "Object Property");
+    }
+    
+    // Selected Element Section
+    if (ImGui::CollapsingHeader("Selected Element", ImGuiTreeNodeFlags_DefaultOpen)) {
+        if (selected_edge_) {
+            // Display edge properties
+            ImGui::TextColored(ImVec4(0.5f, 0.8f, 0.5f, 1.0f), "Object Property");
+            ImGui::Separator();
 
-    } else if (!selected_node_) {
-        ImGui::TextColored(ImVec4(0.6f, 0.6f, 0.6f, 1.0f),
-                          "Select a node or edge to view properties");
-    } else {
-        ImGui::Text("Node: %s", selected_node_->label.c_str());
-        ImGui::Text("IRI: %s", selected_node_->id.c_str());
-        ImGui::Text("Type: %s", selected_node_->is_class ? "Class" : "Individual");
-        ImGui::Separator();
+            std::string display_label = format_label(selected_edge_->label);
+            ImGui::Text("Property: %s", display_label.c_str());
+            ImGui::Text("Full Label: %s", selected_edge_->label.c_str());
+            ImGui::Separator();
 
-        if (ontology_) {
-            // Show axioms related to this entity
-            ImGui::Text("Related Axioms:");
-            // TODO: Query and display axioms
+            // Find the source and target nodes
+            auto from_it = std::find_if(nodes_.begin(), nodes_.end(),
+                                        [this](const GraphNode& n) { return n.id == selected_edge_->from; });
+            auto to_it = std::find_if(nodes_.begin(), nodes_.end(),
+                                      [this](const GraphNode& n) { return n.id == selected_edge_->to; });
+
+            if (from_it != nodes_.end() && to_it != nodes_.end()) {
+                std::string from_label = format_label(from_it->label);
+                std::string to_label = format_label(to_it->label);
+
+                ImGui::Text("Domain: %s", from_label.c_str());
+                ImGui::Text("Domain IRI: %s", selected_edge_->from.c_str());
+                ImGui::Separator();
+                ImGui::Text("Range: %s", to_label.c_str());
+                ImGui::Text("Range IRI: %s", selected_edge_->to.c_str());
+            } else {
+                ImGui::Text("Domain IRI: %s", selected_edge_->from.c_str());
+                ImGui::Text("Range IRI: %s", selected_edge_->to.c_str());
+            }
+
+            ImGui::Separator();
+            ImGui::Text("Type: %s", selected_edge_->is_subclass ? "SubClassOf" : "Object Property");
+
+        } else if (!selected_node_) {
+            ImGui::TextColored(ImVec4(0.6f, 0.6f, 0.6f, 1.0f),
+                              "Select a node or edge to view details");
+        } else {
+            // Display node properties
+            ImGui::TextColored(ImVec4(0.5f, 0.7f, 1.0f, 1.0f), 
+                              selected_node_->is_class ? "Class" : "Individual");
+            ImGui::Separator();
+            
+            std::string display_label = format_label(selected_node_->label);
+            ImGui::Text("Name: %s", display_label.c_str());
+            ImGui::Text("Full Label: %s", selected_node_->label.c_str());
+            ImGui::TextWrapped("IRI: %s", selected_node_->id.c_str());
+            ImGui::Separator();
+
+            if (ontology_) {
+                // Show related edges
+                ImGui::Text("Related Edges:");
+                int edge_count = 0;
+                for (const auto& edge : edges_) {
+                    if (edge.from == selected_node_->id || edge.to == selected_node_->id) {
+                        std::string edge_label = format_label(edge.label);
+                        if (edge.from == selected_node_->id) {
+                            auto to_it = std::find_if(nodes_.begin(), nodes_.end(),
+                                [&edge](const GraphNode& n) { return n.id == edge.to; });
+                            if (to_it != nodes_.end()) {
+                                ImGui::BulletText("%s -> %s", edge_label.c_str(), 
+                                                 format_label(to_it->label).c_str());
+                            }
+                        } else {
+                            auto from_it = std::find_if(nodes_.begin(), nodes_.end(),
+                                [&edge](const GraphNode& n) { return n.id == edge.from; });
+                            if (from_it != nodes_.end()) {
+                                ImGui::BulletText("%s <- %s", edge_label.c_str(),
+                                                 format_label(from_it->label).c_str());
+                            }
+                        }
+                        edge_count++;
+                    }
+                }
+                if (edge_count == 0) {
+                    ImGui::TextColored(ImVec4(0.6f, 0.6f, 0.6f, 1.0f), "  (none)");
+                }
+            }
         }
     }
 }
@@ -1762,6 +1866,123 @@ void KnowledgeGraphEditor::handle_node_selection(const GraphNode* node) {
 void KnowledgeGraphEditor::handle_node_drag(GraphNode* node, float dx, float dy) {
     node->x += dx / zoom_level_;
     node->y += dy / zoom_level_;
+}
+
+void KnowledgeGraphEditor::perform_search(const std::string& query) {
+    if (query.empty()) return;
+    
+    // Convert query to lowercase for case-insensitive search
+    std::string lower_query = query;
+    std::transform(lower_query.begin(), lower_query.end(), lower_query.begin(), ::tolower);
+    
+    // First, try exact match on nodes
+    for (auto& node : nodes_) {
+        std::string lower_label = node.label;
+        std::transform(lower_label.begin(), lower_label.end(), lower_label.begin(), ::tolower);
+        std::string lower_id = node.id;
+        std::transform(lower_id.begin(), lower_id.end(), lower_id.begin(), ::tolower);
+        
+        // Check exact match (case-insensitive)
+        if (lower_label == lower_query || lower_id == lower_query) {
+            // Found exact match - select it
+            for (auto& n : nodes_) n.selected = false;
+            selected_edge_ = nullptr;
+            node.selected = true;
+            selected_node_ = &node;
+            
+            // Center view on the found node
+            view_offset_x_ = -node.x * zoom_level_ + 600.0f;
+            view_offset_y_ = -node.y * zoom_level_ + 400.0f;
+            return;
+        }
+    }
+    
+    // Try exact match on edges
+    for (const auto& edge : edges_) {
+        std::string lower_label = edge.label;
+        std::transform(lower_label.begin(), lower_label.end(), lower_label.begin(), ::tolower);
+        
+        if (lower_label == lower_query) {
+            // Found exact match - select it
+            for (auto& n : nodes_) n.selected = false;
+            selected_node_ = nullptr;
+            selected_edge_ = &edge;
+            
+            // Center view on the edge midpoint
+            auto from_it = std::find_if(nodes_.begin(), nodes_.end(),
+                [&edge](const GraphNode& n) { return n.id == edge.from; });
+            auto to_it = std::find_if(nodes_.begin(), nodes_.end(),
+                [&edge](const GraphNode& n) { return n.id == edge.to; });
+            if (from_it != nodes_.end() && to_it != nodes_.end()) {
+                float mid_x = (from_it->x + to_it->x) / 2.0f;
+                float mid_y = (from_it->y + to_it->y) / 2.0f;
+                view_offset_x_ = -mid_x * zoom_level_ + 600.0f;
+                view_offset_y_ = -mid_y * zoom_level_ + 400.0f;
+            }
+            return;
+        }
+    }
+    
+    // No exact match found, try substring match on nodes
+    for (auto& node : nodes_) {
+        std::string lower_label = node.label;
+        std::transform(lower_label.begin(), lower_label.end(), lower_label.begin(), ::tolower);
+        std::string lower_id = node.id;
+        std::transform(lower_id.begin(), lower_id.end(), lower_id.begin(), ::tolower);
+        
+        // Also check the formatted label (without namespace prefix)
+        std::string formatted = format_label(node.label);
+        std::string lower_formatted = formatted;
+        std::transform(lower_formatted.begin(), lower_formatted.end(), lower_formatted.begin(), ::tolower);
+        
+        if (lower_label.find(lower_query) != std::string::npos ||
+            lower_id.find(lower_query) != std::string::npos ||
+            lower_formatted.find(lower_query) != std::string::npos) {
+            // Found substring match - select it
+            for (auto& n : nodes_) n.selected = false;
+            selected_edge_ = nullptr;
+            node.selected = true;
+            selected_node_ = &node;
+            
+            // Center view on the found node
+            view_offset_x_ = -node.x * zoom_level_ + 600.0f;
+            view_offset_y_ = -node.y * zoom_level_ + 400.0f;
+            return;
+        }
+    }
+    
+    // Try substring match on edges
+    for (const auto& edge : edges_) {
+        std::string lower_label = edge.label;
+        std::transform(lower_label.begin(), lower_label.end(), lower_label.begin(), ::tolower);
+        
+        std::string formatted = format_label(edge.label);
+        std::string lower_formatted = formatted;
+        std::transform(lower_formatted.begin(), lower_formatted.end(), lower_formatted.begin(), ::tolower);
+        
+        if (lower_label.find(lower_query) != std::string::npos ||
+            lower_formatted.find(lower_query) != std::string::npos) {
+            // Found substring match - select it
+            for (auto& n : nodes_) n.selected = false;
+            selected_node_ = nullptr;
+            selected_edge_ = &edge;
+            
+            // Center view on the edge midpoint
+            auto from_it = std::find_if(nodes_.begin(), nodes_.end(),
+                [&edge](const GraphNode& n) { return n.id == edge.from; });
+            auto to_it = std::find_if(nodes_.begin(), nodes_.end(),
+                [&edge](const GraphNode& n) { return n.id == edge.to; });
+            if (from_it != nodes_.end() && to_it != nodes_.end()) {
+                float mid_x = (from_it->x + to_it->x) / 2.0f;
+                float mid_y = (from_it->y + to_it->y) / 2.0f;
+                view_offset_x_ = -mid_x * zoom_level_ + 600.0f;
+                view_offset_y_ = -mid_y * zoom_level_ + 400.0f;
+            }
+            return;
+        }
+    }
+    
+    // No match found - could show a message, but for now just do nothing
 }
 
 std::string KnowledgeGraphEditor::format_label(const std::string& abbreviated_iri) const {

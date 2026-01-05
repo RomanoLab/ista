@@ -200,6 +200,13 @@ private:
     
     // Preferences
     bool pref_show_namespace_prefix_;
+    
+    // Search state
+    char search_buffer_[256];
+    std::string last_search_query_;
+    
+    // Search functionality
+    void perform_search(const std::string& query);
 };
 
 } // namespace gui
