@@ -1440,18 +1440,18 @@ void KnowledgeGraphEditor::apply_hierarchical_layout() {
     // Initialize random number generator
     std::srand(static_cast<unsigned>(std::time(nullptr)));
     
-    // Build adjacency information to identify connected components
-    std::unordered_map<std::string, std::vector<std::string>> adjacency;
-    std::unordered_map<std::string, int> degree;
+    // Layout parameters
+    const float min_node_spacing = 80.0f;  // Minimum distance between node centers
+    const float canvas_width = 1400.0f;
+    const float canvas_height = 900.0f;
+    const float margin = 60.0f;
     
+    // Build adjacency information
+    std::unordered_map<std::string, int> degree;
     for (const auto& node : nodes_) {
         degree[node.id] = 0;
-        adjacency[node.id] = {};
     }
-    
     for (const auto& edge : edges_) {
-        adjacency[edge.from].push_back(edge.to);
-        adjacency[edge.to].push_back(edge.from);
         degree[edge.from]++;
         degree[edge.to]++;
     }
@@ -1468,75 +1468,135 @@ void KnowledgeGraphEditor::apply_hierarchical_layout() {
         }
     }
     
-    // Initialize connected nodes with better distribution
-    const float connected_spread = 600.0f;
-    const float connected_center_x = 700.0f;
-    const float connected_center_y = 500.0f;
+    // Helper function to check if position overlaps with placed nodes
+    auto check_overlap = [min_node_spacing](float x, float y, const std::vector<std::pair<float, float>>& placed) -> bool {
+        for (const auto& pos : placed) {
+            float dx = x - pos.first;
+            float dy = y - pos.second;
+            if (dx * dx + dy * dy < min_node_spacing * min_node_spacing) {
+                return true;
+            }
+        }
+        return false;
+    };
+    
+    // Helper function to find a valid random position
+    auto find_valid_position = [&](const std::vector<std::pair<float, float>>& placed, 
+                                   float center_x, float center_y, float max_radius) -> std::pair<float, float> {
+        const int max_attempts = 100;
+        for (int attempt = 0; attempt < max_attempts; ++attempt) {
+            // Random position within radius, biased towards center
+            float angle = (std::rand() / static_cast<float>(RAND_MAX)) * 2.0f * 3.14159f;
+            float r = std::pow(std::rand() / static_cast<float>(RAND_MAX), 0.5f) * max_radius;
+            float x = center_x + r * std::cos(angle);
+            float y = center_y + r * std::sin(angle);
+            
+            // Clamp to bounds
+            x = std::max(margin, std::min(x, canvas_width - margin));
+            y = std::max(margin, std::min(y, canvas_height - margin));
+            
+            if (!check_overlap(x, y, placed)) {
+                return {x, y};
+            }
+        }
+        // Fallback: just find any non-overlapping spot by grid search
+        for (float x = margin; x < canvas_width - margin; x += min_node_spacing * 0.5f) {
+            for (float y = margin; y < canvas_height - margin; y += min_node_spacing * 0.5f) {
+                // Add small random offset
+                float rx = x + (std::rand() / static_cast<float>(RAND_MAX) - 0.5f) * min_node_spacing * 0.3f;
+                float ry = y + (std::rand() / static_cast<float>(RAND_MAX) - 0.5f) * min_node_spacing * 0.3f;
+                rx = std::max(margin, std::min(rx, canvas_width - margin));
+                ry = std::max(margin, std::min(ry, canvas_height - margin));
+                if (!check_overlap(rx, ry, placed)) {
+                    return {rx, ry};
+                }
+            }
+        }
+        // Last resort: overlap anyway
+        return {center_x + (std::rand() / static_cast<float>(RAND_MAX) - 0.5f) * 100.0f,
+                center_y + (std::rand() / static_cast<float>(RAND_MAX) - 0.5f) * 100.0f};
+    };
+    
+    // Place connected nodes first using force-directed, then fix overlaps
+    std::vector<std::pair<float, float>> placed_positions;
+    
+    // Initial random placement for connected nodes
+    float center_x = canvas_width / 2.0f;
+    float center_y = canvas_height / 2.0f;
+    float connected_radius = std::min(canvas_width, canvas_height) * 0.35f;
     
     for (auto* node : connected_nodes) {
-        // Use polar coordinates for more even distribution
-        float angle = (std::rand() / static_cast<float>(RAND_MAX)) * 2.0f * 3.14159f;
-        float radius = (std::rand() / static_cast<float>(RAND_MAX)) * connected_spread * 0.5f;
-        node->x = connected_center_x + radius * std::cos(angle);
-        node->y = connected_center_y + radius * std::sin(angle);
+        auto pos = find_valid_position(placed_positions, center_x, center_y, connected_radius);
+        node->x = pos.first;
+        node->y = pos.second;
         node->vx = 0.0f;
         node->vy = 0.0f;
+        placed_positions.push_back(pos);
     }
     
-    // Place isolated nodes in a natural circular arrangement around the connected component
-    if (!isolated_nodes.empty()) {
-        const float isolation_radius = connected_spread * 0.7f + 150.0f;
-        const float angle_step = (2.0f * 3.14159f) / static_cast<float>(isolated_nodes.size());
-        
-        // Add some randomness to avoid perfect circle
-        for (size_t i = 0; i < isolated_nodes.size(); ++i) {
-            float base_angle = i * angle_step;
-            float angle_noise = ((std::rand() / static_cast<float>(RAND_MAX)) - 0.5f) * 0.3f;
-            float radius_noise = ((std::rand() / static_cast<float>(RAND_MAX)) - 0.5f) * 80.0f;
-            
-            float angle = base_angle + angle_noise;
-            float radius = isolation_radius + radius_noise;
-            
-            isolated_nodes[i]->x = connected_center_x + radius * std::cos(angle);
-            isolated_nodes[i]->y = connected_center_y + radius * std::sin(angle);
-            isolated_nodes[i]->vx = 0.0f;
-            isolated_nodes[i]->vy = 0.0f;
-        }
-    }
-    
-    // Run force-directed layout only on connected nodes
+    // Run force-directed layout to improve connected node positions
     apply_force_directed_layout();
+    
+    // After force-directed layout, fix any remaining overlaps
+    placed_positions.clear();
+    for (auto* node : connected_nodes) {
+        placed_positions.push_back({node->x, node->y});
+    }
+    
+    // Now place isolated nodes in gaps between connected nodes
+    // Find the bounding box of connected nodes
+    float min_x = canvas_width, max_x = 0, min_y = canvas_height, max_y = 0;
+    for (const auto& pos : placed_positions) {
+        min_x = std::min(min_x, pos.first);
+        max_x = std::max(max_x, pos.first);
+        min_y = std::min(min_y, pos.second);
+        max_y = std::max(max_y, pos.second);
+    }
+    
+    // Expand bounding box slightly to include area around connected nodes
+    float padding = min_node_spacing * 2.0f;
+    min_x = std::max(margin, min_x - padding);
+    max_x = std::min(canvas_width - margin, max_x + padding);
+    min_y = std::max(margin, min_y - padding);
+    max_y = std::min(canvas_height - margin, max_y + padding);
+    
+    // Place isolated nodes within the same region, filling gaps
+    for (auto* node : isolated_nodes) {
+        auto pos = find_valid_position(placed_positions, 
+                                       (min_x + max_x) / 2.0f, 
+                                       (min_y + max_y) / 2.0f,
+                                       std::max(max_x - min_x, max_y - min_y) / 2.0f);
+        node->x = pos.first;
+        node->y = pos.second;
+        node->vx = 0.0f;
+        node->vy = 0.0f;
+        placed_positions.push_back(pos);
+    }
 }
 
 void KnowledgeGraphEditor::apply_force_directed_layout() {
-    // Improved force-directed layout with better overlap prevention
-
+    // Force-directed layout with overlap prevention
+    
     if (nodes_.empty()) return;
 
-    // Count only connected nodes for better spacing
-    int connected_count = 0;
-    for (const auto& node : nodes_) {
-        bool has_edges = false;
-        for (const auto& edge : edges_) {
-            if (edge.from == node.id || edge.to == node.id) {
-                has_edges = true;
-                break;
-            }
-        }
-        if (has_edges) connected_count++;
+    // Build set of connected node IDs
+    std::unordered_set<std::string> connected_node_ids;
+    for (const auto& edge : edges_) {
+        connected_node_ids.insert(edge.from);
+        connected_node_ids.insert(edge.to);
     }
-
+    
+    int connected_count = connected_node_ids.size();
     if (connected_count == 0) return;
 
-    // Layout parameters - tuned for better spread and less overlap
-    const int iterations = 800;  // More iterations for better convergence
-    const float area = 1200.0f * 800.0f;  // Larger area for more space
-    const float k = std::sqrt(area / static_cast<float>(std::max(1, connected_count)));  // Optimal distance
-    const float c_repulsion = k * k * 2.5f;  // Stronger repulsion to prevent overlap
-    const float c_attraction = k * 0.8f;     // Slightly weaker attraction for more spread
-    float temperature = 150.0f;       // Higher initial temperature
-    const float cooling = 0.97f;      // Slower cooling for better settling
-    const float min_temp = 0.5f;      // Higher minimum for continued movement
+    // Layout parameters
+    const int iterations = 300;
+    const float min_distance = 90.0f;  // Minimum distance between nodes
+    const float ideal_edge_length = 120.0f;  // Ideal length for edges
+    const float repulsion_strength = 5000.0f;
+    const float attraction_strength = 0.1f;
+    const float damping = 0.85f;
+    const float max_velocity = 50.0f;
 
     // Build node index map for fast lookup
     std::unordered_map<std::string, size_t> node_index;
@@ -1544,49 +1604,41 @@ void KnowledgeGraphEditor::apply_force_directed_layout() {
         node_index[nodes_[i].id] = i;
     }
 
-    // Build set of connected node IDs for faster lookup
-    std::unordered_set<std::string> connected_node_ids;
-    for (const auto& edge : edges_) {
-        connected_node_ids.insert(edge.from);
-        connected_node_ids.insert(edge.to);
-    }
-    
     // Run simulation iterations
     for (int iter = 0; iter < iterations; ++iter) {
-        // Reset forces
-        for (auto& node : nodes_) {
-            node.vx = 0.0f;
-            node.vy = 0.0f;
-        }
-
-        // Calculate repulsive forces only between connected nodes
+        // Calculate repulsive forces between all connected node pairs
         for (size_t i = 0; i < nodes_.size(); ++i) {
-            // Skip isolated nodes in force calculations
             if (connected_node_ids.find(nodes_[i].id) == connected_node_ids.end()) continue;
             
             for (size_t j = i + 1; j < nodes_.size(); ++j) {
-                // Skip isolated nodes in force calculations
                 if (connected_node_ids.find(nodes_[j].id) == connected_node_ids.end()) continue;
                 
                 float dx = nodes_[i].x - nodes_[j].x;
                 float dy = nodes_[i].y - nodes_[j].y;
-                float dist_sq = dx * dx + dy * dy;
-
-                // Avoid division by zero
-                if (dist_sq < 0.01f) {
-                    dist_sq = 0.01f;
-                    dx = (std::rand() / static_cast<float>(RAND_MAX)) * 0.1f - 0.05f;
-                    dy = (std::rand() / static_cast<float>(RAND_MAX)) * 0.1f - 0.05f;
+                float dist = std::sqrt(dx * dx + dy * dy);
+                
+                if (dist < 1.0f) {
+                    // Nodes too close, push apart randomly
+                    dx = (std::rand() / static_cast<float>(RAND_MAX) - 0.5f) * 2.0f;
+                    dy = (std::rand() / static_cast<float>(RAND_MAX) - 0.5f) * 2.0f;
+                    dist = 1.0f;
                 }
-
-                float dist = std::sqrt(dist_sq);
-                float repulsion = c_repulsion / dist;
-
-                // Apply repulsive force
-                nodes_[i].vx += (dx / dist) * repulsion;
-                nodes_[i].vy += (dy / dist) * repulsion;
-                nodes_[j].vx -= (dx / dist) * repulsion;
-                nodes_[j].vy -= (dy / dist) * repulsion;
+                
+                // Repulsive force (inverse square law, stronger at close range)
+                float force = repulsion_strength / (dist * dist);
+                
+                // Extra strong repulsion when nodes are too close
+                if (dist < min_distance) {
+                    force *= 3.0f * (min_distance / dist);
+                }
+                
+                float fx = (dx / dist) * force;
+                float fy = (dy / dist) * force;
+                
+                nodes_[i].vx += fx;
+                nodes_[i].vy += fy;
+                nodes_[j].vx -= fx;
+                nodes_[j].vy -= fy;
             }
         }
 
@@ -1599,45 +1651,93 @@ void KnowledgeGraphEditor::apply_force_directed_layout() {
                 size_t idx_from = it_from->second;
                 size_t idx_to = it_to->second;
 
-                float dx = nodes_[idx_from].x - nodes_[idx_to].x;
-                float dy = nodes_[idx_from].y - nodes_[idx_to].y;
+                float dx = nodes_[idx_to].x - nodes_[idx_from].x;
+                float dy = nodes_[idx_to].y - nodes_[idx_from].y;
                 float dist = std::sqrt(dx * dx + dy * dy);
 
-                if (dist > 0.01f) {
-                    float attraction = (dist * dist) / c_attraction;
-
-                    // Apply attractive force
-                    nodes_[idx_from].vx -= (dx / dist) * attraction;
-                    nodes_[idx_from].vy -= (dy / dist) * attraction;
-                    nodes_[idx_to].vx += (dx / dist) * attraction;
-                    nodes_[idx_to].vy += (dy / dist) * attraction;
+                if (dist > 1.0f) {
+                    // Attraction proportional to distance beyond ideal length
+                    float displacement = dist - ideal_edge_length;
+                    float force = displacement * attraction_strength;
+                    
+                    float fx = (dx / dist) * force;
+                    float fy = (dy / dist) * force;
+                    
+                    nodes_[idx_from].vx += fx;
+                    nodes_[idx_from].vy += fy;
+                    nodes_[idx_to].vx -= fx;
+                    nodes_[idx_to].vy -= fy;
                 }
             }
         }
 
-        // Update positions with temperature-based displacement limiting (only for connected nodes)
+        // Update positions with velocity limiting and damping
         for (auto& node : nodes_) {
-            // Skip isolated nodes - they stay in their initial positions
             if (connected_node_ids.find(node.id) == connected_node_ids.end()) continue;
             
-            float force_mag = std::sqrt(node.vx * node.vx + node.vy * node.vy);
+            // Apply damping
+            node.vx *= damping;
+            node.vy *= damping;
+            
+            // Limit velocity
+            float speed = std::sqrt(node.vx * node.vx + node.vy * node.vy);
+            if (speed > max_velocity) {
+                node.vx = (node.vx / speed) * max_velocity;
+                node.vy = (node.vy / speed) * max_velocity;
+            }
+            
+            // Update position
+            node.x += node.vx;
+            node.y += node.vy;
 
-            if (force_mag > 0.01f) {
-                float displacement = std::min(force_mag, temperature);
-                node.x += (node.vx / force_mag) * displacement;
-                node.y += (node.vy / force_mag) * displacement;
-
-                // Keep nodes within reasonable bounds
-                node.x = std::max(50.0f, std::min(node.x, 1500.0f));
-                node.y = std::max(50.0f, std::min(node.y, 1000.0f));
+            // Keep nodes within bounds
+            const float margin = 60.0f;
+            const float canvas_width = 1400.0f;
+            const float canvas_height = 900.0f;
+            
+            if (node.x < margin) { node.x = margin; node.vx *= -0.5f; }
+            if (node.x > canvas_width - margin) { node.x = canvas_width - margin; node.vx *= -0.5f; }
+            if (node.y < margin) { node.y = margin; node.vy *= -0.5f; }
+            if (node.y > canvas_height - margin) { node.y = canvas_height - margin; node.vy *= -0.5f; }
+        }
+        
+        // Reset velocities for next iteration
+        for (auto& node : nodes_) {
+            node.vx = 0.0f;
+            node.vy = 0.0f;
+        }
+    }
+    
+    // Final overlap resolution pass
+    const float min_node_spacing = 80.0f;
+    for (int pass = 0; pass < 50; ++pass) {
+        bool had_overlap = false;
+        
+        for (size_t i = 0; i < nodes_.size(); ++i) {
+            if (connected_node_ids.find(nodes_[i].id) == connected_node_ids.end()) continue;
+            
+            for (size_t j = i + 1; j < nodes_.size(); ++j) {
+                if (connected_node_ids.find(nodes_[j].id) == connected_node_ids.end()) continue;
+                
+                float dx = nodes_[j].x - nodes_[i].x;
+                float dy = nodes_[j].y - nodes_[i].y;
+                float dist = std::sqrt(dx * dx + dy * dy);
+                
+                if (dist < min_node_spacing && dist > 0.01f) {
+                    had_overlap = true;
+                    float overlap = (min_node_spacing - dist) / 2.0f + 1.0f;
+                    float nx = dx / dist;
+                    float ny = dy / dist;
+                    
+                    nodes_[i].x -= nx * overlap;
+                    nodes_[i].y -= ny * overlap;
+                    nodes_[j].x += nx * overlap;
+                    nodes_[j].y += ny * overlap;
+                }
             }
         }
-
-        // Cool down temperature
-        temperature *= cooling;
-        if (temperature < min_temp) {
-            temperature = min_temp;
-        }
+        
+        if (!had_overlap) break;
     }
 }
 
