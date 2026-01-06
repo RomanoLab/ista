@@ -1,0 +1,206 @@
+@prefix : <http://example.org/pharmatox#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ptox: <http://example.org/pharmatox#> .
+@base <http://example.org/pharmatox> .
+
+<http://example.org/pharmatox> rdf:type owl:Ontology ;
+    rdfs:label "PharmaTox Example Ontology" ;
+    rdfs:comment "A synthetic biomedical ontology for demonstrating ISTA knowledge graph building capabilities. This is a toy example using synthetic data for testing and demonstration purposes only." ;
+    owl:versionInfo "1.0.0" .
+
+#################################################################
+#    Classes
+#################################################################
+
+ptox:Drug rdf:type owl:Class ;
+    rdfs:label "Drug" ;
+    rdfs:comment "A pharmaceutical compound used for therapeutic purposes." .
+
+ptox:Gene rdf:type owl:Class ;
+    rdfs:label "Gene" ;
+    rdfs:comment "A human gene encoding a protein or functional RNA." .
+
+ptox:Disease rdf:type owl:Class ;
+    rdfs:label "Disease" ;
+    rdfs:comment "A medical condition or disorder." .
+
+ptox:Pathway rdf:type owl:Class ;
+    rdfs:label "Pathway" ;
+    rdfs:comment "A biological or metabolic pathway." .
+
+ptox:AdverseEvent rdf:type owl:Class ;
+    rdfs:label "Adverse Event" ;
+    rdfs:comment "An undesired side effect of drug treatment." .
+
+ptox:DrugClass rdf:type owl:Class ;
+    rdfs:label "Drug Class" ;
+    rdfs:comment "A pharmacological classification of drugs." .
+
+ptox:CellType rdf:type owl:Class ;
+    rdfs:label "Cell Type" ;
+    rdfs:comment "A type of cell in which genes may be expressed." .
+
+ptox:Assay rdf:type owl:Class ;
+    rdfs:label "Assay" ;
+    rdfs:comment "A toxicological or pharmacological assay." .
+
+#################################################################
+#    Data Properties
+#################################################################
+
+ptox:commonName rdf:type owl:DatatypeProperty ;
+    rdfs:domain owl:Thing ;
+    rdfs:range xsd:string ;
+    rdfs:label "common name" ;
+    rdfs:comment "Human-readable name for the entity." .
+
+ptox:xrefDrugbank rdf:type owl:DatatypeProperty ;
+    rdfs:domain ptox:Drug ;
+    rdfs:range xsd:string ;
+    rdfs:label "DrugBank ID" ;
+    rdfs:comment "DrugBank database identifier (e.g., DB00001)." .
+
+ptox:xrefCasRN rdf:type owl:DatatypeProperty ;
+    rdfs:domain ptox:Drug ;
+    rdfs:range xsd:string ;
+    rdfs:label "CAS Registry Number" ;
+    rdfs:comment "Chemical Abstracts Service registry number." .
+
+ptox:xrefPubchemCID rdf:type owl:DatatypeProperty ;
+    rdfs:domain ptox:Drug ;
+    rdfs:range xsd:string ;
+    rdfs:label "PubChem CID" ;
+    rdfs:comment "PubChem Compound identifier." .
+
+ptox:xrefNcbiGene rdf:type owl:DatatypeProperty ;
+    rdfs:domain ptox:Gene ;
+    rdfs:range xsd:integer ;
+    rdfs:label "NCBI Gene ID" ;
+    rdfs:comment "NCBI Gene database identifier." .
+
+ptox:geneSymbol rdf:type owl:DatatypeProperty ;
+    rdfs:domain ptox:Gene ;
+    rdfs:range xsd:string ;
+    rdfs:label "gene symbol" ;
+    rdfs:comment "Official gene symbol (e.g., EGFR, TP53)." .
+
+ptox:xrefUmlsCUI rdf:type owl:DatatypeProperty ;
+    rdfs:domain ptox:Disease ;
+    rdfs:range xsd:string ;
+    rdfs:label "UMLS CUI" ;
+    rdfs:comment "Unified Medical Language System Concept Unique Identifier." .
+
+ptox:xrefMeSH rdf:type owl:DatatypeProperty ;
+    rdfs:range xsd:string ;
+    rdfs:label "MeSH ID" ;
+    rdfs:comment "Medical Subject Headings descriptor identifier." .
+
+ptox:xrefReactome rdf:type owl:DatatypeProperty ;
+    rdfs:domain ptox:Pathway ;
+    rdfs:range xsd:string ;
+    rdfs:label "Reactome ID" ;
+    rdfs:comment "Reactome pathway database identifier." .
+
+ptox:xrefMeddra rdf:type owl:DatatypeProperty ;
+    rdfs:domain ptox:AdverseEvent ;
+    rdfs:range xsd:string ;
+    rdfs:label "MedDRA ID" ;
+    rdfs:comment "Medical Dictionary for Regulatory Activities preferred term identifier." .
+
+ptox:severity rdf:type owl:DatatypeProperty ;
+    rdfs:domain ptox:AdverseEvent ;
+    rdfs:range xsd:string ;
+    rdfs:label "severity" ;
+    rdfs:comment "Severity level of the adverse event (mild, moderate, severe)." .
+
+ptox:xrefCL rdf:type owl:DatatypeProperty ;
+    rdfs:domain ptox:CellType ;
+    rdfs:range xsd:string ;
+    rdfs:label "Cell Ontology ID" ;
+    rdfs:comment "Cell Ontology identifier." .
+
+ptox:ld50Value rdf:type owl:DatatypeProperty ;
+    rdfs:domain ptox:Drug ;
+    rdfs:range xsd:float ;
+    rdfs:label "LD50 value" ;
+    rdfs:comment "Lethal dose 50% value (median lethal dose)." .
+
+ptox:ld50Units rdf:type owl:DatatypeProperty ;
+    rdfs:domain ptox:Drug ;
+    rdfs:range xsd:string ;
+    rdfs:label "LD50 units" ;
+    rdfs:comment "Units for LD50 measurement (e.g., mg/kg)." .
+
+ptox:assayResult rdf:type owl:DatatypeProperty ;
+    rdfs:domain ptox:Assay ;
+    rdfs:range xsd:string ;
+    rdfs:label "assay result" ;
+    rdfs:comment "Result of the assay (Active/Inactive)." .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+ptox:drugTreatsDisease rdf:type owl:ObjectProperty ;
+    rdfs:domain ptox:Drug ;
+    rdfs:range ptox:Disease ;
+    rdfs:label "treats" ;
+    rdfs:comment "Indicates that a drug has a therapeutic indication for a disease." .
+
+ptox:drugCausesAdverseEvent rdf:type owl:ObjectProperty ;
+    rdfs:domain ptox:Drug ;
+    rdfs:range ptox:AdverseEvent ;
+    rdfs:label "causes adverse event" ;
+    rdfs:comment "Indicates that a drug can cause a particular side effect." .
+
+ptox:drugInClass rdf:type owl:ObjectProperty ;
+    rdfs:domain ptox:Drug ;
+    rdfs:range ptox:DrugClass ;
+    rdfs:label "in drug class" ;
+    rdfs:comment "Indicates the pharmacological class of a drug." .
+
+ptox:drugTargetsGene rdf:type owl:ObjectProperty ;
+    rdfs:domain ptox:Drug ;
+    rdfs:range ptox:Gene ;
+    rdfs:label "targets gene" ;
+    rdfs:comment "Indicates that a drug targets or interacts with a gene product." .
+
+ptox:geneAssociatesWithDisease rdf:type owl:ObjectProperty ;
+    rdfs:domain ptox:Gene ;
+    rdfs:range ptox:Disease ;
+    rdfs:label "associates with disease" ;
+    rdfs:comment "Indicates a gene-disease association from genetic studies." .
+
+ptox:geneInPathway rdf:type owl:ObjectProperty ;
+    rdfs:domain ptox:Gene ;
+    rdfs:range ptox:Pathway ;
+    rdfs:label "in pathway" ;
+    rdfs:comment "Indicates that a gene participates in a biological pathway." .
+
+ptox:geneExpressedInCellType rdf:type owl:ObjectProperty ;
+    rdfs:domain ptox:Gene ;
+    rdfs:range ptox:CellType ;
+    rdfs:label "expressed in" ;
+    rdfs:comment "Indicates that a gene is expressed in a particular cell type." .
+
+ptox:pathwayInvolvedInDisease rdf:type owl:ObjectProperty ;
+    rdfs:domain ptox:Pathway ;
+    rdfs:range ptox:Disease ;
+    rdfs:label "involved in disease" ;
+    rdfs:comment "Indicates that a pathway is implicated in a disease process." .
+
+ptox:drugTestedInAssay rdf:type owl:ObjectProperty ;
+    rdfs:domain ptox:Drug ;
+    rdfs:range ptox:Assay ;
+    rdfs:label "tested in assay" ;
+    rdfs:comment "Indicates that a drug was tested in a toxicological assay." .
+
+ptox:assayTargetsGene rdf:type owl:ObjectProperty ;
+    rdfs:domain ptox:Assay ;
+    rdfs:range ptox:Gene ;
+    rdfs:label "targets gene" ;
+    rdfs:comment "Indicates the gene target of an assay." .

@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.org/pharmatox#"
+     xml:base="http://example.org/pharmatox"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ptox="http://example.org/pharmatox#">
+
+    <owl:Ontology rdf:about="http://example.org/pharmatox">
+        <rdfs:label>PharmaTox Example Ontology</rdfs:label>
+        <rdfs:comment>A synthetic biomedical ontology for demonstrating ISTA knowledge graph building capabilities. This is a toy example using synthetic data for testing and demonstration purposes only.</rdfs:comment>
+        <owl:versionInfo>1.0.0</owl:versionInfo>
+    </owl:Ontology>
+
+    <!-- ========================== -->
+    <!-- Classes                    -->
+    <!-- ========================== -->
+
+    <owl:Class rdf:about="http://example.org/pharmatox#Drug">
+        <rdfs:label>Drug</rdfs:label>
+        <rdfs:comment>A pharmaceutical compound used for therapeutic purposes.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.org/pharmatox#Gene">
+        <rdfs:label>Gene</rdfs:label>
+        <rdfs:comment>A human gene encoding a protein or functional RNA.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.org/pharmatox#Disease">
+        <rdfs:label>Disease</rdfs:label>
+        <rdfs:comment>A medical condition or disorder.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.org/pharmatox#Pathway">
+        <rdfs:label>Pathway</rdfs:label>
+        <rdfs:comment>A biological or metabolic pathway.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.org/pharmatox#AdverseEvent">
+        <rdfs:label>Adverse Event</rdfs:label>
+        <rdfs:comment>An undesired side effect of drug treatment.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.org/pharmatox#DrugClass">
+        <rdfs:label>Drug Class</rdfs:label>
+        <rdfs:comment>A pharmacological classification of drugs.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.org/pharmatox#CellType">
+        <rdfs:label>Cell Type</rdfs:label>
+        <rdfs:comment>A type of cell in which genes may be expressed.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.org/pharmatox#Assay">
+        <rdfs:label>Assay</rdfs:label>
+        <rdfs:comment>A toxicological or pharmacological assay.</rdfs:comment>
+    </owl:Class>
+
+    <!-- ========================== -->
+    <!-- Data Properties            -->
+    <!-- ========================== -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/pharmatox#commonName">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>common name</rdfs:label>
+        <rdfs:comment>Human-readable name for the entity.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://example.org/pharmatox#xrefDrugbank">
+        <rdfs:domain rdf:resource="http://example.org/pharmatox#Drug"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>DrugBank ID</rdfs:label>
+        <rdfs:comment>DrugBank database identifier (e.g., DB00001).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://example.org/pharmatox#xrefCasRN">
+        <rdfs:domain rdf:resource="http://example.org/pharmatox#Drug"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>CAS Registry Number</rdfs:label>
+        <rdfs:comment>Chemical Abstracts Service registry number.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://example.org/pharmatox#xrefPubchemCID">
+        <rdfs:domain rdf:resource="http://example.org/pharmatox#Drug"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>PubChem CID</rdfs:label>
+        <rdfs:comment>PubChem Compound identifier.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://example.org/pharmatox#xrefNcbiGene">
+        <rdfs:domain rdf:resource="http://example.org/pharmatox#Gene"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label>NCBI Gene ID</rdfs:label>
+        <rdfs:comment>NCBI Gene database identifier.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://example.org/pharmatox#geneSymbol">
+        <rdfs:domain rdf:resource="http://example.org/pharmatox#Gene"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>gene symbol</rdfs:label>
+        <rdfs:comment>Official gene symbol (e.g., EGFR, TP53).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://example.org/pharmatox#xrefUmlsCUI">
+        <rdfs:domain rdf:resource="http://example.org/pharmatox#Disease"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>UMLS CUI</rdfs:label>
+        <rdfs:comment>Unified Medical Language System Concept Unique Identifier.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://example.org/pharmatox#xrefMeSH">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>MeSH ID</rdfs:label>
+        <rdfs:comment>Medical Subject Headings descriptor identifier.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://example.org/pharmatox#xrefReactome">
+        <rdfs:domain rdf:resource="http://example.org/pharmatox#Pathway"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>Reactome ID</rdfs:label>
+        <rdfs:comment>Reactome pathway database identifier.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://example.org/pharmatox#xrefMeddra">
+        <rdfs:domain rdf:resource="http://example.org/pharmatox#AdverseEvent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>MedDRA ID</rdfs:label>
+        <rdfs:comment>Medical Dictionary for Regulatory Activities preferred term identifier.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://example.org/pharmatox#severity">
+        <rdfs:domain rdf:resource="http://example.org/pharmatox#AdverseEvent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>severity</rdfs:label>
+        <rdfs:comment>Severity level of the adverse event (mild, moderate, severe).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://example.org/pharmatox#xrefCL">
+        <rdfs:domain rdf:resource="http://example.org/pharmatox#CellType"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>Cell Ontology ID</rdfs:label>
+        <rdfs:comment>Cell Ontology identifier.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://example.org/pharmatox#ld50Value">
+        <rdfs:domain rdf:resource="http://example.org/pharmatox#Drug"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label>LD50 value</rdfs:label>
+        <rdfs:comment>Lethal dose 50% value (median lethal dose).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://example.org/pharmatox#ld50Units">
+        <rdfs:domain rdf:resource="http://example.org/pharmatox#Drug"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>LD50 units</rdfs:label>
+        <rdfs:comment>Units for LD50 measurement (e.g., mg/kg).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://example.org/pharmatox#assayResult">
+        <rdfs:domain rdf:resource="http://example.org/pharmatox#Assay"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>assay result</rdfs:label>
+        <rdfs:comment>Result of the assay (Active/Inactive).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- ========================== -->
+    <!-- Object Properties          -->
+    <!-- ========================== -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/pharmatox#drugTreatsDisease">
+        <rdfs:domain rdf:resource="http://example.org/pharmatox#Drug"/>
+        <rdfs:range rdf:resource="http://example.org/pharmatox#Disease"/>
+        <rdfs:label>treats</rdfs:label>
+        <rdfs:comment>Indicates that a drug has a therapeutic indication for a disease.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://example.org/pharmatox#drugCausesAdverseEvent">
+        <rdfs:domain rdf:resource="http://example.org/pharmatox#Drug"/>
+        <rdfs:range rdf:resource="http://example.org/pharmatox#AdverseEvent"/>
+        <rdfs:label>causes adverse event</rdfs:label>
+        <rdfs:comment>Indicates that a drug can cause a particular side effect.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://example.org/pharmatox#drugInClass">
+        <rdfs:domain rdf:resource="http://example.org/pharmatox#Drug"/>
+        <rdfs:range rdf:resource="http://example.org/pharmatox#DrugClass"/>
+        <rdfs:label>in drug class</rdfs:label>
+        <rdfs:comment>Indicates the pharmacological class of a drug.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://example.org/pharmatox#drugTargetsGene">
+        <rdfs:domain rdf:resource="http://example.org/pharmatox#Drug"/>
+        <rdfs:range rdf:resource="http://example.org/pharmatox#Gene"/>
+        <rdfs:label>targets gene</rdfs:label>
+        <rdfs:comment>Indicates that a drug targets or interacts with a gene product.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://example.org/pharmatox#geneAssociatesWithDisease">
+        <rdfs:domain rdf:resource="http://example.org/pharmatox#Gene"/>
+        <rdfs:range rdf:resource="http://example.org/pharmatox#Disease"/>
+        <rdfs:label>associates with disease</rdfs:label>
+        <rdfs:comment>Indicates a gene-disease association from genetic studies.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://example.org/pharmatox#geneInPathway">
+        <rdfs:domain rdf:resource="http://example.org/pharmatox#Gene"/>
+        <rdfs:range rdf:resource="http://example.org/pharmatox#Pathway"/>
+        <rdfs:label>in pathway</rdfs:label>
+        <rdfs:comment>Indicates that a gene participates in a biological pathway.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://example.org/pharmatox#geneExpressedInCellType">
+        <rdfs:domain rdf:resource="http://example.org/pharmatox#Gene"/>
+        <rdfs:range rdf:resource="http://example.org/pharmatox#CellType"/>
+        <rdfs:label>expressed in</rdfs:label>
+        <rdfs:comment>Indicates that a gene is expressed in a particular cell type.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://example.org/pharmatox#pathwayInvolvedInDisease">
+        <rdfs:domain rdf:resource="http://example.org/pharmatox#Pathway"/>
+        <rdfs:range rdf:resource="http://example.org/pharmatox#Disease"/>
+        <rdfs:label>involved in disease</rdfs:label>
+        <rdfs:comment>Indicates that a pathway is implicated in a disease process.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://example.org/pharmatox#drugTestedInAssay">
+        <rdfs:domain rdf:resource="http://example.org/pharmatox#Drug"/>
+        <rdfs:range rdf:resource="http://example.org/pharmatox#Assay"/>
+        <rdfs:label>tested in assay</rdfs:label>
+        <rdfs:comment>Indicates that a drug was tested in a toxicological assay.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://example.org/pharmatox#assayTargetsGene">
+        <rdfs:domain rdf:resource="http://example.org/pharmatox#Assay"/>
+        <rdfs:range rdf:resource="http://example.org/pharmatox#Gene"/>
+        <rdfs:label>targets gene</rdfs:label>
+        <rdfs:comment>Indicates the gene target of an assay.</rdfs:comment>
+    </owl:ObjectProperty>
+
+</rdf:RDF>

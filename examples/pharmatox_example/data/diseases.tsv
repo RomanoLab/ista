@@ -1,0 +1,9 @@
+umls_cui	mesh_id	common_name	disease_category
+C0007107	D002318	Cardiovascular Disease	cardiovascular
+C0027051	D009203	Myocardial Infarction	cardiovascular
+C0006826	D009369	Neoplasms	cancer
+C0024623	D005767	Gastrointestinal Diseases	digestive
+C0011849	D003920	Diabetes Mellitus	metabolic
+C0020538	D006973	Hypertension	cardiovascular
+C0002395	D000544	Alzheimer Disease	neurological
+C0030567	D010300	Parkinson Disease	neurological

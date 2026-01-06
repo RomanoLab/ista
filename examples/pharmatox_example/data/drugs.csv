@@ -1,0 +1,11 @@
+drugbank_id,common_name,cas_number,pubchem_cid,drug_class
+DB00001,Lepirudin,138068-37-8,16129681,Anticoagulant
+DB00002,Cetuximab,205923-56-4,,Antineoplastic
+DB00006,Bivalirudin,128270-60-0,16129704,Anticoagulant
+DB00014,Goserelin,65807-02-5,5311128,Antineoplastic
+DB00035,Desmopressin,16679-58-6,16051930,Antidiuretic
+DB00050,Cetrorelix,120287-85-6,16129749,Hormone Antagonist
+DB00091,Cyclosporine,59865-13-3,5284373,Immunosuppressant
+DB00104,Octreotide,83150-76-9,383414,Hormone Analog
+DB00115,Cyanocobalamin,68-19-9,44176380,Vitamin
+DB00129,Ornithine,70-26-8,6262,Amino Acid
