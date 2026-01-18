@@ -1,0 +1,78 @@
+# Build and deploy ista documentation to romanolab.org/software/ista
+#
+# This workflow builds the Sphinx documentation and triggers a deployment
+# to the romanolab.org repository, which hosts the docs at:
+# https://romanolab.org/software/ista
+#
+# Required secrets:
+#   DOCS_DEPLOY_TOKEN: A Personal Access Token with 'repo' scope for
+#                      triggering workflows in the romanolab.org repo
+
+name: Build Documentation
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "docs/**"
+      - "ista/**"
+      - "lib/**"
+      - ".github/workflows/build-docs.yml"
+  pull_request:
+    branches:
+      - master
+    paths:
+      - "docs/**"
+      - "ista/**"
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout ista repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Full history for versioning
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y doxygen graphviz
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install sphinx furo numpydoc breathe myst-parser
+          pip install -e .
+
+      - name: Build documentation (Doxygen + Sphinx)
+        working-directory: docs
+        run: |
+          # The Makefile's html target runs doxygen first, then sphinx
+          make html SPHINXOPTS="-W --keep-going" || make html
+          # Second attempt without -W if warnings cause failure
+
+      - name: Upload documentation artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ista-docs
+          path: docs/build/html
+          retention-days: 7
+
+      # Only deploy on push to master (not on PRs)
+      - name: Trigger deployment to romanolab.org
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.DOCS_DEPLOY_TOKEN }}
+          repository: romanolab/romanolab.org
+          event-type: deploy-ista-docs
+          client-payload: '{"sha": "${{ github.sha }}", "ref": "${{ github.ref }}"}'

@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1loader_1_1YamlParseException" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::loader::YamlParseException</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::runtime_error</basecompoundref>
+    <includes refid="yaml__parser_8hpp" local="no">yaml_parser.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classista_1_1owl2_1_1loader_1_1YamlParseException_1aec3f7777b8a1099f098b0ebff55155d2" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t ista::owl2::loader::YamlParseException::line_</definition>
+        <argsstring></argsstring>
+        <name>line_</name>
+        <qualifiedname>ista::owl2::loader::YamlParseException::line_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" line="28" column="12" bodyfile="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1YamlParseException_1aa95edb3eee896937d39bb72b52212648" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::loader::YamlParseException::YamlParseException</definition>
+        <argsstring>(const std::string &amp;message, size_t line=0)</argsstring>
+        <name>YamlParseException</name>
+        <qualifiedname>ista::owl2::loader::YamlParseException::YamlParseException</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>line</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" line="20" column="5" bodyfile="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" bodystart="20" bodyend="23"/>
+        <references refid="classista_1_1owl2_1_1loader_1_1YamlParseException_1a6776df20a466133795d10ddc94e3c218" compoundref="yaml__parser_8hpp" startline="25" endline="25">line</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1YamlParseException_1a6776df20a466133795d10ddc94e3c218" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t ista::owl2::loader::YamlParseException::line</definition>
+        <argsstring>() const</argsstring>
+        <name>line</name>
+        <qualifiedname>ista::owl2::loader::YamlParseException::line</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" line="25" column="12" bodyfile="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" bodystart="25" bodyend="25"/>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1YamlParseException_1aa95edb3eee896937d39bb72b52212648" compoundref="yaml__parser_8hpp" startline="20" endline="23">YamlParseException</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Exception thrown when YAML parsing fails. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>ista::owl2::loader::YamlParseException</label>
+        <link refid="classista_1_1owl2_1_1loader_1_1YamlParseException"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::runtime_error</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>ista::owl2::loader::YamlParseException</label>
+        <link refid="classista_1_1owl2_1_1loader_1_1YamlParseException"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::runtime_error</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" line="18" column="1" bodyfile="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" bodystart="18" bodyend="29"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1loader_1_1YamlParseException_1a6776df20a466133795d10ddc94e3c218" prot="public" virt="non-virtual"><scope>ista::owl2::loader::YamlParseException</scope><name>line</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1YamlParseException_1aec3f7777b8a1099f098b0ebff55155d2" prot="private" virt="non-virtual"><scope>ista::owl2::loader::YamlParseException</scope><name>line_</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1YamlParseException_1aa95edb3eee896937d39bb72b52212648" prot="public" virt="non-virtual"><scope>ista::owl2::loader::YamlParseException</scope><name>YamlParseException</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="structista_1_1owl2_1_1loader_1_1TransformDef" kind="struct" language="C++" prot="public">
+    <compoundname>ista::owl2::loader::TransformDef</compoundname>
+    <includes refid="transform__engine_8hpp" local="no">transform_engine.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1TransformDef_1a6cba2859dafaf9691d2c7113e1732345" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::TransformDef::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>ista::owl2::loader::TransformDef::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/transform_engine.hpp" line="33" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/transform_engine.hpp" bodystart="33" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1TransformEngine_1a742d36df206f64b5338a1868d80c647b" compoundref="transform__engine_8cpp" startline="222" endline="245">ista::owl2::loader::TransformEngine::apply_def</referencedby>
+        <referencedby refid="structista_1_1owl2_1_1loader_1_1TransformDef_1a7f35637d92825a62645022a81e428077" compoundref="transform__engine_8hpp" startline="39" endline="39">TransformDef</referencedby>
+        <referencedby refid="structista_1_1owl2_1_1loader_1_1TransformDef_1ab08f2bb331c9193facd0391179870c8b" compoundref="transform__engine_8hpp" startline="40" endline="41">TransformDef</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1TransformDef_1a64dc1251aea46da0625263c414477d90" prot="public" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::string &gt;</type>
+        <definition>std::map&lt;std::string, std::string&gt; ista::owl2::loader::TransformDef::params</definition>
+        <argsstring></argsstring>
+        <name>params</name>
+        <qualifiedname>ista::owl2::loader::TransformDef::params</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/transform_engine.hpp" line="35" column="14" bodyfile="D:/projects/ista/lib/owl2/loader/transform_engine.hpp" bodystart="35" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1TransformEngine_1a742d36df206f64b5338a1868d80c647b" compoundref="transform__engine_8cpp" startline="222" endline="245">ista::owl2::loader::TransformEngine::apply_def</referencedby>
+        <referencedby refid="structista_1_1owl2_1_1loader_1_1TransformDef_1ab08f2bb331c9193facd0391179870c8b" compoundref="transform__engine_8hpp" startline="40" endline="41">TransformDef</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1TransformDef_1a212e98df56f5160c6350f8ce0da7f4ce" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structista_1_1owl2_1_1loader_1_1TransformDef_1a4c1ba354cf8a3169ff0ca5a0daae7811" kindref="member">TransformDef</ref> &gt;</type>
+        <definition>std::vector&lt;TransformDef&gt; ista::owl2::loader::TransformDef::steps</definition>
+        <argsstring></argsstring>
+        <name>steps</name>
+        <qualifiedname>ista::owl2::loader::TransformDef::steps</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/transform_engine.hpp" line="36" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/transform_engine.hpp" bodystart="36" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1TransformEngine_1a742d36df206f64b5338a1868d80c647b" compoundref="transform__engine_8cpp" startline="222" endline="245">ista::owl2::loader::TransformEngine::apply_def</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structista_1_1owl2_1_1loader_1_1TransformDef_1a4c1ba354cf8a3169ff0ca5a0daae7811" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::loader::TransformDef::TransformDef</definition>
+        <argsstring>()=default</argsstring>
+        <name>TransformDef</name>
+        <qualifiedname>ista::owl2::loader::TransformDef::TransformDef</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/transform_engine.hpp" line="38" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="structista_1_1owl2_1_1loader_1_1TransformDef_1a7f35637d92825a62645022a81e428077" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::loader::TransformDef::TransformDef</definition>
+        <argsstring>(const std::string &amp;t)</argsstring>
+        <name>TransformDef</name>
+        <qualifiedname>ista::owl2::loader::TransformDef::TransformDef</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/transform_engine.hpp" line="39" column="5" bodyfile="D:/projects/ista/lib/owl2/loader/transform_engine.hpp" bodystart="39" bodyend="39"/>
+        <references refid="structista_1_1owl2_1_1loader_1_1TransformDef_1a6cba2859dafaf9691d2c7113e1732345" compoundref="transform__engine_8hpp" startline="33">type</references>
+      </memberdef>
+      <memberdef kind="function" id="structista_1_1owl2_1_1loader_1_1TransformDef_1ab08f2bb331c9193facd0391179870c8b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::loader::TransformDef::TransformDef</definition>
+        <argsstring>(const std::string &amp;t, const std::map&lt; std::string, std::string &gt; &amp;p)</argsstring>
+        <name>TransformDef</name>
+        <qualifiedname>ista::owl2::loader::TransformDef::TransformDef</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type>const std::map&lt; std::string, std::string &gt; &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/transform_engine.hpp" line="40" column="5" bodyfile="D:/projects/ista/lib/owl2/loader/transform_engine.hpp" bodystart="40" bodyend="41"/>
+        <references refid="structista_1_1owl2_1_1loader_1_1TransformDef_1a64dc1251aea46da0625263c414477d90" compoundref="transform__engine_8hpp" startline="35">params</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1TransformDef_1a6cba2859dafaf9691d2c7113e1732345" compoundref="transform__engine_8hpp" startline="33">type</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Definition of a transform that can be applied to values. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Transforms can be:<itemizedlist>
+<listitem><para>Simple built-in transforms (split, prefix, lowercase, etc.)</para>
+</listitem><listitem><para>Parameterized transforms (split with delimiter and index)</para>
+</listitem><listitem><para>Chained transforms (apply multiple transforms in sequence) </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/loader/transform_engine.hpp" line="32" column="1" bodyfile="D:/projects/ista/lib/owl2/loader/transform_engine.hpp" bodystart="32" bodyend="42"/>
+    <listofallmembers>
+      <member refid="structista_1_1owl2_1_1loader_1_1TransformDef_1a64dc1251aea46da0625263c414477d90" prot="public" virt="non-virtual"><scope>ista::owl2::loader::TransformDef</scope><name>params</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1TransformDef_1a212e98df56f5160c6350f8ce0da7f4ce" prot="public" virt="non-virtual"><scope>ista::owl2::loader::TransformDef</scope><name>steps</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1TransformDef_1a4c1ba354cf8a3169ff0ca5a0daae7811" prot="public" virt="non-virtual"><scope>ista::owl2::loader::TransformDef</scope><name>TransformDef</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1TransformDef_1a7f35637d92825a62645022a81e428077" prot="public" virt="non-virtual"><scope>ista::owl2::loader::TransformDef</scope><name>TransformDef</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1TransformDef_1ab08f2bb331c9193facd0391179870c8b" prot="public" virt="non-virtual"><scope>ista::owl2::loader::TransformDef</scope><name>TransformDef</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1TransformDef_1a6cba2859dafaf9691d2c7113e1732345" prot="public" virt="non-virtual"><scope>ista::owl2::loader::TransformDef</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

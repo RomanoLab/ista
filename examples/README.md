@@ -40,32 +40,55 @@ New users should start with these examples in order:
 ## Specialized Examples
 
 ### DrugBank Integration
+
 See `drugbank_examples/` for scripts to integrate DrugBank drug data:
 - Drug-disease indications
 - Drug-drug interactions
 - Adverse events
 - Contraindications
 
-See `drugbank_examples/README.md` and `DRUGBANK_INTEGRATION_README.md` for details.
+**Key scripts:**
+- `add_drug_relationships.py` - Consolidated script for all relationship types
+- `filter_drug_mappings.py` - Filter mappings to entities in your ontology
 
-### Memgraph Integration
-See `memgraph_examples/` for graph database integration:
-- Loading ontologies into Memgraph
-- Querying with Cypher
+See `drugbank_examples/README.md` for details.
 
-See `memgraph_examples/MEMGRAPH_QUICK_START.md` for details.
+### Memgraph Graph Database Integration
 
-## Complete Workflows
+See `memgraph_examples/` for loading ontologies into Memgraph:
+- **memgraph_integration_example.py** - Build and load an ontology via the OWL2 API
+- **load_neurokb_to_memgraph.py** - Example loading NeuroKB RDF file
 
-- **COMPLETE_WORKFLOW.md** - Step-by-step guide for building complete knowledge graphs from multiple data sources
-- **QUICK_START.md** - Quick reference for common tasks
+**CLI Tool:** Use `owl2memgraph` to load any OWL2 ontology into Memgraph:
+```bash
+# Install
+pip install -e .[neo4j]
+
+# Load an ontology (auto-detects format from extension)
+owl2memgraph -i ontology.rdf
+owl2memgraph -i ontology.ttl
+owl2memgraph -i ontology.ofn
+
+# With options
+owl2memgraph -i ontology.rdf --uri bolt://localhost:7687 --batch-size 2000
+```
+
+Supported formats: RDF/XML (.rdf, .owl), Turtle (.ttl), Functional Syntax (.ofn), Manchester (.omn), OWL/XML (.owx)
+
+## Knowledge Graph Projects
+
+### pharmatox_example/
+Synthetic biomedical example demonstrating the complete data loading workflow with YAML mapping specifications.
+
+### kg_projects/
+Real knowledge graph projects:
+- **neurokb/** - Neuroscience knowledge base with drug, gene, disease, and pathway data
+- **alzkb/** - Alzheimer's disease knowledge base
 
 ## Data Directories
 
 - **csv_data/** - Sample CSV data for population examples
 - **flatfile_data/** - Sample flat files for data import
-- **kg_projects/** - Knowledge graph projects (e.g., NeuroKB)
-  - `neurokb/` - Neuroscience knowledge base example
 
 ## Test Scripts
 
@@ -82,33 +105,30 @@ See `tests/` for validation scripts:
 ```
 examples/
 ├── README.md                           # This file
-├── QUICK_START.md                      # Quick reference guide
-├── COMPLETE_WORKFLOW.md                # Complete workflow guide
-├── DRUGBANK_INTEGRATION_README.md      # DrugBank integration details
 │
 ├── Core examples (*.py)                # Main example scripts
 │
 ├── drugbank_examples/                  # DrugBank integration
 │   ├── README.md
 │   ├── add_drug_relationships.py       # Consolidated drug data script
-│   ├── filter_drug_mappings.py         # Filter mappings by ontology
-│   ├── check_severity_levels.py
-│   └── *.csv                           # Drug mapping data files
+│   └── filter_drug_mappings.py         # Filter mappings by ontology
 │
 ├── memgraph_examples/                  # Graph database integration
-│   ├── MEMGRAPH_QUICK_START.md
-│   ├── MEMGRAPH_LOADING_README.md
-│   ├── load_neurokb_to_memgraph.py
-│   └── memgraph_integration_example.py
+│   ├── load_neurokb_to_memgraph.py     # NeuroKB loading example
+│   └── memgraph_integration_example.py # OWL2 API integration example
+│
+├── pharmatox_example/                  # Synthetic biomedical example
+│   ├── README.md
+│   └── config/                         # YAML mapping specifications
+│
+├── kg_projects/                        # Knowledge graph projects
+│   ├── neurokb/                        # Neuroscience KB
+│   └── alzkb/                          # Alzheimer's KB
 │
 ├── tests/                              # Test scripts
-│   ├── test_turtle_roundtrip.py
-│   └── test_turtle_serializer.py
 │
 ├── csv_data/                           # Sample CSV data
 ├── flatfile_data/                      # Sample flat files
-├── kg_projects/                        # Knowledge graph projects
-│   └── neurokb/
 │
 └── archived_scripts/                   # Legacy scripts (reference only)
 ```

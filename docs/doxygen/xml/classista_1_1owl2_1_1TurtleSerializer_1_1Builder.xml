@@ -1,0 +1,1063 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder" kind="class" language="C++" prot="private">
+    <compoundname>ista::owl2::TurtleSerializer::Builder</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a3a5a174a6dfe66d49c4703a7fa56e596" prot="private" static="no" mutable="no">
+        <type>const <ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+        <definition>const Ontology&amp; ista::owl2::TurtleSerializer::Builder::ontology_</definition>
+        <argsstring></argsstring>
+        <name>ontology_</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::ontology_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="93" column="24" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a9696be457dc3999a410ea7f40e0fb0f2" prot="private" static="no" mutable="no">
+        <type>std::ostringstream</type>
+        <definition>std::ostringstream ista::owl2::TurtleSerializer::Builder::ttl_</definition>
+        <argsstring></argsstring>
+        <name>ttl_</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::ttl_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="94" column="28" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a899c89aee9ae9956aebc62e542dafe68" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::string &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::string&gt; ista::owl2::TurtleSerializer::Builder::namespaces_</definition>
+        <argsstring></argsstring>
+        <name>namespaces_</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::namespaces_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="95" column="28" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1ad6dd25f7f38650f57d18dd3c0f390184" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::string &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::string&gt; ista::owl2::TurtleSerializer::Builder::prefixes_</definition>
+        <argsstring></argsstring>
+        <name>prefixes_</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::prefixes_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="96" column="28" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a2b239d4b6b1b7cef0fd19908eeb6f307" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ista::owl2::TurtleSerializer::Builder::blank_node_counter_</definition>
+        <argsstring></argsstring>
+        <name>blank_node_counter_</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::blank_node_counter_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="97" column="13" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1aeb67c5c9232f9bbda6777b6b4eaa9271" prot="private" static="no" mutable="no">
+        <type>std::set&lt; std::string &gt;</type>
+        <definition>std::set&lt;std::string&gt; ista::owl2::TurtleSerializer::Builder::written_subjects_</definition>
+        <argsstring></argsstring>
+        <name>written_subjects_</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::written_subjects_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="98" column="18" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" bodystart="98" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1afdc517f061e442d4098acc54f0a38c29" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::TurtleSerializer::Builder::Builder</definition>
+        <argsstring>(const Ontology &amp;ontology)</argsstring>
+        <name>Builder</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::Builder</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="87" column="18" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="45" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a792972733ae64eb9cbfdc994dacdb36f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::TurtleSerializer::Builder::Builder</definition>
+        <argsstring>(const Ontology &amp;ontology, const std::map&lt; std::string, std::string &gt; &amp;custom_prefixes)</argsstring>
+        <name>Builder</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::Builder</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <param>
+          <type>const std::map&lt; std::string, std::string &gt; &amp;</type>
+          <declname>custom_prefixes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="88" column="9" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="52" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a503b21eea432494cb98e1dd611e72a61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::TurtleSerializer::Builder::build</definition>
+        <argsstring>()</argsstring>
+        <name>build</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::build</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="90" column="21" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="65" bodyend="70"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1ac8e740530863e65980fab332a5aac6a6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writePrefixes</definition>
+        <argsstring>()</argsstring>
+        <name>writePrefixes</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writePrefixes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="101" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="72" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1ac70bd4be036389721fe992c8c1946dc5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeOntologyHeader</definition>
+        <argsstring>()</argsstring>
+        <name>writeOntologyHeader</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeOntologyHeader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="102" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="94" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1af504047cd1af1f46b1a468dd9f1bbe7c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeAxioms</definition>
+        <argsstring>()</argsstring>
+        <name>writeAxioms</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeAxioms</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="103" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="127" bodyend="181"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1ad130e55c211a306dbc7ff1be33f492d0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeDeclaration</definition>
+        <argsstring>(const std::shared_ptr&lt; Declaration &gt; &amp;axiom)</argsstring>
+        <name>writeDeclaration</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeDeclaration</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1Declaration" kindref="compound">Declaration</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="106" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="187" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a3df8af4d25330431d24ca052f4532b16" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeSubClassOf</definition>
+        <argsstring>(const std::shared_ptr&lt; SubClassOf &gt; &amp;axiom)</argsstring>
+        <name>writeSubClassOf</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeSubClassOf</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1SubClassOf" kindref="compound">SubClassOf</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="107" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="257" bodyend="263"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a4d587a9f318c8cec91eb685b5da7019f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeEquivalentClasses</definition>
+        <argsstring>(const std::shared_ptr&lt; EquivalentClasses &gt; &amp;axiom)</argsstring>
+        <name>writeEquivalentClasses</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeEquivalentClasses</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1EquivalentClasses" kindref="compound">EquivalentClasses</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="108" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1ac14091766d2b992ef84363e0698ea1b8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeDisjointClasses</definition>
+        <argsstring>(const std::shared_ptr&lt; DisjointClasses &gt; &amp;axiom)</argsstring>
+        <name>writeDisjointClasses</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeDisjointClasses</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1DisjointClasses" kindref="compound">DisjointClasses</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="109" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a5785337d389c2d66dbb705d68fc60588" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeClassAssertion</definition>
+        <argsstring>(const std::shared_ptr&lt; ClassAssertion &gt; &amp;axiom)</argsstring>
+        <name>writeClassAssertion</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeClassAssertion</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1ClassAssertion" kindref="compound">ClassAssertion</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="110" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="217" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a258a64f32390f9806176c9928523e2ff" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeObjectPropertyAssertion</definition>
+        <argsstring>(const std::shared_ptr&lt; ObjectPropertyAssertion &gt; &amp;axiom)</argsstring>
+        <name>writeObjectPropertyAssertion</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeObjectPropertyAssertion</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1ObjectPropertyAssertion" kindref="compound">ObjectPropertyAssertion</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="111" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="225" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a5a75196d534c80285cc289c922ebafd9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeDataPropertyAssertion</definition>
+        <argsstring>(const std::shared_ptr&lt; DataPropertyAssertion &gt; &amp;axiom)</argsstring>
+        <name>writeDataPropertyAssertion</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeDataPropertyAssertion</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1DataPropertyAssertion" kindref="compound">DataPropertyAssertion</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="112" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="243" bodyend="255"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1aecfa10978305563a80d0b6777c69cdaf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeNegativeObjectPropertyAssertion</definition>
+        <argsstring>(const std::shared_ptr&lt; NegativeObjectPropertyAssertion &gt; &amp;axiom)</argsstring>
+        <name>writeNegativeObjectPropertyAssertion</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeNegativeObjectPropertyAssertion</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1NegativeObjectPropertyAssertion" kindref="compound">NegativeObjectPropertyAssertion</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="113" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a9f24c493798086ae2cae8db1e83cd453" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeNegativeDataPropertyAssertion</definition>
+        <argsstring>(const std::shared_ptr&lt; NegativeDataPropertyAssertion &gt; &amp;axiom)</argsstring>
+        <name>writeNegativeDataPropertyAssertion</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeNegativeDataPropertyAssertion</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1NegativeDataPropertyAssertion" kindref="compound">NegativeDataPropertyAssertion</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="114" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a2d39665b9ce6bd3c5e9a9f4ff5ddb336" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeSubObjectPropertyOf</definition>
+        <argsstring>(const std::shared_ptr&lt; SubObjectPropertyOf &gt; &amp;axiom)</argsstring>
+        <name>writeSubObjectPropertyOf</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeSubObjectPropertyOf</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1SubObjectPropertyOf" kindref="compound">SubObjectPropertyOf</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="115" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="297" bodyend="311"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1aabb1778eb4b23b6e0892d769553a200e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeSubDataPropertyOf</definition>
+        <argsstring>(const std::shared_ptr&lt; SubDataPropertyOf &gt; &amp;axiom)</argsstring>
+        <name>writeSubDataPropertyOf</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeSubDataPropertyOf</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1SubDataPropertyOf" kindref="compound">SubDataPropertyOf</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="116" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="313" bodyend="319"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a00633787970a4b3afb51e3b3c7c88c93" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeObjectPropertyDomain</definition>
+        <argsstring>(const std::shared_ptr&lt; ObjectPropertyDomain &gt; &amp;axiom)</argsstring>
+        <name>writeObjectPropertyDomain</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeObjectPropertyDomain</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1ObjectPropertyDomain" kindref="compound">ObjectPropertyDomain</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="117" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="321" bodyend="331"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a58e5b36b6f6543f31920843b5f95d62b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeObjectPropertyRange</definition>
+        <argsstring>(const std::shared_ptr&lt; ObjectPropertyRange &gt; &amp;axiom)</argsstring>
+        <name>writeObjectPropertyRange</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeObjectPropertyRange</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1ObjectPropertyRange" kindref="compound">ObjectPropertyRange</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="118" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="333" bodyend="343"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1ac49020ebf99b75fb32abcdaf9016e710" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeDataPropertyDomain</definition>
+        <argsstring>(const std::shared_ptr&lt; DataPropertyDomain &gt; &amp;axiom)</argsstring>
+        <name>writeDataPropertyDomain</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeDataPropertyDomain</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1DataPropertyDomain" kindref="compound">DataPropertyDomain</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="119" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="345" bodyend="351"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1aa795cbe6476bedc67f23170fc469e248" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeDataPropertyRange</definition>
+        <argsstring>(const std::shared_ptr&lt; DataPropertyRange &gt; &amp;axiom)</argsstring>
+        <name>writeDataPropertyRange</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeDataPropertyRange</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1DataPropertyRange" kindref="compound">DataPropertyRange</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="120" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="353" bodyend="359"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a5e1c5207dce6ef916a932341e2085e49" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeFunctionalObjectProperty</definition>
+        <argsstring>(const std::shared_ptr&lt; FunctionalObjectProperty &gt; &amp;axiom)</argsstring>
+        <name>writeFunctionalObjectProperty</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeFunctionalObjectProperty</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1FunctionalObjectProperty" kindref="compound">FunctionalObjectProperty</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="121" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="361" bodyend="369"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a79261bc8b9c096dc467f492f5c33b041" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeFunctionalDataProperty</definition>
+        <argsstring>(const std::shared_ptr&lt; FunctionalDataProperty &gt; &amp;axiom)</argsstring>
+        <name>writeFunctionalDataProperty</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeFunctionalDataProperty</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1FunctionalDataProperty" kindref="compound">FunctionalDataProperty</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="122" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="371" bodyend="375"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a6070954f76e0afa29c424db058a25634" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeInverseFunctionalObjectProperty</definition>
+        <argsstring>(const std::shared_ptr&lt; InverseFunctionalObjectProperty &gt; &amp;axiom)</argsstring>
+        <name>writeInverseFunctionalObjectProperty</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeInverseFunctionalObjectProperty</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1InverseFunctionalObjectProperty" kindref="compound">InverseFunctionalObjectProperty</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="123" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a880e3d6b4dc3161088fa6d75bd0f4413" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeTransitiveObjectProperty</definition>
+        <argsstring>(const std::shared_ptr&lt; TransitiveObjectProperty &gt; &amp;axiom)</argsstring>
+        <name>writeTransitiveObjectProperty</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeTransitiveObjectProperty</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1TransitiveObjectProperty" kindref="compound">TransitiveObjectProperty</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="124" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="377" bodyend="385"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a0bc826593e6eba400ac47e2bb4a59ae1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeSymmetricObjectProperty</definition>
+        <argsstring>(const std::shared_ptr&lt; SymmetricObjectProperty &gt; &amp;axiom)</argsstring>
+        <name>writeSymmetricObjectProperty</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeSymmetricObjectProperty</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1SymmetricObjectProperty" kindref="compound">SymmetricObjectProperty</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="125" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a81b13c71cded1ff8015f5a3e1b724257" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeAsymmetricObjectProperty</definition>
+        <argsstring>(const std::shared_ptr&lt; AsymmetricObjectProperty &gt; &amp;axiom)</argsstring>
+        <name>writeAsymmetricObjectProperty</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeAsymmetricObjectProperty</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1AsymmetricObjectProperty" kindref="compound">AsymmetricObjectProperty</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="126" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a2a6cdd8644c6ff64ab5d45fc6c41ee15" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeReflexiveObjectProperty</definition>
+        <argsstring>(const std::shared_ptr&lt; ReflexiveObjectProperty &gt; &amp;axiom)</argsstring>
+        <name>writeReflexiveObjectProperty</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeReflexiveObjectProperty</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1ReflexiveObjectProperty" kindref="compound">ReflexiveObjectProperty</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="127" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a23d8af6706e1e401d1ca30b305828a29" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeIrreflexiveObjectProperty</definition>
+        <argsstring>(const std::shared_ptr&lt; IrreflexiveObjectProperty &gt; &amp;axiom)</argsstring>
+        <name>writeIrreflexiveObjectProperty</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeIrreflexiveObjectProperty</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1IrreflexiveObjectProperty" kindref="compound">IrreflexiveObjectProperty</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="128" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a2ca8324336cc1c1669d87a4ab4edc8b5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeInverseObjectProperties</definition>
+        <argsstring>(const std::shared_ptr&lt; InverseObjectProperties &gt; &amp;axiom)</argsstring>
+        <name>writeInverseObjectProperties</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeInverseObjectProperties</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1InverseObjectProperties" kindref="compound">InverseObjectProperties</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="129" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1af8bd3a3d88a10ccdb020be444543aafb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeEquivalentObjectProperties</definition>
+        <argsstring>(const std::shared_ptr&lt; EquivalentObjectProperties &gt; &amp;axiom)</argsstring>
+        <name>writeEquivalentObjectProperties</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeEquivalentObjectProperties</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1EquivalentObjectProperties" kindref="compound">EquivalentObjectProperties</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="130" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a826944ce63e7e5701e643cccd4021713" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeEquivalentDataProperties</definition>
+        <argsstring>(const std::shared_ptr&lt; EquivalentDataProperties &gt; &amp;axiom)</argsstring>
+        <name>writeEquivalentDataProperties</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeEquivalentDataProperties</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1EquivalentDataProperties" kindref="compound">EquivalentDataProperties</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="131" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1aaa15c8697f5187cb327365cc782ae822" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeDisjointObjectProperties</definition>
+        <argsstring>(const std::shared_ptr&lt; DisjointObjectProperties &gt; &amp;axiom)</argsstring>
+        <name>writeDisjointObjectProperties</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeDisjointObjectProperties</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1DisjointObjectProperties" kindref="compound">DisjointObjectProperties</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="132" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1afdcd734faf474cc6f8a54b70300426fa" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeDisjointDataProperties</definition>
+        <argsstring>(const std::shared_ptr&lt; DisjointDataProperties &gt; &amp;axiom)</argsstring>
+        <name>writeDisjointDataProperties</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeDisjointDataProperties</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1DisjointDataProperties" kindref="compound">DisjointDataProperties</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="133" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1aeb4718f4ffe29c0536cb6f5c7c79e870" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeAnnotationAssertion</definition>
+        <argsstring>(const std::shared_ptr&lt; AnnotationAssertion &gt; &amp;axiom)</argsstring>
+        <name>writeAnnotationAssertion</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeAnnotationAssertion</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1AnnotationAssertion" kindref="compound">AnnotationAssertion</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="134" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="265" bodyend="295"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1abaa24e9b6020565029d813c1e3ba73bf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeSubAnnotationPropertyOf</definition>
+        <argsstring>(const std::shared_ptr&lt; SubAnnotationPropertyOf &gt; &amp;axiom)</argsstring>
+        <name>writeSubAnnotationPropertyOf</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeSubAnnotationPropertyOf</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1SubAnnotationPropertyOf" kindref="compound">SubAnnotationPropertyOf</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="135" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1ad6cc4b55d2c6f565c4d5586a025ff3b4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeAnnotationPropertyDomain</definition>
+        <argsstring>(const std::shared_ptr&lt; AnnotationPropertyDomain &gt; &amp;axiom)</argsstring>
+        <name>writeAnnotationPropertyDomain</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeAnnotationPropertyDomain</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1AnnotationPropertyDomain" kindref="compound">AnnotationPropertyDomain</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="136" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a477e64fca50b994f8a2217f77dbb7531" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeAnnotationPropertyRange</definition>
+        <argsstring>(const std::shared_ptr&lt; AnnotationPropertyRange &gt; &amp;axiom)</argsstring>
+        <name>writeAnnotationPropertyRange</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeAnnotationPropertyRange</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1AnnotationPropertyRange" kindref="compound">AnnotationPropertyRange</ref> &gt; &amp;</type>
+          <declname>axiom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="137" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a6a9f76cd0a0f46b0b1b6235df4f9ef76" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::TurtleSerializer::Builder::formatIRI</definition>
+        <argsstring>(const IRI &amp;iri)</argsstring>
+        <name>formatIRI</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::formatIRI</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> &amp;</type>
+          <declname>iri</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="140" column="21" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="391" bodyend="416"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a4eda73789a9bf655a7c54d2d53fa1413" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::TurtleSerializer::Builder::formatLiteral</definition>
+        <argsstring>(const Literal &amp;literal)</argsstring>
+        <name>formatLiteral</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::formatLiteral</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1Literal" kindref="compound">Literal</ref> &amp;</type>
+          <declname>literal</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="141" column="21" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="418" bodyend="442"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1adb8e6e65c8731712197c008d756896f3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::TurtleSerializer::Builder::formatIndividual</definition>
+        <argsstring>(const Individual &amp;individual)</argsstring>
+        <name>formatIndividual</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::formatIndividual</qualifiedname>
+        <param>
+          <type>const <ref refid="namespaceista_1_1owl2_1a8327f2edd65d42a9498697dce8118d84" kindref="member">Individual</ref><ref refid="structIndividual" kindref="compound">Individual</ref> &amp;</type>
+          <declname>individual</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="142" column="21" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="444" bodyend="453"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a490150a8e95d5606dde38807f0c58762" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::TurtleSerializer::Builder::formatClassExpression</definition>
+        <argsstring>(const ClassExpressionPtr &amp;expr)</argsstring>
+        <name>formatClassExpression</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::formatClassExpression</qualifiedname>
+        <param>
+          <type>const <ref refid="namespaceista_1_1owl2_1a61b3005e8a7011a323fdc822a191da25" kindref="member">ClassExpressionPtr</ref> &amp;</type>
+          <declname>expr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="143" column="21" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="455" bodyend="470"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1ac64531f142f8da795416d8e45081b36c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::TurtleSerializer::Builder::formatDataRange</definition>
+        <argsstring>(const DataRangePtr &amp;range)</argsstring>
+        <name>formatDataRange</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::formatDataRange</qualifiedname>
+        <param>
+          <type>const <ref refid="namespaceista_1_1owl2_1a419553adf775765f8b59cfed39cca902" kindref="member">DataRangePtr</ref> &amp;</type>
+          <declname>range</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="144" column="21" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="472" bodyend="486"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1ad8bac19bcf693a64b818e3c1dff4673e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::registerStandardNamespaces</definition>
+        <argsstring>()</argsstring>
+        <name>registerStandardNamespaces</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::registerStandardNamespaces</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="147" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="492" bodyend="509"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1aa044ee678e12cdf8d781fc5e243998f8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::registerOntologyNamespaces</definition>
+        <argsstring>()</argsstring>
+        <name>registerOntologyNamespaces</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::registerOntologyNamespaces</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="148" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="511" bodyend="521"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1aaf807a34266b202d1fcce4b7cbb3c0b2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::detectNamespaces</definition>
+        <argsstring>()</argsstring>
+        <name>detectNamespaces</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::detectNamespaces</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="149" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="523" bodyend="548"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a833db87c3f5e7b5c671bdddf25200cd4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::TurtleSerializer::Builder::getBlankNodeID</definition>
+        <argsstring>()</argsstring>
+        <name>getBlankNodeID</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::getBlankNodeID</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="150" column="21" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="550" bodyend="552"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1aab410b451fee27448c3926f181523d0e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::TurtleSerializer::Builder::escapeTurtleString</definition>
+        <argsstring>(const std::string &amp;str)</argsstring>
+        <name>escapeTurtleString</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::escapeTurtleString</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="151" column="21" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="554" bodyend="567"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a27e65a53cfadfab05f2d14a9625c5ac6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::TurtleSerializer::Builder::needsQuotes</definition>
+        <argsstring>(const std::string &amp;str)</argsstring>
+        <name>needsQuotes</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::needsQuotes</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="152" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="569" bodyend="577"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1ad485f1807396f8cacc93194324e57579" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeTriple</definition>
+        <argsstring>(const std::string &amp;subject, const std::string &amp;predicate, const std::string &amp;object)</argsstring>
+        <name>writeTriple</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeTriple</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>subject</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>predicate</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>object</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="153" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="579" bodyend="583"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a342a5eb8529696e1365b801d8583cffe" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::TurtleSerializer::Builder::writeAnnotations</definition>
+        <argsstring>(const std::vector&lt; Annotation &gt; &amp;annotations, const std::string &amp;subject_iri)</argsstring>
+        <name>writeAnnotations</name>
+        <qualifiedname>ista::owl2::TurtleSerializer::Builder::writeAnnotations</qualifiedname>
+        <param>
+          <type>const std::vector&lt; <ref refid="classista_1_1owl2_1_1Annotation" kindref="compound">Annotation</ref> &gt; &amp;</type>
+          <declname>annotations</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>subject_iri</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="154" column="14" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.cpp" bodystart="585" bodyend="604"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Helper class for building Turtle output. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" line="85" column="5" bodyfile="D:/projects/ista/lib/owl2/serializer/turtle_serializer.hpp" bodystart="85" bodyend="155"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a2b239d4b6b1b7cef0fd19908eeb6f307" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>blank_node_counter_</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a503b21eea432494cb98e1dd611e72a61" prot="public" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>build</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1afdc517f061e442d4098acc54f0a38c29" prot="public" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>Builder</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a792972733ae64eb9cbfdc994dacdb36f" prot="public" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>Builder</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1aaf807a34266b202d1fcce4b7cbb3c0b2" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>detectNamespaces</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1aab410b451fee27448c3926f181523d0e" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>escapeTurtleString</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a490150a8e95d5606dde38807f0c58762" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>formatClassExpression</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1ac64531f142f8da795416d8e45081b36c" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>formatDataRange</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1adb8e6e65c8731712197c008d756896f3" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>formatIndividual</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a6a9f76cd0a0f46b0b1b6235df4f9ef76" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>formatIRI</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a4eda73789a9bf655a7c54d2d53fa1413" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>formatLiteral</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a833db87c3f5e7b5c671bdddf25200cd4" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>getBlankNodeID</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a899c89aee9ae9956aebc62e542dafe68" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>namespaces_</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a27e65a53cfadfab05f2d14a9625c5ac6" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>needsQuotes</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a3a5a174a6dfe66d49c4703a7fa56e596" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>ontology_</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1ad6dd25f7f38650f57d18dd3c0f390184" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>prefixes_</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1aa044ee678e12cdf8d781fc5e243998f8" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>registerOntologyNamespaces</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1ad8bac19bcf693a64b818e3c1dff4673e" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>registerStandardNamespaces</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a9696be457dc3999a410ea7f40e0fb0f2" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>ttl_</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1aeb4718f4ffe29c0536cb6f5c7c79e870" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeAnnotationAssertion</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1ad6cc4b55d2c6f565c4d5586a025ff3b4" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeAnnotationPropertyDomain</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a477e64fca50b994f8a2217f77dbb7531" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeAnnotationPropertyRange</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a342a5eb8529696e1365b801d8583cffe" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeAnnotations</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a81b13c71cded1ff8015f5a3e1b724257" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeAsymmetricObjectProperty</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1af504047cd1af1f46b1a468dd9f1bbe7c" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeAxioms</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a5785337d389c2d66dbb705d68fc60588" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeClassAssertion</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a5a75196d534c80285cc289c922ebafd9" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeDataPropertyAssertion</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1ac49020ebf99b75fb32abcdaf9016e710" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeDataPropertyDomain</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1aa795cbe6476bedc67f23170fc469e248" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeDataPropertyRange</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1ad130e55c211a306dbc7ff1be33f492d0" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeDeclaration</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1ac14091766d2b992ef84363e0698ea1b8" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeDisjointClasses</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1afdcd734faf474cc6f8a54b70300426fa" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeDisjointDataProperties</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1aaa15c8697f5187cb327365cc782ae822" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeDisjointObjectProperties</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a4d587a9f318c8cec91eb685b5da7019f" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeEquivalentClasses</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a826944ce63e7e5701e643cccd4021713" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeEquivalentDataProperties</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1af8bd3a3d88a10ccdb020be444543aafb" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeEquivalentObjectProperties</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a79261bc8b9c096dc467f492f5c33b041" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeFunctionalDataProperty</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a5e1c5207dce6ef916a932341e2085e49" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeFunctionalObjectProperty</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a6070954f76e0afa29c424db058a25634" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeInverseFunctionalObjectProperty</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a2ca8324336cc1c1669d87a4ab4edc8b5" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeInverseObjectProperties</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a23d8af6706e1e401d1ca30b305828a29" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeIrreflexiveObjectProperty</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a9f24c493798086ae2cae8db1e83cd453" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeNegativeDataPropertyAssertion</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1aecfa10978305563a80d0b6777c69cdaf" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeNegativeObjectPropertyAssertion</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a258a64f32390f9806176c9928523e2ff" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeObjectPropertyAssertion</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a00633787970a4b3afb51e3b3c7c88c93" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeObjectPropertyDomain</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a58e5b36b6f6543f31920843b5f95d62b" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeObjectPropertyRange</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1ac70bd4be036389721fe992c8c1946dc5" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeOntologyHeader</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1ac8e740530863e65980fab332a5aac6a6" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writePrefixes</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a2a6cdd8644c6ff64ab5d45fc6c41ee15" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeReflexiveObjectProperty</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1abaa24e9b6020565029d813c1e3ba73bf" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeSubAnnotationPropertyOf</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a3df8af4d25330431d24ca052f4532b16" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeSubClassOf</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1aabb1778eb4b23b6e0892d769553a200e" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeSubDataPropertyOf</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a2d39665b9ce6bd3c5e9a9f4ff5ddb336" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeSubObjectPropertyOf</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a0bc826593e6eba400ac47e2bb4a59ae1" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeSymmetricObjectProperty</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a880e3d6b4dc3161088fa6d75bd0f4413" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeTransitiveObjectProperty</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1ad485f1807396f8cacc93194324e57579" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>writeTriple</name></member>
+      <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1aeb67c5c9232f9bbda6777b6b4eaa9271" prot="private" virt="non-virtual"><scope>ista::owl2::TurtleSerializer::Builder</scope><name>written_subjects_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

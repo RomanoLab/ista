@@ -479,3 +479,55 @@ def load_ontology_to_memgraph(
     """
     with MemgraphLoader(uri, username, password) as loader:
         return loader.load_ontology(ontology, clear_existing=clear_existing)
+
+
+def load_rdf_to_memgraph(
+    rdf_file: str,
+    uri: str = "bolt://localhost:7687",
+    username: str = "",
+    password: str = "",
+    clear_existing: bool = True,
+    cleanup_labels: bool = True,
+) -> Dict[str, Any]:
+    """
+    Convenience function to load an RDF/XML file into Memgraph.
+
+    This function directly parses RDF/XML files and loads individuals,
+    data properties, and object properties into Memgraph.
+
+    Parameters
+    ----------
+    rdf_file : str
+        Path to RDF/XML ontology file.
+    uri : str
+        Memgraph connection URI.
+    username : str
+        Username for authentication.
+    password : str
+        Password for authentication.
+    clear_existing : bool
+        Whether to clear existing data before loading.
+    cleanup_labels : bool
+        Whether to remove OWL infrastructure labels after loading.
+
+    Returns
+    -------
+    dict
+        Dictionary with load statistics including nodes, relationships,
+        labels, and relationship_types.
+
+    Examples
+    --------
+    >>> from ista.memgraph_loader import load_rdf_to_memgraph
+    >>> stats = load_rdf_to_memgraph("ontology.rdf")
+    >>> print(f"Loaded {stats['nodes']} nodes and {stats['relationships']} relationships")
+    """
+    from .owl2memgraph import OWL2MemgraphLoader
+
+    with OWL2MemgraphLoader(uri, username, password) as loader:
+        return loader.load_file(
+            rdf_file,
+            format="rdfxml",
+            clear_existing=clear_existing,
+            cleanup_labels=cleanup_labels,
+        )

@@ -1,0 +1,244 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="transform__engine_8hpp" kind="file" language="C++">
+    <compoundname>transform_engine.hpp</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">map</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">optional</includes>
+    <includes local="no">stdexcept</includes>
+    <includedby refid="data__loader_8hpp" local="yes">D:/projects/ista/lib/owl2/loader/data_loader.hpp</includedby>
+    <includedby refid="mapping__spec_8hpp" local="yes">D:/projects/ista/lib/owl2/loader/mapping_spec.hpp</includedby>
+    <includedby refid="transform__engine_8cpp" local="yes">D:/projects/ista/lib/owl2/loader/transform_engine.cpp</includedby>
+    <includedby refid="owl2_8hpp" local="yes">D:/projects/ista/lib/owl2/owl2.hpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>D:/projects/ista/lib/owl2/loader/transform_engine.hpp</label>
+        <link refid="transform__engine_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>functional</label>
+      </node>
+      <node id="3">
+        <label>map</label>
+      </node>
+      <node id="6">
+        <label>optional</label>
+      </node>
+      <node id="7">
+        <label>stdexcept</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="4">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>D:/projects/ista/lib/owl2/loader/data_loader.cpp</label>
+        <link refid="data__loader_8cpp"/>
+      </node>
+      <node id="2">
+        <label>D:/projects/ista/lib/owl2/loader/data_loader.hpp</label>
+        <link refid="data__loader_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>D:/projects/ista/lib/owl2/loader/database_reader.cpp</label>
+        <link refid="database__reader_8cpp"/>
+      </node>
+      <node id="4">
+        <label>D:/projects/ista/lib/owl2/loader/database_reader.hpp</label>
+        <link refid="database__reader_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>D:/projects/ista/lib/owl2/loader/mapping_spec.cpp</label>
+        <link refid="mapping__spec_8cpp"/>
+      </node>
+      <node id="13">
+        <label>D:/projects/ista/lib/owl2/loader/mapping_spec.hpp</label>
+        <link refid="mapping__spec_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>D:/projects/ista/lib/owl2/loader/mysql_reader.cpp</label>
+        <link refid="mysql__reader_8cpp"/>
+      </node>
+      <node id="6">
+        <label>D:/projects/ista/lib/owl2/loader/mysql_reader.hpp</label>
+        <link refid="mysql__reader_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>D:/projects/ista/lib/owl2/loader/postgres_reader.cpp</label>
+        <link refid="postgres__reader_8cpp"/>
+      </node>
+      <node id="8">
+        <label>D:/projects/ista/lib/owl2/loader/postgres_reader.hpp</label>
+        <link refid="postgres__reader_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>D:/projects/ista/lib/owl2/loader/sqlite_reader.cpp</label>
+        <link refid="sqlite__reader_8cpp"/>
+      </node>
+      <node id="10">
+        <label>D:/projects/ista/lib/owl2/loader/sqlite_reader.hpp</label>
+        <link refid="sqlite__reader_8hpp"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>D:/projects/ista/lib/owl2/loader/transform_engine.cpp</label>
+        <link refid="transform__engine_8cpp"/>
+      </node>
+      <node id="1">
+        <label>D:/projects/ista/lib/owl2/loader/transform_engine.hpp</label>
+        <link refid="transform__engine_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>D:/projects/ista/lib/owl2/owl2.hpp</label>
+        <link refid="owl2_8hpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classista_1_1owl2_1_1loader_1_1TransformException" prot="public">ista::owl2::loader::TransformException</innerclass>
+    <innerclass refid="structista_1_1owl2_1_1loader_1_1TransformDef" prot="public">ista::owl2::loader::TransformDef</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1loader_1_1TransformEngine" prot="public">ista::owl2::loader::TransformEngine</innerclass>
+    <innernamespace refid="namespaceista">ista</innernamespace>
+    <innernamespace refid="namespaceista_1_1owl2">ista::owl2</innernamespace>
+    <innernamespace refid="namespaceista_1_1owl2_1_1loader">ista::owl2::loader</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>ISTA_OWL2_LOADER_TRANSFORM_ENGINE_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ISTA_OWL2_LOADER_TRANSFORM_ENGINE_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;optional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdexcept&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceista" kindref="compound">ista</ref><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceista_1_1owl2" kindref="compound">owl2</ref><sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceista_1_1owl2_1_1loader" kindref="compound">loader</ref><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="classista_1_1owl2_1_1loader_1_1TransformException" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classista_1_1owl2_1_1loader_1_1TransformException_1ab2cb653d3ff2e82da34a575ccd6ad822" kindref="member">TransformException</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>std::runtime_error<sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20" refid="classista_1_1owl2_1_1loader_1_1TransformException_1ab2cb653d3ff2e82da34a575ccd6ad822" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1loader_1_1TransformException_1ab2cb653d3ff2e82da34a575ccd6ad822" kindref="member">TransformException</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>message)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="namespacestd" kindref="compound">std</ref>::runtime_error(</highlight><highlight class="stringliteral">&quot;Transform<sp/>error:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>message)<sp/>{}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="structista_1_1owl2_1_1loader_1_1TransformDef" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structista_1_1owl2_1_1loader_1_1TransformDef_1a4c1ba354cf8a3169ff0ca5a0daae7811" kindref="member">TransformDef</ref><sp/>{</highlight></codeline>
+<codeline lineno="33" refid="structista_1_1owl2_1_1loader_1_1TransformDef_1a6cba2859dafaf9691d2c7113e1732345" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="structista_1_1owl2_1_1loader_1_1TransformDef_1a6cba2859dafaf9691d2c7113e1732345" kindref="member">type</ref>;<sp/><sp/></highlight><highlight class="comment">//<sp/>&quot;split&quot;,<sp/>&quot;chain&quot;,<sp/>&quot;prefix&quot;,<sp/>&quot;suffix&quot;,<sp/>&quot;strip_prefix&quot;,<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>&quot;lowercase&quot;,<sp/>&quot;uppercase&quot;,<sp/>&quot;to_int&quot;,<sp/>&quot;to_float&quot;,<sp/>&quot;regex_extract&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="structista_1_1owl2_1_1loader_1_1TransformDef_1a64dc1251aea46da0625263c414477d90" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>std::string&gt;<sp/><ref refid="structista_1_1owl2_1_1loader_1_1TransformDef_1a64dc1251aea46da0625263c414477d90" kindref="member">params</ref>;</highlight></codeline>
+<codeline lineno="36" refid="structista_1_1owl2_1_1loader_1_1TransformDef_1a212e98df56f5160c6350f8ce0da7f4ce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;TransformDef&gt;<sp/><ref refid="structista_1_1owl2_1_1loader_1_1TransformDef_1a212e98df56f5160c6350f8ce0da7f4ce" kindref="member">steps</ref>;<sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>chain<sp/>transforms</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="38" refid="structista_1_1owl2_1_1loader_1_1TransformDef_1a4c1ba354cf8a3169ff0ca5a0daae7811" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structista_1_1owl2_1_1loader_1_1TransformDef_1a4c1ba354cf8a3169ff0ca5a0daae7811" kindref="member">TransformDef</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39" refid="structista_1_1owl2_1_1loader_1_1TransformDef_1a7f35637d92825a62645022a81e428077" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structista_1_1owl2_1_1loader_1_1TransformDef_1a7f35637d92825a62645022a81e428077" kindref="member">TransformDef</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>t)<sp/>:<sp/><ref refid="structista_1_1owl2_1_1loader_1_1TransformDef_1a6cba2859dafaf9691d2c7113e1732345" kindref="member">type</ref>(t)<sp/>{}</highlight></codeline>
+<codeline lineno="40" refid="structista_1_1owl2_1_1loader_1_1TransformDef_1ab08f2bb331c9193facd0391179870c8b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structista_1_1owl2_1_1loader_1_1TransformDef_1ab08f2bb331c9193facd0391179870c8b" kindref="member">TransformDef</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>t,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::map&lt;std::string,<sp/>std::string&gt;&amp;<sp/>p)<sp/></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="structista_1_1owl2_1_1loader_1_1TransformDef_1a6cba2859dafaf9691d2c7113e1732345" kindref="member">type</ref>(t),<sp/><ref refid="structista_1_1owl2_1_1loader_1_1TransformDef_1a64dc1251aea46da0625263c414477d90" kindref="member">params</ref>(p)<sp/>{}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="classista_1_1owl2_1_1loader_1_1TransformEngine" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classista_1_1owl2_1_1loader_1_1TransformEngine_1addf163d25d04818bab310ef42e5bbd9e" kindref="member">TransformEngine</ref><sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="97" refid="classista_1_1owl2_1_1loader_1_1TransformEngine_1abd2b85c9a6c6cb70d9d95e1c6b116841" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classista_1_1owl2_1_1loader_1_1TransformEngine_1abd2b85c9a6c6cb70d9d95e1c6b116841" kindref="member">TransformFunc</ref><sp/>=<sp/>std::function&lt;std::string(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;,<sp/></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::map&lt;std::string,<sp/>std::string&gt;&amp;)&gt;;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classista_1_1owl2_1_1loader_1_1TransformEngine_1addf163d25d04818bab310ef42e5bbd9e" kindref="member">TransformEngine</ref>();</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classista_1_1owl2_1_1loader_1_1TransformEngine_1ad03880d24a1b2a3c2f32c45b838ea5d5" kindref="member">apply</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>transform_name,</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>value,</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::map&lt;std::string,<sp/>TransformDef&gt;&amp;<sp/>registry)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classista_1_1owl2_1_1loader_1_1TransformEngine_1a742d36df206f64b5338a1868d80c647b" kindref="member">apply_def</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structista_1_1owl2_1_1loader_1_1TransformDef" kindref="compound">TransformDef</ref>&amp;<sp/>def,</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>value,</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::map&lt;std::string,<sp/>TransformDef&gt;&amp;<sp/>registry)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classista_1_1owl2_1_1loader_1_1TransformEngine_1ab180b089b030cb90411e5ee43dc32421" kindref="member">apply_builtin</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>type,</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>value,</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::map&lt;std::string,<sp/>std::string&gt;&amp;<sp/>params)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1loader_1_1TransformEngine_1a25469711de85973f3ac9bb62d7af21a9" kindref="member">register_builtin</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,<sp/><ref refid="classista_1_1owl2_1_1loader_1_1TransformEngine_1abd2b85c9a6c6cb70d9d95e1c6b116841" kindref="member">TransformFunc</ref><sp/>func);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classista_1_1owl2_1_1loader_1_1TransformEngine_1a4520682841745fb5e975ea7568bc9290" kindref="member">has_builtin</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/><ref refid="classista_1_1owl2_1_1loader_1_1TransformEngine_1ae10049801edb4eb05a5213a03d059333" kindref="member">get_builtin_names</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>TransformFunc&gt;<sp/>builtins_;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialize<sp/>built-in<sp/>transforms</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>init_builtins();</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Helper<sp/>to<sp/>get<sp/>required<sp/>param</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>get_param(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::map&lt;std::string,<sp/>std::string&gt;&amp;<sp/>params,</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>default_value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Helper<sp/>to<sp/>get<sp/>int<sp/>param</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>get_int_param(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::map&lt;std::string,<sp/>std::string&gt;&amp;<sp/>params,</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>default_value<sp/>=<sp/>0)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>loader</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>owl2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>ista</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>ISTA_OWL2_LOADER_TRANSFORM_ENGINE_HPP</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/projects/ista/lib/owl2/loader/transform_engine.hpp"/>
+  </compounddef>
+</doxygen>

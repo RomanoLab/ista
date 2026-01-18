@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="namespaceista_1_1owl2_1_1loader" kind="namespace" language="C++">
+    <compoundname>ista::owl2::loader</compoundname>
+    <innerclass refid="classista_1_1owl2_1_1loader_1_1DataLoaderException" prot="public">ista::owl2::loader::DataLoaderException</innerclass>
+    <innerclass refid="structista_1_1owl2_1_1loader_1_1LoadingStats" prot="public">ista::owl2::loader::LoadingStats</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1loader_1_1DataSourceReader" prot="public">ista::owl2::loader::DataSourceReader</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1loader_1_1CsvReader" prot="public">ista::owl2::loader::CsvReader</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1loader_1_1DataSourceFactory" prot="public">ista::owl2::loader::DataSourceFactory</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1loader_1_1DataLoader" prot="public">ista::owl2::loader::DataLoader</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1loader_1_1DatabaseReader" prot="public">ista::owl2::loader::DatabaseReader</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1loader_1_1MappingSpecException" prot="public">ista::owl2::loader::MappingSpecException</innerclass>
+    <innerclass refid="structista_1_1owl2_1_1loader_1_1FilterDef" prot="public">ista::owl2::loader::FilterDef</innerclass>
+    <innerclass refid="structista_1_1owl2_1_1loader_1_1MatchCriteria" prot="public">ista::owl2::loader::MatchCriteria</innerclass>
+    <innerclass refid="structista_1_1owl2_1_1loader_1_1PropertyMapping" prot="public">ista::owl2::loader::PropertyMapping</innerclass>
+    <innerclass refid="structista_1_1owl2_1_1loader_1_1DatabaseConnectionDef" prot="public">ista::owl2::loader::DatabaseConnectionDef</innerclass>
+    <innerclass refid="structista_1_1owl2_1_1loader_1_1DataSourceDef" prot="public">ista::owl2::loader::DataSourceDef</innerclass>
+    <innerclass refid="structista_1_1owl2_1_1loader_1_1NodeMapping" prot="public">ista::owl2::loader::NodeMapping</innerclass>
+    <innerclass refid="structista_1_1owl2_1_1loader_1_1EntityRef" prot="public">ista::owl2::loader::EntityRef</innerclass>
+    <innerclass refid="structista_1_1owl2_1_1loader_1_1RelationshipMapping" prot="public">ista::owl2::loader::RelationshipMapping</innerclass>
+    <innerclass refid="structista_1_1owl2_1_1loader_1_1EnrichmentDef" prot="public">ista::owl2::loader::EnrichmentDef</innerclass>
+    <innerclass refid="structista_1_1owl2_1_1loader_1_1EntityTypeDef" prot="public">ista::owl2::loader::EntityTypeDef</innerclass>
+    <innerclass refid="structista_1_1owl2_1_1loader_1_1ValidationResult" prot="public">ista::owl2::loader::ValidationResult</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec" prot="public">ista::owl2::loader::DataMappingSpec</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1loader_1_1MySqlReader" prot="public">ista::owl2::loader::MySqlReader</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1loader_1_1PostgresReader" prot="public">ista::owl2::loader::PostgresReader</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1loader_1_1SqliteReader" prot="public">ista::owl2::loader::SqliteReader</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1loader_1_1TransformException" prot="public">ista::owl2::loader::TransformException</innerclass>
+    <innerclass refid="structista_1_1owl2_1_1loader_1_1TransformDef" prot="public">ista::owl2::loader::TransformDef</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1loader_1_1TransformEngine" prot="public">ista::owl2::loader::TransformEngine</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1loader_1_1YamlParseException" prot="public">ista::owl2::loader::YamlParseException</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1loader_1_1YamlNode" prot="public">ista::owl2::loader::YamlNode</innerclass>
+    <innerclass refid="classista_1_1owl2_1_1loader_1_1YamlParser" prot="public">ista::owl2::loader::YamlParser</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespaceista_1_1owl2_1_1loader_1ae8d9c89c2c6247e316b52542bf74372e" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>MappingMode</name>
+        <qualifiedname>ista::owl2::loader::MappingMode</qualifiedname>
+        <enumvalue id="namespaceista_1_1owl2_1_1loader_1ae8d9c89c2c6247e316b52542bf74372ea294ce20cdefa29be3be0735cb62e715d" prot="public">
+          <name>CREATE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceista_1_1owl2_1_1loader_1ae8d9c89c2c6247e316b52542bf74372ea30d600d9c3c532d6bbeeb13ff4d2ef54" prot="public">
+          <name>ENRICH</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Mode for node mapping. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="84" column="1" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="84" bodyend="87"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespaceista_1_1owl2_1_1loader_1aa3096bc3ec6e3ce47d6a3fab89ecd87c" prot="public" static="no">
+        <type>std::function&lt; void(size_t current, size_t total, const std::string &amp;mapping_name)&gt;</type>
+        <definition>using ista::owl2::loader::ProgressCallback =  std::function&lt;void(size_t current, size_t total, const std::string&amp; mapping_name)&gt;</definition>
+        <argsstring></argsstring>
+        <name>ProgressCallback</name>
+        <qualifiedname>ista::owl2::loader::ProgressCallback</qualifiedname>
+        <briefdescription>
+<para>Progress callback for loading operations. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>current</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current row number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>total</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Total rows (0 if unknown) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mapping_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the current mapping being processed </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="35" column="1" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.hpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceista_1_1owl2_1_1loader_1a8c7dd408a695878acd33de820a93a66e" prot="public" static="no">
+        <type>std::map&lt; std::string, std::string &gt;</type>
+        <definition>using ista::owl2::loader::DataRow =  std::map&lt;std::string, std::string&gt;</definition>
+        <argsstring></argsstring>
+        <name>DataRow</name>
+        <qualifiedname>ista::owl2::loader::DataRow</qualifiedname>
+        <briefdescription>
+<para>Row of data from a data source. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="80" column="1" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.hpp" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceista_1_1owl2_1_1loader_1a8b96a22b8b503306ad53db7cbfc5d7fb" prot="public" static="no">
+        <type>std::shared_ptr&lt; <ref refid="classista_1_1owl2_1_1loader_1_1YamlNode" kindref="compound">YamlNode</ref> &gt;</type>
+        <definition>using ista::owl2::loader::YamlNodePtr =  std::shared_ptr&lt;YamlNode&gt;</definition>
+        <argsstring></argsstring>
+        <name>YamlNodePtr</name>
+        <qualifiedname>ista::owl2::loader::YamlNodePtr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" line="33" column="1" bodyfile="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/loader/data_loader.cpp" line="21" column="1"/>
+  </compounddef>
+</doxygen>

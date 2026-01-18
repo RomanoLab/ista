@@ -3,6 +3,7 @@
   <compounddef id="dir_d630f01cd53abff97d44ce6d74ab556d" kind="dir">
     <compoundname>D:/projects/ista/lib/owl2</compoundname>
     <innerdir refid="dir_a0473cab9a91a76fce53fd6eebf06533">D:/projects/ista/lib/owl2/core</innerdir>
+    <innerdir refid="dir_64b5f84919921730f0fc3e8bfacc45d1">D:/projects/ista/lib/owl2/loader</innerdir>
     <innerdir refid="dir_3e917f2bd2d315ef6e240335f6f6a295">D:/projects/ista/lib/owl2/parser</innerdir>
     <innerdir refid="dir_396282372a14aa02a8946dacfb18c4b0">D:/projects/ista/lib/owl2/reasoner</innerdir>
     <innerdir refid="dir_a78a4cf07cf6c6b89181d07787f88adf">D:/projects/ista/lib/owl2/serializer</innerdir>

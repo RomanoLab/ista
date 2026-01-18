@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1loader_1_1YamlParser" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::loader::YamlParser</compoundname>
+    <includes refid="yaml__parser_8hpp" local="no">yaml_parser.hpp</includes>
+    <innerclass refid="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState" prot="private">ista::owl2::loader::YamlParser::ParseState</innerclass>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1YamlParser_1a31be90596dd84e704c8e520939cd53e2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceista_1_1owl2_1_1loader_1a8b96a22b8b503306ad53db7cbfc5d7fb" kindref="member">YamlNodePtr</ref></type>
+        <definition>YamlNodePtr ista::owl2::loader::YamlParser::parse</definition>
+        <argsstring>(const std::string &amp;content)</argsstring>
+        <name>parse</name>
+        <qualifiedname>ista::owl2::loader::YamlParser::parse</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>content</declname>
+        </param>
+        <briefdescription>
+<para>Parse YAML string into a node tree. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" line="125" column="24" bodyfile="D:/projects/ista/lib/owl2/loader/yaml_parser.cpp" bodystart="192" bodyend="212"/>
+        <references refid="classista_1_1owl2_1_1loader_1_1YamlNode_1ad26b61da75148e7567920440096255b1" compoundref="yaml__parser_8hpp" startline="101" endline="101">ista::owl2::loader::YamlNode::make_null</references>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aee83b1571a5de67f9bfa1ca721a107e4" compoundref="mapping__spec_8cpp" startline="339" endline="398">ista::owl2::loader::DataMappingSpec::parse</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1YamlParser_1a0e94894fd298c0a6dfb7864decc7465a" compoundref="yaml__parser_8cpp" startline="214" endline="223">parse_file</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1YamlParser_1a0e94894fd298c0a6dfb7864decc7465a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceista_1_1owl2_1_1loader_1a8b96a22b8b503306ad53db7cbfc5d7fb" kindref="member">YamlNodePtr</ref></type>
+        <definition>YamlNodePtr ista::owl2::loader::YamlParser::parse_file</definition>
+        <argsstring>(const std::string &amp;filepath)</argsstring>
+        <name>parse_file</name>
+        <qualifiedname>ista::owl2::loader::YamlParser::parse_file</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filepath</declname>
+        </param>
+        <briefdescription>
+<para>Parse YAML file. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" line="130" column="24" bodyfile="D:/projects/ista/lib/owl2/loader/yaml_parser.cpp" bodystart="214" bodyend="223"/>
+        <references refid="classista_1_1owl2_1_1loader_1_1YamlParser_1a31be90596dd84e704c8e520939cd53e2" compoundref="yaml__parser_8cpp" startline="192" endline="212">parse</references>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1abf7f30d46b4aa762974ad0b9b1e85ef1" compoundref="mapping__spec_8cpp" startline="272" endline="337">ista::owl2::loader::DataMappingSpec::load_from_file</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1YamlParser_1a1524b074a66e59309436451ee67385da" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceista_1_1owl2_1_1loader_1a8b96a22b8b503306ad53db7cbfc5d7fb" kindref="member">YamlNodePtr</ref></type>
+        <definition>YamlNodePtr ista::owl2::loader::YamlParser::parse_value</definition>
+        <argsstring>(ParseState &amp;state, int base_indent)</argsstring>
+        <name>parse_value</name>
+        <qualifiedname>ista::owl2::loader::YamlParser::parse_value</qualifiedname>
+        <param>
+          <type>ParseState &amp;</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>base_indent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" line="155" column="24" bodyfile="D:/projects/ista/lib/owl2/loader/yaml_parser.cpp" bodystart="225" bodyend="263"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1YamlParser_1a30b9cb5492e832f407d2db23ba79ca57" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceista_1_1owl2_1_1loader_1a8b96a22b8b503306ad53db7cbfc5d7fb" kindref="member">YamlNodePtr</ref></type>
+        <definition>YamlNodePtr ista::owl2::loader::YamlParser::parse_map</definition>
+        <argsstring>(ParseState &amp;state, int base_indent)</argsstring>
+        <name>parse_map</name>
+        <qualifiedname>ista::owl2::loader::YamlParser::parse_map</qualifiedname>
+        <param>
+          <type>ParseState &amp;</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>base_indent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" line="156" column="24" bodyfile="D:/projects/ista/lib/owl2/loader/yaml_parser.cpp" bodystart="265" bodyend="372"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1YamlParser_1a0929974f80356ac3893d919555c7179d" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceista_1_1owl2_1_1loader_1a8b96a22b8b503306ad53db7cbfc5d7fb" kindref="member">YamlNodePtr</ref></type>
+        <definition>YamlNodePtr ista::owl2::loader::YamlParser::parse_list</definition>
+        <argsstring>(ParseState &amp;state, int base_indent)</argsstring>
+        <name>parse_list</name>
+        <qualifiedname>ista::owl2::loader::YamlParser::parse_list</qualifiedname>
+        <param>
+          <type>ParseState &amp;</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>base_indent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" line="157" column="24" bodyfile="D:/projects/ista/lib/owl2/loader/yaml_parser.cpp" bodystart="374" bodyend="436"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1YamlParser_1a8a7c1d4125478ede6a215bc96ee3188b" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceista_1_1owl2_1_1loader_1a8b96a22b8b503306ad53db7cbfc5d7fb" kindref="member">YamlNodePtr</ref></type>
+        <definition>YamlNodePtr ista::owl2::loader::YamlParser::parse_inline_map</definition>
+        <argsstring>(ParseState &amp;state)</argsstring>
+        <name>parse_inline_map</name>
+        <qualifiedname>ista::owl2::loader::YamlParser::parse_inline_map</qualifiedname>
+        <param>
+          <type>ParseState &amp;</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" line="158" column="24" bodyfile="D:/projects/ista/lib/owl2/loader/yaml_parser.cpp" bodystart="438" bodyend="486"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1YamlParser_1a3dd33a21761cd03be32a7d2995700026" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceista_1_1owl2_1_1loader_1a8b96a22b8b503306ad53db7cbfc5d7fb" kindref="member">YamlNodePtr</ref></type>
+        <definition>YamlNodePtr ista::owl2::loader::YamlParser::parse_inline_list</definition>
+        <argsstring>(ParseState &amp;state)</argsstring>
+        <name>parse_inline_list</name>
+        <qualifiedname>ista::owl2::loader::YamlParser::parse_inline_list</qualifiedname>
+        <param>
+          <type>ParseState &amp;</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" line="159" column="24" bodyfile="D:/projects/ista/lib/owl2/loader/yaml_parser.cpp" bodystart="488" bodyend="526"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1YamlParser_1a23de157384213ec1a965ad5054046dc1" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::YamlParser::parse_scalar</definition>
+        <argsstring>(ParseState &amp;state)</argsstring>
+        <name>parse_scalar</name>
+        <qualifiedname>ista::owl2::loader::YamlParser::parse_scalar</qualifiedname>
+        <param>
+          <type>ParseState &amp;</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" line="160" column="24" bodyfile="D:/projects/ista/lib/owl2/loader/yaml_parser.cpp" bodystart="528" bodyend="543"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1YamlParser_1ad9268787bb77825885105d5c8062dd55" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::YamlParser::parse_key</definition>
+        <argsstring>(ParseState &amp;state)</argsstring>
+        <name>parse_key</name>
+        <qualifiedname>ista::owl2::loader::YamlParser::parse_key</qualifiedname>
+        <param>
+          <type>ParseState &amp;</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" line="161" column="24" bodyfile="D:/projects/ista/lib/owl2/loader/yaml_parser.cpp" bodystart="545" bodyend="560"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Parse YAML content into a node tree. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" line="120" column="1" bodyfile="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" bodystart="120" bodyend="162"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1loader_1_1YamlParser_1a31be90596dd84e704c8e520939cd53e2" prot="public" virt="non-virtual"><scope>ista::owl2::loader::YamlParser</scope><name>parse</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1YamlParser_1a0e94894fd298c0a6dfb7864decc7465a" prot="public" virt="non-virtual"><scope>ista::owl2::loader::YamlParser</scope><name>parse_file</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1YamlParser_1a3dd33a21761cd03be32a7d2995700026" prot="private" virt="non-virtual"><scope>ista::owl2::loader::YamlParser</scope><name>parse_inline_list</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1YamlParser_1a8a7c1d4125478ede6a215bc96ee3188b" prot="private" virt="non-virtual"><scope>ista::owl2::loader::YamlParser</scope><name>parse_inline_map</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1YamlParser_1ad9268787bb77825885105d5c8062dd55" prot="private" virt="non-virtual"><scope>ista::owl2::loader::YamlParser</scope><name>parse_key</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1YamlParser_1a0929974f80356ac3893d919555c7179d" prot="private" virt="non-virtual"><scope>ista::owl2::loader::YamlParser</scope><name>parse_list</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1YamlParser_1a30b9cb5492e832f407d2db23ba79ca57" prot="private" virt="non-virtual"><scope>ista::owl2::loader::YamlParser</scope><name>parse_map</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1YamlParser_1a23de157384213ec1a965ad5054046dc1" prot="private" virt="non-virtual"><scope>ista::owl2::loader::YamlParser</scope><name>parse_scalar</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1YamlParser_1a1524b074a66e59309436451ee67385da" prot="private" virt="non-virtual"><scope>ista::owl2::loader::YamlParser</scope><name>parse_value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -55,3 +55,29 @@ Native graph data structures.
    :recursive:
 
    ista.graph
+
+Graph Database Integration
+--------------------------
+
+ista.owl2memgraph
+~~~~~~~~~~~~~~~~~
+
+CLI tool and Python API for loading OWL2 ontologies into Memgraph graph database.
+Supports multiple ontology formats (RDF/XML, Turtle, Functional Syntax, Manchester, OWL/XML).
+
+.. autosummary::
+   :toctree: generated
+   :recursive:
+
+   ista.owl2memgraph
+
+ista.memgraph_loader
+~~~~~~~~~~~~~~~~~~~~
+
+Low-level Memgraph loading utilities for programmatic ontology-to-graph conversion.
+
+.. autosummary::
+   :toctree: generated
+   :recursive:
+
+   ista.memgraph_loader

@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="structista_1_1owl2_1_1loader_1_1PropertyMapping" kind="struct" language="C++" prot="public">
+    <compoundname>ista::owl2::loader::PropertyMapping</compoundname>
+    <includes refid="mapping__spec_8hpp" local="no">mapping_spec.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1PropertyMapping_1a086a27a3f17cae33783b5d684cb0258e" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::PropertyMapping::column</definition>
+        <argsstring></argsstring>
+        <name>column</name>
+        <qualifiedname>ista::owl2::loader::PropertyMapping::column</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="46" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1PropertyMapping_1ac22afedb5757afd19cacf8310b7693e2" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::PropertyMapping::property</definition>
+        <argsstring></argsstring>
+        <name>property</name>
+        <qualifiedname>ista::owl2::loader::PropertyMapping::property</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="47" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1PropertyMapping_1aacacfd78bbd22c7e68c91bc9f6f09f79" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; std::string &gt;</type>
+        <definition>std::optional&lt;std::string&gt; ista::owl2::loader::PropertyMapping::transform</definition>
+        <argsstring></argsstring>
+        <name>transform</name>
+        <qualifiedname>ista::owl2::loader::PropertyMapping::transform</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="48" column="19" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1PropertyMapping_1ad884da7045267fd87ce1356ec4381d60" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; std::string &gt;</type>
+        <definition>std::optional&lt;std::string&gt; ista::owl2::loader::PropertyMapping::datatype</definition>
+        <argsstring></argsstring>
+        <name>datatype</name>
+        <qualifiedname>ista::owl2::loader::PropertyMapping::datatype</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="49" column="19" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Mapping from a source column to an ontology property. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="45" column="1" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="45" bodyend="50"/>
+    <listofallmembers>
+      <member refid="structista_1_1owl2_1_1loader_1_1PropertyMapping_1a086a27a3f17cae33783b5d684cb0258e" prot="public" virt="non-virtual"><scope>ista::owl2::loader::PropertyMapping</scope><name>column</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1PropertyMapping_1ad884da7045267fd87ce1356ec4381d60" prot="public" virt="non-virtual"><scope>ista::owl2::loader::PropertyMapping</scope><name>datatype</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1PropertyMapping_1ac22afedb5757afd19cacf8310b7693e2" prot="public" virt="non-virtual"><scope>ista::owl2::loader::PropertyMapping</scope><name>property</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1PropertyMapping_1aacacfd78bbd22c7e68c91bc9f6f09f79" prot="public" virt="non-virtual"><scope>ista::owl2::loader::PropertyMapping</scope><name>transform</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

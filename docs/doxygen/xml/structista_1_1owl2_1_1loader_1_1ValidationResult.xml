@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="structista_1_1owl2_1_1loader_1_1ValidationResult" kind="struct" language="C++" prot="public">
+    <compoundname>ista::owl2::loader::ValidationResult</compoundname>
+    <includes refid="mapping__spec_8hpp" local="no">mapping_spec.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1ValidationResult_1abb7a7ef69e199fd2d1c7e9139645db70" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ista::owl2::loader::ValidationResult::is_valid</definition>
+        <argsstring></argsstring>
+        <name>is_valid</name>
+        <qualifiedname>ista::owl2::loader::ValidationResult::is_valid</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="178" column="10" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="178" bodyend="-1"/>
+        <referencedby refid="structista_1_1owl2_1_1loader_1_1ValidationResult_1afcbd04a9c8a2ed87deb50d50ecfc647b" compoundref="mapping__spec_8hpp" startline="182" endline="185">add_error</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1ValidationResult_1a6de4f0c49c9042e984370ece96dc99b8" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; ista::owl2::loader::ValidationResult::errors</definition>
+        <argsstring></argsstring>
+        <name>errors</name>
+        <qualifiedname>ista::owl2::loader::ValidationResult::errors</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="179" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="179" bodyend="-1"/>
+        <referencedby refid="structista_1_1owl2_1_1loader_1_1ValidationResult_1afcbd04a9c8a2ed87deb50d50ecfc647b" compoundref="mapping__spec_8hpp" startline="182" endline="185">add_error</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1ValidationResult_1a3407c88976a36e2154d6fdc4a05f427c" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; ista::owl2::loader::ValidationResult::warnings</definition>
+        <argsstring></argsstring>
+        <name>warnings</name>
+        <qualifiedname>ista::owl2::loader::ValidationResult::warnings</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="180" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="180" bodyend="-1"/>
+        <referencedby refid="structista_1_1owl2_1_1loader_1_1ValidationResult_1a0baa4bb017722880574604893c909bdd" compoundref="mapping__spec_8hpp" startline="187" endline="189">add_warning</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structista_1_1owl2_1_1loader_1_1ValidationResult_1afcbd04a9c8a2ed87deb50d50ecfc647b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::loader::ValidationResult::add_error</definition>
+        <argsstring>(const std::string &amp;msg)</argsstring>
+        <name>add_error</name>
+        <qualifiedname>ista::owl2::loader::ValidationResult::add_error</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="182" column="10" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="182" bodyend="185"/>
+        <references refid="structista_1_1owl2_1_1loader_1_1ValidationResult_1a6de4f0c49c9042e984370ece96dc99b8" compoundref="mapping__spec_8hpp" startline="179">errors</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1ValidationResult_1abb7a7ef69e199fd2d1c7e9139645db70" compoundref="mapping__spec_8hpp" startline="178">is_valid</references>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aee3f45da75505bdb2e26e4919ef9c550" compoundref="mapping__spec_8cpp" startline="400" endline="515">ista::owl2::loader::DataMappingSpec::validate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structista_1_1owl2_1_1loader_1_1ValidationResult_1a0baa4bb017722880574604893c909bdd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::loader::ValidationResult::add_warning</definition>
+        <argsstring>(const std::string &amp;msg)</argsstring>
+        <name>add_warning</name>
+        <qualifiedname>ista::owl2::loader::ValidationResult::add_warning</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="187" column="10" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="187" bodyend="189"/>
+        <references refid="structista_1_1owl2_1_1loader_1_1ValidationResult_1a3407c88976a36e2154d6fdc4a05f427c" compoundref="mapping__spec_8hpp" startline="180">warnings</references>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aee3f45da75505bdb2e26e4919ef9c550" compoundref="mapping__spec_8cpp" startline="400" endline="515">ista::owl2::loader::DataMappingSpec::validate</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Result of validating a mapping specification. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="177" column="1" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="177" bodyend="190"/>
+    <listofallmembers>
+      <member refid="structista_1_1owl2_1_1loader_1_1ValidationResult_1afcbd04a9c8a2ed87deb50d50ecfc647b" prot="public" virt="non-virtual"><scope>ista::owl2::loader::ValidationResult</scope><name>add_error</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1ValidationResult_1a0baa4bb017722880574604893c909bdd" prot="public" virt="non-virtual"><scope>ista::owl2::loader::ValidationResult</scope><name>add_warning</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1ValidationResult_1a6de4f0c49c9042e984370ece96dc99b8" prot="public" virt="non-virtual"><scope>ista::owl2::loader::ValidationResult</scope><name>errors</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1ValidationResult_1abb7a7ef69e199fd2d1c7e9139645db70" prot="public" virt="non-virtual"><scope>ista::owl2::loader::ValidationResult</scope><name>is_valid</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1ValidationResult_1a3407c88976a36e2154d6fdc4a05f427c" prot="public" virt="non-virtual"><scope>ista::owl2::loader::ValidationResult</scope><name>warnings</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

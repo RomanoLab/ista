@@ -14,7 +14,6 @@
         <param>
           <type>const std::string &amp;</type>
           <declname>content</declname>
-          <defname>turtle_content</defname>
         </param>
         <briefdescription>
 <para>Parse Turtle from string. </para>
@@ -36,18 +35,16 @@
 <parametername><ref refid="classista_1_1owl2_1_1TurtleParseException" kindref="compound">TurtleParseException</ref></parametername>
 </parameternamelist>
 <parameterdescription>
-<para>if parsing fails</para>
+<para>if parsing fails </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="note"><para>This is currently a stub implementation. Full Turtle parsing will be implemented in a future version. </para>
-</simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="44" column="21" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.cpp" bodystart="12" bodyend="16"/>
-        <referencedby refid="classista_1_1owl2_1_1TurtleParser_1af014bdf1185a72383d78d22d8b69d903" compoundref="turtle__parser_8cpp" startline="18" endline="27">parseFromFile</referencedby>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="80" column="21" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.cpp" bodystart="14" bodyend="17"/>
+        <referencedby refid="classista_1_1owl2_1_1TurtleParser_1af014bdf1185a72383d78d22d8b69d903" compoundref="turtle__parser_8cpp" startline="19" endline="28">parseFromFile</referencedby>
       </memberdef>
       <memberdef kind="function" id="classista_1_1owl2_1_1TurtleParser_1af014bdf1185a72383d78d22d8b69d903" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref></type>
@@ -87,27 +84,61 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="52" column="21" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.cpp" bodystart="18" bodyend="27"/>
-        <references refid="classista_1_1owl2_1_1TurtleParser_1ad55a32de1f4c0cfed44a9c82a2421a8d" compoundref="turtle__parser_8cpp" startline="12" endline="16">parseFromString</references>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="88" column="21" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.cpp" bodystart="19" bodyend="28"/>
+        <references refid="classista_1_1owl2_1_1TurtleParser_1ad55a32de1f4c0cfed44a9c82a2421a8d" compoundref="turtle__parser_8cpp" startline="14" endline="17">parseFromString</references>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para>Parser for Turtle (Terse RDF Triple Language) format. </para>
     </briefdescription>
     <detaileddescription>
-<para>Parses ontologies from Turtle format, which is a compact, human-readable RDF serialization. Supports:<itemizedlist>
-<listitem><para>@prefix directives</para>
-</listitem><listitem><para>@base directive</para>
-</listitem><listitem><para>Abbreviated URIs (prefix:localName)</para>
-</listitem><listitem><para>Blank nodes</para>
-</listitem><listitem><para>RDF lists</para>
-</listitem><listitem><para>Turtle comments (#)</para>
-</listitem><listitem><para>Multi-line literals</para>
-</listitem><listitem><para>Language tags and datatypes </para>
+<para>Parses ontologies from Turtle format, which is a compact, human-readable RDF serialization.</para>
+<para><simplesect kind="par"><title>Implementation Status</title><para><bold>BASIC IMPLEMENTATION COMPLETE</bold> - Handles common Turtle patterns (~80% coverage).</para>
+</simplesect>
+<bold>Fully Implemented:</bold><itemizedlist>
+<listitem><para>@prefix and @base directives</para>
+</listitem><listitem><para><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> references in angle brackets &lt;...&gt;</para>
+</listitem><listitem><para>Prefixed names (prefix:local)</para>
+</listitem><listitem><para>Literals (plain, typed with ^^, language-tagged with @)</para>
+</listitem><listitem><para>Basic escape sequences in strings (\t \n \r \&quot; \\\\)
+- Blank nodes (_:id)
+- Comments (#)
+- Numeric literals (integers and decimals)
+- &apos;a&apos; shortcut for rdf:type
+- Simple triples (subject predicate object .)
+- RDF-to-OWL conversion for common axioms:
+  - Declarations (owl:Class, owl:ObjectProperty, etc.)
+  - Class assertions (individual rdf:type Class)
+  - Object/Data property assertions
+  - SubClassOf, SubPropertyOf
+  - Property domain/range
+
+&lt;strong&gt;Not Yet Implemented (see BREADCRUMB comments in code):&lt;/strong&gt;
+- Subject-predicate grouping with semicolons (;)
+- Object lists with commas (,)
+- RDF collections with parentheses ()
+- Blank node property lists with brackets []
+- Triple-quoted strings (&quot;&quot;&quot;)</para>
+</listitem><listitem><para>Unicode escape sequences (\u \U)</para>
+</listitem><listitem><para><ref refid="classista_1_1owl2_1_1IRI" kindref="compound">IRI</ref> escape sequences</para>
+</listitem><listitem><para>Scientific notation for numbers</para>
+</listitem><listitem><para>Complex OWL constructs (restrictions, unions, intersections)</para>
+</listitem><listitem><para>Blank node patterns for complex axioms</para>
 </listitem></itemizedlist>
 </para>
+<para><bold>Current Limitations:</bold><itemizedlist>
+<listitem><para>Each triple must end with &apos;.&apos; (no grouping)</para>
+</listitem><listitem><para>Blank nodes in complex patterns are skipped</para>
+</listitem><listitem><para>Some malformed triples are silently ignored</para>
+</listitem><listitem><para>Limited OWL axiom reconstruction from RDF triples</para>
+</listitem></itemizedlist>
+</para>
+<para>Despite limitations, the parser successfully handles Turtle files generated by <ref refid="classista_1_1owl2_1_1TurtleSerializer" kindref="compound">TurtleSerializer</ref> and many standard Turtle ontologies.</para>
+<para><simplesect kind="see"><para><ulink url="https://www.w3.org/TR/turtle/">https://www.w3.org/TR/turtle/</ulink> </para>
+</simplesect>
+</para>
     </detaileddescription>
-    <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="36" column="1" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="36" bodyend="119"/>
+    <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="72" column="1" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="72" bodyend="155"/>
     <listofallmembers>
       <member refid="classista_1_1owl2_1_1TurtleParser_1af014bdf1185a72383d78d22d8b69d903" prot="public" virt="non-virtual"><scope>ista::owl2::TurtleParser</scope><name>parseFromFile</name></member>
       <member refid="classista_1_1owl2_1_1TurtleParser_1ad55a32de1f4c0cfed44a9c82a2421a8d" prot="public" virt="non-virtual"><scope>ista::owl2::TurtleParser</scope><name>parseFromString</name></member>

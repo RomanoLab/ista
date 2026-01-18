@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="structista_1_1owl2_1_1loader_1_1MatchCriteria" kind="struct" language="C++" prot="public">
+    <compoundname>ista::owl2::loader::MatchCriteria</compoundname>
+    <includes refid="mapping__spec_8hpp" local="no">mapping_spec.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1MatchCriteria_1af6e8e45dff5aef6cbea0f7e9c17ddaa8" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::MatchCriteria::source_column</definition>
+        <argsstring></argsstring>
+        <name>source_column</name>
+        <qualifiedname>ista::owl2::loader::MatchCriteria::source_column</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="38" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1MatchCriteria_1a362f4bfefe5e20ede3355a8ccc7540e4" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::MatchCriteria::target_property</definition>
+        <argsstring></argsstring>
+        <name>target_property</name>
+        <qualifiedname>ista::owl2::loader::MatchCriteria::target_property</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="39" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Criteria for matching existing individuals. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="37" column="1" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="37" bodyend="40"/>
+    <listofallmembers>
+      <member refid="structista_1_1owl2_1_1loader_1_1MatchCriteria_1af6e8e45dff5aef6cbea0f7e9c17ddaa8" prot="public" virt="non-virtual"><scope>ista::owl2::loader::MatchCriteria</scope><name>source_column</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1MatchCriteria_1a362f4bfefe5e20ede3355a8ccc7540e4" prot="public" virt="non-virtual"><scope>ista::owl2::loader::MatchCriteria</scope><name>target_property</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

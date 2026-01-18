@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1loader_1_1DataSourceFactory" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::loader::DataSourceFactory</compoundname>
+    <includes refid="data__loader_8hpp" local="no">data_loader.hpp</includes>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1DataSourceFactory_1aff00fd28b82facee71cc2230b0ffb1cb" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unique_ptr&lt; <ref refid="classista_1_1owl2_1_1loader_1_1DataSourceReader" kindref="compound">DataSourceReader</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; DataSourceReader &gt; ista::owl2::loader::DataSourceFactory::create_reader</definition>
+        <argsstring>(const DataSourceDef &amp;source)</argsstring>
+        <name>create_reader</name>
+        <qualifiedname>ista::owl2::loader::DataSourceFactory::create_reader</qualifiedname>
+        <param>
+          <type>const <ref refid="structista_1_1owl2_1_1loader_1_1DataSourceDef" kindref="compound">DataSourceDef</ref> &amp;</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+<para>Create a reader for the given data source definition. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="164" column="28" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.cpp" bodystart="160" bodyend="202"/>
+        <references refid="structista_1_1owl2_1_1loader_1_1DataSourceDef_1ae992593b4050a5e9b29b8b77f8a6ad76" compoundref="mapping__spec_8hpp" startline="72">ista::owl2::loader::DataSourceDef::delimiter</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1DataSourceDef_1a58e0a9d74e8b3bf763de87da7aec18a0" compoundref="mapping__spec_8hpp" startline="73">ista::owl2::loader::DataSourceDef::has_headers</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1DataSourceDef_1ae4897c5457c65d153c69c62c20d4c7fd" compoundref="mapping__spec_8hpp" startline="71">ista::owl2::loader::DataSourceDef::path</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1DataSourceDef_1a1100374442628453449d62ef16a92adb" compoundref="mapping__spec_8hpp" startline="70">ista::owl2::loader::DataSourceDef::type</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Factory for creating data source readers. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="159" column="1" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.hpp" bodystart="159" bodyend="165"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1loader_1_1DataSourceFactory_1aff00fd28b82facee71cc2230b0ffb1cb" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DataSourceFactory</scope><name>create_reader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

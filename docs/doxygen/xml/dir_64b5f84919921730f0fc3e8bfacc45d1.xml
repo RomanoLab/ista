@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="dir_64b5f84919921730f0fc3e8bfacc45d1" kind="dir">
+    <compoundname>D:/projects/ista/lib/owl2/loader</compoundname>
+    <innerfile refid="data__loader_8cpp">data_loader.cpp</innerfile>
+    <innerfile refid="data__loader_8hpp">data_loader.hpp</innerfile>
+    <innerfile refid="database__reader_8cpp">database_reader.cpp</innerfile>
+    <innerfile refid="database__reader_8hpp">database_reader.hpp</innerfile>
+    <innerfile refid="mapping__spec_8cpp">mapping_spec.cpp</innerfile>
+    <innerfile refid="mapping__spec_8hpp">mapping_spec.hpp</innerfile>
+    <innerfile refid="mysql__reader_8cpp">mysql_reader.cpp</innerfile>
+    <innerfile refid="mysql__reader_8hpp">mysql_reader.hpp</innerfile>
+    <innerfile refid="postgres__reader_8cpp">postgres_reader.cpp</innerfile>
+    <innerfile refid="postgres__reader_8hpp">postgres_reader.hpp</innerfile>
+    <innerfile refid="sqlite__reader_8cpp">sqlite_reader.cpp</innerfile>
+    <innerfile refid="sqlite__reader_8hpp">sqlite_reader.hpp</innerfile>
+    <innerfile refid="transform__engine_8cpp">transform_engine.cpp</innerfile>
+    <innerfile refid="transform__engine_8hpp">transform_engine.hpp</innerfile>
+    <innerfile refid="yaml__parser_8cpp">yaml_parser.cpp</innerfile>
+    <innerfile refid="yaml__parser_8hpp">yaml_parser.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/loader/"/>
+  </compounddef>
+</doxygen>

@@ -86,7 +86,12 @@ setup(
     },
     ext_modules=[CMakeExtension("_libista_owl2", sourcedir=".")],
     cmdclass={"build_ext": CMakeBuild},
-    entry_points={"console_scripts": ["ista=ista.ista:main"]},
+    entry_points={
+        "console_scripts": [
+            "ista=ista.ista:main",
+            "owl2memgraph=ista.owl2memgraph:main",
+        ]
+    },
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Science/Research",

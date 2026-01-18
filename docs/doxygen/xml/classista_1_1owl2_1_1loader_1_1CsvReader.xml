@@ -1,0 +1,371 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1loader_1_1CsvReader" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::loader::CsvReader</compoundname>
+    <basecompoundref refid="classista_1_1owl2_1_1loader_1_1DataSourceReader" prot="public" virt="non-virtual">ista::owl2::loader::DataSourceReader</basecompoundref>
+    <includes refid="data__loader_8hpp" local="no">data_loader.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classista_1_1owl2_1_1loader_1_1CsvReader_1a3394005e2d459a003bcbc2bb77ea3d93" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::CsvReader::filepath_</definition>
+        <argsstring></argsstring>
+        <name>filepath_</name>
+        <qualifiedname>ista::owl2::loader::CsvReader::filepath_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="143" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.hpp" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1loader_1_1CsvReader_1a1a133ce2a8372be63662efdad004e463" prot="private" static="no" mutable="no">
+        <type>char</type>
+        <definition>char ista::owl2::loader::CsvReader::delimiter_</definition>
+        <argsstring></argsstring>
+        <name>delimiter_</name>
+        <qualifiedname>ista::owl2::loader::CsvReader::delimiter_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="144" column="10" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.hpp" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1loader_1_1CsvReader_1afb1764891cf249b469e243656656b46e" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ista::owl2::loader::CsvReader::has_headers_</definition>
+        <argsstring></argsstring>
+        <name>has_headers_</name>
+        <qualifiedname>ista::owl2::loader::CsvReader::has_headers_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="145" column="10" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.hpp" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1loader_1_1CsvReader_1a4955297371bee70968fea50ab86356dc" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; ista::owl2::loader::CsvReader::headers_</definition>
+        <argsstring></argsstring>
+        <name>headers_</name>
+        <qualifiedname>ista::owl2::loader::CsvReader::headers_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="146" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.hpp" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1loader_1_1CsvReader_1a2c079c8bd3c3702207a0e4afdfdaf594" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; std::ifstream &gt;</type>
+        <definition>std::unique_ptr&lt;std::ifstream&gt; ista::owl2::loader::CsvReader::file_</definition>
+        <argsstring></argsstring>
+        <name>file_</name>
+        <qualifiedname>ista::owl2::loader::CsvReader::file_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="147" column="21" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.hpp" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1loader_1_1CsvReader_1a572e11961c6b85a9cbe7de0cb33a3cc7" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t ista::owl2::loader::CsvReader::current_line_</definition>
+        <argsstring></argsstring>
+        <name>current_line_</name>
+        <qualifiedname>ista::owl2::loader::CsvReader::current_line_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="148" column="12" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.hpp" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1loader_1_1CsvReader_1a393964185296bbacd737bd012207c5ee" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t ista::owl2::loader::CsvReader::total_lines_</definition>
+        <argsstring></argsstring>
+        <name>total_lines_</name>
+        <qualifiedname>ista::owl2::loader::CsvReader::total_lines_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="149" column="12" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.hpp" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1loader_1_1CsvReader_1a735218a807902e08169a45dfecb5b4c8" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ista::owl2::loader::CsvReader::at_end_</definition>
+        <argsstring></argsstring>
+        <name>at_end_</name>
+        <qualifiedname>ista::owl2::loader::CsvReader::at_end_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="150" column="10" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.hpp" bodystart="150" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1CsvReader_1a44cfbbeced4551e79019271e7403960e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::loader::CsvReader::CsvReader</definition>
+        <argsstring>(const std::string &amp;filepath, char delimiter=&apos;,&apos;, bool has_headers=true)</argsstring>
+        <name>CsvReader</name>
+        <qualifiedname>ista::owl2::loader::CsvReader::CsvReader</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filepath</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>delimiter</declname>
+          <defval>&apos;,&apos;</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>has_headers</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="131" column="5" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.cpp" bodystart="25" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1CsvReader_1a46cbb4600143f97a8f5a5e7b3e6b14bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::loader::CsvReader::~CsvReader</definition>
+        <argsstring>() override</argsstring>
+        <name>~CsvReader</name>
+        <qualifiedname>ista::owl2::loader::CsvReader::~CsvReader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="132" column="5" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.cpp" bodystart="29" bodyend="31"/>
+        <references refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a9e298e7666c5e8bacd7cd9592d7c702f" compoundref="data__loader_8cpp" startline="61" endline="66">close</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1CsvReader_1af4916e2e46140d3e5cac33f0149e822c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::loader::CsvReader::open</definition>
+        <argsstring>() override</argsstring>
+        <name>open</name>
+        <qualifiedname>ista::owl2::loader::CsvReader::open</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1loader_1_1DataSourceReader_1ab0b06e3b31af464226348c919f6a6b7e">open</reimplements>
+        <briefdescription>
+<para>Open the data source. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if successful </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="134" column="10" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.cpp" bodystart="33" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1CsvReader_1a9e298e7666c5e8bacd7cd9592d7c702f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ista::owl2::loader::CsvReader::close</definition>
+        <argsstring>() override</argsstring>
+        <name>close</name>
+        <qualifiedname>ista::owl2::loader::CsvReader::close</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1loader_1_1DataSourceReader_1a021d6a154ab2759abf752518a52f656c">close</reimplements>
+        <briefdescription>
+<para>Close the data source. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="135" column="10" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.cpp" bodystart="61" bodyend="66"/>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a46cbb4600143f97a8f5a5e7b3e6b14bb" compoundref="data__loader_8cpp" startline="29" endline="31">~CsvReader</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1CsvReader_1a56eba1e9576c3fd6d40659b92a79741f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::loader::CsvReader::has_next</definition>
+        <argsstring>() const override</argsstring>
+        <name>has_next</name>
+        <qualifiedname>ista::owl2::loader::CsvReader::has_next</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1loader_1_1DataSourceReader_1a520227bfb006f6b667de93b75abdf976">has_next</reimplements>
+        <briefdescription>
+<para>Check if there are more rows. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="136" column="10" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.cpp" bodystart="68" bodyend="70"/>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a660aba205a151471827e636b8170b44f" compoundref="data__loader_8cpp" startline="72" endline="94">next</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1CsvReader_1a660aba205a151471827e636b8170b44f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="namespaceista_1_1owl2_1_1loader_1a8c7dd408a695878acd33de820a93a66e" kindref="member">DataRow</ref></type>
+        <definition>DataRow ista::owl2::loader::CsvReader::next</definition>
+        <argsstring>() override</argsstring>
+        <name>next</name>
+        <qualifiedname>ista::owl2::loader::CsvReader::next</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1loader_1_1DataSourceReader_1a3eb873d9e0a3dbf27de4ab97fa42e5e9">next</reimplements>
+        <briefdescription>
+<para>Read the next row. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="137" column="13" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.cpp" bodystart="72" bodyend="94"/>
+        <references refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a56eba1e9576c3fd6d40659b92a79741f" compoundref="data__loader_8cpp" startline="68" endline="70">has_next</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1CsvReader_1a585510eff00bcaa892f94097d4ecf91d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; ista::owl2::loader::CsvReader::headers</definition>
+        <argsstring>() const override</argsstring>
+        <name>headers</name>
+        <qualifiedname>ista::owl2::loader::CsvReader::headers</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1loader_1_1DataSourceReader_1a9e497d90f8214507f98054206208c734">headers</reimplements>
+        <briefdescription>
+<para>Get the column headers. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="138" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.cpp" bodystart="96" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1CsvReader_1acbf3670a2ad35e0438e7172faa411e6b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>size_t</type>
+        <definition>size_t ista::owl2::loader::CsvReader::row_count</definition>
+        <argsstring>() const override</argsstring>
+        <name>row_count</name>
+        <qualifiedname>ista::owl2::loader::CsvReader::row_count</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1loader_1_1DataSourceReader_1aa0e62e6efc680fa1ca8da481982349cd">row_count</reimplements>
+        <briefdescription>
+<para>Get total row count (0 if unknown). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="139" column="12" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.cpp" bodystart="100" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1CsvReader_1a76107aa0a3f113cc5e75cb0e021c6889" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ista::owl2::loader::CsvReader::reset</definition>
+        <argsstring>() override</argsstring>
+        <name>reset</name>
+        <qualifiedname>ista::owl2::loader::CsvReader::reset</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1loader_1_1DataSourceReader_1a71b8b849c28eda3cbefaf79e0b311d6a">reset</reimplements>
+        <briefdescription>
+<para>Reset to beginning. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="140" column="10" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.cpp" bodystart="104" bodyend="118"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1CsvReader_1a9d5c4a2a332117b6b30d6f75689e095e" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; ista::owl2::loader::CsvReader::parse_line</definition>
+        <argsstring>(const std::string &amp;line) const</argsstring>
+        <name>parse_line</name>
+        <qualifiedname>ista::owl2::loader::CsvReader::parse_line</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>line</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="152" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.cpp" bodystart="120" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1CsvReader_1ad92261f03fa36598cd96d696294ce99f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::loader::CsvReader::count_lines</definition>
+        <argsstring>()</argsstring>
+        <name>count_lines</name>
+        <qualifiedname>ista::owl2::loader::CsvReader::count_lines</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="153" column="10" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.cpp" bodystart="148" bodyend="156"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>CSV file reader implementation. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>ista::owl2::loader::CsvReader</label>
+        <link refid="classista_1_1owl2_1_1loader_1_1CsvReader"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ista::owl2::loader::DataSourceReader</label>
+        <link refid="classista_1_1owl2_1_1loader_1_1DataSourceReader"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>ista::owl2::loader::CsvReader</label>
+        <link refid="classista_1_1owl2_1_1loader_1_1CsvReader"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ista::owl2::loader::DataSourceReader</label>
+        <link refid="classista_1_1owl2_1_1loader_1_1DataSourceReader"/>
+      </node>
+    </collaborationgraph>
+    <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="129" column="1" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.hpp" bodystart="129" bodyend="154"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a735218a807902e08169a45dfecb5b4c8" prot="private" virt="non-virtual"><scope>ista::owl2::loader::CsvReader</scope><name>at_end_</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a9e298e7666c5e8bacd7cd9592d7c702f" prot="public" virt="virtual"><scope>ista::owl2::loader::CsvReader</scope><name>close</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1ad92261f03fa36598cd96d696294ce99f" prot="private" virt="non-virtual"><scope>ista::owl2::loader::CsvReader</scope><name>count_lines</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a44cfbbeced4551e79019271e7403960e" prot="public" virt="non-virtual"><scope>ista::owl2::loader::CsvReader</scope><name>CsvReader</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a572e11961c6b85a9cbe7de0cb33a3cc7" prot="private" virt="non-virtual"><scope>ista::owl2::loader::CsvReader</scope><name>current_line_</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a1a133ce2a8372be63662efdad004e463" prot="private" virt="non-virtual"><scope>ista::owl2::loader::CsvReader</scope><name>delimiter_</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a2c079c8bd3c3702207a0e4afdfdaf594" prot="private" virt="non-virtual"><scope>ista::owl2::loader::CsvReader</scope><name>file_</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a3394005e2d459a003bcbc2bb77ea3d93" prot="private" virt="non-virtual"><scope>ista::owl2::loader::CsvReader</scope><name>filepath_</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1afb1764891cf249b469e243656656b46e" prot="private" virt="non-virtual"><scope>ista::owl2::loader::CsvReader</scope><name>has_headers_</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a56eba1e9576c3fd6d40659b92a79741f" prot="public" virt="virtual"><scope>ista::owl2::loader::CsvReader</scope><name>has_next</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a585510eff00bcaa892f94097d4ecf91d" prot="public" virt="virtual"><scope>ista::owl2::loader::CsvReader</scope><name>headers</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a4955297371bee70968fea50ab86356dc" prot="private" virt="non-virtual"><scope>ista::owl2::loader::CsvReader</scope><name>headers_</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a660aba205a151471827e636b8170b44f" prot="public" virt="virtual"><scope>ista::owl2::loader::CsvReader</scope><name>next</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1af4916e2e46140d3e5cac33f0149e822c" prot="public" virt="virtual"><scope>ista::owl2::loader::CsvReader</scope><name>open</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a9d5c4a2a332117b6b30d6f75689e095e" prot="private" virt="non-virtual"><scope>ista::owl2::loader::CsvReader</scope><name>parse_line</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a76107aa0a3f113cc5e75cb0e021c6889" prot="public" virt="virtual"><scope>ista::owl2::loader::CsvReader</scope><name>reset</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1acbf3670a2ad35e0438e7172faa411e6b" prot="public" virt="virtual"><scope>ista::owl2::loader::CsvReader</scope><name>row_count</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a393964185296bbacd737bd012207c5ee" prot="private" virt="non-virtual"><scope>ista::owl2::loader::CsvReader</scope><name>total_lines_</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a46cbb4600143f97a8f5a5e7b3e6b14bb" prot="public" virt="non-virtual"><scope>ista::owl2::loader::CsvReader</scope><name>~CsvReader</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DataSourceReader_1a7e8b2d792afdf09c13e31450243ee99c" prot="public" virt="virtual"><scope>ista::owl2::loader::CsvReader</scope><name>~DataSourceReader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

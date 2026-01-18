@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="structista_1_1owl2_1_1loader_1_1EnrichmentDef" kind="struct" language="C++" prot="public">
+    <compoundname>ista::owl2::loader::EnrichmentDef</compoundname>
+    <includes refid="mapping__spec_8hpp" local="no">mapping_spec.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1EnrichmentDef_1a418a3e28c1e5a9cad767e8688dbf1e55" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::EnrichmentDef::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <qualifiedname>ista::owl2::loader::EnrichmentDef::name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="148" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1EnrichmentDef_1a9d3b8f4d4dcf8494021c5e3cd50b521a" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::EnrichmentDef::source</definition>
+        <argsstring></argsstring>
+        <name>source</name>
+        <qualifiedname>ista::owl2::loader::EnrichmentDef::source</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="149" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1EnrichmentDef_1a82d0db762763f1246e2e355a9eb49469" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; std::string &gt;</type>
+        <definition>std::optional&lt;std::string&gt; ista::owl2::loader::EnrichmentDef::table</definition>
+        <argsstring></argsstring>
+        <name>table</name>
+        <qualifiedname>ista::owl2::loader::EnrichmentDef::table</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="150" column="19" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1EnrichmentDef_1a0b8754f1b57d6a6975b9fdeb89d8d761" prot="public" static="no" mutable="no">
+        <type><ref refid="structista_1_1owl2_1_1loader_1_1MatchCriteria" kindref="compound">MatchCriteria</ref></type>
+        <definition>MatchCriteria ista::owl2::loader::EnrichmentDef::match</definition>
+        <argsstring></argsstring>
+        <name>match</name>
+        <qualifiedname>ista::owl2::loader::EnrichmentDef::match</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="151" column="19" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1EnrichmentDef_1af9491f7888deb7eb124407998e14f80b" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structista_1_1owl2_1_1loader_1_1PropertyMapping" kindref="compound">PropertyMapping</ref> &gt;</type>
+        <definition>std::vector&lt;PropertyMapping&gt; ista::owl2::loader::EnrichmentDef::properties</definition>
+        <argsstring></argsstring>
+        <name>properties</name>
+        <qualifiedname>ista::owl2::loader::EnrichmentDef::properties</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="152" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="152" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Enrichment source for an entity type. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>ista::owl2::loader::EnrichmentDef</label>
+        <link refid="structista_1_1owl2_1_1loader_1_1EnrichmentDef"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>match</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ista::owl2::loader::MatchCriteria</label>
+        <link refid="structista_1_1owl2_1_1loader_1_1MatchCriteria"/>
+      </node>
+    </collaborationgraph>
+    <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="147" column="1" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="147" bodyend="153"/>
+    <listofallmembers>
+      <member refid="structista_1_1owl2_1_1loader_1_1EnrichmentDef_1a0b8754f1b57d6a6975b9fdeb89d8d761" prot="public" virt="non-virtual"><scope>ista::owl2::loader::EnrichmentDef</scope><name>match</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1EnrichmentDef_1a418a3e28c1e5a9cad767e8688dbf1e55" prot="public" virt="non-virtual"><scope>ista::owl2::loader::EnrichmentDef</scope><name>name</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1EnrichmentDef_1af9491f7888deb7eb124407998e14f80b" prot="public" virt="non-virtual"><scope>ista::owl2::loader::EnrichmentDef</scope><name>properties</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1EnrichmentDef_1a9d3b8f4d4dcf8494021c5e3cd50b521a" prot="public" virt="non-virtual"><scope>ista::owl2::loader::EnrichmentDef</scope><name>source</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1EnrichmentDef_1a82d0db762763f1246e2e355a9eb49469" prot="public" virt="non-virtual"><scope>ista::owl2::loader::EnrichmentDef</scope><name>table</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

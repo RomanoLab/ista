@@ -1,0 +1,412 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1loader_1_1PostgresReader" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::loader::PostgresReader</compoundname>
+    <basecompoundref refid="classista_1_1owl2_1_1loader_1_1DatabaseReader" prot="public" virt="non-virtual">ista::owl2::loader::DatabaseReader</basecompoundref>
+    <includes refid="postgres__reader_8hpp" local="no">postgres_reader.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classista_1_1owl2_1_1loader_1_1PostgresReader_1ac78cedec8a7080b00abd104d31fca250" prot="private" static="no" mutable="no">
+        <type><ref refid="postgres__reader_8hpp_1a5ed62e34058025c39959695e724603a6" kindref="member">PGconn</ref> *</type>
+        <definition>PGconn* ista::owl2::loader::PostgresReader::conn_</definition>
+        <argsstring></argsstring>
+        <name>conn_</name>
+        <qualifiedname>ista::owl2::loader::PostgresReader::conn_</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/postgres_reader.hpp" line="65" column="12" bodyfile="D:/projects/ista/lib/owl2/loader/postgres_reader.hpp" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1loader_1_1PostgresReader_1a4b799f31e0737f7973c9cdb3a45c3d99" prot="private" static="no" mutable="no">
+        <type><ref refid="postgres__reader_8hpp_1abf3cdbf643993ad6d51b286dec46a753" kindref="member">PGresult</ref> *</type>
+        <definition>PGresult* ista::owl2::loader::PostgresReader::result_</definition>
+        <argsstring></argsstring>
+        <name>result_</name>
+        <qualifiedname>ista::owl2::loader::PostgresReader::result_</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/postgres_reader.hpp" line="66" column="14" bodyfile="D:/projects/ista/lib/owl2/loader/postgres_reader.hpp" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1loader_1_1PostgresReader_1a6a717d1daa2a474bcfe5b086cc38e716" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ista::owl2::loader::PostgresReader::num_fields_</definition>
+        <argsstring></argsstring>
+        <name>num_fields_</name>
+        <qualifiedname>ista::owl2::loader::PostgresReader::num_fields_</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/postgres_reader.hpp" line="67" column="9" bodyfile="D:/projects/ista/lib/owl2/loader/postgres_reader.hpp" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1loader_1_1PostgresReader_1ad8217ae9aaedb2bf3e2e102326eed75b" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ista::owl2::loader::PostgresReader::num_rows_</definition>
+        <argsstring></argsstring>
+        <name>num_rows_</name>
+        <qualifiedname>ista::owl2::loader::PostgresReader::num_rows_</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/postgres_reader.hpp" line="68" column="9" bodyfile="D:/projects/ista/lib/owl2/loader/postgres_reader.hpp" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1loader_1_1PostgresReader_1ab823ed314fbee29400c77e02f459491a" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ista::owl2::loader::PostgresReader::current_row_</definition>
+        <argsstring></argsstring>
+        <name>current_row_</name>
+        <qualifiedname>ista::owl2::loader::PostgresReader::current_row_</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/postgres_reader.hpp" line="69" column="9" bodyfile="D:/projects/ista/lib/owl2/loader/postgres_reader.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1PostgresReader_1ae8ff95ee0762179b022d2ecad46b60a4" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::loader::PostgresReader::PostgresReader</definition>
+        <argsstring>(const DataSourceDef &amp;source)</argsstring>
+        <name>PostgresReader</name>
+        <qualifiedname>ista::owl2::loader::PostgresReader::PostgresReader</qualifiedname>
+        <param>
+          <type>const <ref refid="structista_1_1owl2_1_1loader_1_1DataSourceDef" kindref="compound">DataSourceDef</ref> &amp;</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+<para>Construct a PostgreSQL reader from a data source definition. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data source definition (must have type &quot;postgres&quot; or &quot;postgresql&quot;) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/postgres_reader.hpp" line="47" column="14" bodyfile="D:/projects/ista/lib/owl2/loader/postgres_reader.cpp" bodystart="9" bodyend="19"/>
+        <references refid="structista_1_1owl2_1_1loader_1_1DataSourceDef_1afeaef3ebd85f7fb083ba62397f303d1c" compoundref="mapping__spec_8hpp" startline="76">ista::owl2::loader::DataSourceDef::connection</references>
+        <references refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1af797fee088fb8e4ba2695e39d320a335" compoundref="database__reader_8cpp" startline="8" endline="10">ista::owl2::loader::DatabaseReader::DatabaseReader</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1DataSourceDef_1a1100374442628453449d62ef16a92adb" compoundref="mapping__spec_8hpp" startline="70">ista::owl2::loader::DataSourceDef::type</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1PostgresReader_1a8fae407e638407c20fef9c362f8275aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::loader::PostgresReader::~PostgresReader</definition>
+        <argsstring>() override</argsstring>
+        <name>~PostgresReader</name>
+        <qualifiedname>ista::owl2::loader::PostgresReader::~PostgresReader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/postgres_reader.hpp" line="49" column="5" bodyfile="D:/projects/ista/lib/owl2/loader/postgres_reader.cpp" bodystart="21" bodyend="23"/>
+        <references refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1ad6de1802a761314575d302b24dd9c694" compoundref="database__reader_8cpp" startline="34" endline="42">ista::owl2::loader::DatabaseReader::close</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1PostgresReader_1a290b5c20252e5e0c7aaf3eb0b83e6335" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::loader::PostgresReader::has_next</definition>
+        <argsstring>() const override</argsstring>
+        <name>has_next</name>
+        <qualifiedname>ista::owl2::loader::PostgresReader::has_next</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1loader_1_1DataSourceReader_1a520227bfb006f6b667de93b75abdf976">has_next</reimplements>
+        <briefdescription>
+<para>Check if there are more rows. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/postgres_reader.hpp" line="52" column="10" bodyfile="D:/projects/ista/lib/owl2/loader/postgres_reader.cpp" bodystart="123" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1PostgresReader_1a47d90425d833b1367de0df7ab66a1c06" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="namespaceista_1_1owl2_1_1loader_1a8c7dd408a695878acd33de820a93a66e" kindref="member">DataRow</ref></type>
+        <definition>DataRow ista::owl2::loader::PostgresReader::next</definition>
+        <argsstring>() override</argsstring>
+        <name>next</name>
+        <qualifiedname>ista::owl2::loader::PostgresReader::next</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1loader_1_1DataSourceReader_1a3eb873d9e0a3dbf27de4ab97fa42e5e9">next</reimplements>
+        <briefdescription>
+<para>Read the next row. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/postgres_reader.hpp" line="53" column="13" bodyfile="D:/projects/ista/lib/owl2/loader/postgres_reader.cpp" bodystart="127" bodyend="148"/>
+        <references refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1a4e1e3b93c4d446eb173fcd3ee91c2a5f" compoundref="database__reader_8hpp" startline="104">ista::owl2::loader::DatabaseReader::headers_</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1PostgresReader_1abbaef98ca26267498ab063bf98110442" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ista::owl2::loader::PostgresReader::reset</definition>
+        <argsstring>() override</argsstring>
+        <name>reset</name>
+        <qualifiedname>ista::owl2::loader::PostgresReader::reset</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1loader_1_1DataSourceReader_1a71b8b849c28eda3cbefaf79e0b311d6a">reset</reimplements>
+        <briefdescription>
+<para>Reset to beginning. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/postgres_reader.hpp" line="54" column="10" bodyfile="D:/projects/ista/lib/owl2/loader/postgres_reader.cpp" bodystart="150" bodyend="152"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1PostgresReader_1a3fa319cf5b250b6f23bbedd0ca84cbe7" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::loader::PostgresReader::connect</definition>
+        <argsstring>() override</argsstring>
+        <name>connect</name>
+        <qualifiedname>ista::owl2::loader::PostgresReader::connect</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1a481f25965953cc7ab45ea06ef40682bc">connect</reimplements>
+        <briefdescription>
+<para>Establish a connection to the database. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if connection was successful </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/postgres_reader.hpp" line="58" column="10" bodyfile="D:/projects/ista/lib/owl2/loader/postgres_reader.cpp" bodystart="55" bodyend="72"/>
+        <references refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1a6f04aace6cd161b9f91c3d30c45f4ab1" compoundref="database__reader_8cpp" startline="59" endline="79">ista::owl2::loader::DatabaseReader::connection_description</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1PostgresReader_1a2ea0c0a4dc80f2b6365ed2ba14e5986c" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ista::owl2::loader::PostgresReader::disconnect</definition>
+        <argsstring>() override</argsstring>
+        <name>disconnect</name>
+        <qualifiedname>ista::owl2::loader::PostgresReader::disconnect</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1a2ad0c3092de0c1311d5f06652530df8f">disconnect</reimplements>
+        <briefdescription>
+<para>Close the database connection. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/postgres_reader.hpp" line="59" column="10" bodyfile="D:/projects/ista/lib/owl2/loader/postgres_reader.cpp" bodystart="74" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1PostgresReader_1ada5e1cc686c999b3a886d9e0f6f207d8" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::loader::PostgresReader::execute_query</definition>
+        <argsstring>() override</argsstring>
+        <name>execute_query</name>
+        <qualifiedname>ista::owl2::loader::PostgresReader::execute_query</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1a37b643ee9aeee8b8ad9010f121115917">execute_query</reimplements>
+        <briefdescription>
+<para>Execute the query and prepare for iteration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This should execute the SQL query (either from table or custom query) and prepare the result set for iteration via <ref refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1a290b5c20252e5e0c7aaf3eb0b83e6335" kindref="member">has_next()</ref>/next().</para>
+<para><simplesect kind="return"><para>true if query execution was successful </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/postgres_reader.hpp" line="60" column="10" bodyfile="D:/projects/ista/lib/owl2/loader/postgres_reader.cpp" bodystart="82" bodyend="105"/>
+        <references refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1a72a4509770ff726df5759d5bbadc749a" compoundref="database__reader_8cpp" startline="44" endline="57">ista::owl2::loader::DatabaseReader::build_query</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1PostgresReader_1a60a3521de868e7038cf7b37dcc167bb9" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; ista::owl2::loader::PostgresReader::fetch_column_names</definition>
+        <argsstring>() override</argsstring>
+        <name>fetch_column_names</name>
+        <qualifiedname>ista::owl2::loader::PostgresReader::fetch_column_names</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1a6efd5a261b56da201047768f81aaad55">fetch_column_names</reimplements>
+        <briefdescription>
+<para>Get the column names from the result set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Called after <ref refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1ada5e1cc686c999b3a886d9e0f6f207d8" kindref="member">execute_query()</ref> to populate headers_.</para>
+<para><simplesect kind="return"><para>Vector of column names </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/postgres_reader.hpp" line="61" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/postgres_reader.cpp" bodystart="107" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1PostgresReader_1ac259dfce2dcc95a2e5fa04279d224d76" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>size_t</type>
+        <definition>size_t ista::owl2::loader::PostgresReader::fetch_row_count</definition>
+        <argsstring>() override</argsstring>
+        <name>fetch_row_count</name>
+        <qualifiedname>ista::owl2::loader::PostgresReader::fetch_row_count</qualifiedname>
+        <reimplements refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1a13cc27439a56b4a36d3c200840bbd65f">fetch_row_count</reimplements>
+        <briefdescription>
+<para>Get the row count from the result set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Called after <ref refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1ada5e1cc686c999b3a886d9e0f6f207d8" kindref="member">execute_query()</ref> to populate total_rows_. Return 0 if count is unknown or expensive to compute.</para>
+<para><simplesect kind="return"><para>Number of rows, or 0 if unknown </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/postgres_reader.hpp" line="62" column="12" bodyfile="D:/projects/ista/lib/owl2/loader/postgres_reader.cpp" bodystart="119" bodyend="121"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1PostgresReader_1a3f547604fa052c9a6b1aa11c9bd4ea73" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::PostgresReader::build_connection_string</definition>
+        <argsstring>() const</argsstring>
+        <name>build_connection_string</name>
+        <qualifiedname>ista::owl2::loader::PostgresReader::build_connection_string</qualifiedname>
+        <briefdescription>
+<para>Build a libpq connection string from connection parameters. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/postgres_reader.hpp" line="74" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/postgres_reader.cpp" bodystart="25" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1PostgresReader_1aa718f62e122add07b9b73887fcb4c937" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::loader::PostgresReader::clear_result</definition>
+        <argsstring>()</argsstring>
+        <name>clear_result</name>
+        <qualifiedname>ista::owl2::loader::PostgresReader::clear_result</qualifiedname>
+        <briefdescription>
+<para>Clear the result set. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/postgres_reader.hpp" line="79" column="10" bodyfile="D:/projects/ista/lib/owl2/loader/postgres_reader.cpp" bodystart="154" bodyend="162"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>PostgreSQL database reader implementation. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Reads data from PostgreSQL databases using the libpq C API. Supports both simple table access and custom SQL queries.</para>
+<para>YAML configuration example: <programlisting filename=".yaml"><codeline><highlight class="normal">sources:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>my_postgres_db:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>type:<sp/>postgres<sp/><sp/>#<sp/>or<sp/>&quot;postgresql&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>connection:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>host:<sp/>&quot;localhost&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>port:<sp/>5432</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>database:<sp/>&quot;mydb&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>username:<sp/>&quot;${DB_USER}&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>password:<sp/>&quot;${DB_PASS}&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Alternative:<sp/>use<sp/>a<sp/>connection<sp/>string</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>connection_string:<sp/>&quot;postgresql://user:pass@host:5432/dbname&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>table:<sp/>my_table</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>or<sp/>use<sp/>a<sp/>custom<sp/>query:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>query:<sp/>&quot;SELECT<sp/>id,<sp/>name<sp/>FROM<sp/>my_table<sp/>WHERE<sp/>active<sp/>=<sp/>true&quot;</highlight></codeline>
+</programlisting> </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>ista::owl2::loader::DataSourceReader</label>
+        <link refid="classista_1_1owl2_1_1loader_1_1DataSourceReader"/>
+      </node>
+      <node id="2">
+        <label>ista::owl2::loader::DatabaseReader</label>
+        <link refid="classista_1_1owl2_1_1loader_1_1DatabaseReader"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ista::owl2::loader::PostgresReader</label>
+        <link refid="classista_1_1owl2_1_1loader_1_1PostgresReader"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4">
+        <label>ista::owl2::loader::DataSourceDef</label>
+        <link refid="structista_1_1owl2_1_1loader_1_1DataSourceDef"/>
+      </node>
+      <node id="3">
+        <label>ista::owl2::loader::DataSourceReader</label>
+        <link refid="classista_1_1owl2_1_1loader_1_1DataSourceReader"/>
+      </node>
+      <node id="2">
+        <label>ista::owl2::loader::DatabaseReader</label>
+        <link refid="classista_1_1owl2_1_1loader_1_1DatabaseReader"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>source_</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ista::owl2::loader::PostgresReader</label>
+        <link refid="classista_1_1owl2_1_1loader_1_1PostgresReader"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/projects/ista/lib/owl2/loader/postgres_reader.hpp" line="40" column="1" bodyfile="D:/projects/ista/lib/owl2/loader/postgres_reader.hpp" bodystart="40" bodyend="80"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1a3f547604fa052c9a6b1aa11c9bd4ea73" prot="private" virt="non-virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>build_connection_string</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1a72a4509770ff726df5759d5bbadc749a" prot="protected" virt="non-virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>build_query</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1aa718f62e122add07b9b73887fcb4c937" prot="private" virt="non-virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>clear_result</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1ad6de1802a761314575d302b24dd9c694" prot="public" virt="virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>close</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1ac78cedec8a7080b00abd104d31fca250" prot="private" virt="non-virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>conn_</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1a3fa319cf5b250b6f23bbedd0ca84cbe7" prot="protected" virt="virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>connect</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1a6f04aace6cd161b9f91c3d30c45f4ab1" prot="protected" virt="non-virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>connection_description</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1ab823ed314fbee29400c77e02f459491a" prot="private" virt="non-virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>current_row_</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1af797fee088fb8e4ba2695e39d320a335" prot="public" virt="non-virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>DatabaseReader</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1a2ea0c0a4dc80f2b6365ed2ba14e5986c" prot="protected" virt="virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>disconnect</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1ada5e1cc686c999b3a886d9e0f6f207d8" prot="protected" virt="virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>execute_query</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1a60a3521de868e7038cf7b37dcc167bb9" prot="protected" virt="virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>fetch_column_names</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1ac259dfce2dcc95a2e5fa04279d224d76" prot="protected" virt="virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>fetch_row_count</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1a290b5c20252e5e0c7aaf3eb0b83e6335" prot="public" virt="virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>has_next</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1af1d9c50266de3f8d1f18191e931a965e" prot="public" virt="virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>headers</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1a4e1e3b93c4d446eb173fcd3ee91c2a5f" prot="protected" virt="non-virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>headers_</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1a8c3e08a54412132f863f2b5a10b85be3" prot="protected" virt="non-virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>is_connected_</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1a47d90425d833b1367de0df7ab66a1c06" prot="public" virt="virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>next</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1a6a717d1daa2a474bcfe5b086cc38e716" prot="private" virt="non-virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>num_fields_</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1ad8217ae9aaedb2bf3e2e102326eed75b" prot="private" virt="non-virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>num_rows_</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1abaec83e20ca19b821563529a7284d2b6" prot="public" virt="virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>open</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1ae8ff95ee0762179b022d2ecad46b60a4" prot="public" virt="non-virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>PostgresReader</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1a2d2efa4237292dca7e9206c7ef07bb33" prot="protected" virt="non-virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>query_executed_</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1abbaef98ca26267498ab063bf98110442" prot="public" virt="virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>reset</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1a4b799f31e0737f7973c9cdb3a45c3d99" prot="private" virt="non-virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>result_</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1aa4122a9c4feb0da8ae0d9b4a60103df1" prot="public" virt="virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>row_count</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1a864eee7c87b40a228ad36be235b2a427" prot="protected" virt="non-virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>source_</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1acaf82b6a101ef863c4ae50db8d778656" prot="protected" virt="non-virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>total_rows_</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1af1418519df81d2ca1a623ded2baa8a37" prot="public" virt="virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>~DatabaseReader</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DataSourceReader_1a7e8b2d792afdf09c13e31450243ee99c" prot="public" virt="virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>~DataSourceReader</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1a8fae407e638407c20fef9c362f8275aa" prot="public" virt="non-virtual"><scope>ista::owl2::loader::PostgresReader</scope><name>~PostgresReader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

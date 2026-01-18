@@ -127,6 +127,65 @@
     <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1afe6fd8f0db0eff3acd827383b9cc8245" kind="function"><name>getBlankNodeID</name></member>
     <member refid="classista_1_1owl2_1_1RDFXMLSerializer_1_1Builder_1abf96fee54c06a7cf2904a906eb0dc6b2" kind="function"><name>writeAnnotations</name></member>
   </compound>
+  <compound refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder" kind="class"><name>ista::owl2::TurtleSerializer::Builder</name>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a3a5a174a6dfe66d49c4703a7fa56e596" kind="variable"><name>ontology_</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a9696be457dc3999a410ea7f40e0fb0f2" kind="variable"><name>ttl_</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a899c89aee9ae9956aebc62e542dafe68" kind="variable"><name>namespaces_</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1ad6dd25f7f38650f57d18dd3c0f390184" kind="variable"><name>prefixes_</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a2b239d4b6b1b7cef0fd19908eeb6f307" kind="variable"><name>blank_node_counter_</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1aeb67c5c9232f9bbda6777b6b4eaa9271" kind="variable"><name>written_subjects_</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1afdc517f061e442d4098acc54f0a38c29" kind="function"><name>Builder</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a792972733ae64eb9cbfdc994dacdb36f" kind="function"><name>Builder</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a503b21eea432494cb98e1dd611e72a61" kind="function"><name>build</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1ac8e740530863e65980fab332a5aac6a6" kind="function"><name>writePrefixes</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1ac70bd4be036389721fe992c8c1946dc5" kind="function"><name>writeOntologyHeader</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1af504047cd1af1f46b1a468dd9f1bbe7c" kind="function"><name>writeAxioms</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1ad130e55c211a306dbc7ff1be33f492d0" kind="function"><name>writeDeclaration</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a3df8af4d25330431d24ca052f4532b16" kind="function"><name>writeSubClassOf</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a4d587a9f318c8cec91eb685b5da7019f" kind="function"><name>writeEquivalentClasses</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1ac14091766d2b992ef84363e0698ea1b8" kind="function"><name>writeDisjointClasses</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a5785337d389c2d66dbb705d68fc60588" kind="function"><name>writeClassAssertion</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a258a64f32390f9806176c9928523e2ff" kind="function"><name>writeObjectPropertyAssertion</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a5a75196d534c80285cc289c922ebafd9" kind="function"><name>writeDataPropertyAssertion</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1aecfa10978305563a80d0b6777c69cdaf" kind="function"><name>writeNegativeObjectPropertyAssertion</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a9f24c493798086ae2cae8db1e83cd453" kind="function"><name>writeNegativeDataPropertyAssertion</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a2d39665b9ce6bd3c5e9a9f4ff5ddb336" kind="function"><name>writeSubObjectPropertyOf</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1aabb1778eb4b23b6e0892d769553a200e" kind="function"><name>writeSubDataPropertyOf</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a00633787970a4b3afb51e3b3c7c88c93" kind="function"><name>writeObjectPropertyDomain</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a58e5b36b6f6543f31920843b5f95d62b" kind="function"><name>writeObjectPropertyRange</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1ac49020ebf99b75fb32abcdaf9016e710" kind="function"><name>writeDataPropertyDomain</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1aa795cbe6476bedc67f23170fc469e248" kind="function"><name>writeDataPropertyRange</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a5e1c5207dce6ef916a932341e2085e49" kind="function"><name>writeFunctionalObjectProperty</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a79261bc8b9c096dc467f492f5c33b041" kind="function"><name>writeFunctionalDataProperty</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a6070954f76e0afa29c424db058a25634" kind="function"><name>writeInverseFunctionalObjectProperty</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a880e3d6b4dc3161088fa6d75bd0f4413" kind="function"><name>writeTransitiveObjectProperty</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a0bc826593e6eba400ac47e2bb4a59ae1" kind="function"><name>writeSymmetricObjectProperty</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a81b13c71cded1ff8015f5a3e1b724257" kind="function"><name>writeAsymmetricObjectProperty</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a2a6cdd8644c6ff64ab5d45fc6c41ee15" kind="function"><name>writeReflexiveObjectProperty</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a23d8af6706e1e401d1ca30b305828a29" kind="function"><name>writeIrreflexiveObjectProperty</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a2ca8324336cc1c1669d87a4ab4edc8b5" kind="function"><name>writeInverseObjectProperties</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1af8bd3a3d88a10ccdb020be444543aafb" kind="function"><name>writeEquivalentObjectProperties</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a826944ce63e7e5701e643cccd4021713" kind="function"><name>writeEquivalentDataProperties</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1aaa15c8697f5187cb327365cc782ae822" kind="function"><name>writeDisjointObjectProperties</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1afdcd734faf474cc6f8a54b70300426fa" kind="function"><name>writeDisjointDataProperties</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1aeb4718f4ffe29c0536cb6f5c7c79e870" kind="function"><name>writeAnnotationAssertion</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1abaa24e9b6020565029d813c1e3ba73bf" kind="function"><name>writeSubAnnotationPropertyOf</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1ad6cc4b55d2c6f565c4d5586a025ff3b4" kind="function"><name>writeAnnotationPropertyDomain</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a477e64fca50b994f8a2217f77dbb7531" kind="function"><name>writeAnnotationPropertyRange</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a6a9f76cd0a0f46b0b1b6235df4f9ef76" kind="function"><name>formatIRI</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a4eda73789a9bf655a7c54d2d53fa1413" kind="function"><name>formatLiteral</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1adb8e6e65c8731712197c008d756896f3" kind="function"><name>formatIndividual</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a490150a8e95d5606dde38807f0c58762" kind="function"><name>formatClassExpression</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1ac64531f142f8da795416d8e45081b36c" kind="function"><name>formatDataRange</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1ad8bac19bcf693a64b818e3c1dff4673e" kind="function"><name>registerStandardNamespaces</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1aa044ee678e12cdf8d781fc5e243998f8" kind="function"><name>registerOntologyNamespaces</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1aaf807a34266b202d1fcce4b7cbb3c0b2" kind="function"><name>detectNamespaces</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a833db87c3f5e7b5c671bdddf25200cd4" kind="function"><name>getBlankNodeID</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1aab410b451fee27448c3926f181523d0e" kind="function"><name>escapeTurtleString</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a27e65a53cfadfab05f2d14a9625c5ac6" kind="function"><name>needsQuotes</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1ad485f1807396f8cacc93194324e57579" kind="function"><name>writeTriple</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleSerializer_1_1Builder_1a342a5eb8529696e1365b801d8583cffe" kind="function"><name>writeAnnotations</name></member>
+  </compound>
   <compound refid="structClass" kind="struct"><name>Class</name>
   </compound>
   <compound refid="classista_1_1owl2_1_1Class" kind="class"><name>ista::owl2::Class</name>
@@ -165,6 +224,56 @@
     <member refid="classista_1_1owl2_1_1CSVParser_1a20bc4c4a28e88a684dd1b6c50a6e7370" kind="function"><name>find_individual_by_property</name></member>
     <member refid="classista_1_1owl2_1_1CSVParser_1af2fcd034579f7e1c3a5f9d90c0f8f851" kind="function"><name>apply_transform</name></member>
   </compound>
+  <compound refid="classista_1_1owl2_1_1loader_1_1CsvReader" kind="class"><name>ista::owl2::loader::CsvReader</name>
+    <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a3394005e2d459a003bcbc2bb77ea3d93" kind="variable"><name>filepath_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a1a133ce2a8372be63662efdad004e463" kind="variable"><name>delimiter_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1afb1764891cf249b469e243656656b46e" kind="variable"><name>has_headers_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a4955297371bee70968fea50ab86356dc" kind="variable"><name>headers_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a2c079c8bd3c3702207a0e4afdfdaf594" kind="variable"><name>file_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a572e11961c6b85a9cbe7de0cb33a3cc7" kind="variable"><name>current_line_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a393964185296bbacd737bd012207c5ee" kind="variable"><name>total_lines_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a735218a807902e08169a45dfecb5b4c8" kind="variable"><name>at_end_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a44cfbbeced4551e79019271e7403960e" kind="function"><name>CsvReader</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a46cbb4600143f97a8f5a5e7b3e6b14bb" kind="function"><name>~CsvReader</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1af4916e2e46140d3e5cac33f0149e822c" kind="function"><name>open</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a9e298e7666c5e8bacd7cd9592d7c702f" kind="function"><name>close</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a56eba1e9576c3fd6d40659b92a79741f" kind="function"><name>has_next</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a660aba205a151471827e636b8170b44f" kind="function"><name>next</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a585510eff00bcaa892f94097d4ecf91d" kind="function"><name>headers</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1acbf3670a2ad35e0438e7172faa411e6b" kind="function"><name>row_count</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a76107aa0a3f113cc5e75cb0e021c6889" kind="function"><name>reset</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1a9d5c4a2a332117b6b30d6f75689e095e" kind="function"><name>parse_line</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1CsvReader_1ad92261f03fa36598cd96d696294ce99f" kind="function"><name>count_lines</name></member>
+  </compound>
+  <compound refid="structista_1_1owl2_1_1loader_1_1DatabaseConnectionDef" kind="struct"><name>ista::owl2::loader::DatabaseConnectionDef</name>
+    <member refid="structista_1_1owl2_1_1loader_1_1DatabaseConnectionDef_1a9b499ffca03cf0fbd944da3564d94949" kind="variable"><name>host</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1DatabaseConnectionDef_1a901692adea750ff5ba476864e0393296" kind="variable"><name>port</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1DatabaseConnectionDef_1ad9f79cf2c09cb0d5843c3990f2db48b0" kind="variable"><name>database</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1DatabaseConnectionDef_1a4a1467e3e0a0cf924b563d37d4b51f91" kind="variable"><name>username</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1DatabaseConnectionDef_1a26299e32188ddeb755bd9e91f5f359da" kind="variable"><name>password</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1DatabaseConnectionDef_1a46f7c1364325bc7456732e415900a033" kind="variable"><name>connection_string</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1DatabaseConnectionDef_1ad6836e1503c31f2e538409dd46f4e785" kind="variable"><name>use_connection_string</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1loader_1_1DatabaseReader" kind="class"><name>ista::owl2::loader::DatabaseReader</name>
+    <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1a864eee7c87b40a228ad36be235b2a427" kind="variable"><name>source_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1a4e1e3b93c4d446eb173fcd3ee91c2a5f" kind="variable"><name>headers_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1acaf82b6a101ef863c4ae50db8d778656" kind="variable"><name>total_rows_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1a8c3e08a54412132f863f2b5a10b85be3" kind="variable"><name>is_connected_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1a2d2efa4237292dca7e9206c7ef07bb33" kind="variable"><name>query_executed_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1af797fee088fb8e4ba2695e39d320a335" kind="function"><name>DatabaseReader</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1af1418519df81d2ca1a623ded2baa8a37" kind="function"><name>~DatabaseReader</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1abaec83e20ca19b821563529a7284d2b6" kind="function"><name>open</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1ad6de1802a761314575d302b24dd9c694" kind="function"><name>close</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1af1d9c50266de3f8d1f18191e931a965e" kind="function"><name>headers</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1aa4122a9c4feb0da8ae0d9b4a60103df1" kind="function"><name>row_count</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1a481f25965953cc7ab45ea06ef40682bc" kind="function"><name>connect</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1a2ad0c3092de0c1311d5f06652530df8f" kind="function"><name>disconnect</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1a37b643ee9aeee8b8ad9010f121115917" kind="function"><name>execute_query</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1a6efd5a261b56da201047768f81aaad55" kind="function"><name>fetch_column_names</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1a13cc27439a56b4a36d3c200840bbd65f" kind="function"><name>fetch_row_count</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1a72a4509770ff726df5759d5bbadc749a" kind="function"><name>build_query</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DatabaseReader_1a6f04aace6cd161b9f91c3d30c45f4ab1" kind="function"><name>connection_description</name></member>
+  </compound>
   <compound refid="classista_1_1owl2_1_1DataComplementOf" kind="class"><name>ista::owl2::DataComplementOf</name>
     <member refid="classista_1_1owl2_1_1DataComplementOf_1ac064a20bbd39f13be56df2963c9589c3" kind="variable"><name>data_range_</name></member>
     <member refid="classista_1_1owl2_1_1DataComplementOf_1a02335ee8e5b6061bfbb9d36c91d80150" kind="function"><name>DataComplementOf</name></member>
@@ -178,6 +287,58 @@
     <member refid="classista_1_1owl2_1_1DataIntersectionOf_1ad527e2b28e48eea98ac073ea25abe852" kind="function"><name>getOperands</name></member>
     <member refid="classista_1_1owl2_1_1DataIntersectionOf_1a89be2bd5aec959e2484f81082a328ec8" kind="function"><name>toFunctionalSyntax</name></member>
     <member refid="classista_1_1owl2_1_1DataIntersectionOf_1a3205e0ad92e1ca7f1cc8b69b5db2f89d" kind="function"><name>getDataRangeType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1loader_1_1DataLoader" kind="class"><name>ista::owl2::loader::DataLoader</name>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataLoader_1af5d0bf0533c8ea8782efa7b7b820c2af" kind="variable"><name>ontology_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataLoader_1a0ebb8b9d1b93ba2eb3d445d3062545a8" kind="variable"><name>spec_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataLoader_1a0657cba4fb87c6890c8bd3e5e7f987f3" kind="variable"><name>transform_engine_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataLoader_1a23ea548c038616b2acef0d6596797ca0" kind="variable"><name>progress_callback_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataLoader_1add487133c5bea39abc113f138e33f975" kind="variable"><name>readers_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataLoader_1a03975cdc6c62c2f36d6a65cd3d14a189" kind="function"><name>DataLoader</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataLoader_1ab7911b8453fe7442560d1ae05435cd4b" kind="function"><name>set_mapping_spec</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataLoader_1a40d6d1c5de3fc8e63b026cd857970b91" kind="function"><name>load_mapping_spec</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataLoader_1ad535a2f0734b2f1b932592aca1eb38ce" kind="function"><name>set_progress_callback</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataLoader_1abb33c803c5482c00abdb6c31ee8f84d5" kind="function"><name>execute</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataLoader_1a7ca783f5c12ea62365818fc0a52a5039" kind="function"><name>execute_node_mapping</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataLoader_1a9153220fdad00bc9ca6e4a2f77067c5f" kind="function"><name>execute_relationship_mapping</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataLoader_1a02ad21d6b7d88d771404ecc12fe11bfb" kind="function"><name>execute_all_node_mappings</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataLoader_1af9e9ebaa786685a8dcdfc871f4e4aeb8" kind="function"><name>execute_all_relationship_mappings</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataLoader_1ad1d414e69e40f0f223cd86508ab4c009" kind="function"><name>mapping_spec</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataLoader_1ad1d3072429089da0025d12692f23cf74" kind="function"><name>validate</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataLoader_1a901648b735a20e66658474ce2cf59f88" kind="function"><name>get_reader</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataLoader_1a84721ee6cb61822c9344f82768c64a15" kind="function"><name>process_node_mapping</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataLoader_1a8708ef32658a80caab0a1a955d002b14" kind="function"><name>process_relationship_mapping</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataLoader_1a916b8f5249dd9c9a582dbdc293a56e03" kind="function"><name>apply_transform</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataLoader_1a515ba0fac0d96a55f4edfef1fbf597c9" kind="function"><name>passes_filter</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataLoader_1a0058784d4aa3b0753a79f95fa058a544" kind="function"><name>find_class</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataLoader_1a3f51f27fd9e1d5f5ff995f3632f1c5eb" kind="function"><name>find_data_property</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataLoader_1a85be1aa8d094a3a7a2dede72dd61ee09" kind="function"><name>find_object_property</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataLoader_1a08ea4e18b935fdc3a60a4c006a18d047" kind="function"><name>find_individual_by_property</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataLoader_1a699e276b6140bc3181bb27d9acff84f6" kind="function"><name>make_individual_iri</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataLoader_1a4d24778b41e156c1a4967c2227d446d9" kind="function"><name>add_data_property</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataLoader_1a2fc1ebd53cb39c7b79423fa72d9a3132" kind="function"><name>sanitize_for_iri</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1loader_1_1DataLoaderException" kind="class"><name>ista::owl2::loader::DataLoaderException</name>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataLoaderException_1a95ced787516138fee55822461a7a4b39" kind="function"><name>DataLoaderException</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec" kind="class"><name>ista::owl2::loader::DataMappingSpec</name>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1acc46d8f216b2e7722f11ece0e6725f42" kind="variable"><name>version</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a4bf827e0b29865e16fe9379697b047f9" kind="variable"><name>base_iri</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a4c023d404f56362eff3315ca76bfd0ad" kind="variable"><name>transforms</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a6be67b1bfd07736b53a9f289b94dc59f" kind="variable"><name>sources</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a9b5fdd6164257865e014f297c7ad2f86" kind="variable"><name>entity_types</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a5877bed541269c529dbfbc699c29348f" kind="variable"><name>node_mappings</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a7971d23f8d1eb499660430824d8a8c13" kind="variable"><name>relationship_mappings</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1abf7f30d46b4aa762974ad0b9b1e85ef1" kind="function"><name>load_from_file</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aee83b1571a5de67f9bfa1ca721a107e4" kind="function"><name>parse</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aee3f45da75505bdb2e26e4919ef9c550" kind="function"><name>validate</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a73cbf7656940f10581ca1d35bf40be0e" kind="function"><name>to_yaml</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1ae22b82763116f06e35c0027aaa7edc1b" kind="function"><name>save_to_file</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1abe021f2a97c46329700ec261c495089a" kind="function"><name>expand_entity_types</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aaa8fdbd9b990889a6bb985284d7986e9" kind="function"><name>get_all_node_mappings</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1ae93f18abd88ed46fb109302d9425def9" kind="function"><name>resolve_environment_variables</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aad0b0bee07c98ae9051b4953fb4399f8" kind="function"><name>has_class</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a3a7036e808574fa3b7301b26b1680d34" kind="function"><name>has_property</name></member>
   </compound>
   <compound refid="classista_1_1owl2_1_1DataOneOf" kind="class"><name>ista::owl2::DataOneOf</name>
     <member refid="classista_1_1owl2_1_1DataOneOf_1a96327c135744e59e6d72e91d9e27eac9" kind="variable"><name>literals_</name></member>
@@ -225,6 +386,29 @@
     <member refid="classista_1_1owl2_1_1DataRange_1af96348d6c75791cb43e898a5b0a4d677" kind="function"><name>~DataRange</name></member>
     <member refid="classista_1_1owl2_1_1DataRange_1abe52a263c7481aa3d078f895a62c7547" kind="function"><name>toFunctionalSyntax</name></member>
     <member refid="classista_1_1owl2_1_1DataRange_1abc8e583db3cb378e0e055ecb5607288b" kind="function"><name>getDataRangeType</name></member>
+  </compound>
+  <compound refid="structista_1_1owl2_1_1loader_1_1DataSourceDef" kind="struct"><name>ista::owl2::loader::DataSourceDef</name>
+    <member refid="structista_1_1owl2_1_1loader_1_1DataSourceDef_1a4aaa397fa29580a12d4860d2d79f8f75" kind="variable"><name>name</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1DataSourceDef_1a1100374442628453449d62ef16a92adb" kind="variable"><name>type</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1DataSourceDef_1ae4897c5457c65d153c69c62c20d4c7fd" kind="variable"><name>path</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1DataSourceDef_1ae992593b4050a5e9b29b8b77f8a6ad76" kind="variable"><name>delimiter</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1DataSourceDef_1a58e0a9d74e8b3bf763de87da7aec18a0" kind="variable"><name>has_headers</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1DataSourceDef_1afeaef3ebd85f7fb083ba62397f303d1c" kind="variable"><name>connection</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1DataSourceDef_1a220600967e43e9d1a43df770943c3d94" kind="variable"><name>table</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1DataSourceDef_1ab87fd64b0084c0e570fad59a3bd6c4cb" kind="variable"><name>query</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1loader_1_1DataSourceFactory" kind="class"><name>ista::owl2::loader::DataSourceFactory</name>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataSourceFactory_1aff00fd28b82facee71cc2230b0ffb1cb" kind="function"><name>create_reader</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1loader_1_1DataSourceReader" kind="class"><name>ista::owl2::loader::DataSourceReader</name>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataSourceReader_1a7e8b2d792afdf09c13e31450243ee99c" kind="function"><name>~DataSourceReader</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataSourceReader_1ab0b06e3b31af464226348c919f6a6b7e" kind="function"><name>open</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataSourceReader_1a021d6a154ab2759abf752518a52f656c" kind="function"><name>close</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataSourceReader_1a520227bfb006f6b667de93b75abdf976" kind="function"><name>has_next</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataSourceReader_1a3eb873d9e0a3dbf27de4ab97fa42e5e9" kind="function"><name>next</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataSourceReader_1a9e497d90f8214507f98054206208c734" kind="function"><name>headers</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataSourceReader_1aa0e62e6efc680fa1ca8da481982349cd" kind="function"><name>row_count</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1DataSourceReader_1a71b8b849c28eda3cbefaf79e0b311d6a" kind="function"><name>reset</name></member>
   </compound>
   <compound refid="structDatatype" kind="struct"><name>Datatype</name>
   </compound>
@@ -311,6 +495,13 @@
     <member refid="classista_1_1owl2_1_1DisjointUnion_1aea2097ac09551729badc14499ac0253c" kind="function"><name>toFunctionalSyntax</name></member>
     <member refid="classista_1_1owl2_1_1DisjointUnion_1a6b1436e01385a50a1a2932db3b3cd595" kind="function"><name>getAxiomType</name></member>
   </compound>
+  <compound refid="structista_1_1owl2_1_1loader_1_1EnrichmentDef" kind="struct"><name>ista::owl2::loader::EnrichmentDef</name>
+    <member refid="structista_1_1owl2_1_1loader_1_1EnrichmentDef_1a418a3e28c1e5a9cad767e8688dbf1e55" kind="variable"><name>name</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1EnrichmentDef_1a9d3b8f4d4dcf8494021c5e3cd50b521a" kind="variable"><name>source</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1EnrichmentDef_1a82d0db762763f1246e2e355a9eb49469" kind="variable"><name>table</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1EnrichmentDef_1a0b8754f1b57d6a6975b9fdeb89d8d761" kind="variable"><name>match</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1EnrichmentDef_1af9491f7888deb7eb124407998e14f80b" kind="variable"><name>properties</name></member>
+  </compound>
   <compound refid="structEntity" kind="struct"><name>Entity</name>
     <member refid="structEntity_1aa7296b46f78ff82279659e7abe2b4717" kind="variable"><name>iri</name></member>
   </compound>
@@ -323,6 +514,22 @@
     <member refid="classista_1_1owl2_1_1Entity_1a0e207ab4f355df68e5adfe107668cec6" kind="function"><name>operator==</name></member>
     <member refid="classista_1_1owl2_1_1Entity_1ab710382cee94c7bbaca255a4d62bffa9" kind="function"><name>operator!=</name></member>
     <member refid="classista_1_1owl2_1_1Entity_1addc9bc76aa4acdd281d6a7e11a9d9afb" kind="function"><name>operator&lt;</name></member>
+  </compound>
+  <compound refid="structista_1_1owl2_1_1loader_1_1EntityRef" kind="struct"><name>ista::owl2::loader::EntityRef</name>
+    <member refid="structista_1_1owl2_1_1loader_1_1EntityRef_1a6635183645081185a0efd7459195a0ae" kind="variable"><name>class_name</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1EntityRef_1a65d0459000227eb6ec090a0e59f04211" kind="variable"><name>column</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1EntityRef_1abafbaa2ab574c38276a2512a9d2f24af" kind="variable"><name>match_property</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1EntityRef_1aae97985371008bc5ab1dcb8b11a20e08" kind="variable"><name>transform</name></member>
+  </compound>
+  <compound refid="structista_1_1owl2_1_1loader_1_1EntityTypeDef" kind="struct"><name>ista::owl2::loader::EntityTypeDef</name>
+    <member refid="structista_1_1owl2_1_1loader_1_1EntityTypeDef_1ad8fef391ec5812cb188044a5509f29bd" kind="variable"><name>class_name</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1EntityTypeDef_1ac379df1ed4f207badf642f9c09df07ff" kind="variable"><name>source</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1EntityTypeDef_1a9d2218ef121a6b1dc151556c11e67212" kind="variable"><name>table</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1EntityTypeDef_1a9d5159840ffac1f813fc2a235ed38b47" kind="variable"><name>iri_column</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1EntityTypeDef_1acfc73fab7c014d6c38137af7e03365cf" kind="variable"><name>filter</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1EntityTypeDef_1a47a678eadc386f536ae877d2e302a3c8" kind="variable"><name>properties</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1EntityTypeDef_1a5940ec3b4653c1e13f508b89dabdcc59" kind="variable"><name>primary</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1EntityTypeDef_1aabd585e1c96de133a51d8b25dbd5289b" kind="variable"><name>enrichments</name></member>
   </compound>
   <compound refid="classista_1_1owl2_1_1EquivalentClasses" kind="class"><name>ista::owl2::EquivalentClasses</name>
     <member refid="classista_1_1owl2_1_1EquivalentClasses_1a463a611bd2b910a94c14f7593229ee19" kind="variable"><name>class_expressions_</name></member>
@@ -356,6 +563,11 @@
     <member refid="structista_1_1owl2_1_1FilterCriteria_1ae1485fa30f50257dbf9c02532c2aa426" kind="variable"><name>include_declarations</name></member>
     <member refid="structista_1_1owl2_1_1FilterCriteria_1abb64413e85f97a22742614663b34434e" kind="variable"><name>custom_filter</name></member>
     <member refid="structista_1_1owl2_1_1FilterCriteria_1a7873082dfa32f27b54e35bc2f45aeb4e" kind="function"><name>FilterCriteria</name></member>
+  </compound>
+  <compound refid="structista_1_1owl2_1_1loader_1_1FilterDef" kind="struct"><name>ista::owl2::loader::FilterDef</name>
+    <member refid="structista_1_1owl2_1_1loader_1_1FilterDef_1a2d06ef414d4b1a1de90f35b94904a9f3" kind="variable"><name>column</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1FilterDef_1a245614744d6a9d9486e86c2a79614c98" kind="variable"><name>value</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1FilterDef_1afb68c30c34a19a3c7e085fa475253736" kind="variable"><name>contains</name></member>
   </compound>
   <compound refid="structista_1_1owl2_1_1FilterResult" kind="struct"><name>ista::owl2::FilterResult</name>
     <member refid="structista_1_1owl2_1_1FilterResult_1af871fff98d85e591dd2eb6913c952111" kind="variable"><name>ontology</name></member>
@@ -517,6 +729,18 @@
     <member refid="classista_1_1owl2_1_1Literal_1a907d905329c2b80bae5b64370423ce97" kind="function"><name>operator!=</name></member>
     <member refid="classista_1_1owl2_1_1Literal_1a7162404fb52bdf89400155e2d05216bf" kind="function"><name>operator&lt;</name></member>
   </compound>
+  <compound refid="structista_1_1owl2_1_1loader_1_1LoadingStats" kind="struct"><name>ista::owl2::loader::LoadingStats</name>
+    <member refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1ac479a78079d70a63fcb908725358c5e8" kind="variable"><name>rows_processed</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1a838acdd1b4795691d3e91f26ccefa77e" kind="variable"><name>individuals_created</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1ae9d52f8c203882c19b19062ce665cd55" kind="variable"><name>individuals_enriched</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1a74a9606495273f17f35fcb00a473bae2" kind="variable"><name>properties_added</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1a8df3d5f3e8452faaa8e6b162b1cce1de" kind="variable"><name>relationships_created</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1ae833773215c0c18ada09ba55819a56ac" kind="variable"><name>rows_skipped</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1a66fb9569ade6ac59b71ca331f08e9a1a" kind="variable"><name>errors</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1a6f5bcf24863163e24ae4fb1a91d77dcc" kind="variable"><name>error_messages</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1a71e17bafad8233a0ba2b120a11ea8608" kind="function"><name>merge</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1af92555edc6a81cee981a16d92c660d45" kind="function"><name>summary</name></member>
+  </compound>
   <compound refid="classista_1_1owl2_1_1ManchesterParseException" kind="class"><name>ista::owl2::ManchesterParseException</name>
     <member refid="classista_1_1owl2_1_1ManchesterParseException_1a845aa52dd395c24e64d4ba14f429b8d4" kind="function"><name>ManchesterParseException</name></member>
   </compound>
@@ -527,6 +751,33 @@
   <compound refid="classista_1_1owl2_1_1ManchesterSerializer" kind="class"><name>ista::owl2::ManchesterSerializer</name>
     <member refid="classista_1_1owl2_1_1ManchesterSerializer_1ab3622cd50a2d24e61c634e9bb296cb83" kind="function"><name>serialize</name></member>
     <member refid="classista_1_1owl2_1_1ManchesterSerializer_1a97a05e2a7467f44792126e61cb0d36fc" kind="function"><name>serializeToFile</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1loader_1_1MappingSpecException" kind="class"><name>ista::owl2::loader::MappingSpecException</name>
+    <member refid="classista_1_1owl2_1_1loader_1_1MappingSpecException_1a6964c8782f68694e518bd1fbadc01015" kind="function"><name>MappingSpecException</name></member>
+  </compound>
+  <compound refid="structista_1_1owl2_1_1loader_1_1MatchCriteria" kind="struct"><name>ista::owl2::loader::MatchCriteria</name>
+    <member refid="structista_1_1owl2_1_1loader_1_1MatchCriteria_1af6e8e45dff5aef6cbea0f7e9c17ddaa8" kind="variable"><name>source_column</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1MatchCriteria_1a362f4bfefe5e20ede3355a8ccc7540e4" kind="variable"><name>target_property</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1loader_1_1MySqlReader" kind="class"><name>ista::owl2::loader::MySqlReader</name>
+    <member refid="classista_1_1owl2_1_1loader_1_1MySqlReader_1a5fc056fe01cccc7ff4ad765e6f59080e" kind="variable"><name>conn_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1MySqlReader_1a5477a8d87ddb2d7df5be7ab43803865f" kind="variable"><name>result_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1MySqlReader_1ace000bdc5b3c123298f17ad309d668bf" kind="variable"><name>num_fields_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1MySqlReader_1aa1a7ea1ccdbfa272b79acce5b7cada14" kind="variable"><name>has_row_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1MySqlReader_1a7e73959971999fdc5e180edbd8961bd9" kind="variable"><name>current_row_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1MySqlReader_1ad80cc54099b5bc5fc4a43b276668a3e9" kind="variable"><name>current_lengths_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1MySqlReader_1a24e38650626b2b29d5d58ce0f8cce973" kind="function"><name>MySqlReader</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1MySqlReader_1a20b1559cb9ba8232e61f742da1595ce4" kind="function"><name>~MySqlReader</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1MySqlReader_1afb79f3223408cd2ab35d9fa964266b0f" kind="function"><name>has_next</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1MySqlReader_1a4863a80c2a3a5ce278f2d891c0236e4d" kind="function"><name>next</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1MySqlReader_1a1b163a4cf0ecb370ced8a3fd8c9464e3" kind="function"><name>reset</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1MySqlReader_1a847580d99e84a99135ecb2184614f112" kind="function"><name>connect</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1MySqlReader_1a07e91ecfbfb0c075bd271871c9bdc87d" kind="function"><name>disconnect</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1MySqlReader_1ab3aecc2faf35b7e8805bfb88be404c63" kind="function"><name>execute_query</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1MySqlReader_1af1fda8535c27d48b03ccf5357fd80244" kind="function"><name>fetch_column_names</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1MySqlReader_1adeaaf76d70bdd6d1c38eea9e4e37d732" kind="function"><name>fetch_row_count</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1MySqlReader_1ad8bb0b53a4194c4b977fba3519c89a73" kind="function"><name>free_result</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1MySqlReader_1ac7fc798b3571a66c5483430141c38116" kind="function"><name>fetch_next_row</name></member>
   </compound>
   <compound refid="classista_1_1owl2_1_1NamedClass" kind="class"><name>ista::owl2::NamedClass</name>
     <member refid="classista_1_1owl2_1_1NamedClass_1a161ce5807d151a3432017ae51630cebc" kind="variable"><name>class_</name></member>
@@ -569,6 +820,17 @@
     <member refid="classista_1_1owl2_1_1NegativeObjectPropertyAssertion_1a621f7e7da8ccc29f9ae280e0557e8d80" kind="function"><name>getTarget</name></member>
     <member refid="classista_1_1owl2_1_1NegativeObjectPropertyAssertion_1af0f0c10b47fc87ae4dc7c39b602bc08d" kind="function"><name>toFunctionalSyntax</name></member>
     <member refid="classista_1_1owl2_1_1NegativeObjectPropertyAssertion_1a77e98400c4a3aee87022350a630d0406" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="structista_1_1owl2_1_1loader_1_1NodeMapping" kind="struct"><name>ista::owl2::loader::NodeMapping</name>
+    <member refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1a144974937628d728cc9d408286e21312" kind="variable"><name>name</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1abc084391b1aed2857a5ac6bad2ded363" kind="variable"><name>source</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1aee7fdff21299210bd14912683181efec" kind="variable"><name>target_class</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1af282957ffbb576145d95f997699aa91c" kind="variable"><name>mode</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1ae34e8a09a0e0b58fe4095fcb69717163" kind="variable"><name>iri_column</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1a94b91fd2daa57b8d0a4795312e82d53c" kind="variable"><name>match</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1af270575823569822f2ca9694cac51d39" kind="variable"><name>filter</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1ac7cd5406b766787a31c1f06fc79ff30e" kind="variable"><name>properties</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1a3a42ac76291e5237bbe96c3562744b84" kind="variable"><name>skip</name></member>
   </compound>
   <compound refid="structista_1_1owl2_1_1NodeTypeConfig" kind="struct"><name>ista::owl2::NodeTypeConfig</name>
     <member refid="structista_1_1owl2_1_1NodeTypeConfig_1ad4bfb1fbddd64bc813e487e411ecf660" kind="variable"><name>iri_column_name</name></member>
@@ -720,6 +982,18 @@
     <member refid="classista_1_1owl2_1_1Ontology_1ab2647568576b66db9c3e610ceb9be7ea" kind="function"><name>getStatistics</name></member>
     <member refid="classista_1_1owl2_1_1Ontology_1a1e42513679e7d6340b68b0b1a8f77b55" kind="function"><name>toFunctionalSyntax</name></member>
     <member refid="classista_1_1owl2_1_1Ontology_1a6669c4413bea23f464ea23b4ea4fd3e2" kind="function"><name>toFunctionalSyntax</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1ad68371b1a6e109e94b34c33e2b8fd374" kind="function"><name>createIndividual</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a5a27ed2a0fb367e43de8ecd008694e86" kind="function"><name>addDataPropertyAssertion</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a748c1f6ff74c12910df3b6d61b591191" kind="function"><name>addObjectPropertyAssertion</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1afbfa479e9616f4d9b88f53cc17ba0c57" kind="function"><name>addClassAssertion</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1ab5d6976cea58d67d0942261690556efb" kind="function"><name>searchByDataProperty</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1ad1927caf5adba272019e6f28f7811faf" kind="function"><name>searchByObjectProperty</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a67cd899111de87082c7e4bb297ed2831" kind="function"><name>getObjectPropertyAssertions</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a474198a32ab3bbe6d848774fd818b352" kind="function"><name>getDataPropertyAssertions</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1ad24fa5941c8c7797cfcd150a3eec4093" kind="function"><name>getClassesForIndividual</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1a31d2433ddebcbe3603c4d5ba5826c83a" kind="function"><name>isInstanceOf</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1ad0d67eea3f0b4626ffb93837f8a1a776" kind="function"><name>isFunctionalObjectProperty</name></member>
+    <member refid="classista_1_1owl2_1_1Ontology_1af57fcb9f930da6c645ee135d400886eb" kind="function"><name>isFunctionalDataProperty</name></member>
     <member refid="classista_1_1owl2_1_1Ontology_1a225834906bceea69d0ae3b37fa5b2e2c" kind="function"><name>createSubgraph</name></member>
     <member refid="classista_1_1owl2_1_1Ontology_1ac137744891c0214127facaac23013b16" kind="function"><name>getIndividualsOfClass</name></member>
     <member refid="classista_1_1owl2_1_1Ontology_1a1b4b0cebf3f0a08142223a8dec60d641" kind="function"><name>getNeighbors</name></member>
@@ -880,7 +1154,7 @@
     <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a8ccd4b3450425544951de6f32c271889" kind="function"><name>parseDirective</name></member>
     <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a68e149f812a5231b5be02c4fc3dff659" kind="function"><name>parsePrefixDirective</name></member>
     <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1ae26a020025b8c79e4cea6fc1c97441a4" kind="function"><name>parseBaseDirective</name></member>
-    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a91d2aa4a04bcfb8e9caa0b26c3fcaec0" kind="function"><name>parseTriples</name></member>
+    <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a5773f7fbacfbc9931f7cfa42916d6cf3" kind="function"><name>parseTriples</name></member>
     <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a524b874a45df320017299c24fab007f5" kind="function"><name>parseSubject</name></member>
     <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a7ff584d11aceb48305f36199a32b07c2" kind="function"><name>parsePredicate</name></member>
     <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a5e28e981182819f73ad20a869db6b169" kind="function"><name>parseObject</name></member>
@@ -896,6 +1170,45 @@
     <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1aab84b3ee5e32d46ffabb01e3c9b6a984" kind="function"><name>isNameChar</name></member>
     <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a006f15e407401f271f43f3c332319a3b" kind="function"><name>error</name></member>
     <member refid="classista_1_1owl2_1_1TurtleParser_1_1Parser_1a7e023a5b86b33536677cc85ef5b73984" kind="function"><name>triplesToOntology</name></member>
+  </compound>
+  <compound refid="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState" kind="struct"><name>ista::owl2::loader::YamlParser::ParseState</name>
+    <member refid="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1add28b7fd719da76b24b87ca36c6e3714" kind="variable"><name>content</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1ae2ae2a76ee548b723be17947f647e839" kind="variable"><name>pos</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1a5db67a50d4b35c371332a573dde9ae13" kind="variable"><name>line</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1a343d17e3dea16fdea0d258a4326f38d2" kind="function"><name>ParseState</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1a7f2b3741921bbc5e61a9cc2877607fa7" kind="function"><name>peek</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1a55ba0c281bbff812f1240498e8e085bb" kind="function"><name>advance</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1a53c4ea2fe455433ce4ed145c3d589956" kind="function"><name>at_end</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1a457fdf8f5cc7a1558f2545888dcf423f" kind="function"><name>skip_whitespace</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1a45b732aac7631a07a48e55cf81d95e97" kind="function"><name>skip_line</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1a3c97a5b8c8b91ed6613e516bb02ff6ce" kind="function"><name>get_indent</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1a2057553078dd73f20e91c3253409cd4b" kind="function"><name>read_until</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1a1b70e1e553349191b52a3afb165fb608" kind="function"><name>read_quoted_string</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1loader_1_1PostgresReader" kind="class"><name>ista::owl2::loader::PostgresReader</name>
+    <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1ac78cedec8a7080b00abd104d31fca250" kind="variable"><name>conn_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1a4b799f31e0737f7973c9cdb3a45c3d99" kind="variable"><name>result_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1a6a717d1daa2a474bcfe5b086cc38e716" kind="variable"><name>num_fields_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1ad8217ae9aaedb2bf3e2e102326eed75b" kind="variable"><name>num_rows_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1ab823ed314fbee29400c77e02f459491a" kind="variable"><name>current_row_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1ae8ff95ee0762179b022d2ecad46b60a4" kind="function"><name>PostgresReader</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1a8fae407e638407c20fef9c362f8275aa" kind="function"><name>~PostgresReader</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1a290b5c20252e5e0c7aaf3eb0b83e6335" kind="function"><name>has_next</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1a47d90425d833b1367de0df7ab66a1c06" kind="function"><name>next</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1abbaef98ca26267498ab063bf98110442" kind="function"><name>reset</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1a3fa319cf5b250b6f23bbedd0ca84cbe7" kind="function"><name>connect</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1a2ea0c0a4dc80f2b6365ed2ba14e5986c" kind="function"><name>disconnect</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1ada5e1cc686c999b3a886d9e0f6f207d8" kind="function"><name>execute_query</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1a60a3521de868e7038cf7b37dcc167bb9" kind="function"><name>fetch_column_names</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1ac259dfce2dcc95a2e5fa04279d224d76" kind="function"><name>fetch_row_count</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1a3f547604fa052c9a6b1aa11c9bd4ea73" kind="function"><name>build_connection_string</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1aa718f62e122add07b9b73887fcb4c937" kind="function"><name>clear_result</name></member>
+  </compound>
+  <compound refid="structista_1_1owl2_1_1loader_1_1PropertyMapping" kind="struct"><name>ista::owl2::loader::PropertyMapping</name>
+    <member refid="structista_1_1owl2_1_1loader_1_1PropertyMapping_1a086a27a3f17cae33783b5d684cb0258e" kind="variable"><name>column</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1PropertyMapping_1ac22afedb5757afd19cacf8310b7693e2" kind="variable"><name>property</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1PropertyMapping_1aacacfd78bbd22c7e68c91bc9f6f09f79" kind="variable"><name>transform</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1PropertyMapping_1ad884da7045267fd87ce1356ec4381d60" kind="variable"><name>datatype</name></member>
   </compound>
   <compound refid="classista_1_1owl2_1_1RDFXMLParseException" kind="class"><name>ista::owl2::RDFXMLParseException</name>
     <member refid="classista_1_1owl2_1_1RDFXMLParseException_1aee49285111f06812c368bb838d9c330b" kind="function"><name>RDFXMLParseException</name></member>
@@ -922,6 +1235,16 @@
     <member refid="classista_1_1owl2_1_1ReflexiveObjectProperty_1a973ff5ca73796b26fb0a7abb1e8d0d07" kind="function"><name>toFunctionalSyntax</name></member>
     <member refid="classista_1_1owl2_1_1ReflexiveObjectProperty_1acba1fe01ec29b681de01e17fb2edf93c" kind="function"><name>getAxiomType</name></member>
   </compound>
+  <compound refid="structista_1_1owl2_1_1loader_1_1RelationshipMapping" kind="struct"><name>ista::owl2::loader::RelationshipMapping</name>
+    <member refid="structista_1_1owl2_1_1loader_1_1RelationshipMapping_1a3f5e7255cdcd832440bd2be691ab2b36" kind="variable"><name>name</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1RelationshipMapping_1ac1da819ca1d750e354c7e4384e035794" kind="variable"><name>source</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1RelationshipMapping_1a6f1215c8582dd6166e49cc731a18de2e" kind="variable"><name>relationship</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1RelationshipMapping_1a350df3bcdf52e3820fbc7d55d6818419" kind="variable"><name>subject</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1RelationshipMapping_1a51eead2ad3593c8bcf57bacc58fb9f7c" kind="variable"><name>object</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1RelationshipMapping_1a1f64ef2e833bded0cc972793f042633c" kind="variable"><name>filter</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1RelationshipMapping_1a2743d4488837df559bd3ec417ee283fd" kind="variable"><name>inverse_relationship</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1RelationshipMapping_1a6c0d83609cc761a94ed901fdbe969110" kind="variable"><name>skip</name></member>
+  </compound>
   <compound refid="structista_1_1owl2_1_1RelationshipTypeConfig" kind="struct"><name>ista::owl2::RelationshipTypeConfig</name>
     <member refid="structista_1_1owl2_1_1RelationshipTypeConfig_1a023457a50e6cce9ca08ec2649379b693" kind="variable"><name>has_headers</name></member>
     <member refid="structista_1_1owl2_1_1RelationshipTypeConfig_1a79e3cca28b10a1fdab75e448c5cb4ccf" kind="variable"><name>subject_class_iri</name></member>
@@ -941,6 +1264,23 @@
     <member refid="classista_1_1owl2_1_1SameIndividual_1a8aca375eca6323bc5adfcf2acce6e104" kind="function"><name>getIndividuals</name></member>
     <member refid="classista_1_1owl2_1_1SameIndividual_1a6cbb4f114dca10be0a2c526678098e92" kind="function"><name>toFunctionalSyntax</name></member>
     <member refid="classista_1_1owl2_1_1SameIndividual_1a8fc659af2b499a2947205f99ad91e491" kind="function"><name>getAxiomType</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1loader_1_1SqliteReader" kind="class"><name>ista::owl2::loader::SqliteReader</name>
+    <member refid="classista_1_1owl2_1_1loader_1_1SqliteReader_1ae81611701bf1bac04f33b70fff3f6cd7" kind="variable"><name>db_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1SqliteReader_1af878f019698b3db620948f4cc4026397" kind="variable"><name>stmt_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1SqliteReader_1a581fcf7f1cbd07f0fb46e96f02bd8d79" kind="variable"><name>has_row_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1SqliteReader_1a593c1cbb2683e6fc08d8ee335f6ce41c" kind="variable"><name>column_count_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1SqliteReader_1ac838fb0e8bb393565eb84731df08acdc" kind="function"><name>SqliteReader</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1SqliteReader_1a1d5d7b9911777a79cab34cc031de4112" kind="function"><name>~SqliteReader</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1SqliteReader_1a595d65e45bb8967e01ef4b2c79ae0bb3" kind="function"><name>has_next</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1SqliteReader_1a08d109244448a48de2fc64cac27e6789" kind="function"><name>next</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1SqliteReader_1a200629a1b61a112881928f29ac0a9a48" kind="function"><name>reset</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1SqliteReader_1a652556f2a1671438cdf20332a445a0bb" kind="function"><name>connect</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1SqliteReader_1a50b9fbb9b1463c669b3518ce99d630b7" kind="function"><name>disconnect</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1SqliteReader_1a849a6d36ec8c9436ab1abe848e2333eb" kind="function"><name>execute_query</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1SqliteReader_1a3b2844a8cb5811af6a5a12e9ae28819f" kind="function"><name>fetch_column_names</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1SqliteReader_1a6d3543d812cef184acad1fbd860d39db" kind="function"><name>fetch_row_count</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1SqliteReader_1a01d6b44a878579874d1a594fcf7dbd7e" kind="function"><name>finalize_statement</name></member>
   </compound>
   <compound refid="classista_1_1owl2_1_1SubAnnotationPropertyOf" kind="class"><name>ista::owl2::SubAnnotationPropertyOf</name>
     <member refid="classista_1_1owl2_1_1SubAnnotationPropertyOf_1a27b675d4046d159e19abed2e805c9b61" kind="variable"><name>sub_property_</name></member>
@@ -989,6 +1329,31 @@
     <member refid="classista_1_1owl2_1_1SymmetricObjectProperty_1a144d0e10da4e5960663a22a40b18ddbb" kind="function"><name>toFunctionalSyntax</name></member>
     <member refid="classista_1_1owl2_1_1SymmetricObjectProperty_1a89e940d8567e4c0c038209fdcabf5ff9" kind="function"><name>getAxiomType</name></member>
   </compound>
+  <compound refid="structista_1_1owl2_1_1loader_1_1TransformDef" kind="struct"><name>ista::owl2::loader::TransformDef</name>
+    <member refid="structista_1_1owl2_1_1loader_1_1TransformDef_1a6cba2859dafaf9691d2c7113e1732345" kind="variable"><name>type</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1TransformDef_1a64dc1251aea46da0625263c414477d90" kind="variable"><name>params</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1TransformDef_1a212e98df56f5160c6350f8ce0da7f4ce" kind="variable"><name>steps</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1TransformDef_1a4c1ba354cf8a3169ff0ca5a0daae7811" kind="function"><name>TransformDef</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1TransformDef_1a7f35637d92825a62645022a81e428077" kind="function"><name>TransformDef</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1TransformDef_1ab08f2bb331c9193facd0391179870c8b" kind="function"><name>TransformDef</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1loader_1_1TransformEngine" kind="class"><name>ista::owl2::loader::TransformEngine</name>
+    <member refid="classista_1_1owl2_1_1loader_1_1TransformEngine_1abd2b85c9a6c6cb70d9d95e1c6b116841" kind="typedef"><name>TransformFunc</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1TransformEngine_1a8562ca052e98bc9b2154c064126b0074" kind="variable"><name>builtins_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1TransformEngine_1addf163d25d04818bab310ef42e5bbd9e" kind="function"><name>TransformEngine</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1TransformEngine_1ad03880d24a1b2a3c2f32c45b838ea5d5" kind="function"><name>apply</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1TransformEngine_1a742d36df206f64b5338a1868d80c647b" kind="function"><name>apply_def</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1TransformEngine_1ab180b089b030cb90411e5ee43dc32421" kind="function"><name>apply_builtin</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1TransformEngine_1a25469711de85973f3ac9bb62d7af21a9" kind="function"><name>register_builtin</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1TransformEngine_1a4520682841745fb5e975ea7568bc9290" kind="function"><name>has_builtin</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1TransformEngine_1ae10049801edb4eb05a5213a03d059333" kind="function"><name>get_builtin_names</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1TransformEngine_1a91fbf2a049fa6614af2470fb38579d84" kind="function"><name>init_builtins</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1TransformEngine_1a8b075b1289ce204b55518450d7ce1fae" kind="function"><name>get_param</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1TransformEngine_1accbf2a2ce26e97aefb661c401cd7995a" kind="function"><name>get_int_param</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1loader_1_1TransformException" kind="class"><name>ista::owl2::loader::TransformException</name>
+    <member refid="classista_1_1owl2_1_1loader_1_1TransformException_1ab2cb653d3ff2e82da34a575ccd6ad822" kind="function"><name>TransformException</name></member>
+  </compound>
   <compound refid="classista_1_1owl2_1_1TransitiveObjectProperty" kind="class"><name>ista::owl2::TransitiveObjectProperty</name>
     <member refid="classista_1_1owl2_1_1TransitiveObjectProperty_1a8c98949b15120d10fcc9ebc11b1677b3" kind="variable"><name>property_</name></member>
     <member refid="classista_1_1owl2_1_1TransitiveObjectProperty_1a5dda94a8f790ef3139ec6c0292a01a33" kind="function"><name>TransitiveObjectProperty</name></member>
@@ -1015,6 +1380,73 @@
     <member refid="classista_1_1owl2_1_1TurtleSerializer_1af3166fbac505bdc7206d3128e78bfdfc" kind="function"><name>serialize</name></member>
     <member refid="classista_1_1owl2_1_1TurtleSerializer_1a491ad16952d26dce4eace8bfddf534e4" kind="function"><name>serializeToFile</name></member>
     <member refid="classista_1_1owl2_1_1TurtleSerializer_1a5414c1a3e42b80235bb3a9f5f6ff7761" kind="function"><name>serialize</name></member>
+  </compound>
+  <compound refid="structista_1_1owl2_1_1loader_1_1ValidationResult" kind="struct"><name>ista::owl2::loader::ValidationResult</name>
+    <member refid="structista_1_1owl2_1_1loader_1_1ValidationResult_1abb7a7ef69e199fd2d1c7e9139645db70" kind="variable"><name>is_valid</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1ValidationResult_1a6de4f0c49c9042e984370ece96dc99b8" kind="variable"><name>errors</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1ValidationResult_1a3407c88976a36e2154d6fdc4a05f427c" kind="variable"><name>warnings</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1ValidationResult_1afcbd04a9c8a2ed87deb50d50ecfc647b" kind="function"><name>add_error</name></member>
+    <member refid="structista_1_1owl2_1_1loader_1_1ValidationResult_1a0baa4bb017722880574604893c909bdd" kind="function"><name>add_warning</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1loader_1_1YamlNode" kind="class"><name>ista::owl2::loader::YamlNode</name>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1a05009a504f3606ef0b4f3e6a57b2a304" kind="enum"><name>Type</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1a05009a504f3606ef0b4f3e6a57b2a304abbb93ef26e3c101ff11cdd21cab08a94" kind="enumvalue"><name>Null</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1a05009a504f3606ef0b4f3e6a57b2a304af60357a8d17e45793298323f1b372a74" kind="enumvalue"><name>Scalar</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1a05009a504f3606ef0b4f3e6a57b2a304a46f3ea056caa3126b91f3f70beea068c" kind="enumvalue"><name>Map</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1a05009a504f3606ef0b4f3e6a57b2a304a4ee29ca12c7d126654bd0e5275de6135" kind="enumvalue"><name>List</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1a1eac40f789e29119ddd4f071314d31dc" kind="typedef"><name>ScalarValue</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1a21774e3ee351ab5aef7407b65065840c" kind="typedef"><name>MapValue</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1ae025ced72a83bc49b5efe53265506a50" kind="typedef"><name>ListValue</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1aeb8b4c67497a971aea24d03e6ce5e060" kind="variable"><name>type_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1a5a8b1642bc4b9779d7e541f6a0db19a5" kind="variable"><name>scalar_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1a55a636cb718094e1d2a3112ca51de89a" kind="variable"><name>map_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1a34b0aa0d75c0f4edb8bb5cfcc08b4cbd" kind="variable"><name>list_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1a4d670e71edae8970e2c971735b0f3a88" kind="function"><name>YamlNode</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1a8376e2f0832e5fad7edb19beda5603ff" kind="function"><name>YamlNode</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1adb27e84c66e962874bb07ca490495bc8" kind="function"><name>YamlNode</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1af8240d61189db25c5e3045fea8247a5c" kind="function"><name>YamlNode</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1ab2f3c3b38a60c76971af0cfd064b26a3" kind="function"><name>type</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1a5c3baa256a9a3a8d52229ad0adf68562" kind="function"><name>is_null</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1a47ad92cd9c15ebaee7493d7a50db1edf" kind="function"><name>is_scalar</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1aa3f6dd6ad76272f77edd4e9e873e3f9d" kind="function"><name>is_map</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1a16cebd95468533721ce22270db14663d" kind="function"><name>is_list</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1a13624612ea608c65615c74437fce7937" kind="function"><name>as_string</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1a4bcea5557600c00531b8f4db8373a69c" kind="function"><name>as_int</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1a0ba29afb6c75ca62ccf519504922153d" kind="function"><name>as_double</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1aad1907b0c48ddc14e96ab478128af2c9" kind="function"><name>as_bool</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1a9d98789ae6b57bf35034c9599d6149f6" kind="function"><name>as_map</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1aa437f593edabb328788f1b267dfcad1c" kind="function"><name>has_key</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1a45d541cc1a24e251e3853ade63195e2b" kind="function"><name>get</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1a8c162ef3342deedcffbdbd21842595da" kind="function"><name>operator[]</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1a61096ffd1720cd33939cb5251ca65464" kind="function"><name>as_list</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1abdd21d4cd128879864085bbb77294728" kind="function"><name>size</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1a896bf9feb130620eab981f62e555d98d" kind="function"><name>get</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1aebefc1739cfcf2d0980b9965e1cc0aec" kind="function"><name>operator[]</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1a458901c79abdeaac9846d8918a42924d" kind="function"><name>get_string</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1a7b68985807acfee7a2380ae7bd888c95" kind="function"><name>get_int</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1a9e14a3f343eaf63851562f9d9ce485cd" kind="function"><name>get_bool</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1a0dcfc64843a41f9b83e1e0ad024b8d26" kind="function"><name>set</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1a58d9185794c6c73bd66767d8511533de" kind="function"><name>append</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1ad26b61da75148e7567920440096255b1" kind="function"><name>make_null</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1aa37e97d55a0cfac69d92397aae74e37f" kind="function"><name>make_scalar</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1ae1e3011175ba06b946ae6a9b1e874a12" kind="function"><name>make_map</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlNode_1af09427a929f676daf36c57e2daf05450" kind="function"><name>make_list</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1loader_1_1YamlParseException" kind="class"><name>ista::owl2::loader::YamlParseException</name>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlParseException_1aec3f7777b8a1099f098b0ebff55155d2" kind="variable"><name>line_</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlParseException_1aa95edb3eee896937d39bb72b52212648" kind="function"><name>YamlParseException</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlParseException_1a6776df20a466133795d10ddc94e3c218" kind="function"><name>line</name></member>
+  </compound>
+  <compound refid="classista_1_1owl2_1_1loader_1_1YamlParser" kind="class"><name>ista::owl2::loader::YamlParser</name>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlParser_1a31be90596dd84e704c8e520939cd53e2" kind="function"><name>parse</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlParser_1a0e94894fd298c0a6dfb7864decc7465a" kind="function"><name>parse_file</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlParser_1a1524b074a66e59309436451ee67385da" kind="function"><name>parse_value</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlParser_1a30b9cb5492e832f407d2db23ba79ca57" kind="function"><name>parse_map</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlParser_1a0929974f80356ac3893d919555c7179d" kind="function"><name>parse_list</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlParser_1a8a7c1d4125478ede6a215bc96ee3188b" kind="function"><name>parse_inline_map</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlParser_1a3dd33a21761cd03be32a7d2995700026" kind="function"><name>parse_inline_list</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlParser_1a23de157384213ec1a965ad5054046dc1" kind="function"><name>parse_scalar</name></member>
+    <member refid="classista_1_1owl2_1_1loader_1_1YamlParser_1ad9268787bb77825885105d5c8062dd55" kind="function"><name>parse_key</name></member>
   </compound>
   <compound refid="namespaceista" kind="namespace"><name>ista</name>
   </compound>
@@ -1052,6 +1484,16 @@
     <member refid="namespaceista_1_1owl2_1_1facets_1a0d8c1562706c985ae152a38bc4537802" kind="variable"><name>MIN_LENGTH</name></member>
     <member refid="namespaceista_1_1owl2_1_1facets_1a02d949712d4d1911c4fe19505aceadd3" kind="variable"><name>MAX_LENGTH</name></member>
     <member refid="namespaceista_1_1owl2_1_1facets_1ac004b7bce27e2d89258bb3f85099fc4d" kind="variable"><name>PATTERN</name></member>
+  </compound>
+  <compound refid="namespaceista_1_1owl2_1_1loader" kind="namespace"><name>ista::owl2::loader</name>
+    <member refid="namespaceista_1_1owl2_1_1loader_1ae8d9c89c2c6247e316b52542bf74372e" kind="enum"><name>MappingMode</name></member>
+    <member refid="namespaceista_1_1owl2_1_1loader_1ae8d9c89c2c6247e316b52542bf74372ea294ce20cdefa29be3be0735cb62e715d" kind="enumvalue"><name>CREATE</name></member>
+    <member refid="namespaceista_1_1owl2_1_1loader_1ae8d9c89c2c6247e316b52542bf74372ea30d600d9c3c532d6bbeeb13ff4d2ef54" kind="enumvalue"><name>ENRICH</name></member>
+    <member refid="namespaceista_1_1owl2_1_1loader_1aa3096bc3ec6e3ce47d6a3fab89ecd87c" kind="typedef"><name>ProgressCallback</name></member>
+    <member refid="namespaceista_1_1owl2_1_1loader_1a8c7dd408a695878acd33de820a93a66e" kind="typedef"><name>DataRow</name></member>
+    <member refid="namespaceista_1_1owl2_1_1loader_1a8b96a22b8b503306ad53db7cbfc5d7fb" kind="typedef"><name>YamlNodePtr</name></member>
+  </compound>
+  <compound refid="namespaceista_1_1owl2_1_1loader_1_1_0d074254322060102070202110301367276003343115245111" kind="namespace"><name>ista::owl2::loader::@074254322060102070202110301367276003343115245111</name>
   </compound>
   <compound refid="namespaceista_1_1owl2_1_1reasoner" kind="namespace"><name>ista::owl2::reasoner</name>
   </compound>
@@ -1110,6 +1552,40 @@
     <member refid="generalDefs_8hpp_1ad1dd4069be4d34001f1a9fdbc7c6b744" kind="typedef"><name>LanguageTag</name></member>
     <member refid="generalDefs_8hpp_1ac6cc8580ccefc8e2136721fd1784aecb" kind="typedef"><name>NodeID</name></member>
   </compound>
+  <compound refid="data__loader_8cpp" kind="file"><name>data_loader.cpp</name>
+  </compound>
+  <compound refid="data__loader_8hpp" kind="file"><name>data_loader.hpp</name>
+  </compound>
+  <compound refid="database__reader_8cpp" kind="file"><name>database_reader.cpp</name>
+  </compound>
+  <compound refid="database__reader_8hpp" kind="file"><name>database_reader.hpp</name>
+  </compound>
+  <compound refid="mapping__spec_8cpp" kind="file"><name>mapping_spec.cpp</name>
+  </compound>
+  <compound refid="mapping__spec_8hpp" kind="file"><name>mapping_spec.hpp</name>
+  </compound>
+  <compound refid="mysql__reader_8cpp" kind="file"><name>mysql_reader.cpp</name>
+  </compound>
+  <compound refid="mysql__reader_8hpp" kind="file"><name>mysql_reader.hpp</name>
+  </compound>
+  <compound refid="postgres__reader_8cpp" kind="file"><name>postgres_reader.cpp</name>
+  </compound>
+  <compound refid="postgres__reader_8hpp" kind="file"><name>postgres_reader.hpp</name>
+    <member refid="postgres__reader_8hpp_1a5ed62e34058025c39959695e724603a6" kind="typedef"><name>PGconn</name></member>
+    <member refid="postgres__reader_8hpp_1abf3cdbf643993ad6d51b286dec46a753" kind="typedef"><name>PGresult</name></member>
+  </compound>
+  <compound refid="sqlite__reader_8cpp" kind="file"><name>sqlite_reader.cpp</name>
+  </compound>
+  <compound refid="sqlite__reader_8hpp" kind="file"><name>sqlite_reader.hpp</name>
+  </compound>
+  <compound refid="transform__engine_8cpp" kind="file"><name>transform_engine.cpp</name>
+  </compound>
+  <compound refid="transform__engine_8hpp" kind="file"><name>transform_engine.hpp</name>
+  </compound>
+  <compound refid="yaml__parser_8cpp" kind="file"><name>yaml_parser.cpp</name>
+  </compound>
+  <compound refid="yaml__parser_8hpp" kind="file"><name>yaml_parser.hpp</name>
+  </compound>
   <compound refid="owl2_8hpp" kind="file"><name>owl2.hpp</name>
   </compound>
   <compound refid="csv__parser_8cpp" kind="file"><name>csv_parser.cpp</name>
@@ -1163,6 +1639,8 @@
   <compound refid="dir_a0473cab9a91a76fce53fd6eebf06533" kind="dir"><name>D:/projects/ista/lib/owl2/core</name>
   </compound>
   <compound refid="dir_97aefd0d527b934f1d99a682da8fe6a9" kind="dir"><name>D:/projects/ista/lib</name>
+  </compound>
+  <compound refid="dir_64b5f84919921730f0fc3e8bfacc45d1" kind="dir"><name>D:/projects/ista/lib/owl2/loader</name>
   </compound>
   <compound refid="dir_d630f01cd53abff97d44ce6d74ab556d" kind="dir"><name>D:/projects/ista/lib/owl2</name>
   </compound>

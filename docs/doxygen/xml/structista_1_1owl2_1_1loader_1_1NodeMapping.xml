@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="structista_1_1owl2_1_1loader_1_1NodeMapping" kind="struct" language="C++" prot="public">
+    <compoundname>ista::owl2::loader::NodeMapping</compoundname>
+    <includes refid="mapping__spec_8hpp" local="no">mapping_spec.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1NodeMapping_1a144974937628d728cc9d408286e21312" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::NodeMapping::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <qualifiedname>ista::owl2::loader::NodeMapping::name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="93" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="93" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1abe021f2a97c46329700ec261c495089a" compoundref="mapping__spec_8cpp" startline="637" endline="662">ista::owl2::loader::DataMappingSpec::expand_entity_types</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aaa8fdbd9b990889a6bb985284d7986e9" compoundref="mapping__spec_8cpp" startline="664" endline="692">ista::owl2::loader::DataMappingSpec::get_all_node_mappings</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1NodeMapping_1abc084391b1aed2857a5ac6bad2ded363" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::NodeMapping::source</definition>
+        <argsstring></argsstring>
+        <name>source</name>
+        <qualifiedname>ista::owl2::loader::NodeMapping::source</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="94" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="94" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1abe021f2a97c46329700ec261c495089a" compoundref="mapping__spec_8cpp" startline="637" endline="662">ista::owl2::loader::DataMappingSpec::expand_entity_types</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aaa8fdbd9b990889a6bb985284d7986e9" compoundref="mapping__spec_8cpp" startline="664" endline="692">ista::owl2::loader::DataMappingSpec::get_all_node_mappings</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1NodeMapping_1aee7fdff21299210bd14912683181efec" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::NodeMapping::target_class</definition>
+        <argsstring></argsstring>
+        <name>target_class</name>
+        <qualifiedname>ista::owl2::loader::NodeMapping::target_class</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="95" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="95" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1abe021f2a97c46329700ec261c495089a" compoundref="mapping__spec_8cpp" startline="637" endline="662">ista::owl2::loader::DataMappingSpec::expand_entity_types</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aaa8fdbd9b990889a6bb985284d7986e9" compoundref="mapping__spec_8cpp" startline="664" endline="692">ista::owl2::loader::DataMappingSpec::get_all_node_mappings</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1NodeMapping_1af282957ffbb576145d95f997699aa91c" prot="public" static="no" mutable="no">
+        <type><ref refid="namespaceista_1_1owl2_1_1loader_1ae8d9c89c2c6247e316b52542bf74372e" kindref="member">MappingMode</ref></type>
+        <definition>MappingMode ista::owl2::loader::NodeMapping::mode</definition>
+        <argsstring></argsstring>
+        <name>mode</name>
+        <qualifiedname>ista::owl2::loader::NodeMapping::mode</qualifiedname>
+        <initializer>= <ref refid="namespaceista_1_1owl2_1_1loader_1ae8d9c89c2c6247e316b52542bf74372ea294ce20cdefa29be3be0735cb62e715d" kindref="member">MappingMode::CREATE</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="97" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="97" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1abe021f2a97c46329700ec261c495089a" compoundref="mapping__spec_8cpp" startline="637" endline="662">ista::owl2::loader::DataMappingSpec::expand_entity_types</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aaa8fdbd9b990889a6bb985284d7986e9" compoundref="mapping__spec_8cpp" startline="664" endline="692">ista::owl2::loader::DataMappingSpec::get_all_node_mappings</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1NodeMapping_1ae34e8a09a0e0b58fe4095fcb69717163" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; std::string &gt;</type>
+        <definition>std::optional&lt;std::string&gt; ista::owl2::loader::NodeMapping::iri_column</definition>
+        <argsstring></argsstring>
+        <name>iri_column</name>
+        <qualifiedname>ista::owl2::loader::NodeMapping::iri_column</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="100" column="19" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="100" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1abe021f2a97c46329700ec261c495089a" compoundref="mapping__spec_8cpp" startline="637" endline="662">ista::owl2::loader::DataMappingSpec::expand_entity_types</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aaa8fdbd9b990889a6bb985284d7986e9" compoundref="mapping__spec_8cpp" startline="664" endline="692">ista::owl2::loader::DataMappingSpec::get_all_node_mappings</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1NodeMapping_1a94b91fd2daa57b8d0a4795312e82d53c" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="structista_1_1owl2_1_1loader_1_1MatchCriteria" kindref="compound">MatchCriteria</ref> &gt;</type>
+        <definition>std::optional&lt;MatchCriteria&gt; ista::owl2::loader::NodeMapping::match</definition>
+        <argsstring></argsstring>
+        <name>match</name>
+        <qualifiedname>ista::owl2::loader::NodeMapping::match</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="103" column="19" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="103" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1abe021f2a97c46329700ec261c495089a" compoundref="mapping__spec_8cpp" startline="637" endline="662">ista::owl2::loader::DataMappingSpec::expand_entity_types</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aaa8fdbd9b990889a6bb985284d7986e9" compoundref="mapping__spec_8cpp" startline="664" endline="692">ista::owl2::loader::DataMappingSpec::get_all_node_mappings</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1NodeMapping_1af270575823569822f2ca9694cac51d39" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="structista_1_1owl2_1_1loader_1_1FilterDef" kindref="compound">FilterDef</ref> &gt;</type>
+        <definition>std::optional&lt;FilterDef&gt; ista::owl2::loader::NodeMapping::filter</definition>
+        <argsstring></argsstring>
+        <name>filter</name>
+        <qualifiedname>ista::owl2::loader::NodeMapping::filter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="106" column="19" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="106" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1abe021f2a97c46329700ec261c495089a" compoundref="mapping__spec_8cpp" startline="637" endline="662">ista::owl2::loader::DataMappingSpec::expand_entity_types</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aaa8fdbd9b990889a6bb985284d7986e9" compoundref="mapping__spec_8cpp" startline="664" endline="692">ista::owl2::loader::DataMappingSpec::get_all_node_mappings</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1NodeMapping_1ac7cd5406b766787a31c1f06fc79ff30e" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structista_1_1owl2_1_1loader_1_1PropertyMapping" kindref="compound">PropertyMapping</ref> &gt;</type>
+        <definition>std::vector&lt;PropertyMapping&gt; ista::owl2::loader::NodeMapping::properties</definition>
+        <argsstring></argsstring>
+        <name>properties</name>
+        <qualifiedname>ista::owl2::loader::NodeMapping::properties</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="109" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="109" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1abe021f2a97c46329700ec261c495089a" compoundref="mapping__spec_8cpp" startline="637" endline="662">ista::owl2::loader::DataMappingSpec::expand_entity_types</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aaa8fdbd9b990889a6bb985284d7986e9" compoundref="mapping__spec_8cpp" startline="664" endline="692">ista::owl2::loader::DataMappingSpec::get_all_node_mappings</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1NodeMapping_1a3a42ac76291e5237bbe96c3562744b84" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ista::owl2::loader::NodeMapping::skip</definition>
+        <argsstring></argsstring>
+        <name>skip</name>
+        <qualifiedname>ista::owl2::loader::NodeMapping::skip</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="112" column="10" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="112" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Mapping definition for creating/enriching individuals of a class. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="92" column="1" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="92" bodyend="113"/>
+    <listofallmembers>
+      <member refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1af270575823569822f2ca9694cac51d39" prot="public" virt="non-virtual"><scope>ista::owl2::loader::NodeMapping</scope><name>filter</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1ae34e8a09a0e0b58fe4095fcb69717163" prot="public" virt="non-virtual"><scope>ista::owl2::loader::NodeMapping</scope><name>iri_column</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1a94b91fd2daa57b8d0a4795312e82d53c" prot="public" virt="non-virtual"><scope>ista::owl2::loader::NodeMapping</scope><name>match</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1af282957ffbb576145d95f997699aa91c" prot="public" virt="non-virtual"><scope>ista::owl2::loader::NodeMapping</scope><name>mode</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1a144974937628d728cc9d408286e21312" prot="public" virt="non-virtual"><scope>ista::owl2::loader::NodeMapping</scope><name>name</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1ac7cd5406b766787a31c1f06fc79ff30e" prot="public" virt="non-virtual"><scope>ista::owl2::loader::NodeMapping</scope><name>properties</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1a3a42ac76291e5237bbe96c3562744b84" prot="public" virt="non-virtual"><scope>ista::owl2::loader::NodeMapping</scope><name>skip</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1abc084391b1aed2857a5ac6bad2ded363" prot="public" virt="non-virtual"><scope>ista::owl2::loader::NodeMapping</scope><name>source</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1aee7fdff21299210bd14912683181efec" prot="public" virt="non-virtual"><scope>ista::owl2::loader::NodeMapping</scope><name>target_class</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

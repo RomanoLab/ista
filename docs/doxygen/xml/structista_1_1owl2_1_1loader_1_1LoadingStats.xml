@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="structista_1_1owl2_1_1loader_1_1LoadingStats" kind="struct" language="C++" prot="public">
+    <compoundname>ista::owl2::loader::LoadingStats</compoundname>
+    <includes refid="data__loader_8hpp" local="no">data_loader.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1LoadingStats_1ac479a78079d70a63fcb908725358c5e8" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t ista::owl2::loader::LoadingStats::rows_processed</definition>
+        <argsstring></argsstring>
+        <name>rows_processed</name>
+        <qualifiedname>ista::owl2::loader::LoadingStats::rows_processed</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="41" column="12" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.hpp" bodystart="41" bodyend="-1"/>
+        <referencedby refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1a71e17bafad8233a0ba2b120a11ea8608" compoundref="data__loader_8hpp" startline="50" endline="61">merge</referencedby>
+        <referencedby refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1af92555edc6a81cee981a16d92c660d45" compoundref="data__loader_8hpp" startline="63" endline="74">summary</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1LoadingStats_1a838acdd1b4795691d3e91f26ccefa77e" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t ista::owl2::loader::LoadingStats::individuals_created</definition>
+        <argsstring></argsstring>
+        <name>individuals_created</name>
+        <qualifiedname>ista::owl2::loader::LoadingStats::individuals_created</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="42" column="12" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.hpp" bodystart="42" bodyend="-1"/>
+        <referencedby refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1a71e17bafad8233a0ba2b120a11ea8608" compoundref="data__loader_8hpp" startline="50" endline="61">merge</referencedby>
+        <referencedby refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1af92555edc6a81cee981a16d92c660d45" compoundref="data__loader_8hpp" startline="63" endline="74">summary</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1LoadingStats_1ae9d52f8c203882c19b19062ce665cd55" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t ista::owl2::loader::LoadingStats::individuals_enriched</definition>
+        <argsstring></argsstring>
+        <name>individuals_enriched</name>
+        <qualifiedname>ista::owl2::loader::LoadingStats::individuals_enriched</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="43" column="12" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.hpp" bodystart="43" bodyend="-1"/>
+        <referencedby refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1a71e17bafad8233a0ba2b120a11ea8608" compoundref="data__loader_8hpp" startline="50" endline="61">merge</referencedby>
+        <referencedby refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1af92555edc6a81cee981a16d92c660d45" compoundref="data__loader_8hpp" startline="63" endline="74">summary</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1LoadingStats_1a74a9606495273f17f35fcb00a473bae2" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t ista::owl2::loader::LoadingStats::properties_added</definition>
+        <argsstring></argsstring>
+        <name>properties_added</name>
+        <qualifiedname>ista::owl2::loader::LoadingStats::properties_added</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="44" column="12" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.hpp" bodystart="44" bodyend="-1"/>
+        <referencedby refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1a71e17bafad8233a0ba2b120a11ea8608" compoundref="data__loader_8hpp" startline="50" endline="61">merge</referencedby>
+        <referencedby refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1af92555edc6a81cee981a16d92c660d45" compoundref="data__loader_8hpp" startline="63" endline="74">summary</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1LoadingStats_1a8df3d5f3e8452faaa8e6b162b1cce1de" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t ista::owl2::loader::LoadingStats::relationships_created</definition>
+        <argsstring></argsstring>
+        <name>relationships_created</name>
+        <qualifiedname>ista::owl2::loader::LoadingStats::relationships_created</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="45" column="12" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.hpp" bodystart="45" bodyend="-1"/>
+        <referencedby refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1a71e17bafad8233a0ba2b120a11ea8608" compoundref="data__loader_8hpp" startline="50" endline="61">merge</referencedby>
+        <referencedby refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1af92555edc6a81cee981a16d92c660d45" compoundref="data__loader_8hpp" startline="63" endline="74">summary</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1LoadingStats_1ae833773215c0c18ada09ba55819a56ac" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t ista::owl2::loader::LoadingStats::rows_skipped</definition>
+        <argsstring></argsstring>
+        <name>rows_skipped</name>
+        <qualifiedname>ista::owl2::loader::LoadingStats::rows_skipped</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="46" column="12" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.hpp" bodystart="46" bodyend="-1"/>
+        <referencedby refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1a71e17bafad8233a0ba2b120a11ea8608" compoundref="data__loader_8hpp" startline="50" endline="61">merge</referencedby>
+        <referencedby refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1af92555edc6a81cee981a16d92c660d45" compoundref="data__loader_8hpp" startline="63" endline="74">summary</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1LoadingStats_1a66fb9569ade6ac59b71ca331f08e9a1a" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t ista::owl2::loader::LoadingStats::errors</definition>
+        <argsstring></argsstring>
+        <name>errors</name>
+        <qualifiedname>ista::owl2::loader::LoadingStats::errors</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="47" column="12" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.hpp" bodystart="47" bodyend="-1"/>
+        <referencedby refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1a71e17bafad8233a0ba2b120a11ea8608" compoundref="data__loader_8hpp" startline="50" endline="61">merge</referencedby>
+        <referencedby refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1af92555edc6a81cee981a16d92c660d45" compoundref="data__loader_8hpp" startline="63" endline="74">summary</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1LoadingStats_1a6f5bcf24863163e24ae4fb1a91d77dcc" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; ista::owl2::loader::LoadingStats::error_messages</definition>
+        <argsstring></argsstring>
+        <name>error_messages</name>
+        <qualifiedname>ista::owl2::loader::LoadingStats::error_messages</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="48" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.hpp" bodystart="48" bodyend="-1"/>
+        <referencedby refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1a71e17bafad8233a0ba2b120a11ea8608" compoundref="data__loader_8hpp" startline="50" endline="61">merge</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structista_1_1owl2_1_1loader_1_1LoadingStats_1a71e17bafad8233a0ba2b120a11ea8608" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::loader::LoadingStats::merge</definition>
+        <argsstring>(const LoadingStats &amp;other)</argsstring>
+        <name>merge</name>
+        <qualifiedname>ista::owl2::loader::LoadingStats::merge</qualifiedname>
+        <param>
+          <type>const <ref refid="structista_1_1owl2_1_1loader_1_1LoadingStats" kindref="compound">LoadingStats</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="50" column="10" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.hpp" bodystart="50" bodyend="61"/>
+        <references refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1a6f5bcf24863163e24ae4fb1a91d77dcc" compoundref="data__loader_8hpp" startline="48">error_messages</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1a66fb9569ade6ac59b71ca331f08e9a1a" compoundref="data__loader_8hpp" startline="47">errors</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1a838acdd1b4795691d3e91f26ccefa77e" compoundref="data__loader_8hpp" startline="42">individuals_created</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1ae9d52f8c203882c19b19062ce665cd55" compoundref="data__loader_8hpp" startline="43">individuals_enriched</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1a74a9606495273f17f35fcb00a473bae2" compoundref="data__loader_8hpp" startline="44">properties_added</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1a8df3d5f3e8452faaa8e6b162b1cce1de" compoundref="data__loader_8hpp" startline="45">relationships_created</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1ac479a78079d70a63fcb908725358c5e8" compoundref="data__loader_8hpp" startline="41">rows_processed</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1ae833773215c0c18ada09ba55819a56ac" compoundref="data__loader_8hpp" startline="46">rows_skipped</references>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataLoader_1abb33c803c5482c00abdb6c31ee8f84d5" compoundref="data__loader_8cpp" startline="224" endline="234">ista::owl2::loader::DataLoader::execute</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataLoader_1a02ad21d6b7d88d771404ecc12fe11bfb" compoundref="data__loader_8cpp" startline="258" endline="269">ista::owl2::loader::DataLoader::execute_all_node_mappings</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataLoader_1af9e9ebaa786685a8dcdfc871f4e4aeb8" compoundref="data__loader_8cpp" startline="271" endline="281">ista::owl2::loader::DataLoader::execute_all_relationship_mappings</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structista_1_1owl2_1_1loader_1_1LoadingStats_1af92555edc6a81cee981a16d92c660d45" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::LoadingStats::summary</definition>
+        <argsstring>() const</argsstring>
+        <name>summary</name>
+        <qualifiedname>ista::owl2::loader::LoadingStats::summary</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="63" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.hpp" bodystart="63" bodyend="74"/>
+        <references refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1a66fb9569ade6ac59b71ca331f08e9a1a" compoundref="data__loader_8hpp" startline="47">errors</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1a838acdd1b4795691d3e91f26ccefa77e" compoundref="data__loader_8hpp" startline="42">individuals_created</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1ae9d52f8c203882c19b19062ce665cd55" compoundref="data__loader_8hpp" startline="43">individuals_enriched</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1a74a9606495273f17f35fcb00a473bae2" compoundref="data__loader_8hpp" startline="44">properties_added</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1a8df3d5f3e8452faaa8e6b162b1cce1de" compoundref="data__loader_8hpp" startline="45">relationships_created</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1ac479a78079d70a63fcb908725358c5e8" compoundref="data__loader_8hpp" startline="41">rows_processed</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1ae833773215c0c18ada09ba55819a56ac" compoundref="data__loader_8hpp" startline="46">rows_skipped</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Statistics from a loading operation. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/loader/data_loader.hpp" line="40" column="1" bodyfile="D:/projects/ista/lib/owl2/loader/data_loader.hpp" bodystart="40" bodyend="75"/>
+    <listofallmembers>
+      <member refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1a6f5bcf24863163e24ae4fb1a91d77dcc" prot="public" virt="non-virtual"><scope>ista::owl2::loader::LoadingStats</scope><name>error_messages</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1a66fb9569ade6ac59b71ca331f08e9a1a" prot="public" virt="non-virtual"><scope>ista::owl2::loader::LoadingStats</scope><name>errors</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1a838acdd1b4795691d3e91f26ccefa77e" prot="public" virt="non-virtual"><scope>ista::owl2::loader::LoadingStats</scope><name>individuals_created</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1ae9d52f8c203882c19b19062ce665cd55" prot="public" virt="non-virtual"><scope>ista::owl2::loader::LoadingStats</scope><name>individuals_enriched</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1a71e17bafad8233a0ba2b120a11ea8608" prot="public" virt="non-virtual"><scope>ista::owl2::loader::LoadingStats</scope><name>merge</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1a74a9606495273f17f35fcb00a473bae2" prot="public" virt="non-virtual"><scope>ista::owl2::loader::LoadingStats</scope><name>properties_added</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1a8df3d5f3e8452faaa8e6b162b1cce1de" prot="public" virt="non-virtual"><scope>ista::owl2::loader::LoadingStats</scope><name>relationships_created</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1ac479a78079d70a63fcb908725358c5e8" prot="public" virt="non-virtual"><scope>ista::owl2::loader::LoadingStats</scope><name>rows_processed</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1ae833773215c0c18ada09ba55819a56ac" prot="public" virt="non-virtual"><scope>ista::owl2::loader::LoadingStats</scope><name>rows_skipped</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1LoadingStats_1af92555edc6a81cee981a16d92c660d45" prot="public" virt="non-virtual"><scope>ista::owl2::loader::LoadingStats</scope><name>summary</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

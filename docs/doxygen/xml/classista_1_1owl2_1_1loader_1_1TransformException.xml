@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1loader_1_1TransformException" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::loader::TransformException</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::runtime_error</basecompoundref>
+    <includes refid="transform__engine_8hpp" local="no">transform_engine.hpp</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1TransformException_1ab2cb653d3ff2e82da34a575ccd6ad822" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::loader::TransformException::TransformException</definition>
+        <argsstring>(const std::string &amp;message)</argsstring>
+        <name>TransformException</name>
+        <qualifiedname>ista::owl2::loader::TransformException::TransformException</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/transform_engine.hpp" line="20" column="14" bodyfile="D:/projects/ista/lib/owl2/loader/transform_engine.hpp" bodystart="20" bodyend="21"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Exception thrown when a transform fails. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>ista::owl2::loader::TransformException</label>
+        <link refid="classista_1_1owl2_1_1loader_1_1TransformException"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::runtime_error</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>ista::owl2::loader::TransformException</label>
+        <link refid="classista_1_1owl2_1_1loader_1_1TransformException"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::runtime_error</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/projects/ista/lib/owl2/loader/transform_engine.hpp" line="18" column="1" bodyfile="D:/projects/ista/lib/owl2/loader/transform_engine.hpp" bodystart="18" bodyend="22"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1loader_1_1TransformException_1ab2cb653d3ff2e82da34a575ccd6ad822" prot="public" virt="non-virtual"><scope>ista::owl2::loader::TransformException</scope><name>TransformException</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

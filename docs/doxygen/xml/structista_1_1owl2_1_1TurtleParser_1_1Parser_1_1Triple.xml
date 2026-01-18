@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="87" column="25" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="87" bodyend="-1"/>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="123" column="25" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="123" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structista_1_1owl2_1_1TurtleParser_1_1Parser_1_1Triple_1aa0faec8e9ade8ee9d4a518f3cffd7333" prot="public" static="no" mutable="no">
         <type>std::string</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="88" column="25" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="88" bodyend="-1"/>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="124" column="25" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="124" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structista_1_1owl2_1_1TurtleParser_1_1Parser_1_1Triple_1ae0fd9acdccf8ec7a56fb76a18bdf07b2" prot="public" static="no" mutable="no">
         <type>std::string</type>
@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="89" column="25" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="89" bodyend="-1"/>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="125" column="25" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="125" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structista_1_1owl2_1_1TurtleParser_1_1Parser_1_1Triple_1a38a264bf3f8d4f0406d3eaf03a690a2e" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -57,7 +57,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="90" column="18" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="90" bodyend="-1"/>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="126" column="18" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="126" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structista_1_1owl2_1_1TurtleParser_1_1Parser_1_1Triple_1a4015e7cbb8eed736fa6a56ed9d30aacc" prot="public" static="no" mutable="no">
         <type>std::string</type>
@@ -71,7 +71,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="91" column="25" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="91" bodyend="-1"/>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="127" column="25" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="127" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structista_1_1owl2_1_1TurtleParser_1_1Parser_1_1Triple_1aa8b67738992dbef3e537518376a3938d" prot="public" static="no" mutable="no">
         <type>std::string</type>
@@ -85,14 +85,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="92" column="25" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="92" bodyend="-1"/>
+        <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="128" column="25" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="128" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="86" column="9" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="86" bodyend="93"/>
+    <location file="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" line="122" column="9" bodyfile="D:/projects/ista/lib/owl2/parser/turtle_parser.hpp" bodystart="122" bodyend="129"/>
     <listofallmembers>
       <member refid="structista_1_1owl2_1_1TurtleParser_1_1Parser_1_1Triple_1a4015e7cbb8eed736fa6a56ed9d30aacc" prot="public" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser::Triple</scope><name>literal_datatype</name></member>
       <member refid="structista_1_1owl2_1_1TurtleParser_1_1Parser_1_1Triple_1aa8b67738992dbef3e537518376a3938d" prot="public" virt="non-virtual"><scope>ista::owl2::TurtleParser::Parser::Triple</scope><name>literal_language</name></member>

@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="structista_1_1owl2_1_1loader_1_1DatabaseConnectionDef" kind="struct" language="C++" prot="public">
+    <compoundname>ista::owl2::loader::DatabaseConnectionDef</compoundname>
+    <includes refid="mapping__spec_8hpp" local="no">mapping_spec.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1DatabaseConnectionDef_1a9b499ffca03cf0fbd944da3564d94949" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::DatabaseConnectionDef::host</definition>
+        <argsstring></argsstring>
+        <name>host</name>
+        <qualifiedname>ista::owl2::loader::DatabaseConnectionDef::host</qualifiedname>
+        <initializer>= &quot;localhost&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="56" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1DatabaseConnectionDef_1a901692adea750ff5ba476864e0393296" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ista::owl2::loader::DatabaseConnectionDef::port</definition>
+        <argsstring></argsstring>
+        <name>port</name>
+        <qualifiedname>ista::owl2::loader::DatabaseConnectionDef::port</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="57" column="9" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1DatabaseConnectionDef_1ad9f79cf2c09cb0d5843c3990f2db48b0" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::DatabaseConnectionDef::database</definition>
+        <argsstring></argsstring>
+        <name>database</name>
+        <qualifiedname>ista::owl2::loader::DatabaseConnectionDef::database</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="58" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1DatabaseConnectionDef_1a4a1467e3e0a0cf924b563d37d4b51f91" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::DatabaseConnectionDef::username</definition>
+        <argsstring></argsstring>
+        <name>username</name>
+        <qualifiedname>ista::owl2::loader::DatabaseConnectionDef::username</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="59" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1DatabaseConnectionDef_1a26299e32188ddeb755bd9e91f5f359da" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::DatabaseConnectionDef::password</definition>
+        <argsstring></argsstring>
+        <name>password</name>
+        <qualifiedname>ista::owl2::loader::DatabaseConnectionDef::password</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="60" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1DatabaseConnectionDef_1a46f7c1364325bc7456732e415900a033" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::DatabaseConnectionDef::connection_string</definition>
+        <argsstring></argsstring>
+        <name>connection_string</name>
+        <qualifiedname>ista::owl2::loader::DatabaseConnectionDef::connection_string</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="61" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1DatabaseConnectionDef_1ad6836e1503c31f2e538409dd46f4e785" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ista::owl2::loader::DatabaseConnectionDef::use_connection_string</definition>
+        <argsstring></argsstring>
+        <name>use_connection_string</name>
+        <qualifiedname>ista::owl2::loader::DatabaseConnectionDef::use_connection_string</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="62" column="10" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="62" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Database connection configuration. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="55" column="1" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="55" bodyend="63"/>
+    <listofallmembers>
+      <member refid="structista_1_1owl2_1_1loader_1_1DatabaseConnectionDef_1a46f7c1364325bc7456732e415900a033" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DatabaseConnectionDef</scope><name>connection_string</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1DatabaseConnectionDef_1ad9f79cf2c09cb0d5843c3990f2db48b0" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DatabaseConnectionDef</scope><name>database</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1DatabaseConnectionDef_1a9b499ffca03cf0fbd944da3564d94949" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DatabaseConnectionDef</scope><name>host</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1DatabaseConnectionDef_1a26299e32188ddeb755bd9e91f5f359da" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DatabaseConnectionDef</scope><name>password</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1DatabaseConnectionDef_1a901692adea750ff5ba476864e0393296" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DatabaseConnectionDef</scope><name>port</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1DatabaseConnectionDef_1ad6836e1503c31f2e538409dd46f4e785" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DatabaseConnectionDef</scope><name>use_connection_string</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1DatabaseConnectionDef_1a4a1467e3e0a0cf924b563d37d4b51f91" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DatabaseConnectionDef</scope><name>username</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

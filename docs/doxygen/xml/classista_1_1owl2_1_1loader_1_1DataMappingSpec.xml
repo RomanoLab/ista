@@ -1,0 +1,466 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classista_1_1owl2_1_1loader_1_1DataMappingSpec" kind="class" language="C++" prot="public">
+    <compoundname>ista::owl2::loader::DataMappingSpec</compoundname>
+    <includes refid="mapping__spec_8hpp" local="no">mapping_spec.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1acc46d8f216b2e7722f11ece0e6725f42" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::DataMappingSpec::version</definition>
+        <argsstring></argsstring>
+        <name>version</name>
+        <qualifiedname>ista::owl2::loader::DataMappingSpec::version</qualifiedname>
+        <initializer>= &quot;1.0&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="201" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="201" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1abf7f30d46b4aa762974ad0b9b1e85ef1" compoundref="mapping__spec_8cpp" startline="272" endline="337">load_from_file</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aee83b1571a5de67f9bfa1ca721a107e4" compoundref="mapping__spec_8cpp" startline="339" endline="398">parse</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a73cbf7656940f10581ca1d35bf40be0e" compoundref="mapping__spec_8cpp" startline="517" endline="627">to_yaml</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a4bf827e0b29865e16fe9379697b047f9" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::DataMappingSpec::base_iri</definition>
+        <argsstring></argsstring>
+        <name>base_iri</name>
+        <qualifiedname>ista::owl2::loader::DataMappingSpec::base_iri</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="202" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="202" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1abf7f30d46b4aa762974ad0b9b1e85ef1" compoundref="mapping__spec_8cpp" startline="272" endline="337">load_from_file</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aee83b1571a5de67f9bfa1ca721a107e4" compoundref="mapping__spec_8cpp" startline="339" endline="398">parse</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1ae93f18abd88ed46fb109302d9425def9" compoundref="mapping__spec_8cpp" startline="694" endline="734">resolve_environment_variables</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a73cbf7656940f10581ca1d35bf40be0e" compoundref="mapping__spec_8cpp" startline="517" endline="627">to_yaml</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a4c023d404f56362eff3315ca76bfd0ad" prot="public" static="no" mutable="no">
+        <type>std::map&lt; std::string, <ref refid="structista_1_1owl2_1_1loader_1_1TransformDef" kindref="compound">TransformDef</ref> &gt;</type>
+        <definition>std::map&lt;std::string, TransformDef&gt; ista::owl2::loader::DataMappingSpec::transforms</definition>
+        <argsstring></argsstring>
+        <name>transforms</name>
+        <qualifiedname>ista::owl2::loader::DataMappingSpec::transforms</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="205" column="14" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="205" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1abf7f30d46b4aa762974ad0b9b1e85ef1" compoundref="mapping__spec_8cpp" startline="272" endline="337">load_from_file</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aee83b1571a5de67f9bfa1ca721a107e4" compoundref="mapping__spec_8cpp" startline="339" endline="398">parse</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a73cbf7656940f10581ca1d35bf40be0e" compoundref="mapping__spec_8cpp" startline="517" endline="627">to_yaml</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aee3f45da75505bdb2e26e4919ef9c550" compoundref="mapping__spec_8cpp" startline="400" endline="515">validate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a6be67b1bfd07736b53a9f289b94dc59f" prot="public" static="no" mutable="no">
+        <type>std::map&lt; std::string, <ref refid="structista_1_1owl2_1_1loader_1_1DataSourceDef" kindref="compound">DataSourceDef</ref> &gt;</type>
+        <definition>std::map&lt;std::string, DataSourceDef&gt; ista::owl2::loader::DataMappingSpec::sources</definition>
+        <argsstring></argsstring>
+        <name>sources</name>
+        <qualifiedname>ista::owl2::loader::DataMappingSpec::sources</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="208" column="14" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="208" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1abf7f30d46b4aa762974ad0b9b1e85ef1" compoundref="mapping__spec_8cpp" startline="272" endline="337">load_from_file</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aee83b1571a5de67f9bfa1ca721a107e4" compoundref="mapping__spec_8cpp" startline="339" endline="398">parse</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1ae93f18abd88ed46fb109302d9425def9" compoundref="mapping__spec_8cpp" startline="694" endline="734">resolve_environment_variables</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a73cbf7656940f10581ca1d35bf40be0e" compoundref="mapping__spec_8cpp" startline="517" endline="627">to_yaml</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aee3f45da75505bdb2e26e4919ef9c550" compoundref="mapping__spec_8cpp" startline="400" endline="515">validate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a9b5fdd6164257865e014f297c7ad2f86" prot="public" static="no" mutable="no">
+        <type>std::map&lt; std::string, <ref refid="structista_1_1owl2_1_1loader_1_1EntityTypeDef" kindref="compound">EntityTypeDef</ref> &gt;</type>
+        <definition>std::map&lt;std::string, EntityTypeDef&gt; ista::owl2::loader::DataMappingSpec::entity_types</definition>
+        <argsstring></argsstring>
+        <name>entity_types</name>
+        <qualifiedname>ista::owl2::loader::DataMappingSpec::entity_types</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="211" column="14" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="211" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1abe021f2a97c46329700ec261c495089a" compoundref="mapping__spec_8cpp" startline="637" endline="662">expand_entity_types</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aaa8fdbd9b990889a6bb985284d7986e9" compoundref="mapping__spec_8cpp" startline="664" endline="692">get_all_node_mappings</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1abf7f30d46b4aa762974ad0b9b1e85ef1" compoundref="mapping__spec_8cpp" startline="272" endline="337">load_from_file</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aee83b1571a5de67f9bfa1ca721a107e4" compoundref="mapping__spec_8cpp" startline="339" endline="398">parse</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aee3f45da75505bdb2e26e4919ef9c550" compoundref="mapping__spec_8cpp" startline="400" endline="515">validate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a5877bed541269c529dbfbc699c29348f" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structista_1_1owl2_1_1loader_1_1NodeMapping" kindref="compound">NodeMapping</ref> &gt;</type>
+        <definition>std::vector&lt;NodeMapping&gt; ista::owl2::loader::DataMappingSpec::node_mappings</definition>
+        <argsstring></argsstring>
+        <name>node_mappings</name>
+        <qualifiedname>ista::owl2::loader::DataMappingSpec::node_mappings</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="214" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="214" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1abe021f2a97c46329700ec261c495089a" compoundref="mapping__spec_8cpp" startline="637" endline="662">expand_entity_types</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aaa8fdbd9b990889a6bb985284d7986e9" compoundref="mapping__spec_8cpp" startline="664" endline="692">get_all_node_mappings</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1abf7f30d46b4aa762974ad0b9b1e85ef1" compoundref="mapping__spec_8cpp" startline="272" endline="337">load_from_file</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aee83b1571a5de67f9bfa1ca721a107e4" compoundref="mapping__spec_8cpp" startline="339" endline="398">parse</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a73cbf7656940f10581ca1d35bf40be0e" compoundref="mapping__spec_8cpp" startline="517" endline="627">to_yaml</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aee3f45da75505bdb2e26e4919ef9c550" compoundref="mapping__spec_8cpp" startline="400" endline="515">validate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a7971d23f8d1eb499660430824d8a8c13" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structista_1_1owl2_1_1loader_1_1RelationshipMapping" kindref="compound">RelationshipMapping</ref> &gt;</type>
+        <definition>std::vector&lt;RelationshipMapping&gt; ista::owl2::loader::DataMappingSpec::relationship_mappings</definition>
+        <argsstring></argsstring>
+        <name>relationship_mappings</name>
+        <qualifiedname>ista::owl2::loader::DataMappingSpec::relationship_mappings</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="217" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="217" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1abf7f30d46b4aa762974ad0b9b1e85ef1" compoundref="mapping__spec_8cpp" startline="272" endline="337">load_from_file</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aee83b1571a5de67f9bfa1ca721a107e4" compoundref="mapping__spec_8cpp" startline="339" endline="398">parse</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a73cbf7656940f10581ca1d35bf40be0e" compoundref="mapping__spec_8cpp" startline="517" endline="627">to_yaml</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aee3f45da75505bdb2e26e4919ef9c550" compoundref="mapping__spec_8cpp" startline="400" endline="515">validate</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1abf7f30d46b4aa762974ad0b9b1e85ef1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec" kindref="compound">DataMappingSpec</ref></type>
+        <definition>DataMappingSpec ista::owl2::loader::DataMappingSpec::load_from_file</definition>
+        <argsstring>(const std::string &amp;filepath)</argsstring>
+        <name>load_from_file</name>
+        <qualifiedname>ista::owl2::loader::DataMappingSpec::load_from_file</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filepath</declname>
+        </param>
+        <briefdescription>
+<para>Load a mapping specification from a YAML file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filepath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to the YAML file </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Parsed mapping specification </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classista_1_1owl2_1_1loader_1_1MappingSpecException" kindref="compound">MappingSpecException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if parsing fails </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="226" column="28" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.cpp" bodystart="272" bodyend="337"/>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a4bf827e0b29865e16fe9379697b047f9" compoundref="mapping__spec_8hpp" startline="202">base_iri</references>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a9b5fdd6164257865e014f297c7ad2f86" compoundref="mapping__spec_8hpp" startline="211">entity_types</references>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a5877bed541269c529dbfbc699c29348f" compoundref="mapping__spec_8hpp" startline="214">node_mappings</references>
+        <references refid="classista_1_1owl2_1_1loader_1_1YamlParser_1a0e94894fd298c0a6dfb7864decc7465a" compoundref="yaml__parser_8cpp" startline="214" endline="223">ista::owl2::loader::YamlParser::parse_file</references>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a7971d23f8d1eb499660430824d8a8c13" compoundref="mapping__spec_8hpp" startline="217">relationship_mappings</references>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a6be67b1bfd07736b53a9f289b94dc59f" compoundref="mapping__spec_8hpp" startline="208">sources</references>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a4c023d404f56362eff3315ca76bfd0ad" compoundref="mapping__spec_8hpp" startline="205">transforms</references>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1acc46d8f216b2e7722f11ece0e6725f42" compoundref="mapping__spec_8hpp" startline="201">version</references>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataLoader_1a40d6d1c5de3fc8e63b026cd857970b91" compoundref="data__loader_8cpp" startline="214" endline="218">ista::owl2::loader::DataLoader::load_mapping_spec</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aee83b1571a5de67f9bfa1ca721a107e4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec" kindref="compound">DataMappingSpec</ref></type>
+        <definition>DataMappingSpec ista::owl2::loader::DataMappingSpec::parse</definition>
+        <argsstring>(const std::string &amp;yaml_content)</argsstring>
+        <name>parse</name>
+        <qualifiedname>ista::owl2::loader::DataMappingSpec::parse</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>yaml_content</declname>
+        </param>
+        <briefdescription>
+<para>Parse a mapping specification from YAML string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>yaml_content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>YAML content as string </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Parsed mapping specification </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="234" column="28" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.cpp" bodystart="339" bodyend="398"/>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a4bf827e0b29865e16fe9379697b047f9" compoundref="mapping__spec_8hpp" startline="202">base_iri</references>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a9b5fdd6164257865e014f297c7ad2f86" compoundref="mapping__spec_8hpp" startline="211">entity_types</references>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a5877bed541269c529dbfbc699c29348f" compoundref="mapping__spec_8hpp" startline="214">node_mappings</references>
+        <references refid="classista_1_1owl2_1_1loader_1_1YamlParser_1a31be90596dd84e704c8e520939cd53e2" compoundref="yaml__parser_8cpp" startline="192" endline="212">ista::owl2::loader::YamlParser::parse</references>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a7971d23f8d1eb499660430824d8a8c13" compoundref="mapping__spec_8hpp" startline="217">relationship_mappings</references>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a6be67b1bfd07736b53a9f289b94dc59f" compoundref="mapping__spec_8hpp" startline="208">sources</references>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a4c023d404f56362eff3315ca76bfd0ad" compoundref="mapping__spec_8hpp" startline="205">transforms</references>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1acc46d8f216b2e7722f11ece0e6725f42" compoundref="mapping__spec_8hpp" startline="201">version</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aee3f45da75505bdb2e26e4919ef9c550" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structista_1_1owl2_1_1loader_1_1ValidationResult" kindref="compound">ValidationResult</ref></type>
+        <definition>ValidationResult ista::owl2::loader::DataMappingSpec::validate</definition>
+        <argsstring>(const Ontology &amp;ontology) const</argsstring>
+        <name>validate</name>
+        <qualifiedname>ista::owl2::loader::DataMappingSpec::validate</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <briefdescription>
+<para>Validate the specification against an ontology. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks that:<itemizedlist>
+<listitem><para>All referenced classes exist</para>
+</listitem><listitem><para>All referenced properties exist</para>
+</listitem><listitem><para>All referenced data sources are defined</para>
+</listitem><listitem><para>All referenced transforms are defined</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ontology</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ontology to validate against </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Validation result with errors and warnings </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="248" column="22" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.cpp" bodystart="400" bodyend="515"/>
+        <references refid="structista_1_1owl2_1_1loader_1_1ValidationResult_1afcbd04a9c8a2ed87deb50d50ecfc647b" compoundref="mapping__spec_8hpp" startline="182" endline="185">ista::owl2::loader::ValidationResult::add_error</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1ValidationResult_1a0baa4bb017722880574604893c909bdd" compoundref="mapping__spec_8hpp" startline="187" endline="189">ista::owl2::loader::ValidationResult::add_warning</references>
+        <references refid="namespaceista_1_1owl2_1_1loader_1ae8d9c89c2c6247e316b52542bf74372ea294ce20cdefa29be3be0735cb62e715d" compoundref="mapping__spec_8hpp" startline="85">ista::owl2::loader::CREATE</references>
+        <references refid="namespaceista_1_1owl2_1_1loader_1ae8d9c89c2c6247e316b52542bf74372ea30d600d9c3c532d6bbeeb13ff4d2ef54" compoundref="mapping__spec_8hpp" startline="86">ista::owl2::loader::ENRICH</references>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a9b5fdd6164257865e014f297c7ad2f86" compoundref="mapping__spec_8hpp" startline="211">entity_types</references>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a5877bed541269c529dbfbc699c29348f" compoundref="mapping__spec_8hpp" startline="214">node_mappings</references>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a7971d23f8d1eb499660430824d8a8c13" compoundref="mapping__spec_8hpp" startline="217">relationship_mappings</references>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a6be67b1bfd07736b53a9f289b94dc59f" compoundref="mapping__spec_8hpp" startline="208">sources</references>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a4c023d404f56362eff3315ca76bfd0ad" compoundref="mapping__spec_8hpp" startline="205">transforms</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a73cbf7656940f10581ca1d35bf40be0e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::DataMappingSpec::to_yaml</definition>
+        <argsstring>() const</argsstring>
+        <name>to_yaml</name>
+        <qualifiedname>ista::owl2::loader::DataMappingSpec::to_yaml</qualifiedname>
+        <briefdescription>
+<para>Serialize the specification to YAML string. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="253" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.cpp" bodystart="517" bodyend="627"/>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a4bf827e0b29865e16fe9379697b047f9" compoundref="mapping__spec_8hpp" startline="202">base_iri</references>
+        <references refid="namespaceista_1_1owl2_1_1loader_1ae8d9c89c2c6247e316b52542bf74372ea294ce20cdefa29be3be0735cb62e715d" compoundref="mapping__spec_8hpp" startline="85">ista::owl2::loader::CREATE</references>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a5877bed541269c529dbfbc699c29348f" compoundref="mapping__spec_8hpp" startline="214">node_mappings</references>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a7971d23f8d1eb499660430824d8a8c13" compoundref="mapping__spec_8hpp" startline="217">relationship_mappings</references>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a6be67b1bfd07736b53a9f289b94dc59f" compoundref="mapping__spec_8hpp" startline="208">sources</references>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a4c023d404f56362eff3315ca76bfd0ad" compoundref="mapping__spec_8hpp" startline="205">transforms</references>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1acc46d8f216b2e7722f11ece0e6725f42" compoundref="mapping__spec_8hpp" startline="201">version</references>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1ae22b82763116f06e35c0027aaa7edc1b" compoundref="mapping__spec_8cpp" startline="629" endline="635">save_to_file</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1ae22b82763116f06e35c0027aaa7edc1b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::loader::DataMappingSpec::save_to_file</definition>
+        <argsstring>(const std::string &amp;filepath) const</argsstring>
+        <name>save_to_file</name>
+        <qualifiedname>ista::owl2::loader::DataMappingSpec::save_to_file</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filepath</declname>
+        </param>
+        <briefdescription>
+<para>Save the specification to a YAML file. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="258" column="10" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.cpp" bodystart="629" bodyend="635"/>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a73cbf7656940f10581ca1d35bf40be0e" compoundref="mapping__spec_8cpp" startline="517" endline="627">to_yaml</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1abe021f2a97c46329700ec261c495089a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::loader::DataMappingSpec::expand_entity_types</definition>
+        <argsstring>()</argsstring>
+        <name>expand_entity_types</name>
+        <qualifiedname>ista::owl2::loader::DataMappingSpec::expand_entity_types</qualifiedname>
+        <briefdescription>
+<para>Expand entity_types into node_mappings. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Converts the grouped entity_types definitions into flat node_mappings for easier processing. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="266" column="10" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.cpp" bodystart="637" bodyend="662"/>
+        <references refid="namespaceista_1_1owl2_1_1loader_1ae8d9c89c2c6247e316b52542bf74372ea294ce20cdefa29be3be0735cb62e715d" compoundref="mapping__spec_8hpp" startline="85">ista::owl2::loader::CREATE</references>
+        <references refid="namespaceista_1_1owl2_1_1loader_1ae8d9c89c2c6247e316b52542bf74372ea30d600d9c3c532d6bbeeb13ff4d2ef54" compoundref="mapping__spec_8hpp" startline="86">ista::owl2::loader::ENRICH</references>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a9b5fdd6164257865e014f297c7ad2f86" compoundref="mapping__spec_8hpp" startline="211">entity_types</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1af270575823569822f2ca9694cac51d39" compoundref="mapping__spec_8hpp" startline="106">ista::owl2::loader::NodeMapping::filter</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1ae34e8a09a0e0b58fe4095fcb69717163" compoundref="mapping__spec_8hpp" startline="100">ista::owl2::loader::NodeMapping::iri_column</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1a94b91fd2daa57b8d0a4795312e82d53c" compoundref="mapping__spec_8hpp" startline="103">ista::owl2::loader::NodeMapping::match</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1af282957ffbb576145d95f997699aa91c" compoundref="mapping__spec_8hpp" startline="97">ista::owl2::loader::NodeMapping::mode</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1a144974937628d728cc9d408286e21312" compoundref="mapping__spec_8hpp" startline="93">ista::owl2::loader::NodeMapping::name</references>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a5877bed541269c529dbfbc699c29348f" compoundref="mapping__spec_8hpp" startline="214">node_mappings</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1ac7cd5406b766787a31c1f06fc79ff30e" compoundref="mapping__spec_8hpp" startline="109">ista::owl2::loader::NodeMapping::properties</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1abc084391b1aed2857a5ac6bad2ded363" compoundref="mapping__spec_8hpp" startline="94">ista::owl2::loader::NodeMapping::source</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1aee7fdff21299210bd14912683181efec" compoundref="mapping__spec_8hpp" startline="95">ista::owl2::loader::NodeMapping::target_class</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aaa8fdbd9b990889a6bb985284d7986e9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="structista_1_1owl2_1_1loader_1_1NodeMapping" kindref="compound">NodeMapping</ref> &gt;</type>
+        <definition>std::vector&lt; NodeMapping &gt; ista::owl2::loader::DataMappingSpec::get_all_node_mappings</definition>
+        <argsstring>() const</argsstring>
+        <name>get_all_node_mappings</name>
+        <qualifiedname>ista::owl2::loader::DataMappingSpec::get_all_node_mappings</qualifiedname>
+        <briefdescription>
+<para>Get all node mappings (including expanded entity_types). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="271" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.cpp" bodystart="664" bodyend="692"/>
+        <references refid="namespaceista_1_1owl2_1_1loader_1ae8d9c89c2c6247e316b52542bf74372ea294ce20cdefa29be3be0735cb62e715d" compoundref="mapping__spec_8hpp" startline="85">ista::owl2::loader::CREATE</references>
+        <references refid="namespaceista_1_1owl2_1_1loader_1ae8d9c89c2c6247e316b52542bf74372ea30d600d9c3c532d6bbeeb13ff4d2ef54" compoundref="mapping__spec_8hpp" startline="86">ista::owl2::loader::ENRICH</references>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a9b5fdd6164257865e014f297c7ad2f86" compoundref="mapping__spec_8hpp" startline="211">entity_types</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1af270575823569822f2ca9694cac51d39" compoundref="mapping__spec_8hpp" startline="106">ista::owl2::loader::NodeMapping::filter</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1ae34e8a09a0e0b58fe4095fcb69717163" compoundref="mapping__spec_8hpp" startline="100">ista::owl2::loader::NodeMapping::iri_column</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1a94b91fd2daa57b8d0a4795312e82d53c" compoundref="mapping__spec_8hpp" startline="103">ista::owl2::loader::NodeMapping::match</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1af282957ffbb576145d95f997699aa91c" compoundref="mapping__spec_8hpp" startline="97">ista::owl2::loader::NodeMapping::mode</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1a144974937628d728cc9d408286e21312" compoundref="mapping__spec_8hpp" startline="93">ista::owl2::loader::NodeMapping::name</references>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a5877bed541269c529dbfbc699c29348f" compoundref="mapping__spec_8hpp" startline="214">node_mappings</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1ac7cd5406b766787a31c1f06fc79ff30e" compoundref="mapping__spec_8hpp" startline="109">ista::owl2::loader::NodeMapping::properties</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1abc084391b1aed2857a5ac6bad2ded363" compoundref="mapping__spec_8hpp" startline="94">ista::owl2::loader::NodeMapping::source</references>
+        <references refid="structista_1_1owl2_1_1loader_1_1NodeMapping_1aee7fdff21299210bd14912683181efec" compoundref="mapping__spec_8hpp" startline="95">ista::owl2::loader::NodeMapping::target_class</references>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1ae93f18abd88ed46fb109302d9425def9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::loader::DataMappingSpec::resolve_environment_variables</definition>
+        <argsstring>()</argsstring>
+        <name>resolve_environment_variables</name>
+        <qualifiedname>ista::owl2::loader::DataMappingSpec::resolve_environment_variables</qualifiedname>
+        <briefdescription>
+<para>Resolve environment variables in paths. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Replaces ${VAR_NAME} with the value of environment variable VAR_NAME </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="278" column="10" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.cpp" bodystart="694" bodyend="734"/>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a4bf827e0b29865e16fe9379697b047f9" compoundref="mapping__spec_8hpp" startline="202">base_iri</references>
+        <references refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a6be67b1bfd07736b53a9f289b94dc59f" compoundref="mapping__spec_8hpp" startline="208">sources</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aad0b0bee07c98ae9051b4953fb4399f8" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::loader::DataMappingSpec::has_class</definition>
+        <argsstring>(const Ontology &amp;ontology, const std::string &amp;local_name)</argsstring>
+        <name>has_class</name>
+        <qualifiedname>ista::owl2::loader::DataMappingSpec::has_class</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>local_name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="282" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.cpp" bodystart="736" bodyend="748"/>
+      </memberdef>
+      <memberdef kind="function" id="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a3a7036e808574fa3b7301b26b1680d34" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::loader::DataMappingSpec::has_property</definition>
+        <argsstring>(const Ontology &amp;ontology, const std::string &amp;local_name)</argsstring>
+        <name>has_property</name>
+        <qualifiedname>ista::owl2::loader::DataMappingSpec::has_property</qualifiedname>
+        <param>
+          <type>const <ref refid="classista_1_1owl2_1_1Ontology" kindref="compound">Ontology</ref> &amp;</type>
+          <declname>ontology</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>local_name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="285" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.cpp" bodystart="750" bodyend="763"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Complete mapping specification. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This represents a complete specification for populating an ontology from multiple data sources. It can be loaded from YAML files and validated against an ontology. </para>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="199" column="1" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="199" bodyend="286"/>
+    <listofallmembers>
+      <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a4bf827e0b29865e16fe9379697b047f9" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DataMappingSpec</scope><name>base_iri</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a9b5fdd6164257865e014f297c7ad2f86" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DataMappingSpec</scope><name>entity_types</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1abe021f2a97c46329700ec261c495089a" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DataMappingSpec</scope><name>expand_entity_types</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aaa8fdbd9b990889a6bb985284d7986e9" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DataMappingSpec</scope><name>get_all_node_mappings</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aad0b0bee07c98ae9051b4953fb4399f8" prot="private" virt="non-virtual"><scope>ista::owl2::loader::DataMappingSpec</scope><name>has_class</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a3a7036e808574fa3b7301b26b1680d34" prot="private" virt="non-virtual"><scope>ista::owl2::loader::DataMappingSpec</scope><name>has_property</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1abf7f30d46b4aa762974ad0b9b1e85ef1" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DataMappingSpec</scope><name>load_from_file</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a5877bed541269c529dbfbc699c29348f" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DataMappingSpec</scope><name>node_mappings</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aee83b1571a5de67f9bfa1ca721a107e4" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DataMappingSpec</scope><name>parse</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a7971d23f8d1eb499660430824d8a8c13" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DataMappingSpec</scope><name>relationship_mappings</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1ae93f18abd88ed46fb109302d9425def9" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DataMappingSpec</scope><name>resolve_environment_variables</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1ae22b82763116f06e35c0027aaa7edc1b" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DataMappingSpec</scope><name>save_to_file</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a6be67b1bfd07736b53a9f289b94dc59f" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DataMappingSpec</scope><name>sources</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a73cbf7656940f10581ca1d35bf40be0e" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DataMappingSpec</scope><name>to_yaml</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1a4c023d404f56362eff3315ca76bfd0ad" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DataMappingSpec</scope><name>transforms</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1aee3f45da75505bdb2e26e4919ef9c550" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DataMappingSpec</scope><name>validate</name></member>
+      <member refid="classista_1_1owl2_1_1loader_1_1DataMappingSpec_1acc46d8f216b2e7722f11ece0e6725f42" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DataMappingSpec</scope><name>version</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

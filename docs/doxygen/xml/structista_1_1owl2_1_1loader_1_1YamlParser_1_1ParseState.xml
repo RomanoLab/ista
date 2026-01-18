@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState" kind="struct" language="C++" prot="private">
+    <compoundname>ista::owl2::loader::YamlParser::ParseState</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1add28b7fd719da76b24b87ca36c6e3714" prot="public" static="no" mutable="no">
+        <type>const std::string &amp;</type>
+        <definition>const std::string&amp; ista::owl2::loader::YamlParser::ParseState::content</definition>
+        <argsstring></argsstring>
+        <name>content</name>
+        <qualifiedname>ista::owl2::loader::YamlParser::ParseState::content</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" line="134" column="27" bodyfile="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1ae2ae2a76ee548b723be17947f647e839" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t ista::owl2::loader::YamlParser::ParseState::pos</definition>
+        <argsstring></argsstring>
+        <name>pos</name>
+        <qualifiedname>ista::owl2::loader::YamlParser::ParseState::pos</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" line="135" column="16" bodyfile="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1a5db67a50d4b35c371332a573dde9ae13" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t ista::owl2::loader::YamlParser::ParseState::line</definition>
+        <argsstring></argsstring>
+        <name>line</name>
+        <qualifiedname>ista::owl2::loader::YamlParser::ParseState::line</qualifiedname>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" line="136" column="16" bodyfile="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" bodystart="136" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1a343d17e3dea16fdea0d258a4326f38d2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ista::owl2::loader::YamlParser::ParseState::ParseState</definition>
+        <argsstring>(const std::string &amp;c)</argsstring>
+        <name>ParseState</name>
+        <qualifiedname>ista::owl2::loader::YamlParser::ParseState::ParseState</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" line="138" column="9" bodyfile="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" bodystart="138" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1a7f2b3741921bbc5e61a9cc2877607fa7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>char</type>
+        <definition>char ista::owl2::loader::YamlParser::ParseState::peek</definition>
+        <argsstring>() const</argsstring>
+        <name>peek</name>
+        <qualifiedname>ista::owl2::loader::YamlParser::ParseState::peek</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" line="140" column="14" bodyfile="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" bodystart="140" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1a55ba0c281bbff812f1240498e8e085bb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>char</type>
+        <definition>char ista::owl2::loader::YamlParser::ParseState::advance</definition>
+        <argsstring>()</argsstring>
+        <name>advance</name>
+        <qualifiedname>ista::owl2::loader::YamlParser::ParseState::advance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" line="141" column="14" bodyfile="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" bodystart="141" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1a53c4ea2fe455433ce4ed145c3d589956" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ista::owl2::loader::YamlParser::ParseState::at_end</definition>
+        <argsstring>() const</argsstring>
+        <name>at_end</name>
+        <qualifiedname>ista::owl2::loader::YamlParser::ParseState::at_end</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" line="147" column="14" bodyfile="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" bodystart="147" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1a457fdf8f5cc7a1558f2545888dcf423f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::loader::YamlParser::ParseState::skip_whitespace</definition>
+        <argsstring>()</argsstring>
+        <name>skip_whitespace</name>
+        <qualifiedname>ista::owl2::loader::YamlParser::ParseState::skip_whitespace</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" line="148" column="14" bodyfile="D:/projects/ista/lib/owl2/loader/yaml_parser.cpp" bodystart="132" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1a45b732aac7631a07a48e55cf81d95e97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ista::owl2::loader::YamlParser::ParseState::skip_line</definition>
+        <argsstring>()</argsstring>
+        <name>skip_line</name>
+        <qualifiedname>ista::owl2::loader::YamlParser::ParseState::skip_line</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" line="149" column="14" bodyfile="D:/projects/ista/lib/owl2/loader/yaml_parser.cpp" bodystart="138" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1a3c97a5b8c8b91ed6613e516bb02ff6ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ista::owl2::loader::YamlParser::ParseState::get_indent</definition>
+        <argsstring>()</argsstring>
+        <name>get_indent</name>
+        <qualifiedname>ista::owl2::loader::YamlParser::ParseState::get_indent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" line="150" column="13" bodyfile="D:/projects/ista/lib/owl2/loader/yaml_parser.cpp" bodystart="145" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1a2057553078dd73f20e91c3253409cd4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::YamlParser::ParseState::read_until</definition>
+        <argsstring>(const std::string &amp;delimiters)</argsstring>
+        <name>read_until</name>
+        <qualifiedname>ista::owl2::loader::YamlParser::ParseState::read_until</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>delimiters</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" line="151" column="21" bodyfile="D:/projects/ista/lib/owl2/loader/yaml_parser.cpp" bodystart="156" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1a1b70e1e553349191b52a3afb165fb608" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::YamlParser::ParseState::read_quoted_string</definition>
+        <argsstring>()</argsstring>
+        <name>read_quoted_string</name>
+        <qualifiedname>ista::owl2::loader::YamlParser::ParseState::read_quoted_string</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" line="152" column="21" bodyfile="D:/projects/ista/lib/owl2/loader/yaml_parser.cpp" bodystart="164" bodyend="188"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" line="133" column="5" bodyfile="D:/projects/ista/lib/owl2/loader/yaml_parser.hpp" bodystart="133" bodyend="153"/>
+    <listofallmembers>
+      <member refid="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1a55ba0c281bbff812f1240498e8e085bb" prot="public" virt="non-virtual"><scope>ista::owl2::loader::YamlParser::ParseState</scope><name>advance</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1a53c4ea2fe455433ce4ed145c3d589956" prot="public" virt="non-virtual"><scope>ista::owl2::loader::YamlParser::ParseState</scope><name>at_end</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1add28b7fd719da76b24b87ca36c6e3714" prot="public" virt="non-virtual"><scope>ista::owl2::loader::YamlParser::ParseState</scope><name>content</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1a3c97a5b8c8b91ed6613e516bb02ff6ce" prot="public" virt="non-virtual"><scope>ista::owl2::loader::YamlParser::ParseState</scope><name>get_indent</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1a5db67a50d4b35c371332a573dde9ae13" prot="public" virt="non-virtual"><scope>ista::owl2::loader::YamlParser::ParseState</scope><name>line</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1a343d17e3dea16fdea0d258a4326f38d2" prot="public" virt="non-virtual"><scope>ista::owl2::loader::YamlParser::ParseState</scope><name>ParseState</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1a7f2b3741921bbc5e61a9cc2877607fa7" prot="public" virt="non-virtual"><scope>ista::owl2::loader::YamlParser::ParseState</scope><name>peek</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1ae2ae2a76ee548b723be17947f647e839" prot="public" virt="non-virtual"><scope>ista::owl2::loader::YamlParser::ParseState</scope><name>pos</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1a1b70e1e553349191b52a3afb165fb608" prot="public" virt="non-virtual"><scope>ista::owl2::loader::YamlParser::ParseState</scope><name>read_quoted_string</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1a2057553078dd73f20e91c3253409cd4b" prot="public" virt="non-virtual"><scope>ista::owl2::loader::YamlParser::ParseState</scope><name>read_until</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1a45b732aac7631a07a48e55cf81d95e97" prot="public" virt="non-virtual"><scope>ista::owl2::loader::YamlParser::ParseState</scope><name>skip_line</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1YamlParser_1_1ParseState_1a457fdf8f5cc7a1558f2545888dcf423f" prot="public" virt="non-virtual"><scope>ista::owl2::loader::YamlParser::ParseState</scope><name>skip_whitespace</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

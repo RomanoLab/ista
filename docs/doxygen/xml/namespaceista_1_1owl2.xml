@@ -89,6 +89,7 @@
     <innerclass refid="classista_1_1owl2_1_1TurtleSerializer" prot="public">ista::owl2::TurtleSerializer</innerclass>
     <innernamespace refid="namespaceista_1_1owl2_1_1facets">ista::owl2::facets</innernamespace>
     <innernamespace refid="namespaceista_1_1owl2_1_1xsd">ista::owl2::xsd</innernamespace>
+    <innernamespace refid="namespaceista_1_1owl2_1_1loader">ista::owl2::loader</innernamespace>
     <innernamespace refid="namespaceista_1_1owl2_1_1reasoner">ista::owl2::reasoner</innernamespace>
     <sectiondef kind="typedef">
       <memberdef kind="typedef" id="namespaceista_1_1owl2_1a61f55fb50b668c2a4fc68c63be3e8574" prot="public" static="no">
@@ -318,7 +319,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="163" column="1" bodyfile="D:/projects/ista/lib/owl2/core/ontology.hpp" bodystart="163" bodyend="-1"/>
+        <location file="D:/projects/ista/lib/owl2/core/ontology.hpp" line="287" column="1" bodyfile="D:/projects/ista/lib/owl2/core/ontology.hpp" bodystart="287" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">

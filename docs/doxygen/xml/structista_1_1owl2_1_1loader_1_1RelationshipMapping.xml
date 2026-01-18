@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="structista_1_1owl2_1_1loader_1_1RelationshipMapping" kind="struct" language="C++" prot="public">
+    <compoundname>ista::owl2::loader::RelationshipMapping</compoundname>
+    <includes refid="mapping__spec_8hpp" local="no">mapping_spec.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1RelationshipMapping_1a3f5e7255cdcd832440bd2be691ab2b36" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::RelationshipMapping::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <qualifiedname>ista::owl2::loader::RelationshipMapping::name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="129" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1RelationshipMapping_1ac1da819ca1d750e354c7e4384e035794" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::RelationshipMapping::source</definition>
+        <argsstring></argsstring>
+        <name>source</name>
+        <qualifiedname>ista::owl2::loader::RelationshipMapping::source</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="130" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1RelationshipMapping_1a6f1215c8582dd6166e49cc731a18de2e" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::RelationshipMapping::relationship</definition>
+        <argsstring></argsstring>
+        <name>relationship</name>
+        <qualifiedname>ista::owl2::loader::RelationshipMapping::relationship</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="131" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1RelationshipMapping_1a350df3bcdf52e3820fbc7d55d6818419" prot="public" static="no" mutable="no">
+        <type><ref refid="structista_1_1owl2_1_1loader_1_1EntityRef" kindref="compound">EntityRef</ref></type>
+        <definition>EntityRef ista::owl2::loader::RelationshipMapping::subject</definition>
+        <argsstring></argsstring>
+        <name>subject</name>
+        <qualifiedname>ista::owl2::loader::RelationshipMapping::subject</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="133" column="15" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1RelationshipMapping_1a51eead2ad3593c8bcf57bacc58fb9f7c" prot="public" static="no" mutable="no">
+        <type><ref refid="structista_1_1owl2_1_1loader_1_1EntityRef" kindref="compound">EntityRef</ref></type>
+        <definition>EntityRef ista::owl2::loader::RelationshipMapping::object</definition>
+        <argsstring></argsstring>
+        <name>object</name>
+        <qualifiedname>ista::owl2::loader::RelationshipMapping::object</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="134" column="15" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1RelationshipMapping_1a1f64ef2e833bded0cc972793f042633c" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="structista_1_1owl2_1_1loader_1_1FilterDef" kindref="compound">FilterDef</ref> &gt;</type>
+        <definition>std::optional&lt;FilterDef&gt; ista::owl2::loader::RelationshipMapping::filter</definition>
+        <argsstring></argsstring>
+        <name>filter</name>
+        <qualifiedname>ista::owl2::loader::RelationshipMapping::filter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="136" column="19" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1RelationshipMapping_1a2743d4488837df559bd3ec417ee283fd" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; std::string &gt;</type>
+        <definition>std::optional&lt;std::string&gt; ista::owl2::loader::RelationshipMapping::inverse_relationship</definition>
+        <argsstring></argsstring>
+        <name>inverse_relationship</name>
+        <qualifiedname>ista::owl2::loader::RelationshipMapping::inverse_relationship</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="139" column="19" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1RelationshipMapping_1a6c0d83609cc761a94ed901fdbe969110" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ista::owl2::loader::RelationshipMapping::skip</definition>
+        <argsstring></argsstring>
+        <name>skip</name>
+        <qualifiedname>ista::owl2::loader::RelationshipMapping::skip</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="141" column="10" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="141" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Mapping definition for creating relationships between individuals. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>ista::owl2::loader::EntityRef</label>
+        <link refid="structista_1_1owl2_1_1loader_1_1EntityRef"/>
+      </node>
+      <node id="1">
+        <label>ista::owl2::loader::RelationshipMapping</label>
+        <link refid="structista_1_1owl2_1_1loader_1_1RelationshipMapping"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>object</edgelabel>
+          <edgelabel>subject</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="128" column="1" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="128" bodyend="142"/>
+    <listofallmembers>
+      <member refid="structista_1_1owl2_1_1loader_1_1RelationshipMapping_1a1f64ef2e833bded0cc972793f042633c" prot="public" virt="non-virtual"><scope>ista::owl2::loader::RelationshipMapping</scope><name>filter</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1RelationshipMapping_1a2743d4488837df559bd3ec417ee283fd" prot="public" virt="non-virtual"><scope>ista::owl2::loader::RelationshipMapping</scope><name>inverse_relationship</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1RelationshipMapping_1a3f5e7255cdcd832440bd2be691ab2b36" prot="public" virt="non-virtual"><scope>ista::owl2::loader::RelationshipMapping</scope><name>name</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1RelationshipMapping_1a51eead2ad3593c8bcf57bacc58fb9f7c" prot="public" virt="non-virtual"><scope>ista::owl2::loader::RelationshipMapping</scope><name>object</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1RelationshipMapping_1a6f1215c8582dd6166e49cc731a18de2e" prot="public" virt="non-virtual"><scope>ista::owl2::loader::RelationshipMapping</scope><name>relationship</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1RelationshipMapping_1a6c0d83609cc761a94ed901fdbe969110" prot="public" virt="non-virtual"><scope>ista::owl2::loader::RelationshipMapping</scope><name>skip</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1RelationshipMapping_1ac1da819ca1d750e354c7e4384e035794" prot="public" virt="non-virtual"><scope>ista::owl2::loader::RelationshipMapping</scope><name>source</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1RelationshipMapping_1a350df3bcdf52e3820fbc7d55d6818419" prot="public" virt="non-virtual"><scope>ista::owl2::loader::RelationshipMapping</scope><name>subject</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

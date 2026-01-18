@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="structista_1_1owl2_1_1loader_1_1DataSourceDef" kind="struct" language="C++" prot="public">
+    <compoundname>ista::owl2::loader::DataSourceDef</compoundname>
+    <includes refid="mapping__spec_8hpp" local="no">mapping_spec.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1DataSourceDef_1a4aaa397fa29580a12d4860d2d79f8f75" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::DataSourceDef::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <qualifiedname>ista::owl2::loader::DataSourceDef::name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="69" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1DataSourceDef_1a1100374442628453449d62ef16a92adb" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::DataSourceDef::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>ista::owl2::loader::DataSourceDef::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="70" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="70" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataSourceFactory_1aff00fd28b82facee71cc2230b0ffb1cb" compoundref="data__loader_8cpp" startline="160" endline="202">ista::owl2::loader::DataSourceFactory::create_reader</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1MySqlReader_1a24e38650626b2b29d5d58ce0f8cce973" compoundref="mysql__reader_8cpp" startline="8" endline="18">ista::owl2::loader::MySqlReader::MySqlReader</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1ae8ff95ee0762179b022d2ecad46b60a4" compoundref="postgres__reader_8cpp" startline="9" endline="19">ista::owl2::loader::PostgresReader::PostgresReader</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1SqliteReader_1ac838fb0e8bb393565eb84731df08acdc" compoundref="sqlite__reader_8cpp" startline="8" endline="18">ista::owl2::loader::SqliteReader::SqliteReader</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1DataSourceDef_1ae4897c5457c65d153c69c62c20d4c7fd" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ista::owl2::loader::DataSourceDef::path</definition>
+        <argsstring></argsstring>
+        <name>path</name>
+        <qualifiedname>ista::owl2::loader::DataSourceDef::path</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="71" column="17" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="71" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataSourceFactory_1aff00fd28b82facee71cc2230b0ffb1cb" compoundref="data__loader_8cpp" startline="160" endline="202">ista::owl2::loader::DataSourceFactory::create_reader</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1SqliteReader_1ac838fb0e8bb393565eb84731df08acdc" compoundref="sqlite__reader_8cpp" startline="8" endline="18">ista::owl2::loader::SqliteReader::SqliteReader</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1DataSourceDef_1ae992593b4050a5e9b29b8b77f8a6ad76" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char ista::owl2::loader::DataSourceDef::delimiter</definition>
+        <argsstring></argsstring>
+        <name>delimiter</name>
+        <qualifiedname>ista::owl2::loader::DataSourceDef::delimiter</qualifiedname>
+        <initializer>= &apos;,&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="72" column="10" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="72" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataSourceFactory_1aff00fd28b82facee71cc2230b0ffb1cb" compoundref="data__loader_8cpp" startline="160" endline="202">ista::owl2::loader::DataSourceFactory::create_reader</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1DataSourceDef_1a58e0a9d74e8b3bf763de87da7aec18a0" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ista::owl2::loader::DataSourceDef::has_headers</definition>
+        <argsstring></argsstring>
+        <name>has_headers</name>
+        <qualifiedname>ista::owl2::loader::DataSourceDef::has_headers</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="73" column="10" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="73" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1DataSourceFactory_1aff00fd28b82facee71cc2230b0ffb1cb" compoundref="data__loader_8cpp" startline="160" endline="202">ista::owl2::loader::DataSourceFactory::create_reader</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1DataSourceDef_1afeaef3ebd85f7fb083ba62397f303d1c" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="structista_1_1owl2_1_1loader_1_1DatabaseConnectionDef" kindref="compound">DatabaseConnectionDef</ref> &gt;</type>
+        <definition>std::optional&lt;DatabaseConnectionDef&gt; ista::owl2::loader::DataSourceDef::connection</definition>
+        <argsstring></argsstring>
+        <name>connection</name>
+        <qualifiedname>ista::owl2::loader::DataSourceDef::connection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="76" column="19" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="76" bodyend="-1"/>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1MySqlReader_1a24e38650626b2b29d5d58ce0f8cce973" compoundref="mysql__reader_8cpp" startline="8" endline="18">ista::owl2::loader::MySqlReader::MySqlReader</referencedby>
+        <referencedby refid="classista_1_1owl2_1_1loader_1_1PostgresReader_1ae8ff95ee0762179b022d2ecad46b60a4" compoundref="postgres__reader_8cpp" startline="9" endline="19">ista::owl2::loader::PostgresReader::PostgresReader</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1DataSourceDef_1a220600967e43e9d1a43df770943c3d94" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; std::string &gt;</type>
+        <definition>std::optional&lt;std::string&gt; ista::owl2::loader::DataSourceDef::table</definition>
+        <argsstring></argsstring>
+        <name>table</name>
+        <qualifiedname>ista::owl2::loader::DataSourceDef::table</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="77" column="19" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structista_1_1owl2_1_1loader_1_1DataSourceDef_1ab87fd64b0084c0e570fad59a3bd6c4cb" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; std::string &gt;</type>
+        <definition>std::optional&lt;std::string&gt; ista::owl2::loader::DataSourceDef::query</definition>
+        <argsstring></argsstring>
+        <name>query</name>
+        <qualifiedname>ista::owl2::loader::DataSourceDef::query</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="78" column="19" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="78" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Definition of a data source. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" line="68" column="1" bodyfile="D:/projects/ista/lib/owl2/loader/mapping_spec.hpp" bodystart="68" bodyend="79"/>
+    <listofallmembers>
+      <member refid="structista_1_1owl2_1_1loader_1_1DataSourceDef_1afeaef3ebd85f7fb083ba62397f303d1c" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DataSourceDef</scope><name>connection</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1DataSourceDef_1ae992593b4050a5e9b29b8b77f8a6ad76" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DataSourceDef</scope><name>delimiter</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1DataSourceDef_1a58e0a9d74e8b3bf763de87da7aec18a0" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DataSourceDef</scope><name>has_headers</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1DataSourceDef_1a4aaa397fa29580a12d4860d2d79f8f75" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DataSourceDef</scope><name>name</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1DataSourceDef_1ae4897c5457c65d153c69c62c20d4c7fd" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DataSourceDef</scope><name>path</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1DataSourceDef_1ab87fd64b0084c0e570fad59a3bd6c4cb" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DataSourceDef</scope><name>query</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1DataSourceDef_1a220600967e43e9d1a43df770943c3d94" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DataSourceDef</scope><name>table</name></member>
+      <member refid="structista_1_1owl2_1_1loader_1_1DataSourceDef_1a1100374442628453449d62ef16a92adb" prot="public" virt="non-virtual"><scope>ista::owl2::loader::DataSourceDef</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
