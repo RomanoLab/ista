@@ -1,0 +1,669 @@
+# NeuroKB Data Loading Mapping Specification
+# This file defines how to populate the NeuroKB ontology from various biomedical data sources.
+#
+# Data sources include:
+#   - DrugBank: Drug information (CSV)
+#   - NCBI Gene: Human gene data (TSV)
+#   - Hetionet: Biomedical knowledge graph (TSV)
+#   - DisGeNET: Disease-gene associations (TSV)
+#   - AOP-DB: Adverse Outcome Pathway database (MySQL)
+#
+# Environment variables required:
+#   - DATA_DIR: Path to directory containing flat file data sources
+#   - MYSQL_HOST: MySQL server hostname (for AOP-DB)
+#   - MYSQL_USER: MySQL username (for AOP-DB)
+#   - MYSQL_PASSWORD: MySQL password (for AOP-DB)
+
+version: "1.0"
+base_iri: "http://example.org/neurokb#"
+
+# Custom transforms for data cleaning
+transforms:
+  # Extract ID after "::" delimiter (common in Hetionet)
+  extract_after_colons:
+    type: split
+    params:
+      delimiter: "::"
+      index: "-1"
+
+  # Extract DOID number (strips "DOID:" prefix)
+  extract_doid:
+    type: strip_prefix
+    params:
+      value: "DOID:"
+
+  # Convert to integer string
+  to_integer:
+    type: to_int
+
+  # Extract and convert to integer (for NCBI gene IDs in Hetionet)
+  extract_int_id:
+    type: chain
+    params:
+      transforms: "extract_after_colons,to_integer"
+
+# Data sources
+sources:
+  # DrugBank drug links
+  drugbank_drugs:
+    type: csv
+    path: "${DATA_DIR}/drugbank/drug links.csv"
+    has_headers: true
+
+  # NCBI Gene human genes
+  ncbi_genes:
+    type: tsv
+    path: "${DATA_DIR}/ncbigene/Homo_sapiens.gene_info"
+    has_headers: true
+
+  # Hetionet nodes
+  hetionet_nodes:
+    type: tsv
+    path: "${DATA_DIR}/hetionet/hetionet-v1.0-nodes.tsv"
+    has_headers: true
+
+  # Hetionet edges
+  hetionet_edges:
+    type: tsv
+    path: "${DATA_DIR}/hetionet/hetionet-v1.0-edges.sif"
+    has_headers: true
+
+  # DisGeNET disease attributes (filtered for neurodegeneration)
+  disgenet_disease_attrs:
+    type: tsv
+    path: "${DATA_DIR}/disgenet/CUSTOM/disease_mappings_attributes_neurodegeneration.tsv"
+    has_headers: true
+
+  # DisGeNET disease mappings (filtered for neurodegeneration)
+  disgenet_disease_mappings:
+    type: tsv
+    path: "${DATA_DIR}/disgenet/CUSTOM/disease_mappings_neurodegeneration.tsv"
+    has_headers: true
+
+  # DisGeNET curated gene-disease associations
+  disgenet_gene_disease:
+    type: tsv
+    path: "${DATA_DIR}/disgenet/curated_gene_disease_associations.tsv"
+    has_headers: true
+
+  # ============================================================================
+  # AOP-DB MySQL Sources
+  # ============================================================================
+
+  # AOP-DB chemical information
+  aopdb_chemicals:
+    type: mysql
+    connection:
+      host: "${MYSQL_HOST}"
+      port: 3306
+      database: aopdb
+      username: "${MYSQL_USER}"
+      password: "${MYSQL_PASSWORD}"
+    table: chemical_info
+
+  # AOP-DB pathways (human only, via custom query)
+  aopdb_pathways:
+    type: mysql
+    connection:
+      host: "${MYSQL_HOST}"
+      port: 3306
+      database: aopdb
+      username: "${MYSQL_USER}"
+      password: "${MYSQL_PASSWORD}"
+    query: |
+      SELECT DISTINCT path_id, path_name, ext_source
+      FROM pathway_gene
+      WHERE tax_id = 9606
+
+  # AOP-DB gene-pathway associations (human only)
+  aopdb_gene_pathways:
+    type: mysql
+    connection:
+      host: "${MYSQL_HOST}"
+      port: 3306
+      database: aopdb
+      username: "${MYSQL_USER}"
+      password: "${MYSQL_PASSWORD}"
+    query: |
+      SELECT entrez, path_id
+      FROM pathway_gene
+      WHERE tax_id = 9606
+
+# Node mappings - define individuals and their data properties
+node_mappings:
+  # ============================================================================
+  # DrugBank Drugs
+  # ============================================================================
+  - name: "DrugBank Drugs"
+    source: drugbank_drugs
+    target_class: Drug
+    mode: create
+    iri_column: DrugBank ID
+    properties:
+      - column: DrugBank ID
+        property: xrefDrugbank
+      - column: CAS Number
+        property: xrefCasRN
+      - column: Name
+        property: commonName
+
+  # ============================================================================
+  # NCBI Genes (Human)
+  # ============================================================================
+  - name: "NCBI Human Genes"
+    source: ncbi_genes
+    target_class: Gene
+    mode: create
+    iri_column: Symbol
+    properties:
+      - column: GeneID
+        property: xrefNcbiGene
+      - column: Symbol
+        property: geneSymbol
+      - column: type_of_gene
+        property: typeOfGene
+      - column: Full_name_from_nomenclature_authority
+        property: commonName
+      # Note: Compound fields like dbXrefs (MIM, HGNC, Ensembl) require
+      # special handling - see Python script for manual processing
+
+  # ============================================================================
+  # Hetionet Node Types
+  # ============================================================================
+  - name: "Hetionet DrugClass (Pharmacologic Class)"
+    source: hetionet_nodes
+    target_class: DrugClass
+    mode: create
+    iri_column: name
+    filter:
+      column: kind
+      value: "Pharmacologic Class"
+      contains: false
+    properties:
+      - column: id
+        property: xrefNciThesaurus
+        transform: extract_after_colons
+      - column: name
+        property: commonName
+
+  - name: "Hetionet Symptoms"
+    source: hetionet_nodes
+    target_class: Symptom
+    mode: create
+    iri_column: name
+    filter:
+      column: kind
+      value: "Symptom"
+      contains: false
+    properties:
+      - column: id
+        property: xrefMeSH
+        transform: extract_after_colons
+      - column: name
+        property: commonName
+
+  - name: "Hetionet Anatomy (BodyPart)"
+    source: hetionet_nodes
+    target_class: BodyPart
+    mode: create
+    iri_column: name
+    filter:
+      column: kind
+      value: "Anatomy"
+      contains: false
+    properties:
+      - column: id
+        property: xrefUberon
+        transform: extract_after_colons
+      - column: name
+        property: commonName
+
+  - name: "Hetionet Biological Process"
+    source: hetionet_nodes
+    target_class: BiologicalProcess
+    mode: create
+    iri_column: name
+    filter:
+      column: kind
+      value: "Biological Process"
+      contains: false
+    properties:
+      - column: id
+        property: xrefGeneOntology
+        transform: extract_after_colons
+      - column: name
+        property: commonName
+
+  - name: "Hetionet Molecular Function"
+    source: hetionet_nodes
+    target_class: MolecularFunction
+    mode: create
+    iri_column: name
+    filter:
+      column: kind
+      value: "Molecular Function"
+      contains: false
+    properties:
+      - column: id
+        property: xrefGeneOntology
+        transform: extract_after_colons
+      - column: name
+        property: commonName
+
+  - name: "Hetionet Cellular Component"
+    source: hetionet_nodes
+    target_class: CellularComponent
+    mode: create
+    iri_column: name
+    filter:
+      column: kind
+      value: "Cellular Component"
+      contains: false
+    properties:
+      - column: id
+        property: xrefGeneOntology
+        transform: extract_after_colons
+      - column: name
+        property: commonName
+
+  # ============================================================================
+  # DisGeNET Diseases
+  # ============================================================================
+  - name: "DisGeNET Diseases (Primary)"
+    source: disgenet_disease_attrs
+    target_class: Disease
+    mode: create
+    iri_column: diseaseId
+    properties:
+      - column: diseaseId
+        property: xrefUmlsCUI
+      - column: name
+        property: commonName
+
+  - name: "DisGeNET Disease DO Mappings (Enrichment)"
+    source: disgenet_disease_mappings
+    target_class: Disease
+    mode: enrich
+    filter:
+      column: vocabulary
+      value: "DO"
+      contains: false
+    match:
+      source_column: diseaseId
+      target_property: xrefUmlsCUI
+    properties:
+      - column: code
+        property: xrefDiseaseOntology
+
+  # ============================================================================
+  # AOP-DB Entities (MySQL)
+  # ============================================================================
+
+  # Enrich Drug entities with AOP-DB chemical info (adds MeSH xrefs)
+  - name: "AOP-DB Drug Enrichment"
+    source: aopdb_chemicals
+    target_class: Drug
+    mode: enrich
+    match:
+      source_column: DTX_id
+      target_property: xrefDTXSID
+    properties:
+      - column: ChemicalID
+        property: xrefMeSH
+
+  # Create Pathway entities from AOP-DB
+  - name: "AOP-DB Pathways"
+    source: aopdb_pathways
+    target_class: Pathway
+    mode: create
+    iri_column: path_id
+    properties:
+      - column: path_id
+        property: pathwayId
+      - column: path_name
+        property: commonName
+      - column: ext_source
+        property: sourceDatabase
+
+# Relationship mappings - define object property assertions between individuals
+relationship_mappings:
+  # ============================================================================
+  # DisGeNET Gene-Disease Associations
+  # ============================================================================
+  - name: "Gene Associates With Disease"
+    source: disgenet_gene_disease
+    relationship: geneAssociatesWithDisease
+    filter:
+      column: diseaseType
+      value: "disease"
+      contains: true
+    subject:
+      class: Gene
+      column: geneSymbol
+      match_property: geneSymbol
+    object:
+      class: Disease
+      column: diseaseId
+      match_property: xrefUmlsCUI
+
+  # ============================================================================
+  # Hetionet Chemical-Gene Relationships
+  # ============================================================================
+  - name: "Chemical Increases Expression"
+    source: hetionet_edges
+    relationship: chemicalIncreasesExpression
+    filter:
+      column: metaedge
+      value: "CuG"
+      contains: false
+    subject:
+      class: Drug
+      column: source
+      match_property: xrefDrugbank
+    object:
+      class: Gene
+      column: target
+      match_property: xrefNcbiGene
+
+  - name: "Chemical Decreases Expression"
+    source: hetionet_edges
+    relationship: chemicalDecreasesExpression
+    filter:
+      column: metaedge
+      value: "CdG"
+      contains: false
+    subject:
+      class: Drug
+      column: source
+      match_property: xrefDrugbank
+    object:
+      class: Gene
+      column: target
+      match_property: xrefNcbiGene
+
+  - name: "Chemical Binds Gene"
+    source: hetionet_edges
+    relationship: chemicalBindsGene
+    filter:
+      column: metaedge
+      value: "CbG"
+      contains: false
+    subject:
+      class: Drug
+      column: source
+      match_property: xrefDrugbank
+    object:
+      class: Gene
+      column: target
+      match_property: xrefNcbiGene
+
+  # ============================================================================
+  # Hetionet Gene-Gene Relationships
+  # ============================================================================
+  - name: "Gene Interacts With Gene"
+    source: hetionet_edges
+    relationship: geneInteractsWithGene
+    filter:
+      column: metaedge
+      value: "GiG"
+      contains: false
+    subject:
+      class: Gene
+      column: source
+      match_property: xrefNcbiGene
+    object:
+      class: Gene
+      column: target
+      match_property: xrefNcbiGene
+
+  - name: "Gene Covaries With Gene"
+    source: hetionet_edges
+    relationship: geneCovariesWithGene
+    filter:
+      column: metaedge
+      value: "GcG"
+      contains: false
+    subject:
+      class: Gene
+      column: source
+      match_property: xrefNcbiGene
+    object:
+      class: Gene
+      column: target
+      match_property: xrefNcbiGene
+
+  - name: "Gene Regulates Gene"
+    source: hetionet_edges
+    relationship: geneRegulatesGene
+    filter:
+      column: metaedge
+      value: "Gr>G"
+      contains: false
+    subject:
+      class: Gene
+      column: source
+      match_property: xrefNcbiGene
+    object:
+      class: Gene
+      column: target
+      match_property: xrefNcbiGene
+
+  # ============================================================================
+  # Hetionet Drug Relationships
+  # ============================================================================
+  - name: "Drug In Class"
+    source: hetionet_edges
+    relationship: drugInClass
+    filter:
+      column: metaedge
+      value: "PCiC"
+      contains: false
+    subject:
+      class: Drug
+      column: target
+      match_property: xrefDrugbank
+    object:
+      class: DrugClass
+      column: source
+      match_property: xrefNciThesaurus
+
+  - name: "Drug Causes Effect"
+    source: hetionet_edges
+    relationship: drugCausesEffect
+    filter:
+      column: metaedge
+      value: "CcSE"
+      contains: false
+    subject:
+      class: Drug
+      column: source
+      match_property: xrefDrugbank
+    object:
+      class: ChemicalEffect
+      column: target
+      match_property: xrefUmlsCUI
+
+  - name: "Drug Treats Disease (CtD)"
+    source: hetionet_edges
+    relationship: drugTreatsDisease
+    filter:
+      column: metaedge
+      value: "CtD"
+      contains: false
+    subject:
+      class: Drug
+      column: source
+      match_property: xrefDrugbank
+    object:
+      class: Disease
+      column: target
+      match_property: xrefDiseaseOntology
+
+  - name: "Drug Palliates Disease (CpD)"
+    source: hetionet_edges
+    relationship: drugTreatsDisease
+    filter:
+      column: metaedge
+      value: "CpD"
+      contains: false
+    subject:
+      class: Drug
+      column: source
+      match_property: xrefDrugbank
+    object:
+      class: Disease
+      column: target
+      match_property: xrefDiseaseOntology
+
+  # ============================================================================
+  # Hetionet Disease Relationships
+  # ============================================================================
+  - name: "Symptom Manifestation Of Disease"
+    source: hetionet_edges
+    relationship: symptomManifestationOfDisease
+    filter:
+      column: metaedge
+      value: "DpS"
+      contains: false
+    subject:
+      class: Symptom
+      column: target
+      match_property: xrefMeSH
+    object:
+      class: Disease
+      column: source
+      match_property: xrefDiseaseOntology
+
+  - name: "Disease Localizes To Anatomy"
+    source: hetionet_edges
+    relationship: diseaseLocalizesToAnatomy
+    filter:
+      column: metaedge
+      value: "DlA"
+      contains: false
+    subject:
+      class: Disease
+      column: source
+      match_property: xrefDiseaseOntology
+    object:
+      class: BodyPart
+      column: target
+      match_property: xrefUberon
+
+  - name: "Disease Associates With Disease"
+    source: hetionet_edges
+    relationship: diseaseAssociatesWithDisease
+    filter:
+      column: metaedge
+      value: "DrD"
+      contains: false
+    subject:
+      class: Disease
+      column: source
+      match_property: xrefDiseaseOntology
+    object:
+      class: Disease
+      column: target
+      match_property: xrefDiseaseOntology
+
+  # ============================================================================
+  # Hetionet Gene Ontology Relationships
+  # ============================================================================
+  - name: "Gene Participates In Biological Process"
+    source: hetionet_edges
+    relationship: geneParticipatesInBiologicalProcess
+    filter:
+      column: metaedge
+      value: "GpBP"
+      contains: false
+    subject:
+      class: Gene
+      column: source
+      match_property: xrefNcbiGene
+    object:
+      class: BiologicalProcess
+      column: target
+      match_property: xrefGeneOntology
+
+  - name: "Gene Associated With Cellular Component"
+    source: hetionet_edges
+    relationship: geneAssociatedWithCellularComponent
+    filter:
+      column: metaedge
+      value: "GpCC"
+      contains: false
+    subject:
+      class: Gene
+      column: source
+      match_property: xrefNcbiGene
+    object:
+      class: CellularComponent
+      column: target
+      match_property: xrefGeneOntology
+
+  - name: "Gene Has Molecular Function"
+    source: hetionet_edges
+    relationship: geneHasMolecularFunction
+    filter:
+      column: metaedge
+      value: "GpMF"
+      contains: false
+    subject:
+      class: Gene
+      column: source
+      match_property: xrefNcbiGene
+    object:
+      class: MolecularFunction
+      column: target
+      match_property: xrefGeneOntology
+
+  # ============================================================================
+  # Hetionet Anatomy-Gene Relationships
+  # ============================================================================
+  - name: "Body Part Overexpresses Gene"
+    source: hetionet_edges
+    relationship: bodyPartOverexpressesGene
+    filter:
+      column: metaedge
+      value: "AuG"
+      contains: false
+    subject:
+      class: BodyPart
+      column: source
+      match_property: xrefUberon
+    object:
+      class: Gene
+      column: target
+      match_property: xrefNcbiGene
+
+  - name: "Body Part Underexpresses Gene"
+    source: hetionet_edges
+    relationship: bodyPartUnderexpressesGene
+    filter:
+      column: metaedge
+      value: "AdG"
+      contains: false
+    subject:
+      class: BodyPart
+      column: source
+      match_property: xrefUberon
+    object:
+      class: Gene
+      column: target
+      match_property: xrefNcbiGene
+
+  # ============================================================================
+  # AOP-DB Relationships (MySQL)
+  # ============================================================================
+  - name: "Gene In Pathway"
+    source: aopdb_gene_pathways
+    relationship: geneInPathway
+    inverse_relationship: PathwayContainsGene
+    subject:
+      class: Gene
+      column: entrez
+      match_property: xrefNcbiGene
+    object:
+      class: Pathway
+      column: path_id
+      match_property: pathwayId

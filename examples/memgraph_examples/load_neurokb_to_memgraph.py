@@ -54,6 +54,30 @@ class RDFMemgraphLoader:
             uri, auth=(username, password) if username else None
         )
 
+    def test_connection(self) -> bool:
+        """
+        Test if the database connection is working.
+
+        Returns:
+            True if connection successful, False otherwise
+        """
+        import sys
+        import os
+        try:
+            # Temporarily suppress stderr to hide connection error messages
+            old_stderr = sys.stderr
+            sys.stderr = open(os.devnull, 'w')
+
+            try:
+                with self.driver.session() as session:
+                    session.run("RETURN 1")
+                return True
+            finally:
+                sys.stderr.close()
+                sys.stderr = old_stderr
+        except Exception:
+            return False
+
     def close(self):
         """Close database connection."""
         if self.driver:
@@ -256,34 +280,91 @@ class RDFMemgraphLoader:
         start_time = time.time()
 
         total = len(relationships)
+        errors = 0
 
         with self.driver.session() as session:
             for i in range(0, total, batch_size):
                 batch = relationships[i:i + batch_size]
 
-                # Use a transaction for the batch
-                with session.begin_transaction() as tx:
-                    for source_iri, prop_name, target_iri in batch:
-                        # Sanitize relationship type
-                        rel_type = self._sanitize_label(prop_name)
+                try:
+                    # Use a transaction for the batch
+                    tx = session.begin_transaction()
+                    try:
+                        for source_iri, prop_name, target_iri in batch:
+                            # Sanitize relationship type
+                            rel_type = self._sanitize_label(prop_name)
 
-                        # Create relationship
-                        query = f"""
-                        MATCH (a:Individual {{iri: $source}})
-                        MATCH (b:Individual {{iri: $target}})
-                        CREATE (a)-[:{rel_type}]->(b)
-                        """
+                            # Create relationship - skip if nodes don't exist
+                            query = f"""
+                            MATCH (a:Individual {{iri: $source}})
+                            MATCH (b:Individual {{iri: $target}})
+                            CREATE (a)-[:{rel_type}]->(b)
+                            """
 
-                        tx.run(query, source=source_iri, target=target_iri)
+                            try:
+                                tx.run(query, source=source_iri, target=target_iri)
+                            except Exception as e:
+                                errors += 1
+                                if errors <= 10:  # Only print first 10 errors
+                                    print(f"  Warning: Failed to create relationship {source_iri} -> {target_iri}: {e}")
 
-                    tx.commit()
+                        tx.commit()
+                    except Exception as e:
+                        tx.rollback()
+                        print(f"  Error in batch at {i}: {e}")
+                        errors += len(batch)
+                except Exception as e:
+                    print(f"  Error starting transaction at {i}: {e}")
+                    errors += len(batch)
 
                 if (i + batch_size) % 50000 == 0 or i + batch_size >= total:
-                    print(f"  Loaded {min(i + batch_size, total):,}/{total:,} relationships")
+                    print(f"  Loaded {min(i + batch_size, total):,}/{total:,} relationships (errors: {errors})")
 
         elapsed = time.time() - start_time
         print(f"  Time: {elapsed:.2f}s")
-        print(f"  Rate: {total / elapsed:.0f} relationships/sec")
+        if total - errors > 0:
+            print(f"  Rate: {(total - errors) / elapsed:.0f} relationships/sec")
+        if errors > 0:
+            print(f"  Total errors: {errors:,}")
+
+    def cleanup_owl_labels(self):
+        """Remove OWL standard labels and delete nodes with no meaningful labels."""
+        print("\nCleaning up OWL standard labels...")
+        start_time = time.time()
+
+        owl_labels = ['DatatypeProperty', 'FunctionalProperty', 'Entity', 'Individual']
+
+        with self.driver.session() as session:
+            # Remove each OWL standard label from all nodes
+            for label in owl_labels:
+                try:
+                    query = f"MATCH (n:{label}) REMOVE n:{label}"
+                    result = session.run(query)
+                    result.consume()
+                    print(f"  Removed :{label} labels from nodes")
+                except Exception as e:
+                    print(f"  Warning: Failed to remove :{label} labels: {e}")
+
+            # Delete nodes that have no labels remaining
+            try:
+                # First, count how many nodes will be deleted
+                count_query = "MATCH (n) WHERE size(labels(n)) = 0 RETURN count(n) as count"
+                result = session.run(count_query)
+                delete_count = result.single()['count']
+
+                if delete_count > 0:
+                    print(f"  Deleting {delete_count:,} nodes with no remaining labels...")
+                    delete_query = "MATCH (n) WHERE size(labels(n)) = 0 DETACH DELETE n"
+                    session.run(delete_query)
+                    print(f"  Deleted {delete_count:,} nodes")
+                else:
+                    print("  No nodes to delete (all have meaningful labels)")
+
+            except Exception as e:
+                print(f"  Warning: Failed to delete unlabeled nodes: {e}")
+
+        elapsed = time.time() - start_time
+        print(f"  Cleanup time: {elapsed:.2f}s")
 
     def get_statistics(self) -> Dict:
         """Get database statistics."""
@@ -350,6 +431,9 @@ class RDFMemgraphLoader:
         # Load relationships
         self.load_relationships(relationships, batch_size)
 
+        # Clean up OWL standard labels
+        self.cleanup_owl_labels()
+
         # Get statistics
         print("\n" + "=" * 70)
         print("LOAD COMPLETE")
@@ -375,7 +459,7 @@ if __name__ == "__main__":
     import sys
 
     # RDF file to load
-    rdf_file = "kg_projects/neurokb/neurokb-with-all-drug-relationships.rdf"
+    rdf_file = "../kg_projects/neurokb/neurokb-with-all-drug-relationships.rdf"
 
     # Check if file exists
     from pathlib import Path
@@ -398,7 +482,15 @@ if __name__ == "__main__":
     # Load into Memgraph
     try:
         with RDFMemgraphLoader() as loader:
-            stats = loader.load_rdf_file(rdf_file, batch_size=5000)
+            # Test connection first
+            if not loader.test_connection():
+                print("\nError: Cannot connect to Memgraph at bolt://localhost:7687")
+                print("\nPlease start Memgraph first:")
+                print("  docker run -p 7687:7687 -p 7444:7444 memgraph/memgraph-platform")
+                print("\nOr if using a different configuration, update the connection settings in the script.")
+                sys.exit(1)
+
+            stats = loader.load_rdf_file(rdf_file, batch_size=1000)
 
         print("\nSuccess! Your knowledge graph is now available in Memgraph.")
         print("\nAccess Memgraph Lab at: http://localhost:7444")

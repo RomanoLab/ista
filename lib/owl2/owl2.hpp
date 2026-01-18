@@ -37,6 +37,18 @@
 #include "loader/yaml_parser.hpp"
 #include "loader/mapping_spec.hpp"
 #include "loader/data_loader.hpp"
+#include "loader/database_reader.hpp"
+
+// Optional database reader implementations
+#ifdef ISTA_HAS_SQLITE
+#include "loader/sqlite_reader.hpp"
+#endif
+#ifdef ISTA_HAS_MYSQL
+#include "loader/mysql_reader.hpp"
+#endif
+#ifdef ISTA_HAS_POSTGRES
+#include "loader/postgres_reader.hpp"
+#endif
 
 /**
  * @namespace ista::owl2

@@ -5,6 +5,17 @@
 #include <cctype>
 #include <regex>
 
+// Conditional includes for database readers
+#ifdef ISTA_HAS_SQLITE
+#include "sqlite_reader.hpp"
+#endif
+#ifdef ISTA_HAS_MYSQL
+#include "mysql_reader.hpp"
+#endif
+#ifdef ISTA_HAS_POSTGRES
+#include "postgres_reader.hpp"
+#endif
+
 namespace ista {
 namespace owl2 {
 namespace loader {
@@ -152,9 +163,42 @@ std::unique_ptr<DataSourceReader> DataSourceFactory::create_reader(const DataSou
     } else if (source.type == "tsv") {
         return std::make_unique<CsvReader>(source.path, '\t', source.has_headers);
     }
-    // TODO: Add support for database sources (SQLite, MySQL, PostgreSQL)
+#ifdef ISTA_HAS_SQLITE
+    else if (source.type == "sqlite") {
+        return std::make_unique<SqliteReader>(source);
+    }
+#endif
+#ifdef ISTA_HAS_MYSQL
+    else if (source.type == "mysql") {
+        return std::make_unique<MySqlReader>(source);
+    }
+#endif
+#ifdef ISTA_HAS_POSTGRES
+    else if (source.type == "postgres" || source.type == "postgresql") {
+        return std::make_unique<PostgresReader>(source);
+    }
+#endif
     
-    throw DataLoaderException("Unsupported data source type: " + source.type);
+    // Provide helpful error message about unsupported or not-compiled types
+    std::string error_msg = "Unsupported data source type: " + source.type;
+    
+#ifndef ISTA_HAS_SQLITE
+    if (source.type == "sqlite") {
+        error_msg += " (SQLite support not compiled - rebuild with SQLite3 library)";
+    }
+#endif
+#ifndef ISTA_HAS_MYSQL
+    if (source.type == "mysql") {
+        error_msg += " (MySQL support not compiled - rebuild with MySQL client library)";
+    }
+#endif
+#ifndef ISTA_HAS_POSTGRES
+    if (source.type == "postgres" || source.type == "postgresql") {
+        error_msg += " (PostgreSQL support not compiled - rebuild with libpq)";
+    }
+#endif
+    
+    throw DataLoaderException(error_msg);
 }
 
 // DataLoader implementation

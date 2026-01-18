@@ -85,9 +85,9 @@ Source Definition Keys
    * - ``type``
      - Yes
      - string
-     - Source type: ``csv``, ``tsv``, or ``database``
+     - Source type: ``csv``, ``tsv``, ``sqlite``, ``mysql``, ``postgres``
    * - ``path``
-     - Yes*
+     - File sources
      - string
      - File path (relative to YAML file or absolute). Supports ``${ENV_VAR}`` syntax.
    * - ``has_headers``
@@ -98,15 +98,23 @@ Source Definition Keys
      - No
      - string
      - Field delimiter character. Default: ``,`` for CSV, ``\t`` for TSV
-   * - ``encoding``
-     - No
+   * - ``connection``
+     - DB sources
+     - object
+     - Database connection parameters (see below)
+   * - ``table``
+     - DB sources*
      - string
-     - File encoding. Default: ``utf-8``
+     - Table name to query
+   * - ``query``
+     - DB sources*
+     - string
+     - Custom SQL query (alternative to ``table``)
 
-\* Required for file-based sources (csv, tsv)
+\* For database sources, either ``table`` or ``query`` is required.
 
-Source Types
-~~~~~~~~~~~~
+File-Based Source Types
+~~~~~~~~~~~~~~~~~~~~~~~
 
 **CSV** (Comma-Separated Values)
 
@@ -129,20 +137,138 @@ Source Types
         path: "./data/genes.tsv"
         has_headers: true
 
-Environment Variables
+Database Source Types
 ~~~~~~~~~~~~~~~~~~~~~
 
-Paths support environment variable expansion:
+**SQLite** (File-Based Database)
+
+SQLite databases are file-based and require only a path:
 
 .. code-block:: yaml
 
     sources:
+      local_db:
+        type: sqlite
+        path: "./data/biomedical.sqlite"
+        table: drugs
+        # Or use a custom query:
+        # query: "SELECT * FROM drugs WHERE approved = 1"
+
+**MySQL**
+
+MySQL databases require connection parameters:
+
+.. code-block:: yaml
+
+    sources:
+      clinical_trials:
+        type: mysql
+        connection:
+          host: "${DB_HOST}"
+          port: 3306
+          database: clinical_data
+          username: "${DB_USER}"
+          password: "${DB_PASSWORD}"
+        table: trials
+
+      # With custom query
+      human_pathways:
+        type: mysql
+        connection:
+          host: localhost
+          database: aopdb
+          username: "${DB_USER}"
+          password: "${DB_PASSWORD}"
+        query: |
+          SELECT DISTINCT path_id, path_name
+          FROM pathway_gene
+          WHERE tax_id = 9606
+
+**PostgreSQL**
+
+PostgreSQL uses similar syntax to MySQL:
+
+.. code-block:: yaml
+
+    sources:
+      research_db:
+        type: postgres  # or "postgresql"
+        connection:
+          host: db.example.org
+          port: 5432
+          database: research
+          username: "${PG_USER}"
+          password: "${PG_PASSWORD}"
+        table: experiments
+
+      # Using connection string
+      analytics:
+        type: postgresql
+        connection:
+          connection_string: "postgresql://${PG_USER}:${PG_PASSWORD}@host:5432/analytics"
+        query: "SELECT * FROM results WHERE status = 'complete'"
+
+Database Connection Parameters
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+   :widths: 22 10 68
+
+   * - Key
+     - Required
+     - Description
+   * - ``host``
+     - Yes*
+     - Database server hostname
+   * - ``port``
+     - No
+     - Port number (default: 3306 for MySQL, 5432 for PostgreSQL)
+   * - ``database``
+     - Yes*
+     - Database name
+   * - ``username``
+     - Yes*
+     - Database username
+   * - ``password``
+     - Yes*
+     - Database password (use environment variables!)
+   * - ``connection_string``
+     - Alt
+     - Full connection string (alternative to individual parameters)
+
+\* Required unless using ``connection_string``
+
+Environment Variables
+~~~~~~~~~~~~~~~~~~~~~
+
+Paths and connection parameters support environment variable expansion:
+
+.. code-block:: yaml
+
+    sources:
+      # File path with env var
       drugbank:
         type: csv
         path: "${DATA_ROOT}/drugbank/drugs.csv"
 
+      # Database credentials with env vars
+      aopdb:
+        type: mysql
+        connection:
+          host: "${MYSQL_HOST}"
+          database: aopdb
+          username: "${MYSQL_USER}"
+          password: "${MYSQL_PASSWORD}"
+        table: chemicals
+
 Environment variables are resolved when loading the specification or by calling
 ``spec.resolve_environment_variables()``.
+
+.. warning::
+
+   Never hardcode database passwords in YAML files. Always use environment variables
+   for sensitive credentials.
 
 Transforms
 ----------
