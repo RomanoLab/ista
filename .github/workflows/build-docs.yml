@@ -57,9 +57,8 @@ jobs:
       - name: Build documentation (Doxygen + Sphinx)
         working-directory: docs
         run: |
-          # The Makefile's html target runs doxygen first, then sphinx
-          make html SPHINXOPTS="-W --keep-going" || make html
-          # Second attempt without -W if warnings cause failure
+          # Use build_docs.sh since Makefile is gitignored
+          ./build_docs.sh
 
       - name: Upload documentation artifact
         uses: actions/upload-artifact@v4
