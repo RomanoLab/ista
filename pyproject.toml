@@ -31,6 +31,9 @@ dependencies = [
     "pandas",
     "tqdm",
     "pybind11>=2.6.0",
+    "neo4j",
+    "networkx",
+    "numpy",
 ]
 
 [project.urls]
