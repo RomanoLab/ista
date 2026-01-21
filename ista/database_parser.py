@@ -2,7 +2,7 @@ import csv
 import os
 import warnings
 
-import ipdb
+import pdb
 import MySQLdb
 import pandas as pd
 from openpyxl import load_workbook
@@ -296,7 +296,7 @@ class FlatFileDatabaseParser(DatabaseParser):
                     # try:
                     #     assert len(subject_match) == 1
                     # except AssertionError:
-                    #     ipdb.set_trace()
+                    #     pdb.set_trace()
                     #     print()
 
                     object_match = self.ont.search_by_data_property(
@@ -307,7 +307,7 @@ class FlatFileDatabaseParser(DatabaseParser):
                     # try:
                     #     assert len(object_match) == 1
                     # except AssertionError:
-                    #     ipdb.set_trace()
+                    #     pdb.set_trace()
                     #     print()
 
                     if no_rel_added:
@@ -617,7 +617,7 @@ class MySQLDatabaseParser(DatabaseParser):
                     try:
                         assert len(subject_match) == 1
                     except AssertionError:
-                        ipdb.set_trace()
+                        pdb.set_trace()
                         print()
                     object_match = self.ont.search_by_data_property(
                         parse_config["object_match_property"], owl2.Literal(oid)
@@ -627,7 +627,7 @@ class MySQLDatabaseParser(DatabaseParser):
                     try:
                         assert len(object_match) == 1
                     except AssertionError:
-                        ipdb.set_trace()
+                        pdb.set_trace()
                         print()
 
                     if no_rel_added:

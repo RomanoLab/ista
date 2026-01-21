@@ -1,4 +1,4 @@
-import ipdb
+import pdb
 
 from . import owl2
 
@@ -101,7 +101,7 @@ def safe_make_individual_name(indiv_name: str, indiv_class: owl2.Class):
     try:
         cl = indiv_class.get_iri().get_local_name().lower()
     except AttributeError:
-        ipdb.set_trace()
+        pdb.set_trace()
         print()
     if type(indiv_name) == str:
         nm = indiv_name.strip().replace(" ", "_").lower()
