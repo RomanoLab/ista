@@ -36,6 +36,7 @@ class CMakeBuild(build_ext):
             f"-DCMAKE_LIBRARY_OUTPUT_DIRECTORY={extdir}",
             f"-DPYTHON_EXECUTABLE={sys.executable}",
             "-DBUILD_PYTHON_BINDINGS=ON",
+            "-DBUILD_GUI=OFF",
         ]
 
         cfg = "Debug" if self.debug else "Release"
