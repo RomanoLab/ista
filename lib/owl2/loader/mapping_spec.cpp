@@ -4,6 +4,7 @@
 #include <sstream>
 #include <algorithm>
 #include <cstdlib>
+#include <cstring>
 #include <regex>
 #include <set>
 
