@@ -37,7 +37,10 @@ set_target_properties(libista PROPERTIES
 )
 
 # Set output name (removes duplicate 'lib' prefix on Unix)
-set_target_properties(libista PROPERTIES OUTPUT_NAME ista)
+set_target_properties(libista PROPERTIES
+    OUTPUT_NAME ista
+    POSITION_INDEPENDENT_CODE ON
+)
 
 # =============================================================================
 # Optional Database Support
