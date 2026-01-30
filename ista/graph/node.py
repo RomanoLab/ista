@@ -1,7 +1,7 @@
 from typing import Dict
 
 class Node:
-    def __init__(self, node_class: str, node_idx: int = None, name: str = None, properties: Dict = {}, weight_prop: str = None):
+    def __init__(self, node_class: str, node_idx: int = None, name: str = None, properties: Dict = None, weight_prop: str = None):
         """Node in a graph.
 
         Attributes
@@ -21,7 +21,7 @@ class Node:
         example, nodes are not aware of incident edges. Things like this are
         handled entirely by the Graph object that the node is a part of.
         """
-        self.properties = properties
+        self.properties = properties if properties is not None else {}
         if node_class:
             self.node_class = node_class.capitalize()
         else:

@@ -79,11 +79,59 @@ void Ontology::initializeStandardPrefixes() {
     registerPrefix("xsd", "http://www.w3.org/2001/XMLSchema#");
 }
 
+void Ontology::rebuildIndices() const {
+    if (indices_valid_) {
+        return;
+    }
+
+    // Clear all caches
+    declaration_index_.clear();
+    class_iri_cache_.clear();
+    object_property_iri_cache_.clear();
+    data_property_iri_cache_.clear();
+    annotation_property_iri_cache_.clear();
+    individual_iri_cache_.clear();
+    datatype_iri_cache_.clear();
+
+    // Build indices from axioms
+    for (const auto& axiom : axioms_) {
+        if (auto decl = std::dynamic_pointer_cast<Declaration>(axiom)) {
+            Declaration::EntityType entity_type = decl->getEntityType();
+            declaration_index_[entity_type].push_back(decl);
+
+            // Cache entity IRIs by type
+            switch (entity_type) {
+                case Declaration::EntityType::CLASS:
+                    class_iri_cache_.insert(decl->getIRI());
+                    break;
+                case Declaration::EntityType::OBJECT_PROPERTY:
+                    object_property_iri_cache_.insert(decl->getIRI());
+                    break;
+                case Declaration::EntityType::DATA_PROPERTY:
+                    data_property_iri_cache_.insert(decl->getIRI());
+                    break;
+                case Declaration::EntityType::ANNOTATION_PROPERTY:
+                    annotation_property_iri_cache_.insert(decl->getIRI());
+                    break;
+                case Declaration::EntityType::NAMED_INDIVIDUAL:
+                    individual_iri_cache_.insert(decl->getIRI());
+                    break;
+                case Declaration::EntityType::DATATYPE:
+                    datatype_iri_cache_.insert(decl->getIRI());
+                    break;
+            }
+        }
+    }
+
+    indices_valid_ = true;
+}
+
 bool Ontology::addAxiom(const AxiomPtr& axiom) {
     if (!axiom) {
         return false;
     }
     axioms_.push_back(axiom);
+    invalidateIndices();
     return true;
 }
 
@@ -91,6 +139,7 @@ bool Ontology::removeAxiom(const AxiomPtr& axiom) {
     auto it = std::find(axioms_.begin(), axioms_.end(), axiom);
     if (it != axioms_.end()) {
         axioms_.erase(it);
+        invalidateIndices();
         return true;
     }
     return false;
@@ -106,14 +155,14 @@ std::vector<AxiomPtr> Ontology::getAxioms() const {
 
 void Ontology::clearAxioms() {
     axioms_.clear();
+    invalidateIndices();
 }
 
 std::vector<std::shared_ptr<Declaration>> Ontology::getDeclarationAxioms() const {
+    rebuildIndices();
     std::vector<std::shared_ptr<Declaration>> result;
-    for (const auto& axiom : axioms_) {
-        if (auto decl = std::dynamic_pointer_cast<Declaration>(axiom)) {
-            result.push_back(decl);
-        }
+    for (const auto& [type, decls] : declaration_index_) {
+        result.insert(result.end(), decls.begin(), decls.end());
     }
     return result;
 }
@@ -306,99 +355,87 @@ std::vector<std::shared_ptr<DataPropertyAssertion>> Ontology::getDataPropertyAss
 
 
 std::unordered_set<Class> Ontology::getClasses() const {
+    rebuildIndices();
     std::unordered_set<Class> result;
-    for (const auto& axiom : axioms_) {
-        if (auto decl = std::dynamic_pointer_cast<Declaration>(axiom)) {
-            if (decl->getEntityType() == Declaration::EntityType::CLASS) {
-                result.insert(Class(decl->getIRI()));
-            }
-        }
+    for (const auto& iri : class_iri_cache_) {
+        result.insert(Class(iri));
     }
     return result;
 }
 
 std::unordered_set<ObjectProperty> Ontology::getObjectProperties() const {
+    rebuildIndices();
     std::unordered_set<ObjectProperty> result;
-    for (const auto& axiom : axioms_) {
-        if (auto decl = std::dynamic_pointer_cast<Declaration>(axiom)) {
-            if (decl->getEntityType() == Declaration::EntityType::OBJECT_PROPERTY) {
-                result.insert(ObjectProperty(decl->getIRI()));
-            }
-        }
+    for (const auto& iri : object_property_iri_cache_) {
+        result.insert(ObjectProperty(iri));
     }
     return result;
 }
 
 std::unordered_set<DataProperty> Ontology::getDataProperties() const {
+    rebuildIndices();
     std::unordered_set<DataProperty> result;
-    for (const auto& axiom : axioms_) {
-        if (auto decl = std::dynamic_pointer_cast<Declaration>(axiom)) {
-            if (decl->getEntityType() == Declaration::EntityType::DATA_PROPERTY) {
-                result.insert(DataProperty(decl->getIRI()));
-            }
-        }
+    for (const auto& iri : data_property_iri_cache_) {
+        result.insert(DataProperty(iri));
     }
     return result;
 }
 
 std::unordered_set<AnnotationProperty> Ontology::getAnnotationProperties() const {
+    rebuildIndices();
     std::unordered_set<AnnotationProperty> result;
-    for (const auto& axiom : axioms_) {
-        if (auto decl = std::dynamic_pointer_cast<Declaration>(axiom)) {
-            if (decl->getEntityType() == Declaration::EntityType::ANNOTATION_PROPERTY) {
-                result.insert(AnnotationProperty(decl->getIRI()));
-            }
-        }
+    for (const auto& iri : annotation_property_iri_cache_) {
+        result.insert(AnnotationProperty(iri));
     }
     return result;
 }
 
 std::unordered_set<NamedIndividual> Ontology::getIndividuals() const {
+    rebuildIndices();
     std::unordered_set<NamedIndividual> result;
-    for (const auto& axiom : axioms_) {
-        if (auto decl = std::dynamic_pointer_cast<Declaration>(axiom)) {
-            if (decl->getEntityType() == Declaration::EntityType::NAMED_INDIVIDUAL) {
-                result.insert(NamedIndividual(decl->getIRI()));
-            }
-        }
+    for (const auto& iri : individual_iri_cache_) {
+        result.insert(NamedIndividual(iri));
     }
     return result;
 }
 
 std::unordered_set<Datatype> Ontology::getDatatypes() const {
+    rebuildIndices();
     std::unordered_set<Datatype> result;
-    for (const auto& axiom : axioms_) {
-        if (auto decl = std::dynamic_pointer_cast<Declaration>(axiom)) {
-            if (decl->getEntityType() == Declaration::EntityType::DATATYPE) {
-                result.insert(Datatype(decl->getIRI()));
-            }
-        }
+    for (const auto& iri : datatype_iri_cache_) {
+        result.insert(Datatype(iri));
     }
     return result;
 }
 
 bool Ontology::containsClass(const Class& cls) const {
-    return getClasses().find(cls) != getClasses().end();
+    rebuildIndices();
+    return class_iri_cache_.find(cls.getIRI()) != class_iri_cache_.end();
 }
 
 bool Ontology::containsObjectProperty(const ObjectProperty& property) const {
-    return getObjectProperties().find(property) != getObjectProperties().end();
+    rebuildIndices();
+    return object_property_iri_cache_.find(property.getIRI()) != object_property_iri_cache_.end();
 }
 
 bool Ontology::containsDataProperty(const DataProperty& property) const {
-    return getDataProperties().find(property) != getDataProperties().end();
+    rebuildIndices();
+    return data_property_iri_cache_.find(property.getIRI()) != data_property_iri_cache_.end();
 }
 
 bool Ontology::containsAnnotationProperty(const AnnotationProperty& property) const {
-    return getAnnotationProperties().find(property) != getAnnotationProperties().end();
+    rebuildIndices();
+    return annotation_property_iri_cache_.find(property.getIRI()) != annotation_property_iri_cache_.end();
 }
 
 bool Ontology::containsIndividual(const NamedIndividual& individual) const {
-    return getIndividuals().find(individual) != getIndividuals().end();
+    rebuildIndices();
+    return individual_iri_cache_.find(individual.getIRI()) != individual_iri_cache_.end();
 }
 
 bool Ontology::containsDatatype(const Datatype& datatype) const {
-    return getDatatypes().find(datatype) != getDatatypes().end();
+    rebuildIndices();
+    return datatype_iri_cache_.find(datatype.getIRI()) != datatype_iri_cache_.end();
 }
 
 size_t Ontology::getEntityCount() const {

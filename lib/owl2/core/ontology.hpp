@@ -276,7 +276,19 @@ private:
     std::unordered_map<std::string, std::string> namespace_to_prefix_;
     std::vector<AxiomPtr> axioms_;
 
+    // Index structures for fast lookups (mutable for lazy rebuild in const methods)
+    mutable std::unordered_map<Declaration::EntityType, std::vector<std::shared_ptr<Declaration>>> declaration_index_;
+    mutable std::unordered_set<IRI> class_iri_cache_;
+    mutable std::unordered_set<IRI> object_property_iri_cache_;
+    mutable std::unordered_set<IRI> data_property_iri_cache_;
+    mutable std::unordered_set<IRI> annotation_property_iri_cache_;
+    mutable std::unordered_set<IRI> individual_iri_cache_;
+    mutable std::unordered_set<IRI> datatype_iri_cache_;
+    mutable bool indices_valid_ = false;
+
     void initializeStandardPrefixes();
+    void rebuildIndices() const;
+    void invalidateIndices() { indices_valid_ = false; }
     bool isClassAxiom(const AxiomPtr& axiom) const;
     bool isObjectPropertyAxiom(const AxiomPtr& axiom) const;
     bool isDataPropertyAxiom(const AxiomPtr& axiom) const;
