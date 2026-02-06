@@ -46,6 +46,10 @@ KnowledgeGraphEditor::KnowledgeGraphEditor()
     , show_database_config_dialog_(false)
     , db_type_selection_("mysql")
     , pref_show_namespace_prefix_(false)
+    , project_modified_(false)
+    , current_mapping_spec_(std::nullopt)
+    , show_project_loader_(false)
+    , show_save_project_dialog_(false)
 {
     // Initialize search buffer
     std::memset(search_buffer_, 0, sizeof(search_buffer_));
@@ -114,6 +118,11 @@ bool KnowledgeGraphEditor::initialize() {
 
 int KnowledgeGraphEditor::run() {
     while (!glfwWindowShouldClose(window_)) {
+        // Block window close while population is running
+        if (glfwWindowShouldClose(window_) && population_running_.load()) {
+            glfwSetWindowShouldClose(window_, GLFW_FALSE);
+        }
+
         glfwPollEvents();
 
         // Start ImGui frame
@@ -180,6 +189,45 @@ int KnowledgeGraphEditor::run() {
             // NFD_CANCEL - user cancelled, do nothing
         }
 
+        // Handle project load dialog
+        if (show_project_loader_) {
+            show_project_loader_ = false;
+
+            nfdchar_t *projectPath;
+            nfdfilteritem_t filterItem[1] = { { "YAML Project Files", "yaml,yml" } };
+            nfdresult_t result = NFD_OpenDialog(&projectPath, filterItem, 1, nullptr);
+
+            if (result == NFD_OKAY) {
+                std::string filepath(projectPath);
+                load_project(filepath);
+                NFD_FreePath(projectPath);
+            } else if (result == NFD_ERROR) {
+                std::cerr << "Project load dialog error: " << NFD_GetError() << std::endl;
+            }
+        }
+
+        // Handle project save dialog
+        if (show_save_project_dialog_) {
+            show_save_project_dialog_ = false;
+
+            nfdchar_t *savePath;
+            nfdfilteritem_t filterItem[1] = { { "YAML Project Files", "yaml,yml" } };
+            nfdresult_t result = NFD_SaveDialog(&savePath, filterItem, 1, nullptr, "project.yaml");
+
+            if (result == NFD_OKAY) {
+                std::string filepath(savePath);
+                // Ensure .yaml extension
+                if (filepath.find(".yaml") == std::string::npos && 
+                    filepath.find(".yml") == std::string::npos) {
+                    filepath += ".yaml";
+                }
+                save_project(filepath);
+                NFD_FreePath(savePath);
+            } else if (result == NFD_ERROR) {
+                std::cerr << "Project save dialog error: " << NFD_GetError() << std::endl;
+            }
+        }
+
         if (show_about_dialog_) {
             ImGui::OpenPopup("About");
             show_about_dialog_ = false;
@@ -228,6 +276,12 @@ int KnowledgeGraphEditor::run() {
         // Handle database configuration dialog
         render_database_config_dialog();
 
+        // Population integration
+        poll_population_status();
+        render_population_confirm_dialog();
+        render_population_progress_modal();
+        render_population_results_dialog();
+
         // Rendering
         ImGui::Render();
         int display_w, display_h;
@@ -244,6 +298,11 @@ int KnowledgeGraphEditor::run() {
 }
 
 void KnowledgeGraphEditor::shutdown() {
+    // Wait for population thread to finish before cleanup
+    if (population_thread_ && population_thread_->joinable()) {
+        population_thread_->join();
+    }
+
     if (window_) {
         ImGui_ImplOpenGL3_Shutdown();
         ImGui_ImplGlfw_Shutdown();
@@ -324,6 +383,16 @@ void KnowledgeGraphEditor::render_menu_bar() {
                 } else if (result == NFD_ERROR) {
                     std::cerr << "Save dialog error: " << NFD_GetError() << std::endl;
                 }
+            }
+            ImGui::Separator();
+            if (ImGui::MenuItem("Load Project...", "Ctrl+Shift+O")) {
+                show_project_loader_ = true;
+            }
+            if (ImGui::MenuItem("Save Project", "Ctrl+Shift+S", false, !current_project_filepath_.empty())) {
+                save_project(current_project_filepath_);
+            }
+            if (ImGui::MenuItem("Save Project As...", nullptr, false, ontology_ != nullptr || !data_sources_.empty())) {
+                show_save_project_dialog_ = true;
             }
             ImGui::Separator();
             if (ImGui::MenuItem("Preferences...", nullptr)) {
@@ -408,13 +477,20 @@ void KnowledgeGraphEditor::render_toolbar() {
     
     if (ImGui::Begin("##Toolbar", nullptr, window_flags)) {
         // New/Clear ontology
-        if (ImGui::Button("Clear Ontology", ImVec2(120, 24))) {
+        bool can_clear = !population_running_.load();
+        if (!can_clear) {
+            ImGui::PushStyleVar(ImGuiStyleVar_Alpha, 0.5f);
+        }
+        if (ImGui::Button("Clear Ontology", ImVec2(120, 24)) && can_clear) {
             if (ontology_) {
                 ImGui::OpenPopup("ConfirmClear");
             }
         }
+        if (!can_clear) {
+            ImGui::PopStyleVar();
+        }
         if (ImGui::IsItemHovered()) {
-            ImGui::SetTooltip("Clear the currently loaded ontology");
+            ImGui::SetTooltip(can_clear ? "Clear the currently loaded ontology" : "Cannot clear during population");
         }
         
         // Confirmation dialog for clearing ontology
@@ -448,7 +524,7 @@ void KnowledgeGraphEditor::render_toolbar() {
         ImGui::SameLine();
         
         // Save ontology (with dropdown menu)
-        bool can_save = (ontology_ != nullptr);
+        bool can_save = (ontology_ != nullptr && !population_running_.load());
         if (!can_save) {
             ImGui::PushStyleVar(ImGuiStyleVar_Alpha, 0.5f);
         }
@@ -543,14 +619,27 @@ void KnowledgeGraphEditor::render_toolbar() {
         ImGui::Spacing();
         ImGui::SameLine();
         
-        // Save project (placeholder for future)
-        ImGui::PushStyleVar(ImGuiStyleVar_Alpha, 0.5f);
-        if (ImGui::Button("Save Project", ImVec2(100, 24))) {
-            // TODO: Implement project saving
+        // Save project
+        bool can_save_project = (ontology_ != nullptr || !data_sources_.empty());
+        if (!can_save_project) {
+            ImGui::PushStyleVar(ImGuiStyleVar_Alpha, 0.5f);
         }
-        ImGui::PopStyleVar();
+        if (ImGui::Button("Save Project", ImVec2(100, 24)) && can_save_project) {
+            if (!current_project_filepath_.empty()) {
+                save_project(current_project_filepath_);
+            } else {
+                show_save_project_dialog_ = true;
+            }
+        }
+        if (!can_save_project) {
+            ImGui::PopStyleVar();
+        }
         if (ImGui::IsItemHovered()) {
-            ImGui::SetTooltip("Save project (coming soon)");
+            if (can_save_project) {
+                ImGui::SetTooltip("Save project to YAML file");
+            } else {
+                ImGui::SetTooltip("Load an ontology or add data sources first");
+            }
         }
         
         ImGui::SameLine();
@@ -558,39 +647,34 @@ void KnowledgeGraphEditor::render_toolbar() {
         ImGui::SameLine();
         
         // Add mapped data to ontology
-        bool can_add_data = (ontology_ != nullptr && selected_data_source_ >= 0 && 
-                            selected_data_source_ < static_cast<int>(data_sources_.size()));
+        bool has_mapped_source = false;
+        for (const auto& ds : data_sources_) {
+            if (ds.mapped_class_iri.has_value()) {
+                has_mapped_source = true;
+                break;
+            }
+        }
+        bool can_add_data = (ontology_ != nullptr && !population_running_.load() &&
+                            (current_mapping_spec_.has_value() || has_mapped_source));
         if (!can_add_data) {
             ImGui::PushStyleVar(ImGuiStyleVar_Alpha, 0.5f);
         }
-        if (ImGui::Button("Add Data to Ontology", ImVec2(150, 24)) && can_add_data) {
-            // TODO: Implement data population from selected source
-            ImGui::OpenPopup("AddDataPopup");
+        if (population_running_.load()) {
+            ImGui::Button("Populating...", ImVec2(150, 24));
+        } else if (ImGui::Button("Add Data to Ontology", ImVec2(150, 24)) && can_add_data) {
+            start_population_flow();
         }
         if (!can_add_data) {
             ImGui::PopStyleVar();
         }
         if (ImGui::IsItemHovered()) {
-            if (can_add_data) {
-                ImGui::SetTooltip("Populate ontology with data from selected source");
+            if (population_running_.load()) {
+                ImGui::SetTooltip("Population is in progress...");
+            } else if (can_add_data) {
+                ImGui::SetTooltip("Populate ontology with data from mapped sources");
             } else {
-                ImGui::SetTooltip("Load an ontology and select a data source first");
+                ImGui::SetTooltip("Load an ontology and map a data source to a class first");
             }
-        }
-        
-        // Placeholder popup for data addition
-        if (ImGui::BeginPopupModal("AddDataPopup", nullptr, ImGuiWindowFlags_AlwaysAutoResize)) {
-            ImGui::Text("Data population feature coming soon!");
-            ImGui::Separator();
-            ImGui::Text("This will allow you to:");
-            ImGui::BulletText("Map data columns to ontology properties");
-            ImGui::BulletText("Create individuals from data rows");
-            ImGui::BulletText("Validate data against ontology constraints");
-            ImGui::Separator();
-            if (ImGui::Button("OK", ImVec2(120, 0))) {
-                ImGui::CloseCurrentPopup();
-            }
-            ImGui::EndPopup();
         }
         
         ImGui::SameLine();
@@ -598,7 +682,7 @@ void KnowledgeGraphEditor::render_toolbar() {
         ImGui::SameLine();
         
         // Refresh graph layout
-        bool can_refresh = (ontology_ != nullptr);
+        bool can_refresh = (ontology_ != nullptr && !population_running_.load());
         if (!can_refresh) {
             ImGui::PushStyleVar(ImGuiStyleVar_Alpha, 0.5f);
         }
@@ -1020,51 +1104,56 @@ void KnowledgeGraphEditor::render_properties_panel() {
     // Ontology Summary Section (always shown when ontology is loaded)
     if (ontology_) {
         if (ImGui::CollapsingHeader("Ontology Summary", ImGuiTreeNodeFlags_DefaultOpen)) {
-            // Get ontology IRI if available
-            auto ontology_iri = ontology_->getOntologyIRI();
-            if (ontology_iri.has_value()) {
-                ImGui::Text("Ontology IRI:");
-                ImGui::TextWrapped("%s", ontology_iri.value().toString().c_str());
-            }
-            
-            ImGui::Spacing();
-            
-            // Count statistics
-            size_t class_count = ontology_->getClasses().size();
-            size_t individual_count = ontology_->getIndividuals().size();
-            size_t obj_prop_count = ontology_->getObjectPropertyCount();
-            size_t data_prop_count = ontology_->getDataPropertyCount();
-            size_t annot_prop_count = ontology_->getAnnotationProperties().size();
-            
-            ImGui::Text("Classes: %zu", class_count);
-            ImGui::Text("Individuals: %zu", individual_count);
-            ImGui::Text("Object Properties: %zu", obj_prop_count);
-            ImGui::Text("Data Properties: %zu", data_prop_count);
-            ImGui::Text("Annotation Properties: %zu", annot_prop_count);
-            
-            ImGui::Spacing();
-            
-            // Graph visualization statistics
-            size_t connected_nodes = 0;
-            size_t isolated_nodes = 0;
-            for (const auto& node : nodes_) {
-                bool has_edge = false;
-                for (const auto& edge : edges_) {
-                    if (edge.from == node.id || edge.to == node.id) {
-                        has_edge = true;
-                        break;
-                    }
+            if (population_running_.load()) {
+                ImGui::TextColored(ImVec4(1.0f, 0.8f, 0.2f, 1.0f), "Population in progress...");
+                ImGui::TextColored(ImVec4(0.6f, 0.6f, 0.6f, 1.0f), "Statistics will update when complete.");
+            } else {
+                // Get ontology IRI if available
+                auto ontology_iri = ontology_->getOntologyIRI();
+                if (ontology_iri.has_value()) {
+                    ImGui::Text("Ontology IRI:");
+                    ImGui::TextWrapped("%s", ontology_iri.value().toString().c_str());
                 }
-                if (has_edge) connected_nodes++;
-                else isolated_nodes++;
+
+                ImGui::Spacing();
+
+                // Count statistics
+                size_t class_count = ontology_->getClasses().size();
+                size_t individual_count = ontology_->getIndividuals().size();
+                size_t obj_prop_count = ontology_->getObjectPropertyCount();
+                size_t data_prop_count = ontology_->getDataPropertyCount();
+                size_t annot_prop_count = ontology_->getAnnotationProperties().size();
+
+                ImGui::Text("Classes: %zu", class_count);
+                ImGui::Text("Individuals: %zu", individual_count);
+                ImGui::Text("Object Properties: %zu", obj_prop_count);
+                ImGui::Text("Data Properties: %zu", data_prop_count);
+                ImGui::Text("Annotation Properties: %zu", annot_prop_count);
+
+                ImGui::Spacing();
+
+                // Graph visualization statistics
+                size_t connected_nodes = 0;
+                size_t isolated_nodes = 0;
+                for (const auto& node : nodes_) {
+                    bool has_edge = false;
+                    for (const auto& edge : edges_) {
+                        if (edge.from == node.id || edge.to == node.id) {
+                            has_edge = true;
+                            break;
+                        }
+                    }
+                    if (has_edge) connected_nodes++;
+                    else isolated_nodes++;
+                }
+
+                ImGui::Text("Graph Nodes: %zu", nodes_.size());
+                ImGui::Text("  Connected: %zu", connected_nodes);
+                ImGui::Text("  Isolated: %zu", isolated_nodes);
+                ImGui::Text("Graph Edges: %zu", edges_.size());
             }
-            
-            ImGui::Text("Graph Nodes: %zu", nodes_.size());
-            ImGui::Text("  Connected: %zu", connected_nodes);
-            ImGui::Text("  Isolated: %zu", isolated_nodes);
-            ImGui::Text("Graph Edges: %zu", edges_.size());
         }
-        
+
         ImGui::Separator();
     }
     
@@ -1156,12 +1245,7 @@ void KnowledgeGraphEditor::render_data_source_panel() {
     ImGui::Text("Data Sources");
     ImGui::Separator();
 
-    if (!ontology_) {
-        ImGui::TextColored(ImVec4(0.6f, 0.6f, 0.6f, 1.0f),
-                          "Load an ontology first");
-        return;
-    }
-
+    // Allow adding data sources even without an ontology
     if (ImGui::Button("Add Data Source")) {
         ImGui::OpenPopup("AddDataSourceMenu");
     }
@@ -1343,6 +1427,203 @@ void KnowledgeGraphEditor::render_data_source_panel() {
                     ImGui::BulletText("%s", table.c_str());
                 }
                 ImGui::EndChild();
+            }
+        }
+    }
+    
+    // Render mappings section
+    render_mappings_section();
+}
+
+void KnowledgeGraphEditor::render_mappings_section() {
+    ImGui::Separator();
+    
+    // Mappings header with collapsible tree
+    if (ImGui::CollapsingHeader("Mappings", ImGuiTreeNodeFlags_DefaultOpen)) {
+        
+        // Check if we have any mappings loaded
+        bool has_mappings = current_mapping_spec_.has_value() && 
+            (!current_mapping_spec_->entity_types.empty() || 
+             !current_mapping_spec_->node_mappings.empty() ||
+             !current_mapping_spec_->relationship_mappings.empty());
+        
+        if (!has_mappings) {
+            ImGui::TextColored(ImVec4(0.6f, 0.6f, 0.6f, 1.0f), "No mappings defined");
+            
+            // Add mapping button (disabled if no ontology)
+            if (!ontology_) {
+                ImGui::BeginDisabled();
+            }
+            if (ImGui::Button("Create Mapping...")) {
+                // TODO: Open mapping creation dialog
+                ImGui::OpenPopup("CreateMappingMenu");
+            }
+            if (!ontology_) {
+                ImGui::EndDisabled();
+                if (ImGui::IsItemHovered(ImGuiHoveredFlags_AllowWhenDisabled)) {
+                    ImGui::SetTooltip("Load an ontology first to create mappings");
+                }
+            }
+            
+            if (ImGui::BeginPopup("CreateMappingMenu")) {
+                if (ImGui::MenuItem("Entity Mapping...")) {
+                    // TODO: Open entity mapping dialog
+                }
+                if (ImGui::MenuItem("Relationship Mapping...")) {
+                    // TODO: Open relationship mapping dialog
+                }
+                ImGui::EndPopup();
+            }
+        } else {
+            const auto& spec = current_mapping_spec_.value();
+            
+            // Entity Type Mappings
+            if (!spec.entity_types.empty()) {
+                if (ImGui::TreeNode("Entity Types")) {
+                    for (const auto& [class_name, entity_def] : spec.entity_types) {
+                        ImGui::PushID(class_name.c_str());
+                        
+                        if (ImGui::TreeNode(class_name.c_str())) {
+                            // Primary source info
+                            ImGui::TextColored(ImVec4(0.7f, 0.9f, 0.7f, 1.0f), "Primary Source:");
+                            ImGui::Indent();
+                            ImGui::Text("Source: %s", entity_def.primary.source.c_str());
+                            if (entity_def.primary.table.has_value()) {
+                                ImGui::Text("Table: %s", entity_def.primary.table.value().c_str());
+                            }
+                            ImGui::Text("IRI Column: %s", entity_def.primary.iri_column.c_str());
+                            ImGui::Text("Properties: %zu", entity_def.primary.properties.size());
+                            ImGui::Unindent();
+                            
+                            // Enrichments
+                            if (!entity_def.enrichments.empty()) {
+                                ImGui::TextColored(ImVec4(0.7f, 0.7f, 0.9f, 1.0f), 
+                                                   "Enrichments: %zu", entity_def.enrichments.size());
+                                ImGui::Indent();
+                                for (const auto& enrichment : entity_def.enrichments) {
+                                    ImGui::BulletText("%s (from %s)", 
+                                                     enrichment.name.c_str(), 
+                                                     enrichment.source.c_str());
+                                }
+                                ImGui::Unindent();
+                            }
+                            
+                            ImGui::TreePop();
+                        }
+                        
+                        ImGui::PopID();
+                    }
+                    ImGui::TreePop();
+                }
+            }
+            
+            // Node Mappings (flat list, alternative to entity_types)
+            if (!spec.node_mappings.empty()) {
+                if (ImGui::TreeNode("Node Mappings")) {
+                    for (size_t i = 0; i < spec.node_mappings.size(); ++i) {
+                        const auto& mapping = spec.node_mappings[i];
+                        ImGui::PushID(static_cast<int>(i));
+                        
+                        std::string label = mapping.name.empty() ? 
+                            ("Mapping " + std::to_string(i + 1)) : mapping.name;
+                        
+                        if (mapping.skip) {
+                            ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.5f, 0.5f, 0.5f, 1.0f));
+                            label += " [SKIPPED]";
+                        }
+                        
+                        if (ImGui::TreeNode(label.c_str())) {
+                            ImGui::Text("Target Class: %s", mapping.target_class.c_str());
+                            ImGui::Text("Source: %s", mapping.source.c_str());
+                            ImGui::Text("Mode: %s", 
+                                       mapping.mode == ista::owl2::loader::MappingMode::CREATE ? 
+                                       "Create" : "Enrich");
+                            if (mapping.iri_column.has_value()) {
+                                ImGui::Text("IRI Column: %s", mapping.iri_column.value().c_str());
+                            }
+                            ImGui::Text("Properties: %zu", mapping.properties.size());
+                            ImGui::TreePop();
+                        }
+                        
+                        if (mapping.skip) {
+                            ImGui::PopStyleColor();
+                        }
+                        
+                        ImGui::PopID();
+                    }
+                    ImGui::TreePop();
+                }
+            }
+            
+            // Relationship Mappings
+            if (!spec.relationship_mappings.empty()) {
+                if (ImGui::TreeNode("Relationship Mappings")) {
+                    for (size_t i = 0; i < spec.relationship_mappings.size(); ++i) {
+                        const auto& rel = spec.relationship_mappings[i];
+                        ImGui::PushID(static_cast<int>(i));
+                        
+                        std::string label = rel.name.empty() ? 
+                            ("Relationship " + std::to_string(i + 1)) : rel.name;
+                        
+                        if (rel.skip) {
+                            ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.5f, 0.5f, 0.5f, 1.0f));
+                            label += " [SKIPPED]";
+                        }
+                        
+                        if (ImGui::TreeNode(label.c_str())) {
+                            ImGui::Text("Property: %s", rel.relationship.c_str());
+                            ImGui::Text("Source: %s", rel.source.c_str());
+                            ImGui::Separator();
+                            
+                            ImGui::TextColored(ImVec4(0.9f, 0.7f, 0.7f, 1.0f), "Subject:");
+                            ImGui::Indent();
+                            ImGui::Text("Class: %s", rel.subject.class_name.c_str());
+                            ImGui::Text("Column: %s", rel.subject.column.c_str());
+                            ImGui::Text("Match Property: %s", rel.subject.match_property.c_str());
+                            ImGui::Unindent();
+                            
+                            ImGui::TextColored(ImVec4(0.7f, 0.7f, 0.9f, 1.0f), "Object:");
+                            ImGui::Indent();
+                            ImGui::Text("Class: %s", rel.object.class_name.c_str());
+                            ImGui::Text("Column: %s", rel.object.column.c_str());
+                            ImGui::Text("Match Property: %s", rel.object.match_property.c_str());
+                            ImGui::Unindent();
+                            
+                            if (rel.inverse_relationship.has_value()) {
+                                ImGui::Text("Inverse: %s", rel.inverse_relationship.value().c_str());
+                            }
+                            
+                            ImGui::TreePop();
+                        }
+                        
+                        if (rel.skip) {
+                            ImGui::PopStyleColor();
+                        }
+                        
+                        ImGui::PopID();
+                    }
+                    ImGui::TreePop();
+                }
+            }
+            
+            ImGui::Separator();
+            
+            // Add mapping buttons
+            if (!ontology_) {
+                ImGui::BeginDisabled();
+            }
+            if (ImGui::Button("Add Entity Mapping")) {
+                // TODO: Open entity mapping dialog
+            }
+            ImGui::SameLine();
+            if (ImGui::Button("Add Relationship Mapping")) {
+                // TODO: Open relationship mapping dialog
+            }
+            if (!ontology_) {
+                ImGui::EndDisabled();
+                if (ImGui::IsItemHovered(ImGuiHoveredFlags_AllowWhenDisabled)) {
+                    ImGui::SetTooltip("Load an ontology first to create mappings");
+                }
             }
         }
     }
@@ -2383,6 +2664,712 @@ int KnowledgeGraphEditor::get_default_port(const std::string& db_type) const {
         return 1433;
     }
     return 0;
+}
+
+// ============================================================================
+// Project File Support (YAML configuration)
+// ============================================================================
+
+std::string KnowledgeGraphEditor::get_iso8601_timestamp() const {
+    auto now = std::chrono::system_clock::now();
+    auto time_t_now = std::chrono::system_clock::to_time_t(now);
+    std::tm tm_now;
+#ifdef _WIN32
+    gmtime_s(&tm_now, &time_t_now);
+#else
+    gmtime_r(&time_t_now, &tm_now);
+#endif
+    
+    char buffer[32];
+    std::strftime(buffer, sizeof(buffer), "%Y-%m-%dT%H:%M:%SZ", &tm_now);
+    return std::string(buffer);
+}
+
+std::string KnowledgeGraphEditor::get_directory(const std::string& filepath) const {
+    size_t pos = filepath.find_last_of("/\\");
+    if (pos != std::string::npos) {
+        return filepath.substr(0, pos + 1);
+    }
+    return "./";
+}
+
+std::string KnowledgeGraphEditor::resolve_path(const std::string& base_path, const std::string& relative_path) const {
+    if (relative_path.empty()) {
+        return relative_path;
+    }
+    // If path is already absolute, return as-is
+    if (relative_path[0] == '/' || relative_path[0] == '~') {
+        return relative_path;
+    }
+#ifdef _WIN32
+    // Check for Windows absolute paths (e.g., C:\)
+    if (relative_path.length() >= 2 && relative_path[1] == ':') {
+        return relative_path;
+    }
+#endif
+    // Resolve relative path from project file directory
+    std::string dir = get_directory(base_path);
+    return dir + relative_path;
+}
+
+std::string KnowledgeGraphEditor::make_relative_path(const std::string& base_path, const std::string& absolute_path) const {
+    if (absolute_path.empty()) {
+        return absolute_path;
+    }
+    
+    std::string base_dir = get_directory(base_path);
+    
+    // Simple case: if absolute_path starts with base_dir, strip it
+    if (absolute_path.find(base_dir) == 0) {
+        std::string relative = absolute_path.substr(base_dir.length());
+        // Add "./" prefix for clarity
+        if (!relative.empty() && relative[0] != '.') {
+            return "./" + relative;
+        }
+        return relative;
+    }
+    
+    // For now, if paths don't share a common prefix, return absolute path
+    // A more sophisticated implementation could compute relative paths with ".."
+    return absolute_path;
+}
+
+ista::owl2::loader::DataSourceDef KnowledgeGraphEditor::gui_to_yaml_source(const DataSource& gui_source) const {
+    ista::owl2::loader::DataSourceDef yaml_source;
+    
+    if (gui_source.is_database) {
+        // Database source - type comes from format field (e.g., "sqlite", "mysql")
+        std::string format_lower = gui_source.format;
+        std::transform(format_lower.begin(), format_lower.end(), format_lower.begin(), ::tolower);
+        yaml_source.type = format_lower;
+        yaml_source.path = gui_source.filepath;  // For SQLite, this is the file path
+        
+        // Store connection details in the optional connection field
+        if (format_lower != "sqlite") {
+            ista::owl2::loader::DatabaseConnectionDef conn;
+            if (!gui_source.db_config.use_connection_string) {
+                conn.host = gui_source.db_config.host;
+                conn.port = gui_source.db_config.port;
+                conn.database = gui_source.db_config.database;
+                conn.username = gui_source.db_config.username;
+                conn.password = gui_source.db_config.password;
+                conn.use_connection_string = false;
+            } else {
+                conn.connection_string = gui_source.db_config.connection_string;
+                conn.use_connection_string = true;
+            }
+            yaml_source.connection = conn;
+        }
+    } else {
+        // File-based source
+        yaml_source.path = gui_source.filepath;
+        
+        // Determine type from format string
+        std::string format_lower = gui_source.format;
+        std::transform(format_lower.begin(), format_lower.end(), format_lower.begin(), ::tolower);
+        
+        if (format_lower.find("csv") != std::string::npos) {
+            yaml_source.type = "csv";
+            yaml_source.delimiter = ',';
+        } else if (format_lower.find("tsv") != std::string::npos || 
+                   format_lower.find("tab") != std::string::npos) {
+            yaml_source.type = "tsv";
+            yaml_source.delimiter = '\t';
+        } else {
+            yaml_source.type = "csv";  // Default to CSV
+            yaml_source.delimiter = ',';
+        }
+        
+        yaml_source.has_headers = true;  // Default assumption
+    }
+    
+    return yaml_source;
+}
+
+KnowledgeGraphEditor::DataSource KnowledgeGraphEditor::yaml_to_gui_source(const ista::owl2::loader::DataSourceDef& yaml_source) const {
+    DataSource gui_source;
+    
+    std::string type_lower = yaml_source.type;
+    std::transform(type_lower.begin(), type_lower.end(), type_lower.begin(), ::tolower);
+    
+    // Check if it's a database type
+    if (type_lower == "sqlite" || type_lower == "mysql" || 
+        type_lower == "postgres" || type_lower == "sqlserver") {
+        gui_source.is_database = true;
+        gui_source.filepath = yaml_source.path;
+        gui_source.format = type_lower;
+        
+        // Extract connection details from optional connection field
+        if (yaml_source.connection.has_value()) {
+            const auto& conn = yaml_source.connection.value();
+            gui_source.db_config.host = conn.host;
+            gui_source.db_config.port = conn.port;
+            gui_source.db_config.database = conn.database;
+            gui_source.db_config.username = conn.username;
+            gui_source.db_config.password = conn.password;
+            gui_source.db_config.connection_string = conn.connection_string;
+            gui_source.db_config.use_connection_string = conn.use_connection_string;
+        }
+    } else {
+        // File-based source
+        gui_source.is_database = false;
+        gui_source.filepath = yaml_source.path;
+        
+        if (type_lower == "tsv" || yaml_source.delimiter == '\t') {
+            gui_source.format = "TSV (Tab-separated)";
+        } else {
+            gui_source.format = "CSV (Comma-separated)";
+        }
+    }
+    
+    return gui_source;
+}
+
+bool KnowledgeGraphEditor::load_project(const std::string& filepath) {
+    try {
+        auto spec = ista::owl2::loader::DataMappingSpec::load_from_file(filepath);
+        
+        // base_path was set by load_from_file() to the YAML file's directory
+        const std::string& bp = spec.base_path;
+
+        // 1. Load ontology if specified
+        if (!spec.ontology_path.empty()) {
+            std::string ontology_full_path = resolve_path(filepath, spec.ontology_path);
+
+            // Use the existing ontology loading mechanism
+            try {
+                auto onto = ista::owl2::RDFXMLParser::parseFromFile(ontology_full_path);
+                ontology_ = std::make_unique<ista::owl2::Ontology>(std::move(onto));
+                current_filepath_ = ontology_full_path;
+                ontology_modified_ = false;
+
+                // Build graph visualization
+                build_graph_from_ontology();
+
+                std::cout << "Loaded ontology from project: " << ontology_full_path << std::endl;
+            } catch (const std::exception& e) {
+                std::cerr << "Failed to load ontology from project: " << e.what() << std::endl;
+                // Continue loading other project data even if ontology fails
+            }
+        }
+
+        // 2. Load data sources
+        data_sources_.clear();
+        for (const auto& [name, yaml_source] : spec.sources) {
+            DataSource gui_source = yaml_to_gui_source(yaml_source);
+
+            // Resolve relative paths using the spec's base_path
+            if (!gui_source.filepath.empty() && !bp.empty() &&
+                gui_source.filepath[0] != '/' && gui_source.filepath[0] != '~') {
+                gui_source.filepath = bp + gui_source.filepath;
+            }
+            
+            // Try to load metadata for the data source
+            if (!gui_source.is_database || gui_source.format == "sqlite") {
+                // For file-based sources and SQLite, try to read columns
+                try {
+                    if (gui_source.is_database && gui_source.format == "sqlite") {
+                        // SQLite: we'd need to query table schemas
+                        // For now, just mark it as loaded
+                        gui_source.column_names.clear();
+                    } else {
+                        // CSV/TSV: read header row
+                        std::ifstream file(gui_source.filepath);
+                        if (file.is_open()) {
+                            std::string header_line;
+                            if (std::getline(file, header_line)) {
+                                char delimiter = (gui_source.format.find("TSV") != std::string::npos) ? '\t' : ',';
+                                std::stringstream ss(header_line);
+                                std::string column;
+                                gui_source.column_names.clear();
+                                while (std::getline(ss, column, delimiter)) {
+                                    // Trim whitespace
+                                    column.erase(0, column.find_first_not_of(" \t\r\n"));
+                                    column.erase(column.find_last_not_of(" \t\r\n") + 1);
+                                    gui_source.column_names.push_back(column);
+                                }
+                            }
+                        }
+                    }
+                } catch (const std::exception& e) {
+                    std::cerr << "Warning: Could not read columns from " << gui_source.filepath << ": " << e.what() << std::endl;
+                }
+            }
+            
+            data_sources_.push_back(gui_source);
+        }
+        
+        // 3. Store mapping spec for later use (contains entity_types, relationship_mappings, etc.)
+        current_mapping_spec_ = spec;
+        current_project_filepath_ = filepath;
+        project_modified_ = false;
+        
+        std::cout << "Loaded project: " << filepath << std::endl;
+        if (!spec.project_name.empty()) {
+            std::cout << "  Project name: " << spec.project_name << std::endl;
+        }
+        std::cout << "  Data sources: " << data_sources_.size() << std::endl;
+        
+        return true;
+        
+    } catch (const std::exception& e) {
+        std::cerr << "Failed to load project: " << e.what() << std::endl;
+        return false;
+    }
+}
+
+bool KnowledgeGraphEditor::save_project(const std::string& filepath) {
+    try {
+        ista::owl2::loader::DataMappingSpec spec;
+        
+        // Preserve existing mappings if available
+        if (current_mapping_spec_.has_value()) {
+            spec = current_mapping_spec_.value();
+        }
+        
+        spec.version = "1.0";
+        
+        // Set ontology path (make relative to project file)
+        if (!current_filepath_.empty()) {
+            spec.ontology_path = make_relative_path(filepath, current_filepath_);
+        }
+        
+        // Update provenance timestamps
+        std::string now = get_iso8601_timestamp();
+        if (spec.created_at.empty()) {
+            spec.created_at = now;  // Only set on first save
+        }
+        spec.modified_at = now;  // Always update on save
+        
+        // Set base IRI from ontology if available
+        if (ontology_ && ontology_->getOntologyIRI().has_value()) {
+            spec.base_iri = ontology_->getOntologyIRI().value().toString();
+        }
+        
+        // Convert GUI data sources to YAML format
+        spec.sources.clear();
+        for (size_t i = 0; i < data_sources_.size(); ++i) {
+            auto yaml_source = gui_to_yaml_source(data_sources_[i]);
+            
+            // Make paths relative to project file
+            yaml_source.path = make_relative_path(filepath, yaml_source.path);
+            
+            // Generate a source name
+            std::string source_name;
+            if (!data_sources_[i].filepath.empty()) {
+                // Extract filename without extension
+                size_t last_slash = data_sources_[i].filepath.find_last_of("/\\");
+                size_t last_dot = data_sources_[i].filepath.find_last_of('.');
+                if (last_slash != std::string::npos) {
+                    source_name = data_sources_[i].filepath.substr(last_slash + 1);
+                } else {
+                    source_name = data_sources_[i].filepath;
+                }
+                if (last_dot != std::string::npos && last_dot > last_slash) {
+                    source_name = source_name.substr(0, source_name.find_last_of('.'));
+                }
+                // Replace non-alphanumeric characters with underscores
+                for (char& c : source_name) {
+                    if (!std::isalnum(c)) {
+                        c = '_';
+                    }
+                }
+            } else {
+                source_name = "source_" + std::to_string(i);
+            }
+            
+            spec.sources[source_name] = yaml_source;
+        }
+        
+        // Save to file
+        spec.save_to_file(filepath);
+        
+        current_project_filepath_ = filepath;
+        current_mapping_spec_ = spec;
+        project_modified_ = false;
+        
+        std::cout << "Saved project: " << filepath << std::endl;
+        
+        return true;
+        
+    } catch (const std::exception& e) {
+        std::cerr << "Failed to save project: " << e.what() << std::endl;
+        return false;
+    }
+}
+
+// --- Population integration methods ---
+
+std::optional<ista::owl2::loader::DataMappingSpec> KnowledgeGraphEditor::build_mapping_spec_from_gui() const {
+    using namespace ista::owl2::loader;
+
+    // Path 1: If a mapping spec was loaded from a YAML project, return it with resolved paths
+    if (current_mapping_spec_.has_value()) {
+        DataMappingSpec spec = current_mapping_spec_.value();
+        // base_path is set by load_from_file(); resolve relative paths using it
+        if (spec.base_path.empty() && !current_project_filepath_.empty()) {
+            spec.base_path = get_directory(current_project_filepath_);
+        }
+        spec.resolve_source_paths();
+        return spec;
+    }
+
+    // Path 2: Build a spec from GUI data sources that have mapped classes
+    DataMappingSpec spec;
+
+    // Set base IRI from ontology
+    if (ontology_) {
+        auto iri = ontology_->getOntologyIRI();
+        if (iri.has_value()) {
+            spec.base_iri = iri.value().toString();
+            // Ensure trailing separator
+            if (!spec.base_iri.empty() && spec.base_iri.back() != '/' && spec.base_iri.back() != '#') {
+                spec.base_iri += '#';
+            }
+        }
+    }
+
+    bool has_any_mapping = false;
+    for (size_t i = 0; i < data_sources_.size(); ++i) {
+        const auto& ds = data_sources_[i];
+        if (!ds.mapped_class_iri.has_value() || ds.column_names.empty()) {
+            continue;
+        }
+
+        has_any_mapping = true;
+
+        // Create a source name
+        std::string source_name = "source_" + std::to_string(i);
+
+        // Build DataSourceDef
+        DataSourceDef source_def;
+        source_def.name = source_name;
+        source_def.type = ds.format;
+        source_def.path = ds.filepath;
+        if (ds.format == "tsv") {
+            source_def.delimiter = '\t';
+        }
+        spec.sources[source_name] = source_def;
+
+        // Build NodeMapping: CREATE mode, first column = IRI column
+        NodeMapping node_mapping;
+        node_mapping.name = "map_" + source_name;
+        node_mapping.source = source_name;
+
+        // Extract class local name from IRI
+        const std::string& class_iri = ds.mapped_class_iri.value();
+        size_t hash_pos = class_iri.rfind('#');
+        size_t slash_pos = class_iri.rfind('/');
+        size_t sep_pos = (hash_pos != std::string::npos) ? hash_pos : slash_pos;
+        if (sep_pos != std::string::npos && sep_pos + 1 < class_iri.size()) {
+            node_mapping.target_class = class_iri.substr(sep_pos + 1);
+        } else {
+            node_mapping.target_class = class_iri;
+        }
+
+        node_mapping.mode = MappingMode::CREATE;
+        node_mapping.iri_column = ds.column_names[0];
+
+        // Map each column to a property with the same local name
+        for (const auto& col : ds.column_names) {
+            PropertyMapping pm;
+            pm.column = col;
+            pm.property = col;
+            node_mapping.properties.push_back(pm);
+        }
+
+        spec.node_mappings.push_back(node_mapping);
+    }
+
+    if (!has_any_mapping) {
+        return std::nullopt;
+    }
+
+    return spec;
+}
+
+void KnowledgeGraphEditor::start_population_flow() {
+    auto spec_opt = build_mapping_spec_from_gui();
+    if (!spec_opt.has_value()) {
+        // Show error - no valid mappings found
+        population_error_message_ = "No valid data mappings found. Map at least one data source to a class, or load a project with mapping definitions.";
+        population_status_.store(PopulationStatus::FAILED);
+        show_population_results_ = true;
+        return;
+    }
+
+    // Validate spec against ontology
+    if (ontology_) {
+        auto validation = spec_opt.value().validate(*ontology_);
+        population_validation_result_ = validation;
+    } else {
+        population_validation_result_ = std::nullopt;
+    }
+
+    show_population_confirm_dialog_ = true;
+}
+
+void KnowledgeGraphEditor::execute_population_async() {
+    if (population_running_.load()) {
+        return;
+    }
+
+    auto spec_opt = build_mapping_spec_from_gui();
+    if (!spec_opt.has_value()) {
+        return;
+    }
+
+    // Reset shared state under mutex
+    {
+        std::lock_guard<std::mutex> lock(population_mutex_);
+        population_progress_ = PopulationProgress{};
+        population_stats_ = ista::owl2::loader::LoadingStats{};
+        population_error_message_.clear();
+    }
+
+    population_status_.store(PopulationStatus::RUNNING);
+    population_running_.store(true);
+    show_population_progress_ = true;
+
+    // Join any previous thread
+    if (population_thread_ && population_thread_->joinable()) {
+        population_thread_->join();
+    }
+
+    auto spec = std::move(spec_opt.value());
+
+    population_thread_ = std::make_unique<std::thread>([this, spec = std::move(spec)]() {
+        try {
+            ista::owl2::loader::DataLoader loader(*ontology_);
+            loader.set_mapping_spec(spec);
+
+            loader.set_progress_callback(
+                [this](size_t current, size_t total, const std::string& mapping_name) {
+                    std::lock_guard<std::mutex> lock(population_mutex_);
+                    population_progress_.current_row = current;
+                    population_progress_.total_rows = total;
+                    population_progress_.current_mapping_name = mapping_name;
+                    population_progress_.fraction = (total > 0)
+                        ? static_cast<float>(current) / static_cast<float>(total)
+                        : 0.0f;
+                });
+
+            auto stats = loader.execute();
+
+            {
+                std::lock_guard<std::mutex> lock(population_mutex_);
+                population_stats_ = stats;
+            }
+
+            population_status_.store(PopulationStatus::COMPLETED);
+        } catch (const std::exception& e) {
+            {
+                std::lock_guard<std::mutex> lock(population_mutex_);
+                population_error_message_ = e.what();
+            }
+            population_status_.store(PopulationStatus::FAILED);
+        }
+
+        population_running_.store(false);
+    });
+}
+
+void KnowledgeGraphEditor::poll_population_status() {
+    auto status = population_status_.load();
+    if (status == PopulationStatus::IDLE || status == PopulationStatus::RUNNING) {
+        return;
+    }
+
+    // Thread finished - join it
+    if (population_thread_ && population_thread_->joinable()) {
+        population_thread_->join();
+    }
+
+    show_population_progress_ = false;
+
+    if (status == PopulationStatus::COMPLETED) {
+        ontology_modified_ = true;
+        population_needs_graph_rebuild_ = true;
+    }
+
+    show_population_results_ = true;
+
+    population_status_.store(PopulationStatus::IDLE);
+
+    if (population_needs_graph_rebuild_) {
+        build_graph_from_ontology();
+        population_needs_graph_rebuild_ = false;
+    }
+}
+
+void KnowledgeGraphEditor::render_population_confirm_dialog() {
+    if (show_population_confirm_dialog_) {
+        ImGui::OpenPopup("Confirm Population");
+        show_population_confirm_dialog_ = false;
+    }
+
+    if (ImGui::BeginPopupModal("Confirm Population", nullptr, ImGuiWindowFlags_AlwaysAutoResize)) {
+        ImGui::Text("Population Summary");
+        ImGui::Separator();
+
+        auto spec_opt = build_mapping_spec_from_gui();
+        if (spec_opt.has_value()) {
+            const auto& spec = spec_opt.value();
+            auto all_node_mappings = spec.get_all_node_mappings();
+            ImGui::Text("Node Mappings: %zu", all_node_mappings.size());
+            ImGui::Text("Relationship Mappings: %zu", spec.relationship_mappings.size());
+            ImGui::Text("Data Sources: %zu", spec.sources.size());
+        }
+
+        ImGui::Spacing();
+
+        // Show validation results
+        if (population_validation_result_.has_value()) {
+            const auto& vr = population_validation_result_.value();
+            if (vr.is_valid && vr.warnings.empty()) {
+                ImGui::TextColored(ImVec4(0.2f, 0.8f, 0.2f, 1.0f), "Validation: Passed");
+            } else if (vr.is_valid) {
+                ImGui::TextColored(ImVec4(1.0f, 0.8f, 0.2f, 1.0f), "Validation: Passed with warnings");
+            } else {
+                ImGui::TextColored(ImVec4(1.0f, 0.3f, 0.3f, 1.0f), "Validation: Failed");
+            }
+
+            if (!vr.errors.empty()) {
+                ImGui::Spacing();
+                ImGui::TextColored(ImVec4(1.0f, 0.3f, 0.3f, 1.0f), "Errors:");
+                for (const auto& err : vr.errors) {
+                    ImGui::BulletText("%s", err.c_str());
+                }
+            }
+            if (!vr.warnings.empty()) {
+                ImGui::Spacing();
+                ImGui::TextColored(ImVec4(1.0f, 0.8f, 0.2f, 1.0f), "Warnings:");
+                for (const auto& warn : vr.warnings) {
+                    ImGui::BulletText("%s", warn.c_str());
+                }
+            }
+
+            ImGui::Separator();
+
+            bool has_errors = !vr.is_valid;
+            if (has_errors) {
+                ImGui::PushStyleVar(ImGuiStyleVar_Alpha, 0.5f);
+            }
+            if (ImGui::Button("Execute", ImVec2(120, 0)) && !has_errors) {
+                execute_population_async();
+                ImGui::CloseCurrentPopup();
+            }
+            if (has_errors) {
+                ImGui::PopStyleVar();
+            }
+        } else {
+            // No validation (no ontology?) - allow execution anyway
+            if (ImGui::Button("Execute", ImVec2(120, 0))) {
+                execute_population_async();
+                ImGui::CloseCurrentPopup();
+            }
+        }
+
+        ImGui::SameLine();
+        if (ImGui::Button("Cancel", ImVec2(120, 0))) {
+            ImGui::CloseCurrentPopup();
+        }
+
+        ImGui::EndPopup();
+    }
+}
+
+void KnowledgeGraphEditor::render_population_progress_modal() {
+    if (show_population_progress_ && !ImGui::IsPopupOpen("Population Progress")) {
+        ImGui::OpenPopup("Population Progress");
+    }
+
+    ImGuiWindowFlags flags = ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoMove;
+    if (ImGui::BeginPopupModal("Population Progress", nullptr, flags)) {
+        ImGui::Text("Populating Ontology...");
+        ImGui::Separator();
+
+        PopulationProgress progress;
+        {
+            std::lock_guard<std::mutex> lock(population_mutex_);
+            progress = population_progress_;
+        }
+
+        if (!progress.current_mapping_name.empty()) {
+            ImGui::Text("Current mapping: %s", progress.current_mapping_name.c_str());
+        }
+
+        char overlay[64];
+        snprintf(overlay, sizeof(overlay), "%zu / %zu rows",
+                 progress.current_row, progress.total_rows);
+        ImGui::ProgressBar(progress.fraction, ImVec2(300, 0), overlay);
+
+        ImGui::Spacing();
+        ImGui::TextColored(ImVec4(0.6f, 0.6f, 0.6f, 1.0f),
+                          "Population cannot be interrupted once started.");
+
+        if (!show_population_progress_) {
+            ImGui::CloseCurrentPopup();
+        }
+
+        ImGui::EndPopup();
+    }
+}
+
+void KnowledgeGraphEditor::render_population_results_dialog() {
+    if (show_population_results_) {
+        ImGui::OpenPopup("Population Results");
+        show_population_results_ = false;
+    }
+
+    if (ImGui::BeginPopupModal("Population Results", nullptr, ImGuiWindowFlags_AlwaysAutoResize)) {
+        ista::owl2::loader::LoadingStats stats;
+        std::string error_msg;
+        {
+            std::lock_guard<std::mutex> lock(population_mutex_);
+            stats = population_stats_;
+            error_msg = population_error_message_;
+        }
+
+        if (!error_msg.empty() && stats.rows_processed == 0) {
+            // Pure failure
+            ImGui::TextColored(ImVec4(1.0f, 0.3f, 0.3f, 1.0f), "Population Failed");
+            ImGui::Separator();
+            ImGui::TextWrapped("%s", error_msg.c_str());
+        } else {
+            // Success (possibly with non-fatal errors)
+            ImGui::TextColored(ImVec4(0.2f, 0.8f, 0.2f, 1.0f), "Population Complete");
+            ImGui::Separator();
+
+            ImGui::Text("Rows processed:       %zu", stats.rows_processed);
+            ImGui::Text("Individuals created:   %zu", stats.individuals_created);
+            ImGui::Text("Individuals enriched:  %zu", stats.individuals_enriched);
+            ImGui::Text("Properties added:      %zu", stats.properties_added);
+            ImGui::Text("Relationships created: %zu", stats.relationships_created);
+            ImGui::Text("Rows skipped:          %zu", stats.rows_skipped);
+
+            if (stats.errors > 0) {
+                ImGui::Spacing();
+                ImGui::TextColored(ImVec4(1.0f, 0.6f, 0.0f, 1.0f), "Errors: %zu", stats.errors);
+                if (!stats.error_messages.empty()) {
+                    ImGui::Separator();
+                    ImGui::Text("Error Details:");
+                    ImGui::BeginChild("ErrorDetails", ImVec2(400, 150), true);
+                    for (const auto& msg : stats.error_messages) {
+                        ImGui::BulletText("%s", msg.c_str());
+                    }
+                    ImGui::EndChild();
+                }
+            }
+        }
+
+        ImGui::Separator();
+        if (ImGui::Button("OK", ImVec2(120, 0))) {
+            ImGui::CloseCurrentPopup();
+        }
+
+        ImGui::EndPopup();
+    }
 }
 
 } // namespace gui

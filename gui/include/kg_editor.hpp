@@ -4,7 +4,12 @@
 #include <vector>
 #include <memory>
 #include <optional>
+#include <thread>
+#include <mutex>
+#include <atomic>
 #include "../../lib/owl2/owl2.hpp"
+#include "../../lib/owl2/loader/mapping_spec.hpp"
+#include "../../lib/owl2/loader/data_loader.hpp"
 
 // Forward declaration for GLFW
 struct GLFWwindow;
@@ -83,6 +88,20 @@ public:
      */
     bool save_ontology(const std::string& filepath);
     
+    /**
+     * @brief Load a project from a YAML configuration file
+     * @param filepath Path to the YAML project file
+     * @return true if loaded successfully
+     */
+    bool load_project(const std::string& filepath);
+    
+    /**
+     * @brief Save the current project to a YAML configuration file
+     * @param filepath Path to save the project file
+     * @return true if saved successfully
+     */
+    bool save_project(const std::string& filepath);
+    
 private:
     // GUI rendering methods
     void render_menu_bar();
@@ -90,6 +109,7 @@ private:
     void render_graph_view();
     void render_properties_panel();
     void render_data_source_panel();
+    void render_mappings_section();
     void render_class_selector();
     void render_preferences_window();
     
@@ -207,6 +227,87 @@ private:
     
     // Search functionality
     void perform_search(const std::string& query);
+    
+    // Project state
+    std::string current_project_filepath_;  // Path to current project file (empty if none)
+    bool project_modified_;                 // Track if project has unsaved changes
+    std::optional<ista::owl2::loader::DataMappingSpec> current_mapping_spec_;  // Stored mapping spec
+    
+    // Project UI state
+    bool show_project_loader_;
+    bool show_save_project_dialog_;
+    
+    // Project helper methods
+    ista::owl2::loader::DataSourceDef gui_to_yaml_source(const DataSource& gui_source) const;
+    DataSource yaml_to_gui_source(const ista::owl2::loader::DataSourceDef& yaml_source) const;
+    std::string get_iso8601_timestamp() const;
+    std::string resolve_path(const std::string& base_path, const std::string& relative_path) const;
+    std::string make_relative_path(const std::string& base_path, const std::string& absolute_path) const;
+    std::string get_directory(const std::string& filepath) const;
+
+    // --- Population integration ---
+
+    /**
+     * @brief Build a DataMappingSpec from the current GUI state
+     * @return Mapping spec if one can be constructed, nullopt otherwise
+     */
+    std::optional<ista::owl2::loader::DataMappingSpec> build_mapping_spec_from_gui() const;
+
+    /**
+     * @brief Start the population flow: validate and show confirmation dialog
+     */
+    void start_population_flow();
+
+    /**
+     * @brief Execute population on a background thread
+     */
+    void execute_population_async();
+
+    /**
+     * @brief Poll for population thread completion (called each frame)
+     */
+    void poll_population_status();
+
+    /**
+     * @brief Render the population confirmation dialog
+     */
+    void render_population_confirm_dialog();
+
+    /**
+     * @brief Render the population progress modal
+     */
+    void render_population_progress_modal();
+
+    /**
+     * @brief Render the population results dialog
+     */
+    void render_population_results_dialog();
+
+    // Population threading state
+    std::unique_ptr<std::thread> population_thread_;
+    std::mutex population_mutex_;
+    std::atomic<bool> population_running_{false};
+
+    struct PopulationProgress {
+        size_t current_row = 0;
+        size_t total_rows = 0;
+        std::string current_mapping_name;
+        float fraction = 0.0f;
+    };
+    PopulationProgress population_progress_;
+
+    enum class PopulationStatus { IDLE, RUNNING, COMPLETED, FAILED };
+    std::atomic<PopulationStatus> population_status_{PopulationStatus::IDLE};
+
+    ista::owl2::loader::LoadingStats population_stats_;
+    std::string population_error_message_;
+    std::optional<ista::owl2::loader::ValidationResult> population_validation_result_;
+
+    // Population UI state
+    bool show_population_confirm_dialog_ = false;
+    bool show_population_progress_ = false;
+    bool show_population_results_ = false;
+    bool population_needs_graph_rebuild_ = false;
 };
 
 } // namespace gui

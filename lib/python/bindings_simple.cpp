@@ -1052,6 +1052,8 @@ PYBIND11_MODULE(_libista_owl2, m) {
         .def(py::init<>())
         .def_readwrite("version", &DataMappingSpec::version, "Spec version")
         .def_readwrite("base_iri", &DataMappingSpec::base_iri, "Base IRI for individuals")
+        .def_readwrite("base_path", &DataMappingSpec::base_path,
+                      "Base directory for resolving relative file paths (set by load_from_file)")
         .def_readwrite("transforms", &DataMappingSpec::transforms, "Named transforms")
         .def_readwrite("sources", &DataMappingSpec::sources, "Data sources")
         .def_readwrite("node_mappings", &DataMappingSpec::node_mappings, "Node mappings")
@@ -1075,6 +1077,8 @@ PYBIND11_MODULE(_libista_owl2, m) {
              "Expand entity_types into node_mappings")
         .def("get_all_node_mappings", &DataMappingSpec::get_all_node_mappings,
              "Get all node mappings (including expanded entity_types)")
+        .def("resolve_source_paths", &DataMappingSpec::resolve_source_paths,
+             "Resolve relative source paths against base_path")
         .def("resolve_environment_variables", &DataMappingSpec::resolve_environment_variables,
              "Resolve ${VAR_NAME} patterns in paths")
         .def("__repr__", [](const DataMappingSpec& spec) {

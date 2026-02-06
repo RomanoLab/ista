@@ -214,6 +214,7 @@ void DataLoader::set_mapping_spec(const DataMappingSpec& spec) {
 void DataLoader::load_mapping_spec(const std::string& filepath) {
     spec_ = DataMappingSpec::load_from_file(filepath);
     spec_.resolve_environment_variables();
+    spec_.resolve_source_paths();
     readers_.clear();
 }
 

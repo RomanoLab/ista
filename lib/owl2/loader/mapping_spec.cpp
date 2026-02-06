@@ -146,7 +146,11 @@ DataSourceDef parse_data_source(const std::string& name, const YamlNodePtr& node
 // Parse EntityRef from YAML node
 EntityRef parse_entity_ref(const YamlNodePtr& node) {
     EntityRef ref;
-    ref.class_name = node->get_string("class");
+    // Support both "class_name" (YAML convention) and "class" (legacy)
+    ref.class_name = node->get_string("class_name");
+    if (ref.class_name.empty()) {
+        ref.class_name = node->get_string("class");
+    }
     ref.column = node->get_string("column");
     ref.match_property = node->get_string("match_property");
     if (node->has_key("transform")) {
@@ -274,14 +278,32 @@ DataMappingSpec DataMappingSpec::load_from_file(const std::string& filepath) {
     if (root->is_null()) {
         throw MappingSpecException("Empty or invalid YAML file: " + filepath);
     }
-    
+
     DataMappingSpec spec;
+
+    // Set base_path to the directory containing the YAML file
+    auto last_sep = filepath.find_last_of("/\\");
+    if (last_sep != std::string::npos) {
+        spec.base_path = filepath.substr(0, last_sep + 1);
+    } else {
+        spec.base_path = "./";
+    }
     
     // Parse version
     spec.version = root->get_string("version", "1.0");
     
     // Parse base_iri
     spec.base_iri = root->get_string("base_iri");
+    
+    // Parse project metadata
+    spec.project_name = root->get_string("project_name");
+    spec.project_description = root->get_string("project_description");
+    spec.ontology_path = root->get_string("ontology_path");
+    
+    // Parse provenance info
+    spec.created_at = root->get_string("created_at");
+    spec.modified_at = root->get_string("modified_at");
+    spec.created_by = root->get_string("created_by");
     
     // Parse transforms
     if (root->has_key("transforms")) {
@@ -348,6 +370,16 @@ DataMappingSpec DataMappingSpec::parse(const std::string& yaml_content) {
     
     spec.version = root->get_string("version", "1.0");
     spec.base_iri = root->get_string("base_iri");
+    
+    // Parse project metadata
+    spec.project_name = root->get_string("project_name");
+    spec.project_description = root->get_string("project_description");
+    spec.ontology_path = root->get_string("ontology_path");
+    
+    // Parse provenance info
+    spec.created_at = root->get_string("created_at");
+    spec.modified_at = root->get_string("modified_at");
+    spec.created_by = root->get_string("created_by");
     
     if (root->has_key("transforms")) {
         auto transforms_node = root->get("transforms");
@@ -518,6 +550,29 @@ std::string DataMappingSpec::to_yaml() const {
     std::ostringstream out;
     
     out << "version: \"" << version << "\"\n";
+    
+    // Serialize project metadata
+    if (!project_name.empty()) {
+        out << "project_name: \"" << project_name << "\"\n";
+    }
+    if (!project_description.empty()) {
+        out << "project_description: \"" << project_description << "\"\n";
+    }
+    if (!ontology_path.empty()) {
+        out << "ontology_path: \"" << ontology_path << "\"\n";
+    }
+    
+    // Serialize provenance info
+    if (!created_at.empty()) {
+        out << "created_at: \"" << created_at << "\"\n";
+    }
+    if (!modified_at.empty()) {
+        out << "modified_at: \"" << modified_at << "\"\n";
+    }
+    if (!created_by.empty()) {
+        out << "created_by: \"" << created_by << "\"\n";
+    }
+    
     if (!base_iri.empty()) {
         out << "base_iri: \"" << base_iri << "\"\n";
     }
@@ -610,11 +665,11 @@ std::string DataMappingSpec::to_yaml() const {
             out << "    source: " << mapping.source << "\n";
             out << "    relationship: " << mapping.relationship << "\n";
             out << "    subject:\n";
-            out << "      class: " << mapping.subject.class_name << "\n";
+            out << "      class_name: " << mapping.subject.class_name << "\n";
             out << "      column: " << mapping.subject.column << "\n";
             out << "      match_property: " << mapping.subject.match_property << "\n";
             out << "    object:\n";
-            out << "      class: " << mapping.object.class_name << "\n";
+            out << "      class_name: " << mapping.object.class_name << "\n";
             out << "      column: " << mapping.object.column << "\n";
             out << "      match_property: " << mapping.object.match_property << "\n";
             if (mapping.inverse_relationship.has_value()) {
@@ -689,6 +744,30 @@ std::vector<NodeMapping> DataMappingSpec::get_all_node_mappings() const {
     }
     
     return all_mappings;
+}
+
+void DataMappingSpec::resolve_source_paths() {
+    if (base_path.empty()) {
+        return;
+    }
+
+    auto resolve = [&](std::string& path) {
+        if (path.empty()) return;
+        // Skip absolute paths
+        if (path[0] == '/' || path[0] == '~') return;
+#ifdef _WIN32
+        if (path.length() >= 2 && path[1] == ':') return;
+#endif
+        path = base_path + path;
+    };
+
+    // Resolve ontology path
+    resolve(ontology_path);
+
+    // Resolve data source paths
+    for (auto& [name, source] : sources) {
+        resolve(source.path);
+    }
 }
 
 void DataMappingSpec::resolve_environment_variables() {

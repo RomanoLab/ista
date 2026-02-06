@@ -223,42 +223,57 @@ YamlNodePtr YamlParser::parse_file(const std::string& filepath) {
 }
 
 YamlNodePtr YamlParser::parse_value(ParseState& state, int base_indent) {
-    state.skip_whitespace();
+    // Don't skip whitespace here - it may be significant indentation
+    // Let parse_map handle indentation, and only skip for inline values
     
     if (state.at_end()) {
         return YamlNode::make_null();
     }
     
-    char c = state.peek();
+    // Peek at what's coming (without advancing past indentation)
+    size_t scan_pos = state.pos;
     
-    // Inline structures
+    // Skip leading spaces to see what the actual content is
+    while (scan_pos < state.content.size() && 
+           (state.content[scan_pos] == ' ' || state.content[scan_pos] == '\t')) {
+        scan_pos++;
+    }
+    
+    if (scan_pos >= state.content.size()) {
+        return YamlNode::make_null();
+    }
+    
+    char c = state.content[scan_pos];
+    
+    // Inline structures - advance past whitespace and parse
     if (c == '{') {
+        state.pos = scan_pos;
         return parse_inline_map(state);
     }
     if (c == '[') {
+        state.pos = scan_pos;
         return parse_inline_list(state);
     }
     
-    // Check if this is a list item
-    if (c == '-') {
+    // Check if this is a list item (- followed by space or newline)
+    if (c == '-' && (scan_pos + 1 >= state.content.size() || 
+                     state.content[scan_pos + 1] == ' ' || 
+                     state.content[scan_pos + 1] == '\n')) {
+        // Don't advance - let parse_list handle indentation
         return parse_list(state, base_indent);
     }
     
-    // Check if this looks like a map (has a colon)
-    size_t save_pos = state.pos;
-    std::string first_word = state.read_until(":[\n#");
-    state.pos = save_pos;
-    
-    if (!first_word.empty() && state.pos < state.content.size()) {
-        size_t colon_pos = state.content.find(':', state.pos);
-        size_t newline_pos = state.content.find('\n', state.pos);
-        if (colon_pos != std::string::npos && 
-            (newline_pos == std::string::npos || colon_pos < newline_pos)) {
-            return parse_map(state, base_indent);
-        }
+    // Check if this looks like a map (has a colon on this line)
+    size_t colon_pos = state.content.find(':', scan_pos);
+    size_t newline_pos = state.content.find('\n', scan_pos);
+    if (colon_pos != std::string::npos && 
+        (newline_pos == std::string::npos || colon_pos < newline_pos)) {
+        // This is a map - don't advance, let parse_map handle indentation
+        return parse_map(state, base_indent);
     }
     
-    // Otherwise it's a scalar
+    // Otherwise it's a scalar - advance past whitespace and parse
+    state.pos = scan_pos;
     return YamlNode::make_scalar(parse_scalar(state));
 }
 
@@ -413,19 +428,152 @@ YamlNodePtr YamlParser::parse_list(ParseState& state, int base_indent) {
             state.pos = item_line_start;
             item = parse_value(state, item_indent);
         } else {
-            // Item value is on same line - could be a map
-            item = parse_value(state, indent + 2);
-            
-            // Skip to end of line if we haven't moved there
-            while (!state.at_end() && state.peek() != '\n') {
-                if (state.peek() == '#') {
-                    state.skip_line();
-                    break;
+            // Item value is on same line as '-'
+            // Check if it looks like a map entry (key: value)
+            bool is_map_entry = false;
+            if (state.peek() != '{' && state.peek() != '[') {
+                size_t scan = state.pos;
+                size_t nl = state.content.find('\n', scan);
+                for (size_t p = scan; p < state.content.size() && (nl == std::string::npos || p < nl); ++p) {
+                    if (state.content[p] == '"' || state.content[p] == '\'') {
+                        // Skip quoted strings
+                        char q = state.content[p++];
+                        while (p < state.content.size() && state.content[p] != q) p++;
+                    } else if (state.content[p] == ':') {
+                        is_map_entry = true;
+                        break;
+                    }
                 }
-                state.advance();
             }
-            if (!state.at_end() && state.peek() == '\n') {
-                state.advance();
+
+            if (is_map_entry) {
+                // Build a map from the first key-value on this line
+                // plus continuation entries on subsequent lines
+                auto map_node = YamlNode::make_map();
+                int item_indent = indent + 2;  // expected indent of continuation lines
+
+                // Parse the first key-value pair (already positioned at the key)
+                std::string first_key = parse_key(state);
+                state.skip_whitespace();
+                if (state.peek() == ':') {
+                    state.advance();  // skip colon
+                    state.skip_whitespace();
+
+                    YamlNodePtr first_value;
+                    if (state.peek() == '\n' || state.peek() == '#') {
+                        // Value on next line(s)
+                        if (state.peek() == '#') state.skip_line();
+                        else state.advance();
+
+                        // Skip blank lines
+                        while (!state.at_end()) {
+                            size_t pb = state.pos;
+                            state.get_indent();
+                            if (state.peek() == '\n') { state.advance(); continue; }
+                            if (state.peek() == '#') { state.skip_line(); continue; }
+                            state.pos = pb;
+                            break;
+                        }
+
+                        size_t vls = state.pos;
+                        int vi = state.get_indent();
+                        state.pos = vls;
+
+                        if (vi > indent) {
+                            first_value = parse_value(state, vi);
+                        } else {
+                            first_value = YamlNode::make_null();
+                        }
+                    } else {
+                        // Value on same line
+                        first_value = parse_value(state, item_indent);
+                        // Skip rest of line
+                        while (!state.at_end() && state.peek() != '\n') {
+                            if (state.peek() == '#') { state.skip_line(); break; }
+                            state.advance();
+                        }
+                        if (!state.at_end() && state.peek() == '\n') state.advance();
+                    }
+                    map_node->set(first_key, first_value);
+                }
+
+                // Parse continuation entries from subsequent lines at item_indent
+                while (!state.at_end()) {
+                    size_t ls = state.pos;
+                    int ci = state.get_indent();
+
+                    if (state.peek() == '\n') { state.advance(); continue; }
+                    if (state.peek() == '#') { state.skip_line(); continue; }
+
+                    // Stop if indent is too small or we hit a list marker at same/lesser indent
+                    if (ci < item_indent) {
+                        state.pos = ls;
+                        break;
+                    }
+                    if (state.peek() == '-' && ci <= indent) {
+                        state.pos = ls;
+                        break;
+                    }
+
+                    // Parse key: value
+                    std::string k = parse_key(state);
+                    if (k.empty()) { state.skip_line(); continue; }
+                    state.skip_whitespace();
+                    if (state.peek() != ':') {
+                        state.skip_line();
+                        continue;
+                    }
+                    state.advance();  // skip colon
+                    state.skip_whitespace();
+
+                    YamlNodePtr v;
+                    if (state.peek() == '\n' || state.peek() == '#') {
+                        if (state.peek() == '#') state.skip_line();
+                        else state.advance();
+
+                        // Skip blank lines
+                        while (!state.at_end()) {
+                            size_t pb = state.pos;
+                            state.get_indent();
+                            if (state.peek() == '\n') { state.advance(); continue; }
+                            if (state.peek() == '#') { state.skip_line(); continue; }
+                            state.pos = pb;
+                            break;
+                        }
+
+                        size_t vls = state.pos;
+                        int vi = state.get_indent();
+                        state.pos = vls;
+
+                        if (vi > ci) {
+                            v = parse_value(state, vi);
+                        } else {
+                            v = YamlNode::make_null();
+                            state.pos = vls;
+                        }
+                    } else {
+                        v = parse_value(state, ci + 1);
+                        while (!state.at_end() && state.peek() != '\n') {
+                            if (state.peek() == '#') { state.skip_line(); break; }
+                            state.advance();
+                        }
+                        if (!state.at_end() && state.peek() == '\n') state.advance();
+                    }
+
+                    map_node->set(k, v);
+                }
+
+                item = map_node;
+            } else {
+                // Non-map value (scalar, inline map/list)
+                item = parse_value(state, indent + 2);
+
+                // Skip to end of line
+                while (!state.at_end() && state.peek() != '\n') {
+                    if (state.peek() == '#') { state.skip_line(); break; }
+                    state.advance();
+                }
+                if (!state.at_end() && state.peek() == '\n') state.advance();
             }
         }
         
