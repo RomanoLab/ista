@@ -197,8 +197,23 @@ public:
     void set_progress_callback(ProgressCallback callback);
     
     /**
+     * @brief Auto-declare ontology schema from the mapping specification.
+     *
+     * Scans the mapping spec to find all referenced classes, data properties,
+     * and object properties, and declares them in the ontology. This enables
+     * YAML-only population without manually pre-declaring the schema.
+     *
+     * Also generates domain/range axioms for object properties based on the
+     * subject/object class references in relationship mappings.
+     */
+    void auto_declare_schema();
+
+    /**
      * @brief Execute all mappings in the specification
-     * 
+     *
+     * Automatically calls auto_declare_schema() before loading data,
+     * and uses batch mode for efficient index management.
+     *
      * @return Loading statistics
      */
     LoadingStats execute();
@@ -241,11 +256,38 @@ private:
     
     // Cache for data source readers
     std::map<std::string, std::unique_ptr<DataSourceReader>> readers_;
+
+    // Lookup caches for fast entity resolution during execute()
+    std::unordered_map<std::string, Class> class_cache_;
+    std::unordered_map<std::string, DataProperty> data_property_cache_;
+    std::unordered_map<std::string, ObjectProperty> object_property_cache_;
+    // Key: "propertyLocalName\0value" → individual
+    std::unordered_map<std::string, NamedIndividual> individual_cache_;
+    bool caches_built_ = false;
     
     /**
-     * @brief Get or create a reader for the given source
+     * @brief Build the individual lookup cache after the node-creation phase.
+     *
+     * Scans all DataPropertyAssertion axioms and builds a hash map for
+     * O(1) individual lookups by property value.
      */
-    DataSourceReader* get_reader(const std::string& source_name);
+    void build_individual_cache();
+
+    /**
+     * @brief Clear all lookup caches.
+     */
+    void clear_caches();
+
+    /**
+     * @brief Get or create a reader for the given source
+     *
+     * @param source_name Name of the data source
+     * @param table_override Optional table name to override the source's table
+     * @param query_override Optional query to override the source's query
+     */
+    DataSourceReader* get_reader(const std::string& source_name,
+                                  const std::optional<std::string>& table_override = std::nullopt,
+                                  const std::optional<std::string>& query_override = std::nullopt);
     
     /**
      * @brief Process a single node mapping

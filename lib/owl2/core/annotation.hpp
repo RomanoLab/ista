@@ -46,17 +46,17 @@ public:
     /**
      * @brief Get the annotation property
      */
-    AnnotationProperty getProperty() const { return property_; }
-    
+    const AnnotationProperty& getProperty() const { return property_; }
+
     /**
      * @brief Get the annotation value
      */
-    AnnotationValue getValue() const { return value_; }
-    
+    const AnnotationValue& getValue() const { return value_; }
+
     /**
      * @brief Get nested annotations
      */
-    std::vector<Annotation> getAnnotations() const { return annotations_; }
+    const std::vector<Annotation>& getAnnotations() const { return annotations_; }
     
     /**
      * @brief Check if this annotation has nested annotations

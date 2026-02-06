@@ -17,7 +17,7 @@ public:
     explicit Entity(const IRI& iri) : iri_(iri) {}
     virtual ~Entity() = default;
     
-    IRI getIRI() const { return iri_; }
+    const IRI& getIRI() const { return iri_; }
     
     virtual std::string getEntityType() const = 0;
     
@@ -102,7 +102,7 @@ class AnonymousIndividual {
 public:
     explicit AnonymousIndividual(const std::string& node_id) : node_id_(node_id) {}
     
-    std::string getNodeID() const { return node_id_; }
+    const std::string& getNodeID() const { return node_id_; }
     
     bool operator==(const AnonymousIndividual& other) const {
         return node_id_ == other.node_id_;

@@ -108,6 +108,10 @@ struct NodeMapping {
     // Property mappings
     std::vector<PropertyMapping> properties;
     
+    // Per-mapping table/query overrides (for database sources)
+    std::optional<std::string> table;
+    std::optional<std::string> query;
+
     // Skip this mapping during execution
     bool skip = false;
 };
@@ -137,7 +141,11 @@ struct RelationshipMapping {
     
     // Optional inverse relationship to also create
     std::optional<std::string> inverse_relationship;
-    
+
+    // Per-mapping table/query overrides (for database sources)
+    std::optional<std::string> table;
+    std::optional<std::string> query;
+
     bool skip = false;
 };
 

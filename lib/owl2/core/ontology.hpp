@@ -55,6 +55,44 @@ public:
     std::vector<AxiomPtr> getAxioms() const;
     void clearAxioms();
 
+    // Batch mode for efficient bulk population
+    /**
+     * @brief Enter batch mode, suspending index updates until endBatchMode().
+     *
+     * During batch mode, addAxiom() does not invalidate indices after each call.
+     * This avoids O(n^2) behavior when adding many axioms sequentially.
+     */
+    void beginBatchMode();
+
+    /**
+     * @brief Exit batch mode and rebuild all indices once.
+     */
+    void endBatchMode();
+
+    /**
+     * @brief Check if the ontology is in batch mode.
+     */
+    bool inBatchMode() const { return batch_mode_; }
+
+    /**
+     * @brief Pre-allocate capacity for the axiom vector.
+     *
+     * @param count Expected number of axioms to reserve space for
+     */
+    void reserveAxioms(size_t count);
+
+    /**
+     * @brief Add multiple axioms at once (move semantics).
+     *
+     * More efficient than calling addAxiom() in a loop. In batch mode,
+     * indices are not rebuilt until endBatchMode(). Outside batch mode,
+     * indices are rebuilt once after all axioms are added.
+     *
+     * @param axioms Vector of axioms to add (moved)
+     * @return true if at least one axiom was added
+     */
+    bool addAxioms(std::vector<AxiomPtr>&& axioms);
+
     // Axiom queries by type
     std::vector<std::shared_ptr<Declaration>> getDeclarationAxioms() const;
     std::vector<AxiomPtr> getClassAxioms() const;
@@ -275,6 +313,7 @@ private:
     std::unordered_map<std::string, std::string> prefix_to_namespace_;
     std::unordered_map<std::string, std::string> namespace_to_prefix_;
     std::vector<AxiomPtr> axioms_;
+    bool batch_mode_ = false;
 
     // Index structures for fast lookups (mutable for lazy rebuild in const methods)
     mutable std::unordered_map<Declaration::EntityType, std::vector<std::shared_ptr<Declaration>>> declaration_index_;
@@ -284,11 +323,21 @@ private:
     mutable std::unordered_set<IRI> annotation_property_iri_cache_;
     mutable std::unordered_set<IRI> individual_iri_cache_;
     mutable std::unordered_set<IRI> datatype_iri_cache_;
+
+    // Typed axiom indices for fast per-type queries (avoid dynamic_pointer_cast during queries)
+    mutable std::vector<std::shared_ptr<ClassAssertion>> class_assertion_index_;
+    mutable std::vector<std::shared_ptr<ObjectPropertyAssertion>> obj_prop_assertion_index_;
+    mutable std::vector<std::shared_ptr<DataPropertyAssertion>> data_prop_assertion_index_;
+
     mutable bool indices_valid_ = false;
 
     void initializeStandardPrefixes();
     void rebuildIndices() const;
-    void invalidateIndices() { indices_valid_ = false; }
+    void invalidateIndices() {
+        if (!batch_mode_) {
+            indices_valid_ = false;
+        }
+    }
     bool isClassAxiom(const AxiomPtr& axiom) const;
     bool isObjectPropertyAxiom(const AxiomPtr& axiom) const;
     bool isDataPropertyAxiom(const AxiomPtr& axiom) const;

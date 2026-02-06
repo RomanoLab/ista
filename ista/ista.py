@@ -5,6 +5,7 @@ import pathlib
 import sys
 
 from ista import owl2
+
 parser = argparse.ArgumentParser(
     description="Ista - a toolkit for building graph knowledge bases."
 )
@@ -51,5 +52,4 @@ def main():
 
 
 if __name__ == "__main__":
-if __name__=="__main__":
     main()

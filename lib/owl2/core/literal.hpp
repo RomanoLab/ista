@@ -33,17 +33,17 @@ public:
     /**
      * @brief Get the lexical form (string representation)
      */
-    std::string getLexicalForm() const { return lexical_form_; }
-    
+    const std::string& getLexicalForm() const { return lexical_form_; }
+
     /**
      * @brief Get the datatype IRI
      */
-    std::optional<IRI> getDatatype() const { return datatype_; }
-    
+    const std::optional<IRI>& getDatatype() const { return datatype_; }
+
     /**
      * @brief Get the language tag
      */
-    std::optional<std::string> getLanguageTag() const { return language_tag_; }
+    const std::optional<std::string>& getLanguageTag() const { return language_tag_; }
     
     /**
      * @brief Check if this is a typed literal

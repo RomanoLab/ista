@@ -6,7 +6,21 @@
       "Bash(python:*)",
       "mcp__acp__Bash",
       "mcp__acp__Write",
-      "Bash(pip install:*)"
+      "Bash(pip install:*)",
+      "Bash(grep:*)",
+      "Bash(PYTHONPATH=/Users/jdr2160/projects/ista python:*)",
+      "Bash(ls:*)",
+      "Bash(PYTHONPATH=/Users/jdr2160/projects/ista/ista python:*)",
+      "Bash(PYTHONPATH=. python:*)",
+      "Bash(pip show:*)",
+      "Bash(ln:*)",
+      "Bash(git stash:*)",
+      "Bash(g++:*)",
+      "Bash(/tmp/test_yaml:*)",
+      "Bash(/tmp/test_complex_yaml)",
+      "Bash(md5:*)",
+      "Bash(PYTHONPATH=. timeout 10 python:*)",
+      "Bash(ista_populate:*)"
     ],
     "deny": [],
     "ask": []

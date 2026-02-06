@@ -223,14 +223,36 @@ YamlNodePtr YamlParser::parse_file(const std::string& filepath) {
 }
 
 YamlNodePtr YamlParser::parse_value(ParseState& state, int base_indent) {
+    // Find the line start and determine the column position before we skip whitespace.
+    // This is needed so parse_map/parse_list's get_indent() works correctly.
+    size_t line_start = state.pos;
+    if (line_start > 0) {
+        size_t p = line_start;
+        while (p > 0 && state.content[p - 1] != '\n') {
+            p--;
+        }
+        line_start = p;
+    }
+
+    // Check if the content between line_start and current pos is all whitespace.
+    // If so, we can safely rewind to line_start for parse_map/parse_list.
+    // If not (e.g., we're after "- " in a list item), we should not rewind.
+    bool at_clean_line_start = true;
+    for (size_t i = line_start; i < state.pos; ++i) {
+        if (state.content[i] != ' ' && state.content[i] != '\t') {
+            at_clean_line_start = false;
+            break;
+        }
+    }
+
     state.skip_whitespace();
-    
+
     if (state.at_end()) {
         return YamlNode::make_null();
     }
-    
+
     char c = state.peek();
-    
+
     // Inline structures
     if (c == '{') {
         return parse_inline_map(state);
@@ -238,40 +260,61 @@ YamlNodePtr YamlParser::parse_value(ParseState& state, int base_indent) {
     if (c == '[') {
         return parse_inline_list(state);
     }
-    
+
     // Check if this is a list item
     if (c == '-') {
+        if (at_clean_line_start) {
+            state.pos = line_start;  // Rewind to line start so parse_list sees correct indent
+        }
         return parse_list(state, base_indent);
     }
-    
-    // Check if this looks like a map (has a colon)
-    size_t save_pos = state.pos;
-    std::string first_word = state.read_until(":[\n#");
-    state.pos = save_pos;
-    
-    if (!first_word.empty() && state.pos < state.content.size()) {
-        size_t colon_pos = state.content.find(':', state.pos);
-        size_t newline_pos = state.content.find('\n', state.pos);
-        if (colon_pos != std::string::npos && 
-            (newline_pos == std::string::npos || colon_pos < newline_pos)) {
+
+    // Check if this looks like a map (has a colon followed by space/newline)
+    // Skip quoted strings when looking for colons (URLs like http:// are not maps)
+    if (c != '"' && c != '\'') {
+        size_t search_pos = state.pos;
+        size_t newline_pos = state.content.find('\n', search_pos);
+        size_t end_pos = (newline_pos != std::string::npos) ? newline_pos : state.content.size();
+
+        bool found_map_colon = false;
+        for (size_t i = search_pos; i < end_pos; ++i) {
+            if (state.content[i] == ':') {
+                // A map key requires colon followed by space, newline, or end
+                size_t next = i + 1;
+                if (next >= end_pos || state.content[next] == ' ' ||
+                    state.content[next] == '\t' || state.content[next] == '\n') {
+                    found_map_colon = true;
+                    break;
+                }
+                // Otherwise it's part of a scalar (e.g., http://)
+            }
+        }
+
+        if (found_map_colon) {
+            if (at_clean_line_start) {
+                // Rewind to line start so parse_map's get_indent() works correctly
+                state.pos = line_start;
+            }
             return parse_map(state, base_indent);
         }
     }
-    
+
     // Otherwise it's a scalar
     return YamlNode::make_scalar(parse_scalar(state));
 }
 
 YamlNodePtr YamlParser::parse_map(ParseState& state, int base_indent) {
     auto map_node = YamlNode::make_map();
-    
+    bool first_entry = true;
+    int effective_indent = base_indent;
+
     while (!state.at_end()) {
         // Save position for indent check
         size_t line_start = state.pos;
-        
+
         // Get indentation of this line
         int indent = state.get_indent();
-        
+
         // Skip blank lines and comments
         if (state.peek() == '\n') {
             state.advance();
@@ -281,13 +324,25 @@ YamlNodePtr YamlParser::parse_map(ParseState& state, int base_indent) {
             state.skip_line();
             continue;
         }
-        
-        // If indent is less than base, we're done with this map
-        if (indent < base_indent) {
+
+        if (first_entry) {
+            first_entry = false;
+            // On the first entry, determine the effective indent level.
+            // If indent < base_indent, we're likely in the middle of a line
+            // (e.g., after "- " in a list item). In that case, skip the indent
+            // check for this first entry and use base_indent going forward.
+            if (indent < base_indent) {
+                effective_indent = base_indent;
+                // Don't break — process this first entry
+            } else {
+                effective_indent = indent;
+            }
+        } else if (indent < effective_indent) {
+            // If indent is less than effective indent, we're done with this map
             state.pos = line_start;  // Rewind
             break;
         }
-        
+
         // If this is a list item, we're done with this map
         if (state.peek() == '-') {
             state.pos = line_start;
@@ -350,21 +405,25 @@ YamlNodePtr YamlParser::parse_map(ParseState& state, int base_indent) {
             }
         } else {
             // Value is on same line
+            size_t pos_before_val = state.pos;
             value = parse_value(state, indent + 1);
-            
-            // Skip to end of line
-            while (!state.at_end() && state.peek() != '\n') {
-                if (state.peek() == '#') {
-                    state.skip_line();
-                    break;
+
+            // Only skip to end of line for single-line values.
+            // Multi-line values (maps, lists) already leave pos at the right place.
+            if (value->is_scalar() || state.pos == pos_before_val) {
+                while (!state.at_end() && state.peek() != '\n') {
+                    if (state.peek() == '#') {
+                        state.skip_line();
+                        break;
+                    }
+                    state.advance();
                 }
-                state.advance();
-            }
-            if (!state.at_end() && state.peek() == '\n') {
-                state.advance();
+                if (!state.at_end() && state.peek() == '\n') {
+                    state.advance();
+                }
             }
         }
-        
+
         map_node->set(key, value);
     }
     
@@ -413,19 +472,24 @@ YamlNodePtr YamlParser::parse_list(ParseState& state, int base_indent) {
             state.pos = item_line_start;
             item = parse_value(state, item_indent);
         } else {
-            // Item value is on same line - could be a map
+            // Item value is on same line - could be a map or scalar
+            size_t pos_before = state.pos;
             item = parse_value(state, indent + 2);
-            
-            // Skip to end of line if we haven't moved there
-            while (!state.at_end() && state.peek() != '\n') {
-                if (state.peek() == '#') {
-                    state.skip_line();
-                    break;
+
+            // Only skip to end of line for single-line values (scalars, inline maps/lists).
+            // Multi-line values (maps, lists parsed over multiple lines) already leave
+            // state.pos at the correct position (start of the next relevant line).
+            if (item->is_scalar() || state.pos == pos_before) {
+                while (!state.at_end() && state.peek() != '\n') {
+                    if (state.peek() == '#') {
+                        state.skip_line();
+                        break;
+                    }
+                    state.advance();
                 }
-                state.advance();
-            }
-            if (!state.at_end() && state.peek() == '\n') {
-                state.advance();
+                if (!state.at_end() && state.peek() == '\n') {
+                    state.advance();
+                }
             }
         }
         

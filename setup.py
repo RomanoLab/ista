@@ -89,7 +89,7 @@ setup(
     cmdclass={"build_ext": CMakeBuild},
     entry_points={
         "console_scripts": [
-            "ista=ista.ista:main",
+            "ista_populate=ista.populate:main",
             "owl2memgraph=ista.owl2memgraph:main",
         ]
     },

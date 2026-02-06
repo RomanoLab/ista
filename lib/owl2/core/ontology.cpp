@@ -92,8 +92,11 @@ void Ontology::rebuildIndices() const {
     annotation_property_iri_cache_.clear();
     individual_iri_cache_.clear();
     datatype_iri_cache_.clear();
+    class_assertion_index_.clear();
+    obj_prop_assertion_index_.clear();
+    data_prop_assertion_index_.clear();
 
-    // Build indices from axioms
+    // Build indices from axioms in a single pass
     for (const auto& axiom : axioms_) {
         if (auto decl = std::dynamic_pointer_cast<Declaration>(axiom)) {
             Declaration::EntityType entity_type = decl->getEntityType();
@@ -120,10 +123,44 @@ void Ontology::rebuildIndices() const {
                     datatype_iri_cache_.insert(decl->getIRI());
                     break;
             }
+        } else if (auto ca = std::dynamic_pointer_cast<ClassAssertion>(axiom)) {
+            class_assertion_index_.push_back(ca);
+        } else if (auto opa = std::dynamic_pointer_cast<ObjectPropertyAssertion>(axiom)) {
+            obj_prop_assertion_index_.push_back(opa);
+        } else if (auto dpa = std::dynamic_pointer_cast<DataPropertyAssertion>(axiom)) {
+            data_prop_assertion_index_.push_back(dpa);
         }
     }
 
     indices_valid_ = true;
+}
+
+void Ontology::beginBatchMode() {
+    batch_mode_ = true;
+}
+
+void Ontology::endBatchMode() {
+    batch_mode_ = false;
+    indices_valid_ = false;
+}
+
+void Ontology::reserveAxioms(size_t count) {
+    axioms_.reserve(axioms_.size() + count);
+}
+
+bool Ontology::addAxioms(std::vector<AxiomPtr>&& axioms) {
+    bool any_added = false;
+    axioms_.reserve(axioms_.size() + axioms.size());
+    for (auto& axiom : axioms) {
+        if (axiom) {
+            axioms_.push_back(std::move(axiom));
+            any_added = true;
+        }
+    }
+    if (any_added) {
+        invalidateIndices();
+    }
+    return any_added;
 }
 
 bool Ontology::addAxiom(const AxiomPtr& axiom) {
@@ -307,14 +344,13 @@ std::vector<std::shared_ptr<SubDataPropertyOf>> Ontology::getSubDataPropertyAxio
 
 std::vector<std::shared_ptr<ClassAssertion>> Ontology::getClassAssertions(
     const NamedIndividual& individual) const {
+    rebuildIndices();
     std::vector<std::shared_ptr<ClassAssertion>> result;
-    for (const auto& axiom : axioms_) {
-        if (auto assertion = std::dynamic_pointer_cast<ClassAssertion>(axiom)) {
-            if (std::holds_alternative<NamedIndividual>(assertion->getIndividual())) {
-                const auto& ind = std::get<NamedIndividual>(assertion->getIndividual());
-                if (ind.getIRI() == individual.getIRI()) {
-                    result.push_back(assertion);
-                }
+    for (const auto& assertion : class_assertion_index_) {
+        Individual ind_variant = assertion->getIndividual();
+        if (std::holds_alternative<NamedIndividual>(ind_variant)) {
+            if (std::get<NamedIndividual>(ind_variant).getIRI() == individual.getIRI()) {
+                result.push_back(assertion);
             }
         }
     }
@@ -323,14 +359,13 @@ std::vector<std::shared_ptr<ClassAssertion>> Ontology::getClassAssertions(
 
 std::vector<std::shared_ptr<ObjectPropertyAssertion>> Ontology::getObjectPropertyAssertions(
     const NamedIndividual& individual) const {
+    rebuildIndices();
     std::vector<std::shared_ptr<ObjectPropertyAssertion>> result;
-    for (const auto& axiom : axioms_) {
-        if (auto assertion = std::dynamic_pointer_cast<ObjectPropertyAssertion>(axiom)) {
-            if (std::holds_alternative<NamedIndividual>(assertion->getSource())) {
-                const auto& ind = std::get<NamedIndividual>(assertion->getSource());
-                if (ind.getIRI() == individual.getIRI()) {
-                    result.push_back(assertion);
-                }
+    for (const auto& assertion : obj_prop_assertion_index_) {
+        Individual source = assertion->getSource();
+        if (std::holds_alternative<NamedIndividual>(source)) {
+            if (std::get<NamedIndividual>(source).getIRI() == individual.getIRI()) {
+                result.push_back(assertion);
             }
         }
     }
@@ -339,14 +374,13 @@ std::vector<std::shared_ptr<ObjectPropertyAssertion>> Ontology::getObjectPropert
 
 std::vector<std::shared_ptr<DataPropertyAssertion>> Ontology::getDataPropertyAssertions(
     const NamedIndividual& individual) const {
+    rebuildIndices();
     std::vector<std::shared_ptr<DataPropertyAssertion>> result;
-    for (const auto& axiom : axioms_) {
-        if (auto assertion = std::dynamic_pointer_cast<DataPropertyAssertion>(axiom)) {
-            if (std::holds_alternative<NamedIndividual>(assertion->getSource())) {
-                const auto& ind = std::get<NamedIndividual>(assertion->getSource());
-                if (ind.getIRI() == individual.getIRI()) {
-                    result.push_back(assertion);
-                }
+    for (const auto& assertion : data_prop_assertion_index_) {
+        Individual source = assertion->getSource();
+        if (std::holds_alternative<NamedIndividual>(source)) {
+            if (std::get<NamedIndividual>(source).getIRI() == individual.getIRI()) {
+                result.push_back(assertion);
             }
         }
     }
@@ -557,22 +591,19 @@ std::shared_ptr<Ontology> Ontology::createSubgraph(const OntologyFilter& filter)
 }
 
 std::unordered_set<NamedIndividual> Ontology::getIndividualsOfClass(const Class& cls) const {
+    rebuildIndices();
     std::unordered_set<NamedIndividual> individuals;
-    
-    for (const auto& axiom : axioms_) {
-        if (auto class_assertion = std::dynamic_pointer_cast<ClassAssertion>(axiom)) {
-            // Check if the class matches
-            if (auto named_class = std::dynamic_pointer_cast<NamedClass>(class_assertion->getClassExpression())) {
-                if (named_class->getClass().getIRI() == cls.getIRI()) {
-                    // Extract the individual
-                    if (std::holds_alternative<NamedIndividual>(class_assertion->getIndividual())) {
-                        individuals.insert(std::get<NamedIndividual>(class_assertion->getIndividual()));
-                    }
+
+    for (const auto& assertion : class_assertion_index_) {
+        if (auto named_class = std::dynamic_pointer_cast<NamedClass>(assertion->getClassExpression())) {
+            if (named_class->getClass().getIRI() == cls.getIRI()) {
+                if (std::holds_alternative<NamedIndividual>(assertion->getIndividual())) {
+                    individuals.insert(std::get<NamedIndividual>(assertion->getIndividual()));
                 }
             }
         }
     }
-    
+
     return individuals;
 }
 
@@ -737,55 +768,47 @@ bool Ontology::addClassAssertion(const NamedIndividual& individual, const Class&
 // Property-based Search
 // ============================================================================
 
-std::vector<NamedIndividual> Ontology::searchByDataProperty(const DataProperty& property, 
+std::vector<NamedIndividual> Ontology::searchByDataProperty(const DataProperty& property,
                                                              const Literal& value) const {
+    rebuildIndices();
     std::vector<NamedIndividual> results;
-    
-    for (const auto& axiom : axioms_) {
-        if (auto data_prop_assertion = std::dynamic_pointer_cast<DataPropertyAssertion>(axiom)) {
-            // Check if this is the property we're looking for
-            if (data_prop_assertion->getProperty() == property) {
-                // Check if the value matches
-                if (data_prop_assertion->getTarget() == value) {
-                    // Extract the individual (source)
-                    Individual source = data_prop_assertion->getSource();
-                    if (std::holds_alternative<NamedIndividual>(source)) {
-                        results.push_back(std::get<NamedIndividual>(source));
-                    }
+
+    for (const auto& assertion : data_prop_assertion_index_) {
+        if (assertion->getProperty() == property) {
+            if (assertion->getTarget() == value) {
+                Individual source = assertion->getSource();
+                if (std::holds_alternative<NamedIndividual>(source)) {
+                    results.push_back(std::get<NamedIndividual>(source));
                 }
             }
         }
     }
-    
+
     return results;
 }
 
 std::vector<NamedIndividual> Ontology::searchByObjectProperty(const ObjectProperty& property,
                                                                const NamedIndividual& object) const {
+    rebuildIndices();
     std::vector<NamedIndividual> results;
-    
-    for (const auto& axiom : axioms_) {
-        if (auto obj_prop_assertion = std::dynamic_pointer_cast<ObjectPropertyAssertion>(axiom)) {
-            // Check if this is the property we're looking for
-            ObjectPropertyExpression prop_expr = obj_prop_assertion->getProperty();
-            if (std::holds_alternative<ObjectProperty>(prop_expr)) {
-                if (std::get<ObjectProperty>(prop_expr) == property) {
-                    // Check if the object matches
-                    Individual target = obj_prop_assertion->getTarget();
-                    if (std::holds_alternative<NamedIndividual>(target)) {
-                        if (std::get<NamedIndividual>(target) == object) {
-                            // Extract the subject (source)
-                            Individual source = obj_prop_assertion->getSource();
-                            if (std::holds_alternative<NamedIndividual>(source)) {
-                                results.push_back(std::get<NamedIndividual>(source));
-                            }
+
+    for (const auto& assertion : obj_prop_assertion_index_) {
+        ObjectPropertyExpression prop_expr = assertion->getProperty();
+        if (std::holds_alternative<ObjectProperty>(prop_expr)) {
+            if (std::get<ObjectProperty>(prop_expr) == property) {
+                Individual target = assertion->getTarget();
+                if (std::holds_alternative<NamedIndividual>(target)) {
+                    if (std::get<NamedIndividual>(target) == object) {
+                        Individual source = assertion->getSource();
+                        if (std::holds_alternative<NamedIndividual>(source)) {
+                            results.push_back(std::get<NamedIndividual>(source));
                         }
                     }
                 }
             }
         }
     }
-    
+
     return results;
 }
 
@@ -793,56 +816,50 @@ std::vector<NamedIndividual> Ontology::searchByObjectProperty(const ObjectProper
 // Property Assertion Queries
 // ============================================================================
 
-std::vector<std::pair<NamedIndividual, NamedIndividual>> 
+std::vector<std::pair<NamedIndividual, NamedIndividual>>
 Ontology::getObjectPropertyAssertions(const ObjectProperty& property) const {
+    rebuildIndices();
     std::vector<std::pair<NamedIndividual, NamedIndividual>> results;
-    
-    for (const auto& axiom : axioms_) {
-        if (auto obj_prop_assertion = std::dynamic_pointer_cast<ObjectPropertyAssertion>(axiom)) {
-            // Check if this is the property we're looking for
-            ObjectPropertyExpression prop_expr = obj_prop_assertion->getProperty();
-            if (std::holds_alternative<ObjectProperty>(prop_expr)) {
-                if (std::get<ObjectProperty>(prop_expr) == property) {
-                    // Extract both individuals
-                    Individual source = obj_prop_assertion->getSource();
-                    Individual target = obj_prop_assertion->getTarget();
-                    
-                    if (std::holds_alternative<NamedIndividual>(source) &&
-                        std::holds_alternative<NamedIndividual>(target)) {
-                        results.emplace_back(
-                            std::get<NamedIndividual>(source),
-                            std::get<NamedIndividual>(target)
-                        );
-                    }
-                }
-            }
-        }
-    }
-    
-    return results;
-}
 
-std::vector<std::pair<NamedIndividual, Literal>> 
-Ontology::getDataPropertyAssertions(const DataProperty& property) const {
-    std::vector<std::pair<NamedIndividual, Literal>> results;
-    
-    for (const auto& axiom : axioms_) {
-        if (auto data_prop_assertion = std::dynamic_pointer_cast<DataPropertyAssertion>(axiom)) {
-            // Check if this is the property we're looking for
-            if (data_prop_assertion->getProperty() == property) {
-                // Extract the individual and literal
-                Individual source = data_prop_assertion->getSource();
-                
-                if (std::holds_alternative<NamedIndividual>(source)) {
+    for (const auto& assertion : obj_prop_assertion_index_) {
+        ObjectPropertyExpression prop_expr = assertion->getProperty();
+        if (std::holds_alternative<ObjectProperty>(prop_expr)) {
+            if (std::get<ObjectProperty>(prop_expr) == property) {
+                Individual source = assertion->getSource();
+                Individual target = assertion->getTarget();
+
+                if (std::holds_alternative<NamedIndividual>(source) &&
+                    std::holds_alternative<NamedIndividual>(target)) {
                     results.emplace_back(
                         std::get<NamedIndividual>(source),
-                        data_prop_assertion->getTarget()
+                        std::get<NamedIndividual>(target)
                     );
                 }
             }
         }
     }
-    
+
+    return results;
+}
+
+std::vector<std::pair<NamedIndividual, Literal>>
+Ontology::getDataPropertyAssertions(const DataProperty& property) const {
+    rebuildIndices();
+    std::vector<std::pair<NamedIndividual, Literal>> results;
+
+    for (const auto& assertion : data_prop_assertion_index_) {
+        if (assertion->getProperty() == property) {
+            Individual source = assertion->getSource();
+
+            if (std::holds_alternative<NamedIndividual>(source)) {
+                results.emplace_back(
+                    std::get<NamedIndividual>(source),
+                    assertion->getTarget()
+                );
+            }
+        }
+    }
+
     return results;
 }
 
@@ -851,51 +868,45 @@ Ontology::getDataPropertyAssertions(const DataProperty& property) const {
 // ============================================================================
 
 std::vector<Class> Ontology::getClassesForIndividual(const NamedIndividual& individual) const {
+    rebuildIndices();
     std::vector<Class> results;
-    
-    for (const auto& axiom : axioms_) {
-        if (auto class_assertion = std::dynamic_pointer_cast<ClassAssertion>(axiom)) {
-            // Check if this is the individual we're looking for
-            Individual asserted_individual = class_assertion->getIndividual();
-            
-            if (std::holds_alternative<NamedIndividual>(asserted_individual)) {
-                if (std::get<NamedIndividual>(asserted_individual) == individual) {
-                    // Extract the class
-                    ClassExpressionPtr class_expr = class_assertion->getClassExpression();
-                    
-                    // Check if it's a simple named class (not a complex class expression)
-                    if (auto named_class = std::dynamic_pointer_cast<NamedClass>(class_expr)) {
-                        results.push_back(named_class->getClass());
-                    }
+
+    for (const auto& assertion : class_assertion_index_) {
+        Individual asserted_individual = assertion->getIndividual();
+
+        if (std::holds_alternative<NamedIndividual>(asserted_individual)) {
+            if (std::get<NamedIndividual>(asserted_individual) == individual) {
+                ClassExpressionPtr class_expr = assertion->getClassExpression();
+
+                if (auto named_class = std::dynamic_pointer_cast<NamedClass>(class_expr)) {
+                    results.push_back(named_class->getClass());
                 }
             }
         }
     }
-    
+
     return results;
 }
 
 bool Ontology::isInstanceOf(const NamedIndividual& individual, const Class& cls) const {
-    for (const auto& axiom : axioms_) {
-        if (auto class_assertion = std::dynamic_pointer_cast<ClassAssertion>(axiom)) {
-            // Check if this is the individual we're looking for
-            Individual asserted_individual = class_assertion->getIndividual();
-            
-            if (std::holds_alternative<NamedIndividual>(asserted_individual)) {
-                if (std::get<NamedIndividual>(asserted_individual) == individual) {
-                    // Check if the class matches
-                    ClassExpressionPtr class_expr = class_assertion->getClassExpression();
-                    
-                    if (auto named_class = std::dynamic_pointer_cast<NamedClass>(class_expr)) {
-                        if (named_class->getClass() == cls) {
-                            return true;
-                        }
+    rebuildIndices();
+
+    for (const auto& assertion : class_assertion_index_) {
+        Individual asserted_individual = assertion->getIndividual();
+
+        if (std::holds_alternative<NamedIndividual>(asserted_individual)) {
+            if (std::get<NamedIndividual>(asserted_individual) == individual) {
+                ClassExpressionPtr class_expr = assertion->getClassExpression();
+
+                if (auto named_class = std::dynamic_pointer_cast<NamedClass>(class_expr)) {
+                    if (named_class->getClass() == cls) {
+                        return true;
                     }
                 }
             }
         }
     }
-    
+
     return false;
 }
 

@@ -4,6 +4,8 @@
 #include <algorithm>
 #include <cctype>
 #include <regex>
+#include <unordered_set>
+#include <filesystem>
 
 // Conditional includes for database readers
 #ifdef ISTA_HAS_SQLITE
@@ -214,6 +216,20 @@ void DataLoader::set_mapping_spec(const DataMappingSpec& spec) {
 void DataLoader::load_mapping_spec(const std::string& filepath) {
     spec_ = DataMappingSpec::load_from_file(filepath);
     spec_.resolve_environment_variables();
+
+    // Resolve relative source paths against the YAML file's directory
+    auto yaml_dir = std::filesystem::path(filepath).parent_path();
+    if (!yaml_dir.empty()) {
+        for (auto& [name, source] : spec_.sources) {
+            if (!source.path.empty()) {
+                std::filesystem::path p(source.path);
+                if (p.is_relative()) {
+                    source.path = std::filesystem::weakly_canonical(yaml_dir / p).string();
+                }
+            }
+        }
+    }
+
     readers_.clear();
 }
 
@@ -221,15 +237,168 @@ void DataLoader::set_progress_callback(ProgressCallback callback) {
     progress_callback_ = callback;
 }
 
+void DataLoader::auto_declare_schema() {
+    std::string base = spec_.base_iri;
+    if (base.empty()) {
+        auto onto_iri = ontology_.getOntologyIRI();
+        if (onto_iri.has_value()) {
+            base = onto_iri.value().getNamespace();
+        } else {
+            base = "http://example.org/onto#";
+        }
+    }
+    // Ensure base ends with # or /
+    if (!base.empty() && base.back() != '#' && base.back() != '/') {
+        base += '#';
+    }
+
+    std::unordered_set<std::string> class_names;
+    std::unordered_set<std::string> data_property_names;
+    std::unordered_set<std::string> object_property_names;
+
+    // Collect from entity_types
+    for (const auto& [name, entity] : spec_.entity_types) {
+        class_names.insert(name);
+        for (const auto& prop : entity.primary.properties) {
+            data_property_names.insert(prop.property);
+        }
+        for (const auto& enrich : entity.enrichments) {
+            for (const auto& prop : enrich.properties) {
+                data_property_names.insert(prop.property);
+            }
+        }
+    }
+
+    // Collect from node_mappings
+    for (const auto& mapping : spec_.node_mappings) {
+        class_names.insert(mapping.target_class);
+        for (const auto& prop : mapping.properties) {
+            data_property_names.insert(prop.property);
+        }
+    }
+
+    // Collect from relationship_mappings
+    for (const auto& mapping : spec_.relationship_mappings) {
+        object_property_names.insert(mapping.relationship);
+        if (mapping.inverse_relationship.has_value()) {
+            object_property_names.insert(mapping.inverse_relationship.value());
+        }
+        class_names.insert(mapping.subject.class_name);
+        class_names.insert(mapping.object.class_name);
+    }
+
+    // Declare classes (skip if already declared)
+    for (const auto& name : class_names) {
+        if (!find_class(name).has_value()) {
+            IRI cls_iri(base + name);
+            auto decl = std::make_shared<Declaration>(
+                Declaration::EntityType::CLASS, cls_iri);
+            ontology_.addAxiom(decl);
+        }
+    }
+
+    // Declare data properties (skip if already declared)
+    for (const auto& name : data_property_names) {
+        if (!find_data_property(name).has_value()) {
+            IRI prop_iri(base + name);
+            auto decl = std::make_shared<Declaration>(
+                Declaration::EntityType::DATA_PROPERTY, prop_iri);
+            ontology_.addAxiom(decl);
+        }
+    }
+
+    // Declare object properties (skip if already declared)
+    for (const auto& name : object_property_names) {
+        if (!find_object_property(name).has_value()) {
+            IRI prop_iri(base + name);
+            auto decl = std::make_shared<Declaration>(
+                Declaration::EntityType::OBJECT_PROPERTY, prop_iri);
+            ontology_.addAxiom(decl);
+        }
+    }
+
+    // Generate domain/range axioms for object properties from relationship mappings
+    // Track already-declared domain/range to avoid duplicates on repeated calls
+    std::unordered_set<std::string> existing_domains;
+    std::unordered_set<std::string> existing_ranges;
+    for (const auto& axiom : ontology_.getAxioms()) {
+        if (auto* domain = dynamic_cast<ObjectPropertyDomain*>(axiom.get())) {
+            auto expr = domain->getProperty();
+            if (auto* prop = std::get_if<ObjectProperty>(&expr)) {
+                existing_domains.insert(prop->getIRI().getFullIRI());
+            }
+        } else if (auto* range = dynamic_cast<ObjectPropertyRange*>(axiom.get())) {
+            auto expr = range->getProperty();
+            if (auto* prop = std::get_if<ObjectProperty>(&expr)) {
+                existing_ranges.insert(prop->getIRI().getFullIRI());
+            }
+        }
+    }
+
+    for (const auto& mapping : spec_.relationship_mappings) {
+        auto obj_prop_opt = find_object_property(mapping.relationship);
+        if (obj_prop_opt.has_value()) {
+            auto prop_iri = obj_prop_opt.value().getIRI().getFullIRI();
+            auto domain_class_opt = find_class(mapping.subject.class_name);
+            auto range_class_opt = find_class(mapping.object.class_name);
+
+            if (domain_class_opt.has_value() && existing_domains.find(prop_iri) == existing_domains.end()) {
+                auto domain_expr = std::make_shared<NamedClass>(domain_class_opt.value());
+                auto domain_axiom = std::make_shared<ObjectPropertyDomain>(
+                    ObjectPropertyExpression(obj_prop_opt.value()), domain_expr);
+                ontology_.addAxiom(domain_axiom);
+                existing_domains.insert(prop_iri);
+            }
+
+            if (range_class_opt.has_value() && existing_ranges.find(prop_iri) == existing_ranges.end()) {
+                auto range_expr = std::make_shared<NamedClass>(range_class_opt.value());
+                auto range_axiom = std::make_shared<ObjectPropertyRange>(
+                    ObjectPropertyExpression(obj_prop_opt.value()), range_expr);
+                ontology_.addAxiom(range_axiom);
+                existing_ranges.insert(prop_iri);
+            }
+        }
+    }
+}
+
 LoadingStats DataLoader::execute() {
+    // Auto-declare schema from mapping spec
+    auto_declare_schema();
+
+    // Use batch mode to defer index invalidation during population
+    ontology_.beginBatchMode();
+
     LoadingStats total_stats;
-    
-    // Execute all node mappings first
-    total_stats.merge(execute_all_node_mappings());
-    
+
+    // Execute node mappings in two phases:
+    // Phase 1: CREATE-mode mappings (produce individuals)
+    // Phase 2: ENRICH-mode mappings (need to find existing individuals)
+    auto all_node_mappings = spec_.get_all_node_mappings();
+    for (const auto& mapping : all_node_mappings) {
+        if (!mapping.skip && mapping.mode == MappingMode::CREATE) {
+            total_stats.merge(process_node_mapping(mapping));
+        }
+    }
+
+    // Build individual cache after create phase — needed by ENRICH and relationships
+    build_individual_cache();
+
+    // Phase 2: ENRICH-mode mappings
+    for (const auto& mapping : all_node_mappings) {
+        if (!mapping.skip && mapping.mode == MappingMode::ENRICH) {
+            total_stats.merge(process_node_mapping(mapping));
+        }
+    }
+
     // Then execute relationship mappings
     total_stats.merge(execute_all_relationship_mappings());
-    
+
+    // Exit batch mode — rebuilds indices once
+    ontology_.endBatchMode();
+
+    // Clear caches (they're only valid during a single execute() call)
+    clear_caches();
+
     return total_stats;
 }
 
@@ -284,34 +453,54 @@ ValidationResult DataLoader::validate() {
     return spec_.validate(ontology_);
 }
 
-DataSourceReader* DataLoader::get_reader(const std::string& source_name) {
+DataSourceReader* DataLoader::get_reader(const std::string& source_name,
+                                          const std::optional<std::string>& table_override,
+                                          const std::optional<std::string>& query_override) {
+    // Build a cache key that includes table/query overrides
+    std::string cache_key = source_name;
+    if (table_override.has_value()) {
+        cache_key += "::table=" + table_override.value();
+    }
+    if (query_override.has_value()) {
+        cache_key += "::query=" + query_override.value();
+    }
+
     // Check cache first
-    auto it = readers_.find(source_name);
+    auto it = readers_.find(cache_key);
     if (it != readers_.end()) {
         it->second->reset();
         return it->second.get();
     }
-    
+
     // Create new reader
     auto source_it = spec_.sources.find(source_name);
     if (source_it == spec_.sources.end()) {
         throw DataLoaderException("Data source not found: " + source_name);
     }
-    
-    auto reader = DataSourceFactory::create_reader(source_it->second);
+
+    // Apply table/query overrides
+    DataSourceDef effective_source = source_it->second;
+    if (table_override.has_value()) {
+        effective_source.table = table_override.value();
+    }
+    if (query_override.has_value()) {
+        effective_source.query = query_override.value();
+    }
+
+    auto reader = DataSourceFactory::create_reader(effective_source);
     if (!reader->open()) {
         throw DataLoaderException("Failed to open data source: " + source_name);
     }
-    
+
     DataSourceReader* ptr = reader.get();
-    readers_[source_name] = std::move(reader);
+    readers_[cache_key] = std::move(reader);
     return ptr;
 }
 
 LoadingStats DataLoader::process_node_mapping(const NodeMapping& mapping) {
     LoadingStats stats;
-    
-    auto reader = get_reader(mapping.source);
+
+    auto reader = get_reader(mapping.source, mapping.table, mapping.query);
     auto target_class_opt = find_class(mapping.target_class);
     
     if (!target_class_opt.has_value()) {
@@ -411,8 +600,8 @@ LoadingStats DataLoader::process_node_mapping(const NodeMapping& mapping) {
 
 LoadingStats DataLoader::process_relationship_mapping(const RelationshipMapping& mapping) {
     LoadingStats stats;
-    
-    auto reader = get_reader(mapping.source);
+
+    auto reader = get_reader(mapping.source, mapping.table, mapping.query);
     auto relationship_opt = find_object_property(mapping.relationship);
     
     if (!relationship_opt.has_value()) {
@@ -517,10 +706,55 @@ bool DataLoader::passes_filter(const DataRow& row, const std::optional<FilterDef
     }
 }
 
+void DataLoader::build_individual_cache() {
+    individual_cache_.clear();
+
+    // Scan all axioms once to build the cache
+    for (const auto& axiom : ontology_.getAxioms()) {
+        auto data_prop = std::dynamic_pointer_cast<DataPropertyAssertion>(axiom);
+        if (!data_prop) continue;
+
+        // Get property local name
+        auto prop_ln = data_prop->getProperty().getIRI().getLocalName();
+        if (!prop_ln.has_value()) continue;
+
+        // Get the individual
+        Individual source = data_prop->getSource();
+        if (!std::holds_alternative<NamedIndividual>(source)) continue;
+
+        // Build cache key: "propertyLocalName\0value"
+        std::string key = prop_ln.value();
+        key += '\0';
+        key += data_prop->getTarget().getLexicalForm();
+
+        // Only store the first match (consistent with previous behavior)
+        if (individual_cache_.find(key) == individual_cache_.end()) {
+            individual_cache_.emplace(key, std::get<NamedIndividual>(source));
+        }
+    }
+
+    caches_built_ = true;
+}
+
+void DataLoader::clear_caches() {
+    class_cache_.clear();
+    data_property_cache_.clear();
+    object_property_cache_.clear();
+    individual_cache_.clear();
+    caches_built_ = false;
+}
+
 std::optional<Class> DataLoader::find_class(const std::string& local_name) {
+    // Check cache first
+    auto it = class_cache_.find(local_name);
+    if (it != class_cache_.end()) {
+        return it->second;
+    }
+
     for (const auto& cls : ontology_.getClasses()) {
         auto ln = cls.getIRI().getLocalName();
         if (ln.has_value() && ln.value() == local_name) {
+            class_cache_.emplace(local_name, cls);
             return cls;
         }
     }
@@ -528,9 +762,16 @@ std::optional<Class> DataLoader::find_class(const std::string& local_name) {
 }
 
 std::optional<DataProperty> DataLoader::find_data_property(const std::string& local_name) {
+    // Check cache first
+    auto it = data_property_cache_.find(local_name);
+    if (it != data_property_cache_.end()) {
+        return it->second;
+    }
+
     for (const auto& prop : ontology_.getDataProperties()) {
         auto ln = prop.getIRI().getLocalName();
         if (ln.has_value() && ln.value() == local_name) {
+            data_property_cache_.emplace(local_name, prop);
             return prop;
         }
     }
@@ -538,9 +779,16 @@ std::optional<DataProperty> DataLoader::find_data_property(const std::string& lo
 }
 
 std::optional<ObjectProperty> DataLoader::find_object_property(const std::string& local_name) {
+    // Check cache first
+    auto it = object_property_cache_.find(local_name);
+    if (it != object_property_cache_.end()) {
+        return it->second;
+    }
+
     for (const auto& prop : ontology_.getObjectProperties()) {
         auto ln = prop.getIRI().getLocalName();
         if (ln.has_value() && ln.value() == local_name) {
+            object_property_cache_.emplace(local_name, prop);
             return prop;
         }
     }
@@ -550,19 +798,32 @@ std::optional<ObjectProperty> DataLoader::find_object_property(const std::string
 std::optional<NamedIndividual> DataLoader::find_individual_by_property(
     const std::string& property_name,
     const std::string& value) {
-    
+
+    // Use individual cache if built (O(1) lookup)
+    if (caches_built_) {
+        std::string key = property_name;
+        key += '\0';
+        key += value;
+        auto it = individual_cache_.find(key);
+        if (it != individual_cache_.end()) {
+            return it->second;
+        }
+        return std::nullopt;
+    }
+
+    // Fallback to ontology scan
     auto prop_opt = find_data_property(property_name);
     if (!prop_opt.has_value()) {
         return std::nullopt;
     }
-    
+
     Literal lit(value);
     auto matches = ontology_.searchByDataProperty(prop_opt.value(), lit);
-    
+
     if (matches.empty()) {
         return std::nullopt;
     }
-    
+
     return matches[0];
 }
 
