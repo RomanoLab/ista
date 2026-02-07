@@ -8,6 +8,9 @@ from setuptools.command.build_ext import build_ext
 with open("README.md", "r", encoding="utf-8") as fp:
     readme = fp.read()
 
+with open("VERSION", "r", encoding="utf-8") as fp:
+    ista_version = fp.read().strip()
+
 
 class CMakeExtension(Extension):
     def __init__(self, name, sourcedir=""):
@@ -64,7 +67,7 @@ class CMakeBuild(build_ext):
 
 setup(
     name="ista",
-    version="0.2.0",
+    version=ista_version,
     author="Joseph D. Romano",
     description="A Python/C++ toolkit for building and manipulating knowledge graphs.",
     long_description=readme,

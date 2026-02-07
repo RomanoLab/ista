@@ -10,6 +10,7 @@
 #include <pybind11/functional.h>
 #include <pybind11/operators.h>
 
+#include "ista/version.hpp"
 #include "../owl2/owl2.hpp"
 #include "../owl2/parser/rdfxml_parser.hpp"
 #include "../owl2/parser/csv_parser.hpp"
@@ -1119,5 +1120,5 @@ PYBIND11_MODULE(_libista_owl2, m) {
     // ========================================================================
     // Version information
     // ========================================================================
-    m.attr("__version__") = "0.1.0";
+    m.attr("__version__") = ISTA_VERSION;
 }

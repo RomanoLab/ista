@@ -54,6 +54,9 @@ struct GraphEdge {
  */
 class KnowledgeGraphEditor {
 public:
+    /// @brief Project lifecycle state
+    enum class ProjectState { NO_PROJECT, PROJECT_LOADED, POPULATED };
+
     KnowledgeGraphEditor();
     ~KnowledgeGraphEditor();
     
@@ -145,8 +148,10 @@ private:
     bool ontology_modified_;
     
     // Graph visualization data
+    static constexpr size_t MAX_DISPLAY_NODES = 1000;
     std::vector<GraphNode> nodes_;
     std::vector<GraphEdge> edges_;
+    size_t total_node_count_ = 0;  // Total before truncation
     GraphNode* selected_node_;
     GraphNode* dragged_node_;
     const GraphEdge* selected_edge_;
@@ -160,6 +165,7 @@ private:
     
     // Data source panel state
     struct DataSource {
+        std::string source_name;  // Original source name from YAML (used as key in sources map)
         std::string filepath;
         std::string format;  // "csv", "tsv", "excel", "sqlite", "postgres", "mysql", "sqlserver"
         std::optional<std::string> mapped_class_iri;
@@ -228,14 +234,45 @@ private:
     // Search functionality
     void perform_search(const std::string& query);
     
+    // Project state machine
+    ProjectState project_state_ = ProjectState::NO_PROJECT;
+
     // Project state
     std::string current_project_filepath_;  // Path to current project file (empty if none)
     bool project_modified_;                 // Track if project has unsaved changes
     std::optional<ista::owl2::loader::DataMappingSpec> current_mapping_spec_;  // Stored mapping spec
-    
+
+    // Welcome / New Project dialog state
+    bool show_welcome_dialog_ = true;
+    bool show_new_project_dialog_ = false;
+    char new_project_name_[256];
+    std::string new_project_ontology_path_;
+    std::string new_project_save_path_;
+
+    // Ontology view toggle
+    bool viewing_populated_ = false;
+    std::string populated_ontology_path_;   // Absolute path to populated .ttl
+    std::string unpopulated_ontology_path_; // Absolute path to original ontology
+    std::unique_ptr<ista::owl2::Ontology> cached_populated_ontology_;   // In-memory cache
+    std::unique_ptr<ista::owl2::Ontology> cached_unpopulated_ontology_; // In-memory cache
+
     // Project UI state
     bool show_project_loader_;
     bool show_save_project_dialog_;
+
+    // Welcome and new-project dialog rendering
+    void render_welcome_dialog();
+    void render_new_project_dialog();
+
+    // Ontology view switching
+    void switch_to_unpopulated_view();
+    void switch_to_populated_view();
+
+    // Auto-save populated ontology as Turtle after population
+    void auto_save_populated_ontology();
+
+    /// @brief Derive populated ontology path from current file (replaces ext with -populated.ttl)
+    std::string derive_populated_ontology_path() const;
     
     // Project helper methods
     ista::owl2::loader::DataSourceDef gui_to_yaml_source(const DataSource& gui_source) const;

@@ -244,7 +244,13 @@ YamlNodePtr YamlParser::parse_value(ParseState& state, int base_indent) {
     }
     
     char c = state.content[scan_pos];
-    
+
+    // Quoted strings are always scalars
+    if (c == '"' || c == '\'') {
+        state.pos = scan_pos;
+        return YamlNode::make_scalar(parse_scalar(state));
+    }
+
     // Inline structures - advance past whitespace and parse
     if (c == '{') {
         state.pos = scan_pos;

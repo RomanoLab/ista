@@ -19,8 +19,24 @@ int main(int argc, char** argv) {
     // If a file path was provided as argument, load it
     if (argc > 1) {
         std::string filepath(argv[1]);
-        std::cout << "Loading ontology from command line: " << filepath << std::endl;
-        editor.load_ontology(filepath);
+        // Detect YAML project files by extension
+        bool is_project = false;
+        if (filepath.size() >= 5) {
+            std::string ext = filepath.substr(filepath.size() - 5);
+            if (ext == ".yaml") is_project = true;
+        }
+        if (!is_project && filepath.size() >= 4) {
+            std::string ext = filepath.substr(filepath.size() - 4);
+            if (ext == ".yml") is_project = true;
+        }
+
+        if (is_project) {
+            std::cout << "Loading project from command line: " << filepath << std::endl;
+            editor.load_project(filepath);
+        } else {
+            std::cout << "Loading ontology from command line: " << filepath << std::endl;
+            editor.load_ontology(filepath);
+        }
     }
 
     int result = editor.run();

@@ -93,21 +93,24 @@ struct NodeMapping {
     std::string name;               // Human-readable name for this mapping
     std::string source;             // Reference to data source name
     std::string target_class;       // OWL class local name
-    
+
     MappingMode mode = MappingMode::CREATE;
-    
+
     // For CREATE mode: column used to generate IRI
     std::optional<std::string> iri_column;
-    
+
     // For ENRICH mode: how to find existing individuals
     std::optional<MatchCriteria> match;
-    
+
+    // For database sources: override the table for this mapping
+    std::optional<std::string> table;
+
     // Row filtering
     std::optional<FilterDef> filter;
-    
+
     // Property mappings
     std::vector<PropertyMapping> properties;
-    
+
     // Skip this mapping during execution
     bool skip = false;
 };
@@ -129,15 +132,18 @@ struct RelationshipMapping {
     std::string name;               // Human-readable name
     std::string source;             // Reference to data source name
     std::string relationship;       // Object property local name
-    
+
     EntityRef subject;
     EntityRef object;
-    
+
+    // For database sources: override the table for this mapping
+    std::optional<std::string> table;
+
     std::optional<FilterDef> filter;
-    
+
     // Optional inverse relationship to also create
     std::optional<std::string> inverse_relationship;
-    
+
     bool skip = false;
 };
 
@@ -208,6 +214,7 @@ public:
     std::string project_name;        // Optional human-readable project name
     std::string project_description; // Optional project description
     std::string ontology_path;       // Path to the ontology file
+    std::string populated_ontology_path;  ///< Path to save populated ontology (Turtle format)
     
     // Provenance information (optional)
     std::string created_at;          // ISO 8601 timestamp when project was created
