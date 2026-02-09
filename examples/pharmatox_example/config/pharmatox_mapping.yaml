@@ -1,70 +1,66 @@
-# PharmaTox Knowledge Graph Mapping Configuration
-#
-# This is a TOY EXAMPLE using SYNTHETIC DATA for testing and demonstration
-# purposes only. The mappings define how to populate an ontology from
-# multiple data sources (CSV, TSV, SQLite).
-
 version: "1.0"
-base_iri: "http://example.org/pharmatox#"
+ontology_path: "/Users/jdr2160/projects/ista/examples/pharmatox_example/ontology/pharmatox.owl"
+populated_ontology_path: "/Users/jdr2160/projects/ista/examples/pharmatox_example/ontology/pharmatox-populated.ttl"
+created_at: "2026-02-07T19:13:56Z"
+modified_at: "2026-02-07T19:29:10Z"
+base_iri: "http://example.org/pharmatox"
 
-# Named transforms for data value processing
 transforms:
+  normalize_cas:
+    type: chain
+  to_lowercase:
+    type: lowercase
   trim_whitespace:
     type: trim
 
-  normalize_cas:
-    type: chain
-    steps:
-      - { type: trim }
-      - { type: strip_prefix, params: { value: "CAS-" } }
-
-  to_lowercase:
-    type: lowercase
-
-# Data source definitions
 sources:
-  drugs_csv:
-    type: csv
-    path: "./data/drugs.csv"
-    delimiter: ","
-    has_headers: true
-
-  drug_toxicity_csv:
-    type: csv
-    path: "./data/drug_toxicity.csv"
-    delimiter: ","
-    has_headers: true
-
-  genes_tsv:
-    type: tsv
-    path: "./data/genes.tsv"
-    has_headers: true
-
   diseases_tsv:
     type: tsv
-    path: "./data/diseases.tsv"
-    has_headers: true
-
+    path: "../data/diseases.tsv"
+    delimiter: "	"
+  drug_toxicity_csv:
+    type: csv
+    path: "../data/drug_toxicity.csv"
+  drugs_csv:
+    type: csv
+    path: "../data/drugs.csv"
+  genes_tsv:
+    type: tsv
+    path: "../data/genes.tsv"
+    delimiter: "	"
   pathways_tsv:
     type: tsv
-    path: "./data/pathways.tsv"
-    has_headers: true
-
+    path: "../data/pathways.tsv"
+    delimiter: "	"
   pharmatox_db:
     type: sqlite
-    path: "./data/pharmatox.db"
+    path: "../data/pharmatox.db"
 
-# Entity type definitions with primary source and optional enrichments
 entity_types:
+  Disease:
+    primary:
+      source: diseases_tsv
+      iri_column: umls_cui
+      properties:
+        - column: umls_cui
+          property: xrefUmlsCUI
+        - column: mesh_id
+          property: xrefMeSH
+        - column: common_name
+          property: commonName
   Drug:
     primary:
       source: drugs_csv
       iri_column: drugbank_id
       properties:
-        - { column: drugbank_id, property: xrefDrugbank }
-        - { column: common_name, property: commonName }
-        - { column: cas_number, property: xrefCasRN }
-        - { column: pubchem_cid, property: xrefPubchemCID }
+        - column: drugbank_id
+          property: xrefDrugbank
+        - column: common_name
+          property: commonName
+        - column: cas_number
+          property: xrefCasRN
+        - column: pubchem_cid
+          property: xrefPubchemCID
     enrichments:
       - name: "Drug Toxicity Data"
         source: drug_toxicity_csv
@@ -72,36 +68,33 @@ entity_types:
           source_column: cas_number
           target_property: xrefCasRN
         properties:
-          - { column: ld50_value, property: ld50Value, datatype: float }
-          - { column: ld50_units, property: ld50Units }
-
+          - column: ld50_value
+            property: ld50Value
+            datatype: float
+          - column: ld50_units
+            property: ld50Units
   Gene:
     primary:
       source: genes_tsv
       iri_column: gene_symbol
       properties:
-        - { column: ncbi_gene_id, property: xrefNcbiGene, datatype: integer }
-        - { column: gene_symbol, property: geneSymbol }
-        - { column: common_name, property: commonName }
-
-  Disease:
-    primary:
-      source: diseases_tsv
-      iri_column: umls_cui
-      properties:
-        - { column: umls_cui, property: xrefUmlsCUI }
-        - { column: mesh_id, property: xrefMeSH }
-        - { column: common_name, property: commonName }
-
+        - column: ncbi_gene_id
+          property: xrefNcbiGene
+          datatype: integer
+        - column: gene_symbol
+          property: geneSymbol
+        - column: common_name
+          property: commonName
   Pathway:
     primary:
       source: pathways_tsv
       iri_column: reactome_id
       properties:
-        - { column: reactome_id, property: xrefReactome }
-        - { column: pathway_name, property: commonName }
+        - column: reactome_id
+          property: xrefReactome
+        - column: pathway_name
+          property: commonName
 
-# Node mappings for entities from database and derived entities
 node_mappings:
   - name: "DrugClass from CSV"
     source: drugs_csv
@@ -109,30 +102,33 @@ node_mappings:
     mode: create
     iri_column: drug_class
     properties:
-      - { column: drug_class, property: commonName }
-
+      - column: drug_class
+        property: commonName
   - name: "AdverseEvents from SQLite"
     source: pharmatox_db
     target_class: AdverseEvent
     mode: create
-    table: adverse_events
     iri_column: meddra_id
+    table: adverse_events
     properties:
-      - { column: meddra_id, property: xrefMeddra }
-      - { column: event_name, property: commonName }
-      - { column: severity, property: severity }
-
+      - column: meddra_id
+        property: xrefMeddra
+      - column: event_name
+        property: commonName
+      - column: severity
+        property: severity
   - name: "CellTypes from SQLite"
     source: pharmatox_db
     target_class: CellType
     mode: create
-    table: cell_types
     iri_column: cl_id
+    table: cell_types
     properties:
-      - { column: cl_id, property: xrefCL }
-      - { column: cell_name, property: commonName }
+      - column: cl_id
+        property: xrefCL
+      - column: cell_name
+        property: commonName
 
-# Relationship mappings connecting entities
 relationship_mappings:
   - name: "Drug In Class"
     source: drugs_csv
@@ -145,7 +141,6 @@ relationship_mappings:
       class_name: DrugClass
       column: drug_class
       match_property: commonName
-
   - name: "Drug Treats Disease"
     source: pharmatox_db
     table: drug_treats_disease
@@ -158,7 +153,6 @@ relationship_mappings:
       class_name: Disease
       column: umls_cui
       match_property: xrefUmlsCUI
-
   - name: "Drug Targets Gene"
     source: pharmatox_db
     table: drug_targets_gene
@@ -171,7 +165,6 @@ relationship_mappings:
       class_name: Gene
       column: ncbi_gene_id
       match_property: xrefNcbiGene
-
   - name: "Gene Associates With Disease"
     source: pharmatox_db
     table: gene_disease_association
@@ -184,7 +177,6 @@ relationship_mappings:
       class_name: Disease
       column: umls_cui
       match_property: xrefUmlsCUI
-
   - name: "Gene In Pathway"
     source: pharmatox_db
     table: gene_pathway
@@ -197,7 +189,6 @@ relationship_mappings:
       class_name: Pathway
       column: reactome_id
       match_property: xrefReactome
-
   - name: "Drug Causes Adverse Event"
     source: pharmatox_db
     table: drug_adverse_event
@@ -210,7 +201,6 @@ relationship_mappings:
       class_name: AdverseEvent
       column: meddra_id
       match_property: xrefMeddra
-
   - name: "Gene Expressed In CellType"
     source: pharmatox_db
     table: gene_expression

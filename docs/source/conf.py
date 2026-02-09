@@ -141,8 +141,9 @@ sys.modules["_libista_owl2"] = MockCppModule()
 project = "ista"
 copyright = "2025, ista Contributors"
 author = "ista Contributors"
-release = "0.1.0"
-version = "0.1"
+with open(os.path.join(os.path.dirname(__file__), "..", "..", "VERSION")) as _vf:
+    release = _vf.read().strip()
+version = ".".join(release.split(".")[:2])
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

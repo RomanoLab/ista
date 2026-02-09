@@ -5,7 +5,20 @@
       "Bash(python debug_ontology_iris.py:*)",
       "Bash(python:*)",
       "mcp__acp__Bash",
-      "mcp__acp__Write"
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(cmake --build:*)",
+      "Bash(pytest:*)",
+      "Bash(pip install:*)",
+      "Bash(cmake:*)",
+      "Bash(PYTHONPATH=/Users/jdr2160/projects/ista/build/lib/python:$PYTHONPATH python -m pytest:*)",
+      "Bash(PYTHONPATH=/Users/jdr2160/projects/ista/build/lib/python:$PYTHONPATH python3:*)",
+      "Bash(PYTHONPATH=/Users/jdr2160/projects/ista/build/lib/python python3:*)",
+      "Bash(pip3 install pybind11)",
+      "Bash(python3:*)",
+      "Bash(PYTHONPATH=build/lib/python python:*)",
+      "Bash(PYTHONPATH=build/lib/python:$PYTHONPATH python -m pytest:*)",
+      "Bash(PYTHONPATH=/Users/jdr2160/projects/ista/build/lib/python:$PYTHONPATH python:*)"
     ],
     "deny": [],
     "ask": []

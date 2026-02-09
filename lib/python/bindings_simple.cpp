@@ -11,6 +11,7 @@
 #include <pybind11/operators.h>
 #include <pybind11/functional.h>
 
+#include "ista/version.hpp"
 #include "../owl2/owl2.hpp"
 #include "../owl2/parser/rdfxml_parser.hpp"
 #include "../owl2/parser/csv_parser.hpp"
@@ -965,6 +966,41 @@ PYBIND11_MODULE(_libista_owl2, m) {
         .def_readwrite("transform", &PropertyMapping::transform, "Optional transform name")
         .def_readwrite("datatype", &PropertyMapping::datatype, "Optional XSD datatype");
     
+    // EnrichmentDef struct
+    py::class_<EnrichmentDef>(m, "EnrichmentDef", "Enrichment source for an entity type")
+        .def(py::init<>())
+        .def_readwrite("name", &EnrichmentDef::name, "Enrichment name")
+        .def_readwrite("source", &EnrichmentDef::source, "Data source reference")
+        .def_readwrite("table", &EnrichmentDef::table, "Database table override")
+        .def_readwrite("match", &EnrichmentDef::match, "Match criteria for finding existing individuals")
+        .def_readwrite("properties", &EnrichmentDef::properties, "Property mappings");
+
+    // EntityTypeDef struct
+    py::class_<EntityTypeDef> entity_type_def(m, "EntityTypeDef",
+        "Complete definition for an entity type with primary and enrichment sources");
+    entity_type_def
+        .def(py::init<>())
+        .def_readwrite("class_name", &EntityTypeDef::class_name, "OWL class local name")
+        .def_readwrite("enrichments", &EntityTypeDef::enrichments, "Enrichment sources");
+
+    // EntityTypeDef::primary is an anonymous struct, expose via lambdas
+    entity_type_def
+        .def_property("primary",
+            [](const EntityTypeDef& e) -> py::dict {
+                py::dict d;
+                d["source"] = e.primary.source;
+                d["iri_column"] = e.primary.iri_column;
+                d["table"] = e.primary.table;
+                d["properties"] = e.primary.properties;
+                return d;
+            },
+            [](EntityTypeDef& e, py::dict d) {
+                if (d.contains("source")) e.primary.source = d["source"].cast<std::string>();
+                if (d.contains("iri_column")) e.primary.iri_column = d["iri_column"].cast<std::string>();
+                if (d.contains("properties")) e.primary.properties = d["properties"].cast<std::vector<PropertyMapping>>();
+            },
+            "Primary source definition (dict with source, iri_column, table, properties)");
+
     // DataSourceDef struct
     py::class_<DataSourceDef>(m, "DataSourceDef", "Definition of a data source")
         .def(py::init<>())
@@ -983,6 +1019,7 @@ PYBIND11_MODULE(_libista_owl2, m) {
         .def_readwrite("mode", &NodeMapping::mode, "CREATE or ENRICH mode")
         .def_readwrite("iri_column", &NodeMapping::iri_column, "Column for IRI generation (CREATE)")
         .def_readwrite("match", &NodeMapping::match, "Match criteria (ENRICH)")
+        .def_readwrite("table", &NodeMapping::table, "Database table override for this mapping")
         .def_readwrite("filter", &NodeMapping::filter, "Row filtering")
         .def_readwrite("properties", &NodeMapping::properties, "Property mappings")
         .def_readwrite("skip", &NodeMapping::skip, "Skip this mapping during execution");
@@ -1004,6 +1041,7 @@ PYBIND11_MODULE(_libista_owl2, m) {
         .def_readwrite("relationship", &RelationshipMapping::relationship, "Object property local name")
         .def_readwrite("subject", &RelationshipMapping::subject, "Subject entity reference")
         .def_readwrite("object", &RelationshipMapping::object, "Object entity reference")
+        .def_readwrite("table", &RelationshipMapping::table, "Database table override for this mapping")
         .def_readwrite("filter", &RelationshipMapping::filter, "Row filtering")
         .def_readwrite("inverse_relationship", &RelationshipMapping::inverse_relationship, 
                       "Optional inverse relationship to also create")
@@ -1052,8 +1090,20 @@ PYBIND11_MODULE(_libista_owl2, m) {
         .def(py::init<>())
         .def_readwrite("version", &DataMappingSpec::version, "Spec version")
         .def_readwrite("base_iri", &DataMappingSpec::base_iri, "Base IRI for individuals")
+        .def_readwrite("base_path", &DataMappingSpec::base_path,
+                      "Base directory for resolving relative file paths (set by load_from_file)")
+        .def_readwrite("project_name", &DataMappingSpec::project_name, "Human-readable project name")
+        .def_readwrite("project_description", &DataMappingSpec::project_description, "Project description")
+        .def_readwrite("ontology_path", &DataMappingSpec::ontology_path, "Path to the ontology file")
+        .def_readwrite("populated_ontology_path", &DataMappingSpec::populated_ontology_path,
+                      "Path to save populated ontology (Turtle format)")
+        .def_readwrite("created_at", &DataMappingSpec::created_at, "ISO 8601 timestamp when project was created")
+        .def_readwrite("modified_at", &DataMappingSpec::modified_at, "ISO 8601 timestamp when last saved")
+        .def_readwrite("created_by", &DataMappingSpec::created_by, "Author/creator name")
         .def_readwrite("transforms", &DataMappingSpec::transforms, "Named transforms")
         .def_readwrite("sources", &DataMappingSpec::sources, "Data sources")
+        .def_readwrite("entity_types", &DataMappingSpec::entity_types,
+                      "Entity type definitions (grouped primary + enrichments)")
         .def_readwrite("node_mappings", &DataMappingSpec::node_mappings, "Node mappings")
         .def_readwrite("relationship_mappings", &DataMappingSpec::relationship_mappings, 
                       "Relationship mappings")
@@ -1075,6 +1125,8 @@ PYBIND11_MODULE(_libista_owl2, m) {
              "Expand entity_types into node_mappings")
         .def("get_all_node_mappings", &DataMappingSpec::get_all_node_mappings,
              "Get all node mappings (including expanded entity_types)")
+        .def("resolve_source_paths", &DataMappingSpec::resolve_source_paths,
+             "Resolve relative source paths against base_path")
         .def("resolve_environment_variables", &DataMappingSpec::resolve_environment_variables,
              "Resolve ${VAR_NAME} patterns in paths")
         .def("__repr__", [](const DataMappingSpec& spec) {
@@ -1133,5 +1185,5 @@ PYBIND11_MODULE(_libista_owl2, m) {
     // ========================================================================
     // Version information
     // ========================================================================
-    m.attr("__version__") = "0.1.0-simple";
+    m.attr("__version__") = ISTA_VERSION;
 }

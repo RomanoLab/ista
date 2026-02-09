@@ -244,8 +244,11 @@ private:
     
     /**
      * @brief Get or create a reader for the given source
+     * @param source_name Name of the data source
+     * @param table_override Optional table name that overrides the source's default table
      */
-    DataSourceReader* get_reader(const std::string& source_name);
+    DataSourceReader* get_reader(const std::string& source_name,
+                                 const std::optional<std::string>& table_override = std::nullopt);
     
     /**
      * @brief Process a single node mapping

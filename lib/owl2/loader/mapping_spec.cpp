@@ -146,7 +146,11 @@ DataSourceDef parse_data_source(const std::string& name, const YamlNodePtr& node
 // Parse EntityRef from YAML node
 EntityRef parse_entity_ref(const YamlNodePtr& node) {
     EntityRef ref;
-    ref.class_name = node->get_string("class");
+    // Support both "class_name" (YAML convention) and "class" (legacy)
+    ref.class_name = node->get_string("class_name");
+    if (ref.class_name.empty()) {
+        ref.class_name = node->get_string("class");
+    }
     ref.column = node->get_string("column");
     ref.match_property = node->get_string("match_property");
     if (node->has_key("transform")) {
@@ -173,15 +177,19 @@ NodeMapping parse_node_mapping(const YamlNodePtr& node) {
     if (node->has_key("match")) {
         mapping.match = parse_match_criteria(node->get("match"));
     }
-    
+
+    if (node->has_key("table")) {
+        mapping.table = node->get_string("table");
+    }
+
     if (node->has_key("filter")) {
         mapping.filter = parse_filter_def(node->get("filter"));
     }
-    
+
     if (node->has_key("properties")) {
         mapping.properties = parse_property_mappings(node->get("properties"));
     }
-    
+
     return mapping;
 }
 
@@ -192,22 +200,26 @@ RelationshipMapping parse_relationship_mapping(const YamlNodePtr& node) {
     mapping.source = node->get_string("source");
     mapping.relationship = node->get_string("relationship");
     mapping.skip = node->get_bool("skip", false);
-    
+
     if (node->has_key("subject")) {
         mapping.subject = parse_entity_ref(node->get("subject"));
     }
     if (node->has_key("object")) {
         mapping.object = parse_entity_ref(node->get("object"));
     }
-    
+
+    if (node->has_key("table")) {
+        mapping.table = node->get_string("table");
+    }
+
     if (node->has_key("filter")) {
         mapping.filter = parse_filter_def(node->get("filter"));
     }
-    
+
     if (node->has_key("inverse_relationship")) {
         mapping.inverse_relationship = node->get_string("inverse_relationship");
     }
-    
+
     return mapping;
 }
 
@@ -274,8 +286,16 @@ DataMappingSpec DataMappingSpec::load_from_file(const std::string& filepath) {
     if (root->is_null()) {
         throw MappingSpecException("Empty or invalid YAML file: " + filepath);
     }
-    
+
     DataMappingSpec spec;
+
+    // Set base_path to the directory containing the YAML file
+    auto last_sep = filepath.find_last_of("/\\");
+    if (last_sep != std::string::npos) {
+        spec.base_path = filepath.substr(0, last_sep + 1);
+    } else {
+        spec.base_path = "./";
+    }
     
     // Parse version
     spec.version = root->get_string("version", "1.0");
@@ -283,6 +303,17 @@ DataMappingSpec DataMappingSpec::load_from_file(const std::string& filepath) {
     // Parse base_iri
     spec.base_iri = root->get_string("base_iri");
     
+    // Parse project metadata
+    spec.project_name = root->get_string("project_name");
+    spec.project_description = root->get_string("project_description");
+    spec.ontology_path = root->get_string("ontology_path");
+    spec.populated_ontology_path = root->get_string("populated_ontology_path");
+
+    // Parse provenance info
+    spec.created_at = root->get_string("created_at");
+    spec.modified_at = root->get_string("modified_at");
+    spec.created_by = root->get_string("created_by");
+
     // Parse transforms
     if (root->has_key("transforms")) {
         auto transforms_node = root->get("transforms");
@@ -292,7 +323,7 @@ DataMappingSpec DataMappingSpec::load_from_file(const std::string& filepath) {
             }
         }
     }
-    
+
     // Parse sources
     if (root->has_key("sources")) {
         auto sources_node = root->get("sources");
@@ -302,7 +333,7 @@ DataMappingSpec DataMappingSpec::load_from_file(const std::string& filepath) {
             }
         }
     }
-    
+
     // Parse entity_types
     if (root->has_key("entity_types")) {
         auto entity_types_node = root->get("entity_types");
@@ -312,7 +343,7 @@ DataMappingSpec DataMappingSpec::load_from_file(const std::string& filepath) {
             }
         }
     }
-    
+
     // Parse node_mappings
     if (root->has_key("node_mappings")) {
         auto mappings_node = root->get("node_mappings");
@@ -322,7 +353,7 @@ DataMappingSpec DataMappingSpec::load_from_file(const std::string& filepath) {
             }
         }
     }
-    
+
     // Parse relationship_mappings
     if (root->has_key("relationship_mappings")) {
         auto rel_mappings_node = root->get("relationship_mappings");
@@ -332,7 +363,7 @@ DataMappingSpec DataMappingSpec::load_from_file(const std::string& filepath) {
             }
         }
     }
-    
+
     return spec;
 }
 
@@ -349,6 +380,17 @@ DataMappingSpec DataMappingSpec::parse(const std::string& yaml_content) {
     spec.version = root->get_string("version", "1.0");
     spec.base_iri = root->get_string("base_iri");
     
+    // Parse project metadata
+    spec.project_name = root->get_string("project_name");
+    spec.project_description = root->get_string("project_description");
+    spec.ontology_path = root->get_string("ontology_path");
+    spec.populated_ontology_path = root->get_string("populated_ontology_path");
+
+    // Parse provenance info
+    spec.created_at = root->get_string("created_at");
+    spec.modified_at = root->get_string("modified_at");
+    spec.created_by = root->get_string("created_by");
+
     if (root->has_key("transforms")) {
         auto transforms_node = root->get("transforms");
         if (transforms_node->is_map()) {
@@ -518,6 +560,32 @@ std::string DataMappingSpec::to_yaml() const {
     std::ostringstream out;
     
     out << "version: \"" << version << "\"\n";
+    
+    // Serialize project metadata
+    if (!project_name.empty()) {
+        out << "project_name: \"" << project_name << "\"\n";
+    }
+    if (!project_description.empty()) {
+        out << "project_description: \"" << project_description << "\"\n";
+    }
+    if (!ontology_path.empty()) {
+        out << "ontology_path: \"" << ontology_path << "\"\n";
+    }
+    if (!populated_ontology_path.empty()) {
+        out << "populated_ontology_path: \"" << populated_ontology_path << "\"\n";
+    }
+
+    // Serialize provenance info
+    if (!created_at.empty()) {
+        out << "created_at: \"" << created_at << "\"\n";
+    }
+    if (!modified_at.empty()) {
+        out << "modified_at: \"" << modified_at << "\"\n";
+    }
+    if (!created_by.empty()) {
+        out << "created_by: \"" << created_by << "\"\n";
+    }
+    
     if (!base_iri.empty()) {
         out << "base_iri: \"" << base_iri << "\"\n";
     }
@@ -564,6 +632,66 @@ std::string DataMappingSpec::to_yaml() const {
         out << "\n";
     }
     
+    // Serialize entity_types
+    if (!entity_types.empty()) {
+        out << "entity_types:\n";
+        for (const auto& [class_name, entity] : entity_types) {
+            out << "  " << class_name << ":\n";
+            out << "    primary:\n";
+            out << "      source: " << entity.primary.source << "\n";
+            out << "      iri_column: " << entity.primary.iri_column << "\n";
+            if (entity.primary.table.has_value()) {
+                out << "      table: " << entity.primary.table.value() << "\n";
+            }
+            if (entity.primary.filter.has_value()) {
+                out << "      filter:\n";
+                out << "        column: " << entity.primary.filter->column << "\n";
+                out << "        value: \"" << entity.primary.filter->value << "\"\n";
+                out << "        contains: " << (entity.primary.filter->contains ? "true" : "false") << "\n";
+            }
+            if (!entity.primary.properties.empty()) {
+                out << "      properties:\n";
+                for (const auto& prop : entity.primary.properties) {
+                    out << "        - column: " << prop.column << "\n";
+                    out << "          property: " << prop.property << "\n";
+                    if (prop.transform.has_value()) {
+                        out << "          transform: " << prop.transform.value() << "\n";
+                    }
+                    if (prop.datatype.has_value()) {
+                        out << "          datatype: " << prop.datatype.value() << "\n";
+                    }
+                }
+            }
+            if (!entity.enrichments.empty()) {
+                out << "    enrichments:\n";
+                for (const auto& enrich : entity.enrichments) {
+                    out << "      - name: \"" << enrich.name << "\"\n";
+                    out << "        source: " << enrich.source << "\n";
+                    if (enrich.table.has_value()) {
+                        out << "        table: " << enrich.table.value() << "\n";
+                    }
+                    out << "        match:\n";
+                    out << "          source_column: " << enrich.match.source_column << "\n";
+                    out << "          target_property: " << enrich.match.target_property << "\n";
+                    if (!enrich.properties.empty()) {
+                        out << "        properties:\n";
+                        for (const auto& prop : enrich.properties) {
+                            out << "          - column: " << prop.column << "\n";
+                            out << "            property: " << prop.property << "\n";
+                            if (prop.transform.has_value()) {
+                                out << "            transform: " << prop.transform.value() << "\n";
+                            }
+                            if (prop.datatype.has_value()) {
+                                out << "            datatype: " << prop.datatype.value() << "\n";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        out << "\n";
+    }
+
     // Serialize node_mappings
     if (!node_mappings.empty()) {
         out << "node_mappings:\n";
@@ -575,6 +703,9 @@ std::string DataMappingSpec::to_yaml() const {
             
             if (mapping.iri_column.has_value()) {
                 out << "    iri_column: " << mapping.iri_column.value() << "\n";
+            }
+            if (mapping.table.has_value()) {
+                out << "    table: " << mapping.table.value() << "\n";
             }
             if (mapping.match.has_value()) {
                 out << "    match:\n";
@@ -608,13 +739,16 @@ std::string DataMappingSpec::to_yaml() const {
         for (const auto& mapping : relationship_mappings) {
             out << "  - name: \"" << mapping.name << "\"\n";
             out << "    source: " << mapping.source << "\n";
+            if (mapping.table.has_value()) {
+                out << "    table: " << mapping.table.value() << "\n";
+            }
             out << "    relationship: " << mapping.relationship << "\n";
             out << "    subject:\n";
-            out << "      class: " << mapping.subject.class_name << "\n";
+            out << "      class_name: " << mapping.subject.class_name << "\n";
             out << "      column: " << mapping.subject.column << "\n";
             out << "      match_property: " << mapping.subject.match_property << "\n";
             out << "    object:\n";
-            out << "      class: " << mapping.object.class_name << "\n";
+            out << "      class_name: " << mapping.object.class_name << "\n";
             out << "      column: " << mapping.object.column << "\n";
             out << "      match_property: " << mapping.object.match_property << "\n";
             if (mapping.inverse_relationship.has_value()) {
@@ -643,10 +777,11 @@ void DataMappingSpec::expand_entity_types() {
         primary_mapping.target_class = class_name;
         primary_mapping.mode = MappingMode::CREATE;
         primary_mapping.iri_column = entity.primary.iri_column;
+        primary_mapping.table = entity.primary.table;
         primary_mapping.filter = entity.primary.filter;
         primary_mapping.properties = entity.primary.properties;
         node_mappings.push_back(primary_mapping);
-        
+
         // Create enrichment node mappings
         for (const auto& enrich : entity.enrichments) {
             NodeMapping enrich_mapping;
@@ -655,6 +790,7 @@ void DataMappingSpec::expand_entity_types() {
             enrich_mapping.target_class = class_name;
             enrich_mapping.mode = MappingMode::ENRICH;
             enrich_mapping.match = enrich.match;
+            enrich_mapping.table = enrich.table;
             enrich_mapping.properties = enrich.properties;
             node_mappings.push_back(enrich_mapping);
         }
@@ -663,7 +799,7 @@ void DataMappingSpec::expand_entity_types() {
 
 std::vector<NodeMapping> DataMappingSpec::get_all_node_mappings() const {
     std::vector<NodeMapping> all_mappings = node_mappings;
-    
+
     // Add expanded entity_types
     for (const auto& [class_name, entity] : entity_types) {
         NodeMapping primary_mapping;
@@ -672,10 +808,11 @@ std::vector<NodeMapping> DataMappingSpec::get_all_node_mappings() const {
         primary_mapping.target_class = class_name;
         primary_mapping.mode = MappingMode::CREATE;
         primary_mapping.iri_column = entity.primary.iri_column;
+        primary_mapping.table = entity.primary.table;
         primary_mapping.filter = entity.primary.filter;
         primary_mapping.properties = entity.primary.properties;
         all_mappings.push_back(primary_mapping);
-        
+
         for (const auto& enrich : entity.enrichments) {
             NodeMapping enrich_mapping;
             enrich_mapping.name = class_name + " (" + enrich.name + ")";
@@ -683,12 +820,40 @@ std::vector<NodeMapping> DataMappingSpec::get_all_node_mappings() const {
             enrich_mapping.target_class = class_name;
             enrich_mapping.mode = MappingMode::ENRICH;
             enrich_mapping.match = enrich.match;
+            enrich_mapping.table = enrich.table;
             enrich_mapping.properties = enrich.properties;
             all_mappings.push_back(enrich_mapping);
         }
     }
     
     return all_mappings;
+}
+
+void DataMappingSpec::resolve_source_paths() {
+    if (base_path.empty()) {
+        return;
+    }
+
+    auto resolve = [&](std::string& path) {
+        if (path.empty()) return;
+        // Skip absolute paths
+        if (path[0] == '/' || path[0] == '~') return;
+#ifdef _WIN32
+        if (path.length() >= 2 && path[1] == ':') return;
+#endif
+        path = base_path + path;
+    };
+
+    // Resolve ontology path
+    resolve(ontology_path);
+
+    // Resolve populated ontology path
+    resolve(populated_ontology_path);
+
+    // Resolve data source paths
+    for (auto& [name, source] : sources) {
+        resolve(source.path);
+    }
 }
 
 void DataMappingSpec::resolve_environment_variables() {

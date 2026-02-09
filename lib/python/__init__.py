@@ -23,8 +23,7 @@ Example usage:
 """
 
 from _libista_owl2 import *
-
-__version__ = "0.1.0"
+from _libista_owl2 import __version__
 __author__ = "ISTA OWL2 Library Contributors"
 
 # Re-export all public symbols

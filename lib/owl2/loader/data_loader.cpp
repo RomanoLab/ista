@@ -214,6 +214,7 @@ void DataLoader::set_mapping_spec(const DataMappingSpec& spec) {
 void DataLoader::load_mapping_spec(const std::string& filepath) {
     spec_ = DataMappingSpec::load_from_file(filepath);
     spec_.resolve_environment_variables();
+    spec_.resolve_source_paths();
     readers_.clear();
 }
 
@@ -284,34 +285,48 @@ ValidationResult DataLoader::validate() {
     return spec_.validate(ontology_);
 }
 
-DataSourceReader* DataLoader::get_reader(const std::string& source_name) {
+DataSourceReader* DataLoader::get_reader(const std::string& source_name,
+                                         const std::optional<std::string>& table_override) {
+    // Build a cache key that includes the table override so different tables
+    // on the same source get separate readers
+    std::string cache_key = source_name;
+    if (table_override.has_value() && !table_override->empty()) {
+        cache_key += ":" + table_override.value();
+    }
+
     // Check cache first
-    auto it = readers_.find(source_name);
+    auto it = readers_.find(cache_key);
     if (it != readers_.end()) {
         it->second->reset();
         return it->second.get();
     }
-    
+
     // Create new reader
     auto source_it = spec_.sources.find(source_name);
     if (source_it == spec_.sources.end()) {
         throw DataLoaderException("Data source not found: " + source_name);
     }
-    
-    auto reader = DataSourceFactory::create_reader(source_it->second);
+
+    // Apply per-mapping table override if provided
+    DataSourceDef source_def = source_it->second;
+    if (table_override.has_value() && !table_override->empty()) {
+        source_def.table = table_override.value();
+    }
+
+    auto reader = DataSourceFactory::create_reader(source_def);
     if (!reader->open()) {
         throw DataLoaderException("Failed to open data source: " + source_name);
     }
-    
+
     DataSourceReader* ptr = reader.get();
-    readers_[source_name] = std::move(reader);
+    readers_[cache_key] = std::move(reader);
     return ptr;
 }
 
 LoadingStats DataLoader::process_node_mapping(const NodeMapping& mapping) {
     LoadingStats stats;
-    
-    auto reader = get_reader(mapping.source);
+
+    auto reader = get_reader(mapping.source, mapping.table);
     auto target_class_opt = find_class(mapping.target_class);
     
     if (!target_class_opt.has_value()) {
@@ -411,8 +426,8 @@ LoadingStats DataLoader::process_node_mapping(const NodeMapping& mapping) {
 
 LoadingStats DataLoader::process_relationship_mapping(const RelationshipMapping& mapping) {
     LoadingStats stats;
-    
-    auto reader = get_reader(mapping.source);
+
+    auto reader = get_reader(mapping.source, mapping.table);
     auto relationship_opt = find_object_property(mapping.relationship);
     
     if (!relationship_opt.has_value()) {
