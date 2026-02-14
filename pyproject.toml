@@ -26,7 +26,6 @@ classifiers = [
     "Programming Language :: C++",
 ]
 dependencies = [
-    "mysqlclient",
     "openpyxl",
     "pandas",
     "tqdm",
@@ -40,10 +39,14 @@ dependencies = [
 Homepage = "https://github.com/JDRomano2/ista"
 
 [project.scripts]
+ista = "ista.ista:main"
 ista_populate = "ista.populate:main"
 owl2memgraph = "ista.owl2memgraph:main"
 
 [project.optional-dependencies]
+mysql = [
+    "mysqlclient",
+]
 test = [
     "pytest>=7.0",
     "pytest-cov>=4.0",

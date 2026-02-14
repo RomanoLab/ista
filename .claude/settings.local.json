@@ -18,7 +18,11 @@
       "Bash(python3:*)",
       "Bash(PYTHONPATH=build/lib/python python:*)",
       "Bash(PYTHONPATH=build/lib/python:$PYTHONPATH python -m pytest:*)",
-      "Bash(PYTHONPATH=/Users/jdr2160/projects/ista/build/lib/python:$PYTHONPATH python:*)"
+      "Bash(PYTHONPATH=/Users/jdr2160/projects/ista/build/lib/python:$PYTHONPATH python:*)",
+      "Bash(git merge:*)",
+      "Bash(git clone:*)",
+      "Bash(git checkout:*)",
+      "Bash(git stash:*)"
     ],
     "deny": [],
     "ask": []

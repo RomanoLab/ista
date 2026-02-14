@@ -4,8 +4,6 @@ import csv
 import os
 import warnings
 
-import pdb
-import MySQLdb
 import pandas as pd
 from openpyxl import load_workbook
 from tqdm import tqdm
@@ -525,6 +523,13 @@ class MySQLDatabaseParser(DatabaseParser):
 
     def __init__(self, name: str, destination: owl2.Ontology, config_dict: dict):
         _emit_deprecation_warning("MySQLDatabaseParser")
+        try:
+            import MySQLdb
+        except ImportError:
+            raise ImportError(
+                "MySQLDatabaseParser requires the 'mysqlclient' package. "
+                "Install it with: pip install ista[mysql]"
+            )
         super().__init__(name, destination)
 
         if "socket" in config_dict:
@@ -619,8 +624,7 @@ class MySQLDatabaseParser(DatabaseParser):
                     try:
                         assert len(subject_match) == 1
                     except AssertionError:
-                        pdb.set_trace()
-                        print()
+                        pass
                     object_match = self.ont.search_by_data_property(
                         parse_config["object_match_property"], owl2.Literal(oid)
                     )
@@ -629,8 +633,7 @@ class MySQLDatabaseParser(DatabaseParser):
                     try:
                         assert len(object_match) == 1
                     except AssertionError:
-                        pdb.set_trace()
-                        print()
+                        pass
 
                     if no_rel_added:
                         no_rel_added = False

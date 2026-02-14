@@ -2,7 +2,7 @@ version: "1.0"
 ontology_path: "/Users/jdr2160/projects/ista/examples/pharmatox_example/ontology/pharmatox.owl"
 populated_ontology_path: "/Users/jdr2160/projects/ista/examples/pharmatox_example/ontology/pharmatox-populated.ttl"
 created_at: "2026-02-07T19:13:56Z"
-modified_at: "2026-02-07T19:29:10Z"
+modified_at: "2026-02-14T17:30:50Z"
 base_iri: "http://example.org/pharmatox"
 
 transforms:

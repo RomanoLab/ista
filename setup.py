@@ -77,13 +77,13 @@ setup(
     packages=find_packages(),
     python_requires=">=3.7",
     install_requires=[
-        "mysqlclient",
         "openpyxl",
         "pandas",
         "tqdm",
         "pybind11>=2.6.0",
     ],
     extras_require={
+        "mysql": ["mysqlclient"],
         "neo4j": ["neo4j"],
         "graph": ["networkx"],
         "dev": ["pytest", "sphinx"],
