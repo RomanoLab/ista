@@ -1,6 +1,6 @@
 import secrets
 
-import ipdb
+import pdb
 
 from ista import FlatFileDatabaseParser, MySQLDatabaseParser, owl2
 from ista.util import print_onto_stats

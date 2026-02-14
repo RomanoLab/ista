@@ -36,7 +36,7 @@ public:
     /**
      * @brief Get annotations on this axiom
      */
-    std::vector<Annotation> getAnnotations() const { return annotations_; }
+    const std::vector<Annotation>& getAnnotations() const { return annotations_; }
 
     /**
      * @brief Check if this axiom has annotations
@@ -90,7 +90,7 @@ public:
         : entity_type_(type), iri_(iri) {}
 
     EntityType getEntityType() const { return entity_type_; }
-    IRI getIRI() const { return iri_; }
+    const IRI& getIRI() const { return iri_; }
 
     std::string toFunctionalSyntax() const override;
     std::string getAxiomType() const override { return "Declaration"; }

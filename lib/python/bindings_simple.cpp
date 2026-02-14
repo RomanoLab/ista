@@ -44,12 +44,16 @@ PYBIND11_MODULE(_libista_owl2, m) {
              py::arg("namespace_uri"),
              "Construct IRI from prefix, local name, and namespace URI")
         .def("get_full_iri", &IRI::getFullIRI,
+             py::return_value_policy::reference_internal,
              "Get the full IRI string")
         .def("get_prefix", &IRI::getPrefix,
+             py::return_value_policy::reference_internal,
              "Get the namespace prefix (if available)")
         .def("get_local_name", &IRI::getLocalName,
+             py::return_value_policy::reference_internal,
              "Get the local name (if available)")
         .def("get_namespace", &IRI::getNamespace,
+             py::return_value_policy::reference_internal,
              "Get the namespace URI")
         .def("get_abbreviated", &IRI::getAbbreviated,
              "Get abbreviated form (prefix:localName) if available")
@@ -73,6 +77,7 @@ PYBIND11_MODULE(_libista_owl2, m) {
     // ========================================================================
     py::class_<Entity, std::shared_ptr<Entity>>(m, "Entity", "Base class for all OWL2 entities")
         .def("get_iri", &Entity::getIRI,
+             py::return_value_policy::reference_internal,
              "Get the IRI of this entity")
         .def("get_entity_type", &Entity::getEntityType,
              "Get the type of this entity")
@@ -86,6 +91,12 @@ PYBIND11_MODULE(_libista_owl2, m) {
              "Construct a Class with the given IRI")
         .def("__repr__", [](const Class& cls) {
             return "<Class '" + cls.getIRI().toString() + "'>";
+        })
+        .def("__hash__", [](const Class& cls) {
+            return std::hash<IRI>()(cls.getIRI());
+        })
+        .def("__eq__", [](const Class& a, const Class& b) {
+            return a.getIRI() == b.getIRI();
         });
 
     py::class_<ObjectProperty, Entity, std::shared_ptr<ObjectProperty>>(m, "ObjectProperty", "OWL2 Object Property")
@@ -94,6 +105,12 @@ PYBIND11_MODULE(_libista_owl2, m) {
              "Construct an ObjectProperty with the given IRI")
         .def("__repr__", [](const ObjectProperty& op) {
             return "<ObjectProperty '" + op.getIRI().toString() + "'>";
+        })
+        .def("__hash__", [](const ObjectProperty& op) {
+            return std::hash<IRI>()(op.getIRI());
+        })
+        .def("__eq__", [](const ObjectProperty& a, const ObjectProperty& b) {
+            return a.getIRI() == b.getIRI();
         });
 
     py::class_<DataProperty, Entity, std::shared_ptr<DataProperty>>(m, "DataProperty", "OWL2 Data Property")
@@ -102,6 +119,12 @@ PYBIND11_MODULE(_libista_owl2, m) {
              "Construct a DataProperty with the given IRI")
         .def("__repr__", [](const DataProperty& dp) {
             return "<DataProperty '" + dp.getIRI().toString() + "'>";
+        })
+        .def("__hash__", [](const DataProperty& dp) {
+            return std::hash<IRI>()(dp.getIRI());
+        })
+        .def("__eq__", [](const DataProperty& a, const DataProperty& b) {
+            return a.getIRI() == b.getIRI();
         });
 
     py::class_<NamedIndividual, Entity, std::shared_ptr<NamedIndividual>>(m, "NamedIndividual", "OWL2 Named Individual")
@@ -113,6 +136,9 @@ PYBIND11_MODULE(_libista_owl2, m) {
         })
         .def("__hash__", [](const NamedIndividual& ni) {
             return std::hash<IRI>()(ni.getIRI());
+        })
+        .def("__eq__", [](const NamedIndividual& a, const NamedIndividual& b) {
+            return a.getIRI() == b.getIRI();
         });
 
     // ========================================================================
@@ -128,10 +154,13 @@ PYBIND11_MODULE(_libista_owl2, m) {
              py::arg("datatype"),
              "Construct a typed literal")
         .def("get_lexical_form", &Literal::getLexicalForm,
+             py::return_value_policy::reference_internal,
              "Get the lexical form (string representation)")
         .def("get_datatype", &Literal::getDatatype,
+             py::return_value_policy::reference_internal,
              "Get the datatype IRI")
         .def("get_language_tag", &Literal::getLanguageTag,
+             py::return_value_policy::reference_internal,
              "Get the language tag")
         .def("is_typed", &Literal::isTyped,
              "Check if this is a typed literal")
@@ -238,8 +267,16 @@ PYBIND11_MODULE(_libista_owl2, m) {
              py::arg("domain"),
              "Construct an ObjectPropertyDomain axiom")
         .def("get_domain", &ObjectPropertyDomain::getDomain,
-             "Get the domain");
-        // Note: getProperty() returns variant, so we skip it
+             "Get the domain")
+        .def("get_property", [](const ObjectPropertyDomain& self) -> ObjectProperty {
+                 auto expr = self.getProperty();
+                 if (auto* prop = std::get_if<ObjectProperty>(&expr)) {
+                     return *prop;
+                 }
+                 // Inverse property — return the base property
+                 return std::get<std::pair<ObjectProperty, bool>>(expr).first;
+             },
+             "Get the object property");
 
     // ObjectPropertyRange Axiom - using lambda to accept ObjectProperty directly
     py::class_<ObjectPropertyRange, Axiom, std::shared_ptr<ObjectPropertyRange>>(m, "ObjectPropertyRange", "ObjectPropertyRange axiom")
@@ -250,8 +287,15 @@ PYBIND11_MODULE(_libista_owl2, m) {
              py::arg("range"),
              "Construct an ObjectPropertyRange axiom")
         .def("get_range", &ObjectPropertyRange::getRange,
-             "Get the range");
-        // Note: getProperty() returns variant, so we skip it
+             "Get the range")
+        .def("get_property", [](const ObjectPropertyRange& self) -> ObjectProperty {
+                 auto expr = self.getProperty();
+                 if (auto* prop = std::get_if<ObjectProperty>(&expr)) {
+                     return *prop;
+                 }
+                 return std::get<std::pair<ObjectProperty, bool>>(expr).first;
+             },
+             "Get the object property");
 
     // DataPropertyDomain Axiom
     py::class_<DataPropertyDomain, Axiom, std::shared_ptr<DataPropertyDomain>>(m, "DataPropertyDomain", "DataPropertyDomain axiom")
@@ -309,7 +353,19 @@ PYBIND11_MODULE(_libista_owl2, m) {
              py::arg("property"),
              py::arg("source"),
              py::arg("value"),
-             "Construct a DataPropertyAssertion axiom");
+             "Construct a DataPropertyAssertion axiom")
+        .def("get_property", &DataPropertyAssertion::getProperty,
+             "Get the data property")
+        .def("get_source", [](const DataPropertyAssertion& self) -> NamedIndividual {
+                 auto ind = self.getSource();
+                 if (auto* named = std::get_if<NamedIndividual>(&ind)) {
+                     return *named;
+                 }
+                 throw std::runtime_error("Source is an anonymous individual");
+             },
+             "Get the source individual")
+        .def("get_target", &DataPropertyAssertion::getTarget,
+             "Get the target literal value");
 
     // ========================================================================
     // Ontology Class
@@ -381,6 +437,15 @@ PYBIND11_MODULE(_libista_owl2, m) {
              "Get all axioms in the ontology")
         .def("clear_axioms", &Ontology::clearAxioms,
              "Clear all axioms from the ontology")
+        .def("begin_batch_mode", &Ontology::beginBatchMode,
+             "Enter batch mode, suspending index updates for bulk population")
+        .def("end_batch_mode", &Ontology::endBatchMode,
+             "Exit batch mode and rebuild all indices once")
+        .def("in_batch_mode", &Ontology::inBatchMode,
+             "Check if the ontology is in batch mode")
+        .def("reserve_axioms", &Ontology::reserveAxioms,
+             py::arg("count"),
+             "Pre-allocate capacity for the axiom vector")
         
         // Entity queries
         .def("get_classes", &Ontology::getClasses,
@@ -1022,6 +1087,8 @@ PYBIND11_MODULE(_libista_owl2, m) {
         .def_readwrite("table", &NodeMapping::table, "Database table override for this mapping")
         .def_readwrite("filter", &NodeMapping::filter, "Row filtering")
         .def_readwrite("properties", &NodeMapping::properties, "Property mappings")
+        .def_readwrite("table", &NodeMapping::table, "Per-mapping table override for database sources")
+        .def_readwrite("query", &NodeMapping::query, "Per-mapping query override for database sources")
         .def_readwrite("skip", &NodeMapping::skip, "Skip this mapping during execution");
     
     // EntityRef struct
@@ -1043,8 +1110,10 @@ PYBIND11_MODULE(_libista_owl2, m) {
         .def_readwrite("object", &RelationshipMapping::object, "Object entity reference")
         .def_readwrite("table", &RelationshipMapping::table, "Database table override for this mapping")
         .def_readwrite("filter", &RelationshipMapping::filter, "Row filtering")
-        .def_readwrite("inverse_relationship", &RelationshipMapping::inverse_relationship, 
+        .def_readwrite("inverse_relationship", &RelationshipMapping::inverse_relationship,
                       "Optional inverse relationship to also create")
+        .def_readwrite("table", &RelationshipMapping::table, "Per-mapping table override for database sources")
+        .def_readwrite("query", &RelationshipMapping::query, "Per-mapping query override for database sources")
         .def_readwrite("skip", &RelationshipMapping::skip, "Skip this mapping");
     
     // TransformDef struct
@@ -1151,6 +1220,11 @@ PYBIND11_MODULE(_libista_owl2, m) {
         .def("load_mapping_spec", &DataLoader::load_mapping_spec,
              py::arg("filepath"),
              "Load the mapping specification from a YAML file")
+        .def("auto_declare_schema", &DataLoader::auto_declare_schema,
+             "Auto-declare ontology schema (classes, properties) from mapping spec.\n\n"
+             "Scans the YAML mapping specification and declares all referenced\n"
+             "classes, data properties, and object properties in the ontology.\n"
+             "This is called automatically by execute().")
         .def("set_progress_callback", &DataLoader::set_progress_callback,
              py::arg("callback"),
              "Set a progress callback function(current, total, mapping_name)")

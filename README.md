@@ -330,6 +330,20 @@ See [requirements.txt](requirements.txt) for full list.
 - CMake 3.15+
 - No external dependencies for core library
 
+#### Optional Database Support
+
+The library can optionally support loading data from databases. These dependencies are auto-detected at build time:
+
+- **SQLite**: Install `sqlite3` development libraries
+- **MySQL**: Install MySQL client libraries
+  - macOS (Homebrew): `brew install mysql` or `brew install mysql-client`
+  - Ubuntu/Debian: `apt install libmysqlclient-dev`
+- **PostgreSQL**: Install PostgreSQL client libraries
+  - macOS (Homebrew): `brew install libpq`
+  - Ubuntu/Debian: `apt install libpq-dev`
+
+CMake will report which database backends are enabled during configuration.
+
 ## Contributing
 
 Contributions are welcome! Areas of interest:

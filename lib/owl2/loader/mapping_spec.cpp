@@ -4,6 +4,7 @@
 #include <sstream>
 #include <algorithm>
 #include <cstdlib>
+#include <cstring>
 #include <regex>
 #include <set>
 
@@ -146,9 +147,10 @@ DataSourceDef parse_data_source(const std::string& name, const YamlNodePtr& node
 // Parse EntityRef from YAML node
 EntityRef parse_entity_ref(const YamlNodePtr& node) {
     EntityRef ref;
-    // Support both "class_name" (YAML convention) and "class" (legacy)
-    ref.class_name = node->get_string("class_name");
-    if (ref.class_name.empty()) {
+    // Accept both "class_name" (preferred) and "class" for compatibility
+    if (node->has_key("class_name")) {
+        ref.class_name = node->get_string("class_name");
+    } else {
         ref.class_name = node->get_string("class");
     }
     ref.column = node->get_string("column");
@@ -190,6 +192,10 @@ NodeMapping parse_node_mapping(const YamlNodePtr& node) {
         mapping.properties = parse_property_mappings(node->get("properties"));
     }
 
+    if (node->has_key("query")) {
+        mapping.query = node->get_string("query");
+    }
+
     return mapping;
 }
 
@@ -218,6 +224,10 @@ RelationshipMapping parse_relationship_mapping(const YamlNodePtr& node) {
 
     if (node->has_key("inverse_relationship")) {
         mapping.inverse_relationship = node->get_string("inverse_relationship");
+    }
+
+    if (node->has_key("query")) {
+        mapping.query = node->get_string("query");
     }
 
     return mapping;
@@ -712,10 +722,16 @@ std::string DataMappingSpec::to_yaml() const {
                 out << "      source_column: " << mapping.match->source_column << "\n";
                 out << "      target_property: " << mapping.match->target_property << "\n";
             }
+            if (mapping.table.has_value()) {
+                out << "    table: " << mapping.table.value() << "\n";
+            }
+            if (mapping.query.has_value()) {
+                out << "    query: \"" << mapping.query.value() << "\"\n";
+            }
             if (mapping.skip) {
                 out << "    skip: true\n";
             }
-            
+
             if (!mapping.properties.empty()) {
                 out << "    properties:\n";
                 for (const auto& prop : mapping.properties) {
@@ -754,9 +770,15 @@ std::string DataMappingSpec::to_yaml() const {
             if (mapping.inverse_relationship.has_value()) {
                 out << "    inverse_relationship: " << mapping.inverse_relationship.value() << "\n";
             }
+            if (mapping.table.has_value()) {
+                out << "    table: " << mapping.table.value() << "\n";
+            }
+            if (mapping.query.has_value()) {
+                out << "    query: \"" << mapping.query.value() << "\"\n";
+            }
         }
     }
-    
+
     return out.str();
 }
 
@@ -780,6 +802,7 @@ void DataMappingSpec::expand_entity_types() {
         primary_mapping.table = entity.primary.table;
         primary_mapping.filter = entity.primary.filter;
         primary_mapping.properties = entity.primary.properties;
+        primary_mapping.table = entity.primary.table;
         node_mappings.push_back(primary_mapping);
 
         // Create enrichment node mappings
@@ -792,6 +815,7 @@ void DataMappingSpec::expand_entity_types() {
             enrich_mapping.match = enrich.match;
             enrich_mapping.table = enrich.table;
             enrich_mapping.properties = enrich.properties;
+            enrich_mapping.table = enrich.table;
             node_mappings.push_back(enrich_mapping);
         }
     }
@@ -811,6 +835,7 @@ std::vector<NodeMapping> DataMappingSpec::get_all_node_mappings() const {
         primary_mapping.table = entity.primary.table;
         primary_mapping.filter = entity.primary.filter;
         primary_mapping.properties = entity.primary.properties;
+        primary_mapping.table = entity.primary.table;
         all_mappings.push_back(primary_mapping);
 
         for (const auto& enrich : entity.enrichments) {
@@ -822,10 +847,11 @@ std::vector<NodeMapping> DataMappingSpec::get_all_node_mappings() const {
             enrich_mapping.match = enrich.match;
             enrich_mapping.table = enrich.table;
             enrich_mapping.properties = enrich.properties;
+            enrich_mapping.table = enrich.table;
             all_mappings.push_back(enrich_mapping);
         }
     }
-    
+
     return all_mappings;
 }
 

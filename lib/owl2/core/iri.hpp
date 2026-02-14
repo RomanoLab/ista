@@ -31,27 +31,27 @@ public:
     
     /**
      * @brief Get the full IRI string
-     * @return Full IRI
+     * @return Full IRI (const reference)
      */
-    std::string getFullIRI() const { return full_iri_; }
-    
+    const std::string& getFullIRI() const { return full_iri_; }
+
     /**
      * @brief Get the namespace prefix (if available)
-     * @return Optional prefix
+     * @return Optional prefix (const reference)
      */
-    std::optional<std::string> getPrefix() const { return prefix_; }
-    
+    const std::optional<std::string>& getPrefix() const { return prefix_; }
+
     /**
      * @brief Get the local name (if available)
-     * @return Optional local name
+     * @return Optional local name (const reference)
      */
-    std::optional<std::string> getLocalName() const { return local_name_; }
-    
+    const std::optional<std::string>& getLocalName() const { return local_name_; }
+
     /**
      * @brief Get the namespace URI
-     * @return Namespace URI
+     * @return Namespace URI (const reference)
      */
-    std::string getNamespace() const { return namespace_uri_; }
+    const std::string& getNamespace() const { return namespace_uri_; }
     
     /**
      * @brief Get abbreviated form (prefix:localName) if available
@@ -72,7 +72,7 @@ public:
     /**
      * @brief Convert to string (returns full IRI)
      */
-    std::string toString() const { return full_iri_; }
+    const std::string& toString() const { return full_iri_; }
 
 private:
     std::string full_iri_;

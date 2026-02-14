@@ -39,6 +39,7 @@ class CMakeBuild(build_ext):
             f"-DCMAKE_LIBRARY_OUTPUT_DIRECTORY={extdir}",
             f"-DPYTHON_EXECUTABLE={sys.executable}",
             "-DBUILD_PYTHON_BINDINGS=ON",
+            "-DBUILD_GUI=OFF",
         ]
 
         cfg = "Debug" if self.debug else "Release"
@@ -91,7 +92,7 @@ setup(
     cmdclass={"build_ext": CMakeBuild},
     entry_points={
         "console_scripts": [
-            "ista=ista.ista:main",
+            "ista_populate=ista.populate:main",
             "owl2memgraph=ista.owl2memgraph:main",
         ]
     },
