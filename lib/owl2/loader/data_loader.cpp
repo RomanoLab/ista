@@ -251,6 +251,26 @@ void DataLoader::set_progress_callback(ProgressCallback callback) {
     progress_callback_ = callback;
 }
 
+void DataLoader::set_progress_interval(size_t interval) {
+    progress_interval_ = interval;
+}
+
+void DataLoader::emit_progress(const ProgressEvent& event) {
+    if (!progress_callback_) return;
+    // Always emit structural events (mapping start/finish, cache building)
+    if (event.mapping_started || event.mapping_finished ||
+        event.phase == LoadingPhase::BUILD_CACHE) {
+        progress_callback_(event);
+        return;
+    }
+    // Throttle row-level events
+    if (progress_interval_ == 0 ||
+        event.current_row % progress_interval_ == 0 ||
+        (event.total_rows > 0 && event.current_row == event.total_rows)) {
+        progress_callback_(event);
+    }
+}
+
 void DataLoader::auto_declare_schema() {
     std::string base = spec_.base_iri;
     if (base.empty()) {
@@ -387,20 +407,48 @@ LoadingStats DataLoader::execute() {
 
     LoadingStats total_stats;
 
-    // Execute node mappings in two phases:
-    // Phase 1: CREATE-mode mappings (produce individuals)
-    // Phase 2: ENRICH-mode mappings (need to find existing individuals)
+    // Pre-collect active mappings per phase for accurate totals
     auto all_node_mappings = spec_.get_all_node_mappings();
-    for (const auto& mapping : all_node_mappings) {
-        if (!mapping.skip && mapping.mode == MappingMode::CREATE) {
+
+    std::vector<const NodeMapping*> create_mappings, enrich_mappings;
+    for (const auto& m : all_node_mappings) {
+        if (m.skip) continue;
+        if (m.mode == MappingMode::CREATE) create_mappings.push_back(&m);
+        else if (m.mode == MappingMode::ENRICH) enrich_mappings.push_back(&m);
+    }
+    std::vector<const RelationshipMapping*> rel_mappings;
+    for (const auto& m : spec_.relationship_mappings) {
+        if (!m.skip) rel_mappings.push_back(&m);
+    }
+
+    // Helper to emit mapping start/finish events
+    auto run_node_phase = [&](LoadingPhase phase, const std::string& kind,
+                              const std::vector<const NodeMapping*>& mappings) {
+        current_phase_ = phase;
+        current_mapping_total_ = mappings.size();
+        current_mapping_index_ = 0;
+
+        for (const auto* mp : mappings) {
+            const auto& mapping = *mp;
             MappingResult mr;
             mr.name = mapping.name;
             mr.source = mapping.source;
-            mr.kind = "create";
+            mr.kind = kind;
+
+            // Emit mapping_started
+            ProgressEvent start_evt;
+            start_evt.phase = phase;
+            start_evt.mapping_name = mapping.name;
+            start_evt.mapping_index = current_mapping_index_;
+            start_evt.mapping_total = current_mapping_total_;
+            start_evt.mapping_started = true;
+            emit_progress(start_evt);
+
             try {
                 auto ms = process_node_mapping(mapping);
                 mr.rows_processed = ms.rows_processed;
-                mr.items_created = ms.individuals_created;
+                mr.items_created = (phase == LoadingPhase::CREATE)
+                    ? ms.individuals_created : ms.individuals_enriched;
                 mr.rows_skipped = ms.rows_skipped;
                 mr.errors = ms.errors;
                 total_stats.merge(ms);
@@ -412,60 +460,83 @@ LoadingStats DataLoader::execute() {
                 mr.error_detail = e.what();
             }
             total_stats.mapping_results.push_back(mr);
-        }
-    }
 
-    // Build individual cache after create phase — needed by ENRICH and relationships
+            // Emit mapping_finished
+            ProgressEvent end_evt;
+            end_evt.phase = phase;
+            end_evt.mapping_name = mapping.name;
+            end_evt.mapping_index = current_mapping_index_;
+            end_evt.mapping_total = current_mapping_total_;
+            end_evt.current_row = mr.rows_processed;
+            end_evt.total_rows = mr.rows_processed;
+            end_evt.mapping_finished = true;
+            emit_progress(end_evt);
+
+            current_mapping_index_++;
+        }
+    };
+
+    // Phase 1: CREATE
+    run_node_phase(LoadingPhase::CREATE, "create", create_mappings);
+
+    // Build individual cache
+    {
+        ProgressEvent cache_evt;
+        cache_evt.phase = LoadingPhase::BUILD_CACHE;
+        emit_progress(cache_evt);
+    }
     build_individual_cache();
 
-    // Phase 2: ENRICH-mode mappings
-    for (const auto& mapping : all_node_mappings) {
-        if (!mapping.skip && mapping.mode == MappingMode::ENRICH) {
-            MappingResult mr;
-            mr.name = mapping.name;
-            mr.source = mapping.source;
-            mr.kind = "enrich";
-            try {
-                auto ms = process_node_mapping(mapping);
-                mr.rows_processed = ms.rows_processed;
-                mr.items_created = ms.individuals_enriched;
-                mr.rows_skipped = ms.rows_skipped;
-                mr.errors = ms.errors;
-                total_stats.merge(ms);
-            } catch (const std::exception& e) {
-                total_stats.errors++;
-                total_stats.error_messages.push_back(
-                    "Mapping '" + mapping.name + "' failed: " + e.what());
-                mr.errors = 1;
-                mr.error_detail = e.what();
-            }
-            total_stats.mapping_results.push_back(mr);
-        }
-    }
+    // Phase 2: ENRICH
+    run_node_phase(LoadingPhase::ENRICH, "enrich", enrich_mappings);
 
-    // Then execute relationship mappings — also with per-mapping error handling
-    for (const auto& mapping : spec_.relationship_mappings) {
-        if (!mapping.skip) {
-            MappingResult mr;
-            mr.name = mapping.name;
-            mr.source = mapping.source;
-            mr.kind = "relationship";
-            try {
-                auto ms = process_relationship_mapping(mapping);
-                mr.rows_processed = ms.rows_processed;
-                mr.items_created = ms.relationships_created;
-                mr.rows_skipped = ms.rows_skipped;
-                mr.errors = ms.errors;
-                total_stats.merge(ms);
-            } catch (const std::exception& e) {
-                total_stats.errors++;
-                total_stats.error_messages.push_back(
-                    "Relationship mapping '" + mapping.name + "' failed: " + e.what());
-                mr.errors = 1;
-                mr.error_detail = e.what();
-            }
-            total_stats.mapping_results.push_back(mr);
+    // Phase 3: RELATIONSHIP
+    current_phase_ = LoadingPhase::RELATIONSHIP;
+    current_mapping_total_ = rel_mappings.size();
+    current_mapping_index_ = 0;
+
+    for (const auto* mp : rel_mappings) {
+        const auto& mapping = *mp;
+        MappingResult mr;
+        mr.name = mapping.name;
+        mr.source = mapping.source;
+        mr.kind = "relationship";
+
+        ProgressEvent start_evt;
+        start_evt.phase = LoadingPhase::RELATIONSHIP;
+        start_evt.mapping_name = mapping.name;
+        start_evt.mapping_index = current_mapping_index_;
+        start_evt.mapping_total = current_mapping_total_;
+        start_evt.mapping_started = true;
+        emit_progress(start_evt);
+
+        try {
+            auto ms = process_relationship_mapping(mapping);
+            mr.rows_processed = ms.rows_processed;
+            mr.items_created = ms.relationships_created;
+            mr.rows_skipped = ms.rows_skipped;
+            mr.errors = ms.errors;
+            total_stats.merge(ms);
+        } catch (const std::exception& e) {
+            total_stats.errors++;
+            total_stats.error_messages.push_back(
+                "Relationship mapping '" + mapping.name + "' failed: " + e.what());
+            mr.errors = 1;
+            mr.error_detail = e.what();
         }
+        total_stats.mapping_results.push_back(mr);
+
+        ProgressEvent end_evt;
+        end_evt.phase = LoadingPhase::RELATIONSHIP;
+        end_evt.mapping_name = mapping.name;
+        end_evt.mapping_index = current_mapping_index_;
+        end_evt.mapping_total = current_mapping_total_;
+        end_evt.current_row = mr.rows_processed;
+        end_evt.total_rows = mr.rows_processed;
+        end_evt.mapping_finished = true;
+        emit_progress(end_evt);
+
+        current_mapping_index_++;
     }
 
     // Exit batch mode — rebuilds indices once
@@ -592,22 +663,29 @@ LoadingStats DataLoader::process_node_mapping(const NodeMapping& mapping) {
     
     size_t total = reader->row_count();
     size_t current = 0;
-    
+
     while (reader->has_next()) {
         DataRow row = reader->next();
         stats.rows_processed++;
         current++;
-        
-        if (progress_callback_) {
-            progress_callback_(current, total, mapping.name);
+
+        {
+            ProgressEvent evt;
+            evt.phase = current_phase_;
+            evt.mapping_name = mapping.name;
+            evt.mapping_index = current_mapping_index_;
+            evt.mapping_total = current_mapping_total_;
+            evt.current_row = current;
+            evt.total_rows = total;
+            emit_progress(evt);
         }
-        
+
         // Apply filter
         if (!passes_filter(row, mapping.filter)) {
             stats.rows_skipped++;
             continue;
         }
-        
+
         NamedIndividual individual(IRI(""));  // Placeholder, will be assigned
         bool has_individual = false;
         
@@ -706,22 +784,29 @@ LoadingStats DataLoader::process_relationship_mapping(const RelationshipMapping&
     
     size_t total = reader->row_count();
     size_t current = 0;
-    
+
     while (reader->has_next()) {
         DataRow row = reader->next();
         stats.rows_processed++;
         current++;
-        
-        if (progress_callback_) {
-            progress_callback_(current, total, mapping.name);
+
+        {
+            ProgressEvent evt;
+            evt.phase = current_phase_;
+            evt.mapping_name = mapping.name;
+            evt.mapping_index = current_mapping_index_;
+            evt.mapping_total = current_mapping_total_;
+            evt.current_row = current;
+            evt.total_rows = total;
+            emit_progress(evt);
         }
-        
+
         // Apply filter
         if (!passes_filter(row, mapping.filter)) {
             stats.rows_skipped++;
             continue;
         }
-        
+
         // Get subject value
         auto subj_col_it = row.find(mapping.subject.column);
         if (subj_col_it == row.end() || subj_col_it->second.empty()) {

@@ -1134,6 +1134,61 @@ PYBIND11_MODULE(_libista_owl2, m) {
                    " warnings=" + std::to_string(r.warnings.size()) + ">";
         });
     
+    // LoadingPhase enum
+    py::enum_<LoadingPhase>(m, "LoadingPhase",
+        "Phase of the loading pipeline.\n\n"
+        "Values: CREATE, BUILD_CACHE, ENRICH, RELATIONSHIP")
+        .value("CREATE", LoadingPhase::CREATE, "Creating new individuals")
+        .value("BUILD_CACHE", LoadingPhase::BUILD_CACHE, "Building individual lookup cache")
+        .value("ENRICH", LoadingPhase::ENRICH, "Enriching existing individuals")
+        .value("RELATIONSHIP", LoadingPhase::RELATIONSHIP, "Creating relationships");
+
+    // ProgressEvent struct
+    py::class_<ProgressEvent>(m, "ProgressEvent",
+        "Progress event emitted during ontology population.\n\n"
+        "Attributes\n"
+        "----------\n"
+        "phase : LoadingPhase\n"
+        "    Current pipeline phase.\n"
+        "mapping_name : str\n"
+        "    Name of the current mapping.\n"
+        "mapping_index : int\n"
+        "    0-based index within the current phase.\n"
+        "mapping_total : int\n"
+        "    Total mappings in this phase.\n"
+        "current_row : int\n"
+        "    Current row (1-based) within the mapping.\n"
+        "total_rows : int\n"
+        "    Total rows (0 if unknown).\n"
+        "mapping_started : bool\n"
+        "    True on the first event for a mapping.\n"
+        "mapping_finished : bool\n"
+        "    True on the final event for a mapping.")
+        .def(py::init<>())
+        .def_readonly("phase", &ProgressEvent::phase)
+        .def_readonly("mapping_name", &ProgressEvent::mapping_name)
+        .def_readonly("mapping_index", &ProgressEvent::mapping_index)
+        .def_readonly("mapping_total", &ProgressEvent::mapping_total)
+        .def_readonly("current_row", &ProgressEvent::current_row)
+        .def_readonly("total_rows", &ProgressEvent::total_rows)
+        .def_readonly("mapping_started", &ProgressEvent::mapping_started)
+        .def_readonly("mapping_finished", &ProgressEvent::mapping_finished)
+        .def("__repr__", [](const ProgressEvent& e) {
+            std::string phase_str;
+            switch (e.phase) {
+                case LoadingPhase::CREATE: phase_str = "CREATE"; break;
+                case LoadingPhase::BUILD_CACHE: phase_str = "BUILD_CACHE"; break;
+                case LoadingPhase::ENRICH: phase_str = "ENRICH"; break;
+                case LoadingPhase::RELATIONSHIP: phase_str = "RELATIONSHIP"; break;
+            }
+            std::string flags;
+            if (e.mapping_started) flags += " started";
+            if (e.mapping_finished) flags += " finished";
+            return "<ProgressEvent " + phase_str + " '" + e.mapping_name + "' " +
+                   std::to_string(e.current_row) + "/" + std::to_string(e.total_rows) +
+                   flags + ">";
+        });
+
     // MappingResult struct
     py::class_<MappingResult>(m, "MappingResult", "Per-mapping result for diagnostic reporting")
         .def(py::init<>())
@@ -1243,7 +1298,16 @@ PYBIND11_MODULE(_libista_owl2, m) {
              "This is called automatically by execute().")
         .def("set_progress_callback", &DataLoader::set_progress_callback,
              py::arg("callback"),
-             "Set a progress callback function(current, total, mapping_name)")
+             "Set a progress callback that receives ProgressEvent objects.\n\n"
+             "Parameters\n"
+             "----------\n"
+             "callback : callable(ProgressEvent)\n"
+             "    Called during execute() with progress updates.")
+        .def("set_progress_interval", &DataLoader::set_progress_interval,
+             py::arg("interval"),
+             "Set how often row-level progress events fire (every N rows).\n\n"
+             "Lower values give smoother progress at higher overhead.\n"
+             "Default is 100. Set to 0 for every row.")
         .def("execute", &DataLoader::execute,
              "Execute all mappings in the specification\n\n"
              "Returns:\n"

@@ -26,13 +26,40 @@ public:
 };
 
 /**
- * @brief Progress callback for loading operations
- * 
- * @param current Current row number
- * @param total Total rows (0 if unknown)
- * @param mapping_name Name of the current mapping being processed
+ * @brief Phase of the loading pipeline.
  */
-using ProgressCallback = std::function<void(size_t current, size_t total, const std::string& mapping_name)>;
+enum class LoadingPhase {
+    CREATE,         ///< Creating new individuals
+    BUILD_CACHE,    ///< Building individual lookup cache
+    ENRICH,         ///< Enriching existing individuals
+    RELATIONSHIP    ///< Creating relationships
+};
+
+/**
+ * @brief Progress event emitted during ontology population.
+ *
+ * This struct is passed to the progress callback and contains all information
+ * needed to render a progress indicator in any frontend (CLI, GUI, etc.).
+ */
+struct ProgressEvent {
+    LoadingPhase phase = LoadingPhase::CREATE;  ///< Current pipeline phase
+    std::string mapping_name;      ///< Name of the current mapping (empty during BUILD_CACHE)
+    size_t mapping_index = 0;      ///< 0-based index of mapping within its phase
+    size_t mapping_total = 0;      ///< Total mappings in this phase
+    size_t current_row = 0;        ///< Current row within the mapping (1-based when in progress)
+    size_t total_rows = 0;         ///< Total rows in this mapping (0 if unknown)
+    bool mapping_started = false;  ///< True on the first event for a new mapping
+    bool mapping_finished = false; ///< True on the final event for a mapping
+};
+
+/**
+ * @brief Callback for receiving progress events during loading.
+ *
+ * The callback is invoked from C++ during execute(). It receives a
+ * ProgressEvent struct that can be used to drive CLI progress bars,
+ * GUI widgets, or any other progress display.
+ */
+using ProgressCallback = std::function<void(const ProgressEvent&)>;
 
 /**
  * @brief Statistics from a loading operation
@@ -210,6 +237,16 @@ public:
      * @brief Set a progress callback
      */
     void set_progress_callback(ProgressCallback callback);
+
+    /**
+     * @brief Set how often row-level progress fires (every N rows).
+     *
+     * Lower values give smoother progress but higher overhead from
+     * crossing the C++/Python boundary. Default is 100.
+     *
+     * @param interval Emit row progress every N rows (0 = every row)
+     */
+    void set_progress_interval(size_t interval);
     
     /**
      * @brief Auto-declare ontology schema from the mapping specification.
@@ -268,6 +305,12 @@ private:
     DataMappingSpec spec_;
     TransformEngine transform_engine_;
     ProgressCallback progress_callback_;
+    size_t progress_interval_ = 100;  ///< Emit row-level progress every N rows
+
+    // Transient state for progress reporting during execute()
+    LoadingPhase current_phase_ = LoadingPhase::CREATE;
+    size_t current_mapping_index_ = 0;
+    size_t current_mapping_total_ = 0;
     
     // Cache for data source readers
     std::map<std::string, std::unique_ptr<DataSourceReader>> readers_;
@@ -292,6 +335,14 @@ private:
      * @brief Clear all lookup caches.
      */
     void clear_caches();
+
+    /**
+     * @brief Emit a progress event if a callback is set.
+     *
+     * Always emits mapping_started, mapping_finished, and BUILD_CACHE events.
+     * Row-level events are throttled to every progress_interval_ rows.
+     */
+    void emit_progress(const ProgressEvent& event);
 
     /**
      * @brief Get or create a reader for the given source

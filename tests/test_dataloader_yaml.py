@@ -514,15 +514,17 @@ class TestProgressCallback:
 
         progress_calls = []
         loader.set_progress_callback(
-            lambda current, total, name: progress_calls.append((current, total, name))
+            lambda event: progress_calls.append(event)
         )
 
         loader.execute()
 
         assert len(progress_calls) > 0
-        # Last call should have current == total for the mapping
-        last_call = progress_calls[-1]
-        assert last_call[0] == last_call[1]
+        # Should have at least mapping_started and mapping_finished events
+        started = [e for e in progress_calls if e.mapping_started]
+        finished = [e for e in progress_calls if e.mapping_finished]
+        assert len(started) > 0
+        assert len(finished) > 0
 
 
 class TestEmptyData:

@@ -118,9 +118,12 @@ try:
         # Serializers & Parsers
         FunctionalSyntaxSerializer,
         Literal,
+        LoadingPhase,
         LoadingStats,
         # Data Loading
         MappingMode,
+        # Progress reporting
+        ProgressEvent,
         MappingSpecException,
         MatchCriteria,
         NamedClass,
@@ -249,7 +252,9 @@ if HAS_CPP_BINDINGS:
         "RelationshipMapping",
         "TransformDef",
         "ValidationResult",
+        "LoadingPhase",
         "LoadingStats",
+        "ProgressEvent",
         "DataMappingSpec",
         "DataLoader",
         "MappingSpecException",

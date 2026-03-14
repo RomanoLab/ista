@@ -111,6 +111,122 @@ def _error(msg: str) -> None:
 
 _ENV_VAR_RE = re.compile(r"\$\{([^}]+)\}")
 
+# Phase display names (used by progress handlers)
+_PHASE_LABELS = {
+    "CREATE": "CREATE",
+    "BUILD_CACHE": "CACHE",
+    "ENRICH": "ENRICH",
+    "RELATIONSHIP": "RELATE",
+}
+
+
+class ProgressHandler:
+    """Base class for progress reporting during ontology population.
+
+    Subclass this to integrate progress with any frontend (CLI, GUI, web).
+    The default implementation does nothing.
+
+    Parameters
+    ----------
+    None
+
+    Examples
+    --------
+    Create a custom handler for a GUI framework::
+
+        class QtProgressHandler(ProgressHandler):
+            def __init__(self, signal):
+                super().__init__()
+                self.signal = signal
+
+            def on_progress(self, event):
+                self.signal.emit(event)
+
+    Then pass it to :func:`populate`::
+
+        handler = QtProgressHandler(my_signal)
+        populate("mapping.yaml", "out.owl", progress_handler=handler)
+    """
+
+    def on_progress(self, event) -> None:
+        """Handle a progress event.
+
+        Parameters
+        ----------
+        event : owl2.ProgressEvent
+            The progress event from the C++ DataLoader.
+        """
+        pass
+
+
+class TqdmProgressHandler(ProgressHandler):
+    """CLI progress handler using tqdm progress bars.
+
+    Displays a per-mapping progress bar with row-level granularity.
+    Falls back to plain ``print()`` output if tqdm is not installed.
+    """
+
+    def __init__(self):
+        super().__init__()
+        try:
+            from tqdm import tqdm
+            self._tqdm = tqdm
+        except ImportError:
+            self._tqdm = None
+        self._bar = None
+        self._current_phase = None
+
+    def on_progress(self, event) -> None:
+        """Handle a progress event by updating the tqdm bar."""
+        phase_name = event.phase.name
+
+        if phase_name == "BUILD_CACHE":
+            self._close_bar()
+            print("  Building individual lookup cache...")
+            return
+
+        if event.mapping_started:
+            self._close_bar()
+            desc = (
+                f"  [{_PHASE_LABELS.get(phase_name, phase_name):6s}] "
+                f"{event.mapping_name} "
+                f"({event.mapping_index + 1}/{event.mapping_total})"
+            )
+            if self._tqdm and event.total_rows > 0:
+                self._bar = self._tqdm(
+                    total=event.total_rows,
+                    desc=desc,
+                    unit=" rows",
+                    leave=True,
+                    ncols=100,
+                )
+            elif self._tqdm:
+                # Unknown total — show a spinner-style bar
+                self._bar = self._tqdm(
+                    desc=desc,
+                    unit=" rows",
+                    leave=True,
+                    ncols=100,
+                )
+            else:
+                print(desc)
+            return
+
+        if event.mapping_finished:
+            self._close_bar()
+            return
+
+        # Row-level update
+        if self._bar is not None and event.current_row > 0:
+            increment = event.current_row - self._bar.n
+            if increment > 0:
+                self._bar.update(increment)
+
+    def _close_bar(self):
+        if self._bar is not None:
+            self._bar.close()
+            self._bar = None
+
 
 def _validate_sources(spec, verbose: bool = False) -> List[str]:
     """Pre-flight validation of data sources in a mapping spec.
@@ -222,6 +338,7 @@ def populate(
     iri: Optional[str] = None,
     quiet: bool = False,
     verbose: bool = False,
+    progress_handler: Optional[ProgressHandler] = None,
 ) -> None:
     """
     Populate an ontology from a YAML mapping and serialize to a file.
@@ -242,6 +359,10 @@ def populate(
         Suppress progress output.
     verbose : bool
         Show detailed output.
+    progress_handler : ProgressHandler, optional
+        Custom progress handler. If *None* and not quiet, a
+        :class:`TqdmProgressHandler` is used for CLI progress bars.
+        Pass a custom subclass for GUI integration.
 
     Raises
     ------
@@ -300,6 +421,12 @@ def populate(
     elif verbose:
         print("  All data sources validated successfully.")
     print()
+
+    # --- Set up progress reporting ---
+    if progress_handler is None and not quiet:
+        progress_handler = TqdmProgressHandler()
+    if progress_handler is not None:
+        loader.set_progress_callback(progress_handler.on_progress)
 
     # --- Execute ---
     stats = loader.execute()

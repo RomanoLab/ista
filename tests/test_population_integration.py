@@ -10,16 +10,7 @@ import os
 import tempfile
 import pytest
 
-import sys
-import os
-
-# Ensure the C++ extension module build directory is on the path
-_build_dir = os.path.join(os.path.dirname(__file__), '..', 'build', 'lib', 'python')
-if os.path.isdir(_build_dir) and os.path.abspath(_build_dir) not in sys.path:
-    sys.path.insert(0, os.path.abspath(_build_dir))
-
-# Import the C++ bindings directly to avoid ista/__init__.py dependency issues
-import _libista_owl2 as owl2
+from ista import owl2
 
 
 # ---------------------------------------------------------------------------
@@ -273,8 +264,8 @@ class TestProgressCallback:
         """Progress callback should be invoked during execution."""
         calls = []
 
-        def on_progress(current, total, mapping_name):
-            calls.append((current, total, mapping_name))
+        def on_progress(event):
+            calls.append(event)
 
         loader = owl2.DataLoader(patient_ontology)
         loader.set_mapping_spec(patient_spec)
@@ -287,8 +278,8 @@ class TestProgressCallback:
         """Progress callback should report the mapping name."""
         names = set()
 
-        def on_progress(current, total, mapping_name):
-            names.add(mapping_name)
+        def on_progress(event):
+            names.add(event.mapping_name)
 
         loader = owl2.DataLoader(patient_ontology)
         loader.set_mapping_spec(patient_spec)
@@ -301,8 +292,9 @@ class TestProgressCallback:
         """Progress callback should report increasing current row counts."""
         currents = []
 
-        def on_progress(current, total, mapping_name):
-            currents.append(current)
+        def on_progress(event):
+            if event.current_row > 0:
+                currents.append(event.current_row)
 
         loader = owl2.DataLoader(patient_ontology)
         loader.set_mapping_spec(patient_spec)
