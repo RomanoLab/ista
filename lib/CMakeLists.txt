@@ -82,12 +82,11 @@ if(MySQL_FOUND OR MYSQL_FOUND)
     else()
         # pkg-config provides MYSQL_LINK_LIBRARIES with full paths
         list(APPEND EXTRA_LIBS ${MYSQL_LINK_LIBRARIES})
-        # pkg-config returns -I.../include/mysql, but we use #include <mysql/mysql.h>
-        # so we need the parent directory
-        foreach(_dir ${MYSQL_INCLUDE_DIRS})
-            get_filename_component(_parent_dir "${_dir}" DIRECTORY)
-            list(APPEND EXTRA_INCLUDE_DIRS ${_parent_dir})
-        endforeach()
+        list(APPEND EXTRA_INCLUDE_DIRS ${MYSQL_INCLUDE_DIRS})
+    endif()
+    # On Windows, also need libmysql.dll at runtime
+    if(WIN32 AND MYSQL_DLL_DIR)
+        message(STATUS "  MySQL DLL dir: ${MYSQL_DLL_DIR}")
     endif()
 else()
     message(STATUS "MySQL not found - MySQL data source support disabled")

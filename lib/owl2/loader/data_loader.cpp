@@ -18,6 +18,33 @@
 #include "postgres_reader.hpp"
 #endif
 
+namespace {
+
+/// Split a string by a multi-character delimiter, trimming whitespace from each token.
+std::vector<std::string> split_multi_value(const std::string& value, const std::string& delimiter) {
+    std::vector<std::string> result;
+    size_t start = 0;
+    size_t pos;
+    while ((pos = value.find(delimiter, start)) != std::string::npos) {
+        std::string token = value.substr(start, pos - start);
+        size_t begin = token.find_first_not_of(" \t");
+        size_t end = token.find_last_not_of(" \t");
+        if (begin != std::string::npos) {
+            result.push_back(token.substr(begin, end - begin + 1));
+        }
+        start = pos + delimiter.length();
+    }
+    std::string last = value.substr(start);
+    size_t begin = last.find_first_not_of(" \t");
+    size_t end = last.find_last_not_of(" \t");
+    if (begin != std::string::npos) {
+        result.push_back(last.substr(begin, end - begin + 1));
+    }
+    return result;
+}
+
+} // anonymous namespace
+
 namespace ista {
 namespace owl2 {
 namespace loader {
@@ -262,6 +289,9 @@ void DataLoader::auto_declare_schema() {
         for (const auto& prop : mapping.properties) {
             data_property_names.insert(prop.property);
         }
+        for (const auto& cls_name : mapping.additional_classes) {
+            class_names.insert(cls_name);
+        }
     }
 
     // Collect from relationship_mappings
@@ -363,7 +393,25 @@ LoadingStats DataLoader::execute() {
     auto all_node_mappings = spec_.get_all_node_mappings();
     for (const auto& mapping : all_node_mappings) {
         if (!mapping.skip && mapping.mode == MappingMode::CREATE) {
-            total_stats.merge(process_node_mapping(mapping));
+            MappingResult mr;
+            mr.name = mapping.name;
+            mr.source = mapping.source;
+            mr.kind = "create";
+            try {
+                auto ms = process_node_mapping(mapping);
+                mr.rows_processed = ms.rows_processed;
+                mr.items_created = ms.individuals_created;
+                mr.rows_skipped = ms.rows_skipped;
+                mr.errors = ms.errors;
+                total_stats.merge(ms);
+            } catch (const std::exception& e) {
+                total_stats.errors++;
+                total_stats.error_messages.push_back(
+                    "Mapping '" + mapping.name + "' failed: " + e.what());
+                mr.errors = 1;
+                mr.error_detail = e.what();
+            }
+            total_stats.mapping_results.push_back(mr);
         }
     }
 
@@ -373,12 +421,52 @@ LoadingStats DataLoader::execute() {
     // Phase 2: ENRICH-mode mappings
     for (const auto& mapping : all_node_mappings) {
         if (!mapping.skip && mapping.mode == MappingMode::ENRICH) {
-            total_stats.merge(process_node_mapping(mapping));
+            MappingResult mr;
+            mr.name = mapping.name;
+            mr.source = mapping.source;
+            mr.kind = "enrich";
+            try {
+                auto ms = process_node_mapping(mapping);
+                mr.rows_processed = ms.rows_processed;
+                mr.items_created = ms.individuals_enriched;
+                mr.rows_skipped = ms.rows_skipped;
+                mr.errors = ms.errors;
+                total_stats.merge(ms);
+            } catch (const std::exception& e) {
+                total_stats.errors++;
+                total_stats.error_messages.push_back(
+                    "Mapping '" + mapping.name + "' failed: " + e.what());
+                mr.errors = 1;
+                mr.error_detail = e.what();
+            }
+            total_stats.mapping_results.push_back(mr);
         }
     }
 
-    // Then execute relationship mappings
-    total_stats.merge(execute_all_relationship_mappings());
+    // Then execute relationship mappings — also with per-mapping error handling
+    for (const auto& mapping : spec_.relationship_mappings) {
+        if (!mapping.skip) {
+            MappingResult mr;
+            mr.name = mapping.name;
+            mr.source = mapping.source;
+            mr.kind = "relationship";
+            try {
+                auto ms = process_relationship_mapping(mapping);
+                mr.rows_processed = ms.rows_processed;
+                mr.items_created = ms.relationships_created;
+                mr.rows_skipped = ms.rows_skipped;
+                mr.errors = ms.errors;
+                total_stats.merge(ms);
+            } catch (const std::exception& e) {
+                total_stats.errors++;
+                total_stats.error_messages.push_back(
+                    "Relationship mapping '" + mapping.name + "' failed: " + e.what());
+                mr.errors = 1;
+                mr.error_detail = e.what();
+            }
+            total_stats.mapping_results.push_back(mr);
+        }
+    }
 
     // Exit batch mode — rebuilds indices once
     ontology_.endBatchMode();
@@ -476,7 +564,11 @@ DataSourceReader* DataLoader::get_reader(const std::string& source_name,
 
     auto reader = DataSourceFactory::create_reader(effective_source);
     if (!reader->open()) {
-        throw DataLoaderException("Failed to open data source: " + source_name);
+        std::string detail = "Failed to open data source '" + source_name + "'";
+        if (!effective_source.path.empty()) {
+            detail += ": file not found at " + effective_source.path;
+        }
+        throw DataLoaderException(detail);
     }
 
     DataSourceReader* ptr = reader.get();
@@ -576,12 +668,20 @@ LoadingStats DataLoader::process_node_mapping(const NodeMapping& mapping) {
             
             std::string value = apply_transform(col_it->second, prop_mapping.transform);
             if (!value.empty()) {
-                add_data_property(individual, prop_mapping.property, value, 
+                add_data_property(individual, prop_mapping.property, value,
                                   prop_mapping.datatype, stats);
             }
         }
+
+        // Add additional class assertions (for ENRICH mode append_class pattern)
+        for (const auto& cls_name : mapping.additional_classes) {
+            auto cls_opt = find_class(cls_name);
+            if (cls_opt.has_value()) {
+                ontology_.addClassAssertion(individual, cls_opt.value());
+            }
+        }
     }
-    
+
     return stats;
 }
 
@@ -628,38 +728,58 @@ LoadingStats DataLoader::process_relationship_mapping(const RelationshipMapping&
             stats.rows_skipped++;
             continue;
         }
-        std::string subj_value = apply_transform(subj_col_it->second, mapping.subject.transform);
-        
+        std::string subj_raw = apply_transform(subj_col_it->second, mapping.subject.transform);
+
         // Get object value
         auto obj_col_it = row.find(mapping.object.column);
         if (obj_col_it == row.end() || obj_col_it->second.empty()) {
             stats.rows_skipped++;
             continue;
         }
-        std::string obj_value = apply_transform(obj_col_it->second, mapping.object.transform);
-        
-        // Find subject individual
-        auto subject_opt = find_individual_by_property(mapping.subject.match_property, subj_value);
-        if (!subject_opt.has_value()) {
-            stats.rows_skipped++;
-            continue;
+        std::string obj_raw = apply_transform(obj_col_it->second, mapping.object.transform);
+
+        // Expand multi-value fields if delimiter is specified
+        std::vector<std::string> subj_values;
+        if (mapping.subject.multi_value_delimiter.has_value()) {
+            subj_values = split_multi_value(subj_raw, mapping.subject.multi_value_delimiter.value());
+        } else {
+            subj_values = {subj_raw};
         }
-        
-        // Find object individual
-        auto object_opt = find_individual_by_property(mapping.object.match_property, obj_value);
-        if (!object_opt.has_value()) {
-            stats.rows_skipped++;
-            continue;
+
+        std::vector<std::string> obj_values;
+        if (mapping.object.multi_value_delimiter.has_value()) {
+            obj_values = split_multi_value(obj_raw, mapping.object.multi_value_delimiter.value());
+        } else {
+            obj_values = {obj_raw};
         }
-        
-        // Add relationship
-        ontology_.addObjectPropertyAssertion(subject_opt.value(), relationship, object_opt.value());
-        stats.relationships_created++;
-        
-        // Add inverse if specified
-        if (inverse_relationship.has_value()) {
-            ontology_.addObjectPropertyAssertion(object_opt.value(), inverse_relationship.value(), subject_opt.value());
-            stats.relationships_created++;
+
+        // Create relationships for each (subject, object) pair
+        bool any_matched = false;
+        for (const auto& subj_value : subj_values) {
+            if (subj_value.empty()) continue;
+
+            auto subject_opt = find_individual_by_property(mapping.subject.match_property, subj_value);
+            if (!subject_opt.has_value()) continue;
+
+            for (const auto& obj_value : obj_values) {
+                if (obj_value.empty()) continue;
+
+                auto object_opt = find_individual_by_property(mapping.object.match_property, obj_value);
+                if (!object_opt.has_value()) continue;
+
+                ontology_.addObjectPropertyAssertion(subject_opt.value(), relationship, object_opt.value());
+                stats.relationships_created++;
+                any_matched = true;
+
+                if (inverse_relationship.has_value()) {
+                    ontology_.addObjectPropertyAssertion(object_opt.value(), inverse_relationship.value(), subject_opt.value());
+                    stats.relationships_created++;
+                }
+            }
+        }
+
+        if (!any_matched) {
+            stats.rows_skipped++;
         }
     }
     

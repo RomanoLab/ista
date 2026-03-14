@@ -42,12 +42,11 @@ using YamlNodePtr = std::shared_ptr<YamlNode>;
  * - Inline maps ({ key: value })
  * - Inline lists ([ item, item ])
  * - Comments (# comment)
- * - Multi-line strings (basic support)
- * 
+ * - Multi-line strings (|, >)
+ * - Anchors (&name) and aliases (*name)
+ *
  * Does NOT support:
- * - Anchors and aliases
  * - Tags
- * - Complex multi-line strings (|, >)
  * - Multiple documents
  */
 class YamlNode {
@@ -134,11 +133,14 @@ private:
         const std::string& content;
         size_t pos = 0;
         size_t line = 1;
-        
+
+        /// Anchor registry: maps anchor names to their parsed nodes.
+        std::map<std::string, YamlNodePtr> anchors;
+
         ParseState(const std::string& c) : content(c) {}
-        
+
         char peek() const { return pos < content.size() ? content[pos] : '\0'; }
-        char advance() { 
+        char advance() {
             char c = peek();
             if (c == '\n') line++;
             pos++;

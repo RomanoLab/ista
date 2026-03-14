@@ -332,16 +332,110 @@ YamlNodePtr YamlParser::parse_map(ParseState& state, int base_indent) {
         
         state.skip_whitespace();
         
+        // Check for alias (*anchor_name) as the value
+        if (state.peek() == '*') {
+            state.advance();  // skip '*'
+            std::string alias = state.read_until(" \t\n#,]}");
+            while (!alias.empty() && std::isspace(alias.back())) alias.pop_back();
+            auto it = state.anchors.find(alias);
+            if (it == state.anchors.end()) {
+                throw YamlParseException("Unknown alias '*" + alias + "'", state.line);
+            }
+            map_node->set(key, it->second);
+            // Skip to end of line
+            while (!state.at_end() && state.peek() != '\n') {
+                if (state.peek() == '#') { state.skip_line(); break; }
+                state.advance();
+            }
+            if (!state.at_end() && state.peek() == '\n') state.advance();
+            continue;
+        }
+
+        // Check for anchor (&anchor_name) before the value
+        std::string anchor_name;
+        if (state.peek() == '&') {
+            state.advance();  // skip '&'
+            anchor_name = state.read_until(" \t\n#");
+            while (!anchor_name.empty() && std::isspace(anchor_name.back())) anchor_name.pop_back();
+            state.skip_whitespace();
+        }
+
         // Parse value
         YamlNodePtr value;
-        if (state.peek() == '\n' || state.peek() == '#') {
+
+        // Block scalar indicators: | (literal) and > (folded)
+        if (state.peek() == '|' || state.peek() == '>') {
+            char block_style = state.advance();  // consume '|' or '>'
+            // Skip optional modifiers (e.g. |-, |+, |2) and rest of line
+            while (!state.at_end() && state.peek() != '\n') {
+                state.advance();
+            }
+            if (!state.at_end()) state.advance();  // skip newline
+
+            // Determine block indentation from first content line
+            int block_indent = -1;
+            std::string block_text;
+
+            while (!state.at_end()) {
+                size_t line_start = state.pos;
+                int line_indent = state.get_indent();
+
+                // Empty line — preserve as newline in block
+                if (state.peek() == '\n') {
+                    state.advance();
+                    if (block_indent >= 0) {
+                        block_text += '\n';
+                    }
+                    continue;
+                }
+
+                // First content line sets the block indent
+                if (block_indent < 0) {
+                    if (line_indent <= indent) {
+                        // No indented content at all
+                        state.pos = line_start;
+                        break;
+                    }
+                    block_indent = line_indent;
+                }
+
+                // Line not indented enough — end of block
+                if (line_indent < block_indent) {
+                    state.pos = line_start;
+                    break;
+                }
+
+                // Read line content (including any extra leading spaces)
+                std::string line_content;
+                // Preserve indentation beyond block_indent
+                for (int i = 0; i < line_indent - block_indent; ++i) {
+                    line_content += ' ';
+                }
+                while (!state.at_end() && state.peek() != '\n') {
+                    line_content += state.advance();
+                }
+                if (!state.at_end()) state.advance();  // skip newline
+
+                if (!block_text.empty()) {
+                    block_text += (block_style == '|') ? '\n' : ' ';
+                }
+                block_text += line_content;
+            }
+
+            // Literal blocks end with a trailing newline by default
+            if (!block_text.empty() && block_style == '|') {
+                block_text += '\n';
+            }
+
+            value = YamlNode::make_scalar(block_text);
+        } else if (state.peek() == '\n' || state.peek() == '#') {
             // Value is on next line(s), need to determine its indent
             if (state.peek() == '#') {
                 state.skip_line();
             } else {
                 state.advance();  // Skip newline
             }
-            
+
             // Skip empty lines
             while (!state.at_end()) {
                 size_t pos_before = state.pos;
@@ -357,12 +451,12 @@ YamlNodePtr YamlParser::parse_map(ParseState& state, int base_indent) {
                 state.pos = pos_before;
                 break;
             }
-            
+
             // Get the actual value indent
             size_t value_line_start = state.pos;
             int value_indent = state.get_indent();
             state.pos = value_line_start;
-            
+
             if (value_indent > indent) {
                 value = parse_value(state, value_indent);
             } else {
@@ -372,7 +466,7 @@ YamlNodePtr YamlParser::parse_map(ParseState& state, int base_indent) {
         } else {
             // Value is on same line
             value = parse_value(state, indent + 1);
-            
+
             // Skip to end of line
             while (!state.at_end() && state.peek() != '\n') {
                 if (state.peek() == '#') {
@@ -385,7 +479,12 @@ YamlNodePtr YamlParser::parse_map(ParseState& state, int base_indent) {
                 state.advance();
             }
         }
-        
+
+        // Register anchor if present
+        if (!anchor_name.empty()) {
+            state.anchors[anchor_name] = value;
+        }
+
         map_node->set(key, value);
     }
     

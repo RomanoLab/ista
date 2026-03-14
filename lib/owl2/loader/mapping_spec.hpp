@@ -114,6 +114,10 @@ struct NodeMapping {
     // Per-mapping query override (for database sources)
     std::optional<std::string> query;
 
+    // Additional OWL classes to assert on matched individuals (for ENRICH mode).
+    // Allows adding class membership without creating new individuals.
+    std::vector<std::string> additional_classes;
+
     // Skip this mapping during execution
     bool skip = false;
 };
@@ -126,6 +130,7 @@ struct EntityRef {
     std::string column;             // Column containing the value
     std::string match_property;     // Property to match on
     std::optional<std::string> transform;  // Optional transform for column value
+    std::optional<std::string> multi_value_delimiter;  // If set, split column value by this delimiter
 };
 
 /**

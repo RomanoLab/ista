@@ -41,6 +41,42 @@ Always import from `ista.owl2`, never from `_libista_owl2` directly.
 """
 
 try:
+    # On Windows, Python 3.8+ restricts DLL search paths. We must
+    # pre-load DLL dependencies (sqlite3, libpq) before importing the
+    # C++ extension, since os.add_dll_directory alone is not sufficient
+    # for transitive dependencies.
+    import sys as _sys
+    import os as _os
+
+    if _sys.platform == "win32":
+        import ctypes as _ctypes
+
+        _dll_search_dirs = [
+            r"C:\bin",
+            r"C:\Program Files\PostgreSQL\14\bin",
+            _os.path.join(_sys.prefix, "Library", "bin"),  # conda env
+        ]
+        # Auto-discover MySQL Server lib directory
+        import glob as _glob
+        _mysql_dirs = _glob.glob(r"C:\Program Files\MySQL\MySQL Server*\lib")
+        _dll_search_dirs.extend(_mysql_dirs)
+        # Register search directories (Python 3.8+)
+        if hasattr(_os, "add_dll_directory"):
+            for _dll_dir in _dll_search_dirs:
+                if _os.path.isdir(_dll_dir):
+                    _os.add_dll_directory(_dll_dir)
+        # Pre-load known DLL dependencies
+        for _dll_dir in _dll_search_dirs:
+            if not _os.path.isdir(_dll_dir):
+                continue
+            for _dll_name in ["sqlite3.dll", "libpq.dll", "libmysql.dll"]:
+                _dll_path = _os.path.join(_dll_dir, _dll_name)
+                if _os.path.isfile(_dll_path):
+                    try:
+                        _ctypes.WinDLL(_dll_path)
+                    except OSError:
+                        pass
+
     # Import everything from the C++ extension
     from _libista_owl2 import *
 

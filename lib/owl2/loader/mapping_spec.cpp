@@ -158,6 +158,9 @@ EntityRef parse_entity_ref(const YamlNodePtr& node) {
     if (node->has_key("transform")) {
         ref.transform = node->get_string("transform");
     }
+    if (node->has_key("multi_value_delimiter")) {
+        ref.multi_value_delimiter = node->get_string("multi_value_delimiter");
+    }
     return ref;
 }
 
@@ -168,14 +171,14 @@ NodeMapping parse_node_mapping(const YamlNodePtr& node) {
     mapping.source = node->get_string("source");
     mapping.target_class = node->get_string("target_class");
     mapping.skip = node->get_bool("skip", false);
-    
+
     std::string mode_str = node->get_string("mode", "create");
     mapping.mode = parse_mapping_mode(mode_str);
-    
+
     if (node->has_key("iri_column")) {
         mapping.iri_column = node->get_string("iri_column");
     }
-    
+
     if (node->has_key("match")) {
         mapping.match = parse_match_criteria(node->get("match"));
     }
@@ -194,6 +197,17 @@ NodeMapping parse_node_mapping(const YamlNodePtr& node) {
 
     if (node->has_key("query")) {
         mapping.query = node->get_string("query");
+    }
+
+    if (node->has_key("additional_classes")) {
+        auto classes_node = node->get("additional_classes");
+        if (classes_node->is_list()) {
+            for (const auto& item : classes_node->as_list()) {
+                if (item->is_scalar()) {
+                    mapping.additional_classes.push_back(item->as_string());
+                }
+            }
+        }
     }
 
     return mapping;
@@ -504,8 +518,14 @@ ValidationResult DataMappingSpec::validate(const Ontology& ontology) const {
             
             check_transform(prop.transform, prop_ctx);
         }
+
+        for (const auto& cls_name : mapping.additional_classes) {
+            if (!has_class(ontology, cls_name)) {
+                result.add_warning(ctx + ": Unknown additional class '" + cls_name + "'");
+            }
+        }
     }
-    
+
     // Validate relationship mappings
     for (size_t i = 0; i < relationship_mappings.size(); ++i) {
         const auto& mapping = relationship_mappings[i];
@@ -732,6 +752,13 @@ std::string DataMappingSpec::to_yaml() const {
                 out << "    skip: true\n";
             }
 
+            if (!mapping.additional_classes.empty()) {
+                out << "    additional_classes:\n";
+                for (const auto& cls : mapping.additional_classes) {
+                    out << "      - " << cls << "\n";
+                }
+            }
+
             if (!mapping.properties.empty()) {
                 out << "    properties:\n";
                 for (const auto& prop : mapping.properties) {
@@ -763,10 +790,22 @@ std::string DataMappingSpec::to_yaml() const {
             out << "      class_name: " << mapping.subject.class_name << "\n";
             out << "      column: " << mapping.subject.column << "\n";
             out << "      match_property: " << mapping.subject.match_property << "\n";
+            if (mapping.subject.transform.has_value()) {
+                out << "      transform: " << mapping.subject.transform.value() << "\n";
+            }
+            if (mapping.subject.multi_value_delimiter.has_value()) {
+                out << "      multi_value_delimiter: \"" << mapping.subject.multi_value_delimiter.value() << "\"\n";
+            }
             out << "    object:\n";
             out << "      class_name: " << mapping.object.class_name << "\n";
             out << "      column: " << mapping.object.column << "\n";
             out << "      match_property: " << mapping.object.match_property << "\n";
+            if (mapping.object.transform.has_value()) {
+                out << "      transform: " << mapping.object.transform.value() << "\n";
+            }
+            if (mapping.object.multi_value_delimiter.has_value()) {
+                out << "      multi_value_delimiter: \"" << mapping.object.multi_value_delimiter.value() << "\"\n";
+            }
             if (mapping.inverse_relationship.has_value()) {
                 out << "    inverse_relationship: " << mapping.inverse_relationship.value() << "\n";
             }

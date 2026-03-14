@@ -1,6 +1,9 @@
 cmake_minimum_required (VERSION 3.15...3.19)
 set (CMAKE_CXX_STANDARD 20)
 
+# Add project-local CMake modules (e.g. FindMySQL)
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+
 # Read version from the single source-of-truth VERSION file
 file(READ "${CMAKE_CURRENT_SOURCE_DIR}/VERSION" ISTA_VERSION)
 string(STRIP "${ISTA_VERSION}" ISTA_VERSION)

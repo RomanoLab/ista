@@ -1,5 +1,11 @@
 #include "mysql_reader.hpp"
+// MySQL 8.0+ on Windows places mysql.h directly in the include dir,
+// while Linux packages typically use mysql/mysql.h.
+#if defined(_WIN32)
+#include <mysql.h>
+#else
 #include <mysql/mysql.h>
+#endif
 
 namespace ista {
 namespace owl2 {

@@ -37,6 +37,20 @@ using ProgressCallback = std::function<void(size_t current, size_t total, const 
 /**
  * @brief Statistics from a loading operation
  */
+/**
+ * @brief Per-mapping result record for diagnostic reporting.
+ */
+struct MappingResult {
+    std::string name;           ///< Mapping name from the YAML spec.
+    std::string source;         ///< Data source name.
+    std::string kind;           ///< "create", "enrich", or "relationship".
+    size_t rows_processed = 0;
+    size_t items_created = 0;   ///< Individuals or relationships created.
+    size_t rows_skipped = 0;
+    size_t errors = 0;
+    std::string error_detail;   ///< Non-empty if the mapping failed entirely.
+};
+
 struct LoadingStats {
     size_t rows_processed = 0;
     size_t individuals_created = 0;
@@ -46,7 +60,8 @@ struct LoadingStats {
     size_t rows_skipped = 0;
     size_t errors = 0;
     std::vector<std::string> error_messages;
-    
+    std::vector<MappingResult> mapping_results;
+
     void merge(const LoadingStats& other) {
         rows_processed += other.rows_processed;
         individuals_created += other.individuals_created;
@@ -59,7 +74,7 @@ struct LoadingStats {
             error_messages.push_back(msg);
         }
     }
-    
+
     std::string summary() const {
         std::ostringstream ss;
         ss << "Loading Statistics:\n";

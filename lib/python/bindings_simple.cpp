@@ -1134,6 +1134,20 @@ PYBIND11_MODULE(_libista_owl2, m) {
                    " warnings=" + std::to_string(r.warnings.size()) + ">";
         });
     
+    // MappingResult struct
+    py::class_<MappingResult>(m, "MappingResult", "Per-mapping result for diagnostic reporting")
+        .def(py::init<>())
+        .def_readonly("name", &MappingResult::name, "Mapping name from the YAML spec")
+        .def_readonly("source", &MappingResult::source, "Data source name")
+        .def_readonly("kind", &MappingResult::kind, "Mapping kind: create, enrich, or relationship")
+        .def_readonly("rows_processed", &MappingResult::rows_processed)
+        .def_readonly("items_created", &MappingResult::items_created,
+                      "Individuals or relationships created by this mapping")
+        .def_readonly("rows_skipped", &MappingResult::rows_skipped)
+        .def_readonly("errors", &MappingResult::errors)
+        .def_readonly("error_detail", &MappingResult::error_detail,
+                      "Error message if the mapping failed entirely");
+
     // LoadingStats struct
     py::class_<LoadingStats>(m, "LoadingStats", "Statistics from a loading operation")
         .def(py::init<>())
@@ -1145,11 +1159,13 @@ PYBIND11_MODULE(_libista_owl2, m) {
         .def_readonly("rows_skipped", &LoadingStats::rows_skipped)
         .def_readonly("errors", &LoadingStats::errors)
         .def_readonly("error_messages", &LoadingStats::error_messages)
+        .def_readonly("mapping_results", &LoadingStats::mapping_results,
+                      "Per-mapping results for diagnostic reporting")
         .def("summary", &LoadingStats::summary, "Get a summary of the loading statistics")
         .def("merge", &LoadingStats::merge, py::arg("other"), "Merge with another stats object")
         .def("__repr__", [](const LoadingStats& s) {
-            return "<LoadingStats rows=" + std::to_string(s.rows_processed) + 
-                   " created=" + std::to_string(s.individuals_created) + 
+            return "<LoadingStats rows=" + std::to_string(s.rows_processed) +
+                   " created=" + std::to_string(s.individuals_created) +
                    " enriched=" + std::to_string(s.individuals_enriched) + ">";
         });
     
