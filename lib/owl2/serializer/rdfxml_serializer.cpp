@@ -738,18 +738,62 @@ void RDFXMLSerializer::Builder::writeClassExpression(const ClassExpressionPtr& e
 std::string RDFXMLSerializer::Builder::escapeXML(const std::string& str) const {
     std::string result;
     result.reserve(str.size());
-    
-    for (char c : str) {
-        switch (c) {
-            case '&':  result += "&amp;"; break;
-            case '<':  result += "&lt;"; break;
-            case '>':  result += "&gt;"; break;
-            case '"':  result += "&quot;"; break;
-            case '\'': result += "&apos;"; break;
-            default:   result += c; break;
+
+    size_t i = 0;
+    while (i < str.size()) {
+        unsigned char c = static_cast<unsigned char>(str[i]);
+
+        // XML special characters
+        if (c == '&')       { result += "&amp;";  ++i; continue; }
+        if (c == '<')       { result += "&lt;";   ++i; continue; }
+        if (c == '>')       { result += "&gt;";   ++i; continue; }
+        if (c == '"')       { result += "&quot;";  ++i; continue; }
+        if (c == '\'')      { result += "&apos;";  ++i; continue; }
+
+        // Valid ASCII printable + whitespace
+        if (c == 0x09 || c == 0x0A || c == 0x0D || (c >= 0x20 && c <= 0x7E)) {
+            result += static_cast<char>(c);
+            ++i;
+            continue;
         }
+
+        // Invalid XML control characters (0x00-0x08, 0x0B, 0x0C, 0x0E-0x1F)
+        if (c < 0x20) {
+            ++i;  // skip silently
+            continue;
+        }
+
+        // Multi-byte UTF-8 sequence: validate and pass through, or replace
+        // if the sequence is malformed (e.g. bare Latin-1 high bytes).
+        if (c >= 0xC0 && c <= 0xF7) {
+            // Determine expected sequence length
+            int seq_len = (c < 0xE0) ? 2 : (c < 0xF0) ? 3 : 4;
+            bool valid = (i + seq_len <= str.size());
+            if (valid) {
+                for (int j = 1; j < seq_len; ++j) {
+                    unsigned char cont = static_cast<unsigned char>(str[i + j]);
+                    if ((cont & 0xC0) != 0x80) { valid = false; break; }
+                }
+            }
+            if (valid) {
+                // Valid UTF-8 multi-byte sequence — copy it through
+                result.append(str, i, seq_len);
+                i += seq_len;
+            } else {
+                // Malformed lead byte — emit Unicode replacement character
+                result += "\xEF\xBF\xBD";
+                ++i;
+            }
+            continue;
+        }
+
+        // Bare continuation byte (0x80-0xBF) or other invalid byte —
+        // this commonly comes from Latin-1 data (e.g. 0xAD soft hyphen).
+        // Emit Unicode replacement character.
+        result += "\xEF\xBF\xBD";
+        ++i;
     }
-    
+
     return result;
 }
 
