@@ -14,11 +14,20 @@ namespace owl2 {
 class RDFXMLParser::Parser {
 public:
     explicit Parser(const std::string& rdfxml_content)
-        : content_(rdfxml_content) {}
-    
+        : from_file_(false), content_(rdfxml_content) {}
+
+    explicit Parser(const std::string& filepath, bool /*file_tag*/)
+        : from_file_(true), filepath_(filepath) {}
+
     Ontology parse() {
-        // Parse XML document
-        pugi::xml_parse_result result = doc_.load_string(content_.c_str());
+        // Parse XML document — use load_file for file paths to avoid
+        // the 2 GB std::string limit on large ontologies.
+        pugi::xml_parse_result result;
+        if (from_file_) {
+            result = doc_.load_file(filepath_.c_str());
+        } else {
+            result = doc_.load_string(content_.c_str());
+        }
         if (!result) {
             throw RDFXMLParseException(
                 std::string("XML parsing failed: ") + result.description());
@@ -57,7 +66,9 @@ public:
     }
 
 private:
-    std::string content_;
+    bool from_file_ = false;
+    std::string content_;   // used when parsing from string
+    std::string filepath_;  // used when parsing from file
     pugi::xml_document doc_;
     pugi::xml_node rdf_root_;
     std::unordered_map<std::string, std::string> namespaces_;
@@ -819,16 +830,10 @@ Ontology RDFXMLParser::parse(const std::string& rdfxml_content) {
 }
 
 Ontology RDFXMLParser::parseFromFile(const std::string& filename) {
-    std::ifstream file(filename);
-    if (!file.is_open()) {
-        throw RDFXMLParseException("Cannot open file: " + filename);
-    }
-    
-    std::stringstream buffer;
-    buffer << file.rdbuf();
-    file.close();
-    
-    return parse(buffer.str());
+    // Use pugixml's load_file directly to avoid reading the entire
+    // file into a std::string (which truncates at ~2 GB on MSVC).
+    Parser parser(filename, true);
+    return parser.parse();
 }
 
 } // namespace owl2
