@@ -511,6 +511,17 @@ LoadingStats DataLoader::execute() {
     // Phase 2: ENRICH
     run_node_phase(LoadingPhase::ENRICH, "enrich", enrich_mappings);
 
+    // Rebuild the cache so that properties added during ENRICH are
+    // available for relationship matching (e.g. xrefCasRN).
+    if (!enrich_mappings.empty()) {
+        {
+            ProgressEvent cache_evt;
+            cache_evt.phase = LoadingPhase::BUILD_CACHE;
+            emit_progress(cache_evt);
+        }
+        build_individual_cache();
+    }
+
     // Phase 3: RELATIONSHIP
     current_phase_ = LoadingPhase::RELATIONSHIP;
     current_mapping_total_ = rel_mappings.size();
