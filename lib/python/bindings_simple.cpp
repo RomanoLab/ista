@@ -255,8 +255,15 @@ PYBIND11_MODULE(_libista_owl2, m) {
              py::arg("individual"),
              "Construct a ClassAssertion axiom with a Class and NamedIndividual")
         .def("get_class_expression", &ClassAssertion::getClassExpression,
-             "Get the class expression");
-        // Note: getIndividual() returns variant, so we skip it
+             "Get the class expression")
+        .def("get_individual", [](const ClassAssertion& self) -> NamedIndividual {
+                 auto ind = self.getIndividual();
+                 if (auto* named = std::get_if<NamedIndividual>(&ind)) {
+                     return *named;
+                 }
+                 throw std::runtime_error("Individual is anonymous");
+             },
+             "Get the individual");
 
     // ObjectPropertyDomain Axiom - using lambda to accept ObjectProperty directly
     py::class_<ObjectPropertyDomain, Axiom, std::shared_ptr<ObjectPropertyDomain>>(m, "ObjectPropertyDomain", "ObjectPropertyDomain axiom")
@@ -340,7 +347,31 @@ PYBIND11_MODULE(_libista_owl2, m) {
              py::arg("property"),
              py::arg("source"),
              py::arg("target"),
-             "Construct an ObjectPropertyAssertion axiom");
+             "Construct an ObjectPropertyAssertion axiom")
+        .def("get_property", [](const ObjectPropertyAssertion& self) -> ObjectProperty {
+                 auto expr = self.getProperty();
+                 if (auto* prop = std::get_if<ObjectProperty>(&expr)) {
+                     return *prop;
+                 }
+                 return std::get<std::pair<ObjectProperty, bool>>(expr).first;
+             },
+             "Get the object property")
+        .def("get_source", [](const ObjectPropertyAssertion& self) -> NamedIndividual {
+                 auto ind = self.getSource();
+                 if (auto* named = std::get_if<NamedIndividual>(&ind)) {
+                     return *named;
+                 }
+                 throw std::runtime_error("Source is an anonymous individual");
+             },
+             "Get the source individual")
+        .def("get_target", [](const ObjectPropertyAssertion& self) -> NamedIndividual {
+                 auto ind = self.getTarget();
+                 if (auto* named = std::get_if<NamedIndividual>(&ind)) {
+                     return *named;
+                 }
+                 throw std::runtime_error("Target is an anonymous individual");
+             },
+             "Get the target individual");
 
     // DataPropertyAssertion - using lambda to accept NamedIndividual directly
     py::class_<DataPropertyAssertion, Axiom, std::shared_ptr<DataPropertyAssertion>>(m, "DataPropertyAssertion", "DataPropertyAssertion axiom")

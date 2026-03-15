@@ -315,13 +315,17 @@ class OWL2MemgraphLoader:
                             "label": self._extract_fragment(ind_iri),
                         }
 
-                    # Get class name if it's a named class
-                    class_str = str(class_expr)
-                    if class_str.startswith("NamedClass("):
-                        # Extract IRI from NamedClass(IRI(...))
-                        class_name = self._extract_fragment(class_str)
+                    # Get class name from the class expression
+                    class_name = None
+                    if hasattr(class_expr, "get_expression_type") and \
+                       class_expr.get_expression_type() == "NamedClass":
+                        cls_iri = str(class_expr.get_class().get_iri())
+                        class_name = self._extract_fragment(cls_iri)
                     else:
-                        class_name = self._extract_fragment(class_str)
+                        # Fallback: use functional syntax string
+                        class_name = self._extract_fragment(
+                            class_expr.to_functional_syntax()
+                        )
 
                     if class_name and class_name != "NamedIndividual":
                         individuals[ind_iri]["types"].add(class_name)
@@ -368,13 +372,15 @@ class OWL2MemgraphLoader:
             elif axiom_type == "ObjectPropertyAssertion":
                 # Extract relationship
                 try:
-                    prop = axiom.get_property()
-                    source = axiom.get_source()
-                    target = axiom.get_target()
+                    prop = axiom.get_property()   # ObjectProperty
+                    source = axiom.get_source()   # NamedIndividual
+                    target = axiom.get_target()   # NamedIndividual
 
                     source_iri = str(source.get_iri())
                     target_iri = str(target.get_iri())
-                    prop_name = self._extract_fragment(str(prop.get_iri()))
+                    prop_name = self._extract_fragment(
+                        str(prop.get_iri())
+                    )
 
                     # Ensure both individuals exist
                     for iri in [source_iri, target_iri]:

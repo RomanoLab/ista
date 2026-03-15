@@ -71,7 +71,8 @@ struct DataSourceDef {
     std::string path;  // File path (for file sources)
     char delimiter = ',';
     bool has_headers = true;
-    
+    std::vector<std::string> columns;  ///< Explicit column names (for headerless files)
+
     // For database sources
     std::optional<DatabaseConnectionDef> connection;
     std::optional<std::string> table;

@@ -81,12 +81,14 @@ private:
         
         // Helper functions
         std::string escapeXML(const std::string& str) const;
-        std::string getQName(const IRI& iri) const;
+        std::string getQName(const IRI& iri);
         std::string getNamespacePrefix(const std::string& ns) const;
         void registerStandardNamespaces();
         void registerOntologyNamespaces();
+        void collectNamespaces();
         std::string formatLiteral(const Literal& literal) const;
         std::string formatIndividual(const Individual& individual) const;
+        int auto_ns_counter_ = 0;
         std::string getBlankNodeID();
         void writeAnnotations(const std::vector<Annotation>& annotations, const std::string& indent);
     };

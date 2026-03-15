@@ -130,7 +130,20 @@ DataSourceDef parse_data_source(const std::string& name, const YamlNodePtr& node
     std::string delimiter = node->get_string("delimiter", ",");
     source.delimiter = delimiter.empty() ? ',' : delimiter[0];
     source.has_headers = node->get_bool("has_headers", true);
-    
+
+    // Explicit column names for headerless files
+    if (node->has_key("columns")) {
+        auto cols_node = node->get("columns");
+        if (cols_node && cols_node->is_list()) {
+            for (size_t i = 0; i < cols_node->size(); ++i) {
+                auto item = cols_node->get(i);
+                if (item && item->is_scalar()) {
+                    source.columns.push_back(item->as_string());
+                }
+            }
+        }
+    }
+
     if (node->has_key("connection")) {
         source.connection = parse_database_connection(node->get("connection"));
     }
@@ -651,6 +664,14 @@ std::string DataMappingSpec::to_yaml() const {
             }
             if (!source.has_headers) {
                 out << "    has_headers: false\n";
+            }
+            if (!source.columns.empty()) {
+                out << "    columns: [";
+                for (size_t i = 0; i < source.columns.size(); ++i) {
+                    if (i > 0) out << ", ";
+                    out << "\"" << source.columns[i] << "\"";
+                }
+                out << "]\n";
             }
             if (source.table.has_value()) {
                 out << "    table: " << source.table.value() << "\n";

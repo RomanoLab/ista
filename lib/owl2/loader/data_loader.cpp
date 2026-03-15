@@ -51,9 +51,14 @@ namespace loader {
 
 // CsvReader implementation
 
-CsvReader::CsvReader(const std::string& filepath, char delimiter, bool has_headers)
+CsvReader::CsvReader(const std::string& filepath, char delimiter, bool has_headers,
+                     const std::vector<std::string>& explicit_columns)
     : filepath_(filepath), delimiter_(delimiter), has_headers_(has_headers),
-      current_line_(0), total_lines_(0), at_end_(false) {}
+      current_line_(0), total_lines_(0), at_end_(false) {
+    if (!explicit_columns.empty()) {
+        headers_ = explicit_columns;
+    }
+}
 
 CsvReader::~CsvReader() {
     close();
@@ -82,8 +87,22 @@ bool CsvReader::open() {
             headers_ = parse_line(header_line);
             current_line_++;
         }
+    } else if (headers_.empty()) {
+        // No headers in the file and none provided explicitly.
+        // Peek at the first line to count columns and generate col0, col1, ...
+        std::string first_line;
+        auto pos = file_->tellg();
+        if (std::getline(*file_, first_line)) {
+            auto cols = parse_line(first_line);
+            for (size_t i = 0; i < cols.size(); ++i) {
+                headers_.push_back("col" + std::to_string(i));
+            }
+            // Rewind — the first line is data, not a header
+            file_->clear();
+            file_->seekg(pos);
+        }
     }
-    
+
     return true;
 }
 
@@ -188,9 +207,11 @@ void CsvReader::count_lines() {
 
 std::unique_ptr<DataSourceReader> DataSourceFactory::create_reader(const DataSourceDef& source) {
     if (source.type == "csv") {
-        return std::make_unique<CsvReader>(source.path, source.delimiter, source.has_headers);
+        return std::make_unique<CsvReader>(source.path, source.delimiter,
+                                           source.has_headers, source.columns);
     } else if (source.type == "tsv") {
-        return std::make_unique<CsvReader>(source.path, '\t', source.has_headers);
+        return std::make_unique<CsvReader>(source.path, '\t',
+                                           source.has_headers, source.columns);
     }
 #ifdef ISTA_HAS_SQLITE
     else if (source.type == "sqlite") {

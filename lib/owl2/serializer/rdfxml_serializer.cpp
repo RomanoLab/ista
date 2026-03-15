@@ -37,6 +37,10 @@ RDFXMLSerializer::Builder::Builder(const Ontology& ontology)
 }
 
 std::string RDFXMLSerializer::Builder::build() {
+    // Pre-scan: collect all namespaces needed by axioms so that
+    // the xmlns declarations in the RDF header are complete.
+    collectNamespaces();
+
     writeXMLDeclaration();
     writeRDFHeader();
     writeOntologyHeader();
@@ -749,18 +753,42 @@ std::string RDFXMLSerializer::Builder::escapeXML(const std::string& str) const {
     return result;
 }
 
-std::string RDFXMLSerializer::Builder::getQName(const IRI& iri) const {
+std::string RDFXMLSerializer::Builder::getQName(const IRI& iri) {
     std::string full_iri = iri.getFullIRI();
-    
+
     // Try to find a matching namespace
     for (const auto& [prefix, ns] : namespaces_) {
         if (full_iri.find(ns) == 0) {
             std::string local_name = full_iri.substr(ns.length());
-            return prefix + ":" + local_name;
+            if (!local_name.empty()) {
+                return prefix + ":" + local_name;
+            }
         }
     }
-    
-    // No prefix found, return full IRI
+
+    // No prefix found — auto-register the namespace part of the IRI.
+    // Split at '#' or last '/' to get the namespace and local name.
+    std::string ns_part, local_name;
+    auto hash_pos = full_iri.rfind('#');
+    if (hash_pos != std::string::npos) {
+        ns_part = full_iri.substr(0, hash_pos + 1);
+        local_name = full_iri.substr(hash_pos + 1);
+    } else {
+        auto slash_pos = full_iri.rfind('/');
+        if (slash_pos != std::string::npos) {
+            ns_part = full_iri.substr(0, slash_pos + 1);
+            local_name = full_iri.substr(slash_pos + 1);
+        }
+    }
+
+    if (!ns_part.empty() && !local_name.empty()) {
+        // Register a new prefix for this namespace
+        std::string new_prefix = "ns" + std::to_string(auto_ns_counter_++);
+        namespaces_[new_prefix] = ns_part;
+        return new_prefix + ":" + local_name;
+    }
+
+    // Last resort: this shouldn't happen for well-formed IRIs
     return full_iri;
 }
 
@@ -779,6 +807,72 @@ void RDFXMLSerializer::Builder::registerStandardNamespaces() {
     namespaces_["owl"] = "http://www.w3.org/2002/07/owl#";
     namespaces_["xsd"] = "http://www.w3.org/2001/XMLSchema#";
     namespaces_["xml"] = "http://www.w3.org/XML/1998/namespace";
+}
+
+void RDFXMLSerializer::Builder::collectNamespaces() {
+    // Pre-scan all axiom IRIs so that getQName() auto-registers any
+    // namespace prefixes that aren't already known. This ensures the
+    // xmlns declarations in the RDF header are complete.
+    for (const auto& axiom : ontology_.getAxioms()) {
+        auto type_name = axiom->getAxiomType();
+
+        if (type_name == "Declaration") {
+            auto decl = std::dynamic_pointer_cast<Declaration>(axiom);
+            if (decl) getQName(decl->getIRI());
+        } else if (type_name == "ClassAssertion") {
+            auto ca = std::dynamic_pointer_cast<ClassAssertion>(axiom);
+            if (ca) {
+                auto cls = ca->getClassExpression();
+                if (auto named = std::dynamic_pointer_cast<NamedClass>(cls)) {
+                    getQName(named->getClass().getIRI());
+                }
+            }
+        } else if (type_name == "DataPropertyAssertion") {
+            auto dpa = std::dynamic_pointer_cast<DataPropertyAssertion>(axiom);
+            if (dpa) getQName(dpa->getProperty().getIRI());
+        } else if (type_name == "ObjectPropertyAssertion") {
+            auto opa = std::dynamic_pointer_cast<ObjectPropertyAssertion>(axiom);
+            if (opa) {
+                auto prop_expr = opa->getProperty();
+                if (std::holds_alternative<ObjectProperty>(prop_expr)) {
+                    getQName(std::get<ObjectProperty>(prop_expr).getIRI());
+                }
+            }
+        } else if (type_name == "AnnotationAssertion") {
+            auto aa = std::dynamic_pointer_cast<AnnotationAssertion>(axiom);
+            if (aa) getQName(aa->getProperty().getIRI());
+        } else if (type_name == "SubClassOf") {
+            auto sc = std::dynamic_pointer_cast<SubClassOf>(axiom);
+            if (sc) {
+                if (auto named = std::dynamic_pointer_cast<NamedClass>(sc->getSubClass())) {
+                    getQName(named->getClass().getIRI());
+                }
+                if (auto named = std::dynamic_pointer_cast<NamedClass>(sc->getSuperClass())) {
+                    getQName(named->getClass().getIRI());
+                }
+            }
+        } else if (type_name == "ObjectPropertyDomain") {
+            auto opd = std::dynamic_pointer_cast<ObjectPropertyDomain>(axiom);
+            if (opd) {
+                auto pe = opd->getProperty();
+                if (std::holds_alternative<ObjectProperty>(pe))
+                    getQName(std::get<ObjectProperty>(pe).getIRI());
+            }
+        } else if (type_name == "ObjectPropertyRange") {
+            auto opr = std::dynamic_pointer_cast<ObjectPropertyRange>(axiom);
+            if (opr) {
+                auto pe = opr->getProperty();
+                if (std::holds_alternative<ObjectProperty>(pe))
+                    getQName(std::get<ObjectProperty>(pe).getIRI());
+            }
+        } else if (type_name == "DataPropertyDomain") {
+            auto dpd = std::dynamic_pointer_cast<DataPropertyDomain>(axiom);
+            if (dpd) getQName(dpd->getProperty().getIRI());
+        } else if (type_name == "DataPropertyRange") {
+            auto dpr = std::dynamic_pointer_cast<DataPropertyRange>(axiom);
+            if (dpr) getQName(dpr->getProperty().getIRI());
+        }
+    }
 }
 
 void RDFXMLSerializer::Builder::registerOntologyNamespaces() {

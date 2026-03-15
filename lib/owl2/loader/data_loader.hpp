@@ -170,7 +170,9 @@ public:
  */
 class CsvReader : public DataSourceReader {
 public:
-    CsvReader(const std::string& filepath, char delimiter = ',', bool has_headers = true);
+    CsvReader(const std::string& filepath, char delimiter = ',',
+              bool has_headers = true,
+              const std::vector<std::string>& explicit_columns = {});
     ~CsvReader() override;
     
     bool open() override;

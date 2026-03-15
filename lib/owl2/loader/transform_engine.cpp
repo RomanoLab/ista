@@ -133,6 +133,8 @@ void TransformEngine::init_builtins() {
         }
     };
     
+    builtins_["to_integer"] = builtins_["to_int"];  // alias
+
     // to_float: Validate/convert to float string
     builtins_["to_float"] = [](const std::string& value,
                                 const std::map<std::string, std::string>&) -> std::string {
@@ -225,9 +227,33 @@ std::string TransformEngine::apply_def(const TransformDef& def,
     // Handle chain transforms
     if (def.type == "chain") {
         std::string result = value;
-        for (const auto& step : def.steps) {
-            result = apply_def(step, result, registry);
+
+        if (!def.steps.empty()) {
+            // Pre-built steps (e.g., from programmatic construction)
+            for (const auto& step : def.steps) {
+                result = apply_def(step, result, registry);
+            }
+        } else if (def.params.count("transforms")) {
+            // Comma-separated list of named transforms (from YAML)
+            std::string list = def.params.at("transforms");
+            std::istringstream ss(list);
+            std::string name;
+            while (std::getline(ss, name, ',')) {
+                // Trim whitespace
+                size_t start = name.find_first_not_of(" \t");
+                size_t end = name.find_last_not_of(" \t");
+                if (start == std::string::npos) continue;
+                name = name.substr(start, end - start + 1);
+                // Apply as either a registry transform or a builtin
+                auto reg_it = registry.find(name);
+                if (reg_it != registry.end()) {
+                    result = apply_def(reg_it->second, result, registry);
+                } else {
+                    result = apply_builtin(name, result, {});
+                }
+            }
         }
+
         return result;
     }
     
