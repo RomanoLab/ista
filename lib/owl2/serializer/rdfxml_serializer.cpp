@@ -11,32 +11,34 @@ namespace owl2 {
 // ============================================================================
 
 std::string RDFXMLSerializer::serialize(const Ontology& ontology) {
-    Builder builder(ontology);
-    return builder.build();
+    std::ostringstream ss;
+    Builder builder(ontology, ss);
+    builder.build();
+    return ss.str();
 }
 
 bool RDFXMLSerializer::serializeToFile(const Ontology& ontology, const std::string& filename) {
-    std::string xml = serialize(ontology);
-    std::ofstream file(filename);
+    std::ofstream file(filename, std::ios::binary);
     if (!file.is_open()) {
         return false;
     }
-    file << xml;
+    Builder builder(ontology, file);
+    builder.build();
     file.close();
-    return true;
+    return file.good();
 }
 
 // ============================================================================
 // Builder Implementation
 // ============================================================================
 
-RDFXMLSerializer::Builder::Builder(const Ontology& ontology)
-    : ontology_(ontology), blank_node_counter_(0) {
+RDFXMLSerializer::Builder::Builder(const Ontology& ontology, std::ostream& out)
+    : ontology_(ontology), xml_(out), blank_node_counter_(0) {
     registerStandardNamespaces();
     registerOntologyNamespaces();
 }
 
-std::string RDFXMLSerializer::Builder::build() {
+void RDFXMLSerializer::Builder::build() {
     // Pre-scan: collect all namespaces needed by axioms so that
     // the xmlns declarations in the RDF header are complete.
     collectNamespaces();
@@ -46,7 +48,6 @@ std::string RDFXMLSerializer::Builder::build() {
     writeOntologyHeader();
     writeAxioms();
     writeRDFFooter();
-    return xml_.str();
 }
 
 void RDFXMLSerializer::Builder::writeXMLDeclaration() {

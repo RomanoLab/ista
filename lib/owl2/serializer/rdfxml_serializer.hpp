@@ -4,6 +4,7 @@
 #include "../core/ontology.hpp"
 #include <string>
 #include <sstream>
+#include <ostream>
 #include <unordered_map>
 
 namespace ista {
@@ -35,12 +36,12 @@ private:
     // Helper class for building RDF/XML
     class Builder {
     public:
-        explicit Builder(const Ontology& ontology);
-        std::string build();
-        
+        Builder(const Ontology& ontology, std::ostream& out);
+        void build();
+
     private:
         const Ontology& ontology_;
-        std::ostringstream xml_;
+        std::ostream& xml_;
         std::unordered_map<std::string, std::string> namespaces_;
         int blank_node_counter_;
         
