@@ -691,25 +691,34 @@ YamlNodePtr YamlParser::parse_list(ParseState& state, int base_indent) {
 YamlNodePtr YamlParser::parse_inline_map(ParseState& state) {
     state.advance();  // Skip '{'
     auto map_node = YamlNode::make_map();
-    
+
+    // Helper: skip whitespace AND newlines inside flow mappings,
+    // since YAML allows flow mappings to span multiple lines.
+    auto skip_flow_ws = [&]() {
+        while (!state.at_end() &&
+               (state.peek() == ' ' || state.peek() == '\t' || state.peek() == '\n' || state.peek() == '\r')) {
+            state.advance();
+        }
+    };
+
     while (!state.at_end()) {
-        state.skip_whitespace();
-        
+        skip_flow_ws();
+
         if (state.peek() == '}') {
             state.advance();
             break;
         }
-        
+
         // Parse key
         std::string key = parse_key(state);
-        state.skip_whitespace();
-        
+        skip_flow_ws();
+
         if (state.peek() != ':') {
             throw YamlParseException("Expected ':' in inline map", state.line);
         }
         state.advance();
-        state.skip_whitespace();
-        
+        skip_flow_ws();
+
         // Parse value
         YamlNodePtr value;
         if (state.peek() == '{') {
@@ -719,37 +728,45 @@ YamlNodePtr YamlParser::parse_inline_map(ParseState& state) {
         } else if (state.peek() == '"' || state.peek() == '\'') {
             value = YamlNode::make_scalar(state.read_quoted_string());
         } else {
-            std::string scalar = state.read_until(",}");
+            std::string scalar = state.read_until(",}\n");
             // Trim trailing whitespace
             while (!scalar.empty() && std::isspace(scalar.back())) {
                 scalar.pop_back();
             }
             value = YamlNode::make_scalar(scalar);
         }
-        
+
         map_node->set(key, value);
-        
-        state.skip_whitespace();
+
+        skip_flow_ws();
         if (state.peek() == ',') {
             state.advance();
         }
     }
-    
+
     return map_node;
 }
 
 YamlNodePtr YamlParser::parse_inline_list(ParseState& state) {
     state.advance();  // Skip '['
     auto list_node = YamlNode::make_list();
-    
+
+    // Skip whitespace and newlines inside flow sequences
+    auto skip_flow_ws = [&]() {
+        while (!state.at_end() &&
+               (state.peek() == ' ' || state.peek() == '\t' || state.peek() == '\n' || state.peek() == '\r')) {
+            state.advance();
+        }
+    };
+
     while (!state.at_end()) {
-        state.skip_whitespace();
-        
+        skip_flow_ws();
+
         if (state.peek() == ']') {
             state.advance();
             break;
         }
-        
+
         // Parse value
         YamlNodePtr value;
         if (state.peek() == '{') {
@@ -759,22 +776,22 @@ YamlNodePtr YamlParser::parse_inline_list(ParseState& state) {
         } else if (state.peek() == '"' || state.peek() == '\'') {
             value = YamlNode::make_scalar(state.read_quoted_string());
         } else {
-            std::string scalar = state.read_until(",]");
+            std::string scalar = state.read_until(",]\n");
             // Trim
             while (!scalar.empty() && std::isspace(scalar.back())) {
                 scalar.pop_back();
             }
             value = YamlNode::make_scalar(scalar);
         }
-        
+
         list_node->append(value);
-        
-        state.skip_whitespace();
+
+        skip_flow_ws();
         if (state.peek() == ',') {
             state.advance();
         }
     }
-    
+
     return list_node;
 }
 

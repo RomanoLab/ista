@@ -507,8 +507,10 @@ class OWL2MemgraphLoader:
                         MATCH (b:Individual {{iri: rel.target}})
                         CREATE (a)-[:{rel_type}]->(b)
                         """
-                        session.run(query, rels=rels)
-                        loaded += len(rels)
+                        result = session.run(query, rels=rels)
+                        summary = result.consume()
+                        created = summary.counters.relationships_created
+                        loaded += created
                     except Exception as e:
                         errors += len(rels)
                         if errors <= 5:
