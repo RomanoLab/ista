@@ -3,6 +3,7 @@
 #include <fstream>
 #include <sstream>
 #include <algorithm>
+#include <set>
 
 namespace ista {
 namespace owl2 {
@@ -269,9 +270,22 @@ private:
     // ========================================================================
     
     void parseAxioms(Ontology& ontology) {
+        // Element names that are OWL/RDF infrastructure, not typed individuals
+        static const std::set<std::string> owl_elements = {
+            "owl:Class", "Class",
+            "owl:ObjectProperty", "ObjectProperty",
+            "owl:DatatypeProperty", "DatatypeProperty",
+            "owl:AnnotationProperty", "AnnotationProperty",
+            "owl:NamedIndividual", "NamedIndividual",
+            "owl:AllDisjointClasses", "AllDisjointClasses",
+            "owl:Ontology", "Ontology",
+            "owl:Restriction", "Restriction",
+            "rdf:Description", "Description",
+        };
+
         for (pugi::xml_node child : rdf_root_.children()) {
             std::string node_name = child.name();
-            
+
             if (node_name == "owl:Class" || node_name == "Class") {
                 parseClassAxioms(ontology, child);
             } else if (node_name == "owl:ObjectProperty" || node_name == "ObjectProperty") {
@@ -284,6 +298,11 @@ private:
                 parseDisjointClasses(ontology, child);
             } else if (node_name == "rdf:Description" || node_name == "Description") {
                 parseDescriptionAxioms(ontology, child);
+            } else if (owl_elements.find(node_name) == owl_elements.end() &&
+                       !node_name.empty()) {
+                // Typed node element: <ClassName rdf:about="#id">
+                // This is RDF/XML shorthand for rdf:type = ClassName
+                parseTypedIndividual(ontology, child, node_name);
             }
         }
     }
@@ -550,6 +569,47 @@ private:
         }
     }
     
+    /**
+     * @brief Parse a typed node element as an individual with an implicit rdf:type.
+     *
+     * In RDF/XML, ``<Drug rdf:about="#x">...</Drug>`` is shorthand for
+     * ``<rdf:Description rdf:about="#x"><rdf:type rdf:resource="Drug"/></rdf:Description>``.
+     */
+    void parseTypedIndividual(Ontology& ontology, const pugi::xml_node& node,
+                              const std::string& type_name) {
+        auto about = getOptionalAttributeIRI(node, "rdf:about");
+        if (!about.has_value()) {
+            about = getOptionalAttributeIRI(node, "about");
+        }
+        if (!about.has_value()) {
+            return;
+        }
+
+        IRI ind_iri = resolveIRI(about.value());
+        NamedIndividual ind(ind_iri);
+
+        // The element name gives the implicit rdf:type
+        IRI type_iri = resolveNodeName(type_name);
+        Class cls(type_iri);
+        auto named_class = std::make_shared<NamedClass>(cls);
+        ontology.addAxiom(std::make_shared<ClassAssertion>(named_class, ind));
+
+        // Parse child elements as property assertions (same as parseIndividualAxioms)
+        for (pugi::xml_node child : node.children()) {
+            std::string child_name = child.name();
+
+            if (child_name == "rdf:type" || child_name == "type") {
+                // Additional explicit rdf:type (e.g. owl:NamedIndividual)
+                ClassExpressionPtr extra_cls = parseClassExpression(child);
+                if (extra_cls) {
+                    ontology.addAxiom(std::make_shared<ClassAssertion>(extra_cls, ind));
+                }
+            } else {
+                parsePropertyAssertion(ontology, ind, child);
+            }
+        }
+    }
+
     void parseDescriptionAxioms(Ontology& ontology, const pugi::xml_node& node) {
         auto about = getOptionalAttributeIRI(node, "rdf:about");
         if (!about.has_value()) {
